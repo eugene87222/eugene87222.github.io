@@ -1,0 +1,11 @@
+---
+title: 鸚鵡音頭
+date: 2017-10-15 18:52:26
+tags: [other]
+---
+
+# 鸚鵡兄弟!!
+
+<iframe width="640" height="360" src="https://www.youtube.com/embed/8gqKzv6nuIk?rel=0" frameborder="0" allowfullscreen></iframe>
+
+我想不到可以打什麼...
