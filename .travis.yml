@@ -10,6 +10,12 @@ cache:
 before_script:
   - git clone --branch master https://github.com/eugene87222/eugene87222.github.io public
 
+install:
+  - npm install hexo-renderer-ejs --save
+  - npm install hexo-renderer-stylus --save
+  - npm install hexo-renderer-marked --save
+  - npm install hexo-renderer-sass --save
+
 script:
   - npm run build
 
