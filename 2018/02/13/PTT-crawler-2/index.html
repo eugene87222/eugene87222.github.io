@@ -112,19 +112,19 @@
 
 
 
-<meta name="description" content="上一篇 國網 / 爬蟲 / PTT - 1 已經講過怎麼取得八卦版首頁的文章列表了，忘記細節的可以回去看看，這次要來講如何取得文章內文。 如何取得內文取得網頁原始碼我在八卦版上隨便挑了一篇文章，文章傳送門，一樣使用 requests.get 並用 BeautifulSoup 包起來。 123456res = requests.get(    url=&apos;https://www.ptt.cc/bbs/">
+<meta name="description" content="上一篇 國網 / 爬蟲 / PTT - 1 已經講過怎麼取得八卦版首頁的文章列表了，忘記細節的可以回去看看，這次要來講如何取得文章內文。 環境 Windows 10 家用版 python 3.6.4  如何取得內文取得網頁原始碼我在八卦版上隨便挑了一篇文章，文章傳送門，一樣使用 requests.get 並用 BeautifulSoup 包起來。 123456res = requests.get(">
 <meta name="keywords" content="python,crawler,PTT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="國網 &#x2F; 爬蟲 &#x2F; PTT - 2">
 <meta property="og:url" content="http://eugene87222.github.io/2018/02/13/PTT-crawler-2/index.html">
 <meta property="og:site_name" content="3ugeneYang.§ite">
-<meta property="og:description" content="上一篇 國網 / 爬蟲 / PTT - 1 已經講過怎麼取得八卦版首頁的文章列表了，忘記細節的可以回去看看，這次要來講如何取得文章內文。 如何取得內文取得網頁原始碼我在八卦版上隨便挑了一篇文章，文章傳送門，一樣使用 requests.get 並用 BeautifulSoup 包起來。 123456res = requests.get(    url=&apos;https://www.ptt.cc/bbs/">
+<meta property="og:description" content="上一篇 國網 / 爬蟲 / PTT - 1 已經講過怎麼取得八卦版首頁的文章列表了，忘記細節的可以回去看看，這次要來講如何取得文章內文。 環境 Windows 10 家用版 python 3.6.4  如何取得內文取得網頁原始碼我在八卦版上隨便挑了一篇文章，文章傳送門，一樣使用 requests.get 並用 BeautifulSoup 包起來。 123456res = requests.get(">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://eugene87222.github.io/image/gossiping_screenshot.PNG">
-<meta property="og:updated_time" content="2018-02-25T15:31:50.586Z">
+<meta property="og:updated_time" content="2018-02-26T14:01:44.322Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="國網 &#x2F; 爬蟲 &#x2F; PTT - 2">
-<meta name="twitter:description" content="上一篇 國網 / 爬蟲 / PTT - 1 已經講過怎麼取得八卦版首頁的文章列表了，忘記細節的可以回去看看，這次要來講如何取得文章內文。 如何取得內文取得網頁原始碼我在八卦版上隨便挑了一篇文章，文章傳送門，一樣使用 requests.get 並用 BeautifulSoup 包起來。 123456res = requests.get(    url=&apos;https://www.ptt.cc/bbs/">
+<meta name="twitter:description" content="上一篇 國網 / 爬蟲 / PTT - 1 已經講過怎麼取得八卦版首頁的文章列表了，忘記細節的可以回去看看，這次要來講如何取得文章內文。 環境 Windows 10 家用版 python 3.6.4  如何取得內文取得網頁原始碼我在八卦版上隨便挑了一篇文章，文章傳送門，一樣使用 requests.get 並用 BeautifulSoup 包起來。 123456res = requests.get(">
 <meta name="twitter:image" content="http://eugene87222.github.io/image/gossiping_screenshot.PNG">
 
 
@@ -388,6 +388,10 @@
 
       
         <p>上一篇 <a href="https://eugene87222.github.io/2018/02/10/PTT-crawler-1/">國網 / 爬蟲 / PTT - 1</a> 已經講過怎麼取得八卦版首頁的文章列表了，忘記細節的可以回去看看，這次要來講如何取得文章內文。</p>
+<h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>Windows 10 家用版</li>
+<li>python 3.6.4</li>
+</ul>
 <h1 id="如何取得內文"><a href="#如何取得內文" class="headerlink" title="如何取得內文"></a>如何取得內文</h1><h2 id="取得網頁原始碼"><a href="#取得網頁原始碼" class="headerlink" title="取得網頁原始碼"></a>取得網頁原始碼</h2><p>我在八卦版上隨便挑了一篇文章，<a href="https://www.ptt.cc/bbs/Gossiping/M.1518773576.A.14A.html" target="_blank" rel="external">文章傳送門</a>，一樣使用 requests.get 並用 BeautifulSoup 包起來。
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">res = requests.get(</div><div class="line">    url=<span class="string">'https://www.ptt.cc/bbs/Gossiping/M.1518773576.A.14A.html'</span>,</div><div class="line">    cookies=&#123;<span class="string">'over18'</span>:<span class="string">'1'</span>&#125;</div><div class="line">)</div><div class="line">html = res.text</div><div class="line">content = BeautifulSoup(html.text)</div></pre></td></tr></table></figure></p>
 <h2 id="分析原始碼"><a href="#分析原始碼" class="headerlink" title="分析原始碼"></a>分析原始碼</h2><p>先來看看文章頁面
@@ -633,7 +637,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#如何取得內文"><span class="nav-number">1.</span> <span class="nav-text">如何取得內文</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#取得網頁原始碼"><span class="nav-number">1.1.</span> <span class="nav-text">取得網頁原始碼</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析原始碼"><span class="nav-number">1.2.</span> <span class="nav-text">分析原始碼</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#環境"><span class="nav-number">1.</span> <span class="nav-text">環境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#如何取得內文"><span class="nav-number">2.</span> <span class="nav-text">如何取得內文</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#取得網頁原始碼"><span class="nav-number">2.1.</span> <span class="nav-text">取得網頁原始碼</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析原始碼"><span class="nav-number">2.2.</span> <span class="nav-text">分析原始碼</span></a></li></ol></li></ol></div>
             
 
           </div>

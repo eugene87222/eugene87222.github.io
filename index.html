@@ -516,8 +516,12 @@ Credit by Eugene Yang
         
           
           上一篇 國網 / 爬蟲 / PTT - 3 已經說明如何透過頁數來推導出每個列表頁的網址了，這次要來針對這每個文章列表頁網址去取出每一頁的文章連結。
+環境
+Windows 10 家用版
+python 3.6.4
+
 先把前幾篇文章的程式碼整理一下 (目前都是以八卦版為例，想爬別的版請自行換網址)
-1234567891011121314151617181920212
+12
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -644,7 +648,9 @@ Credit by Eugene Yang
         
           
           之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，國網 / 爬蟲 / PTT - 1、國網 / 爬蟲 / PTT - 2，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。
-取得討論版總頁數我們先觀察文章列表頁的網址，以八
+環境
+Windows 10 家用版
+python
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -771,8 +777,11 @@ Credit by Eugene Yang
         
           
           上一篇 國網 / 爬蟲 / PTT - 1 已經講過怎麼取得八卦版首頁的文章列表了，忘記細節的可以回去看看，這次要來講如何取得文章內文。
-如何取得內文取得網頁原始碼我在八卦版上隨便挑了一篇文章，文章傳送門，一樣使用 requests.get 並用 BeautifulSoup 包起來。
-123456r
+環境
+Windows 10 家用版
+python 3.6.4
+
+如何取得內文取得網頁原始碼我在八卦版上隨便挑了一篇文章，文章傳送門，一樣使用 requests.g
           ...
           <!--noindex-->
           <div class="post-button text-center">

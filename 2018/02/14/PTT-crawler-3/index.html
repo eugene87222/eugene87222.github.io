@@ -112,19 +112,19 @@
 
 
 
-<meta name="description" content="之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，國網 / 爬蟲 / PTT - 1、國網 / 爬蟲 / PTT - 2，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。 取得討論版總頁數我們先觀察文章列表頁的網址，以八卦版為例，到八卦版首頁點選&amp;quot;上頁&amp;quot;，網址末端的數字是  37092，再往上頁看，">
+<meta name="description" content="之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，國網 / 爬蟲 / PTT - 1、國網 / 爬蟲 / PTT - 2，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。 環境 Windows 10 家用版 python 3.6.4  取得討論版總頁數我們先觀察文章列表頁的網址，以八卦版為例，到八卦版首頁點選&amp;quot">
 <meta name="keywords" content="python,crawler,PTT">
 <meta property="og:type" content="article">
 <meta property="og:title" content="國網 &#x2F; 爬蟲 &#x2F; PTT - 3">
 <meta property="og:url" content="http://eugene87222.github.io/2018/02/14/PTT-crawler-3/index.html">
 <meta property="og:site_name" content="3ugeneYang.§ite">
-<meta property="og:description" content="之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，國網 / 爬蟲 / PTT - 1、國網 / 爬蟲 / PTT - 2，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。 取得討論版總頁數我們先觀察文章列表頁的網址，以八卦版為例，到八卦版首頁點選&amp;quot;上頁&amp;quot;，網址末端的數字是  37092，再往上頁看，">
+<meta property="og:description" content="之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，國網 / 爬蟲 / PTT - 1、國網 / 爬蟲 / PTT - 2，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。 環境 Windows 10 家用版 python 3.6.4  取得討論版總頁數我們先觀察文章列表頁的網址，以八卦版為例，到八卦版首頁點選&amp;quot">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://eugene87222.github.io/image/pagination_class.gif">
-<meta property="og:updated_time" content="2018-02-25T15:32:08.706Z">
+<meta property="og:updated_time" content="2018-02-26T14:01:51.965Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="國網 &#x2F; 爬蟲 &#x2F; PTT - 3">
-<meta name="twitter:description" content="之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，國網 / 爬蟲 / PTT - 1、國網 / 爬蟲 / PTT - 2，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。 取得討論版總頁數我們先觀察文章列表頁的網址，以八卦版為例，到八卦版首頁點選&amp;quot;上頁&amp;quot;，網址末端的數字是  37092，再往上頁看，">
+<meta name="twitter:description" content="之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，國網 / 爬蟲 / PTT - 1、國網 / 爬蟲 / PTT - 2，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。 環境 Windows 10 家用版 python 3.6.4  取得討論版總頁數我們先觀察文章列表頁的網址，以八卦版為例，到八卦版首頁點選&amp;quot">
 <meta name="twitter:image" content="http://eugene87222.github.io/image/pagination_class.gif">
 
 
@@ -388,6 +388,10 @@
 
       
         <p>之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，<a href="https://eugene87222.github.io/2018/02/10/PTT-crawler-1/">國網 / 爬蟲 / PTT - 1</a>、<a href="https://eugene87222.github.io/2018/02/13/PTT-crawler-2/">國網 / 爬蟲 / PTT - 2</a>，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。</p>
+<h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>Windows 10 家用版</li>
+<li>python 3.6.4</li>
+</ul>
 <h1 id="取得討論版總頁數"><a href="#取得討論版總頁數" class="headerlink" title="取得討論版總頁數"></a>取得討論版總頁數</h1><p>我們先觀察文章列表頁的網址，以八卦版為例，到八卦版首頁點選&quot;上頁&quot;，網址末端的數字是  37092，再往上頁看，變成 37091，或者直接跳至&quot;最舊&quot;，數字變成 1，發現到我們可以經由網址末端的數字得知該版的總頁數，最舊的那一頁就是 1，一直往上累加到目前的頁數也就是最新的一頁，所以只要能得到總頁數，就能得到每個列表頁的網址。<br>※ 注意：頁數會一直更新、增加，如果跟我的不一樣也別意外</p>
 <h2 id="取得網頁原始碼"><a href="#取得網頁原始碼" class="headerlink" title="取得網頁原始碼"></a>取得網頁原始碼</h2><p>一樣使用 request.get 拿到八卦版首頁的原始碼，然後再用 BeautifulSoup 包起來。
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">res = requests.get(</div><div class="line">    url=<span class="string">'https://www.ptt.cc/bbs/Gossiping/index.html'</span>,</div><div class="line">    cookies=&#123;<span class="string">'over18'</span>:<span class="string">'1'</span>&#125;</div><div class="line">)</div><div class="line">html = res.text</div><div class="line">content = BeautifulSoup(html.text)</div></pre></td></tr></table></figure></p>
@@ -641,7 +645,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#取得討論版總頁數"><span class="nav-number">1.</span> <span class="nav-text">取得討論版總頁數</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#取得網頁原始碼"><span class="nav-number">1.1.</span> <span class="nav-text">取得網頁原始碼</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析原始碼，取得總頁數"><span class="nav-number">1.2.</span> <span class="nav-text">分析原始碼，取得總頁數</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#取得文章列表頁網址"><span class="nav-number">2.</span> <span class="nav-text">取得文章列表頁網址</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#環境"><span class="nav-number">1.</span> <span class="nav-text">環境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#取得討論版總頁數"><span class="nav-number">2.</span> <span class="nav-text">取得討論版總頁數</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#取得網頁原始碼"><span class="nav-number">2.1.</span> <span class="nav-text">取得網頁原始碼</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析原始碼，取得總頁數"><span class="nav-number">2.2.</span> <span class="nav-text">分析原始碼，取得總頁數</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#取得文章列表頁網址"><span class="nav-number">3.</span> <span class="nav-text">取得文章列表頁網址</span></a></li></ol></div>
             
 
           </div>
