@@ -101,7 +101,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="python,crawler,PTT," />
 
 
 
@@ -112,13 +112,18 @@
 
 
 
-<meta property="og:type" content="website">
-<meta property="og:title" content="3ugeneYang.§ite">
-<meta property="og:url" content="http://eugene87222.github.io/page/3/index.html">
+<meta name="description" content="國網 / 爬蟲 / PTT - 1 國網 / 爬蟲 / PTT - 2 國網 / 爬蟲 / PTT - 3 國網 / 爬蟲 / PTT - 4 國網 / 爬蟲 / PTT - 5  完整程式碼在這邊，因為程式也還在修改、調整，Github 上面的可能會和之前五篇文章有些許不同，如果有問題或是我有寫錯的地方歡迎 email 告訴我。">
+<meta name="keywords" content="python,crawler,PTT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="簡易 PTT 爬蟲系列">
+<meta property="og:url" content="http://eugene87222.github.io/2018/02/18/PTT-crawler-sum/index.html">
 <meta property="og:site_name" content="3ugeneYang.§ite">
+<meta property="og:description" content="國網 / 爬蟲 / PTT - 1 國網 / 爬蟲 / PTT - 2 國網 / 爬蟲 / PTT - 3 國網 / 爬蟲 / PTT - 4 國網 / 爬蟲 / PTT - 5  完整程式碼在這邊，因為程式也還在修改、調整，Github 上面的可能會和之前五篇文章有些許不同，如果有問題或是我有寫錯的地方歡迎 email 告訴我。">
 <meta property="og:locale" content="en">
+<meta property="og:updated_time" content="2018-02-27T05:53:23.366Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="3ugeneYang.§ite">
+<meta name="twitter:title" content="簡易 PTT 爬蟲系列">
+<meta name="twitter:description" content="國網 / 爬蟲 / PTT - 1 國網 / 爬蟲 / PTT - 2 國網 / 爬蟲 / PTT - 3 國網 / 爬蟲 / PTT - 4 國網 / 爬蟲 / PTT - 5  完整程式碼在這邊，因為程式也還在修改、調整，Github 上面的可能會和之前五篇文章有些許不同，如果有問題或是我有寫錯的地方歡迎 email 告訴我。">
 
 
 
@@ -148,13 +153,13 @@
 
 
 
-  <link rel="canonical" href="http://eugene87222.github.io/page/3/"/>
+  <link rel="canonical" href="http://eugene87222.github.io/2018/02/18/PTT-crawler-sum/"/>
 
 
 
 
 
-  <title>3ugeneYang.§ite</title>
+  <title>簡易 PTT 爬蟲系列 | 3ugeneYang.§ite</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -200,8 +205,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -294,9 +298,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
 
@@ -309,7 +313,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2017/12/16/20171216/">
+    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2018/02/18/PTT-crawler-sum/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eugene Yang">
@@ -326,9 +330,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/16/20171216/" itemprop="url">雜記</a></h1>
+          <h1 class="post-title" itemprop="name headline">簡易 PTT 爬蟲系列</h1>
         
 
         <div class="post-meta">
@@ -340,8 +342,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-16T00:37:00+08:00">
-                2017-12-16
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-18T13:44:52+08:00">
+                2018-02-18
               </time>
             
 
@@ -359,6 +361,11 @@
           
           
 
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
           
 
           
@@ -378,18 +385,15 @@
       
 
       
-        
-          
-          今天下課之後去桃園機場接機，回到基隆已經 11 點了，下客運的時候，有那麼一瞬間感覺自己回到了高中那時候；冰冷乾爽空氣的味道、街上稀稀落落的夜歸人，就像是高二、高三夜自習結束後回到基隆的感覺，不禁回憶起以前大家為了學測奮鬥，請長假的請長假，報名衝刺班的整天待在補習班，剩下不到一半的同學就待在學校。剎
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/16/20171216/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+        <ul>
+<li><a href="https://eugene87222.github.io/2018/02/10/PTT-crawler-1/">國網 / 爬蟲 / PTT - 1</a></li>
+<li><a href="https://eugene87222.github.io/2018/02/13/PTT-crawler-2/">國網 / 爬蟲 / PTT - 2</a></li>
+<li><a href="https://eugene87222.github.io/2018/02/14/PTT-crawler-3/">國網 / 爬蟲 / PTT - 3</a></li>
+<li><a href="https://eugene87222.github.io/2018/02/15/PTT-crawler-4/">國網 / 爬蟲 / PTT - 4</a></li>
+<li><a href="https://eugene87222.github.io/2018/02/16/PTT-crawler-5/">國網 / 爬蟲 / PTT - 5</a></li>
+</ul>
+<p>完整程式碼在<a href="https://github.com/eugene87222/Crawler/tree/master/PTT%20Crawler" target="_blank" rel="external">這邊</a>，因為程式也還在修改、調整，Github 上面的可能會和之前五篇文章有些許不同，如果有問題或是我有寫錯的地方歡迎 <a href="mailto:eugene87222@gmail.com" target="_blank" rel="external">email</a> 告訴我。</p>
+
       
     </div>
     
@@ -401,279 +405,65 @@
     
 
     
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Eugene Yang
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://eugene87222.github.io/2018/02/18/PTT-crawler-sum/" title="簡易 PTT 爬蟲系列">http://eugene87222.github.io/2018/02/18/PTT-crawler-sum/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
 
     <footer class="post-footer">
       
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2017/12/14/20171214/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Eugene Yang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="3ugeneYang.§ite">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/14/20171214/" itemprop="url">雜記</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-14T19:31:15+08:00">
-                2017-12-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/python/" rel="tag"># python</a>
           
-            
+            <a href="/tags/crawler/" rel="tag"># crawler</a>
           
-
+            <a href="/tags/PTT/" rel="tag"># PTT</a>
           
-          
-
-          
-
-          
-
-          
-
         </div>
-      </header>
-    
+      
 
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
+      
       
       
 
       
-        
-          
-          轉眼間 2017 快結束了，網站建立將近 2 個月，但是接近年底各科都在期末報告考試，真的是沒有多餘的時間可以弄網頁，而且這學期選了兩堂建議修課年級為大三的課，作業雖然不會說很多但是每項作業都很有份量；這幾天才剛把令人頭痛的演算法作業寫完，喘口氣在這邊寫寫東西，晚點還要處理資料庫還有機器學習的報告.
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/14/20171214/#more" rel="contents">
-              Read more &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/16/PTT-crawler-5/" rel="next" title="國網 / 爬蟲 / PTT - 5">
+                <i class="fa fa-chevron-left"></i> 國網 / 爬蟲 / PTT - 5
+              </a>
+            
           </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
 
-    
+          <span class="post-nav-divider"></span>
 
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2017/12/14/20171214-photo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Eugene Yang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="3ugeneYang.§ite">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/14/20171214-photo/" itemprop="url">隨手拍#2</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+          <div class="post-nav-prev post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-14T19:16:47+08:00">
-                2017-12-14
-              </time>
+              <a href="/2018/02/23/20180223-photo/" rel="prev" title="隨手拍#4">
+                隨手拍#4 <i class="fa fa-chevron-right"></i>
+              </a>
             
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-          
-Credit by Eugene Yang
-拍攝時間：2017/3/23拍攝地點：交大校園
-
-
-
-    img{
-        border-radius: 10px;
-        width: 98%;
-    }    
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/14/20171214-photo/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -683,291 +473,32 @@ Credit by Eugene Yang
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2017/11/02/20171102-photo/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Eugene Yang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="3ugeneYang.§ite">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/11/02/20171102-photo/" itemprop="url">隨手拍#1</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-11-02T21:19:33+08:00">
-                2017-11-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          
-Credit by Eugene YangPS by Andy Wu (Blog)
-拍攝時間：2017/7/4拍攝地點：象山六巨石
-
-
-當天跟同學相約回高中看老師，結束後心血來潮去爬象山，爬到半山腰的時候忽然下起大雨，想說等個半小時雨應該就停了，結果在涼亭等了快一個小時才繼續往上爬，下過雨空氣變得
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/11/02/20171102-photo/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
 
 
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2017/10/29/share-other/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Eugene Yang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="3ugeneYang.§ite">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/29/share-other/" itemprop="url">其他收藏分享(持續更新)</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-29T18:48:28+08:00">
-                2017-10-29
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          世界
-被地圖遺忘的地方！卡帕多細亞的地下城
-日本第一星空村 長野縣阿智村
-漂浮在碧綠湖水上的無人秘境車站 靜岡縣奧大井湖上站！
-
-動物
-喵星人如何在零下20°的雪地裡生活呢？
-貓貓攝影失敗大賽||(=´ω`=)
-鼠鼠攝影失敗大賽(=´ϖ`=)
-30 張花紋奇特的貓
-14 張貓咪做壞事的瞬間
-
-其他
-
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/29/share-other/#more" rel="contents">
-              Read more &raquo;
-            </a>
           </div>
-          <!--/noindex-->
-        
-      
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
 
   
-  <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/2/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><span class="page-number current">3</span><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/4/"><i class="fa fa-angle-right"></i></a>
-  </nav>
 
 
-
-          </div>
-          
-
-
-          
 
         </div>
         
@@ -1234,6 +765,10 @@ Credit by Eugene YangPS by Andy Wu (Blog)
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
 
   
 
@@ -1249,6 +784,18 @@ Credit by Eugene YangPS by Andy Wu (Blog)
 
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://eugene87222.github.io/2018/02/18/PTT-crawler-sum/';
+          this.page.identifier = '2018/02/18/PTT-crawler-sum/';
+          this.page.title = '簡易 PTT 爬蟲系列';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://eugene87222.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
