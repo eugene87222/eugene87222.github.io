@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+
+
+
+
+<html class="theme-next pisces" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Kaushan Script:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.3">
+
+
+
+
+
+
+  <meta name="keywords" content="python,crawler,PTT," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，國網 / 爬蟲 / PTT - 1、國網 / 爬蟲 / PTT - 2，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。 環境 Windows 10 家用版 python 3.6.4  取得討論版總頁數我們先觀察文章列表頁的網址，以八卦版為例，到八卦版首頁點選&amp;quot">
+<meta name="keywords" content="python,crawler,PTT">
+<meta property="og:type" content="article">
+<meta property="og:title" content="國網 &#x2F; 爬蟲 &#x2F; PTT - 3">
+<meta property="og:url" content="http://eugene87222.github.io/2018/02/14/PTT-crawler-3/index.html">
+<meta property="og:site_name" content="3ugeneYang.§ite">
+<meta property="og:description" content="之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，國網 / 爬蟲 / PTT - 1、國網 / 爬蟲 / PTT - 2，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。 環境 Windows 10 家用版 python 3.6.4  取得討論版總頁數我們先觀察文章列表頁的網址，以八卦版為例，到八卦版首頁點選&amp;quot">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="http://eugene87222.github.io/image/pagination_class.gif">
+<meta property="og:updated_time" content="2018-02-26T14:01:51.965Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="國網 &#x2F; 爬蟲 &#x2F; PTT - 3">
+<meta name="twitter:description" content="之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，國網 / 爬蟲 / PTT - 1、國網 / 爬蟲 / PTT - 2，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。 環境 Windows 10 家用版 python 3.6.4  取得討論版總頁數我們先觀察文章列表頁的網址，以八卦版為例，到八卦版首頁點選&amp;quot">
+<meta name="twitter:image" content="http://eugene87222.github.io/image/pagination_class.gif">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://eugene87222.github.io/2018/02/14/PTT-crawler-3/"/>
+
+
+
+
+
+  <title>國網 / 爬蟲 / PTT - 3 | 3ugeneYang.§ite</title>
+  
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '',
+      xfbml      : true,
+      version    : 'v2.10'
+    });
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-107694365-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">3ugeneYang.§ite</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2018/02/14/PTT-crawler-3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eugene Yang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="3ugeneYang.§ite">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">國網 / 爬蟲 / PTT - 3</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-14T23:30:46+08:00">
+                2018-02-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，<a href="https://eugene87222.github.io/2018/02/10/PTT-crawler-1/">國網 / 爬蟲 / PTT - 1</a>、<a href="https://eugene87222.github.io/2018/02/13/PTT-crawler-2/">國網 / 爬蟲 / PTT - 2</a>，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。</p>
+<h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>Windows 10 家用版</li>
+<li>python 3.6.4</li>
+</ul>
+<h1 id="取得討論版總頁數"><a href="#取得討論版總頁數" class="headerlink" title="取得討論版總頁數"></a>取得討論版總頁數</h1><p>我們先觀察文章列表頁的網址，以八卦版為例，到八卦版首頁點選&quot;上頁&quot;，網址末端的數字是  37092，再往上頁看，變成 37091，或者直接跳至&quot;最舊&quot;，數字變成 1，發現到我們可以經由網址末端的數字得知該版的總頁數，最舊的那一頁就是 1，一直往上累加到目前的頁數也就是最新的一頁，所以只要能得到總頁數，就能得到每個列表頁的網址。<br>※ 注意：頁數會一直更新、增加，如果跟我的不一樣也別意外</p>
+<h2 id="取得網頁原始碼"><a href="#取得網頁原始碼" class="headerlink" title="取得網頁原始碼"></a>取得網頁原始碼</h2><p>一樣使用 request.get 拿到八卦版首頁的原始碼，然後再用 BeautifulSoup 包起來。
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">res = requests.get(</div><div class="line">    url=<span class="string">'https://www.ptt.cc/bbs/Gossiping/index.html'</span>,</div><div class="line">    cookies=&#123;<span class="string">'over18'</span>:<span class="string">'1'</span>&#125;</div><div class="line">)</div><div class="line">html = res.text</div><div class="line">content = BeautifulSoup(html.text)</div></pre></td></tr></table></figure></p>
+<h2 id="分析原始碼，取得總頁數"><a href="#分析原始碼，取得總頁數" class="headerlink" title="分析原始碼，取得總頁數"></a>分析原始碼，取得總頁數</h2><p>先打開瀏覽器到八卦版首頁按下 f12 觀察一下，[ 最舊、上頁、下頁、最新 ] 這幾個按鈕被包在 class=&quot;btn-group-paging&quot; 底下的 class=&quot;btn&quot; 裡面。
+<img src="/image/pagination_class.gif" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">pagination = content.find(<span class="string">'div'</span>, &#123;<span class="string">'class'</span>:<span class="string">'btn-group-paging'</span>).findAll(<span class="string">'a'</span>, &#123;<span class="string">'class'</span>:<span class="string">'btn'</span>)</div><div class="line">next_page = pagination[<span class="number">1</span>][<span class="string">'href'</span>]</div><div class="line">total_page = next_page.replace(<span class="string">'/bbs/Gossiping/index'</span>, <span class="string">''</span>)</div><div class="line">total_page = int(total_page[:<span class="number">-5</span>]) + <span class="number">1</span></div></pre></td></tr></table></figure>
+<p>&quot;上頁&quot;在第二個 class=&quot;btn&quot; 裡面，所以是 pagination[1]，取出&quot;上頁&quot;的連結後把前面 &#39;/bbs/Gossiping/index&#39; 這段字串拿掉 (用 replace 替換成空字串就好了)，然後第四行這邊用到了 python 的 <a href="http://python-reference.readthedocs.io/en/latest/docs/brackets/slicing.html" target="_blank" rel="external">slice</a> 把字串尾巴的 &quot;.html&quot; 移除，剩下來的部分就是數字了，不過現在的數字是 string 型態，要轉換成 int 才能夠做加減的動作，這邊為什麼還要加一呢？因為我們抓到的數字是最新一頁的&quot;上頁&quot;的，所以還要加一才會是目前的總頁數。</p>
+<h1 id="取得文章列表頁網址"><a href="#取得文章列表頁網址" class="headerlink" title="取得文章列表頁網址"></a>取得文章列表頁網址</h1><p>有了總頁數就可以得到每個文章列表頁的網址了，上面講過最舊頁是 1，一直累加上去到最新頁。<br>假設現在有 100 頁列表，那最新的一頁就會是 100，假設我們想爬 20 頁，寫成 C 大概會長這樣
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">100</span>; i&gt;<span class="number">100</span><span class="number">-20</span>; i--)&#123;</div><div class="line">    <span class="comment">// url = 'https://www.ptt.cc/bbs/Gossiping/index' + i + '.html'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在 python 裡面可以用 range() 來達成，這邊只會大略說明 range() 怎麼用，想深入了解的話可以到<a href="https://docs.python.org/3/library/functions.html#func-range" target="_blank" rel="external">Python Built-in Functions</a>看。</p>
+<p>上面的 C 寫成 python 的 range() 就是
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>, <span class="number">100</span><span class="number">-20</span>, <span class="number">-1</span>):</div><div class="line">    <span class="comment"># url = 'https://www.ptt.cc/bbs/Gossiping/index' + i + '.html'</span></div></pre></td></tr></table></figure></p>
+<p>range() 裡面第一個參數放的是開始的值，第二個是結束的值，第三個是每一步的間隔，第三個可放可不放，預設是 1。range(100, 100-20, -1) 的意思就是從 100 開始，到 100-20 也就是 80 結束 (不包含 80)，第三個參數 step 設成 -1 就是每次遞減 1 的概念，所以如果把 range(100, 100-20, -1) 印出來就會得到從 100 到 81 這 20 個數字。</p>
+<p>有了總頁數、知道如何使用 range()，我們就可以很簡單的取得每個文章列表頁的網址了
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">links = list()</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(總頁數, 總頁數 - 想爬的頁數, <span class="number">-1</span>):</div><div class="line">    link = <span class="string">'https://www.ptt.cc/bbs/Gossiping/index'</span> + str(i) + <span class="string">'.html'</span></div><div class="line">    links.append(link)</div></pre></td></tr></table></figure></p>
+<p>現在已經可以利用總頁數來得到我們要爬的 10頁、20頁或者更多頁的文章列表頁網址，再來就要針對諸多列表網址中的每個網址去取得每頁的文章連結了，不過講到這裡先告一段落，剩下的我們下面幾篇再來慢慢談。</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Eugene Yang
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://eugene87222.github.io/2018/02/14/PTT-crawler-3/" title="國網 / 爬蟲 / PTT - 3">http://eugene87222.github.io/2018/02/14/PTT-crawler-3/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/python/" rel="tag"># python</a>
+          
+            <a href="/tags/crawler/" rel="tag"># crawler</a>
+          
+            <a href="/tags/PTT/" rel="tag"># PTT</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/13/PTT-crawler-2/" rel="next" title="國網 / 爬蟲 / PTT - 2">
+                <i class="fa fa-chevron-left"></i> 國網 / 爬蟲 / PTT - 2
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/02/15/PTT-crawler-4/" rel="prev" title="國網 / 爬蟲 / PTT - 4">
+                國網 / 爬蟲 / PTT - 4 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Eugene Yang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:eugene87222@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://t.me/Eugene87222" target="_blank" title="Telegram">
+                    
+                      <i class="fa fa-fw fa-telegram"></i>Telegram</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com/eugene87222" target="_blank" title="Facebook">
+                    
+                      <i class="fa fa-fw fa-facebook"></i>Facebook</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/eugene87222" target="_blank" title="Twitter">
+                    
+                      <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.pinterest.com/eugene87222/" target="_blank" title="Pinterest">
+                    
+                      <i class="fa fa-fw fa-pinterest"></i>Pinterest</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/eugene87222" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#環境"><span class="nav-number">1.</span> <span class="nav-text">環境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#取得討論版總頁數"><span class="nav-number">2.</span> <span class="nav-text">取得討論版總頁數</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#取得網頁原始碼"><span class="nav-number">2.1.</span> <span class="nav-text">取得網頁原始碼</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#分析原始碼，取得總頁數"><span class="nav-number">2.2.</span> <span class="nav-text">分析原始碼，取得總頁數</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#取得文章列表頁網址"><span class="nav-number">3.</span> <span class="nav-text">取得文章列表頁網址</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017-2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eugene Yang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT</a></div>
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://eugene87222.github.io/2018/02/14/PTT-crawler-3/';
+          this.page.identifier = '2018/02/14/PTT-crawler-3/';
+          this.page.title = '國網 / 爬蟲 / PTT - 3';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://eugene87222.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
