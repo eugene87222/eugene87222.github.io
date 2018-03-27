@@ -1,7 +1,7 @@
 ---
 title: 國網 / 爬蟲 / PTT - 1
 date: 2018-02-10 23:05:13
-tags: [python,crawler,PTT]
+tags: [python,crawler,PTT,tutorial]
 ---
 
 應徵上國網中心工讀生之後第一件事就是練習 python 爬蟲，爬 PTT、facebook、MOBILE01，這幾天正在做 PTT 的部分。
@@ -162,6 +162,6 @@ requests 可以處理一般 service 的請求，requests.get 裡面有很多參�
             })
 ```
 這邊為什麼用 find 而不是 findAll，因為每個 row 裡面只會有一個 class="title"。  
-接著利用 ['href'] 可以取得 class="title" 裡面的連結，.text 可以提取出 block 裡面的文字，再將這些資訊一一存入 list 中。  
+接著利用 ['href'] 可以取得 class="title" 裡面的連結，.text 可以提取出 block 裡面的文字，再將這些資訊一 一存入 list 中。  
 
 目前為止我們已經可以從文章列表抓出我們要的每天文章的資訊了，現在只有抓一頁文章列表， 後面幾篇文章會講如何抓很多頁以及如何進一步取出每篇文章的內文。
