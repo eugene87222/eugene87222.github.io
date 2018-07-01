@@ -114,19 +114,19 @@
 
 
 
-<meta name="description" content="之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，國網 / 爬蟲 / PTT - 1、國網 / 爬蟲 / PTT - 2，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。 環境 Windows 10 家用版 python 3.6.4  取得討論版總頁數我們先觀察文章列表頁的網址，以八卦版為例，到八卦版首頁點選&amp;quot">
+<meta name="description" content="之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，爬蟲 / PTT - 1、爬蟲 / PTT - 2，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。 環境 Windows 10 家用版 python 3.6.4  取得討論版總頁數我們先觀察文章列表頁的網址，以八卦版為例，到八卦版首頁點選&amp;quot;上頁&amp;quot;，">
 <meta name="keywords" content="python,crawler,PTT,tutorial">
 <meta property="og:type" content="article">
-<meta property="og:title" content="國網 &#x2F; 爬蟲 &#x2F; PTT - 3">
+<meta property="og:title" content="爬蟲 &#x2F; PTT - 3">
 <meta property="og:url" content="http://eugene87222.github.io/2018/02/14/PTT-crawler-3/index.html">
 <meta property="og:site_name" content="3ugeneYang.§ite">
-<meta property="og:description" content="之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，國網 / 爬蟲 / PTT - 1、國網 / 爬蟲 / PTT - 2，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。 環境 Windows 10 家用版 python 3.6.4  取得討論版總頁數我們先觀察文章列表頁的網址，以八卦版為例，到八卦版首頁點選&amp;quot">
+<meta property="og:description" content="之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，爬蟲 / PTT - 1、爬蟲 / PTT - 2，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。 環境 Windows 10 家用版 python 3.6.4  取得討論版總頁數我們先觀察文章列表頁的網址，以八卦版為例，到八卦版首頁點選&amp;quot;上頁&amp;quot;，">
 <meta property="og:locale" content="en">
 <meta property="og:image" content="http://eugene87222.github.io/image/pagination_class.gif">
-<meta property="og:updated_time" content="2018-03-27T01:32:35.918Z">
+<meta property="og:updated_time" content="2018-07-01T02:15:48.178Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="國網 &#x2F; 爬蟲 &#x2F; PTT - 3">
-<meta name="twitter:description" content="之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，國網 / 爬蟲 / PTT - 1、國網 / 爬蟲 / PTT - 2，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。 環境 Windows 10 家用版 python 3.6.4  取得討論版總頁數我們先觀察文章列表頁的網址，以八卦版為例，到八卦版首頁點選&amp;quot">
+<meta name="twitter:title" content="爬蟲 &#x2F; PTT - 3">
+<meta name="twitter:description" content="之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，爬蟲 / PTT - 1、爬蟲 / PTT - 2，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。 環境 Windows 10 家用版 python 3.6.4  取得討論版總頁數我們先觀察文章列表頁的網址，以八卦版為例，到八卦版首頁點選&amp;quot;上頁&amp;quot;，">
 <meta name="twitter:image" content="http://eugene87222.github.io/image/pagination_class.gif">
 
 
@@ -163,7 +163,7 @@
 
 
 
-  <title>國網 / 爬蟲 / PTT - 3 | 3ugeneYang.§ite</title>
+  <title>爬蟲 / PTT - 3 | 3ugeneYang.§ite</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -334,7 +334,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">國網 / 爬蟲 / PTT - 3</h1>
+          <h1 class="post-title" itemprop="name headline">爬蟲 / PTT - 3</h1>
         
 
         <div class="post-meta">
@@ -389,7 +389,7 @@
       
 
       
-        <p>之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，<a href="https://eugene87222.github.io/2018/02/10/PTT-crawler-1/">國網 / 爬蟲 / PTT - 1</a>、<a href="https://eugene87222.github.io/2018/02/13/PTT-crawler-2/">國網 / 爬蟲 / PTT - 2</a>，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。</p>
+        <p>之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，<a href="https://eugene87222.github.io/2018/02/10/PTT-crawler-1/">爬蟲 / PTT - 1</a>、<a href="https://eugene87222.github.io/2018/02/13/PTT-crawler-2/">爬蟲 / PTT - 2</a>，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。</p>
 <h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
 <li>Windows 10 家用版</li>
 <li>python 3.6.4</li>
@@ -399,7 +399,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">res = requests.get(</div><div class="line">    url=<span class="string">'https://www.ptt.cc/bbs/Gossiping/index.html'</span>,</div><div class="line">    cookies=&#123;<span class="string">'over18'</span>:<span class="string">'1'</span>&#125;</div><div class="line">)</div><div class="line">html = res.text</div><div class="line">content = BeautifulSoup(html.text)</div></pre></td></tr></table></figure></p>
 <h2 id="分析原始碼，取得總頁數"><a href="#分析原始碼，取得總頁數" class="headerlink" title="分析原始碼，取得總頁數"></a>分析原始碼，取得總頁數</h2><p>先打開瀏覽器到八卦版首頁按下 f12 觀察一下，[ 最舊、上頁、下頁、最新 ] 這幾個按鈕被包在 class=&quot;btn-group-paging&quot; 底下的 class=&quot;btn&quot; 裡面。
 <img src="/image/pagination_class.gif" alt=""></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">pagination = content.find(<span class="string">'div'</span>, &#123;<span class="string">'class'</span>:<span class="string">'btn-group-paging'</span>).findAll(<span class="string">'a'</span>, &#123;<span class="string">'class'</span>:<span class="string">'btn'</span>)</div><div class="line">next_page = pagination[<span class="number">1</span>][<span class="string">'href'</span>]</div><div class="line">total_page = next_page.replace(<span class="string">'/bbs/Gossiping/index'</span>, <span class="string">''</span>)</div><div class="line">total_page = int(total_page[:<span class="number">-5</span>]) + <span class="number">1</span></div></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">pagination = content.find(<span class="string">'div'</span>, &#123;<span class="string">'class'</span>:<span class="string">'btn-group-paging'</span>&#125;).findAll(<span class="string">'a'</span>, &#123;<span class="string">'class'</span>:<span class="string">'btn'</span>&#125;)</div><div class="line">next_page = pagination[<span class="number">1</span>][<span class="string">'href'</span>]</div><div class="line">total_page = next_page.replace(<span class="string">'/bbs/Gossiping/index'</span>, <span class="string">''</span>)</div><div class="line">total_page = int(total_page[:<span class="number">-5</span>]) + <span class="number">1</span></div></pre></td></tr></table></figure>
 <p>&quot;上頁&quot;在第二個 class=&quot;btn&quot; 裡面，所以是 pagination[1]，取出&quot;上頁&quot;的連結後把前面 &#39;/bbs/Gossiping/index&#39; 這段字串拿掉 (用 replace 替換成空字串就好了)，然後第四行這邊用到了 python 的 <a href="http://python-reference.readthedocs.io/en/latest/docs/brackets/slicing.html" target="_blank" rel="external">slice</a> 把字串尾巴的 &quot;.html&quot; 移除，剩下來的部分就是數字了，不過現在的數字是 string 型態，要轉換成 int 才能夠做加減的動作，這邊為什麼還要加一呢？因為我們抓到的數字是最新一頁的&quot;上頁&quot;的，所以還要加一才會是目前的總頁數。</p>
 <h1 id="取得文章列表頁網址"><a href="#取得文章列表頁網址" class="headerlink" title="取得文章列表頁網址"></a>取得文章列表頁網址</h1><p>有了總頁數就可以得到每個文章列表頁的網址了，上面講過最舊頁是 1，一直累加上去到最新頁。<br>假設現在有 100 頁列表，那最新的一頁就會是 100，假設我們想爬 20 頁，寫成 C 大概會長這樣
 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">100</span>; i&gt;<span class="number">100</span><span class="number">-20</span>; i--)&#123;</div><div class="line">    <span class="comment">// url = 'https://www.ptt.cc/bbs/Gossiping/index' + i + '.html'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
@@ -430,7 +430,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="http://eugene87222.github.io/2018/02/14/PTT-crawler-3/" title="國網 / 爬蟲 / PTT - 3">http://eugene87222.github.io/2018/02/14/PTT-crawler-3/</a>
+    <a href="http://eugene87222.github.io/2018/02/14/PTT-crawler-3/" title="爬蟲 / PTT - 3">http://eugene87222.github.io/2018/02/14/PTT-crawler-3/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -464,8 +464,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/13/PTT-crawler-2/" rel="next" title="國網 / 爬蟲 / PTT - 2">
-                <i class="fa fa-chevron-left"></i> 國網 / 爬蟲 / PTT - 2
+              <a href="/2018/02/13/PTT-crawler-2/" rel="next" title="爬蟲 / PTT - 2">
+                <i class="fa fa-chevron-left"></i> 爬蟲 / PTT - 2
               </a>
             
           </div>
@@ -474,8 +474,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/02/15/PTT-crawler-4/" rel="prev" title="國網 / 爬蟲 / PTT - 4">
-                國網 / 爬蟲 / PTT - 4 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/02/15/PTT-crawler-4/" rel="prev" title="爬蟲 / PTT - 4">
+                爬蟲 / PTT - 4 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -825,7 +825,7 @@
         var disqus_config = function () {
           this.page.url = 'http://eugene87222.github.io/2018/02/14/PTT-crawler-3/';
           this.page.identifier = '2018/02/14/PTT-crawler-3/';
-          this.page.title = '國網 / 爬蟲 / PTT - 3';
+          this.page.title = '爬蟲 / PTT - 3';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://eugene87222.disqus.com/embed.js';

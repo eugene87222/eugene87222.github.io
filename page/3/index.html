@@ -330,7 +330,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/15/PTT-crawler-4/" itemprop="url">國網 / 爬蟲 / PTT - 4</a></h1>
+                <a class="post-title-link" href="/2018/02/15/PTT-crawler-4/" itemprop="url">爬蟲 / PTT - 4</a></h1>
         
 
         <div class="post-meta">
@@ -382,13 +382,13 @@
       
         
           
-          上一篇 國網 / 爬蟲 / PTT - 3 已經說明如何透過頁數來推導出每個列表頁的網址了，這次要來針對這每個文章列表頁網址去取出每一頁的文章連結。
+          上一篇 爬蟲 / PTT - 3 已經說明如何透過頁數來推導出每個列表頁的網址了，這次要來針對這每個文章列表頁網址去取出每一頁的文章連結。
 環境
 Windows 10 家用版
 python 3.6.4
 
 先把前幾篇文章的程式碼整理一下 (目前都是以八卦版為例，想爬別的版請自行換網址)
-12
+1234567
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -462,7 +462,7 @@ python 3.6.4
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/14/PTT-crawler-3/" itemprop="url">國網 / 爬蟲 / PTT - 3</a></h1>
+                <a class="post-title-link" href="/2018/02/14/PTT-crawler-3/" itemprop="url">爬蟲 / PTT - 3</a></h1>
         
 
         <div class="post-meta">
@@ -514,10 +514,12 @@ python 3.6.4
       
         
           
-          之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，國網 / 爬蟲 / PTT - 1、國網 / 爬蟲 / PTT - 2，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。
+          之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，爬蟲 / PTT - 1、爬蟲 / PTT - 2，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。
 環境
 Windows 10 家用版
-python
+python 3.6.4
+
+取得
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -591,7 +593,7 @@ python
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/13/PTT-crawler-2/" itemprop="url">國網 / 爬蟲 / PTT - 2</a></h1>
+                <a class="post-title-link" href="/2018/02/13/PTT-crawler-2/" itemprop="url">爬蟲 / PTT - 2</a></h1>
         
 
         <div class="post-meta">
@@ -643,12 +645,12 @@ python
       
         
           
-          上一篇 國網 / 爬蟲 / PTT - 1 已經講過怎麼取得八卦版首頁的文章列表了，忘記細節的可以回去看看，這次要來講如何取得文章內文。
+          上一篇 爬蟲 / PTT - 1 已經講過怎麼取得八卦版首頁的文章列表了，忘記細節的可以回去看看，這次要來講如何取得文章內文。
 環境
 Windows 10 家用版
 python 3.6.4
 
-如何取得內文取得網頁原始碼我在八卦版上隨便挑了一篇文章，文章傳送門，一樣使用 requests.g
+如何取得內文取得網頁原始碼我在八卦版上隨便挑了一篇文章，文章傳送門，一樣使用 requests.get 並用
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -722,7 +724,7 @@ python 3.6.4
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/02/10/PTT-crawler-1/" itemprop="url">國網 / 爬蟲 / PTT - 1</a></h1>
+                <a class="post-title-link" href="/2018/02/10/PTT-crawler-1/" itemprop="url">爬蟲 / PTT - 1</a></h1>
         
 
         <div class="post-meta">
@@ -774,14 +776,14 @@ python 3.6.4
       
         
           
-          應徵上國網中心工讀生之後第一件事就是練習 python 爬蟲，爬 PTT、facebook、MOBILE01，這幾天正在做 PTT 的部分。
+          應徵上國網中心工讀生之後第一件事就是練習 python 爬蟲，爬 PTT、facebook、MOBILE01 這類的論壇，這幾天正在做 PTT 的部分。
 環境
 Windows 10 家用版
 python 3.6.4
 
 安裝 library
 requests (取得網頁原始碼)
-1pip3 install req
+1pip3 insta
           ...
           <!--noindex-->
           <div class="post-button text-center">
