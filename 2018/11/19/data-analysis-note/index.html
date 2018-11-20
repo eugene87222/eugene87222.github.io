@@ -132,7 +132,7 @@
 <meta property="og:site_name" content="3ugeneYang.§ite">
 <meta property="og:description" content="資料分析筆記如何獲取資料 sklearn 內建的 dataset Kaggle Dataset(包含較多已整理的資料，不需要太多時間對資料做前處理) Google Map API(好像要$$) 各種政府提供的 Open data 平台(e.g. 政府資料開放平台, 台北市政府資料開放平台)  MEDIUM 進度 2.3講 常見的資料分析方法一、描述統計(敘述統計)透過對數據資料的圖像化處理，將資料">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-11-20T00:23:41.401Z">
+<meta property="og:updated_time" content="2018-11-20T00:27:33.047Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="資料分析筆記">
 <meta name="twitter:description" content="資料分析筆記如何獲取資料 sklearn 內建的 dataset Kaggle Dataset(包含較多已整理的資料，不需要太多時間對資料做前處理) Google Map API(好像要$$) 各種政府提供的 Open data 平台(e.g. 政府資料開放平台, 台北市政府資料開放平台)  MEDIUM 進度 2.3講 常見的資料分析方法一、描述統計(敘述統計)透過對數據資料的圖像化處理，將資料">
@@ -406,9 +406,12 @@
 <li>迴歸填充(Regression imputation): 對於連續取值的變數，可以利用線性回歸來擬合估計其取值。對於二值變數，可以利用logistic regression來估計其取值。</li>
 <li>決策樹(Decision tree): 利用不缺失某個屬性的樣本訓練決策樹，然後對於該屬性缺失的樣本即可利用訓練所得決策樹來預測所缺失的屬性取值。</li>
 <li>熱卡填充(Hot deck imputation): 對於一個含有缺失值的變數，尋找一個與他最為相似的數據並進行填充，利用 hot deck 填充數據後，其 standard deviation 與填充前較為相近。但在回歸函數中，容易使得誤差變大，而且這個很耗時。</li>
-<li>多重填充(Multiple imputation): 有點複雜還是直接 google 好了。<h4 id="常態性檢驗"><a href="#常態性檢驗" class="headerlink" title="常態性檢驗"></a>常態性檢驗</h4>很多統計方法都要求數值呈現或近似呈現常態分佈，所以之前需要進行常態性檢驗。</li>
+<li>多重填充(Multiple imputation): 有點複雜還是直接 google 好了。</li>
 </ul>
 </li>
+</ul>
+<h4 id="常態性檢驗"><a href="#常態性檢驗" class="headerlink" title="常態性檢驗"></a>常態性檢驗</h4><p>很多統計方法都要求數值呈現或近似呈現常態分佈，所以之前需要進行常態性檢驗。</p>
+<ul>
 <li>非引數檢驗的K-量檢驗(這是什麼我也不知道)</li>
 <li><a href="https://en.wikipedia.org/wiki/Normal_probability_plot" target="_blank" rel="external">PP圖(probability plot graph)</a></li>
 <li><a href="https://zh.wikipedia.org/wiki/%E5%88%86%E4%BD%8D%E5%9C%96" target="_blank" rel="external">QQ圖</a></li>
@@ -421,7 +424,10 @@
 <li>T檢驗: 當樣本較小時，樣本符合常態分布。 (大三上統計學講義)</li>
 <li>單樣本T檢驗: 推斷該樣本來自的總體平均μ與已知的某一總體平均數μ0(通常為理論值或標準值)有無差別。 <strong>(不懂)</strong></li>
 <li>配對樣本T檢驗: 當總體均數未知時，且兩個樣本可以配對，同對中的兩者在可能會影響處理效果的各種條件方面極為相似。 <strong>(不懂)</strong></li>
-<li>獨立雙樣本T檢驗: 無法找到在各方面極為相似的兩樣本作配對比較時使用。 <strong>(不懂)</strong><h4 id="非引數檢驗"><a href="#非引數檢驗" class="headerlink" title="非引數檢驗"></a>非引數檢驗</h4>不考慮總體分佈是否已知，常常也不是針對總體引數，而是針對總體的某些一般性假設(e.g. 總體分佈的位罝是否相同，總體分佈是否常態)進行檢驗。</li>
+<li>獨立雙樣本T檢驗: 無法找到在各方面極為相似的兩樣本作配對比較時使用。 <strong>(不懂)</strong></li>
+</ul>
+<h4 id="非引數檢驗"><a href="#非引數檢驗" class="headerlink" title="非引數檢驗"></a>非引數檢驗</h4><p>不考慮總體分佈是否已知，常常也不是針對總體引數，而是針對總體的某些一般性假設(e.g. 總體分佈的位罝是否相同，總體分佈是否常態)進行檢驗。</p>
+<ul>
 <li>適用情況: 順序型別的數據資料，這類資料的分佈形態一般是未知的。</li>
 <li>雖然是連續資料，但總體分佈形態未知或者非正態</li>
 <li>總體分佈雖然常態，資料也是連續型別，但樣本容量極小(10以下)</li>
