@@ -186,7 +186,8 @@ th {
 body {
   position: relative;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 15px;
+  font-size: 16px;
+  font-weight: 300;
   line-height: 2;
   color: #555;
   background: #f5f7f9;
@@ -214,7 +215,8 @@ h5,
 h6 {
   margin: 0;
   padding: 0;
-  font-weight: bold;
+  font-weight: 400;
+  letter-spacing: 0.8px;
   line-height: 1.5;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
 }
@@ -977,6 +979,7 @@ pre .javascript .function {
   margin: 120px 0 40px;
   text-align: center;
   border-top: 1px solid #eee;
+  font-weight: 400;
 }
 .page-number-basic,
 .pagination .prev,
@@ -1051,6 +1054,7 @@ pre .javascript .function {
 }
 .tag-cloud {
   text-align: center;
+  font-weight: 400;
 }
 .tag-cloud a {
   display: inline-block;
@@ -1094,6 +1098,7 @@ pre .javascript .function {
 }
 .header-inner {
   position: relative;
+  font-weight: 400;
 }
 .headband {
   height: 3px;
@@ -1226,6 +1231,10 @@ pre .javascript .function {
   .post-body {
     word-break: break-word;
   }
+}
+strong {
+  font-weight: 500;
+  color: #c80000;
 }
 .post-body .fancybox img {
   display: block !important;
@@ -1514,6 +1523,10 @@ pre .javascript .function {
   font-size: 14px;
   margin-top: 2px;
 }
+.post-time {
+  font-size: 13px;
+  font-weight: 400;
+}
 .post-meta-divider {
   margin: 0 0.5em;
 }
@@ -1788,6 +1801,7 @@ pre .javascript .function {
 }
 .site-state-item-name {
   font-size: 13px;
+  font-weight: 400;
   color: #999;
 }
 .feed-link {
@@ -1821,6 +1835,7 @@ pre .javascript .function {
   margin-bottom: 10px;
   border-bottom-color: #555;
   font-size: 13px;
+  font-weight: 400;
 }
 .links-of-author a:before {
   display: inline-block;
@@ -1830,7 +1845,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #064663;
+  background: #d5ff21;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1872,9 +1887,11 @@ pre .javascript .function {
 }
 .page-post-detail .sidebar-nav-toc {
   padding: 0 5px;
+  font-weight: 400;
 }
 .page-post-detail .sidebar-nav-overview {
   margin-left: 10px;
+  font-weight: 400;
 }
 .sidebar-nav .sidebar-nav-active {
   color: #fc6423;
@@ -1898,6 +1915,7 @@ pre .javascript .function {
 }
 .post-toc {
   overflow: auto;
+  font-weight: 400;
 }
 .post-toc ol {
   margin: 0;
@@ -1958,6 +1976,7 @@ pre .javascript .function {
 }
 .footer-inner {
   text-align: center;
+  font-weight: 400;
 }
 .with-love {
   display: inline-block;
@@ -2376,6 +2395,7 @@ pre .javascript .function {
   position: relative;
   top: 3px;
   left: 20px;
+  font-weight: 400;
 }
 @media (max-width: 767px) {
   .page-archive .archive-page-counter {
