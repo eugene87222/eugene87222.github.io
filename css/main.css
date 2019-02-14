@@ -186,7 +186,7 @@ th {
 body {
   position: relative;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 300;
   line-height: 2;
   color: #555;
@@ -1254,7 +1254,7 @@ pre .javascript .function {
   }
 }
 .menu {
-  margin-top: 20px;
+  margin-top: 15px;
   padding-left: 0;
   text-align: center;
 }
@@ -1910,7 +1910,7 @@ strong {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ff3313;
+  background: #410a04;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2784,7 +2784,7 @@ strong {
   position: static;
   float: left;
   margin-top: 300px;
-  width: 240px;
+  width: 190px;
   background: #f5f7f9;
   box-shadow: none;
 }
@@ -2831,6 +2831,48 @@ strong {
 .sidebar-position-right .footer-inner {
   padding-left: 0;
   padding-right: 260px;
+}
+header {
+  width: 90% !important;
+}
+header.post-header {
+  width: auto !important;
+}
+.container .main-inner {
+  width: 90%;
+}
+.content-wrap {
+  width: calc(100% - 260px);
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .header {
+    width: auto !important;
+  }
+}
+@media (max-width: 767px) {
+  .header {
+    width: auto !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .container .main-inner {
+    width: auto !important;
+  }
+}
+@media (max-width: 767px) {
+  .container .main-inner {
+    width: auto !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  .content-wrap {
+    width: 100% !important;
+  }
+}
+@media (max-width: 767px) {
+  .content-wrap {
+    width: 100% !important;
+  }
 }
 .site-brand-wrapper {
   position: relative;
