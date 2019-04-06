@@ -186,7 +186,7 @@ th {
 body {
   position: relative;
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 300;
   line-height: 2;
   color: #555;
@@ -204,7 +204,7 @@ body {
 }
 @media (min-width: 1600px) {
   body {
-    font-size: 17px;
+    font-size: 18px;
   }
 }
 h1,
@@ -1312,7 +1312,7 @@ strong {
 .post-body .figure .caption {
   margin: -20px auto 15px;
   text-align: center;
-  font-size: 15px;
+  font-size: 16px;
   color: #999;
   font-weight: bold;
   line-height: 1;
@@ -1910,7 +1910,7 @@ strong {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #410a04;
+  background: #ffffc6;
 }
 .links-of-blogroll {
   font-size: 13px;
