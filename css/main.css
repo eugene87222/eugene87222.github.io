@@ -300,11 +300,11 @@ img {
   height: auto;
 }
 hr {
-  margin: 40px 0;
-  height: 3px;
+  margin: 30px 0;
+  height: 2px;
   border: none;
   background-color: #ddd;
-  background-image: repeating-linear-gradient(-45deg, #fff, #fff 4px, transparent 4px, transparent 8px);
+  background-image: repeating-linear-gradient(-90deg, #fff, #fff 4px, transparent 4px, transparent 8px);
 }
 blockquote {
   padding: 0 15px;
@@ -1688,7 +1688,7 @@ strong {
 .posts-expand .post-eof {
   display: block;
   margin: 50px auto 40px;
-  width: 40%;
+  width: 60%;
   height: 1px;
   background: #ccc;
   text-align: center;
@@ -1910,7 +1910,7 @@ strong {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #d2fc69;
+  background: #ff8213;
 }
 .links-of-blogroll {
   font-size: 13px;
