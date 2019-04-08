@@ -113,7 +113,7 @@
 
 
 
-  <meta name="keywords" content="other," />
+  <meta name="keywords" content="NCTU,note,computer security," />
 
 
 
@@ -124,18 +124,18 @@
 
 
 
-<meta name="description" content="TEST 這篇文是從別的電腦上發的，直接把 markdown push 到 eugene87222.github.io 的 raw branch 並透過 travis CI 自動發布。">
-<meta name="keywords" content="other">
+<meta name="description" content="Access ControlAccess control: the central element of computer security Principal Objectives of Computer Security Prevent unauthorized users from gaining access to recources Prevent legitimate users fr">
+<meta name="keywords" content="NCTU,note,computer security">
 <meta property="og:type" content="article">
-<meta property="og:title" content="TEST">
-<meta property="og:url" content="http://eugene87222.github.io/2018/03/18/20180318-test/index.html">
+<meta property="og:title" content="[Intro. to Computer Security Course Note] Ch 4">
+<meta property="og:url" content="http://eugene87222.github.io/2019/04/08/20190408-ComputerSecurity-note-ch4/index.html">
 <meta property="og:site_name" content="3ugeneYang.§ite">
-<meta property="og:description" content="TEST 這篇文是從別的電腦上發的，直接把 markdown push 到 eugene87222.github.io 的 raw branch 並透過 travis CI 自動發布。">
+<meta property="og:description" content="Access ControlAccess control: the central element of computer security Principal Objectives of Computer Security Prevent unauthorized users from gaining access to recources Prevent legitimate users fr">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2019-02-08T05:24:39.919Z">
+<meta property="og:updated_time" content="2019-04-08T07:13:19.694Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TEST">
-<meta name="twitter:description" content="TEST 這篇文是從別的電腦上發的，直接把 markdown push 到 eugene87222.github.io 的 raw branch 並透過 travis CI 自動發布。">
+<meta name="twitter:title" content="[Intro. to Computer Security Course Note] Ch 4">
+<meta name="twitter:description" content="Access ControlAccess control: the central element of computer security Principal Objectives of Computer Security Prevent unauthorized users from gaining access to recources Prevent legitimate users fr">
 
 
 
@@ -165,13 +165,13 @@
 
 
 
-  <link rel="canonical" href="http://eugene87222.github.io/2018/03/18/20180318-test/"/>
+  <link rel="canonical" href="http://eugene87222.github.io/2019/04/08/20190408-ComputerSecurity-note-ch4/"/>
 
 
 
 
 
-  <title>TEST | 3ugeneYang.§ite</title>
+  <title>[Intro. to Computer Security Course Note] Ch 4 | 3ugeneYang.§ite</title>
   
 
 
@@ -307,7 +307,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2018/03/18/20180318-test/">
+    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/04/08/20190408-ComputerSecurity-note-ch4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Eugene Yang">
@@ -324,7 +324,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">TEST</h1>
+          <h1 class="post-title" itemprop="name headline">[Intro. to Computer Security Course Note] Ch 4</h1>
         
 
         <div class="post-meta">
@@ -336,8 +336,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-18T01:02:36+08:00">
-                2018-03-18
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-08T15:06:38+08:00">
+                2019-04-08
               </time>
             
 
@@ -379,9 +379,71 @@
       
 
       
-        <p>TEST</p>
-<p>這篇文是從別的電腦上發的，直接把 markdown push 到 eugene87222.github.io 的 raw branch 並透過 travis CI 自動發布。</p>
-
+        <h1 id="Access-Control"><a href="#Access-Control" class="headerlink" title="Access Control"></a>Access Control</h1><p><strong>Access control: the central element of computer security</strong></p>
+<h1 id="Principal-Objectives-of-Computer-Security"><a href="#Principal-Objectives-of-Computer-Security" class="headerlink" title="Principal Objectives of Computer Security"></a>Principal Objectives of Computer Security</h1><ul>
+<li><strong>Prevent unauthorized users</strong> from gaining access to recources</li>
+<li><strong>Prevent legitimate users</strong> from accessing resources in an <strong>unauthorized manner</strong></li>
+<li><strong>Enable legitimate users</strong> to access resources in an <strong>authorized manner</strong></li>
+</ul>
+<h1 id="Access-Control-Principles"><a href="#Access-Control-Principles" class="headerlink" title="Access Control Principles"></a>Access Control Principles</h1><h2 id="Access-Control-Context"><a href="#Access-Control-Context" class="headerlink" title="Access Control Context"></a>Access Control Context</h2><ul>
+<li><strong>Authentication</strong>: verification that user / system credentials are valid</li>
+<li><strong>Authorization</strong>: the granting of a right or permission to a system entity ro access a system resource</li>
+<li><strong>Audit</strong>: an independent examination of system records and activities<ul>
+<li>To test for adequacy of system controls</li>
+<li>To ensure compliance with established policy and operational procedures</li>
+<li>To detect breaches in security</li>
+<li>To recommend any indicated changes in control, policy ans procedures</li>
+</ul>
+</li>
+</ul>
+<h2 id="Access-Control-Policies"><a href="#Access-Control-Policies" class="headerlink" title="Access Control Policies"></a>Access Control Policies</h2><ul>
+<li>Discretionary access control (DAC)<ul>
+<li><strong>Based on the identity of the requestor</strong>, and on access rules stating what requestors are (or are not) allowed to do</li>
+<li>Why discretionary ? <strong>An entity might have access rights to enable another entity to access some resource</strong></li>
+</ul>
+</li>
+<li>Mandatory access control (MAC)<ul>
+<li>Based on security clearances of system entities, and on security labels of resources</li>
+<li>Why mandatory ? An entity that has clearance to access a resource <strong>may not enable another entity to access that resource</strong></li>
+</ul>
+</li>
+<li>Role-based access control (RBAC)<ul>
+<li><strong>Based on the roles that users have</strong>, and on rules stating what accesses are allowed to given roles</li>
+</ul>
+</li>
+<li>Attribute-based access control (ABAC)<ul>
+<li>Based on attributes of the user, the resource to be accessed, and current environmental conditions</li>
+</ul>
+</li>
+</ul>
+<h1 id="Subjects-Objects-and-Access-Rights"><a href="#Subjects-Objects-and-Access-Rights" class="headerlink" title="Subjects, Objects, and Access Rights"></a>Subjects, Objects, and Access Rights</h1><h2 id="Subject"><a href="#Subject" class="headerlink" title="Subject"></a>Subject</h2><ul>
+<li>An entity capable of accessing objects</li>
+<li>3 classes<ul>
+<li>Owner</li>
+<li>Group</li>
+<li>World (include all users)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><ul>
+<li>A resource to which access is controlled</li>
+</ul>
+<h2 id="Access-Rights"><a href="#Access-Rights" class="headerlink" title="Access Rights"></a>Access Rights</h2><ul>
+<li>Describes the way in which a subject may access an object</li>
+<li>Could include<ul>
+<li>Read</li>
+<li>Write</li>
+<li>Execute</li>
+<li>Delete</li>
+<li>Create</li>
+<li>Search</li>
+</ul>
+</li>
+</ul>
+<h1 id="Discretionary-任意-Access-Control"><a href="#Discretionary-任意-Access-Control" class="headerlink" title="Discretionary(任意) Access Control"></a>Discretionary(任意) Access Control</h1><ul>
+<li>A general approach: access matrix</li>
+</ul>
+<h1 id="Example-UNIX-File-Access-Control"><a href="#Example-UNIX-File-Access-Control" class="headerlink" title="Example: UNIX File Access Control"></a>Example: UNIX File Access Control</h1><h1 id="Role-Based-Access-Control"><a href="#Role-Based-Access-Control" class="headerlink" title="Role-Based Access Control"></a>Role-Based Access Control</h1><h1 id="Attribute-Based-Access-Control"><a href="#Attribute-Based-Access-Control" class="headerlink" title="Attribute-Based Access Control"></a>Attribute-Based Access Control</h1><h1 id="Case-Study-RBAC-System-for-a-Bank"><a href="#Case-Study-RBAC-System-for-a-Bank" class="headerlink" title="Case Study: RBAC System for a Bank"></a>Case Study: RBAC System for a Bank</h1>
       
     </div>
     
@@ -401,7 +463,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="http://eugene87222.github.io/2018/03/18/20180318-test/" title="TEST">http://eugene87222.github.io/2018/03/18/20180318-test/</a>
+    <a href="http://eugene87222.github.io/2019/04/08/20190408-ComputerSecurity-note-ch4/" title="[Intro. to Computer Security Course Note] Ch 4">http://eugene87222.github.io/2019/04/08/20190408-ComputerSecurity-note-ch4/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -416,7 +478,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/other/" rel="tag"># other</a>
+            <a href="/tags/NCTU/" rel="tag"># NCTU</a>
+          
+            <a href="/tags/note/" rel="tag"># note</a>
+          
+            <a href="/tags/computer-security/" rel="tag"># computer security</a>
           
         </div>
       
@@ -429,8 +495,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/18/20180318/" rel="next" title="雜記">
-                <i class="fa fa-chevron-left"></i> 雜記
+              <a href="/2019/04/08/20190408-psy-note-ch9/" rel="next" title="[Intro. to Psy Course Note] Ch 9">
+                <i class="fa fa-chevron-left"></i> [Intro. to Psy Course Note] Ch 9
               </a>
             
           </div>
@@ -438,10 +504,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/20/20180320-test-img/" rel="prev" title="TEST">
-                TEST <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -503,8 +565,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -599,6 +670,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Access-Control"><span class="nav-number">1.</span> <span class="nav-text">Access Control</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Principal-Objectives-of-Computer-Security"><span class="nav-number">2.</span> <span class="nav-text">Principal Objectives of Computer Security</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Access-Control-Principles"><span class="nav-number">3.</span> <span class="nav-text">Access Control Principles</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Access-Control-Context"><span class="nav-number">3.1.</span> <span class="nav-text">Access Control Context</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Access-Control-Policies"><span class="nav-number">3.2.</span> <span class="nav-text">Access Control Policies</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Subjects-Objects-and-Access-Rights"><span class="nav-number">4.</span> <span class="nav-text">Subjects, Objects, and Access Rights</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Subject"><span class="nav-number">4.1.</span> <span class="nav-text">Subject</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object"><span class="nav-number">4.2.</span> <span class="nav-text">Object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Access-Rights"><span class="nav-number">4.3.</span> <span class="nav-text">Access Rights</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Discretionary-任意-Access-Control"><span class="nav-number">5.</span> <span class="nav-text">Discretionary(任意) Access Control</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Example-UNIX-File-Access-Control"><span class="nav-number">6.</span> <span class="nav-text">Example: UNIX File Access Control</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Role-Based-Access-Control"><span class="nav-number">7.</span> <span class="nav-text">Role-Based Access Control</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Attribute-Based-Access-Control"><span class="nav-number">8.</span> <span class="nav-text">Attribute-Based Access Control</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Case-Study-RBAC-System-for-a-Bank"><span class="nav-number">9.</span> <span class="nav-text">Case Study: RBAC System for a Bank</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -763,9 +850,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://eugene87222.github.io/2018/03/18/20180318-test/';
-          this.page.identifier = '2018/03/18/20180318-test/';
-          this.page.title = 'TEST';
+          this.page.url = 'http://eugene87222.github.io/2019/04/08/20190408-ComputerSecurity-note-ch4/';
+          this.page.identifier = '2019/04/08/20190408-ComputerSecurity-note-ch4/';
+          this.page.title = '[Intro. to Computer Security Course Note] Ch 4';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://eugene87222.disqus.com/embed.js';
