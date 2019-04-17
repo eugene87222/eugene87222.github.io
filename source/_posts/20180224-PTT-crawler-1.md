@@ -1,10 +1,14 @@
 ---
-title: 國網 / 爬蟲 / PTT - 1
+title: '[爬蟲] PTT - 1'
 date: 2018-02-10 23:05:13
-tags: [python,crawler,PTT,tutorial]
+tags:
+  - python
+  - crawler
+  - PTT
+  - tutorial
 ---
 
-應徵上國網中心工讀生之後第一件事就是練習 python 爬蟲，爬 PTT、facebook、MOBILE01，這幾天正在做 PTT 的部分。
+應徵上國網中心工讀生之後第一件事就是練習 python 爬蟲，爬 PTT、facebook、MOBILE01 這類的論壇，這幾天正在做 PTT 的部分。
 
 # 環境
 
@@ -39,8 +43,8 @@ tags: [python,crawler,PTT,tutorial]
 	)
 	html = res.text
 ```
-requests 可以處理一般 service 的請求，requests.get 裡面有很多參數，url 就是我們要抓的頁面的網址，這邊設定 cookies 的用意在於 PTT 有些版會要求年齡 18 歲以上才能進入，我們將 over18 設為 1 (已滿 18 歲) 並存入 cookies。  
-以八卦版為例 (八卦板首頁網址為 https://www.ptt.cc/bbs/Gossiping/index.html) ，requests.get 會回傳一個 Response 物件，透過 .text 可以即可得網頁原始碼。  
+requests 可以處理一般 service 的請求，requests.get 裡面有很多參數，url 就是我們要抓的頁面的網址，這邊設定 cookies 的用意在於 PTT 有些版會要求年齡 18 歲以上才能進入，我們將 over18 設為 1 (已滿 18 歲) 並存入 cookies。
+以八卦版為例 (八卦板首頁網址為 https://www.ptt.cc/bbs/Gossiping/index.html) ，requests.get 會回傳一個 Response 物件，透過 .text 可以即可得網頁原始碼。
 
 ```python
 	print (html)
@@ -149,7 +153,7 @@ requests 可以處理一般 service 的請求，requests.get 裡面有很多參�
 從上面的 html 程式碼可以發看到每篇文章的連結都在 class="title" 的 div 裡面，剛剛說過 ResultSet 這個物件是可迭代的，所以使用 for loop 來取得每篇文章的資訊。
 ```python
     posts = list()
-	
+
     for row in rows:
         meta = row.find('div', 'title').find('a')
         if meta :    # 如果文章已被刪除，meta 會是 None
@@ -161,7 +165,7 @@ requests 可以處理一般 service 的請求，requests.get 裡面有很多參�
                 'push': article.find('div', 'nrec').text      # 推文數
             })
 ```
-這邊為什麼用 find 而不是 findAll，因為每個 row 裡面只會有一個 class="title"。  
-接著利用 ['href'] 可以取得 class="title" 裡面的連結，.text 可以提取出 block 裡面的文字，再將這些資訊一 一存入 list 中。  
+這邊為什麼用 find 而不是 findAll，因為每個 row 裡面只會有一個 class="title"。
+接著利用 ['href'] 可以取得 class="title" 裡面的連結，.text 可以提取出 block 裡面的文字，再將這些資訊一 一存入 list 中。
 
 目前為止我們已經可以從文章列表抓出我們要的每天文章的資訊了，現在只有抓一頁文章列表， 後面幾篇文章會講如何抓很多頁以及如何進一步取出每篇文章的內文。

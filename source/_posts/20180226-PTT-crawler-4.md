@@ -1,15 +1,14 @@
 ---
-title: 國網 / 爬蟲 / PTT - 4
+title: '[爬蟲] PTT - 4'
+date: 2018-02-15 21:14:41
 tags:
   - python
   - crawler
   - PTT
   - tutorial
-date: 2018-02-15 21:14:41
 ---
 
-
-上一篇 [國網 / 爬蟲 / PTT - 3](https://eugene87222.github.io/2018/02/14/PTT-crawler-3/) 已經說明如何透過頁數來推導出每個列表頁的網址了，這次要來針對這每個文章列表頁網址去取出每一頁的文章連結。
+上一篇 [爬蟲 / PTT - 3](https://eugene87222.github.io/2018/02/14/PTT-crawler-3/) 已經說明如何透過頁數來推導出每個列表頁的網址了，這次要來針對這每個文章列表頁網址去取出每一頁的文章連結。
 
 # 環境
 
@@ -30,7 +29,7 @@ def get_page_content(URL):
 # 取得該版文章總頁數
 def get_total_page_num(URL):
     content = get_page_content(URL)
-    pagination = content.find('div', {'class':'btn-group-paging').findAll('a', {'class':'btn')
+    pagination = content.find('div', {'class':'btn-group-paging'}).findAll('a', {'class':'btn'})
     next_page = pagination[1]['href']
     total_page = next_page.replace('/bbs/Gossiping/index', '')
     total_page = int(total_page[:-5]) + 1
@@ -75,7 +74,7 @@ def get_links(total_page, page_want_to_crawl):
         links.append(link)
     return links
 ```
-以上程式碼都是從前幾篇 [ 爬蟲 PTT ] 整理出來的，忘記的話可以回去看看。
+以上程式碼都是從前幾篇 [ 爬蟲 / PTT ] 整理出來的，忘記的話可以回去看看。
 假設現在八卦版總共有 500 頁，要爬 100 頁，可以先利用 get_links 取得這 100 頁文章列表頁的網址
 ```python
     links = get_links(500, 100)

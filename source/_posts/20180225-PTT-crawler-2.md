@@ -1,14 +1,14 @@
 ---
-title: 國網 / 爬蟲 / PTT - 2
+title: '[爬蟲] PTT - 2'
+date: 2018-02-13 15:31:08
 tags:
   - python
   - crawler
   - PTT
   - tutorial
-date: 2018-02-13 15:31:08
 ---
 
-上一篇 [國網 / 爬蟲 / PTT - 1](https://eugene87222.github.io/2018/02/10/PTT-crawler-1/) 已經講過怎麼取得八卦版首頁的文章列表了，忘記細節的可以回去看看，這次要來講如何取得文章內文。
+上一篇 [爬蟲 / PTT - 1](https://eugene87222.github.io/2018/02/10/PTT-crawler-1/) 已經講過怎麼取得八卦版首頁的文章列表了，忘記細節的可以回去看看，這次要來講如何取得文章內文。
 
 # 環境
 

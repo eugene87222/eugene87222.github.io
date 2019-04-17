@@ -1,7 +1,7 @@
 <div class="copyright">{#
 #}{% set current = date(Date.now(), "YYYY") %}{#
 #}&copy; {#
-#}<span itemprop="copyrightYear">2017-2018</span>
+#}<span itemprop="copyrightYear">2017-2019</span>
   <span class="with-love">
     <i class="fa fa-{{ theme.footer.icon }}"></i>
   </span>
@@ -20,25 +20,6 @@
   #}</span>
   {% endif %}
 </div>
-
-{% if theme.footer.powered %}
-  <div class="powered-by">{#
-  #}{{ __('footer.powered', '<a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a>') }}{#
-#}</div>
-{% endif %}
-
-{% if theme.footer.powered and theme.footer.theme.enable %}
-  <span class="post-meta-divider">|</span>
-{% endif %}
-
-{% if theme.footer.theme.enable %}
-  <div class="theme-info">{#
-  #}{{ __('footer.theme') }} &mdash; {#
-  #}<a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">{#
-    #}NexT{#
-  #}</a>{#
-#}</div>
-{% endif %}
 
 {% if theme.footer.custom_text %}
   <div class="footer-custom">{#

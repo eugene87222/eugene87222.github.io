@@ -1,15 +1,14 @@
 ---
-title: 國網 / 爬蟲 / PTT - 3
+title: '[爬蟲] PTT - 3'
+date: 2018-02-14 23:30:46
 tags:
   - python
   - crawler
   - PTT
   - tutorial
-date: 2018-02-14 23:30:46
 ---
 
-
-之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，[國網 / 爬蟲 / PTT - 1](https://eugene87222.github.io/2018/02/10/PTT-crawler-1/)、[國網 / 爬蟲 / PTT - 2](https://eugene87222.github.io/2018/02/13/PTT-crawler-2/)，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。
+之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，[爬蟲 / PTT - 1](https://eugene87222.github.io/2018/02/10/PTT-crawler-1/)、[爬蟲 / PTT - 2](https://eugene87222.github.io/2018/02/13/PTT-crawler-2/)，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。
 
 # 環境
 
@@ -39,7 +38,7 @@ date: 2018-02-14 23:30:46
 ![](/image/pagination_class.gif)
 
 ```python
-    pagination = content.find('div', {'class':'btn-group-paging').findAll('a', {'class':'btn')
+    pagination = content.find('div', {'class':'btn-group-paging'}).findAll('a', {'class':'btn'})
     next_page = pagination[1]['href']
     total_page = next_page.replace('/bbs/Gossiping/index', '')
     total_page = int(total_page[:-5]) + 1

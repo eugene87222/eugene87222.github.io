@@ -23,6 +23,7 @@ $blue-bright  = #87daff
 $blue         = #0684bd
 $blue-deep    = #262a30
 $orange       = #fc6423
+$own-grey     = #cccccc
 
 
 
@@ -91,8 +92,8 @@ $font-weight-bolder       = 700
 
 
 // Font size
-$font-size-base           = 14px
-$font-size-base           = unit(hexo-config('font.global.size'), px) if hexo-config('font.global.size') is a 'unit'
+$font-size-base           = 16px
+//$font-size-base           = unit(hexo-config('font.global.size'), px) if hexo-config('font.global.size') is a 'unit'
 $font-size-small          = $font-size-base - 2px
 $font-size-smaller        = $font-size-base - 4px
 $font-size-large          = $font-size-base + 2px
@@ -102,7 +103,7 @@ $font-size-larger         = $font-size-base + 4px
 // Headings font size
 $font-size-headings-step    = 2px
 $font-size-headings-base    = 24px
-$font-size-headings-base    = unit(hexo-config('font.headings.size'), px) if hexo-config('font.headings.size') is a 'unit'
+//$font-size-headings-base    = unit(hexo-config('font.headings.size'), px) if hexo-config('font.headings.size') is a 'unit'
 $font-size-headings-small   = $font-size-headings-base - $font-size-headings-step
 $font-size-headings-smaller = $font-size-headings-small - $font-size-headings-step
 $font-size-headings-large   = $font-size-headings-base + $font-size-headings-step
@@ -201,7 +202,7 @@ $content-desktop-padding        = 40px
 $content-tablet-padding         = 10px
 $content-mobile-padding         = 8px
 
-$sidebar-desktop                = 240px
+$sidebar-desktop                = 190px
 
 $footer-height                  = 50px
 
@@ -321,8 +322,8 @@ $full-image-margin-vertical   = 25px
 
 //  .post-expand .post-eof
 //  In Muse scheme, margin above and below the post separator
-$post-eof-margin-top          = 80px  //  or 160px for more white space
-$post-eof-margin-bottom       = 60px  //  or 120px for less white space
+$post-eof-margin-top          = 50px  //  or 160px for more white space
+$post-eof-margin-bottom       = 40px  //  or 120px for less white space
 
 
 // Iconography
