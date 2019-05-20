@@ -1,6 +1,6 @@
 ---
 title: 收藏分享(持續更新)
-date: 2018-8-26 07:18:28
+date: 2019-5-20 19:59:03
 tags: 
     - collection
 ---
@@ -9,11 +9,16 @@ tags:
 
 - [Mr. Opengate](http://mropengate.blogspot.com/)
 - [部落格 | 宅吉便](https://aji.tw/)
-- [莫烦](https://morvanzhou.github.io/tutorials/)
+- [莫烦 Python](https://morvanzhou.github.io/tutorials/)
 - [杨秀璋的专栏 - CSDN博客](https://blog.csdn.net/eastmount?t=1&orderby=UpdateTime)
 
-## CS 相關延伸閱讀
+## CS 延伸閱讀 (未分類)
 
+- [Python Telegram Bot 教學 (by 陳達仁)](https://hackmd.io/s/HkgaMUc24)
+- [Introducing DeepStack AI Server for Windows](https://medium.com/deepquestai/ai-apis-available-on-windows-with-deepstack-native-3f500d33b7ed?fbclid=IwAR10xMguNZFxDFnmpNt0xgtdVptkCMj3wGgF7l78n89_1bUYwjTcpYKLuiM)
+- [100 days of algorithms](https://medium.com/100-days-of-algorithms/tagged/algorithms?fbclid=IwAR34Lqt5Kn45Fut8pAgRAq4Im0imLbZHzw4VnA454WzFQt7rgSlzuj-OT80)
+- [Top 25 C++ API design mistakes and how to avoid them ](https://www.acodersjourney.com/top-25-cplusplus-api-design-mistakes-and-how-to-avoid-them/)
+- [密碼學概論 - 陳榮傑 (hackmd 共筆)](https://hackmd.io/Ti0G1z5zR9GBv5MctULMZw)
 - [Education – Google AI](https://ai.google/education/#%3Fmodal_active=none)
 - [簡單學 makefile：makefile 介紹與範例程式 | Mr. Opengate](http://mropengate.blogspot.com/2018/01/makefile.html)
 - [[系列文目錄] 正規語言 Formal Language | Mr. Opengate](http://mropengate.blogspot.com/2015/06/formal-language.html)
@@ -28,6 +33,14 @@ tags:
 - [鳥哥的 Linux 私房菜](http://linux.vbird.org/)
 - [Verilog HDL 教學講義](https://hom-wang.gitbooks.io/verilog-hdl/content/)
 - [組合語言與計算機組織 · 課程筆記](https://chi_gitbook.gitbooks.io/personal-note/content/zu_he_yu_yan_yu_ji_suan_ji_zu_zhi.html)
+
+## 資安、CTF 競賽相關
+
+- [Got Your PW](https://gotyour.pw/)
+- [Bamboofox Official Blog](https://bamboofox.github.io/)
+- [Binary Ninja 101: Windows Binary Reversing from Zero to Master ](https://speakerdeck.com/aaaddress1/binary-ninja-101-windows-binary-reversing-from-zero-to-master)
+- [我想學資安 從哪裡開始呢 - DuckLL](https://www.duckll.tw/2017/11/blog-post.html)
+ - [CTF Wiki](https://ctf-wiki.github.io/ctf-wiki/)
 
 ## 類神經網路
 

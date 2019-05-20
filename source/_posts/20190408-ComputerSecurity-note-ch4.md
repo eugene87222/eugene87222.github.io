@@ -4,12 +4,14 @@ tags:
   - NCTU
   - computer security
   - note
-date: 2019-04-08 15:06:38
+date: 2019-04-08 08:06:38
 ---
 
 # Access Control
 
 __Access control: the central element of computer security__
+
+---
 
 # Principal Objectives of Computer Security
 
