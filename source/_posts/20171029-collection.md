@@ -8,6 +8,7 @@ tags:
 ## 優質 Blog
 
 - [Mr. Opengate](http://mropengate.blogspot.com/)
+- [Nick Cano](https://nickcano.com/)
 - [部落格 | 宅吉便](https://aji.tw/)
 - [莫烦 Python](https://morvanzhou.github.io/tutorials/)
 - [杨秀璋的专栏 - CSDN博客](https://blog.csdn.net/eastmount?t=1&orderby=UpdateTime)
@@ -36,6 +37,8 @@ tags:
 
 ## 資安、CTF 競賽相關
 
+- [PWNABLE.KR](https://pwnable.kr/index.php)
+- [PWNABLE.TW](https://pwnable.tw/)
 - [Got Your PW](https://gotyour.pw/)
 - [Bamboofox Official Blog](https://bamboofox.github.io/)
 - [Binary Ninja 101: Windows Binary Reversing from Zero to Master ](https://speakerdeck.com/aaaddress1/binary-ninja-101-windows-binary-reversing-from-zero-to-master)
