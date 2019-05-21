@@ -9,6 +9,7 @@ tags:
 
 - [Mr. Opengate](http://mropengate.blogspot.com/)
 - [Nick Cano](https://nickcano.com/)
+- [HITCON Knowledge Base](https://kb.hitcon.org/)
 - [部落格 | 宅吉便](https://aji.tw/)
 - [莫烦 Python](https://morvanzhou.github.io/tutorials/)
 - [杨秀璋的专栏 - CSDN博客](https://blog.csdn.net/eastmount?t=1&orderby=UpdateTime)
@@ -37,6 +38,7 @@ tags:
 
 ## 資安、CTF 競賽相關
 
+- [國網中心 CDX 經驗分享](https://kb.hitcon.org/post/162189657177/%E5%9C%8B%E7%B6%B2%E4%B8%AD%E5%BF%83-cdx-%E7%B6%93%E9%A9%97%E5%88%86%E4%BA%AB)
 - [PWNABLE.KR](https://pwnable.kr/index.php)
 - [PWNABLE.TW](https://pwnable.tw/)
 - [Got Your PW](https://gotyour.pw/)
