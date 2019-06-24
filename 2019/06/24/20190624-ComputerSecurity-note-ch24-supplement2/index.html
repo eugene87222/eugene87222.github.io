@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script>
+	(function(){
+		if(''){
+			if(prompt('Password:') !== ''){
+				alert('Wrong password');
+				history.back()
+			}
+		}
+	})();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Kaushan Script:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.3">
+
+
+
+
+
+
+  <meta name="keywords" content="NCTU,note,computer security," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Ch24 Supplement. Cellular Network Security Evolution of mobile networks Standards Body for Mobile Network: 3GPP An international standards body Evolves and standardizes GSM, UMTS, LTE, among others We">
+<meta name="keywords" content="NCTU,note,computer security">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Intro. to Computer Security Course Note] Ch 24 (supplement 2)">
+<meta property="og:url" content="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch24-supplement2/index.html">
+<meta property="og:site_name" content="3ugeneYang.§ite">
+<meta property="og:description" content="Ch24 Supplement. Cellular Network Security Evolution of mobile networks Standards Body for Mobile Network: 3GPP An international standards body Evolves and standardizes GSM, UMTS, LTE, among others We">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://i.imgur.com/whI84Ny.png">
+<meta property="og:image" content="https://i.imgur.com/aJ3Du9S.png">
+<meta property="og:image" content="https://i.imgur.com/JmLnWwL.png">
+<meta property="og:image" content="https://i.imgur.com/OnqbP2F.png">
+<meta property="og:image" content="https://i.imgur.com/KyJ9lg6.png">
+<meta property="og:image" content="https://i.imgur.com/rUMl9m1.png">
+<meta property="og:image" content="https://i.imgur.com/A6fFWKL.png">
+<meta property="og:image" content="https://i.imgur.com/KRQzUKl.png">
+<meta property="og:image" content="https://i.imgur.com/sgjzdV1.png">
+<meta property="og:image" content="https://i.imgur.com/0Wp6USa.png">
+<meta property="og:image" content="https://i.imgur.com/9m2gWVp.png">
+<meta property="og:image" content="https://i.imgur.com/spnq6Pa.png">
+<meta property="og:image" content="https://i.imgur.com/XpOMLQX.png">
+<meta property="og:image" content="https://i.imgur.com/AdDMcjy.png">
+<meta property="og:image" content="https://i.imgur.com/CJT2fK8.png">
+<meta property="og:image" content="https://i.imgur.com/aoJlTKS.png">
+<meta property="og:updated_time" content="2019-06-24T12:06:20.426Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Intro. to Computer Security Course Note] Ch 24 (supplement 2)">
+<meta name="twitter:description" content="Ch24 Supplement. Cellular Network Security Evolution of mobile networks Standards Body for Mobile Network: 3GPP An international standards body Evolves and standardizes GSM, UMTS, LTE, among others We">
+<meta name="twitter:image" content="https://i.imgur.com/whI84Ny.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeIn","post_body":"fadeIn","coll_header":"fadeIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch24-supplement2/"/>
+
+
+
+
+
+  <title>[Intro. to Computer Security Course Note] Ch 24 (supplement 2) | 3ugeneYang.§ite</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-107694365-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">3ugeneYang.§ite</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch24-supplement2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eugene Yang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="3ugeneYang.§ite">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">[Intro. to Computer Security Course Note] Ch 24 (supplement 2)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-24T20:06:14+08:00">
+                2019-06-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Ch24-Supplement-Cellular-Network-Security"><a href="#Ch24-Supplement-Cellular-Network-Security" class="headerlink" title="Ch24 Supplement. Cellular Network Security"></a>Ch24 Supplement. Cellular Network Security</h1><hr>
+<h1 id="Evolution-of-mobile-networks"><a href="#Evolution-of-mobile-networks" class="headerlink" title="Evolution of mobile networks"></a>Evolution of mobile networks</h1><p><img src="https://i.imgur.com/whI84Ny.png" alt=""></p>
+<h2 id="Standards-Body-for-Mobile-Network-3GPP"><a href="#Standards-Body-for-Mobile-Network-3GPP" class="headerlink" title="Standards Body for Mobile Network: 3GPP"></a>Standards Body for Mobile Network: 3GPP</h2><ul>
+<li>An international standards body</li>
+<li>Evolves and standardizes GSM, UMTS, LTE, among others</li>
+<li>We will primarily discuss 3GPP standards</li>
+</ul>
+<h2 id="Current-Mobile-Networks"><a href="#Current-Mobile-Networks" class="headerlink" title="Current Mobile Networks"></a>Current Mobile Networks</h2><p><img src="https://i.imgur.com/aJ3Du9S.png" alt=""></p>
+<h2 id="Technology-3G-gt-4G"><a href="#Technology-3G-gt-4G" class="headerlink" title="Technology: 3G -&gt; 4G"></a>Technology: 3G -&gt; 4G</h2><ul>
+<li>4G LTE: First global standard for mobile broadband<ul>
+<li>More data capacity</li>
+<li>Faster speed</li>
+<li>Lower latency</li>
+<li>New service paradigm</li>
+</ul>
+</li>
+<li>Key enabler: network architecture evolution</li>
+</ul>
+<h2 id="Network-Architecture-Evolution"><a href="#Network-Architecture-Evolution" class="headerlink" title="Network Architecture Evolution"></a>Network Architecture Evolution</h2><p><img src="https://i.imgur.com/JmLnWwL.png" alt=""></p>
+<h2 id="2G-is-based-on-Circuit-Switching-CS"><a href="#2G-is-based-on-Circuit-Switching-CS" class="headerlink" title="2G is based on Circuit Switching (CS)"></a>2G is based on Circuit Switching (CS)</h2><ul>
+<li>End-end resources reserved for &quot;call&quot;sss<ul>
+<li>No sharing</li>
+</ul>
+</li>
+<li><img src="https://i.imgur.com/OnqbP2F.png" alt=""></li>
+</ul>
+<h2 id="CS-Signaling"><a href="#CS-Signaling" class="headerlink" title="CS Signaling"></a>CS Signaling</h2><ul>
+<li>Used to setup, maintain, and tear down VC</li>
+<li>Used in 2G, 3G</li>
+<li><img src="https://i.imgur.com/KyJ9lg6.png" alt=""></li>
+</ul>
+<h2 id="Packet-Switching-PS"><a href="#Packet-Switching-PS" class="headerlink" title="Packet Switching (PS)"></a>Packet Switching (PS)</h2><ul>
+<li>Store-and-forward at intermediate routers</li>
+<li>Used by the Internet</li>
+<li><img src="https://i.imgur.com/rUMl9m1.png" alt=""></li>
+</ul>
+<h2 id="PS-Signaling"><a href="#PS-Signaling" class="headerlink" title="PS Signaling"></a>PS Signaling</h2><ul>
+<li>No call setup at network layer</li>
+<li>No network-level concept of &quot;connection&quot;</li>
+<li>Packets forwarded using destination host address<ul>
+<li>Packets between same source-destination pair may take different paths</li>
+</ul>
+</li>
+<li><img src="https://i.imgur.com/A6fFWKL.png" alt=""></li>
+</ul>
+<h2 id="4G-Cellular-Network-Architecture"><a href="#4G-Cellular-Network-Architecture" class="headerlink" title="4G Cellular Network Architecture"></a>4G Cellular Network Architecture</h2><p><img src="https://i.imgur.com/KRQzUKl.png" alt=""></p>
+<ul>
+<li>MME: Mobility Management Entity</li>
+<li>BS: Base Station</li>
+</ul>
+<h2 id="3G-4G-Network-Architecture"><a href="#3G-4G-Network-Architecture" class="headerlink" title="3G/4G Network Architecture"></a>3G/4G Network Architecture</h2><p><img src="https://i.imgur.com/sgjzdV1.png" alt=""></p>
+<h2 id="Operations"><a href="#Operations" class="headerlink" title="Operations"></a>Operations</h2><ul>
+<li>Two main planes in operation in parallel<ul>
+<li>Data/User plane: content delivery</li>
+<li>Control plane: signaling functions<ul>
+<li>Three Major Functions<ul>
+<li>Radio Resource Control (RRC)</li>
+<li>Mobility Management (MM)</li>
+<li>Connection Management (CM)</li>
+<li><img src="https://i.imgur.com/0Wp6USa.png" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Additional plane that woks with the above<ul>
+<li>Management plane: configurations, monitoring</li>
+</ul>
+</li>
+</ul>
+<h1 id="How-to-set-up-data-services-in-4G-networks"><a href="#How-to-set-up-data-services-in-4G-networks" class="headerlink" title="How to set up data services in 4G networks"></a>How to set up data services in 4G networks</h1><p><img src="https://i.imgur.com/9m2gWVp.png" alt=""></p>
+<h1 id="Security-in-4G-networks"><a href="#Security-in-4G-networks" class="headerlink" title="Security in 4G networks"></a>Security in 4G networks</h1><p><img src="https://i.imgur.com/spnq6Pa.png" alt="">
+<img src="https://i.imgur.com/XpOMLQX.png" alt="">
+<img src="https://i.imgur.com/AdDMcjy.png" alt=""></p>
+<ul>
+<li>IMSI (International Mobile Subscriber Identity): 國際移動用戶識別碼</li>
+<li>TMSI (Temporary Mobile Subscriber Identity): 臨時移動用戶識別碼</li>
+<li><img src="https://i.imgur.com/CJT2fK8.png" alt="">
+<img src="https://i.imgur.com/aoJlTKS.png" alt=""></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Eugene Yang
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch24-supplement2/" title="[Intro. to Computer Security Course Note] Ch 24 (supplement 2)">http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch24-supplement2/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/NCTU/" rel="tag"># NCTU</a>
+          
+            <a href="/tags/note/" rel="tag"># note</a>
+          
+            <a href="/tags/computer-security/" rel="tag"># computer security</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/24/20190624-ComputerSecurity-note-ch24-supplement1/" rel="next" title="[Intro. to Computer Security Course Note] Ch 24 (supplement 1)">
+                <i class="fa fa-chevron-left"></i> [Intro. to Computer Security Course Note] Ch 24 (supplement 1)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/20161224_132915.jpg"
+                alt="Eugene Yang" />
+            
+              <p class="site-author-name" itemprop="name">Eugene Yang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:eugene87222@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://t.me/Eugene87222" target="_blank" title="Telegram">
+                    
+                      <i class="fa fa-fw fa-telegram"></i>Telegram</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com/eugene87222" target="_blank" title="Facebook">
+                    
+                      <i class="fa fa-fw fa-facebook"></i>Facebook</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/eugene87222" target="_blank" title="Twitter">
+                    
+                      <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.pinterest.com/eugene87222/" target="_blank" title="Pinterest">
+                    
+                      <i class="fa fa-fw fa-pinterest"></i>Pinterest</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/eugene87222" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch24-Supplement-Cellular-Network-Security"><span class="nav-number">1.</span> <span class="nav-text">Ch24 Supplement. Cellular Network Security</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Evolution-of-mobile-networks"><span class="nav-number">2.</span> <span class="nav-text">Evolution of mobile networks</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Standards-Body-for-Mobile-Network-3GPP"><span class="nav-number">2.1.</span> <span class="nav-text">Standards Body for Mobile Network: 3GPP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Current-Mobile-Networks"><span class="nav-number">2.2.</span> <span class="nav-text">Current Mobile Networks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Technology-3G-gt-4G"><span class="nav-number">2.3.</span> <span class="nav-text">Technology: 3G -> 4G</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network-Architecture-Evolution"><span class="nav-number">2.4.</span> <span class="nav-text">Network Architecture Evolution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2G-is-based-on-Circuit-Switching-CS"><span class="nav-number">2.5.</span> <span class="nav-text">2G is based on Circuit Switching (CS)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CS-Signaling"><span class="nav-number">2.6.</span> <span class="nav-text">CS Signaling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Packet-Switching-PS"><span class="nav-number">2.7.</span> <span class="nav-text">Packet Switching (PS)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PS-Signaling"><span class="nav-number">2.8.</span> <span class="nav-text">PS Signaling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4G-Cellular-Network-Architecture"><span class="nav-number">2.9.</span> <span class="nav-text">4G Cellular Network Architecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3G-4G-Network-Architecture"><span class="nav-number">2.10.</span> <span class="nav-text">3G/4G Network Architecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Operations"><span class="nav-number">2.11.</span> <span class="nav-text">Operations</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-to-set-up-data-services-in-4G-networks"><span class="nav-number">3.</span> <span class="nav-text">How to set up data services in 4G networks</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Security-in-4G-networks"><span class="nav-number">4.</span> <span class="nav-text">Security in 4G networks</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017-2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eugene Yang</span>
+
+  
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch24-supplement2/';
+          this.page.identifier = '2019/06/24/20190624-ComputerSecurity-note-ch24-supplement2/';
+          this.page.title = '[Intro. to Computer Security Course Note] Ch 24 (supplement 2)';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://eugene87222.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

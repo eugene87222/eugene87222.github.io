@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script>
+	(function(){
+		if(''){
+			if(prompt('Password:') !== ''){
+				alert('Wrong password');
+				history.back()
+			}
+		}
+	})();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Kaushan Script:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.3">
+
+
+
+
+
+
+  <meta name="keywords" content="NCTU,note,computer security," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Ch23. Internet Authentication Applications Kerberos A software utility available both in the public domain and in commercially supported versions The defacto standard for remote authentication A trust">
+<meta name="keywords" content="NCTU,note,computer security">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Intro. to Computer Security Course Note] Ch 23">
+<meta property="og:url" content="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch23/index.html">
+<meta property="og:site_name" content="3ugeneYang.§ite">
+<meta property="og:description" content="Ch23. Internet Authentication Applications Kerberos A software utility available both in the public domain and in commercially supported versions The defacto standard for remote authentication A trust">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://i.imgur.com/uhVkfXL.jpg">
+<meta property="og:image" content="https://i.imgur.com/wTwLgCn.png">
+<meta property="og:image" content="https://i.imgur.com/dUmMB13.png">
+<meta property="og:updated_time" content="2019-06-24T12:03:06.492Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Intro. to Computer Security Course Note] Ch 23">
+<meta name="twitter:description" content="Ch23. Internet Authentication Applications Kerberos A software utility available both in the public domain and in commercially supported versions The defacto standard for remote authentication A trust">
+<meta name="twitter:image" content="https://i.imgur.com/uhVkfXL.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeIn","post_body":"fadeIn","coll_header":"fadeIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch23/"/>
+
+
+
+
+
+  <title>[Intro. to Computer Security Course Note] Ch 23 | 3ugeneYang.§ite</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-107694365-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">3ugeneYang.§ite</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch23/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eugene Yang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="3ugeneYang.§ite">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">[Intro. to Computer Security Course Note] Ch 23</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-24T20:02:05+08:00">
+                2019-06-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Ch23-Internet-Authentication-Applications"><a href="#Ch23-Internet-Authentication-Applications" class="headerlink" title="Ch23. Internet Authentication Applications"></a>Ch23. Internet Authentication Applications</h1><hr>
+<h1 id="Kerberos"><a href="#Kerberos" class="headerlink" title="Kerberos"></a>Kerberos</h1><ul>
+<li>A software utility available both in the public domain and in commercially supported versions</li>
+<li>The defacto standard for remote authentication</li>
+<li>A trusted third party authentication service<ul>
+<li>Clients and servers trust Kerberos to mediate their mutual authentication</li>
+<li>Requires that<ul>
+<li>A user proves his or her identity for each service invoked</li>
+<li>Optionally, services prove their identity to clients</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Security-Issues-between-Clients-and-Servers"><a href="#Security-Issues-between-Clients-and-Servers" class="headerlink" title="Security Issues between Clients and Servers?"></a>Security Issues between Clients and Servers?</h2><ul>
+<li>In an unprotected network environment, any client can apply to any server for server</li>
+<li>Obvious security risk?<ul>
+<li>Impersonation: an opponent can <strong>pretend to be another client</strong> and obtain unauthorized privileges on server machines</li>
+</ul>
+</li>
+<li>Countermeasure<ul>
+<li>Confirm the identities of clients</li>
+</ul>
+</li>
+<li>Alternative: using an <strong>authentication server (AS)</strong><ul>
+<li>Once the AS has verified the user&#39;s identity, it can pass this information on to an application server</li>
+</ul>
+</li>
+</ul>
+<h2 id="Kerberos-Overview"><a href="#Kerberos-Overview" class="headerlink" title="Kerberos Overview"></a>Kerberos Overview</h2><ul>
+<li>AS shares a unique secret key with each server</li>
+<li>Session key: one-time encryption key</li>
+<li>Ticket and session key are both encrypted using the user&#39;s password as the encryption key</li>
+<li>Password is never passed over the network</li>
+<li><img src="https://i.imgur.com/uhVkfXL.jpg" alt=""><ol>
+<li>User logs on to workstation and requests service on host</li>
+<li>AS verifies user&#39;s access right in database, creates ticket-granting ticket and section key. Results are encrypted using key derived from user&#39;s password</li>
+<li>Workstation prompts user for password to decrypt incoming message, then send ticket and authenticator that contains user&#39;s name, network address and time to TGS</li>
+<li>TGS decrypts ticket and authenticator, verifies requests then creates ticket for requested application server</li>
+<li>Workstation sends ticket and authenticator to host</li>
+<li>Host verifies that ticket and authenticator match, then grants access to service. If mutual authentication is required, server returns an authenticator</li>
+</ol>
+</li>
+<li>Ticket: a set of credentials<ul>
+<li>User&#39;s ID, server&#39;s ID, timestamp, lifetime</li>
+</ul>
+</li>
+<li>Entire ticket is encrypted using a secret DES key shared by the AS and the server</li>
+<li>Why TGS?<ul>
+<li>Query the user for his password for each service<ul>
+<li>Inconvenient</li>
+</ul>
+</li>
+<li>Store the password in memory for the duration of the logon session<ul>
+<li>有安全風險</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>TGS: a ticket to get more ticket</li>
+<li>How to counter the following threats for ticket-granting ticket?<ul>
+<li>Ticket may be stolen and reused<ul>
+<li>Timestamp</li>
+</ul>
+</li>
+<li>Alteration of the ticket<ul>
+<li>Encrypted with a secret key <strong>known only to the AS and TGS</strong></li>
+</ul>
+</li>
+<li>User spoofing<ul>
+<li>Authentication based on the encryption with the user&#39;s password</li>
+</ul>
+</li>
+<li>Reply attack<ul>
+<li>Authenticator, which is not reusable</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Kerberos-Realms"><a href="#Kerberos-Realms" class="headerlink" title="Kerberos Realms"></a>Kerberos Realms</h2><ul>
+<li>A Kerberos realm: full-service Kerberos environment<ul>
+<li>A Kerberos server</li>
+<li>A number of clients<ul>
+<li>Each registers with the Kerberos server; the <strong>server holds a database</strong> for the user ID/password</li>
+</ul>
+</li>
+<li>A number of app servers<ul>
+<li>Each registers with the Kerberos server <strong>and shares a secret key</strong> with it</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Interrealm-Authentication"><a href="#Interrealm-Authentication" class="headerlink" title="Interrealm Authentication"></a>Interrealm Authentication</h2><ul>
+<li>不同 realm 的 Kerberos server 彼此 shares a secret key</li>
+<li>Kerberos servers are registered with each other</li>
+</ul>
+<h2 id="Kerberos-Version-4-amp-5"><a href="#Kerberos-Version-4-amp-5" class="headerlink" title="Kerberos Version 4 &amp; 5"></a>Kerberos Version 4 &amp; 5</h2><ul>
+<li>4: most widely used in late 1980s</li>
+<li>5:<ul>
+<li>Introduced in 1993, updated in 2005</li>
+<li>AES is the default choice (DES in v4)</li>
+<li>Authentication forwarding<ul>
+<li>Enabling a client to access a server and have that server access another server on behalf of the client</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Performance-Issues"><a href="#Performance-Issues" class="headerlink" title="Performance Issues"></a>Performance Issues</h2><ul>
+<li>Very little performance impact in a large-scale environment<ul>
+<li>If the system is properly configured</li>
+<li>The amount of traffic needed for the granting ticket: modest</li>
+</ul>
+</li>
+<li>Does it require a dedicated platform?<ul>
+<li>Not wise to run it on the same machine as a resource-intensive app</li>
+<li>Its security is best assured by placing it on a <strong>separate, isolated machine</strong></li>
+</ul>
+</li>
+<li>How about using multiple realms to maintain performance?<ul>
+<li>Probably not</li>
+<li>The motivation of multiple realms is administrative</li>
+</ul>
+</li>
+</ul>
+<h1 id="X-509"><a href="#X-509" class="headerlink" title="X.509"></a>X.509</h1><h2 id="X-509-Public-key-Certificate"><a href="#X-509-Public-key-Certificate" class="headerlink" title="X.509: Public-key Certificate"></a>X.509: Public-key Certificate</h2><ul>
+<li>A certificate<ul>
+<li>Linking a public key with the identity of the key&#39;s owner</li>
+<li>The whole block signed by a trusted third party</li>
+</ul>
+</li>
+<li>Third party: certificate authority (CA)</li>
+<li>User can present his public key to the authority in a secure manner ad obtain a certificate</li>
+<li><img src="https://i.imgur.com/wTwLgCn.png" alt=""></li>
+</ul>
+<h2 id="X-509-1"><a href="#X-509-1" class="headerlink" title="X.509"></a>X.509</h2><ul>
+<li>A certificate revocation list (CRL)<ul>
+<li>Signed by the issuer</li>
+<li>Containing a serial number of a certificate and the revocation date</li>
+</ul>
+</li>
+<li>When receiving a certificate, an app should determine whether it has been revoked<ul>
+<li>Check CRL</li>
+<li>Very few apps do this due to <strong>high overheads</strong></li>
+</ul>
+</li>
+<li>A lightweight protocol for the revocation in RFC 6960</li>
+<li>Hash signature<ul>
+<li>Using <strong>SHA-2, SHA-2</strong> now</li>
+</ul>
+</li>
+</ul>
+<h1 id="Public-Key-Infrastructure-PKI"><a href="#Public-Key-Infrastructure-PKI" class="headerlink" title="Public-Key Infrastructure (PKI)"></a>Public-Key Infrastructure (PKI)</h1><ul>
+<li>RFC 4949: the set of hardware, software, people, policies, and procedures needed to create, manage, store, distribute, and revoke digital certificates <strong>based on asymmetric cryptography</strong></li>
+<li><img src="https://i.imgur.com/dUmMB13.png" alt=""></li>
+</ul>
+<h2 id="CA-in-Trust-Store"><a href="#CA-in-Trust-Store" class="headerlink" title="CA in Trust Store"></a>CA in Trust Store</h2><ul>
+<li>Either directly sign &quot;end-user&quot; certificates</li>
+<li>Or sign a small number of &quot;Intermediate-CAs&quot;</li>
+<li>All the hierarchy are very small, and all are equally trusted</li>
+</ul>
+<h2 id="Issues-with-the-PKI-Model"><a href="#Issues-with-the-PKI-Model" class="headerlink" title="Issues with the PKI Model"></a>Issues with the PKI Model</h2><ul>
+<li>Issue 1: reliance on the user to make an informed decision when there is a problem verifying a certificate</li>
+<li>Issue 2: assuming that all of the CAs in the &quot;trust store&quot; are equally trusted, equally well managed, and apply equivalent policies</li>
+<li>Issue 3: different implementations, in the various web browsers and OS, use different &quot;trust stores&quot;<ul>
+<li>Present different security views to users</li>
+</ul>
+</li>
+</ul>
+<h2 id="Improve-the-X-509-Certificates"><a href="#Improve-the-X-509-Certificates" class="headerlink" title="Improve the X.509 Certificates"></a>Improve the X.509 Certificates</h2><ul>
+<li>Recognize that many apps do not require formal linking of a public key to a verified identity</li>
+<li>Improvement 1: confirming continuity in time<ul>
+<li>Apps keep a record of certificate details for all sites they visit</li>
+</ul>
+</li>
+<li>Improvement 2: confirming continuity in space<ul>
+<li>Using a number of widely separated &quot;network notary(公證人) servers&quot; that keep records of certificates for all sites they view</li>
+</ul>
+</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Eugene Yang
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch23/" title="[Intro. to Computer Security Course Note] Ch 23">http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch23/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/NCTU/" rel="tag"># NCTU</a>
+          
+            <a href="/tags/note/" rel="tag"># note</a>
+          
+            <a href="/tags/computer-security/" rel="tag"># computer security</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/24/20190624-ComputerSecurity-note-ch22/" rel="next" title="[Intro. to Computer Security Course Note] Ch 22">
+                <i class="fa fa-chevron-left"></i> [Intro. to Computer Security Course Note] Ch 22
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/24/20190624-ComputerSecurity-note-ch24-supplement1/" rel="prev" title="[Intro. to Computer Security Course Note] Ch 24 (supplement 1)">
+                [Intro. to Computer Security Course Note] Ch 24 (supplement 1) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/20161224_132915.jpg"
+                alt="Eugene Yang" />
+            
+              <p class="site-author-name" itemprop="name">Eugene Yang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:eugene87222@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://t.me/Eugene87222" target="_blank" title="Telegram">
+                    
+                      <i class="fa fa-fw fa-telegram"></i>Telegram</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com/eugene87222" target="_blank" title="Facebook">
+                    
+                      <i class="fa fa-fw fa-facebook"></i>Facebook</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/eugene87222" target="_blank" title="Twitter">
+                    
+                      <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.pinterest.com/eugene87222/" target="_blank" title="Pinterest">
+                    
+                      <i class="fa fa-fw fa-pinterest"></i>Pinterest</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/eugene87222" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch23-Internet-Authentication-Applications"><span class="nav-number">1.</span> <span class="nav-text">Ch23. Internet Authentication Applications</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kerberos"><span class="nav-number">2.</span> <span class="nav-text">Kerberos</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Security-Issues-between-Clients-and-Servers"><span class="nav-number">2.1.</span> <span class="nav-text">Security Issues between Clients and Servers?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kerberos-Overview"><span class="nav-number">2.2.</span> <span class="nav-text">Kerberos Overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kerberos-Realms"><span class="nav-number">2.3.</span> <span class="nav-text">Kerberos Realms</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interrealm-Authentication"><span class="nav-number">2.4.</span> <span class="nav-text">Interrealm Authentication</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kerberos-Version-4-amp-5"><span class="nav-number">2.5.</span> <span class="nav-text">Kerberos Version 4 & 5</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Performance-Issues"><span class="nav-number">2.6.</span> <span class="nav-text">Performance Issues</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#X-509"><span class="nav-number">3.</span> <span class="nav-text">X.509</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#X-509-Public-key-Certificate"><span class="nav-number">3.1.</span> <span class="nav-text">X.509: Public-key Certificate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#X-509-1"><span class="nav-number">3.2.</span> <span class="nav-text">X.509</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Public-Key-Infrastructure-PKI"><span class="nav-number">4.</span> <span class="nav-text">Public-Key Infrastructure (PKI)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#CA-in-Trust-Store"><span class="nav-number">4.1.</span> <span class="nav-text">CA in Trust Store</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Issues-with-the-PKI-Model"><span class="nav-number">4.2.</span> <span class="nav-text">Issues with the PKI Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Improve-the-X-509-Certificates"><span class="nav-number">4.3.</span> <span class="nav-text">Improve the X.509 Certificates</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017-2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eugene Yang</span>
+
+  
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch23/';
+          this.page.identifier = '2019/06/24/20190624-ComputerSecurity-note-ch23/';
+          this.page.title = '[Intro. to Computer Security Course Note] Ch 23';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://eugene87222.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

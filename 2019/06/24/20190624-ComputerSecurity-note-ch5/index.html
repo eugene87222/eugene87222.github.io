@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script>
+	(function(){
+		if(''){
+			if(prompt('Password:') !== ''){
+				alert('Wrong password');
+				history.back()
+			}
+		}
+	})();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+    
+      
+    
+
+    
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Kaushan Script:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.3">
+
+
+
+
+
+
+  <meta name="keywords" content="NCTU,note,computer security," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="Ch5. Database and Cloud Security Database Management SystemsDBMS Architecture DDL(data definition language): defines the database logical structure and procedural properties DML(data manipulation lang">
+<meta name="keywords" content="NCTU,note,computer security">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[Intro. to Computer Security Course Note] Ch 5">
+<meta property="og:url" content="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch5/index.html">
+<meta property="og:site_name" content="3ugeneYang.§ite">
+<meta property="og:description" content="Ch5. Database and Cloud Security Database Management SystemsDBMS Architecture DDL(data definition language): defines the database logical structure and procedural properties DML(data manipulation lang">
+<meta property="og:locale" content="en">
+<meta property="og:image" content="https://i.imgur.com/9A8RekB.jpg">
+<meta property="og:updated_time" content="2019-06-24T11:39:07.304Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="[Intro. to Computer Security Course Note] Ch 5">
+<meta name="twitter:description" content="Ch5. Database and Cloud Security Database Management SystemsDBMS Architecture DDL(data definition language): defines the database logical structure and procedural properties DML(data manipulation lang">
+<meta name="twitter:image" content="https://i.imgur.com/9A8RekB.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeIn","post_body":"fadeIn","coll_header":"fadeIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch5/"/>
+
+
+
+
+
+  <title>[Intro. to Computer Security Course Note] Ch 5 | 3ugeneYang.§ite</title>
+  
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-107694365-1', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">3ugeneYang.§ite</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Eugene Yang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="3ugeneYang.§ite">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">[Intro. to Computer Security Course Note] Ch 5</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-24T19:37:38+08:00">
+                2019-06-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h1 id="Ch5-Database-and-Cloud-Security"><a href="#Ch5-Database-and-Cloud-Security" class="headerlink" title="Ch5. Database and Cloud Security"></a>Ch5. Database and Cloud Security</h1><hr>
+<h1 id="Database-Management-Systems"><a href="#Database-Management-Systems" class="headerlink" title="Database Management Systems"></a>Database Management Systems</h1><h2 id="DBMS-Architecture"><a href="#DBMS-Architecture" class="headerlink" title="DBMS Architecture"></a>DBMS Architecture</h2><ul>
+<li>DDL(data definition language): defines the database logical structure and procedural properties</li>
+<li>DML(data manipulation language): provides a powerful set of tools for app developers</li>
+</ul>
+<p><img src="https://i.imgur.com/9A8RekB.jpg" alt=""></p>
+<h1 id="Relational-Databases"><a href="#Relational-Databases" class="headerlink" title="Relational Databases"></a>Relational Databases</h1><ul>
+<li>Constructed from tables of data</li>
+<li>Have multiple tables linked by identifiers</li>
+<li>Use a query language to access data items meeting specified criteria</li>
+</ul>
+<h2 id="Relational-Database-Elements"><a href="#Relational-Database-Elements" class="headerlink" title="Relational Database Elements"></a>Relational Database Elements</h2><ul>
+<li>Relation / table / file</li>
+<li>Tuple / row / record</li>
+<li>Attribute / column / field</li>
+<li>View / virtual table: result of a query</li>
+</ul>
+<h2 id="Structured-Query-Language-SQL"><a href="#Structured-Query-Language-SQL" class="headerlink" title="Structured Query Language (SQL)"></a>Structured Query Language (SQL)</h2><p>Originally developed by IBM in the mid-1970s</p>
+<h1 id="SQL-Injection-Attacks"><a href="#SQL-Injection-Attacks" class="headerlink" title="SQL Injection Attacks"></a>SQL Injection Attacks</h1><h2 id="Injection-Technique"><a href="#Injection-Technique" class="headerlink" title="Injection Technique"></a>Injection Technique</h2><ul>
+<li>Typical SQLi attacks: permaturely terminating a text string and appending a new command<ul>
+<li>comment mark <code>--</code></li>
+</ul>
+</li>
+</ul>
+<h2 id="3-Categories-of-SQLi-Attacks"><a href="#3-Categories-of-SQLi-Attacks" class="headerlink" title="3 Categories of SQLi Attacks"></a>3 Categories of SQLi Attacks</h2><ul>
+<li>In-band attacks<ul>
+<li>Tautology (e.g., <code>&#39; OR &#39;1&#39;==&#39;1&#39;</code>)</li>
+<li>End-of-line comment (e.g., <code>--</code>)</li>
+<li>Piggybacked queries<ul>
+<li>The attacker adds additional queries beyond the intended query</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Out-of-band attacks<ul>
+<li>Data are retrieved using a different channel, e.g., email instead of web pages</li>
+<li>Used when there are limitations on info. retrieval<ul>
+<li>But, outbound connectivity from the data server is lax</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Inferential attacks<ul>
+<li>Recontruct the info. by sending particular requests and observing the resulting behavior of the Website / database server<ul>
+<li>Blind SQL injection<ul>
+<li>Infers the data present in a database system</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="SQLi-countermeasures"><a href="#SQLi-countermeasures" class="headerlink" title="SQLi countermeasures"></a>SQLi countermeasures</h2><ul>
+<li>Defensive coding<ul>
+<li>Manual defensive coding practices</li>
+<li>Parameterized query insertion</li>
+<li>SQL DOM (domain object model)</li>
+</ul>
+</li>
+<li>Detection<ul>
+<li>Signature based</li>
+<li>Anomaly based</li>
+<li>COde analysis</li>
+</ul>
+</li>
+<li>Run-time prevention<ul>
+<li>Check queries at runtime</li>
+</ul>
+</li>
+</ul>
+<h1 id="Database-Access-Control"><a href="#Database-Access-Control" class="headerlink" title="Database Access Control"></a>Database Access Control</h1><h1 id="Inference"><a href="#Inference" class="headerlink" title="Inference"></a>Inference</h1><h1 id="Database-Encryption"><a href="#Database-Encryption" class="headerlink" title="Database Encryption"></a>Database Encryption</h1><h1 id="Cloud-Computing"><a href="#Cloud-Computing" class="headerlink" title="Cloud Computing"></a>Cloud Computing</h1><h1 id="Cloud-Security-Risks-and-Countermeasures"><a href="#Cloud-Security-Risks-and-Countermeasures" class="headerlink" title="Cloud Security Risks and Countermeasures"></a>Cloud Security Risks and Countermeasures</h1><h1 id="Cloud-Security-as-a-Service"><a href="#Cloud-Security-as-a-Service" class="headerlink" title="Cloud Security as a Service"></a>Cloud Security as a Service</h1>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Eugene Yang
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch5/" title="[Intro. to Computer Security Course Note] Ch 5">http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch5/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/NCTU/" rel="tag"># NCTU</a>
+          
+            <a href="/tags/note/" rel="tag"># note</a>
+          
+            <a href="/tags/computer-security/" rel="tag"># computer security</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/06/24/20190624-ComputerSecurity-note-ch3/" rel="next" title="[Intro. to Computer Security Course Note] Ch 3">
+                <i class="fa fa-chevron-left"></i> [Intro. to Computer Security Course Note] Ch 3
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/06/24/20190624-ComputerSecurity-note-ch7/" rel="prev" title="[Intro. to Computer Security Course Note] Ch 7">
+                [Intro. to Computer Security Course Note] Ch 7 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/20161224_132915.jpg"
+                alt="Eugene Yang" />
+            
+              <p class="site-author-name" itemprop="name">Eugene Yang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:eugene87222@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://t.me/Eugene87222" target="_blank" title="Telegram">
+                    
+                      <i class="fa fa-fw fa-telegram"></i>Telegram</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.facebook.com/eugene87222" target="_blank" title="Facebook">
+                    
+                      <i class="fa fa-fw fa-facebook"></i>Facebook</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://twitter.com/eugene87222" target="_blank" title="Twitter">
+                    
+                      <i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://www.pinterest.com/eugene87222/" target="_blank" title="Pinterest">
+                    
+                      <i class="fa fa-fw fa-pinterest"></i>Pinterest</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/eugene87222" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch5-Database-and-Cloud-Security"><span class="nav-number">1.</span> <span class="nav-text">Ch5. Database and Cloud Security</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Database-Management-Systems"><span class="nav-number">2.</span> <span class="nav-text">Database Management Systems</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DBMS-Architecture"><span class="nav-number">2.1.</span> <span class="nav-text">DBMS Architecture</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Relational-Databases"><span class="nav-number">3.</span> <span class="nav-text">Relational Databases</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Relational-Database-Elements"><span class="nav-number">3.1.</span> <span class="nav-text">Relational Database Elements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Structured-Query-Language-SQL"><span class="nav-number">3.2.</span> <span class="nav-text">Structured Query Language (SQL)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL-Injection-Attacks"><span class="nav-number">4.</span> <span class="nav-text">SQL Injection Attacks</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Injection-Technique"><span class="nav-number">4.1.</span> <span class="nav-text">Injection Technique</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Categories-of-SQLi-Attacks"><span class="nav-number">4.2.</span> <span class="nav-text">3 Categories of SQLi Attacks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQLi-countermeasures"><span class="nav-number">4.3.</span> <span class="nav-text">SQLi countermeasures</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Database-Access-Control"><span class="nav-number">5.</span> <span class="nav-text">Database Access Control</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Inference"><span class="nav-number">6.</span> <span class="nav-text">Inference</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Database-Encryption"><span class="nav-number">7.</span> <span class="nav-text">Database Encryption</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cloud-Computing"><span class="nav-number">8.</span> <span class="nav-text">Cloud Computing</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cloud-Security-Risks-and-Countermeasures"><span class="nav-number">9.</span> <span class="nav-text">Cloud Security Risks and Countermeasures</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cloud-Security-as-a-Service"><span class="nav-number">10.</span> <span class="nav-text">Cloud Security as a Service</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2017-2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eugene Yang</span>
+
+  
+</div>
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch5/';
+          this.page.identifier = '2019/06/24/20190624-ComputerSecurity-note-ch5/';
+          this.page.title = '[Intro. to Computer Security Course Note] Ch 5';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://eugene87222.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
