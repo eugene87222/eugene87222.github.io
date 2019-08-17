@@ -143,7 +143,7 @@
 <meta property="og:image" content="https://i.imgur.com/faWeigz.png">
 <meta property="og:image" content="https://i.imgur.com/4Zglole.png">
 <meta property="og:image" content="https://i.imgur.com/PMubRxS.png">
-<meta property="og:updated_time" content="2019-06-24T12:05:52.319Z">
+<meta property="og:updated_time" content="2019-08-17T15:49:13.545Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Intro. to Computer Security Course Note] Ch 24 (supplement 1)">
 <meta name="twitter:description" content="Ch24 Supplement. Phishing Attacks in Wi-Fi Networks Goal Understand how user credentials can be leaked by a man-in-the-middle phishing attack over Wi-Fi networks Expected to learn How to identify a vi">
@@ -402,7 +402,7 @@
 </ul>
 </li>
 </ul>
-<h2 id="Scenario"><a href="#Scenario" class="headerlink" title="Scenario"></a>Scenario</h2><p><img src="https://i.imgur.com/GZvz9VR.png" alt=""></p>
+<h2 id="Scenario"><a href="#Scenario" class="headerlink" title="Scenario"></a>Scenario</h2><p><img src="https://i.imgur.com/GZvz9VR.png" width="60%"></p>
 <h2 id="Four-Tasks"><a href="#Four-Tasks" class="headerlink" title="Four Tasks"></a>Four Tasks</h2><ul>
 <li>Discover the IP/MAC addresses of a target victim device from a Wi-Fi network</li>
 <li>Redirect all the traffic of the victim device to your attack device</li>
@@ -414,24 +414,24 @@
 <li>e.g., using &quot;Fing&quot;</li>
 </ul>
 </li>
-<li><img src="https://i.imgur.com/kk9vkBb.png" alt=""></li>
+<li><img src="https://i.imgur.com/kk9vkBb.png" width="60%"></li>
 </ul>
 <h3 id="What-is-ARP-Address-Resolution-Protocol"><a href="#What-is-ARP-Address-Resolution-Protocol" class="headerlink" title="What is ARP (Address Resolution Protocol)"></a>What is ARP (Address Resolution Protocol)</h3><ul>
 <li>A communication protocol used for <strong>discovering the link layer (or MAC) address</strong> associated with a given IP</li>
 <li>A request-response protocol whose messages are encapsulated by a link-layer protocol</li>
 <li>Within the boundaries of a single network, never routed across interworking nodes</li>
-<li><img src="https://i.imgur.com/eDq4J7V.png" alt=""></li>
+<li><img src="https://i.imgur.com/eDq4J7V.png" width="60%"></li>
 </ul>
 <h2 id="Task-II"><a href="#Task-II" class="headerlink" title="Task II"></a>Task II</h2><ul>
 <li>Redirect all the traffic of the victim device to your attack device<ul>
 <li>Launch ARP spoofing</li>
 <li>e.g., using &quot;Arpspoof&quot; (<a href="https://github.com/alandau/arpspoof" target="_blank" rel="external">https://github.com/alandau/arpspoof</a>) or &quot;Ettercap&quot;</li>
-<li><img src="https://i.imgur.com/b0u0rmh.png" alt=""></li>
+<li><img src="https://i.imgur.com/b0u0rmh.png" width="60%"></li>
 </ul>
 </li>
 <li>If the attack is successful<ul>
 <li>the victim&#39;s traffic will be routed to the attacker for both uplink and downlink</li>
-<li><img src="https://i.imgur.com/BpKmKtI.png" alt=""></li>
+<li><img src="https://i.imgur.com/BpKmKtI.png" width="60%"></li>
 </ul>
 </li>
 </ul>
@@ -440,11 +440,11 @@
 <li>The resolution of the hierarchical name space is done by a hierarchy of name servers</li>
 <li>Each server is responsible (authoritative) for a contiguous portion of the DNS namespace called a zone</li>
 <li>DNS server answer queries about hosts in its zone</li>
-<li><img src="https://i.imgur.com/AGg5hXp.png" alt=""></li>
+<li><img src="https://i.imgur.com/AGg5hXp.png" width="70%"></li>
 </ul>
 <h3 id="DNS-Address-Resolution"><a href="#DNS-Address-Resolution" class="headerlink" title="DNS Address Resolution"></a>DNS Address Resolution</h3><ul>
 <li>Domain name resolvers determine the domain name servers responsible for the domain name in question by <strong>a sequence of queries starting with the right-most (top-level) domain label</strong></li>
-<li><img src="https://i.imgur.com/iM19Wpx.png" alt=""></li>
+<li><img src="https://i.imgur.com/iM19Wpx.png" width="60%"></li>
 </ul>
 <h2 id="Task-III"><a href="#Task-III" class="headerlink" title="Task III"></a>Task III</h2><ul>
 <li>Redirect the victim device to access a phishing web page<ul>
@@ -452,13 +452,13 @@
 <li>e.g., using &quot;Ettercap&quot;</li>
 </ul>
 </li>
-<li><img src="https://i.imgur.com/2jADm1I.png" alt=""></li>
+<li><img src="https://i.imgur.com/2jADm1I.png" width="60%"></li>
 <li>If the attack is successful<ul>
 <li>An access request to NCTU home page will be redirected to the attack server (140.113.207.243)</li>
 <li>The attacker can reply with a fake, phishing web page</li>
 </ul>
 </li>
-<li><img src="https://i.imgur.com/faWeigz.png" alt=""></li>
+<li><img src="https://i.imgur.com/faWeigz.png" width="60%"></li>
 </ul>
 <h2 id="Task-IV"><a href="#Task-IV" class="headerlink" title="Task IV"></a>Task IV</h2><ul>
 <li>Launch a man-in-the-middle attack to steal the victim&#39;s credential<ul>
@@ -467,13 +467,13 @@
 <li>Access a web page from the link</li>
 </ul>
 </li>
-<li><img src="https://i.imgur.com/4Zglole.png" alt=""></li>
+<li><img src="https://i.imgur.com/4Zglole.png" width="60%"></li>
 <li>If the attack is successful<ul>
 <li>You <strong>can steal user credentials</strong> from the intercepted packets</li>
 </ul>
 </li>
 <li>Prerequisite: the web page <strong>cannot be encrypted</strong></li>
-<li><img src="https://i.imgur.com/PMubRxS.png" alt=""></li>
+<li><img src="https://i.imgur.com/PMubRxS.png" width="60%"></li>
 </ul>
 
       
