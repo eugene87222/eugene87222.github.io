@@ -204,7 +204,7 @@ body {
 }
 @media (min-width: 1600px) {
   body {
-    font-size: 19px;
+    font-size: 16px;
   }
 }
 h1,
@@ -1846,7 +1846,7 @@ strong {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #9a2b5b;
+  background: #2b6296;
 }
 .links-of-blogroll {
   font-size: 13px;
