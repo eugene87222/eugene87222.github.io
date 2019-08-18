@@ -7,93 +7,98 @@ comments: false
 
 # About Me
 
-我是 Eugene Yang，基隆人，目前就讀交通大學資訊工程系資工組大三
-
-__近期動態：找暑期實習、學習 Design Pattern__
+Hi，我是 Eugene Yang，基隆人，目前就讀交通大學資訊工程系資工組大四  
+__近期動態：神通資科助理工程師、準備研究所__
 
 # Skills
 
-- Language：__C/C++__、__Python__、PHP、ASM
+- Language：__C/C++__、__Python__、PHP、ASM、C#、XAML
 - Web：HTML、CSS
 - Database：MySQL
-- Other：__Web Crawler__、NLP (word2vec)、Neural Network (Tensorflow / Keras)、OpenGL
+- Other：__Web Crawler__、NLP (word2vec)、Neural Network (Tensorflow / Keras)、OpenGL、__WPF__
 
 > 紅字代表最近比較常接觸的
 
-
 # Hobby
 
-- 吉他、鋼琴
-- 游泳、單槓
-- 畫畫
-- 看電影、跑跑卡丁車
+偶爾彈吉他、彈鋼琴，喜歡靜物寫生、臨摹（with IPad / Apple pencil），時常利用課餘的時間去游泳、吊單槓，平常沒事的時候用 Python 寫寫簡單的自動化程式（因為很懶，什麼事都想要自動化）
 
 # Milestone
 
-- 2018.8.29 - 國軍 online 正式下線
-- 2018.7.10 ~ 2018.8.28 - 四個月軍事訓練第二階段
-- 2018.1 ~ Present - 國網中心工讀生
-- 2017.10 - 個人網頁建立
-- 2017.9 ~ 2017.12 - 協助翻譯 Scratch 相關文件
-- 2017.7.11 ~ 2017.9.5 - 四個月軍事訓練第一階段
-- 2017.2 ~ 2017.6 - 參與 MozTW 社群，維護 [moztw.org](https://moztw.org/) (我認領的 issue 在[這邊](https://github.com/moztw/www.moztw.org/issues?q=is%3Aissue+assignee%3Aeugene87222+is%3Aclosed))
-- 2016.9 ~ Present - 交大資工系
-- 2013.9 ~ 2016.7 - 師大附中
-- 2010.9 ~ 2013.7 - 銘傳國中
-- 2005.9 ~ 2010.7 - 武崙國小
+- 20190701 ~ __Present__ [神通資訊科](https://www.mitac.com.tw/)技助理工程師
+- 20180829 - 國軍 online 正式下線
+- 20180710 ~ 20180828 - 四個月軍事訓練第二階段
+- 201801 ~ __Present__ - [國網中心](https://www.nchc.org.tw/en)工讀生
+- 201710 - 個人網頁建立
+- 201709 ~ 201712 - 協助翻譯 Scratch 相關文件
+- 20170711 ~ 20170905 - 四個月軍事訓練第一階段
+- 201702 ~ 201706 - 參與 MozTW 社群，維護 [moztw.org](https://moztw.org/) (我認領的 issue 在[這邊](https://github.com/moztw/www.moztw.org/issues?q=is%3Aissue+assignee%3Aeugene87222+is%3Aclosed))
+- 201609 ~ __Present__ - [國立交通大學資訊工程學系](https://www.cs.nctu.edu.tw/)
+- 201309 ~ 201607 - [國立師範大學附屬高級中學](https://www.hs.ntnu.edu.tw/)
 
-# NCTU 修課紀錄
+# Courses in NCTU
 
-## 大三下
+<table>
+    <tr>
+        <th style="text-align:center; width:30%; font-size:130%;">大一上 / 下</th>
+        <th style="width:35%;">
+            計算機概論與程式設計 (英文授課)  
+            線性代數 (英文授課)  
+            LabVIEW 程式語言  
+            微積分甲 (一)  
+            物理 (一)
+        </th>
+        <th style="width:35%;">
+            資料結構與物件導向程式設計  
+            基礎程式設計 (英文授課)  
+            離散數學 (英文授課)  
+            數位電路設計  
+            微積分甲 (二)  
+            經濟學概論  
+            物理 (二)
+        </th>
+    </tr>
+    <tr>
+        <th style="text-align:center; font-size:130%;">大二上 / 下</th>
+        <th>
+            演算法概論 (英文授課)  
+            機率 (英文授課)  
+            資料庫系統概論  
+            計算機網路概論  
+            機器學習概論  
+            設計基礎 (一)
+        </th>
+        <th>
+            組合語言與系統程式 (英文授課)  
+            正規語言概論 (英文授課)  
+            計算機組織 (英文授課)
+        </th>
+    </tr>
+    <tr>
+        <th style="text-align:center; font-size:130%;">大三上 / 下</th>
+        <th>
+            微處理機系統實驗  
+            計算機圖學概論  
+            編譯器設計概論  
+            作業系統概論  
+            統計方法與資料分析  
+            普通生物學 (一)  
+            心理學概論
+        </th>
+        <th>
+            高等 UNIX 程式設計 (英文授課)  
+            MATLAB 程式語言 (英文授課)  
+            資訊工程專題 (一)  
+            電腦安全概論 (英文授課)  
+            電腦動畫與特效  
+            建築與環境概論  
+            社會心理學
+        </th>
+    </tr>
+</table>
 
-高等 UNIX 程式設計 (英文授課)  
-MATLAB 程式語言 (英文授課)  
-電腦安全概論 (英文授課)  
-電腦動畫與特效  
-建築與環境概論  
-社會心理學
-
-## 大三上
-
-__C__ 微處理機系統實驗  
-__A-__ 計算機圖學概論  
-__A+__ 編譯器設計概論  
-__B+__ 作業系統概論  
-__A__ 統計方法與資料分析  
-__C+__ 普通生物學 (一)  
-__A+__ 心理學概論
-
-## 大二下
-
-__A+__ 組合語言與系統程式 (英文授課)  
-__A-__ 正規語言概論 (英文授課)  
-__A-__ 計算機組織 (英文授課)  
-~~(停修)網際網路路由器 (英文授課)~~  
-
-## 大二上
-
-__A__ 演算法概論 (英文授課)  
-__C+__ 機率 (英文授課)  
-__A-__ 資料庫系統概論  
-__B__ 計算機網路概論  
-__A__ 機器學習概論  
-__A-__ 設計基礎 (一)
-
-## 大一下
-
-__A__ 資料結構與物件導向程式設計  
-__Pass__ 基礎程式設計 (英文授課)  
-__B__ 離散數學 (英文授課)  
-__A-__ 數位電路設計  
-__A+__ 微積分甲 (二)  
-__A-__ 經濟學概論  
-__A-__ 物理 (二)
-
-## 大一上
-
-__A__ 計算機概論與程式設計 (英文授課)  
-__A__ 線性代數 (英文授課)  
-__C__ LabVIEW 程式語言  
-__A+__ 微積分甲 (一)  
-__A__ 物理 (一)  
-~~(停修)數位訊號處理概~~
+<style>
+    tr th {
+        font-weight: lighter;
+    }
+</style>
