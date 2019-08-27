@@ -1226,11 +1226,11 @@ pre .javascript .function {
 }
 .post-body {
   font-family: 'Lato', "PingFang SC", "Microsoft YaHei", sans-serif;
-  word-break: break-all;
+  word-break: break-word;
 }
 @media (max-width: 767px) {
   .post-body {
-    word-break: break-all;
+    word-break: break-word;
   }
 }
 strong {
@@ -1846,7 +1846,7 @@ strong {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff94;
+  background: #ccb5d7;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -1943,7 +1943,6 @@ strong {
 .post-toc .nav-item {
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
   line-height: 1.8;
 }
 .post-toc .nav .nav-child {
