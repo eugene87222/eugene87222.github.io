@@ -1,6 +1,6 @@
 ---
 layout: about
-title: 
+title: About
 date: 2017-10-12 13:22:49
 comments: false
 ---
@@ -8,13 +8,11 @@ comments: false
 # About Me
 
 Hi，我是 Eugene Yang，基隆人，目前就讀交通大學資訊工程系資工組大四  
-__近期動態：神通資科助理工程師、準備研究所__
+__近期動態：準備研究所__
 
 # Skills
 
-- Language：__C/C++__、__Python__、PHP、ASM、C#、XAML
-- Web：HTML、CSS
-- Database：MySQL
+- __C/C++__、__Python__、PHP、ASM、__C#__、HTML、CSS、MySQL、SQLite
 - Other：__Web Crawler__、NLP (word2vec)、Neural Network (Tensorflow / Keras)、OpenGL、__WPF__
 
 > 紅字代表最近比較常接觸的
@@ -25,7 +23,7 @@ __近期動態：神通資科助理工程師、準備研究所__
 
 # Milestone
 
-- 20190701 ~ __Present__ [神通資訊科](https://www.mitac.com.tw/)技助理工程師
+- 20190701 ~ 20190830 [神通資訊科](https://www.mitac.com.tw/)技助理工程師
 - 20180829 - 國軍 online 正式下線
 - 20180710 ~ 20180828 - 四個月軍事訓練第二階段
 - 201801 ~ __Present__ - [國網中心](https://www.nchc.org.tw/en)工讀生
