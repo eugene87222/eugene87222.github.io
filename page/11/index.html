@@ -1,130 +1,55 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="en">
+<html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/favicon.ico" color="#222">
 
-<script>
-	(function(){
-		if(''){
-			if(prompt('Password:') !== ''){
-				alert('Wrong password');
-				history.back()
-			}
-		}
-	})();
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://eugene87222.github.io').hostname,
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeIn","post_body":"fadeIn","coll_header":"fadeIn"}}
+  };
 </script>
 
-
-  
-  
-    
-    
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Kaushan Script:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
-
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.3">
-
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
-<meta property="og:type" content="website">
+  <meta property="og:type" content="website">
 <meta property="og:title" content="3ugeneYang.§ite">
 <meta property="og:url" content="http://eugene87222.github.io/page/11/index.html">
 <meta property="og:site_name" content="3ugeneYang.§ite">
@@ -132,236 +57,179 @@
 <meta property="article:author" content="Eugene Yang">
 <meta name="twitter:card" content="summary">
 
+<link rel="canonical" href="http://eugene87222.github.io/page/11/">
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeIn","post_body":"fadeIn","coll_header":"fadeIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false
   };
 </script>
 
-
-
-  <link rel="canonical" href="http://eugene87222.github.io/page/11/"/>
-
-
-
-
-
   <title>3ugeneYang.§ite</title>
   
-
-
-
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-107694365-1', 'auto');
-  ga('send', 'pageview');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107694365-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-107694365-1');
+      }
+    </script>
 
 
 
 
 
-<meta name="generator" content="Hexo 4.2.0"></head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-  
-  
-    
-  
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-  <div class="container sidebar-position-left 
-  page-home">
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+    <div>
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">3ugeneYang.§ite</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
   </div>
 
   <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
 </div>
 
+
 <nav class="site-nav">
   
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
-          <a href="/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
         <li class="menu-item menu-item-about">
-          <a href="/about/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            About
-          </a>
-        </li>
-      
-        
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
         <li class="menu-item menu-item-tags">
-          <a href="/tags/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
-          </a>
-        </li>
-      
-        
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
 
-  
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>Sitemap</a>
+
+  </li>
+  </ul>
+
 </nav>
-
-
-
- </div>
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content">
             
-  <section id="posts" class="posts-expand">
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <div class="posts-expand">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2018/02/16/20180227-PTT-crawler-5/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
       <meta itemprop="name" content="Eugene Yang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="3ugeneYang.§ite">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/16/20180227-PTT-crawler-5/" itemprop="url">[爬蟲] PTT - 5</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/02/16/20180227-PTT-crawler-5/" class="post-title-link" itemprop="url">[爬蟲] PTT - 5</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-16T13:43:25+08:00">
-                2018-02-16
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <time title="Created: 2018-02-16 13:43:25" itemprop="dateCreated datePublished" datetime="2018-02-16T13:43:25+08:00">2018-02-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-04-08 10:28:46" itemprop="dateModified" datetime="2019-04-08T10:28:46+08:00">2019-04-08</time>
+              </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -369,130 +237,76 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
+          <p>上一篇 <a href="https://eugene87222.github.io/2018/02/15/PTT-crawler-4/">爬蟲 / PTT - 4</a> 已經說明如何用 Pool 快速取得所有的文章連結了，這次要用這些文章連結去取得每篇文章內文。</p>
+<h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>Windows 10 家用版</li>
+<li>python 3.6.4</li>
+</ul>
+<p>我們一樣可以很直覺地用 for 取得每一篇內文，像下面這樣<br>(parse_get_article 是取自上一篇所整理的函數，all_post_meta 則是取自上一篇文末的程式碼)
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">contents = list()</div><div class="line"><span class="keyword">for</span> post_meta <span class="keyword">in</span> all_post_meta:</div><div class="line">    content = parse_get_article(post_meta[<span class="string">'link'</span>])</div><div class="line">    contents.append(article)</div></pre></td></tr></table></figure></p>
+<p>但我們在上一篇已經知道如何使用 Pool 了，所以可以改成這樣
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    post_links = [entry[<span class="string">'link'</span>] <span class="keyword">for</span> entry <span class="keyword">in</span> all_post_meta]</div><div class="line">    all_post_content = list()</div><div class="line">    <span class="keyword">with</span> Pool(<span class="number">10</span>) <span class="keyword">as</span> p:</div><div class="line">        contents = p.map(parse_get_article, post_links)</div></pre></td></tr></table></figure></p>
+<p>執行後得到的 contents 裡面就是每一篇的文章內文，現在把內文跟文章資訊拼在一起
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">all_post = list()</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(all_post_meta)):</div><div class="line">    all_post.append(&#123;</div><div class="line">        <span class="string">'title'</span>: post_list[i][<span class="string">'title'</span>], </div><div class="line">        <span class="string">'link'</span>: post_list[i][<span class="string">'link'</span>], </div><div class="line">        <span class="string">'date'</span>: post_list[i][<span class="string">'date'</span>],</div><div class="line">        <span class="string">'author'</span>: post_list[i][<span class="string">'author'</span>], </div><div class="line">        <span class="string">'push'</span>: post_list[i][<span class="string">'push'</span>], </div><div class="line">        <span class="string">'content'</span>: contents[i]</div><div class="line">    &#125;)</div></pre></td></tr></table></figure></p>
+<p>如此一來 all_post 就包含所有文章的 [ 標題、網址、發布日期、作者、推文數、內文 ] 了。</p>
+<p>PTT 爬蟲就到這邊告一段落了，前前後後共寫了五篇，文章中某些程式碼都是跟上篇或上上篇有所關連，從中間看可能會看不懂，如果可以的話還是建議從 <a href="https://eugene87222.github.io/2018/02/10/PTT-crawler-1/">第一篇</a> 開始看。</p>
 
-      
-        
-          
-          上一篇 爬蟲 / PTT - 4 已經說明如何用 Pool 快速取得所有的文章連結了，這次要用這些文章連結去取得每篇文章內文。
-環境
-Windows 10 家用版
-python 3.6.4
-
-我們一樣可以很直覺地用 for 取得每一篇內文，像下面這樣(parse_get_article 是取自上一篇
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/16/20180227-PTT-crawler-5/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2018/02/15/20180226-PTT-crawler-4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
       <meta itemprop="name" content="Eugene Yang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="3ugeneYang.§ite">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/15/20180226-PTT-crawler-4/" itemprop="url">[爬蟲] PTT - 4</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/02/15/20180226-PTT-crawler-4/" class="post-title-link" itemprop="url">[爬蟲] PTT - 4</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-15T21:14:41+08:00">
-                2018-02-15
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <time title="Created: 2018-02-15 21:14:41" itemprop="dateCreated datePublished" datetime="2018-02-15T21:14:41+08:00">2018-02-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-04-08 10:29:11" itemprop="dateModified" datetime="2019-04-08T10:29:11+08:00">2019-04-08</time>
+              </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -500,131 +314,82 @@ python 3.6.4
     <div class="post-body" itemprop="articleBody">
 
       
-      
+          <p>上一篇 <a href="https://eugene87222.github.io/2018/02/14/PTT-crawler-3/">爬蟲 / PTT - 3</a> 已經說明如何透過頁數來推導出每個列表頁的網址了，這次要來針對這每個文章列表頁網址去取出每一頁的文章連結。</p>
+<h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>Windows 10 家用版</li>
+<li>python 3.6.4</li>
+</ul>
+<p>先把前幾篇文章的程式碼整理一下 (目前都是以八卦版為例，想爬別的版請自行換網址)
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 取得頁面原始碼</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_page_content</span><span class="params">(URL)</span>:</span></div><div class="line">    res = requests.get(</div><div class="line">    	url=URL,</div><div class="line">        cookies=&#123;<span class="string">'over18'</span>:<span class="string">'1'</span>&#125;</div><div class="line">    )</div><div class="line">    content = BeautifulSoup(res.text)</div><div class="line">    <span class="keyword">return</span> content</div><div class="line"></div><div class="line"><span class="comment"># 取得該版文章總頁數</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_total_page_num</span><span class="params">(URL)</span>:</span></div><div class="line">    content = get_page_content(URL)</div><div class="line">    pagination = content.find(<span class="string">'div'</span>, &#123;<span class="string">'class'</span>:<span class="string">'btn-group-paging'</span>&#125;).findAll(<span class="string">'a'</span>, &#123;<span class="string">'class'</span>:<span class="string">'btn'</span>&#125;)</div><div class="line">    next_page = pagination[<span class="number">1</span>][<span class="string">'href'</span>]</div><div class="line">    total_page = next_page.replace(<span class="string">'/bbs/Gossiping/index'</span>, <span class="string">''</span>)</div><div class="line">    total_page = int(total_page[:<span class="number">-5</span>]) + <span class="number">1</span></div><div class="line">	<span class="keyword">return</span> total_page</div><div class="line"></div><div class="line"><span class="comment"># 取得目前文章列表頁的文章連結</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse_get_each_row</span><span class="params">(URL)</span>:</span></div><div class="line">    content = get_page_content(URL)</div><div class="line">    rows = content.findAll(<span class="string">'div'</span>,&#123;<span class="string">'class'</span>:<span class="string">'r-ent'</span>&#125;)</div><div class="line">    posts = list()</div><div class="line">    <span class="keyword">for</span> row <span class="keyword">in</span> rows:</div><div class="line">        meta = row.find(<span class="string">'div'</span>, <span class="string">'title'</span>).find(<span class="string">'a'</span>)</div><div class="line">        <span class="keyword">if</span> meta :</div><div class="line">            posts.append(&#123;</div><div class="line">                <span class="string">'link'</span>: meta[<span class="string">'href'</span>],</div><div class="line">                <span class="string">'title'</span>: meta.text,</div><div class="line">                <span class="string">'date'</span>: article.find(<span class="string">'div'</span>, <span class="string">'date'</span>).text,</div><div class="line">                <span class="string">'author'</span>: article.find(<span class="string">'div'</span>, <span class="string">'author'</span>).text,</div><div class="line">                <span class="string">'push'</span>: article.find(<span class="string">'div'</span>, <span class="string">'nrec'</span>).text</div><div class="line">            &#125;)</div><div class="line">    <span class="keyword">return</span> posts</div><div class="line"></div><div class="line"><span class="comment"># 取得文章內文</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse_get_article</span><span class="params">(URL)</span>:</span></div><div class="line">    content = get_page_content(URL)</div><div class="line">    shift = content.findAll(<span class="string">'div'</span>,[<span class="string">'article-metaline'</span>, <span class="string">'article-metaline-right'</span>, <span class="string">'push'</span>])</div><div class="line">    <span class="keyword">if</span> shift:</div><div class="line">        <span class="keyword">for</span> elem <span class="keyword">in</span> shift:</div><div class="line">            elem = elem.extract()</div><div class="line">    main_content = content.find(id=<span class="string">'main-content'</span>)</div><div class="line">    <span class="keyword">if</span> main_content:</div><div class="line">    	content = main_content.text.lstrip().rstrip()</div><div class="line">    <span class="keyword">else</span>:</div><div class="line">    	content = <span class="string">'None'</span></div><div class="line">    <span class="keyword">return</span> content</div><div class="line"></div><div class="line"><span class="comment"># 取得文章列表頁網址</span></div><div class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_links</span><span class="params">(total_page, page_want_to_crawl)</span>:</span></div><div class="line">    links = list()</div><div class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(total_page, total_page - page_want_to_crawl, <span class="number">-1</span>):</div><div class="line">        link = <span class="string">'https://www.ptt.cc/bbs/Gossiping/index'</span> + str(i) + <span class="string">'.html'</span></div><div class="line">        links.append(link)</div><div class="line">    <span class="keyword">return</span> links</div></pre></td></tr></table></figure></p>
+<p>以上程式碼都是從前幾篇 [ 爬蟲 / PTT ] 整理出來的，忘記的話可以回去看看。
+假設現在八卦版總共有 500 頁，要爬 100 頁，可以先利用 get_links 取得這 100 頁文章列表頁的網址
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">links = get_links(<span class="number">500</span>, <span class="number">100</span>)</div></pre></td></tr></table></figure></p>
+<p>links 裡面就會有 100 個網址，代表著最近 100 頁的文章列表。<br>接著要透過 parse_get_each_row 取得每一個列表頁的文章連結，我們可以很直覺地用 for loop 來完成這件事
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">post_meta = list()</div><div class="line"><span class="keyword">for</span> link <span class="keyword">in</span> links:</div><div class="line">    post_meta += parse_get_each_row(link)</div></pre></td></tr></table></figure></p>
+<p>但是明顯看到執行上面程式碼所需的時間跟要爬的頁數成正比，當頁數很大時候所需的時間也會大幅度增加。<br>怎麼辦呢？請先看看下圖
+<img src="/image/illus.jpg" alt="">
+如果用 for loop 的話就會像右邊那樣，必須等待 A 做完了才能接著做 B 還有其他後面的 task；但是如果能像左邊那樣，把程式平行化同時處理五個 task，豈不是更有效率。
+還好 python standrad library 裡面的 multiprocessing 可以做到，multiprocessing 裡面有個叫做 Pool 的東西，能夠實現上圖左邊的流程。程式碼如下
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    <span class="keyword">with</span> Pool(<span class="number">10</span>) <span class="keyword">as</span> p:</div><div class="line">        post_meta = p.map(parse_get_each_row, links)</div><div class="line">    all_post_meta = list()</div><div class="line">    <span class="keyword">for</span> each_page <span class="keyword">in</span> post_meta:</div><div class="line">        <span class="keyword">for</span> each_post <span class="keyword">in</span> each_page:</div><div class="line">            all_post_meta.append(each_post)</div></pre></td></tr></table></figure></p>
+<p>※ 注意：如果要用 Pool 的話一定要在 __name__ == &#39;__main__&#39; 裡面<br>可以把 Pool 裡面的數字想像成上圖左邊的分支數量，數字大正常情況下當然比較快，但是還得考慮到網路狀況、硬體限制等。我在學校自己測試的時候 for loop 比 Pool 慢了快要 10 倍，然後 5 ~ 7 行可以請讀者自己研究看看為什麼要這樣寫。</p>
+<p>先說到這吧～目前已經可以取得我們要的頁數的所有文章連結了，並透過函數加速讓爬蟲更有效率。下一篇應該是 PTT 爬蟲最後一篇，等 PTT 系列告一段落後就會繼續往 facebook、MOBILE01 爬蟲前進，到時候在談談我做了什麼。</p>
 
-      
-        
-          
-          上一篇 爬蟲 / PTT - 3 已經說明如何透過頁數來推導出每個列表頁的網址了，這次要來針對這每個文章列表頁網址去取出每一頁的文章連結。
-環境
-Windows 10 家用版
-python 3.6.4
-
-先把前幾篇文章的程式碼整理一下 (目前都是以八卦版為例，想爬別的版請自行換網址)
-1234567
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/15/20180226-PTT-crawler-4/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2018/02/14/20180225-PTT-crawler-3/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
       <meta itemprop="name" content="Eugene Yang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="3ugeneYang.§ite">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/14/20180225-PTT-crawler-3/" itemprop="url">[爬蟲] PTT - 3</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/02/14/20180225-PTT-crawler-3/" class="post-title-link" itemprop="url">[爬蟲] PTT - 3</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-14T23:30:46+08:00">
-                2018-02-14
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <time title="Created: 2018-02-14 23:30:46" itemprop="dateCreated datePublished" datetime="2018-02-14T23:30:46+08:00">2018-02-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-01-17 12:24:17" itemprop="dateModified" datetime="2020-01-17T12:24:17+08:00">2020-01-17</time>
+              </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -632,130 +397,84 @@ python 3.6.4
     <div class="post-body" itemprop="articleBody">
 
       
-      
+          <p>之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，<a href="https://eugene87222.github.io/2018/02/10/PTT-crawler-1/">爬蟲 / PTT - 1</a>、<a href="https://eugene87222.github.io/2018/02/13/PTT-crawler-2/">爬蟲 / PTT - 2</a>，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。</p>
+<h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>Windows 10 家用版</li>
+<li>python 3.6.4</li>
+</ul>
+<h1 id="取得討論版總頁數"><a href="#取得討論版總頁數" class="headerlink" title="取得討論版總頁數"></a>取得討論版總頁數</h1><p>我們先觀察文章列表頁的網址，以八卦版為例，到八卦版首頁點選&quot;上頁&quot;，網址末端的數字是  37092，再往上頁看，變成 37091，或者直接跳至&quot;最舊&quot;，數字變成 1，發現到我們可以經由網址末端的數字得知該版的總頁數，最舊的那一頁就是 1，一直往上累加到目前的頁數也就是最新的一頁，所以只要能得到總頁數，就能得到每個列表頁的網址。<br>※ 注意：頁數會一直更新、增加，如果跟我的不一樣也別意外</p>
+<h2 id="取得網頁原始碼"><a href="#取得網頁原始碼" class="headerlink" title="取得網頁原始碼"></a>取得網頁原始碼</h2><p>一樣使用 request.get 拿到八卦版首頁的原始碼，然後再用 BeautifulSoup 包起來。
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">res = requests.get(</div><div class="line">    url=<span class="string">'https://www.ptt.cc/bbs/Gossiping/index.html'</span>,</div><div class="line">    cookies=&#123;<span class="string">'over18'</span>:<span class="string">'1'</span>&#125;</div><div class="line">)</div><div class="line">html = res.text</div><div class="line">content = BeautifulSoup(html.text)</div></pre></td></tr></table></figure></p>
+<h2 id="分析原始碼，取得總頁數"><a href="#分析原始碼，取得總頁數" class="headerlink" title="分析原始碼，取得總頁數"></a>分析原始碼，取得總頁數</h2><p>先打開瀏覽器到八卦版首頁按下 f12 觀察一下，[ 最舊、上頁、下頁、最新 ] 這幾個按鈕被包在 class=&quot;btn-group-paging&quot; 底下的 class=&quot;btn&quot; 裡面。
+<img src="/image/pagination_class.gif" alt=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">pagination = content.find(<span class="string">'div'</span>, &#123;<span class="string">'class'</span>:<span class="string">'btn-group-paging'</span>&#125;).findAll(<span class="string">'a'</span>, &#123;<span class="string">'class'</span>:<span class="string">'btn'</span>&#125;)</div><div class="line">next_page = pagination[<span class="number">1</span>][<span class="string">'href'</span>]</div><div class="line">total_page = next_page.replace(<span class="string">'/bbs/Gossiping/index'</span>, <span class="string">''</span>)</div><div class="line">total_page = int(total_page[:<span class="number">-5</span>]) + <span class="number">1</span></div></pre></td></tr></table></figure>
+<p>&quot;上頁&quot;在第二個 class=&quot;btn&quot; 裡面，所以是 pagination[1]，取出&quot;上頁&quot;的連結後把前面 &#39;/bbs/Gossiping/index&#39; 這段字串拿掉 (用 replace 替換成空字串就好了)，然後第四行這邊用到了 python 的 <a href="http://python-reference.readthedocs.io/en/latest/docs/brackets/slicing.html" target="_blank" rel="external">slice</a> 把字串尾巴的 &quot;.html&quot; 移除，剩下來的部分就是數字了，不過現在的數字是 string 型態，要轉換成 int 才能夠做加減的動作，這邊為什麼還要加一呢？因為我們抓到的數字是最新一頁的&quot;上頁&quot;的，所以還要加一才會是目前的總頁數。</p>
+<h1 id="取得文章列表頁網址"><a href="#取得文章列表頁網址" class="headerlink" title="取得文章列表頁網址"></a>取得文章列表頁網址</h1><p>有了總頁數就可以得到每個文章列表頁的網址了，上面講過最舊頁是 1，一直累加上去到最新頁。<br>假設現在有 100 頁列表，那最新的一頁就會是 100，假設我們想爬 20 頁，寫成 C 大概會長這樣
+<figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">100</span>; i&gt;<span class="number">100</span><span class="number">-20</span>; i--)&#123;</div><div class="line">    <span class="comment">// url = 'https://www.ptt.cc/bbs/Gossiping/index' + i + '.html'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在 python 裡面可以用 range() 來達成，這邊只會大略說明 range() 怎麼用，想深入了解的話可以到 <a href="https://docs.python.org/3/library/functions.html#func-range" target="_blank" rel="external">Python Built-in Functions</a>看。</p>
+<p>上面的 C 寫成 python 的 range() 就是
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>, <span class="number">100</span><span class="number">-20</span>, <span class="number">-1</span>):</div><div class="line">    <span class="comment"># url = 'https://www.ptt.cc/bbs/Gossiping/index' + i + '.html'</span></div></pre></td></tr></table></figure></p>
+<p>range() 裡面第一個參數放的是開始的值，第二個是結束的值，第三個是每一步的間隔，第三個可放可不放，預設是 1。range(100, 100-20, -1) 的意思就是從 100 開始，到 100-20 也就是 80 結束 (不包含 80)，第三個參數 step 設成 -1 就是每次遞減 1 的概念，所以如果把 range(100, 100-20, -1) 印出來就會得到從 100 到 81 這 20 個數字。</p>
+<p>有了總頁數、知道如何使用 range()，我們就可以很簡單的取得每個文章列表頁的網址了
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">links = list()</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(總頁數, 總頁數 - 想爬的頁數, <span class="number">-1</span>):</div><div class="line">    link = <span class="string">'https://www.ptt.cc/bbs/Gossiping/index'</span> + str(i) + <span class="string">'.html'</span></div><div class="line">    links.append(link)</div></pre></td></tr></table></figure></p>
+<p>現在已經可以利用總頁數來得到我們要爬的 10頁、20頁或者更多頁的文章列表頁網址，再來就要針對諸多列表網址中的每個網址去取得每頁的文章連結了，不過講到這裡先告一段落，剩下的我們下面幾篇再來慢慢談。</p>
 
-      
-        
-          
-          之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，爬蟲 / PTT - 1、爬蟲 / PTT - 2，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。
-環境
-Windows 10 家用版
-python 3.6.4
-
-取得
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/14/20180225-PTT-crawler-3/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2018/02/13/20180225-PTT-crawler-2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
       <meta itemprop="name" content="Eugene Yang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="3ugeneYang.§ite">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/13/20180225-PTT-crawler-2/" itemprop="url">[爬蟲] PTT - 2</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/02/13/20180225-PTT-crawler-2/" class="post-title-link" itemprop="url">[爬蟲] PTT - 2</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-13T15:31:08+08:00">
-                2018-02-13
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <time title="Created: 2018-02-13 15:31:08" itemprop="dateCreated datePublished" datetime="2018-02-13T15:31:08+08:00">2018-02-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-05-20 20:04:01" itemprop="dateModified" datetime="2019-05-20T20:04:01+08:00">2019-05-20</time>
+              </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -763,130 +482,76 @@ python 3.6.4
     <div class="post-body" itemprop="articleBody">
 
       
-      
+          <p>上一篇 <a href="https://eugene87222.github.io/2018/02/10/PTT-crawler-1/">爬蟲 / PTT - 1</a> 已經講過怎麼取得八卦版首頁的文章列表了，忘記細節的可以回去看看，這次要來講如何取得文章內文。</p>
+<h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>Windows 10 家用版</li>
+<li>python 3.6.4</li>
+</ul>
+<h1 id="如何取得內文"><a href="#如何取得內文" class="headerlink" title="如何取得內文"></a>如何取得內文</h1><h2 id="取得網頁原始碼"><a href="#取得網頁原始碼" class="headerlink" title="取得網頁原始碼"></a>取得網頁原始碼</h2><p>我在八卦版上隨便挑了一篇文章，<a href="https://www.ptt.cc/bbs/Gossiping/M.1518773576.A.14A.html" target="_blank" rel="external">文章傳送門</a>，一樣使用 requests.get 並用 BeautifulSoup 包起來。
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">res = requests.get(</div><div class="line">    url=<span class="string">'https://www.ptt.cc/bbs/Gossiping/M.1518773576.A.14A.html'</span>,</div><div class="line">    cookies=&#123;<span class="string">'over18'</span>:<span class="string">'1'</span>&#125;</div><div class="line">)</div><div class="line">html = res.text</div><div class="line">content = BeautifulSoup(html.text)</div></pre></td></tr></table></figure></p>
+<h2 id="分析原始碼"><a href="#分析原始碼" class="headerlink" title="分析原始碼"></a>分析原始碼</h2><p>先來看看文章頁面
+<img src="/image/gossiping_screenshot.PNG" alt="">
+整個黃色框框是 id=&quot;main-content&quot;，我們只要裡面的紅色框框部分，也就是文章的內文。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">shift = content.findAll(<span class="string">'div'</span>,[<span class="string">'article-metaline'</span>, <span class="string">'article-metaline-right'</span>, <span class="string">'push'</span>])</div><div class="line"><span class="keyword">if</span> shift:</div><div class="line">    <span class="keyword">for</span> elem <span class="keyword">in</span> shift:</div><div class="line">        elem = elem.extract()</div><div class="line">main_content = content.find(id=<span class="string">'main-content'</span>)</div><div class="line"><span class="keyword">if</span> main_content:</div><div class="line">    content = main_content.text.lstrip().rstrip()</div><div class="line"><span class="keyword">else</span>:</div><div class="line">    content = <span class="string">'None'</span></div></pre></td></tr></table></figure>
+<p>article-metaline、article-metaline-right 是上面 [ 作者、標題、時間 ] 那個區塊；push 則是推文的部分，這兩個部份都不要，我們可以用 extract() 來移除我們不要的部分，處理好之後 id=&quot;main-content&quot; 裡面就只剩下紅色框框的東西了，一樣用 .text 即可取得裡面的文字，另外文章頭尾可能會有多餘的空白，可以利用 lstrip 與 rstrip 來將其移除。  </p>
+<p>截至目前我們已經可以透過文章列表頁取得每篇文章的資訊 (文章連結、作者、時間等)，並且進一步取得個別的內文，下一次會介紹怎麼抓取更多頁的文章列表，並且用 python 的 standard library 來加速爬蟲。</p>
 
-      
-        
-          
-          上一篇 爬蟲 / PTT - 1 已經講過怎麼取得八卦版首頁的文章列表了，忘記細節的可以回去看看，這次要來講如何取得文章內文。
-環境
-Windows 10 家用版
-python 3.6.4
-
-如何取得內文取得網頁原始碼我在八卦版上隨便挑了一篇文章，文章傳送門，一樣使用 requests.get 並用
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/13/20180225-PTT-crawler-2/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2018/02/10/20180224-PTT-crawler-1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
       <meta itemprop="name" content="Eugene Yang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="3ugeneYang.§ite">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/10/20180224-PTT-crawler-1/" itemprop="url">[爬蟲] PTT - 1</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/02/10/20180224-PTT-crawler-1/" class="post-title-link" itemprop="url">[爬蟲] PTT - 1</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-10T23:05:13+08:00">
-                2018-02-10
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <time title="Created: 2018-02-10 23:05:13" itemprop="dateCreated datePublished" datetime="2018-02-10T23:05:13+08:00">2018-02-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-04-08 10:29:32" itemprop="dateModified" datetime="2019-04-08T10:29:32+08:00">2019-04-08</time>
+              </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -894,65 +559,58 @@ python 3.6.4
     <div class="post-body" itemprop="articleBody">
 
       
-      
+          <p>應徵上國網中心工讀生之後第一件事就是練習 python 爬蟲，爬 PTT、facebook、MOBILE01 這類的論壇，這幾天正在做 PTT 的部分。</p>
+<h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
+<li>Windows 10 家用版</li>
+<li>python 3.6.4</li>
+</ul>
+<h1 id="安裝-library"><a href="#安裝-library" class="headerlink" title="安裝 library"></a>安裝 library</h1><ul>
+<li><p>requests (取得網頁原始碼)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip3 install requests</div></pre></td></tr></table></figure>
+</li>
+<li><p>BeautifulSoup4 (處理網頁原始碼)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">pip3 install beautifulsoup4</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h1 id="如何取得文章列表"><a href="#如何取得文章列表" class="headerlink" title="如何取得文章列表"></a>如何取得文章列表</h1><h2 id="取得網頁原始碼"><a href="#取得網頁原始碼" class="headerlink" title="取得網頁原始碼"></a>取得網頁原始碼</h2><p>先把要用到的 library import 進來
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">import</span> requests</div><div class="line"><span class="keyword">import</span> BeautifulSoup</div></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">res = requests.get(</div><div class="line">    url=<span class="string">'https://www.ptt.cc/bbs/Gossiping/index.html'</span>,</div><div class="line">    cookies=&#123;<span class="string">'over18'</span>:<span class="string">'1'</span>&#125;</div><div class="line">)</div><div class="line">html = res.text</div></pre></td></tr></table></figure>
+<p>requests 可以處理一般 service 的請求，requests.get 裡面有很多參數，url 就是我們要抓的頁面的網址，這邊設定 cookies 的用意在於 PTT 有些版會要求年齡 18 歲以上才能進入，我們將 over18 設為 1 (已滿 18 歲) 並存入 cookies。
+以八卦版為例 (八卦板首頁網址為 <a href="https://www.ptt.cc/bbs/Gossiping/index.html" target="_blank" rel="external">https://www.ptt.cc/bbs/Gossiping/index.html</a>) ，requests.get 會回傳一個 Response 物件，透過 .text 可以即可得網頁原始碼。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">print</span> (html)</div></pre></td></tr></table></figure>
+<p>我們把 html 印出來看看，應該會長這個樣子
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>/&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1"</span> <span class="attr">name</span>=<span class="string">"viewport"</span>/&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>看板 Gossiping 文章列表 - 批踢踢實業坊<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"//images.ptt.cc/bbs/v2.22/bbs-common.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"//images.ptt.cc/bbs/v2.22/bbs-base.css"</span> <span class="attr">media</span>=<span class="string">"screen"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"//images.ptt.cc/bbs/v2.22/bbs-custom.css"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"//images.ptt.cc/bbs/v2.22/pushstream.css"</span> <span class="attr">media</span>=<span class="string">"screen"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">href</span>=<span class="string">"//images.ptt.cc/bbs/v2.22/bbs-print.css"</span> <span class="attr">media</span>=<span class="string">"print"</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">type</span>=<span class="string">"text/css"</span>/&gt;</span></div><div class="line"></div><div class="line">        <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"topbar-container"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"bbs-content"</span> <span class="attr">id</span>=<span class="string">"topbar"</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/"</span> <span class="attr">id</span>=<span class="string">"logo"</span>&gt;</span>批踢踢實業坊<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">span</span>&gt;</span>›<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"board"</span> <span class="attr">href</span>=<span class="string">"/bbs/Gossiping/index.html"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"board-label"</span>&gt;</span>看板 <span class="tag">&lt;/<span class="name">span</span>&gt;</span>Gossiping<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"right small"</span> <span class="attr">href</span>=<span class="string">"/about.html"</span>&gt;</span>關於我們<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"right small"</span> <span class="attr">href</span>=<span class="string">"/contact.html"</span>&gt;</span>聯絡資訊<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"main-container"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"action-bar-container"</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"action-bar"</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"btn-group btn-group-dir"</span>&gt;</span></div><div class="line">                                <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"btn selected"</span> <span class="attr">href</span>=<span class="string">"/bbs/Gossiping/index.html"</span>&gt;</span>看板<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">                                <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"btn"</span> <span class="attr">href</span>=<span class="string">"/man/Gossiping/index.html"</span>&gt;</span>精華區<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"btn-group btn-group-paging"</span>&gt;</span></div><div class="line">                                <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"btn wide"</span> <span class="attr">href</span>=<span class="string">"/bbs/Gossiping/index1.html"</span>&gt;</span>最舊<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">                                <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"btn wide"</span> <span class="attr">href</span>=<span class="string">"/bbs/Gossiping/index37017.html"</span>&gt;</span>‹ 上頁<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">                                <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"btn wide disabled"</span>&gt;</span>下頁 ›<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">                                <span class="tag">&lt;<span class="name">a</span> <span class="attr">class</span>=<span class="string">"btn wide"</span> <span class="attr">href</span>=<span class="string">"/bbs/Gossiping/index.html"</span>&gt;</span>最新<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"r-list-container action-bar-margin bbs-screen"</span>&gt;</span></div><div class="line"></div><div class="line">                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"r-ent"</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"nrec"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mark"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span></div><div class="line"></div><div class="line">                                <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/bbs/Gossiping/M.1519527707.A.3EF.html"</span>&gt;</span>[新聞] 主人「暴斃」測忠誠度　喵皇反應讓人笑翻<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"></div><div class="line">......太多了，後面省略</div></pre></td></tr></table></figure></p>
+<h2 id="分析原始碼，取得文章列表"><a href="#分析原始碼，取得文章列表" class="headerlink" title="分析原始碼，取得文章列表"></a>分析原始碼，取得文章列表</h2><p>首先在瀏覽器打開 <a href="https://www.ptt.cc/bbs/Gossiping/index.html" target="_blank" rel="external">https://www.ptt.cc/bbs/Gossiping/index.html</a> ，按 f12 就可以看到網頁原始碼還有其他資訊，經過觀察發現每篇文章都是包在 class=&quot;r-ent&quot; 這個 div 之下。
+<img src="/image/entry_class.gif" alt=""></p>
+<p>接著用 BeautifulSoup 來提取原始碼中我們要的部分，因為要找出所有符合 class=&quot;r-ent&quot; 的 div，所以用 findAll (如果用 find 只會找一個)，findAll 會回傳可迭代的 ResultSet 物件，可以用 for loop 看看他裡面是什麼。
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">rows = html.findAll(<span class="string">'div'</span>,&#123;<span class="string">'class'</span>:<span class="string">'r-ent'</span>&#125;)</div><div class="line"><span class="keyword">for</span> row <span class="keyword">in</span> rows:</div><div class="line">    <span class="keyword">print</span> (row)</div></pre></td></tr></table></figure></p>
+<p>執行出來的結果應該會是這樣，很多個由 class=&quot;r-ent&quot; 包起來的 div
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"r-ent"</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"nrec"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"hl f2"</span>&gt;</span>4<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mark"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span></div><div class="line"></div><div class="line">                                <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/bbs/Gossiping/M.1519530046.A.17E.html"</span>&gt;</span>[問卦] 雪爾80的副駕駛有用嗎？<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"></div><div class="line">                        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"meta"</span>&gt;</span></div><div class="line">                                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"date"</span>&gt;</span> 2/25<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"author"</span>&gt;</span>kobe9527<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"r-ent"</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"nrec"</span>&gt;</span><span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"hl f2"</span>&gt;</span>6<span class="tag">&lt;/<span class="name">span</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"mark"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"title"</span>&gt;</span></div><div class="line"></div><div class="line">                                <span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"/bbs/Gossiping/M.1519530052.A.6B9.html"</span>&gt;</span>[問卦] 有沒有參加法會佛像有怪聲的八卦<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line"></div><div class="line">                        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"meta"</span>&gt;</span></div><div class="line">                                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"date"</span>&gt;</span> 2/25<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                                <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"author"</span>&gt;</span>SagaCandida<span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">                <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"></div><div class="line">......太多了，後面省略</div></pre></td></tr></table></figure></p>
+<p>從上面的 html 程式碼可以發看到每篇文章的連結都在 class=&quot;title&quot; 的 div 裡面，剛剛說過 ResultSet 這個物件是可迭代的，所以使用 for loop 來取得每篇文章的資訊。
+<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">posts = list()</div><div class="line"></div><div class="line"><span class="keyword">for</span> row <span class="keyword">in</span> rows:</div><div class="line">    meta = row.find(<span class="string">'div'</span>, <span class="string">'title'</span>).find(<span class="string">'a'</span>)</div><div class="line">    <span class="keyword">if</span> meta :    <span class="comment"># 如果文章已被刪除，meta 會是 None</span></div><div class="line">        posts.append(&#123;</div><div class="line">            <span class="string">'link'</span>: meta[<span class="string">'href'</span>],                         <span class="comment"># 文章網址</span></div><div class="line">            <span class="string">'title'</span>: meta.text,                           <span class="comment"># 文章標題</span></div><div class="line">            <span class="string">'date'</span>: article.find(<span class="string">'div'</span>, <span class="string">'date'</span>).text,     <span class="comment"># 文章發布日期</span></div><div class="line">            <span class="string">'author'</span>: article.find(<span class="string">'div'</span>, <span class="string">'author'</span>).text, <span class="comment"># 文章作者</span></div><div class="line">            <span class="string">'push'</span>: article.find(<span class="string">'div'</span>, <span class="string">'nrec'</span>).text      <span class="comment"># 推文數</span></div><div class="line">        &#125;)</div></pre></td></tr></table></figure></p>
+<p>這邊為什麼用 find 而不是 findAll，因為每個 row 裡面只會有一個 class=&quot;title&quot;。
+接著利用 [&#39;href&#39;] 可以取得 class=&quot;title&quot; 裡面的連結，.text 可以提取出 block 裡面的文字，再將這些資訊一 一存入 list 中。</p>
+<p>目前為止我們已經可以從文章列表抓出我們要的每天文章的資訊了，現在只有抓一頁文章列表， 後面幾篇文章會講如何抓很多頁以及如何進一步取出每篇文章的內文。</p>
 
-      
-        
-          
-          應徵上國網中心工讀生之後第一件事就是練習 python 爬蟲，爬 PTT、facebook、MOBILE01 這類的論壇，這幾天正在做 PTT 的部分。
-環境
-Windows 10 家用版
-python 3.6.4
-
-安裝 library
-requests (取得網頁原始碼)
-1pip3 insta
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/10/20180224-PTT-crawler-1/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
-  </section>
+  </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/10/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/12/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
+    <a class="extend prev" rel="prev" href="/page/10/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/10/">10</a><span class="page-number current">11</span><a class="page-number" href="/page/12/">12</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/12/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -960,162 +618,150 @@ requests (取得網頁原始碼)
           </div>
           
 
-
-          
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
-        
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
-    
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
-      
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/20161224_132915.jpg"
-                alt="Eugene Yang" />
-            
-              <p class="site-author-name" itemprop="name">Eugene Yang</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/%20%7C%7C%20archive">
-              
-                  <span class="site-state-item-count">67</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
-                  <span class="site-state-item-name">tags</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Eugene Yang"
+      src="/images/20161224_132915.jpg">
+  <p class="site-author-name" itemprop="name">Eugene Yang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
           
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:eugene87222@gmail.com" title="E-Mail → mailto:eugene87222@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Eugene87222" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Eugene87222" rel="noopener" target="_blank"><i class="fa fa-fw fa-telegram"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/eugene87222" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/yanghc" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;yanghc" rel="noopener" target="_blank"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pinterest.com/eugene87222/" title="Pinterest → https:&#x2F;&#x2F;www.pinterest.com&#x2F;eugene87222&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw fa-pinterest"></i>Pinterest</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/eugene87222" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
 
-          <div class="links-of-author motion-element">
-            
-              
-                <span class="links-of-author-item">
-                  <a href="mailto:eugene87222@gmail.com" target="_blank" title="E-Mail">
-                    
-                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://t.me/Eugene87222" target="_blank" title="Telegram">
-                    
-                      <i class="fa fa-fw fa-telegram"></i>Telegram</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.facebook.com/eugene87222" target="_blank" title="Facebook">
-                    
-                      <i class="fa fa-fw fa-facebook"></i>Facebook</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.linkedin.com/in/yanghc" target="_blank" title="LinkedIn">
-                    
-                      <i class="fa fa-fw fa-linkedin"></i>LinkedIn</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.pinterest.com/eugene87222/" target="_blank" title="Pinterest">
-                    
-                      <i class="fa fa-fw fa-pinterest"></i>Pinterest</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/eugene87222" target="_blank" title="GitHub">
-                    
-                      <i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-            
-          </div>
 
-          
-          
 
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
+      </div>
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017-2020</span>
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Eugene Yang</span>
-
-  
 </div>
-
-
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  </div>
 
         
 <div class="busuanzi-count">
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
     </span>
-  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
 </div>
 
 
@@ -1125,125 +771,26 @@ requests (取得網頁原始碼)
 
 
 
-        
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
+<script src="/js/utils.js"></script>
 
-
-
-
-
+<script src="/js/motion.js"></script>
 
 
+<script src="/js/schemes/pisces.js"></script>
 
 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  
-
-    
-
-    
-
-  
-
-
-
-
-	
-
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -1263,26 +810,11 @@ requests (取得網頁原始碼)
 
 
 
-  
-
-
-
-
 
   
 
   
 
-  
-
-  
-  
-
-  
-
-  
-
-  
 
 </body>
 </html>

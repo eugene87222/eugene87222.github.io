@@ -1,130 +1,55 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="en">
+<html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/favicon.ico" color="#222">
 
-<script>
-	(function(){
-		if(''){
-			if(prompt('Password:') !== ''){
-				alert('Wrong password');
-				history.back()
-			}
-		}
-	})();
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://eugene87222.github.io').hostname,
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeIn","post_body":"fadeIn","coll_header":"fadeIn"}}
+  };
 </script>
 
-
-  
-  
-    
-    
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Kaushan Script:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
-
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.3">
-
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
-<meta property="og:type" content="website">
+  <meta property="og:type" content="website">
 <meta property="og:title" content="3ugeneYang.§ite">
 <meta property="og:url" content="http://eugene87222.github.io/page/2/index.html">
 <meta property="og:site_name" content="3ugeneYang.§ite">
@@ -132,236 +57,179 @@
 <meta property="article:author" content="Eugene Yang">
 <meta name="twitter:card" content="summary">
 
+<link rel="canonical" href="http://eugene87222.github.io/page/2/">
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeIn","post_body":"fadeIn","coll_header":"fadeIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false
   };
 </script>
 
-
-
-  <link rel="canonical" href="http://eugene87222.github.io/page/2/"/>
-
-
-
-
-
   <title>3ugeneYang.§ite</title>
   
-
-
-
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-107694365-1', 'auto');
-  ga('send', 'pageview');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107694365-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-107694365-1');
+      }
+    </script>
 
 
 
 
 
-<meta name="generator" content="Hexo 4.2.0"></head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-  
-  
-    
-  
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-  <div class="container sidebar-position-left 
-  page-home">
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+    <div>
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">3ugeneYang.§ite</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
   </div>
 
   <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
 </div>
 
+
 <nav class="site-nav">
   
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
-          <a href="/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
         <li class="menu-item menu-item-about">
-          <a href="/about/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            About
-          </a>
-        </li>
-      
-        
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
         <li class="menu-item menu-item-tags">
-          <a href="/tags/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
-          </a>
-        </li>
-      
-        
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
 
-  
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>Sitemap</a>
+
+  </li>
+  </ul>
+
 </nav>
-
-
-
- </div>
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content">
             
-  <section id="posts" class="posts-expand">
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <div class="posts-expand">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch23/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
       <meta itemprop="name" content="Eugene Yang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="3ugeneYang.§ite">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/24/20190624-ComputerSecurity-note-ch23/" itemprop="url">[Intro. to Computer Security Course Note] Ch 23</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/24/20190624-ComputerSecurity-note-ch23/" class="post-title-link" itemprop="url">[Intro. to Computer Security Course Note] Ch 23</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-24T20:02:05+08:00">
-                2019-06-24
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <time title="Created: 2019-06-24 20:02:05" itemprop="dateCreated datePublished" datetime="2019-06-24T20:02:05+08:00">2019-06-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-18 09:25:53" itemprop="dateModified" datetime="2019-08-18T09:25:53+08:00">2019-08-18</time>
+              </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -369,128 +237,245 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
+          <h1 id="Ch23-Internet-Authentication-Applications"><a href="#Ch23-Internet-Authentication-Applications" class="headerlink" title="Ch23. Internet Authentication Applications"></a>Ch23. Internet Authentication Applications</h1><hr>
+<h1 id="Kerberos"><a href="#Kerberos" class="headerlink" title="Kerberos"></a>Kerberos</h1><ul>
+<li>A software utility available both in the public domain and in commercially supported versions</li>
+<li>The defacto standard for remote authentication</li>
+<li>A trusted third party authentication service<ul>
+<li>Clients and servers trust Kerberos to mediate their mutual authentication</li>
+<li>Requires that<ul>
+<li>A user proves his or her identity for each service invoked</li>
+<li>Optionally, services prove their identity to clients</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Security-Issues-between-Clients-and-Servers"><a href="#Security-Issues-between-Clients-and-Servers" class="headerlink" title="Security Issues between Clients and Servers?"></a>Security Issues between Clients and Servers?</h2><ul>
+<li>In an unprotected network environment, any client can apply to any server for server</li>
+<li>Obvious security risk?<ul>
+<li>Impersonation: an opponent can <strong>pretend to be another client</strong> and obtain unauthorized privileges on server machines</li>
+</ul>
+</li>
+<li>Countermeasure<ul>
+<li>Confirm the identities of clients</li>
+</ul>
+</li>
+<li>Alternative: using an <strong>authentication server (AS)</strong><ul>
+<li>Once the AS has verified the user&#39;s identity, it can pass this information on to an application server</li>
+</ul>
+</li>
+</ul>
+<h2 id="Kerberos-Overview"><a href="#Kerberos-Overview" class="headerlink" title="Kerberos Overview"></a>Kerberos Overview</h2><ul>
+<li>AS shares a unique secret key with each server</li>
+<li>Session key: one-time encryption key</li>
+<li>Ticket and session key are both encrypted using the user&#39;s password as the encryption key</li>
+<li>Password is never passed over the network</li>
+<li><img src="https://i.imgur.com/uhVkfXL.jpg" alt=""><ol>
+<li>User logs on to workstation and requests service on host</li>
+<li>AS verifies user&#39;s access right in database, creates ticket-granting ticket and section key. Results are encrypted using key derived from user&#39;s password</li>
+<li>Workstation prompts user for password to decrypt incoming message, then send ticket and authenticator that contains user&#39;s name, network address and time to TGS</li>
+<li>TGS decrypts ticket and authenticator, verifies requests then creates ticket for requested application server</li>
+<li>Workstation sends ticket and authenticator to host</li>
+<li>Host verifies that ticket and authenticator match, then grants access to service. If mutual authentication is required, server returns an authenticator</li>
+</ol>
+</li>
+<li>Ticket: a set of credentials<ul>
+<li>User&#39;s ID, server&#39;s ID, timestamp, lifetime</li>
+</ul>
+</li>
+<li>Entire ticket is encrypted using a secret DES key shared by the AS and the server</li>
+<li>Why TGS?<ul>
+<li>Query the user for his password for each service<ul>
+<li>Inconvenient</li>
+</ul>
+</li>
+<li>Store the password in memory for the duration of the logon session<ul>
+<li>有安全風險</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>TGS: a ticket to get more ticket</li>
+<li>How to counter the following threats for ticket-granting ticket?<ul>
+<li>Ticket may be stolen and reused<ul>
+<li>Timestamp</li>
+</ul>
+</li>
+<li>Alteration of the ticket<ul>
+<li>Encrypted with a secret key <strong>known only to the AS and TGS</strong></li>
+</ul>
+</li>
+<li>User spoofing<ul>
+<li>Authentication based on the encryption with the user&#39;s password</li>
+</ul>
+</li>
+<li>Reply attack<ul>
+<li>Authenticator, which is not reusable</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Kerberos-Realms"><a href="#Kerberos-Realms" class="headerlink" title="Kerberos Realms"></a>Kerberos Realms</h2><ul>
+<li>A Kerberos realm: full-service Kerberos environment<ul>
+<li>A Kerberos server</li>
+<li>A number of clients<ul>
+<li>Each registers with the Kerberos server; the <strong>server holds a database</strong> for the user ID/password</li>
+</ul>
+</li>
+<li>A number of app servers<ul>
+<li>Each registers with the Kerberos server <strong>and shares a secret key</strong> with it</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Interrealm-Authentication"><a href="#Interrealm-Authentication" class="headerlink" title="Interrealm Authentication"></a>Interrealm Authentication</h2><ul>
+<li>不同 realm 的 Kerberos server 彼此 shares a secret key</li>
+<li>Kerberos servers are registered with each other</li>
+</ul>
+<h2 id="Kerberos-Version-4-amp-5"><a href="#Kerberos-Version-4-amp-5" class="headerlink" title="Kerberos Version 4 &amp; 5"></a>Kerberos Version 4 &amp; 5</h2><ul>
+<li>4: most widely used in late 1980s</li>
+<li>5:<ul>
+<li>Introduced in 1993, updated in 2005</li>
+<li>AES is the default choice (DES in v4)</li>
+<li>Authentication forwarding<ul>
+<li>Enabling a client to access a server and have that server access another server on behalf of the client</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Performance-Issues"><a href="#Performance-Issues" class="headerlink" title="Performance Issues"></a>Performance Issues</h2><ul>
+<li>Very little performance impact in a large-scale environment<ul>
+<li>If the system is properly configured</li>
+<li>The amount of traffic needed for the granting ticket: modest</li>
+</ul>
+</li>
+<li>Does it require a dedicated platform?<ul>
+<li>Not wise to run it on the same machine as a resource-intensive app</li>
+<li>Its security is best assured by placing it on a <strong>separate, isolated machine</strong></li>
+</ul>
+</li>
+<li>How about using multiple realms to maintain performance?<ul>
+<li>Probably not</li>
+<li>The motivation of multiple realms is administrative</li>
+</ul>
+</li>
+</ul>
+<h1 id="X-509"><a href="#X-509" class="headerlink" title="X.509"></a>X.509</h1><h2 id="X-509-Public-key-Certificate"><a href="#X-509-Public-key-Certificate" class="headerlink" title="X.509: Public-key Certificate"></a>X.509: Public-key Certificate</h2><ul>
+<li>A certificate<ul>
+<li>Linking a public key with the identity of the key&#39;s owner</li>
+<li>The whole block signed by a trusted third party</li>
+</ul>
+</li>
+<li>Third party: certificate authority (CA)</li>
+<li>User can present his public key to the authority in a secure manner ad obtain a certificate</li>
+<li><img src="https://i.imgur.com/wTwLgCn.png" width="60%"></li>
+</ul>
+<h2 id="X-509-1"><a href="#X-509-1" class="headerlink" title="X.509"></a>X.509</h2><ul>
+<li>A certificate revocation list (CRL)<ul>
+<li>Signed by the issuer</li>
+<li>Containing a serial number of a certificate and the revocation date</li>
+</ul>
+</li>
+<li>When receiving a certificate, an app should determine whether it has been revoked<ul>
+<li>Check CRL</li>
+<li>Very few apps do this due to <strong>high overheads</strong></li>
+</ul>
+</li>
+<li>A lightweight protocol for the revocation in RFC 6960</li>
+<li>Hash signature<ul>
+<li>Using <strong>SHA-2, SHA-2</strong> now</li>
+</ul>
+</li>
+</ul>
+<h1 id="Public-Key-Infrastructure-PKI"><a href="#Public-Key-Infrastructure-PKI" class="headerlink" title="Public-Key Infrastructure (PKI)"></a>Public-Key Infrastructure (PKI)</h1><ul>
+<li>RFC 4949: the set of hardware, software, people, policies, and procedures needed to create, manage, store, distribute, and revoke digital certificates <strong>based on asymmetric cryptography</strong></li>
+<li><img src="https://i.imgur.com/dUmMB13.png" width="60%"></li>
+</ul>
+<h2 id="CA-in-Trust-Store"><a href="#CA-in-Trust-Store" class="headerlink" title="CA in Trust Store"></a>CA in Trust Store</h2><ul>
+<li>Either directly sign &quot;end-user&quot; certificates</li>
+<li>Or sign a small number of &quot;Intermediate-CAs&quot;</li>
+<li>All the hierarchy are very small, and all are equally trusted</li>
+</ul>
+<h2 id="Issues-with-the-PKI-Model"><a href="#Issues-with-the-PKI-Model" class="headerlink" title="Issues with the PKI Model"></a>Issues with the PKI Model</h2><ul>
+<li>Issue 1: reliance on the user to make an informed decision when there is a problem verifying a certificate</li>
+<li>Issue 2: assuming that all of the CAs in the &quot;trust store&quot; are equally trusted, equally well managed, and apply equivalent policies</li>
+<li>Issue 3: different implementations, in the various web browsers and OS, use different &quot;trust stores&quot;<ul>
+<li>Present different security views to users</li>
+</ul>
+</li>
+</ul>
+<h2 id="Improve-the-X-509-Certificates"><a href="#Improve-the-X-509-Certificates" class="headerlink" title="Improve the X.509 Certificates"></a>Improve the X.509 Certificates</h2><ul>
+<li>Recognize that many apps do not require formal linking of a public key to a verified identity</li>
+<li>Improvement 1: confirming continuity in time<ul>
+<li>Apps keep a record of certificate details for all sites they visit</li>
+</ul>
+</li>
+<li>Improvement 2: confirming continuity in space<ul>
+<li>Using a number of widely separated &quot;network notary(公證人) servers&quot; that keep records of certificates for all sites they view</li>
+</ul>
+</li>
+</ul>
 
-      
-        
-          
-          Ch23. Internet Authentication Applications
-Kerberos
-A software utility available both in the public domain and in commercially supported versions
-The 
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/06/24/20190624-ComputerSecurity-note-ch23/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch22/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
       <meta itemprop="name" content="Eugene Yang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="3ugeneYang.§ite">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/24/20190624-ComputerSecurity-note-ch22/" itemprop="url">[Intro. to Computer Security Course Note] Ch 22</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/24/20190624-ComputerSecurity-note-ch22/" class="post-title-link" itemprop="url">[Intro. to Computer Security Course Note] Ch 22</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-24T19:58:16+08:00">
-                2019-06-24
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <time title="Created: 2019-06-24 19:58:16" itemprop="dateCreated datePublished" datetime="2019-06-24T19:58:16+08:00">2019-06-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-18 09:25:53" itemprop="dateModified" datetime="2019-08-18T09:25:53+08:00">2019-08-18</time>
+              </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -498,132 +483,355 @@ The
     <div class="post-body" itemprop="articleBody">
 
       
-      
+          <h1 id="Ch22-Internet-Security-Protocols-and-Standards"><a href="#Ch22-Internet-Security-Protocols-and-Standards" class="headerlink" title="Ch22. Internet Security Protocols and Standards"></a>Ch22. Internet Security Protocols and Standards</h1><hr>
+<h1 id="Secure-E-mail"><a href="#Secure-E-mail" class="headerlink" title="Secure E-mail"></a>Secure E-mail</h1><table style="">
+    <tr>
+        <th style="font-weight: normal;">MIME</th>
+        <th style="font-weight: normal;">S/MIME</th>
+    </tr>
+    <tr>
+        <th style="font-weight: lighter;">Extension to the old RFC 822 specification of an Internet mail format<br>- RFC 822 defines a simple heading with To, From, Subject<br>- Assu,es ASCII text format</th>
+        <th style="font-weight: lighter;">Secure/Multipurpose Internet Mail Extension<br>Based on RSA<br>Provides the ability to sign and/or encrypt e-mail messages</th>
+    </tr>
+    <tr>
+        <th style="font-weight: lighter;"><img src="https://i.imgur.com/o9mUChP.png" width="60%"></th>
+        <th style="font-weight: lighter;"><img src="https://i.imgur.com/aCLJAAC.png" width="60%"></th>
+    </tr>
+</table>
 
-      
-        
-          
-          Ch22. Internet Security Protocols and Standards
-Secure E-mail
-    
-        MIME
-        S/MIME
-    
-    
-        Extension to the old RFC 822 specific
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/06/24/20190624-ComputerSecurity-note-ch22/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+<h2 id="Typical-S-MIME-Process-for-Creating-an-S-MIME-Message"><a href="#Typical-S-MIME-Process-for-Creating-an-S-MIME-Message" class="headerlink" title="Typical S/MIME Process for Creating an S/MIME Message"></a>Typical S/MIME Process for Creating an S/MIME Message</h2><p><img src="https://i.imgur.com/fB0mxph.png" width="60%"></p>
+<h2 id="S-MIME-Functions"><a href="#S-MIME-Functions" class="headerlink" title="S/MIME Functions"></a>S/MIME Functions</h2><ul>
+<li>Enveloped data<ul>
+<li>Encrypted content and associated keys</li>
+</ul>
+</li>
+<li>Signed data<ul>
+<li>Encoded message + signed digest</li>
+</ul>
+</li>
+<li>Clear-signed data<ul>
+<li>Cleartext message + signed digest</li>
+</ul>
+</li>
+<li>Signed and enveloped data<ul>
+<li>Nesting of signed and encrypted entities</li>
+</ul>
+</li>
+</ul>
+<h2 id="Enveloped-Data-Using-Public-key-Infrastructure"><a href="#Enveloped-Data-Using-Public-key-Infrastructure" class="headerlink" title="Enveloped Data Using Public-key Infrastructure"></a>Enveloped Data Using Public-key Infrastructure</h2><ul>
+<li>M -&gt; 3DES(M) -&gt; X + 3DES(M) -&gt; ELGamal(X + 3DES(M))<ul>
+<li>M: message</li>
+<li>X: a session encryption key</li>
+<li>User recipient&#39;s ELGamal&#39;s public key to encrypt X + 3DES(M)</li>
+<li>ELGamal is based no the Diffie-Hellman public-key exchange algorithm</li>
+</ul>
+</li>
+<li><strong>Radix-64</strong> is used to convert the ciphertext to ACSII format</li>
+<li>Basic tool that permits widespread use of S/MIME is the <strong>public-key certificate</strong></li>
+<li>S/MIMNE uses certificates that conform to the international standard X.509.3</li>
+</ul>
+<h2 id="Signed-and-Clear-signed-Data"><a href="#Signed-and-Clear-signed-Data" class="headerlink" title="Signed and Clear-signed Data"></a>Signed and Clear-signed Data</h2><ul>
+<li>Signed data -&gt; Base64(content + sig)</li>
+<li>Clear-signed data -&gt; content + Base674(sig)</li>
+<li>DSS(SHA-1(MEssage), DSS-private-key)</li>
+<li>RSA(SHA-1/MD5(Message), RSA-private-key)</li>
+<li><strong>Radix-64 or Base64</strong> mapping is used to map the signature and message into printable ASCII characters</li>
+</ul>
+<h1 id="DomainKeys-Identified-Mail-DKIM"><a href="#DomainKeys-Identified-Mail-DKIM" class="headerlink" title="DomainKeys Identified Mail (DKIM)"></a>DomainKeys Identified Mail (DKIM)</h1><ul>
+<li>A specification of cryptographically signing e-mail messages</li>
+<li>A proposed Internet standard</li>
+</ul>
+<h2 id="Internet-Mail-Architecture"><a href="#Internet-Mail-Architecture" class="headerlink" title="Internet Mail Architecture"></a>Internet Mail Architecture</h2><ul>
+<li>User world: MUA</li>
+<li>Transfer world: MHS<ul>
+<li>Composed of MTAs</li>
+</ul>
+</li>
+<li><img src="https://i.imgur.com/QGcBAS8.png" width="60%"></li>
+</ul>
+<h2 id="Why-DKIM"><a href="#Why-DKIM" class="headerlink" title="Why DKIM"></a>Why DKIM</h2><ul>
+<li>An email authentication technique that is transparent to the end user</li>
+<li>Reasons<ul>
+<li>S/MIME depends on both the sending and receiving users employing S/MIME<ul>
+<li>But, the bulk of incoming mail does not use S/MIME</li>
+<li><strong>S/MIME signs only the message content</strong><ul>
+<li>Header information concerning origin can be compromised</li>
+</ul>
+</li>
+<li>Applied to all mail from cooperating domains</li>
+<li><strong>Preventing forgers from masquerading as good senders</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Simple-Example-of-DKIM-Deployment"><a href="#Simple-Example-of-DKIM-Deployment" class="headerlink" title="Simple Example of DKIM Deployment"></a>Simple Example of DKIM Deployment</h2><ul>
+<li>DNS = domain name system</li>
+<li>MDA = mail delivery agent</li>
+<li>MSA = mail submission agent</li>
+<li>MTA = message transfer agent</li>
+<li>MUA = message user agent
+<img src="https://i.imgur.com/JX8yM8c.png" width="60%"></li>
+</ul>
+<h1 id="Secure-Sockets-Layer-SSL-and-Transport-Layer-Security-TLS"><a href="#Secure-Sockets-Layer-SSL-and-Transport-Layer-Security-TLS" class="headerlink" title="Secure Sockets Layer (SSL) and Transport Layer Security (TLS)"></a>Secure Sockets Layer (SSL) and Transport Layer Security (TLS)</h1><ul>
+<li>Secure Socket Layer (SSL)<ul>
+<li>One of the most widely used security services</li>
+</ul>
+</li>
+<li>Transport Layer Security (TLS)<ul>
+<li>Becoming Internet standard RFC4346</li>
+<li>General-purpose service: as a set of protocols that rely on TCP</li>
+<li>Two implementation choices<ul>
+<li>As part of the underlying protocol suite: transparent to apps</li>
+<li>Be embedded in specific packages: e.g., most browsers come equipped with SSL</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="SSL-TLS-Protocol-Stack"><a href="#SSL-TLS-Protocol-Stack" class="headerlink" title="SSL/TLS Protocol Stack"></a>SSL/TLS Protocol Stack</h2><ul>
+<li><img src="https://i.imgur.com/cV2D1ER.png" width="60%"></li>
+</ul>
+<h2 id="TLS-Concepts"><a href="#TLS-Concepts" class="headerlink" title="TLS Concepts"></a>TLS Concepts</h2><ul>
+<li>TLS Connection<ul>
+<li>A transport (in the OSI layering model definition) that provides a suitable type of service</li>
+<li>Peer-to-peer relationships</li>
+<li>Transient (暫時的)</li>
+<li>Every connection is associated with one session</li>
+</ul>
+</li>
+<li>TLS Session<ul>
+<li>An association between a client and a server</li>
+<li>Created by the <strong>handshake protocol</strong></li>
+<li><strong>Define a set of cryptographic security parameters</strong></li>
+<li>Used to avoid the expensive negotiation of new security parameters for each connection</li>
+</ul>
+</li>
+</ul>
+<h2 id="TLS-Record-Protocol-Operation"><a href="#TLS-Record-Protocol-Operation" class="headerlink" title="TLS Record Protocol Operation"></a>TLS Record Protocol Operation</h2><ul>
+<li><img src="https://i.imgur.com/tsZPibK.png" width="60%"></li>
+</ul>
+<h2 id="Handshake-Protocol"><a href="#Handshake-Protocol" class="headerlink" title="Handshake Protocol"></a>Handshake Protocol</h2><ul>
+<li>TLS 最複雜的部份</li>
+<li><strong>Is used before any application data are transmitted</strong></li>
+<li>Authenticate each other -&gt; Negotiate encryption and MAC algorithms -&gt; Negotiate cyrptographic keys to be used</li>
+<li>Exchanges has four phases</li>
+</ul>
+<h2 id="Handshake-Protocol-Action-1-phase-1-amp-2"><a href="#Handshake-Protocol-Action-1-phase-1-amp-2" class="headerlink" title="Handshake Protocol Action 1 (phase 1 &amp; 2)"></a>Handshake Protocol Action 1 (phase 1 &amp; 2)</h2><p><img src="https://i.imgur.com/zgyfypi.png" width="60%"></p>
+<h2 id="Handshake-Protocol-Action-2-phase-3-amp-4"><a href="#Handshake-Protocol-Action-2-phase-3-amp-4" class="headerlink" title="Handshake Protocol Action 2 (phase 3 &amp; 4)"></a>Handshake Protocol Action 2 (phase 3 &amp; 4)</h2><p><img src="https://i.imgur.com/Nfv18KU.png" width="60%"></p>
+<h2 id="ClientHello-RFC"><a href="#ClientHello-RFC" class="headerlink" title="ClientHello (RFC)"></a>ClientHello (RFC)</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> &#123;</span></div><div class="line">   ProtocolVersion client_version;</div><div class="line">   Random random;</div><div class="line">   SessionID session_id;</div><div class="line">   CipherSuite cipher_suites &lt;<span class="number">2.</span><span class="number">.2</span>^<span class="number">16</span><span class="number">-2</span>&gt;;</div><div class="line">   CompressionMethod compression_methods &lt;<span class="number">1.</span><span class="number">.2</span>^<span class="number">8</span><span class="number">-1</span>&gt;;</div><div class="line">&#125; ClientHello;</div></pre></td></tr></table></figure>
+<h2 id="ServerHello-RFC"><a href="#ServerHello-RFC" class="headerlink" title="ServerHello (RFC)"></a>ServerHello (RFC)</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> &#123;</span></div><div class="line">   ProtocolVersion server_version;</div><div class="line">   Random random;</div><div class="line">   SessionID session_id;</div><div class="line">   CipherSuite cipher_suite;</div><div class="line">   CompressionMethod compression_method;</div><div class="line">&#125; ServerHello;</div></pre></td></tr></table></figure>
+<h2 id="Four-TLS-specific-protocols"><a href="#Four-TLS-specific-protocols" class="headerlink" title="Four TLS specific protocols"></a>Four TLS specific protocols</h2><ul>
+<li>Change Cipher Spec Protocol<ul>
+<li>One of four TLS specific protocols that use the TLS Record Protocol</li>
+<li>Simplest</li>
+<li>Consists of a single message which consists of a single byte with the value 1</li>
+<li>Sole purpose of this message is to <strong>cause pending state to be copied into the current state</strong></li>
+<li>Hence updating the cipher suite in use</li>
+</ul>
+</li>
+<li>Alert Protocol<ul>
+<li>Two bytes<ul>
+<li>1^st^ byte: warning (1), fatal (2)<ul>
+<li>For fatal, TLS implementation <strong>terminates</strong> the TLS connection</li>
+<li>For other TLS connections using the same TSL session, they may continue, <strong>but no new TLS connections may be established</strong></li>
+</ul>
+</li>
+<li>2^nd^: specific alert code (RFC5246-appendix)<ul>
+<li>close_notify(0), unexpected_message(10), etc</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Heartbeat Protocol<ul>
+<li>A periodic signal generated to indicate normal operation or to synchronize other parts of a system</li>
+<li>Typically used to <strong>monitor the availability of a protocol entity</strong></li>
+<li>Runs on top of the TLS Record Protocol</li>
+<li>Established during <strong>phase 1</strong> of the handshake protocol</li>
+<li>Each peer indicated whether it supports heartbeats</li>
+<li>Serves two purposes:</li>
+<li><strong>Assures the sender that the recipient is still alive</strong></li>
+<li>Generates activity across the connection <strong>during idle periods</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="SSL-TLS-Attacks"><a href="#SSL-TLS-Attacks" class="headerlink" title="SSL/TLS Attacks"></a>SSL/TLS Attacks</h2><p><img src="https://i.imgur.com/fHCcQVE.png" width="60%"></p>
+<h2 id="The-Heartbleed-Exploit-Source-BAE-Systems"><a href="#The-Heartbleed-Exploit-Source-BAE-Systems" class="headerlink" title="The Heartbleed Exploit (Source: BAE Systems)"></a>The Heartbleed Exploit (Source: BAE Systems)</h2><p><img src="https://i.imgur.com/SAQRWwv.png" width="60%"></p>
+<h1 id="HTTPS-HTTP-over-SSL-TLS"><a href="#HTTPS-HTTP-over-SSL-TLS" class="headerlink" title="HTTPS (HTTP over SSL/TLS)"></a>HTTPS (HTTP over SSL/TLS)</h1><ul>
+<li>Secure communication between a Web browser and a Web server</li>
+<li>Build into all modern Web browsers<ul>
+<li>Search engines do not support HTTPS</li>
+</ul>
+</li>
+<li>Connection initiation and closure<ul>
+<li>HTTP client act as TLS client</li>
+<li>TLS handshake -&gt; HTTP request</li>
+<li>Three levels: HTTP, TLS session, TCP</li>
+</ul>
+</li>
+</ul>
+<h2 id="IPSec-v-s-SSL-TLS"><a href="#IPSec-v-s-SSL-TLS" class="headerlink" title="IPSec v.s. SSL/TLS"></a>IPSec v.s. SSL/TLS</h2><p><img src="https://i.imgur.com/NLQtElg.png" width="60%"></p>
+<h2 id="Applications-of-IPSec"><a href="#Applications-of-IPSec" class="headerlink" title="Applications of IPSec"></a>Applications of IPSec</h2><ul>
+<li>Secure branch office connectivity over the Internet</li>
+<li>Secure remote access over the Internet</li>
+<li>Establishing extranet and internet connectivity with partners</li>
+<li>Enhancing electronic commerce security</li>
+</ul>
+<h2 id="Benefits-of-IPSec"><a href="#Benefits-of-IPSec" class="headerlink" title="Benefits of IPSec"></a>Benefits of IPSec</h2><ul>
+<li>Strong security</li>
+<li>Resistant to bypass at a firewall</li>
+<li>Transparent to apps<ul>
+<li>No need to change software</li>
+</ul>
+</li>
+<li>Transparent  to end user<ul>
+<li>No need to train users on security mechanisms</li>
+</ul>
+</li>
+<li>Routing apps: prevent attackers from disrupting communications or diverting some traffic<ul>
+<li>A router advertisement from an authorized router</li>
+<li>A neighbor advertisement from an authorized router</li>
+<li>A redirect message from the router to which the initial packet was sent</li>
+<li>A routing update is nor forged</li>
+</ul>
+</li>
+<li>The Scope of IPSec<ul>
+<li>Two main functions<ul>
+<li>Encapsulating Security Payload (ESP): a combined authentication/encryption function</li>
+<li>A key exchange function</li>
+</ul>
+</li>
+<li>VPN: both authentication and encryption are generally desired</li>
+<li>Authentication Header (AH): authentication-only function (deprecated)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Security-Associations"><a href="#Security-Associations" class="headerlink" title="Security Associations"></a>Security Associations</h2><ul>
+<li>A key concept of IPSec<ul>
+<li>One-way relationship between a sender and a receiver</li>
+<li>Two-way secure exchange: two SAs are required</li>
+</ul>
+</li>
+<li>Uniquely identified by three parameters<ul>
+<li>Security parameter index (SPI)</li>
+<li>IP destination address</li>
+<li>Protocol identifier: AH or ESP</li>
+</ul>
+</li>
+<li>Characterized by the following parameters<ul>
+<li>Sequence number counter: 32-bit</li>
+<li>Sequence counter overflow: A flag -&gt; whether overflow -&gt; an auditable event</li>
+<li>Antireplay window: defining a sliding window</li>
+<li>AH information<ul>
+<li>Algorithm, keys, key lifetimes</li>
+</ul>
+</li>
+<li>ESP information<ul>
+<li>Algorithm, keys, init values, key lifetimes</li>
+</ul>
+</li>
+<li>Lifetime of this security association</li>
+<li>IPSec protocol mode: tunnel or transport</li>
+<li>Path MTU</li>
+</ul>
+</li>
+</ul>
+<h2 id="Two-IPSec-Operation-Modes"><a href="#Two-IPSec-Operation-Modes" class="headerlink" title="Two IPSec Operation Modes"></a>Two IPSec Operation Modes</h2><ul>
+<li>Transport and tunnel modes</li>
+<li><img src="https://i.imgur.com/dPmSPN6.png" width="60%"></li>
+<li><table style="">
+  <tr>
+      <th style="font-weight: normal;">Transport Mode</th>
+      <th style="font-weight: normal;">Tunnel Mode</th>
+  </tr>
+  <tr>
+      <th style="font-weight: lighter;">Provides protection to the payload of an IP packet<br>Typically used for end-to-end communication <strong>between two hosts</strong><br>ESP protects the <strong>IP payload</strong> but not the IP header</th>
+      <th style="font-weight: lighter;">Provides protection to the <strong>entire IP packet</strong><br>Entire original packet travels through a tunnel from one point to another<br>Used when one or both ends of a security association are a security gateway<br>Hosts on networks behind firewalls may engage in secure communications without implementing IPSec</th>
+  </tr>
+</table>
+
+</li>
+</ul>
+<h2 id="Encapsulating-Security-Payload"><a href="#Encapsulating-Security-Payload" class="headerlink" title="Encapsulating Security Payload"></a>Encapsulating Security Payload</h2><ul>
+<li>Providing authentication and confidentiality services</li>
+<li><img src="https://i.imgur.com/xzPy2dV.png" width="60%"></li>
+</ul>
+<h2 id="IPSec-AH-ESP"><a href="#IPSec-AH-ESP" class="headerlink" title="IPSec: AH + ESP"></a>IPSec: AH + ESP</h2><ul>
+<li>IP AH only<ul>
+<li><img src="https://i.imgur.com/gih8yFX.png" width="60%"></li>
+</ul>
+</li>
+<li>IP AH + ESP<ul>
+<li>Transport mode<ul>
+<li><img src="https://i.imgur.com/KJw67Ky.png" width="60%"></li>
+</ul>
+</li>
+<li>Tunnel mode<ul>
+<li><img src="https://i.imgur.com/xmR09TT.png" width="60%"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="IPv4-and-IPv6-Security"><a href="#IPv4-and-IPv6-Security" class="headerlink" title="IPv4 and IPv6 Security"></a>IPv4 and IPv6 Security</h1>
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch12/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
       <meta itemprop="name" content="Eugene Yang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="3ugeneYang.§ite">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/24/20190624-ComputerSecurity-note-ch12/" itemprop="url">[Intro. to Computer Security Course Note] Ch 12</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/24/20190624-ComputerSecurity-note-ch12/" class="post-title-link" itemprop="url">[Intro. to Computer Security Course Note] Ch 12</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-24T19:57:00+08:00">
-                2019-06-24
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <time title="Created: 2019-06-24 19:57:00" itemprop="dateCreated datePublished" datetime="2019-06-24T19:57:00+08:00">2019-06-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-18 09:25:53" itemprop="dateModified" datetime="2019-08-18T09:25:53+08:00">2019-08-18</time>
+              </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -631,128 +839,152 @@ Secure E-mail
     <div class="post-body" itemprop="articleBody">
 
       
-      
+          <h1 id="Ch12-Operating-System-Security"><a href="#Ch12-Operating-System-Security" class="headerlink" title="Ch12. Operating System Security"></a>Ch12. Operating System Security</h1><hr>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><h2 id="System-Security-Planning"><a href="#System-Security-Planning" class="headerlink" title="System Security Planning"></a>System Security Planning</h2><ul>
+<li>The first step in deploying a new system is planning<ul>
+<li>A wide security assessment of the organization</li>
+<li>To maximize security while minimizing costs</li>
+<li>To determine security requirements for the system, apps, data, and users</li>
+<li>To identify appropriate personnel and training to install and manage the system</li>
+</ul>
+</li>
+</ul>
+<h1 id="Operating-System-Hardening"><a href="#Operating-System-Hardening" class="headerlink" title="Operating System Hardening"></a>Operating System Hardening</h1><ul>
+<li>First thing to do: secure the base OS</li>
+<li>Basic steps<ul>
+<li>Install and patch the OS</li>
+<li>Harden and configure the OS to adequately address the identified security needs of the system by<ul>
+<li>Removing 不必要的東西</li>
+<li>Configuring 權限</li>
+<li>Configuring 資源</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Application-Security"><a href="#Application-Security" class="headerlink" title="Application Security"></a>Application Security</h1><h1 id="Security-Maintenance"><a href="#Security-Maintenance" class="headerlink" title="Security Maintenance"></a>Security Maintenance</h1><ul>
+<li>NIST SP 800-123 suggests to include<ul>
+<li>Monitoring and analyzing logging information<ul>
+<li>Can only inform you about bad things that <strong>have already happened</strong></li>
+</ul>
+</li>
+<li>Performing regular backups</li>
+<li>Recovering from security compromises</li>
+<li>Regularly testing system security</li>
+</ul>
+</li>
+</ul>
+<h1 id="Linux-Unix-Security"><a href="#Linux-Unix-Security" class="headerlink" title="Linux/Unix Security"></a>Linux/Unix Security</h1><ul>
+<li>Patch management<ul>
+<li>Keeping security patches up to date is a widely recognized</li>
+</ul>
+</li>
+<li>App security using a chroot jail<ul>
+<li>Some network accessible services: do not require access to the full file system, but rather only need a limited set of data files and directories<ul>
+<li>e.g., FTP</li>
+</ul>
+</li>
+<li>Running such services in a chroot jail: restricting the server&#39;s view of the file system to just a specified portion</li>
+<li>Drawback: added <strong>complexity</strong></li>
+</ul>
+</li>
+</ul>
+<h1 id="Windows-Security"><a href="#Windows-Security" class="headerlink" title="Windows Security"></a>Windows Security</h1><ul>
+<li>Patch management<ul>
+<li>記得更新</li>
+</ul>
+</li>
+</ul>
+<h1 id="Virtualization-Security"><a href="#Virtualization-Security" class="headerlink" title="Virtualization Security"></a>Virtualization Security</h1><ul>
+<li>Benefits<ul>
+<li>比較有效率</li>
+</ul>
+</li>
+<li>However, it raises additional security concerns</li>
+</ul>
+<h2 id="Hypervisor"><a href="#Hypervisor" class="headerlink" title="Hypervisor"></a>Hypervisor</h2><ul>
+<li>The software that sits between the hardware and the VMs<ul>
+<li>Acting as a resource broker</li>
+</ul>
+</li>
+</ul>
+<h2 id="Two-Types-of-Hypervisor"><a href="#Two-Types-of-Hypervisor" class="headerlink" title="Two Types of Hypervisor"></a>Two Types of Hypervisor</h2><ul>
+<li><img src="https://i.imgur.com/a5cfdKu.png" width="60%"></li>
+<li>Key differences<ul>
+<li>Typically, type 1 performs better, <strong>more secure</strong>, <strong>用在 server 上</strong></li>
+<li>Type 2: enabling virtualization without needing to dedicate a server to that function, <strong>用在 client 上</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="New-Type-Container-APp-Virtualization"><a href="#New-Type-Container-APp-Virtualization" class="headerlink" title="New Type: Container/APp Virtualization"></a>New Type: Container/APp Virtualization</h2><ul>
+<li><img src="https://i.imgur.com/tCGCtqx.png" width="60%"></li>
+<li>Reducing overhead: no need of resources to run a separate OS for each app</li>
+<li>But, 安全風險較高</li>
+</ul>
+<h2 id="Securing-Virtualization-Systems"><a href="#Securing-Virtualization-Systems" class="headerlink" title="Securing Virtualization Systems"></a>Securing Virtualization Systems</h2><ul>
+<li>Hypervisor security<ul>
+<li>Secured using a process similar to securing an OS</li>
+<li>Installed in an <strong>isolated</strong> environment</li>
+</ul>
+</li>
+</ul>
 
-      
-        
-          
-          Ch12. Operating System Security
-IntroductionSystem Security Planning
-The first step in deploying a new system is planning
-A wide security assessment o
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/06/24/20190624-ComputerSecurity-note-ch12/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch24/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
       <meta itemprop="name" content="Eugene Yang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="3ugeneYang.§ite">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/24/20190624-ComputerSecurity-note-ch24/" itemprop="url">[Intro. to Computer Security Course Note] Ch 24</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/24/20190624-ComputerSecurity-note-ch24/" class="post-title-link" itemprop="url">[Intro. to Computer Security Course Note] Ch 24</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-24T19:51:32+08:00">
-                2019-06-24
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <time title="Created: 2019-06-24 19:51:32" itemprop="dateCreated datePublished" datetime="2019-06-24T19:51:32+08:00">2019-06-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-18 09:25:53" itemprop="dateModified" datetime="2019-08-18T09:25:53+08:00">2019-08-18</time>
+              </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -760,129 +992,409 @@ A wide security assessment o
     <div class="post-body" itemprop="articleBody">
 
       
-      
+          <h1 id="Ch24-Wireless-Network-Security"><a href="#Ch24-Wireless-Network-Security" class="headerlink" title="Ch24. Wireless Network Security"></a>Ch24. Wireless Network Security</h1><hr>
+<h1 id="Wireless-Security"><a href="#Wireless-Security" class="headerlink" title="Wireless Security"></a>Wireless Security</h1><ul>
+<li>Key factors: contributing to higher security risks (v.s. wired networks)<ul>
+<li>Channel<ul>
+<li>Vulnerabilities in communication protocols</li>
+</ul>
+</li>
+<li>Mobility</li>
+<li>Resources<ul>
+<li>Smartphones/tablets: sophisticated OS but limited memory and processing resources</li>
+</ul>
+</li>
+<li>Accessibility<ul>
+<li>Sensors/robots: may be left unattended in remote and/or hostile locations</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Wireless-Network-Threats"><a href="#Wireless-Network-Threats" class="headerlink" title="Wireless Network Threats"></a>Wireless Network Threats</h2><ul>
+<li><img src="https://i.imgur.com/aQb2KPb.png" width="60%"></li>
+</ul>
+<h2 id="Wireless-Security-Measures"><a href="#Wireless-Security-Measures" class="headerlink" title="Wireless Security Measures"></a>Wireless Security Measures</h2><ul>
+<li>Securing wireless transmissions<ul>
+<li>Principal threats: eavesdropping, altering, inserting, messages, disruption</li>
+<li>eaves (屋簷)</li>
+</ul>
+</li>
+<li>Countermeasures for eavesdropping<ul>
+<li>Signal-hiding techniques</li>
+<li>Encryption</li>
+</ul>
+</li>
+<li>For altering and inserting<ul>
+<li>Encryption and authentication protocols</li>
+</ul>
+</li>
+<li>Securing wireless networks<ul>
+<li>Wireless APs: unauthorized access to the network</li>
+<li>Principal approach: IEEE 802.1X (port-based network access control)<ul>
+<li>Prevent rogue APs and other authorized devices</li>
+</ul>
+</li>
+<li><img src="https://i.imgur.com/snYWqt6.png" width="60%"></li>
+</ul>
+</li>
+</ul>
+<h2 id="Wireless-Network-Security-Techniques"><a href="#Wireless-Network-Security-Techniques" class="headerlink" title="Wireless Network Security Techniques"></a>Wireless Network Security Techniques</h2><p><img src="https://i.imgur.com/M4Dkdlb.png" width="60%"></p>
+<h1 id="Mobile-Device-Security"><a href="#Mobile-Device-Security" class="headerlink" title="Mobile Device Security"></a>Mobile Device Security</h1><ul>
+<li>An organization&#39;s networks must accommodate<ul>
+<li>Growing use of new devices</li>
+<li><strong>Cloud-based apps</strong></li>
+<li>De-perimeterization<ul>
+<li>A multitude of network perimeters around devices, apps, user, and data</li>
+</ul>
+</li>
+<li>External business requirements</li>
+</ul>
+</li>
+</ul>
+<h2 id="Security-Threats"><a href="#Security-Threats" class="headerlink" title="Security Threats"></a>Security Threats</h2><ul>
+<li><img src="https://i.imgur.com/10rJp5U.png" width="60%"></li>
+</ul>
+<h2 id="Mobile-Device-Security-Strategy"><a href="#Mobile-Device-Security-Strategy" class="headerlink" title="Mobile Device Security Strategy"></a>Mobile Device Security Strategy</h2><ul>
+<li>Device security</li>
+<li>Traffic security<ul>
+<li>Based on encryption and authentication</li>
+<li>via VPN</li>
+</ul>
+</li>
+<li>Barrier security<ul>
+<li>Firewall</li>
+</ul>
+</li>
+<li><img src="https://i.imgur.com/veezYlX.png" width="60%"></li>
+</ul>
+<h1 id="IEEE-802-11-Wireless-LAN-Overview"><a href="#IEEE-802-11-Wireless-LAN-Overview" class="headerlink" title="IEEE 802.11 Wireless LAN Overview"></a>IEEE 802.11 Wireless LAN Overview</h1><h2 id="Terminology-amp-Services"><a href="#Terminology-amp-Services" class="headerlink" title="Terminology &amp; Services"></a>Terminology &amp; Services</h2><ul>
+<li>Access point (AP)<ul>
+<li>Any entity that has station functionality and provides access to the distribution system via the wireless medium for associated stations</li>
+</ul>
+</li>
+<li>Basic service set (BSS)<ul>
+<li>A set of stations controlled by a single coordination function</li>
+</ul>
+</li>
+<li>Coordination function<ul>
+<li>The logical function that determines when a station operating within a BSS is permitted to transmit and may be able to receive PDUs</li>
+</ul>
+</li>
+<li>Distribution system (DS)<ul>
+<li>A system used to interconnect a set of BSSs and integrated LANs to create an ESS</li>
+</ul>
+</li>
+<li>Extended service set (ESS)<ul>
+<li>A set of one or more interconnected BSSs and integrated LANs that appear as a single BSS to the LLC layer at any station associated with one of these BSS</li>
+<li><img src="https://i.imgur.com/pZpfprh.png" width="60%"></li>
+</ul>
+</li>
+<li>MAC protocol data unit (MPDU)<ul>
+<li><strong>The unit of data</strong> exchanged between two peer MAC entities using the services of the physical layer</li>
+</ul>
+</li>
+<li>MAC service data unit (MSDU)<ul>
+<li><strong>Information</strong> that is delivered as a unit between MAC users</li>
+</ul>
+</li>
+<li>Station<ul>
+<li>Any device that contains an IEEE 802.11 conferment MAC and physical layer</li>
+</ul>
+</li>
+<li><img src="https://i.imgur.com/iF0ugu7.png" width="60%"></li>
+</ul>
+<h2 id="Distribution-of-Messages-within-a-DS"><a href="#Distribution-of-Messages-within-a-DS" class="headerlink" title="Distribution of Messages within a DS"></a>Distribution of Messages within a DS</h2><ul>
+<li>Two services involved<ul>
+<li>Distribution: <strong>exchange</strong> MPDUs between two BSS</li>
+<li>Integration: data <strong>transfer</strong> between a Wi-Fi station and a LAN station on an integrated IEEE 802x LAN</li>
+</ul>
+</li>
+</ul>
+<h2 id="Association-Related-Services"><a href="#Association-Related-Services" class="headerlink" title="Association-Related Services"></a>Association-Related Services</h2><ul>
+<li>Transition types, based on mobility:<ul>
+<li>No transition</li>
+<li>BSS transition<ul>
+<li><img src="https://i.imgur.com/sMcBV7H.jpg" alt=""></li>
+</ul>
+</li>
+<li>ESS transition<ul>
+<li><img src="https://i.imgur.com/1bZ6slq.jpg" alt=""></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Distribution-Service"><a href="#Distribution-Service" class="headerlink" title="Distribution Service"></a>Distribution Service</h2><ul>
+<li>Association<ul>
+<li>Establishes an initial association between a station and an AP</li>
+</ul>
+</li>
+<li>Reassociation<ul>
+<li>Enables an established association to be transferred from one AP to another</li>
+</ul>
+</li>
+<li>Disassociation</li>
+</ul>
+<h2 id="Wireless-Fidelity-Wi-Fi-Alliance"><a href="#Wireless-Fidelity-Wi-Fi-Alliance" class="headerlink" title="Wireless Fidelity (Wi-Fi) Alliance"></a>Wireless Fidelity (Wi-Fi) Alliance</h2><ul>
+<li>802.11b<ul>
+<li>First 802.11 standard to gain broad industry acceptance</li>
+</ul>
+</li>
+<li>Wireless Ethernet Compatibility Alliance (WECA)<ul>
+<li>Industry consortium(合夥) formed in 1999: interoperation between vendors</li>
+</ul>
+</li>
+<li>Term used for certified 802.11b products: Wi-Fi</li>
+<li>Wi-Fi Protected Access (WPA)<ul>
+<li>Certification procedures for IEEE 802.11 security standards</li>
+<li>Most recent version: WPA2</li>
+</ul>
+</li>
+</ul>
+<h2 id="IEEE-802-11-Protocol-Stack"><a href="#IEEE-802-11-Protocol-Stack" class="headerlink" title="IEEE 802.11 Protocol Stack"></a>IEEE 802.11 Protocol Stack</h2><p><img src="https://i.imgur.com/W99PYik.png" width="60%"></p>
+<h2 id="General-IEEE-802-MPDU-Format"><a href="#General-IEEE-802-MPDU-Format" class="headerlink" title="General IEEE 802 MPDU Format"></a>General IEEE 802 MPDU Format</h2><p><img src="https://i.imgur.com/J7C1ZFj.png" width="60%"></p>
+<h1 id="IEEE-802-11i-Wireless-LAN-Overview"><a href="#IEEE-802-11i-Wireless-LAN-Overview" class="headerlink" title="IEEE 802.11i Wireless LAN Overview"></a>IEEE 802.11i Wireless LAN Overview</h1><ul>
+<li>Wired Equivalent Privacy (WEP) algorithm<ul>
+<li>802.11 privacy</li>
+</ul>
+</li>
+<li>Wi-Fi Protected Access (WPA)<ul>
+<li>Set of security mechanisms: eliminates most 802.11 security issues</li>
+<li>Based in the current state of the 802.11i standard</li>
+</ul>
+</li>
+<li>Robust Security Network (RSN)<ul>
+<li><img src="https://i.imgur.com/CO4gSdy.png" width="60%"></li>
+<li><img src="https://i.imgur.com/grye5ly.png" width="60%"></li>
+</ul>
+</li>
+<li>Wi-Fi Alliance certifies vendors in compliance with the full 802.11i (WPA2)</li>
+</ul>
+<h2 id="Five-Phases-of-Operation-for-an-RSN"><a href="#Five-Phases-of-Operation-for-an-RSN" class="headerlink" title="Five Phases of Operation for an RSN"></a>Five Phases of Operation for an RSN</h2><ul>
+<li><img src="https://i.imgur.com/DC85X70.png" width="60%"></li>
+<li>Phase 1: Discovery Phase<ul>
+<li>Security capabilities<ul>
+<li>Confidentiality and MPDU integrity protocols</li>
+<li>Authentication method</li>
+<li>Cryptography key management approach</li>
+</ul>
+</li>
+<li>Cipher suite (Confidentiality/Integrity)<ul>
+<li>WEP, TKIP, CCMP</li>
+</ul>
+</li>
+<li>AKM: Authentication and Key Management<ul>
+<li>IEEE 802.11x, pre-shared key</li>
+</ul>
+</li>
+<li><img src="https://i.imgur.com/eMsu6xU.png" width="60%"></li>
+<li>802.1X Access Control<ul>
+<li><img src="https://i.imgur.com/3DRfr6p.png" width="60%"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Phase 2: Authentication Phase<ul>
+<li>IEEE 802.11x AC<ul>
+<li>802.1X Control channel is unblocked</li>
+<li>802.11 data channel is blocked</li>
+</ul>
+</li>
+<li>Three phases<ul>
+<li>Connect to AS</li>
+<li>EAP exchange</li>
+<li>Secure key delivery</li>
+</ul>
+</li>
+<li><img src="https://i.imgur.com/DGzgnYn.png" width="60%"></li>
+<li>EAP Authentication Protocol<ul>
+<li>Initiated by the server (authenticator)</li>
+<li>Authentication is mutual between the client and authentication server</li>
+<li><img src="https://i.imgur.com/a72D2Os.png" width="60%"></li>
+</ul>
+</li>
+<li>Popular EAP Methods<ul>
+<li>Cisco LEAP (Lightweight EAP)<ul>
+<li><strong>complex passwords are required</strong></li>
+</ul>
+</li>
+<li>EAP-FAST (EAP-Flexible Authentication via Secure Tunneling)<ul>
+<li><strong>No need of strong password or any certificate</strong></li>
+<li>Using a PAC (Protected Access Credential) to establish a TLS tunnel</li>
+</ul>
+</li>
+<li>EAP-TLS<ul>
+<li>Using PKI: both client and AS need a certificate (X509 certificates)</li>
+<li><strong>One of the most secure EAP standards available</strong></li>
+</ul>
+</li>
+<li>PEAP (Protected EAP)<ul>
+<li>Encapsulating EAP within a potentially <strong>encrypted and authenticated TLS tunnel</strong></li>
+<li>Only the server authentication is performed using PKI certificate</li>
+<li>Client is authenticated using either <strong>EAP-GTC</strong> or <strong>EAP-MSCHAPv2</strong> within the tunnel<ul>
+<li>EAP-GTC (Generic Token Card)</li>
+<li>EAP-MSCHAPv2 (Microsoft&#39;s Challenge Handshake Authentication Protocol)</li>
+</ul>
+</li>
+<li><img src="https://i.imgur.com/iFSalIT.png" width="60%"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Phase 3: Key Management Phase<ul>
+<li>Pairwise keys: for communication between a STA and an AP<ul>
+<li>Pre-shared key (PSK)</li>
+<li>Master session key (MSK)</li>
+<li>Pairwise master key (PMK)<ul>
+<li>PSK or derived from MSK</li>
+</ul>
+</li>
+<li>Pairwise transient key (PTK)</li>
+<li>Hierarchy<ul>
+<li><img src="https://i.imgur.com/ZQP8XmI.png" width="60%"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Group keys: for multicast communication<ul>
+<li>Group master key (GMK)</li>
+<li>Group temporal key (GTK)</li>
+<li>Hierarchy<ul>
+<li><img src="https://i.imgur.com/kgkCdCe.png" width="60%"></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>IEEE 802.11i Phases of Operation<ul>
+<li>4-way Handshake<ul>
+<li><img src="https://i.imgur.com/2Jdydjt.png" width="60%"></li>
+</ul>
+</li>
+<li>Group Key Handshake<ul>
+<li><img src="https://i.imgur.com/RvAPxOY.png" width="60%"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Phase 4: Protected Data Transfer Phase<ul>
+<li>Temporal Key Integrity Protocol (TKIP)<ul>
+<li>Only software changes are required to old WEP</li>
+<li>Message integrity<ul>
+<li>Message Integrity Code (MIC)</li>
+<li>64-bit: source/destination MAC address + data filed + key material</li>
+</ul>
+</li>
+<li>Data confidentiality<ul>
+<li>Encrypting MPDU + MIC using RC4</li>
+</ul>
+</li>
+<li>256-bit TK<ul>
+<li>Two 64-bit keys for MIC: one key for each direction</li>
+<li>128 bits: generate the RC4 key for encryption</li>
+<li>TKIP sequence counter (TSC): monotonically increasing<ul>
+<li>Included with each MPCU and protected by MIC -&gt; <strong>against replay attack</strong></li>
+<li>Combined with session TK -&gt; dynamic encryption key</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Counter Mode-CBC MAC Protocol (CCMP)<ul>
+<li>需要硬體支援</li>
+<li>Message integrity<ul>
+<li>Cipher block chaining message authentication code</li>
+</ul>
+</li>
+<li>Data confidentiality<ul>
+<li>CTR block cipher mode of operation with <strong>AES</strong></li>
+</ul>
+</li>
+<li>Same 128-bit AES key for both</li>
+<li>A 48-bit packet number: <strong>a nonce(暫時) to prevent replay attack</strong></li>
+</ul>
+</li>
+<li>IEEE 802.11i Pseudorandom Function (PRF)<ul>
+<li>A pseudorandom bit stream: HMAC-SHA-1<ul>
+<li>A message and a key (at least 160 bits) -&gt; 160-bit hash value</li>
+<li>SHA-1 property: change of a single bit -&gt; a new hash value with no apparent connect</li>
+<li><img src="https://i.imgur.com/k4Mkwzd.png" width="60%"></li>
+<li>PTK:<ul>
+<li>K = PMK</li>
+<li>A = &quot;Pairwise key expansion&quot;</li>
+<li>B = Concatenation of two MAC address and two nonces</li>
+<li>Len = 384 bits</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
-      
-        
-          
-          Ch24. Wireless Network Security
-Wireless Security
-Key factors: contributing to higher security risks (v.s. wired networks)
-Channel
-Vulnerabilities in 
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/06/24/20190624-ComputerSecurity-note-ch24/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch11/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
       <meta itemprop="name" content="Eugene Yang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="3ugeneYang.§ite">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/24/20190624-ComputerSecurity-note-ch11/" itemprop="url">[Intro. to Computer Security Course Note] Ch 11</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/24/20190624-ComputerSecurity-note-ch11/" class="post-title-link" itemprop="url">[Intro. to Computer Security Course Note] Ch 11</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-24T19:51:32+08:00">
-                2019-06-24
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <time title="Created: 2019-06-24 19:51:32" itemprop="dateCreated datePublished" datetime="2019-06-24T19:51:32+08:00">2019-06-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-18 09:25:53" itemprop="dateModified" datetime="2019-08-18T09:25:53+08:00">2019-08-18</time>
+              </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -890,61 +1402,277 @@ Vulnerabilities in
     <div class="post-body" itemprop="articleBody">
 
       
-      
+          <h1 id="Ch11-Software-Security"><a href="#Ch11-Software-Security" class="headerlink" title="Ch11. Software Security"></a>Ch11. Software Security</h1><hr>
+<h1 id="Software-Security-Issues"><a href="#Software-Security-Issues" class="headerlink" title="Software Security Issues"></a>Software Security Issues</h1><ul>
+<li>Many vulnerabilities result from <strong>poor programming practices</strong></li>
+<li>Consequences from insufficient checking/validation of data and error codes in programs</li>
+</ul>
+<h2 id="Software-Error-Categories"><a href="#Software-Error-Categories" class="headerlink" title="Software Error Categories"></a>Software Error Categories</h2><ul>
+<li>Insecure interaction between components<ul>
+<li>SQL injection</li>
+<li>Cross-site scripting</li>
+<li>Open redirect</li>
+</ul>
+</li>
+<li>Risky resource management<ul>
+<li>Classical buffer overflow</li>
+<li>Path traversal</li>
+<li>DOwnload of code without integrity check</li>
+</ul>
+</li>
+<li>Porous(多孔的) defenses<ul>
+<li><strong>Missing</strong> authentication for critical function</li>
+<li><strong>Missing</strong> authorization</li>
+<li><strong>Missing</strong> encryption of sensitive data</li>
+</ul>
+</li>
+</ul>
+<h2 id="Software-Security-Software-Quality-Reliability"><a href="#Software-Security-Software-Quality-Reliability" class="headerlink" title="Software Security: Software Quality/Reliability"></a>Software Security: Software Quality/Reliability</h2><ul>
+<li>Software Quality and Reliability<ul>
+<li>Concern: accidental failure of a program</li>
+<li>Not the total number of bugs, but <strong>how often</strong> they are triggered</li>
+<li>Improvement: structured design and testing to identity and eliminate bugs</li>
+</ul>
+</li>
+<li>Software Security<ul>
+<li>Attacker targets specific bugs that result in a failure that can be exploited</li>
+<li>Triggered by inputs that differ dramatically from what is usually expected</li>
+<li>Unlikely to be identified by common testing approaches</li>
+</ul>
+</li>
+</ul>
+<h2 id="Defensive-or-Secure-Programming"><a href="#Defensive-or-Secure-Programming" class="headerlink" title="Defensive or Secure Programming"></a>Defensive or Secure Programming</h2><ul>
+<li>The process of designing and implementing software: continue to function even when under attack</li>
+<li>Software written using this process<ul>
+<li>Detect erroneous conditions resulting from some attack</li>
+<li>Either continue <strong>executing safety, or fail gracefully</strong></li>
+</ul>
+</li>
+<li>Key rule: <strong>never assume anything</strong><ul>
+<li>Check all assumptions and handle any possible error states</li>
+</ul>
+</li>
+<li><table style="">
+  <tr>
+      <th style="font-weight: normal;">Typical programmers</th>
+      <th style="font-weight: normal;">Defensive Programming</th>
+  </tr>
+  <tr>
+      <th style="font-weight: lighter;">Attention on the steps needed for success<br>- Follow the normal flow of execution of the program<br>- But <strong>not consider every potential point of failure</strong><br>Often make assumptions: type of inputs and environment</th>
+      <th style="font-weight: lighter;">The assumptions need to be validated by the program<br><strong>All potential failures handled gracefully and safely</strong><br>But, increase codes and time spent</th>
+  </tr>
+  <tr>
+      <th style="font-weight: lighter;">When changes are required<br>- Focus on the cahnges required and <strong>what needs to be achieved</strong></th>
+      <th style="font-weight: lighter;">Must carefully check any assumptions made<br>Check and handle all possible errors<br>Carefully check any interactions with existing code</th>
+  </tr>
+</table>
 
-      
-        
-          
-          Ch11. Software Security
-Software Security Issues
-Many vulnerabilities result from poor programming practices
-Consequences from insufficient checking/v
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/06/24/20190624-ComputerSecurity-note-ch11/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+</li>
+</ul>
+<h2 id="Security-by-Design"><a href="#Security-by-Design" class="headerlink" title="Security by Design"></a>Security by Design</h2><ul>
+<li>Recent years have been increasing efforts to improve secure software development process<ul>
+<li>Software Assurance Forum for Excellence in Code (SAFECode)<ul>
+<li>Outlining industry best practices for software assurance</li>
+<li>Providing practical advice for secure software development</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Handling-Program-Input"><a href="#Handling-Program-Input" class="headerlink" title="Handling Program Input"></a>Handling Program Input</h1><ul>
+<li>Incorrect handling is one of the most common failings</li>
+<li>Input is any source of data from outside and whose value is not explicitly known by the programmer</li>
+<li>All sources of input data must be identified</li>
+<li>Explicitly validate assumptions on size and type of values before use</li>
+<li>Two key areas of concern: <strong>size and interpretation</strong></li>
+</ul>
+<h2 id="Input-Size-amp-Buffer-Overflow"><a href="#Input-Size-amp-Buffer-Overflow" class="headerlink" title="Input Size &amp; Buffer Overflow"></a>Input Size &amp; Buffer Overflow</h2><ul>
+<li>Programmers often make assumptions: <strong>maximum expected size of input</strong><ul>
+<li>有可能會導致 buffer overflows</li>
+</ul>
+</li>
+<li>Testing may not identify the vulnerability<ul>
+<li>測資不夠完整</li>
+</ul>
+</li>
+<li>Safe programming practices</li>
+<li><strong>Safe coding regards any input as dangerous</strong></li>
+</ul>
+<h2 id="Interpretation-of-Program-Input"><a href="#Interpretation-of-Program-Input" class="headerlink" title="Interpretation of Program Input"></a>Interpretation of Program Input</h2><ul>
+<li>Program input may be binary or textual<ul>
+<li>Binary data: <strong>depends on encoding and is usually app-specific</strong></li>
+</ul>
+</li>
+<li>Failure to validate may result in an exploitable vulnerability</li>
+</ul>
+<h2 id="Injection-Attacks"><a href="#Injection-Attacks" class="headerlink" title="Injection Attacks"></a>Injection Attacks</h2><h2 id="Cross-site-Scripting-XSS-Attacks"><a href="#Cross-site-Scripting-XSS-Attacks" class="headerlink" title="Cross-site Scripting (XSS) Attacks"></a>Cross-site Scripting (XSS) Attacks</h2><ul>
+<li><strong>Input provided to a program by one user that is subsequently output to another user</strong><ul>
+<li>Assumption: all content from one site is <strong>equally trusted</strong> and hence is permitted to interact with other content from that site</li>
+<li>Attacks exploit this assumption and attempt to bypass the browser&#39;s security checks</li>
+</ul>
+</li>
+<li>Most common variant: XSS reflection</li>
+</ul>
+<h2 id="XSS-Reflection"><a href="#XSS-Reflection" class="headerlink" title="XSS Reflection"></a>XSS Reflection</h2><ul>
+<li>Consider the widespread use of guestbook programs<ul>
+<li>留言板那些的</li>
+</ul>
+</li>
+<li>Prevention: any user-supplied input should be examined</li>
+</ul>
+<h2 id="Validating-Input-Syntax"><a href="#Validating-Input-Syntax" class="headerlink" title="Validating Input Syntax"></a>Validating Input Syntax</h2><ul>
+<li>Input data should be compared against <strong>what is wanted</strong><ul>
+<li>using regular expression</li>
+<li>Whitelisting <strong>(more secure)</strong></li>
+</ul>
+</li>
+<li>Alternative is to compare the input data with <strong>known dangerous values</strong><ul>
+<li>Blacklisting</li>
+</ul>
+</li>
+</ul>
+<h2 id="Alternative-Encodings"><a href="#Alternative-Encodings" class="headerlink" title="Alternative Encodings"></a>Alternative Encodings</h2><ul>
+<li>Canonicalization: transforming input data into a single, standard, minimal representation<ul>
+<li>Once this is done the input data can be compared with a single representation of acceptable input values</li>
+</ul>
+</li>
+</ul>
+<h2 id="Validating-Numeric-Input"><a href="#Validating-Numeric-Input" class="headerlink" title="Validating Numeric Input"></a>Validating Numeric Input</h2><ul>
+<li>Internally stored in fixed sized value</li>
+<li>Must correctly interpret text form<ul>
+<li>Have issues comparing signed to unsigned</li>
+</ul>
+</li>
+</ul>
+<h2 id="Input-Fuzzing"><a href="#Input-Fuzzing" class="headerlink" title="Input Fuzzing"></a>Input Fuzzing</h2><ul>
+<li>Major issue of input texting: very large range of inputs</li>
+<li>Fuzzing: a software testing technique: using randomly generated data as inputs to a program<ul>
+<li>Simplicity and freedom from assumption</li>
+<li>Very low cost of generating large numbers of tests</li>
+</ul>
+</li>
+<li>Input can be randomly generated</li>
+<li>Conceptually very simple, but identifying only simple types of faults<ul>
+<li>Only triggered by a small number of very specific input values</li>
+</ul>
+</li>
+</ul>
+<h1 id="Writing-Safe-Program-Code"><a href="#Writing-Safe-Program-Code" class="headerlink" title="Writing Safe Program Code"></a>Writing Safe Program Code</h1><ul>
+<li>Key issues<ul>
+<li><strong>Correct</strong> algorithm implementation, machine instructions</li>
+<li><strong>Valid</strong> manipulate of data</li>
+</ul>
+</li>
+</ul>
+<h2 id="Correct-Algorithm-Implementation"><a href="#Correct-Algorithm-Implementation" class="headerlink" title="Correct Algorithm Implementation"></a>Correct Algorithm Implementation</h2><ul>
+<li>Not correctly implement all cases or variants of the problem<ul>
+<li>用對的方法重做一遍</li>
+</ul>
+</li>
+</ul>
+<h2 id="Correct-Machine-Instructions-for-algorithm"><a href="#Correct-Machine-Instructions-for-algorithm" class="headerlink" title="Correct Machine Instructions for algorithm"></a>Correct Machine Instructions for algorithm</h2><ul>
+<li><strong>Largely ignored by most programmers</strong><ul>
+<li>Assumption: 反正 compiler 會處理好</li>
+</ul>
+</li>
+<li>Malicious compiler programmer<ul>
+<li>Including instructions in the compiler to emit additional code</li>
+</ul>
+</li>
+<li>Countermeasure:<ul>
+<li>檢查檢查再檢查(source 跟 machine code)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Correct-Data-Interpretation"><a href="#Correct-Data-Interpretation" class="headerlink" title="Correct Data Interpretation"></a>Correct Data Interpretation</h2><ul>
+<li>All data on a computer are stored as groups of binary bits</li>
+<li>Different languages provide varying capabilities for restriction and validating interpretation of data in variables</li>
+<li>Correct use of memory<ul>
+<li>Issue: allocation and management of dynamic memory storage (heap)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Preventing-Race-Conditions-with-Shared-Memory"><a href="#Preventing-Race-Conditions-with-Shared-Memory" class="headerlink" title="Preventing Race Conditions with Shared Memory"></a>Preventing Race Conditions with Shared Memory</h2><ul>
+<li>Race condition</li>
+</ul>
+<h1 id="Interacting-with-the-OS-and-Other-Programs"><a href="#Interacting-with-the-OS-and-Other-Programs" class="headerlink" title="Interacting with the OS and Other Programs"></a>Interacting with the OS and Other Programs</h1><p> In general, programs do not run in isolation on most computer systems</p>
+<h2 id="Several-issues"><a href="#Several-issues" class="headerlink" title="Several issues"></a>Several issues</h2><ul>
+<li>Environment variables<ul>
+<li>沒辦法透過 reset PATH variable 解決<ul>
+<li><code>PATH=&quot;/sib:/bin:/usr/sbin:/usr/bin&quot;</code></li>
+<li>把 IFS environment variable 改調就可以繞過</li>
+</ul>
+</li>
+<li>Generally, writing secure, privileged shell scripts is very difficult</li>
+<li>Dynamic linking of libraries may be vulnerable<ul>
+<li>Library injection (LD_LIBRARY_PATH)</li>
+<li>Solution: using a <strong>statically linked executable</strong> or <strong>blocking the use of this env variable</strong> when the program executed runs with different privileges</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Using appropriate, least privileges<ul>
+<li>Root/Administrator privileges<ul>
+<li><strong>Major attack target</strong></li>
+<li>Good design partitions complex programs in smaller modules with needed privileges<ul>
+<li>A greater degree of isolation between components</li>
+<li><strong>Fewer consequences of a security breach in one component</strong></li>
+<li>Easier to test and verify</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Systems calls and standard library functions<ul>
+<li>The programs may not perform as expected<ul>
+<li>Incorrect assumptions made for the operations of the system calls and standard library functions</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Preventing race conditions with shared system resources<ul>
+<li>Need suitable synchronization mechanisms<ul>
+<li>e.g., lock</li>
+</ul>
+</li>
+<li>Lockfile</li>
+</ul>
+</li>
+<li>Safe temporary file use<ul>
+<li>Secure temporary file creation and use requires the use of <strong>random names and atomic operation</strong><ul>
+<li>:+1: mkstemp()</li>
+<li>:-1: <del>tmpfile(), tmpnam(), tempnam()</del></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Interacting with other programs</li>
+</ul>
+<h1 id="Handling-Program-Output"><a href="#Handling-Program-Output" class="headerlink" title="Handling Program Output"></a>Handling Program Output</h1><ul>
+<li>Programs must identify what is permissible output content</li>
+<li>Character set should be specified</li>
+</ul>
+
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
-  </section>
+  </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/3/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -952,162 +1680,150 @@ Consequences from insufficient checking/v
           </div>
           
 
-
-          
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
-        
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
-    
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
-      
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/20161224_132915.jpg"
-                alt="Eugene Yang" />
-            
-              <p class="site-author-name" itemprop="name">Eugene Yang</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/%20%7C%7C%20archive">
-              
-                  <span class="site-state-item-count">67</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
-                  <span class="site-state-item-name">tags</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Eugene Yang"
+      src="/images/20161224_132915.jpg">
+  <p class="site-author-name" itemprop="name">Eugene Yang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
           
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:eugene87222@gmail.com" title="E-Mail → mailto:eugene87222@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Eugene87222" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Eugene87222" rel="noopener" target="_blank"><i class="fa fa-fw fa-telegram"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/eugene87222" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/yanghc" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;yanghc" rel="noopener" target="_blank"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pinterest.com/eugene87222/" title="Pinterest → https:&#x2F;&#x2F;www.pinterest.com&#x2F;eugene87222&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw fa-pinterest"></i>Pinterest</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/eugene87222" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
 
-          <div class="links-of-author motion-element">
-            
-              
-                <span class="links-of-author-item">
-                  <a href="mailto:eugene87222@gmail.com" target="_blank" title="E-Mail">
-                    
-                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://t.me/Eugene87222" target="_blank" title="Telegram">
-                    
-                      <i class="fa fa-fw fa-telegram"></i>Telegram</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.facebook.com/eugene87222" target="_blank" title="Facebook">
-                    
-                      <i class="fa fa-fw fa-facebook"></i>Facebook</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.linkedin.com/in/yanghc" target="_blank" title="LinkedIn">
-                    
-                      <i class="fa fa-fw fa-linkedin"></i>LinkedIn</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.pinterest.com/eugene87222/" target="_blank" title="Pinterest">
-                    
-                      <i class="fa fa-fw fa-pinterest"></i>Pinterest</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/eugene87222" target="_blank" title="GitHub">
-                    
-                      <i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-            
-          </div>
 
-          
-          
 
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
+      </div>
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017-2020</span>
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Eugene Yang</span>
-
-  
 </div>
-
-
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  </div>
 
         
 <div class="busuanzi-count">
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
     </span>
-  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
 </div>
 
 
@@ -1117,125 +1833,26 @@ Consequences from insufficient checking/v
 
 
 
-        
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
+<script src="/js/utils.js"></script>
 
-
-
-
-
+<script src="/js/motion.js"></script>
 
 
+<script src="/js/schemes/pisces.js"></script>
 
 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  
-
-    
-
-    
-
-  
-
-
-
-
-	
-
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -1255,26 +1872,11 @@ Consequences from insufficient checking/v
 
 
 
-  
-
-
-
-
 
   
 
   
 
-  
-
-  
-  
-
-  
-
-  
-
-  
 
 </body>
 </html>

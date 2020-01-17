@@ -1,130 +1,55 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="en">
+<html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/favicon.ico" color="#222">
 
-<script>
-	(function(){
-		if(''){
-			if(prompt('Password:') !== ''){
-				alert('Wrong password');
-				history.back()
-			}
-		}
-	})();
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://eugene87222.github.io').hostname,
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeIn","post_body":"fadeIn","coll_header":"fadeIn"}}
+  };
 </script>
 
-
-  
-  
-    
-    
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Kaushan Script:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
-
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.3">
-
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
-<meta property="og:type" content="website">
+  <meta property="og:type" content="website">
 <meta property="og:title" content="3ugeneYang.§ite">
 <meta property="og:url" content="http://eugene87222.github.io/index.html">
 <meta property="og:site_name" content="3ugeneYang.§ite">
@@ -132,236 +57,173 @@
 <meta property="article:author" content="Eugene Yang">
 <meta name="twitter:card" content="summary">
 
+<link rel="canonical" href="http://eugene87222.github.io/">
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeIn","post_body":"fadeIn","coll_header":"fadeIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false
   };
 </script>
 
-
-
-  <link rel="canonical" href="http://eugene87222.github.io/"/>
-
-
-
-
-
   <title>3ugeneYang.§ite</title>
   
-
-
-
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-107694365-1', 'auto');
-  ga('send', 'pageview');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107694365-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-107694365-1');
+      }
+    </script>
 
 
 
 
 
-<meta name="generator" content="Hexo 4.2.0"></head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-  
-  
-    
-  
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-  <div class="container sidebar-position-left 
-  page-home">
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+    <div>
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">3ugeneYang.§ite</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
   </div>
 
   <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
 </div>
 
+
 <nav class="site-nav">
   
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
-          <a href="/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
         <li class="menu-item menu-item-about">
-          <a href="/about/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            About
-          </a>
-        </li>
-      
-        
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
         <li class="menu-item menu-item-tags">
-          <a href="/tags/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
-          </a>
-        </li>
-      
-        
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
 
-  
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>Sitemap</a>
+
+  </li>
+  </ul>
+
 </nav>
-
-
-
- </div>
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content">
             
-  <section id="posts" class="posts-expand">
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <div class="posts-expand">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2020/01/18/20191219-get-rid-of-captcha/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
       <meta itemprop="name" content="Eugene Yang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="3ugeneYang.§ite">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/01/18/20191219-get-rid-of-captcha/" itemprop="url">用機器學習的方式登入選課系統</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2020/01/18/20191219-get-rid-of-captcha/" class="post-title-link" itemprop="url">用機器學習的方式登入選課系統</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
               
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-01-18T00:33:02+08:00">
-                2020-01-18
-              </time>
-            
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <time title="Created: 2020-01-18 00:33:02 / Modified: 00:33:18" itemprop="dateCreated datePublished" datetime="2020-01-18T00:33:02+08:00">2020-01-18</time>
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -369,125 +231,106 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
+          <p>之前大三上剛開學的時候閒閒沒事，剛好那段時間正在選課，有鑑於每次登入選課系統都要打驗證碼（下圖），我自己是覺得很麻煩（到底有多懶），就想說用 Python 寫個自動登入的程式，不過選課系統的數字驗證碼長得不是很好看，去暴力搜尋每個數字感覺不太可行，後來決定先用 OpenCV 把數字切出來，再用機器學習去辨識數字，一開始寫的時候是直接用 <a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/tutorials/mnist" target="_blank" rel="noopener">tensorflow 的手寫數字辨識 CNN 模型</a>，不過因為 MNIST 的手寫數字跟選課系統的數字驗證碼書寫風格差異有點大，加上那時候用 OpenCV 做 preprocessing 理弄得亂七八糟（雖然現在的版本可能還是亂七八糟），所以數字辨識的準確度只有 85% 左右，根本沒辦法拿來登入選課系統，因為其中一個數字打錯就整個都錯了。</p>
+<p><img src="/image/2020-01-16_230643.png" alt=""></p>
+<p>之後事情開始變多，得念書考試寫作業，只好把這個東西暫時擱置，一直等到現在大四上結束，才有空繼續把它完成。下面的介紹主要就分成實作方法跟實驗結果兩個部分。</p>
+<h1 id="實作方法"><a href="#實作方法" class="headerlink" title="實作方法"></a>實作方法</h1><h2 id="開發環境"><a href="#開發環境" class="headerlink" title="開發環境"></a>開發環境</h2><ul>
+<li>Windows 10 Home</li>
+<li>Python 3.6.4</li>
+<li>Python packages: OpenCV, Numpy, Pillow, Requests, scikit learn, Selenium</li>
+</ul>
+<h2 id="蒐集-training-data"><a href="#蒐集-training-data" class="headerlink" title="蒐集 training data"></a>蒐集 training data</h2><p>這邊就簡單地用 <code>requests</code> 來抓圖片，一共下載了 7000 張。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">image_url = <span class="string">'https://course.nctu.edu.tw/function/Safecode.asp'</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">7000</span>):</span><br><span class="line">    image = requests.get(image_url)</span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">f"<span class="subst">&#123;config[<span class="string">'PATH'</span>][<span class="string">'DOWNLOAD'</span>]&#125;</span>/<span class="subst">&#123;i&#125;</span>.jpg"</span>, <span class="string">'wb+'</span>) <span class="keyword">as</span> file:</span><br><span class="line">        file.write(image.content)</span><br></pre></td></tr></table></figure>
 
-      
-        
-          
-          之前大三上剛開學的時候閒閒沒事，剛好那段時間正在選課，有鑑於每次登入選課系統都要打驗證碼（下圖），我自己是覺得很麻煩（到底有多懶），就想說用 Python 寫個自動登入的程式，不過選課系統的數字驗證碼長得不是很好看，去暴力搜尋每個數字感覺不太可行，後來決定先用 OpenCV 把數字切出來，再用機器學
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2020/01/18/20191219-get-rid-of-captcha/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+<h2 id="Preprocessing"><a href="#Preprocessing" class="headerlink" title="Preprocessing"></a>Preprocessing</h2><p>我們用這下面張圖來解說。</p>
+<img src="/image/3.jpg" width="50%"/>
+
+<p>首先會把驗證碼統一調整大小至 50 乘 100，然後把驗證碼加白框（怕數字太靠近圖片邊緣，之後在切割的時候會不好處理），再來把圖片轉乘灰階，因為有些數字的顏色較淺，轉乘灰階之後還要利用 <code>cv2.adaptiveThreshold</code> 把數字從背景中分離出來。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">image = cv2.imread(filename)</span><br><span class="line">image = cv2.resize(image, (<span class="number">100</span>, <span class="number">50</span>))</span><br><span class="line">image = cv2.copyMakeBorder(image, <span class="number">5</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">5</span>, cv2.BORDER_CONSTANT, value=(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>))</span><br><span class="line">image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)</span><br><span class="line">image = cv2.adaptiveThreshold(image, <span class="number">255</span>, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, <span class="number">11</span>, <span class="number">2</span>)</span><br><span class="line">image = cv2.threshold(image, <span class="number">170</span>, <span class="number">255</span>, cv2.THRESH_BINARY)[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+<img src="/image/3_gray.jpg" width="50%"/>
+
+<p>如上圖所示，這時候的圖片還是有雜訊（背景的黑點點），根據 <a href="https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_filtering/py_filtering.html" target="_blank" rel="noopener">OpenCV Python Tutorial</a> 上面有關 Medium Filtering 的介紹：<strong>This is highly effective in removing salt-and-pepper noise</strong>，接著用 <code>cv2.medianBlur</code> 來去除背景的雜訊。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">image = cv2.medianBlur(image, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<p>處理完後會像下面這個樣子，仔細觀察其實可以發現在降噪的過程中，&quot;3&quot;跟&quot;9&quot;有部分筆劃感覺也被去除了，這部分我現在還想不到可以怎麼改善，我相信一定有更好的處理方法，如果讀者有什麼想法也可以留言或寫信告訴我。</p>
+<img src="/image/3_blur.jpg" width="50%"/>
+
+<h2 id="切割數字"><a href="#切割數字" class="headerlink" title="切割數字"></a>切割數字</h2><p>把雜訊去掉後，下一步就是把驗證碼裡面的數字切割出來，OpenCV 裡面有個很方便的函數 <code>cv2.findContours</code> 可以直接將輪廓標出來。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">contours, hierarchy = cv2.findContours(img_blur_gray, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)</span><br></pre></td></tr></table></figure>
+<p><code>cv2.findContours</code> 有三個主要的參數，第一個當然就是要被檢測的圖片，第二個是 <code>mode</code>，用來指定要使用哪種模式檢測輪廓，我們使用 <code>cv2.RETR_TREE</code> 來建立一個樹狀結構的輪廓，第三個參數是 <code>method</code>，用以選擇輪廓的近似方法，如果用 <code>cv2.CHAIN_APPROX_NONE</code> 的話，OpenCV 會將輪廓上的所有點存下來，假如今天碰到一個矩形的輪廓，那矩形的四條邊都會被存起來，但其實我們只要知道四個頂點的座標就夠了，所以改用 <code>cv2.CHAIN_APPROX_SIMPLE</code>。</p>
+<p>接著來看 <code>cv2.findContours</code> 回傳的資料，該函數會回傳兩個東西，一個是輪廓本身（<code>contours</code>），一個是每個輪廓對應的屬性（<code>hierarchy</code>），<code>contours</code> 裡面包含每個輪廓的點，如果是矩形輪廓就有四個點，五角形就有五個點，依此類推；<code>hierarchy</code> 則是輪廓的樹狀結構，每個輪廓都對應到 <code>hierarchy</code> 當中的四個元素，分別是&quot;後一個輪廓&quot;、&quot;前一個輪廓&quot;、&quot;父輪廓&quot;、&quot;被自己包起來的輪廓編號&quot;。</p>
+<p>這邊我們只會使用到 <code>contours</code>，首先用 <code>cv2.drawContours</code> 把輪廓畫出來看看：</p>
+<img src="/image/3_highlight.jpg" width="50%"/>
+
+<p>可以發現偵測到的輪廓是多邊形，但是我們的目的是要切割出數字所在的矩形區域，可以用 <code>cv2.boundingRect</code> 來算出包含整個輪廓的最小矩形。</p>
+<img src="/image/3_ori_contour.jpg" width="50%"/>
+
+<p>算完後會長這樣，相信大家也注意到了，上圖的&quot;4&quot;會有兩個輪廓，一個是&quot;4&quot;的外圍的輪廓，一個是&quot;4&quot;中間空洞的輪廓，用 <code>cv2.boundingRect</code> 計算完後會產生兩個矩形，就是分別對應這兩個輪廓，但是只有外圍那個才是我們想要的，所以還要加一些判斷式來檢查，最後的程式碼會長這樣。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">valid = []</span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> contours:</span><br><span class="line">    x, y, w, h = cv2.boundingRect(c)</span><br><span class="line">    <span class="keyword">if</span> (w &lt; <span class="number">8</span> <span class="keyword">and</span> h &lt; <span class="number">8</span>) <span class="keyword">or</span> (w &gt; <span class="number">25</span> <span class="keyword">and</span> h &gt; <span class="number">25</span>) <span class="keyword">or</span> w &gt; <span class="number">40</span> <span class="keyword">or</span> h &gt; <span class="number">40</span>:</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    valid.append((x, y, w, h))</span><br><span class="line">contours = valid</span><br></pre></td></tr></table></figure>
+<p>這邊還有一點要注意，可以看到上圖的&quot;3&quot;被切成兩個部分，之所以會這樣可能是與先前提到降噪的問題有關，為了解決這種情況，我另外寫了一個用來合併矩形的函數。因為當這種情況發生時，兩個矩形通常會有部分區域重疊（上圖的&quot;3&quot;就是這樣），至於實作方面，我們可以透過 logical AND 來檢查是否重疊，每個矩形都對應到一張 60 乘 110 的圖，矩形所在的地方標&quot;1&quot;，其他地方標&quot;0&quot;，把兩張圖做 AND 就知道有沒有相交了，下面是合併矩形的程式碼。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">contours.sort(key=<span class="keyword">lambda</span> x: x[<span class="number">0</span>])</span><br><span class="line">frame = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(contours)):</span><br><span class="line">    x, y, w, h = contours[i]</span><br><span class="line">    frame.append(cv2.rectangle(np.zeros((<span class="number">60</span>, <span class="number">110</span>)), (x, y), (x+w, y+h), <span class="number">1</span>, <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line">status = np.zeros(len(frame))</span><br><span class="line">intermediate = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(frame)):</span><br><span class="line">    <span class="keyword">if</span> status[i]:</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">if</span> i == len(frame) - <span class="number">1</span>:</span><br><span class="line">        status[i] = <span class="number">1</span></span><br><span class="line">        intermediate.append(contours[i])</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    intersect = np.logical_and(frame[i], frame[i + <span class="number">1</span>])</span><br><span class="line">    <span class="keyword">if</span> <span class="literal">True</span> <span class="keyword">in</span> intersect:</span><br><span class="line">        x = min(contours[i][<span class="number">0</span>], contours[i + <span class="number">1</span>][<span class="number">0</span>])</span><br><span class="line">        y = min(contours[i][<span class="number">1</span>], contours[i + <span class="number">1</span>][<span class="number">1</span>])</span><br><span class="line">        w = max(contours[i][<span class="number">0</span>] + contours[i][<span class="number">2</span>], contours[i + <span class="number">1</span>][<span class="number">0</span>] + contours[i + <span class="number">1</span>][<span class="number">2</span>]) - x</span><br><span class="line">        h = max(contours[i][<span class="number">1</span>] + contours[i][<span class="number">3</span>], contours[i + <span class="number">1</span>][<span class="number">1</span>] + contours[i + <span class="number">1</span>][<span class="number">3</span>]) - y</span><br><span class="line">        <span class="keyword">if</span> w &lt;= <span class="number">20</span> <span class="keyword">and</span> h &lt;= <span class="number">20</span>:</span><br><span class="line">            status[i] = <span class="number">1</span></span><br><span class="line">            status[i + <span class="number">1</span>] = <span class="number">1</span></span><br><span class="line">            intermediate.append((x, y, w, h))</span><br><span class="line">    <span class="keyword">if</span> status[i] != <span class="number">1</span>:</span><br><span class="line">        status[i] = <span class="number">1</span></span><br><span class="line">        intermediate.append(contours[i])</span><br><span class="line"></span><br><span class="line">contours = final_contours</span><br></pre></td></tr></table></figure>
+<p>簡單說明一下，前五行先把矩形由左到右排序，並畫出每個矩形對應的 60 乘 110 的圖，第七行的 <code>state</code> 是用來記錄該矩形處理了沒，因為矩形已經排序過，所以第 <code>i</code> 個矩形只可能與第 <code>i + 1</code> 個相交，如果相交的話就將兩者合併，並在 <code>state</code> 中將第 <code>i</code> 與 <code>i + 1</code> 個紀錄為已處理的狀態。注意第 22 行的判斷式，因為有時候會發生兩個數字靠很近，導致矩形相交，這時就要檢查矩形的大小，如果超過單一數字的矩形大小（這邊設定為 20），就代表過程中誤將兩個數字合在一起了，不應該採用該合併後的結果。下圖是合併之後的結果。</p>
+<img src="/image/3_final_contour.jpg" width="50%"/>
+
+<h2 id="Train-model"><a href="#Train-model" class="headerlink" title="Train model"></a>Train model</h2><p>每張驗證碼會切出五個數字，7000 張驗證碼總共有 35000 個數字，切割完數字後就可以開始訓練辨識用的模型了，一開始是想用 unsupervised learning 的方式去學習，畢竟切出來的三萬多張圖也沒有標 label，想說讓電腦自己去做 clustering，於是就用 scikit learn 提供的 KMeans 來訓練模型，但是做出來的準確度有夠低，一方面是因為 KMeans 只能找 local minimum，如果初始化爛掉了那就很可能會繼續爛下去，另一方面是有些數字其實長得很像，像是&quot;3&quot;寫醜一點就很像&quot;8&quot;，或許改用 Spectral Clustering 會比較好一點，不過後來還是決定先用 supervised 的方式，Spectral Clustering 之後有空再說。</p>
+<p>因為改用 supervised，所以我自己手動標了 700 張數字，每個數字各 100 張（驗證碼只會出現 3、4、5、6、7、8、9 這七種數字），然後用 scikit learn 的 SVM 來訓練。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train</span><span class="params">()</span></span></span><br><span class="line">    X = []</span><br><span class="line">    y = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>, <span class="number">10</span>):</span><br><span class="line">        <span class="keyword">for</span> filename <span class="keyword">in</span> os.listdir(<span class="string">f"<span class="subst">&#123;config[<span class="string">'PATH'</span>][<span class="string">'PARTITION'</span>]&#125;</span>/<span class="subst">&#123;i&#125;</span>"</span>):</span><br><span class="line">            img = openImage(<span class="string">f"<span class="subst">&#123;config[<span class="string">'PATH'</span>][<span class="string">'PARTITION'</span>]&#125;</span>/<span class="subst">&#123;i&#125;</span>/<span class="subst">&#123;filename&#125;</span>"</span>)</span><br><span class="line">            X.append(img)</span><br><span class="line">            y.append(i)</span><br><span class="line">    model = svm.SVC()</span><br><span class="line">    model.fit(X, y)</span><br><span class="line">    <span class="keyword">return</span> model</span><br></pre></td></tr></table></figure>
+<p>訓練完第一版模型之後，我打算用這個模型來處理剩下的 34300 張數字，主要流程就是 SVM 每標註完 2000 張數字後，會訓練一個新版本的 SVM，再用這個新的模型去標註，一直重複這些動作直到所有圖片都標好 label，我那麼懶怎麼可能自己手動跑這些步驟呢，當然是直接寫 Python 讓電腦全部自己完成，以下是程式碼。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">model = train()</span><br><span class="line"></span><br><span class="line">iteration = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> filename <span class="keyword">in</span> os.listdir(config[<span class="string">'PATH'</span>][<span class="string">'PARTITION'</span>]):</span><br><span class="line">        <span class="keyword">if</span> len(filename) != <span class="number">1</span>:</span><br><span class="line">            img = cv2.imread(<span class="string">f"<span class="subst">&#123;config[<span class="string">'PATH'</span>][<span class="string">'PARTITION'</span>]&#125;</span>/<span class="subst">&#123;filename&#125;</span>"</span>)</span><br><span class="line">            img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line">            img = img.ravel()</span><br><span class="line">            ans = model.predict([img])[<span class="number">0</span>]</span><br><span class="line">            shutil.move(<span class="string">f"<span class="subst">&#123;config[<span class="string">'PATH'</span>][<span class="string">'PARTITION'</span>]&#125;</span>/<span class="subst">&#123;filename&#125;</span>"</span>, </span><br><span class="line">                        <span class="string">f"<span class="subst">&#123;config[<span class="string">'PATH'</span>][<span class="string">'PARTITION'</span>]&#125;</span>/<span class="subst">&#123;ans&#125;</span>/<span class="subst">&#123;filename&#125;</span>"</span>)</span><br><span class="line">            count += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> count == <span class="number">2000</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">    iteration += <span class="number">1</span></span><br><span class="line">    print(<span class="string">f'Iter: <span class="subst">&#123;iteration&#125;</span>'</span>)</span><br><span class="line">    model = train()</span><br><span class="line">    <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<p>全部跑完之後發現這七個數字的出現頻率都還滿平均的，每個數字大約出現五千次左右，至於準確度的部分我並沒有特別去測，不過整個流程跑完之後我有去檢查每個 label 所在的資料夾，35000 張數字只有不到 5 張被放錯地方（標錯 label）。</p>
+<h2 id="登入系統"><a href="#登入系統" class="headerlink" title="登入系統"></a>登入系統</h2><p>模型訓練好後，就可以開始嘗試登入選課系統了，不過第一個碰到的問題就是如何從網頁畫面中取得驗證碼，因為驗證碼是透過 <a href="https://course.nctu.edu.tw/function/Safecode.asp" target="_blank" rel="noopener">https://course.nctu.edu.tw/function/Safecode.asp</a> 隨機產生的，沒辦法直接用 <code>requests</code> 從網頁裡面抓圖片，或許 Python 有辦法抓網頁載入時後台的資訊，但是我不知道怎麼做 QQ，所以後來決定直接把視窗 resize 成固定大小，再用 Selenium 抓特定的區塊，接著就是把抓到的驗證碼丟給切割數字的函數，再把切出來的五個數字拿去辨識，這部分的程式碼因為沒有什麼比較需要解釋的，只是一些 Selenium 的操作（自動點擊、輸入文字等），所以就不放上來了。</p>
+<h1 id="實驗結果"><a href="#實驗結果" class="headerlink" title="實驗結果"></a>實驗結果</h1><p>下面是我錄的小短片，驗證碼的辨識準確度跟辨識速度都有不錯的表現，我後來也寫了一個簡單的 BAT 檔，要登入的時候點兩下就好了，整體下來感覺還不錯，但就是敗在 Selenium 的開瀏覽器的速度，如果能夠再快一點就好了。然後程式碼的部分我都放在 <a href="https://github.com/eugene87222/NCTU-LetMeFillTheCAPTCHA" target="_blank" rel="noopener">Github</a> 上面了，有興趣的讀者可以去玩玩看，有什麼問題或想法也歡迎寫信告訴我。</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UV738erwCus" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/11/24/20171029-collection/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
       <meta itemprop="name" content="Eugene Yang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="3ugeneYang.§ite">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/11/24/20171029-collection/" itemprop="url">收藏分享(持續更新)</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/11/24/20171029-collection/" class="post-title-link" itemprop="url">收藏分享(持續更新)</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
               
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-11-24T14:59:41+08:00">
-                2019-11-24
-              </time>
-            
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <time title="Created: 2019-11-24 14:59:41 / Modified: 15:02:19" itemprop="dateCreated datePublished" datetime="2019-11-24T14:59:41+08:00">2019-11-24</time>
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -495,135 +338,170 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
+          <h2 id="優質-Blog-Good-Blogs"><a href="#優質-Blog-Good-Blogs" class="headerlink" title="優質 Blog / Good Blogs"></a>優質 Blog / Good Blogs</h2><ul>
+<li><a href="http://mropengate.blogspot.com/" target="_blank" rel="external">Mr. Opengate</a></li>
+<li><a href="https://nickcano.com/" target="_blank" rel="external">Nick Cano</a></li>
+<li><a href="https://kb.hitcon.org/" target="_blank" rel="external">HITCON Knowledge Base</a></li>
+<li><a href="https://aji.tw/" target="_blank" rel="external">部落格 | 宅吉便</a></li>
+<li><a href="https://morvanzhou.github.io/tutorials/" target="_blank" rel="external">莫烦 Python</a></li>
+<li><a href="https://blog.csdn.net/eastmount?t=1&amp;orderby=UpdateTime" target="_blank" rel="external">杨秀璋的专栏 - CSDN博客</a></li>
+</ul>
+<h2 id="資安、CTF-Computer-Security"><a href="#資安、CTF-Computer-Security" class="headerlink" title="資安、CTF / Computer Security"></a>資安、CTF / Computer Security</h2><ul>
+<li><a href="https://kb.hitcon.org/post/162189657177/%E5%9C%8B%E7%B6%B2%E4%B8%AD%E5%BF%83-cdx-%E7%B6%93%E9%A9%97%E5%88%86%E4%BA%AB" target="_blank" rel="external">國網中心 CDX 經驗分享</a></li>
+<li><a href="https://pwnable.kr/index.php" target="_blank" rel="external">PWNABLE.KR</a></li>
+<li><a href="https://pwnable.tw/" target="_blank" rel="external">PWNABLE.TW</a></li>
+<li><a href="https://gotyour.pw/" target="_blank" rel="external">Got Your PW</a></li>
+<li><a href="https://bamboofox.github.io/" target="_blank" rel="external">Bamboofox Official Blog</a></li>
+<li><a href="https://speakerdeck.com/aaaddress1/binary-ninja-101-windows-binary-reversing-from-zero-to-master" target="_blank" rel="external">Binary Ninja 101: Windows Binary Reversing from Zero to Master </a></li>
+<li><a href="https://www.duckll.tw/2017/11/blog-post.html" target="_blank" rel="external">我想學資安 從哪裡開始呢 - DuckLL</a></li>
+<li><a href="https://ctf-wiki.github.io/ctf-wiki/" target="_blank" rel="external">CTF Wiki</a></li>
+</ul>
+<h2 id="Machine-Learning"><a href="#Machine-Learning" class="headerlink" title="Machine Learning"></a>Machine Learning</h2><ul>
+<li><a href="https://www.theverge.com/2019/10/15/20914575/openai-dactyl-robotic-hand-rubiks-cube-one-handed-solve-dexterity-ai?fbclid=IwAR0V2LoBQfBdYxSDvRg0OTqX-Fzy97cCiCAHXLkdj8eJ2J1NqNDnkCBX0Pw" target="_blank" rel="external">OpenAI’s AI-powered robot learned how to solve a Rubik’s cube one-handed</a></li>
+<li><a href="https://ardianumam.wordpress.com/machine-learning/#english" target="_blank" rel="external">Machine Learning and Pattern Recognition</a></li>
+<li><a href="https://mp.weixin.qq.com/s/cl3HBzt_u1Edp35YLmBVsw" target="_blank" rel="external">比Tiny YOLOv3小8倍，性能提升11个点，4MB的网络也能做目标检测</a></li>
+<li><a href="http://cpmarkchang.logdown.com/posts/189108-machine-learning-perceptron-algorithm" target="_blank" rel="external">機器學習 -- Perceptron Algorithm</a></li>
+<li><a href="http://mropengate.blogspot.com/2016/10/ai-ch165-tensorflow.html" target="_blank" rel="external">AI - Ch16.5 類神經網路實作 - TensorFlow 介紹與入門教學 | Mr. Opengate</a></li>
+<li><a href="https://medium.com/@yehjames/%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90-%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92-%E7%AC%AC5-1%E8%AC%9B-%E5%8D%B7%E7%A9%8D%E7%A5%9E%E7%B6%93%E7%B6%B2%E7%B5%A1%E4%BB%8B%E7%B4%B9-convolutional-neural-network-4f8249d65d4f" target="_blank" rel="external">[資料分析&amp;機器學習] 第5.1講: 卷積神經網絡介紹(Convolutional Neural Network)</a></li>
+<li><a href="https://medium.com/@gau820827/%E6%95%99%E9%9B%BB%E8%85%A6%E7%95%AB%E7%95%AB-%E5%88%9D%E5%BF%83%E8%80%85%E7%9A%84%E7%94%9F%E6%88%90%E5%BC%8F%E5%B0%8D%E6%8A%97%E7%B6%B2%E8%B7%AF-gan-%E5%85%A5%E9%96%80%E7%AD%86%E8%A8%98-tensorflow-python3-dfad71662952" target="_blank" rel="external">教電腦畫畫：初心者的生成式對抗網路(GAN)入門筆記（TensorFlow + Python3） – Yi-Hsiang Kao – Medium</a></li>
+</ul>
+<h2 id="Natural-Language-Processing"><a href="#Natural-Language-Processing" class="headerlink" title="Natural Language Processing"></a>Natural Language Processing</h2><ul>
+<li><a href="https://medium.com/pyladies-taiwan/%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E8%99%95%E7%90%86%E5%85%A5%E9%96%80-word2vec%E5%B0%8F%E5%AF%A6%E4%BD%9C-f8832d9677c8" target="_blank" rel="external">自然語言處理入門- Word2vec小實作 – PyLadies Taiwan – Medium</a></li>
+<li><a href="https://medium.com/pyladies-taiwan/%E4%BB%A5-jieba-%E8%88%87-gensim-%E6%8E%A2%E7%B4%A2%E6%96%87%E6%9C%AC%E4%B8%BB%E9%A1%8C-%E4%BA%94%E6%9C%88%E5%A4%A9%E4%BA%BA%E7%94%9F%E7%84%A1%E9%99%90%E5%85%AC%E5%8F%B8%E6%AD%8C%E8%A9%9E%E5%88%86%E6%9E%90-i-cd2147b89083" target="_blank" rel="external">以 jieba 與 gensim 探索文本主題：五月天人生無限公司歌詞分析 – PyLadies Taiwan – Medium</a></li>
+<li><a href="http://zake7749.github.io/2016/08/28/word2vec-with-gensim/#" target="_blank" rel="external">以 gensim 訓練中文詞向量 | 雷德麥的藏書閣</a> <a href="https://github.com/zake7749/word2vec-tutorial" target="_blank" rel="external">(程式碼)</a></li>
+<li><a href="http://zake7749.github.io/2016/08/30/chatterbot-with-word2vec/" target="_blank" rel="external">基於詞向量的主題匹配 | 雷德麥的藏書閣</a> <a href="https://github.com/zake7749/Chatbot" target="_blank" rel="external">(程式碼)</a></li>
+<li><a href="https://city.shaform.com/zh/2014/11/04/word2vec/" target="_blank" rel="external">用中文資料測試 word2vec · 翼之都</a></li>
+<li><a href="https://blog.csdn.net/itplus/article/details/37969519" target="_blank" rel="external">word2vec 中的数学原理详解 - CSDN博客</a></li>
+<li><a href="https://www.jianshu.com/p/362cb98ed586" target="_blank" rel="external">gensim TF-IDF模型中文关键词抽取 - 简书</a></li>
+<li><a href="https://blog.csdn.net/u010105243/article/details/53352155" target="_blank" rel="external">使用Gensim建立bow TFIDF LSI模型对文本相似度计算 - CSDN博客</a></li>
+<li><a href="https://blog.csdn.net/scotfield_msn/article/details/72904651" target="_blank" rel="external">NLP 主题抽取 Topic LDA代码实践 gensim包 代码 - CSDN博客</a></li>
+<li><a href="https://blog.csdn.net/john_xyz/article/details/54731403" target="_blank" rel="external">gensim学习笔记（一）- Vector space model - CSDN博客</a></li>
+<li><a href="https://blog.csdn.net/John_xyz/article/details/54744413" target="_blank" rel="external">gensim学习笔记 (二) - Topic and transformations(TF-IDF, LSI) - CSDN博客</a></li>
+</ul>
+<h2 id="爬蟲大小事-Cralwer"><a href="#爬蟲大小事-Cralwer" class="headerlink" title="爬蟲大小事 / Cralwer"></a>爬蟲大小事 / Cralwer</h2><ul>
+<li><a href="https://www.dcard.tw/f/dcard/p/224157736" target="_blank" rel="external">dcard 爬蟲疑問</a></li>
+<li><a href="https://www.dcard.tw/_api/forums/" target="_blank" rel="external">dcard API</a></li>
+<li><a href="https://medium.com/pyradise/%E5%9C%A8%E9%9B%B2%E7%AB%AF%E4%BC%BA%E6%9C%8D%E5%99%A8%E4%B8%8A%E5%88%A9%E7%94%A8-python-selenium-%E6%93%B7%E5%8F%96%E7%B6%B2%E7%AB%99%E8%B3%87%E6%96%99-b42fcc9a3b93" target="_blank" rel="external">在雲端伺服器上利用 Python Selenium 擷取網站資料 – Pyradise – Medium</a></li>
+</ul>
+<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><ul>
+<li><a href="http://www.nparikh.org/unix/prompt.php" target="_blank" rel="external">Customizing your shell prompt</a></li>
+<li><a href="https://www.freebsd.org/doc/zh_TW/books/handbook/disks-adding.html" target="_blank" rel="external">freeBSD 加入磁碟</a></li>
+<li><a href="http://linux.vbird.org/" target="_blank" rel="external">鳥哥的 Linux 私房菜</a></li>
+</ul>
+<h2 id="CS-延伸閱讀-未分類-Computer-Science"><a href="#CS-延伸閱讀-未分類-Computer-Science" class="headerlink" title="CS 延伸閱讀 (未分類) / Computer Science"></a>CS 延伸閱讀 (未分類) / Computer Science</h2><ul>
+<li><a href="https://hackmd.io/p/HkW8LjRfl#/" target="_blank" rel="external">Bot Development</a></li>
+<li><a href="https://medium.com/@nick03008/gitlab-ci-%E5%85%A5%E9%96%80%E7%AD%86%E8%A8%98-%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6%E7%AF%87-156455e2ad9f" target="_blank" rel="external">Gitlab-CI 入門實作教學 - 單元測試篇</a></li>
+<li><a href="https://medium.com/@dboyliao/pybind11-%E5%85%A5%E9%96%80%E7%8E%A9%E6%A8%82%E6%89%8B%E8%A8%98-9da22f6193f2" target="_blank" rel="external">pybind11 入門玩樂手記 (一)</a></li>
+<li><a href="https://w3c.hexschool.com/%E5%AE%A2%E5%BA%A7%E6%8A%95%E7%A8%BF/how-web-applications-work-8d691e4f?fbclid=IwAR1NUniFfIMhQggXk9T1N1XxiQlg04tTHbKt8sBCCvAKfYunPBjYibtOOmk" target="_blank" rel="external">[熱門面試題] 從輸入網址列到渲染畫面，過程經歷了什麼事？</a></li>
+<li><a href="https://hackmd.io/s/HkgaMUc24" target="_blank" rel="external">Python Telegram Bot 教學 (by 陳達仁)</a></li>
+<li><a href="https://medium.com/deepquestai/ai-apis-available-on-windows-with-deepstack-native-3f500d33b7ed?fbclid=IwAR10xMguNZFxDFnmpNt0xgtdVptkCMj3wGgF7l78n89_1bUYwjTcpYKLuiM" target="_blank" rel="external">Introducing DeepStack AI Server for Windows</a></li>
+<li><a href="https://medium.com/100-days-of-algorithms/tagged/algorithms?fbclid=IwAR34Lqt5Kn45Fut8pAgRAq4Im0imLbZHzw4VnA454WzFQt7rgSlzuj-OT80" target="_blank" rel="external">100 days of algorithms</a></li>
+<li><a href="https://www.acodersjourney.com/top-25-cplusplus-api-design-mistakes-and-how-to-avoid-them/" target="_blank" rel="external">Top 25 C++ API design mistakes and how to avoid them </a></li>
+<li><a href="https://hackmd.io/Ti0G1z5zR9GBv5MctULMZw" target="_blank" rel="external">密碼學概論 - 陳榮傑 (hackmd 共筆)</a></li>
+<li><a href="https://ai.google/education/#%3Fmodal_active=none" target="_blank" rel="external">Education – Google AI</a></li>
+<li><a href="http://mropengate.blogspot.com/2018/01/makefile.html" target="_blank" rel="external">簡單學 makefile：makefile 介紹與範例程式 | Mr. Opengate</a></li>
+<li><a href="http://mropengate.blogspot.com/2015/06/formal-language.html" target="_blank" rel="external">[系列文目錄] 正規語言 Formal Language | Mr. Opengate</a></li>
+<li><a href="https://levirve.github.io/blog/2016/hexo-deploy-through-travisci/" target="_blank" rel="external">使用 Travis CI 自動發布 hexo 到 Github pages | Salas&#39;</a></li>
+<li><a href="https://google.github.io/styleguide/pyguide.html" target="_blank" rel="external">Google Python Style Guide</a></li>
+<li><a href="https://aji.tw/python%E4%BD%A0%E5%88%B0%E5%BA%95%E6%98%AF%E5%9C%A8__%E5%BA%95%E7%B7%9A__%E4%BB%80%E9%BA%BC%E5%95%A6/" target="_blank" rel="external">Python，你到底是在__底線__什麼啦！| 宅吉便</a></li>
+<li><a href="https://medium.com/@m50816m50816/latex%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98-%E5%AE%89%E8%A3%9D%E7%AF%87-with-sublime-text-3-on-win10-49b6c216e2d" target="_blank" rel="external">[LaTeX學習筆記]安裝篇 (with Sublime Text 3 on Win10) – 陳麒升 – Medium</a></li>
+<li><a href="https://medium.com/pyradise/60%E7%A7%92%E6%90%9E%E6%87%82firestore%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B-c61ba6206cba" target="_blank" rel="external">60秒搞懂firestore資料結構 – Pyradise – Medium</a></li>
+<li><a href="https://medium.com/monospace-tw/%E4%BB%8B%E9%9D%A2%E8%A8%AD%E8%A8%88%E5%B8%AB%E8%BD%89%E8%81%B7%E4%B9%8B%E8%B7%AF-dcd9a19aa1dc?sk=c6b3e8556cda8df8a02f265a41519d01" target="_blank" rel="external">介面設計師轉職之路 – Monospace – Medium</a></li>
+<li><a href="https://plot.ly/api/" target="_blank" rel="external">Plotly API libraries</a></li>
+<li><a href="https://medium.com/deep-learning-turkey/google-colab-free-gpu-tutorial-e113627b9f5d" target="_blank" rel="external">Google Colab Free GPU Tutorial – Deep Learning Turkey – Medium</a></li>
+<li><a href="https://hom-wang.gitbooks.io/verilog-hdl/content/" target="_blank" rel="external">Verilog HDL 教學講義</a></li>
+<li><a href="https://chi_gitbook.gitbooks.io/personal-note/content/zu_he_yu_yan_yu_ji_suan_ji_zu_zhi.html" target="_blank" rel="external">組合語言與計算機組織 · 課程筆記</a></li>
+</ul>
+<h2 id="國家地理-National-Geography"><a href="#國家地理-National-Geography" class="headerlink" title="國家地理 / National Geography"></a>國家地理 / National Geography</h2><ul>
+<li><a href="https://www.natgeomedia.com/news/editorpick/32757?doing_wp_cron=1521019353.6385700702667236328125" target="_blank" rel="external">浣熊洗棉花糖，真是因為蠢萌嗎？ - 國家地理雜誌中文網</a></li>
+<li><a href="https://www.natgeomedia.com/news/ngnews/73294" target="_blank" rel="external">實驗室中的人羊混種－揭露詳情 - 國家地理雜誌中文網</a></li>
+</ul>
+<h2 id="泛科學-PanSci"><a href="#泛科學-PanSci" class="headerlink" title="泛科學 / PanSci"></a>泛科學 / PanSci</h2><ul>
+<li><a href="http://pansci.asia/archives/137321" target="_blank" rel="external">霍金的加州理工時光：粒子物理、X射線與黑洞賭局</a></li>
+<li><a href="http://pansci.asia/archives/72480" target="_blank" rel="external">愛的萬物論：為什麼我們會相愛、背叛和分開？</a></li>
+<li><a href="http://pansci.asia/archives/136623" target="_blank" rel="external">三倍體複製蝦全面入侵——進擊の大理石紋螯蝦（上）</a></li>
+<li><a href="http://pansci.asia/archives/136629" target="_blank" rel="external">缺乏遺傳多樣性的孤雌生殖，註定死路一條？——進擊の大理石紋螯蝦（下）</a></li>
+</ul>
+<h2 id="旅遊-Travel"><a href="#旅遊-Travel" class="headerlink" title="旅遊 / Travel"></a>旅遊 / Travel</h2><ul>
+<li><a href="https://www.vogue.com.tw/feature/travel/content-34341.html" target="_blank" rel="external">被地圖遺忘的地方！卡帕多細亞的地下城</a></li>
+<li><a href="https://gooshuo.tw/article/536" target="_blank" rel="external">日本第一星空村 長野縣阿智村</a></li>
+<li><a href="https://gooshuo.tw/article/651" target="_blank" rel="external">漂浮在碧綠湖水上的無人秘境車站 靜岡縣奧大井湖上站！</a></li>
+</ul>
+<h2 id="動物-Animals"><a href="#動物-Animals" class="headerlink" title="動物 / Animals"></a>動物 / Animals</h2><ul>
+<li><a href="https://pets.ettoday.net/news/1107576#ixzz5A1WyfqVe" target="_blank" rel="external">影片小女孩爆哭！牧羊犬嚇到「球都掉了」　嘴開開衝上前關心</a></li>
+<li><a href="https://pets.ettoday.net/news/869905#ixzz5A1X76irb" target="_blank" rel="external">「你看過這隻貓嗎？」好心路人想幫找　近看卻傻眼：…可惡</a></li>
+<li><a href="https://pets.ettoday.net/news/1115029#ixzz5A1WZdU3n" target="_blank" rel="external">竟然偷吃我飼料！阿金把貓弟弟叼走　媽傻眼：別扔出去啊啊啊</a></li>
+<li><a href="http://www.epochtimes.com/b5/17/12/18/n9967372.htm" target="_blank" rel="external">汪星人穿越柵欄逃家 主人僅靠「這根東西」成功攔截</a></li>
+<li><a href="https://www.facebook.com/NowJustLaugh.TW/posts/1982056361827700" target="_blank" rel="external">大貓行列！</a>twitter <a href="https://twitter.com/dk_art?lang=en" target="_blank" rel="external">@dk_art</a></li>
+<li><a href="https://www.facebook.com/peanutnews/videos/1867436036604009/" target="_blank" rel="external">喵星人如何在零下20°的雪地裡生活呢？</a></li>
+<li><a href="https://www.facebook.com/odanobunagafire/posts/1458553057584971" target="_blank" rel="external">貓貓攝影失敗大賽||(=´ω`=)</a></li>
+<li><a href="https://www.facebook.com/odanobunagafire/posts/1461142400659370" target="_blank" rel="external">鼠鼠攝影失敗大賽(=´ϖ`=)</a></li>
+</ul>
+<h2 id="其他-Other"><a href="#其他-Other" class="headerlink" title="其他 / Other"></a>其他 / Other</h2><ul>
+<li><a href="https://medium.com/@Johann016/%E5%A6%82%E4%BD%95%E9%96%B1%E8%AE%80%E4%B8%80%E7%AF%87%E5%AD%B8%E8%A1%93%E8%AB%96%E6%96%87-cedb2f0d7cd0" target="_blank" rel="external">如何閱讀一篇學術論文 – 黃岳涵 – Medium</a></li>
+<li><a href="http://root.eng.tw/" target="_blank" rel="external">Eng.tw 每日字根</a></li>
+<li><a href="https://www.youtube.com/watch?v=U_7qPitWoAo" target="_blank" rel="external">SITCON 2018 開場動畫</a></li>
+<li><a href="https://www.facebook.com/groups/MusikmesseFrankfurt/permalink/10155348138108848/" target="_blank" rel="external">Despacito, sube me la radio, ballad !!! info@prestigeventi.com</a></li>
+<li><a href="https://www.ettoday.net/news/20180316/1131802.htm" target="_blank" rel="external">學生實習該不該領薪？</a></li>
+<li><a href="https://www.facebook.com/NowJustLaugh.TW/videos/1975330192500317/" target="_blank" rel="external">複線甩尾！</a>twitter <a href="https://twitter.com/crocklego?lang=en" target="_blank" rel="external">@crocklego</a></li>
+<li><a href="https://www.ettoday.net/dalemon/post/33581#ixzz5A1XvNwnO" target="_blank" rel="external">歪頭！看得出左右是同一張照片嗎？基礎幻術第一課：斜塔錯覺</a></li>
+<li><a href="https://www.facebook.com/jamesiscurly2/posts/323607634825593" target="_blank" rel="external">醫生梗懶人包總整理</a></li>
+<li><a href="https://www.facebook.com/ETtoday/videos/1752335874802569/" target="_blank" rel="external">鼻子被老爸「隔空拔走」 小男孩崩潰：快裝回去！</a></li>
+<li><a href="https://www.facebook.com/1533865249957605/photos/a.1533866239957506.1073741826.1533865249957605/1639364909407638/?type=3&amp;theater" target="_blank" rel="external">HCOONa+瑪踏塔</a></li>
+<li><a href="https://www.facebook.com/BoredPandaArt/videos/764156053771522/" target="_blank" rel="external">Surreal 3D art</a> by <a href="https://www.facebook.com/extraweg/?fref=mentions" target="_blank" rel="external">extraweg.com</a></li>
+<li><a href="https://www.facebook.com/diplyhumor/videos/887752821366322/" target="_blank" rel="external">How Engineers Play Basketball</a></li>
+</ul>
 
-      
-        
-          
-          優質 Blog / Good Blogs
-Mr. Opengate
-Nick Cano
-HITCON Knowledge Base
-部落格 | 宅吉便
-莫烦 Python
-杨秀璋的专栏 - CSDN博客
-
-資安、CTF / Computer Security
-國網中心 CDX 經驗分享
-PWNABL
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/11/24/20171029-collection/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/09/07/20190907-CG-final-project/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
       <meta itemprop="name" content="Eugene Yang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="3ugeneYang.§ite">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/09/07/20190907-CG-final-project/" itemprop="url">電腦動畫與特效期末專題</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/09/07/20190907-CG-final-project/" class="post-title-link" itemprop="url">電腦動畫與特效期末專題</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
               
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-09-07T11:19:51+08:00">
-                2019-09-07
-              </time>
-            
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <time title="Created: 2019-09-07 11:19:51 / Modified: 11:20:04" itemprop="dateCreated datePublished" datetime="2019-09-07T11:19:51+08:00">2019-09-07</time>
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -631,129 +509,97 @@ PWNABL
     <div class="post-body" itemprop="articleBody">
 
       
-      
+          <p>我在大三下學期的時候修了一門多媒體所開的「電腦動畫與特效」，並於製作了一個小動畫作為這堂課的期末專題，想說在這邊跟大家分享一下製作動畫時的一些心路歷程。</p>
+<blockquote>
+<p>P.S. 因為做動畫的當下沒有打算寫這篇，所以也沒有把製作的過程截圖下來，之後有時間再把整個製作流程 run 一遍，並把截圖補上</p>
+</blockquote>
+<h1 id="製作動機"><a href="#製作動機" class="headerlink" title="製作動機"></a>製作動機</h1><p>源自於 Youtube 上面用子彈射擊各種物體的慢動作影片。<br>(影片相關連結：<a href="https://www.youtube.com/watch?v=_rFYhLt7Dlo" target="_blank" rel="external">https://www.youtube.com/watch?v=_rFYhLt7Dlo</a>)</p>
+<h1 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h1><ul>
+<li>結合剛體碎裂與流體的模擬，嘗試模擬子彈射穿盛裝液體的容器的場景</li>
+<li>盡可能提高動畫的擬真性</li>
+<li>學習建模與動畫軟體的基本操作</li>
+</ul>
+<h1 id="構思"><a href="#構思" class="headerlink" title="構思"></a>構思</h1><p>以射擊裝有液體的杯子為例，整個碰撞過程主要包含三個面向</p>
+<ul>
+<li>子彈射擊杯子時，杯子與子彈之間的碰撞</li>
+<li>子彈穿過杯中液體時，與液體間的碰撞</li>
+<li>杯子碎裂後，碎片與液體之間的碰撞</li>
+</ul>
+<p>如果將上述三種面向全部模擬出來的話會最接近現實的情況，但是由於硬體設備的不足以及整個模擬的過程過於複雜，後來便決定將碰撞過程拆分成兩個大面向個別處理。</p>
+<h2 id="剛體層面"><a href="#剛體層面" class="headerlink" title="剛體層面"></a>剛體層面</h2><p>先模擬子彈射擊未盛裝液體的杯子，並將模擬結果存起來。</p>
+<h2 id="流體層面"><a href="#流體層面" class="headerlink" title="流體層面"></a>流體層面</h2><p>將先前的動畫模擬結果匯入到專門實作流體的軟體當中，直接將流體加入動畫中。此時因為杯子的破碎方式是固定的(先前的存檔)，所以流體並不會對子彈以及杯子碎塊造成力以及位置上的影響，流體只是單純照著杯子的碎裂方式去移動。</p>
+<h1 id="實作流程"><a href="#實作流程" class="headerlink" title="實作流程"></a>實作流程</h1><p>場景：子彈射擊裝有液體的酒杯
+用 <a href="https://www.autodesk.com/products/maya/overview" target="_blank" rel="external">Maya</a> 作為建模以及模擬剛體碎裂的程式，並使用 <a href="http://www.nextlimit.com/realflow/" target="_blank" rel="external">RealFlow</a> 處理流體模擬。</p>
+<h2 id="在-Maya-中模擬酒杯碎裂"><a href="#在-Maya-中模擬酒杯碎裂" class="headerlink" title="在 Maya 中模擬酒杯碎裂"></a>在 <a href="https://www.autodesk.com/products/maya/overview" target="_blank" rel="external">Maya</a> 中模擬酒杯碎裂</h2><p>首先在 <a href="https://www.autodesk.com/products/maya/overview" target="_blank" rel="external">Maya</a> 裡面建模，包含地板、牆壁、酒杯與子彈。</p>
+<ul>
+<li>使用 <a href="https://www.autodesk.com/products/maya/overview" target="_blank" rel="external">Maya</a> 的 plugin - <a href="https://www.pulldownit.com/" target="_blank" rel="external">Pulldownit</a>，來將物體隨機碎裂成多個碎塊，在設定子彈與酒杯的物理屬性(kinematics rigid body 與 passive rigid body)。比較需要注意的是，地板與牆壁等障礙物也要設定屬性，這樣酒杯與子彈才不會穿透進地板或牆壁裡面。</li>
+<li>設定子彈的 key frame，也就是設定在特定時間下，子彈的位置。設定好之後 Maya 會自行計算物體的移動速度。</li>
+<li>模擬子彈射擊的過程，並將模擬出來的動畫輸出成 .sd 檔案。</li>
+</ul>
+<h2 id="在-RealFlow-中做流體模擬"><a href="#在-RealFlow-中做流體模擬" class="headerlink" title="在 RealFlow 中做流體模擬"></a>在 <a href="http://www.nextlimit.com/realflow/" target="_blank" rel="external">RealFlow</a> 中做流體模擬</h2><p>將先前製作好的動畫匯入進 <a href="http://www.nextlimit.com/realflow/" target="_blank" rel="external">RealFlow</a>。</p>
+<ul>
+<li>使用 <a href="http://www.nextlimit.com/realflow/" target="_blank" rel="external">RealFlow</a> 當中的 emitter（有點類似水龍頭的東西，可以在容器中注入液體），並隨著杯子碎裂的方式，來流體模擬的動向。上一個環節已經說明過了，由於剛體的運動軌跡已經決定，流體並不會影響到剛體的移動方向。</li>
+<li>將模擬出來的流體匯出。</li>
+</ul>
+<h2 id="回到-Maya-做最後修飾"><a href="#回到-Maya-做最後修飾" class="headerlink" title="回到 Maya 做最後修飾"></a>回到 <a href="https://www.autodesk.com/products/maya/overview" target="_blank" rel="external">Maya</a> 做最後修飾</h2><p>將 <a href="http://www.nextlimit.com/realflow/" target="_blank" rel="external">RealFlow</a> 製作出來的流體以及原先的杯子動畫合併在一起，並給各種物件加上材質，於場景當中加入光源。</p>
+<h1 id="完成品"><a href="#完成品" class="headerlink" title="完成品"></a>完成品</h1><p>影片網址：<a href="https://www.youtube.com/watch?v=VnRKnYkhNhU" target="_blank" rel="external">https://www.youtube.com/watch?v=VnRKnYkhNhU</a></p>
 
-      
-        
-          
-          我在大三下學期的時候修了一門多媒體所開的「電腦動畫與特效」，並於製作了一個小動畫作為這堂課的期末專題，想說在這邊跟大家分享一下製作動畫時的一些心路歷程。
-
-P.S. 因為做動畫的當下沒有打算寫這篇，所以也沒有把製作的過程截圖下來，之後有時間再把整個製作流程 run 一遍，並把截圖補上
-
-製作動機源自
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/09/07/20190907-CG-final-project/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch24-supplement2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
       <meta itemprop="name" content="Eugene Yang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="3ugeneYang.§ite">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/24/20190624-ComputerSecurity-note-ch24-supplement2/" itemprop="url">[Intro. to Computer Security Course Note] Ch 24 (supplement 2)</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/24/20190624-ComputerSecurity-note-ch24-supplement2/" class="post-title-link" itemprop="url">[Intro. to Computer Security Course Note] Ch 24 (supplement 2)</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-24T20:06:14+08:00">
-                2019-06-24
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <time title="Created: 2019-06-24 20:06:14" itemprop="dateCreated datePublished" datetime="2019-06-24T20:06:14+08:00">2019-06-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-17 23:43:52" itemprop="dateModified" datetime="2019-08-17T23:43:52+08:00">2019-08-17</time>
+              </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -761,129 +607,144 @@ P.S. 因為做動畫的當下沒有打算寫這篇，所以也沒有把製作的
     <div class="post-body" itemprop="articleBody">
 
       
-      
+          <h1 id="Ch24-Supplement-Cellular-Network-Security"><a href="#Ch24-Supplement-Cellular-Network-Security" class="headerlink" title="Ch24 Supplement. Cellular Network Security"></a>Ch24 Supplement. Cellular Network Security</h1><hr>
+<h1 id="Evolution-of-mobile-networks"><a href="#Evolution-of-mobile-networks" class="headerlink" title="Evolution of mobile networks"></a>Evolution of mobile networks</h1><p><img src="https://i.imgur.com/whI84Ny.png" width="60%"></p>
+<h2 id="Standards-Body-for-Mobile-Network-3GPP"><a href="#Standards-Body-for-Mobile-Network-3GPP" class="headerlink" title="Standards Body for Mobile Network: 3GPP"></a>Standards Body for Mobile Network: 3GPP</h2><ul>
+<li>An international standards body</li>
+<li>Evolves and standardizes GSM, UMTS, LTE, among others</li>
+<li>We will primarily discuss 3GPP standards</li>
+</ul>
+<h2 id="Current-Mobile-Networks"><a href="#Current-Mobile-Networks" class="headerlink" title="Current Mobile Networks"></a>Current Mobile Networks</h2><p><img src="https://i.imgur.com/aJ3Du9S.png" width="60%"></p>
+<h2 id="Technology-3G-gt-4G"><a href="#Technology-3G-gt-4G" class="headerlink" title="Technology: 3G -&gt; 4G"></a>Technology: 3G -&gt; 4G</h2><ul>
+<li>4G LTE: First global standard for mobile broadband<ul>
+<li>More data capacity</li>
+<li>Faster speed</li>
+<li>Lower latency</li>
+<li>New service paradigm</li>
+</ul>
+</li>
+<li>Key enabler: network architecture evolution</li>
+</ul>
+<h2 id="Network-Architecture-Evolution"><a href="#Network-Architecture-Evolution" class="headerlink" title="Network Architecture Evolution"></a>Network Architecture Evolution</h2><p><img src="https://i.imgur.com/JmLnWwL.png" width="60%"></p>
+<h2 id="2G-is-based-on-Circuit-Switching-CS"><a href="#2G-is-based-on-Circuit-Switching-CS" class="headerlink" title="2G is based on Circuit Switching (CS)"></a>2G is based on Circuit Switching (CS)</h2><ul>
+<li>End-end resources reserved for &quot;call&quot;sss<ul>
+<li>No sharing</li>
+</ul>
+</li>
+<li><img src="https://i.imgur.com/OnqbP2F.png" width="40%"></li>
+</ul>
+<h2 id="CS-Signaling"><a href="#CS-Signaling" class="headerlink" title="CS Signaling"></a>CS Signaling</h2><ul>
+<li>Used to setup, maintain, and tear down VC</li>
+<li>Used in 2G, 3G</li>
+<li><img src="https://i.imgur.com/KyJ9lg6.png" width="60%"></li>
+</ul>
+<h2 id="Packet-Switching-PS"><a href="#Packet-Switching-PS" class="headerlink" title="Packet Switching (PS)"></a>Packet Switching (PS)</h2><ul>
+<li>Store-and-forward at intermediate routers</li>
+<li>Used by the Internet</li>
+<li><img src="https://i.imgur.com/rUMl9m1.png" width="60%"></li>
+</ul>
+<h2 id="PS-Signaling"><a href="#PS-Signaling" class="headerlink" title="PS Signaling"></a>PS Signaling</h2><ul>
+<li>No call setup at network layer</li>
+<li>No network-level concept of &quot;connection&quot;</li>
+<li>Packets forwarded using destination host address<ul>
+<li>Packets between same source-destination pair may take different paths</li>
+</ul>
+</li>
+<li><img src="https://i.imgur.com/A6fFWKL.png" width="60%"></li>
+</ul>
+<h2 id="4G-Cellular-Network-Architecture"><a href="#4G-Cellular-Network-Architecture" class="headerlink" title="4G Cellular Network Architecture"></a>4G Cellular Network Architecture</h2><p><img src="https://i.imgur.com/KRQzUKl.png" width="60%"></p>
+<ul>
+<li>MME: Mobility Management Entity</li>
+<li>BS: Base Station</li>
+</ul>
+<h2 id="3G-4G-Network-Architecture"><a href="#3G-4G-Network-Architecture" class="headerlink" title="3G/4G Network Architecture"></a>3G/4G Network Architecture</h2><p><img src="https://i.imgur.com/sgjzdV1.png" width="60%"></p>
+<h2 id="Operations"><a href="#Operations" class="headerlink" title="Operations"></a>Operations</h2><ul>
+<li>Two main planes in operation in parallel<ul>
+<li>Data/User plane: content delivery</li>
+<li>Control plane: signaling functions<ul>
+<li>Three Major Functions<ul>
+<li>Radio Resource Control (RRC)</li>
+<li>Mobility Management (MM)</li>
+<li>Connection Management (CM)</li>
+<li><img src="https://i.imgur.com/0Wp6USa.png" width="60%"></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Additional plane that woks with the above<ul>
+<li>Management plane: configurations, monitoring</li>
+</ul>
+</li>
+</ul>
+<h1 id="How-to-set-up-data-services-in-4G-networks"><a href="#How-to-set-up-data-services-in-4G-networks" class="headerlink" title="How to set up data services in 4G networks"></a>How to set up data services in 4G networks</h1><p><img src="https://i.imgur.com/9m2gWVp.png" width="60%"></p>
+<h1 id="Security-in-4G-networks"><a href="#Security-in-4G-networks" class="headerlink" title="Security in 4G networks"></a>Security in 4G networks</h1><p><img src="https://i.imgur.com/spnq6Pa.png" width="60%">
+<img src="https://i.imgur.com/XpOMLQX.png" width="60%">
+<img src="https://i.imgur.com/AdDMcjy.png" width="60%"></p>
+<ul>
+<li>IMSI (International Mobile Subscriber Identity): 國際移動用戶識別碼</li>
+<li>TMSI (Temporary Mobile Subscriber Identity): 臨時移動用戶識別碼</li>
+<li><img src="https://i.imgur.com/CJT2fK8.png" width="60%">
+<img src="https://i.imgur.com/aoJlTKS.png" width="60%"></li>
+</ul>
 
-      
-        
-          
-          Ch24 Supplement. Cellular Network Security
-Evolution of mobile networks
-Standards Body for Mobile Network: 3GPP
-An international standards body
-Evolve
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/06/24/20190624-ComputerSecurity-note-ch24-supplement2/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch24-supplement1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
       <meta itemprop="name" content="Eugene Yang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="3ugeneYang.§ite">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/06/24/20190624-ComputerSecurity-note-ch24-supplement1/" itemprop="url">[Intro. to Computer Security Course Note] Ch 24 (supplement 1)</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/24/20190624-ComputerSecurity-note-ch24-supplement1/" class="post-title-link" itemprop="url">[Intro. to Computer Security Course Note] Ch 24 (supplement 1)</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-06-24T20:05:53+08:00">
-                2019-06-24
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <time title="Created: 2019-06-24 20:05:53" itemprop="dateCreated datePublished" datetime="2019-06-24T20:05:53+08:00">2019-06-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-17 23:49:13" itemprop="dateModified" datetime="2019-08-17T23:49:13+08:00">2019-08-17</time>
+              </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -891,60 +752,110 @@ Evolve
     <div class="post-body" itemprop="articleBody">
 
       
-      
+          <h1 id="Ch24-Supplement-Phishing-Attacks-in-Wi-Fi-Networks"><a href="#Ch24-Supplement-Phishing-Attacks-in-Wi-Fi-Networks" class="headerlink" title="Ch24 Supplement. Phishing Attacks in Wi-Fi Networks"></a>Ch24 Supplement. Phishing Attacks in Wi-Fi Networks</h1><hr>
+<h2 id="Goal"><a href="#Goal" class="headerlink" title="Goal"></a>Goal</h2><ul>
+<li>Understand how user credentials can be leaked by a man-in-the-middle phishing attack over Wi-Fi networks</li>
+<li>Expected to learn<ul>
+<li>How to identify a victim&#39;s device?</li>
+<li>How to redirect the victim&#39;s traffic to our attack machine?</li>
+<li>How to steal user credential from intercepted data packets?</li>
+<li>How to return phishing web pages to the victim?</li>
+</ul>
+</li>
+</ul>
+<h2 id="Scenario"><a href="#Scenario" class="headerlink" title="Scenario"></a>Scenario</h2><p><img src="https://i.imgur.com/GZvz9VR.png" width="60%"></p>
+<h2 id="Four-Tasks"><a href="#Four-Tasks" class="headerlink" title="Four Tasks"></a>Four Tasks</h2><ul>
+<li>Discover the IP/MAC addresses of a target victim device from a Wi-Fi network</li>
+<li>Redirect all the traffic of the victim device to your attack device</li>
+<li>Redirect the victim device to access a phishing web page</li>
+<li>Launch a man-in-the-middle attack to steal the victim&#39;s credential</li>
+</ul>
+<h2 id="Task-I"><a href="#Task-I" class="headerlink" title="Task I"></a>Task I</h2><ul>
+<li>Discover the IP/MAC addresses of a target victim device from a Wi-Fi network<ul>
+<li>e.g., using &quot;Fing&quot;</li>
+</ul>
+</li>
+<li><img src="https://i.imgur.com/kk9vkBb.png" width="60%"></li>
+</ul>
+<h3 id="What-is-ARP-Address-Resolution-Protocol"><a href="#What-is-ARP-Address-Resolution-Protocol" class="headerlink" title="What is ARP (Address Resolution Protocol)"></a>What is ARP (Address Resolution Protocol)</h3><ul>
+<li>A communication protocol used for <strong>discovering the link layer (or MAC) address</strong> associated with a given IP</li>
+<li>A request-response protocol whose messages are encapsulated by a link-layer protocol</li>
+<li>Within the boundaries of a single network, never routed across interworking nodes</li>
+<li><img src="https://i.imgur.com/eDq4J7V.png" width="60%"></li>
+</ul>
+<h2 id="Task-II"><a href="#Task-II" class="headerlink" title="Task II"></a>Task II</h2><ul>
+<li>Redirect all the traffic of the victim device to your attack device<ul>
+<li>Launch ARP spoofing</li>
+<li>e.g., using &quot;Arpspoof&quot; (<a href="https://github.com/alandau/arpspoof" target="_blank" rel="external">https://github.com/alandau/arpspoof</a>) or &quot;Ettercap&quot;</li>
+<li><img src="https://i.imgur.com/b0u0rmh.png" width="60%"></li>
+</ul>
+</li>
+<li>If the attack is successful<ul>
+<li>the victim&#39;s traffic will be routed to the attacker for both uplink and downlink</li>
+<li><img src="https://i.imgur.com/BpKmKtI.png" width="60%"></li>
+</ul>
+</li>
+</ul>
+<h3 id="What-is-DNS-Domain-Name-System-Service"><a href="#What-is-DNS-Domain-Name-System-Service" class="headerlink" title="What is DNS (Domain Name System) Service?"></a>What is DNS (Domain Name System) Service?</h3><ul>
+<li>A hierarchical decentralized naming system for computers, services, or other resources connected to the Internet or a private network</li>
+<li>The resolution of the hierarchical name space is done by a hierarchy of name servers</li>
+<li>Each server is responsible (authoritative) for a contiguous portion of the DNS namespace called a zone</li>
+<li>DNS server answer queries about hosts in its zone</li>
+<li><img src="https://i.imgur.com/AGg5hXp.png" width="70%"></li>
+</ul>
+<h3 id="DNS-Address-Resolution"><a href="#DNS-Address-Resolution" class="headerlink" title="DNS Address Resolution"></a>DNS Address Resolution</h3><ul>
+<li>Domain name resolvers determine the domain name servers responsible for the domain name in question by <strong>a sequence of queries starting with the right-most (top-level) domain label</strong></li>
+<li><img src="https://i.imgur.com/iM19Wpx.png" width="60%"></li>
+</ul>
+<h2 id="Task-III"><a href="#Task-III" class="headerlink" title="Task III"></a>Task III</h2><ul>
+<li>Redirect the victim device to access a phishing web page<ul>
+<li>Launch DNS spoofing</li>
+<li>e.g., using &quot;Ettercap&quot;</li>
+</ul>
+</li>
+<li><img src="https://i.imgur.com/2jADm1I.png" width="60%"></li>
+<li>If the attack is successful<ul>
+<li>An access request to NCTU home page will be redirected to the attack server (140.113.207.243)</li>
+<li>The attacker can reply with a fake, phishing web page</li>
+</ul>
+</li>
+<li><img src="https://i.imgur.com/faWeigz.png" width="60%"></li>
+</ul>
+<h2 id="Task-IV"><a href="#Task-IV" class="headerlink" title="Task IV"></a>Task IV</h2><ul>
+<li>Launch a man-in-the-middle attack to steal the victim&#39;s credential<ul>
+<li>Launch ARP spoofing (but no DNS spoofing)</li>
+<li>Use &quot;Wireshark&quot; to analyze your intercepted packets</li>
+<li>Access a web page from the link</li>
+</ul>
+</li>
+<li><img src="https://i.imgur.com/4Zglole.png" width="60%"></li>
+<li>If the attack is successful<ul>
+<li>You <strong>can steal user credentials</strong> from the intercepted packets</li>
+</ul>
+</li>
+<li>Prerequisite: the web page <strong>cannot be encrypted</strong></li>
+<li><img src="https://i.imgur.com/PMubRxS.png" width="60%"></li>
+</ul>
 
-      
-        
-          
-          Ch24 Supplement. Phishing Attacks in Wi-Fi Networks
-Goal
-Understand how user credentials can be leaked by a man-in-the-middle phishing attack over Wi-
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/06/24/20190624-ComputerSecurity-note-ch24-supplement1/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
-  </section>
+  </div>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/2/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -952,162 +863,150 @@ Understand how user credentials can be leaked by a man-in-the-middle phishing at
           </div>
           
 
-
-          
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
-        
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
-    
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
-      
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/20161224_132915.jpg"
-                alt="Eugene Yang" />
-            
-              <p class="site-author-name" itemprop="name">Eugene Yang</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/%20%7C%7C%20archive">
-              
-                  <span class="site-state-item-count">67</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
-                  <span class="site-state-item-name">tags</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Eugene Yang"
+      src="/images/20161224_132915.jpg">
+  <p class="site-author-name" itemprop="name">Eugene Yang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
           
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:eugene87222@gmail.com" title="E-Mail → mailto:eugene87222@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Eugene87222" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Eugene87222" rel="noopener" target="_blank"><i class="fa fa-fw fa-telegram"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/eugene87222" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/yanghc" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;yanghc" rel="noopener" target="_blank"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pinterest.com/eugene87222/" title="Pinterest → https:&#x2F;&#x2F;www.pinterest.com&#x2F;eugene87222&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw fa-pinterest"></i>Pinterest</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/eugene87222" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
 
-          <div class="links-of-author motion-element">
-            
-              
-                <span class="links-of-author-item">
-                  <a href="mailto:eugene87222@gmail.com" target="_blank" title="E-Mail">
-                    
-                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://t.me/Eugene87222" target="_blank" title="Telegram">
-                    
-                      <i class="fa fa-fw fa-telegram"></i>Telegram</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.facebook.com/eugene87222" target="_blank" title="Facebook">
-                    
-                      <i class="fa fa-fw fa-facebook"></i>Facebook</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.linkedin.com/in/yanghc" target="_blank" title="LinkedIn">
-                    
-                      <i class="fa fa-fw fa-linkedin"></i>LinkedIn</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.pinterest.com/eugene87222/" target="_blank" title="Pinterest">
-                    
-                      <i class="fa fa-fw fa-pinterest"></i>Pinterest</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/eugene87222" target="_blank" title="GitHub">
-                    
-                      <i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-            
-          </div>
 
-          
-          
 
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
+      </div>
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017-2020</span>
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Eugene Yang</span>
-
-  
 </div>
-
-
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  </div>
 
         
 <div class="busuanzi-count">
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
     </span>
-  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
 </div>
 
 
@@ -1117,125 +1016,26 @@ Understand how user credentials can be leaked by a man-in-the-middle phishing at
 
 
 
-        
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
+<script src="/js/utils.js"></script>
 
-
-
-
-
+<script src="/js/motion.js"></script>
 
 
+<script src="/js/schemes/pisces.js"></script>
 
 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  
-
-    
-
-    
-
-  
-
-
-
-
-	
-
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -1255,26 +1055,11 @@ Understand how user credentials can be leaked by a man-in-the-middle phishing at
 
 
 
-  
-
-
-
-
 
   
 
   
 
-  
-
-  
-  
-
-  
-
-  
-
-  
 
 </body>
 </html>

@@ -1,130 +1,55 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="en">
+<html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/favicon.ico" color="#222">
 
-<script>
-	(function(){
-		if(''){
-			if(prompt('Password:') !== ''){
-				alert('Wrong password');
-				history.back()
-			}
-		}
-	})();
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://eugene87222.github.io').hostname,
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeIn","post_body":"fadeIn","coll_header":"fadeIn"}}
+  };
 </script>
 
-
-  
-  
-    
-    
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Kaushan Script:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
-
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.3">
-
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
-<meta property="og:type" content="website">
+  <meta property="og:type" content="website">
 <meta property="og:title" content="3ugeneYang.§ite">
 <meta property="og:url" content="http://eugene87222.github.io/page/6/index.html">
 <meta property="og:site_name" content="3ugeneYang.§ite">
@@ -132,236 +57,173 @@
 <meta property="article:author" content="Eugene Yang">
 <meta name="twitter:card" content="summary">
 
+<link rel="canonical" href="http://eugene87222.github.io/page/6/">
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeIn","post_body":"fadeIn","coll_header":"fadeIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false
   };
 </script>
 
-
-
-  <link rel="canonical" href="http://eugene87222.github.io/page/6/"/>
-
-
-
-
-
   <title>3ugeneYang.§ite</title>
   
-
-
-
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-107694365-1', 'auto');
-  ga('send', 'pageview');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107694365-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-107694365-1');
+      }
+    </script>
 
 
 
 
 
-<meta name="generator" content="Hexo 4.2.0"></head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-  
-  
-    
-  
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-  <div class="container sidebar-position-left 
-  page-home">
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+    <div>
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">3ugeneYang.§ite</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
   </div>
 
   <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
 </div>
 
+
 <nav class="site-nav">
   
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
-          <a href="/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
         <li class="menu-item menu-item-about">
-          <a href="/about/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            About
-          </a>
-        </li>
-      
-        
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
         <li class="menu-item menu-item-tags">
-          <a href="/tags/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
-          </a>
-        </li>
-      
-        
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
 
-  
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>Sitemap</a>
+
+  </li>
+  </ul>
+
 </nav>
-
-
-
- </div>
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content">
             
-  <section id="posts" class="posts-expand">
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <div class="posts-expand">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/04/26/20190426-social-psy-note-ch1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
       <meta itemprop="name" content="Eugene Yang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="3ugeneYang.§ite">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/26/20190426-social-psy-note-ch1/" itemprop="url">[Social Psychology Course Note] Ch 1</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/04/26/20190426-social-psy-note-ch1/" class="post-title-link" itemprop="url">[Social Psychology Course Note] Ch 1</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
               
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-26T07:17:28+08:00">
-                2019-04-26
-              </time>
-            
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <time title="Created: 2019-04-26 07:17:28 / Modified: 07:32:58" itemprop="dateCreated datePublished" datetime="2019-04-26T07:17:28+08:00">2019-04-26</time>
+            </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -369,128 +231,209 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
+          <h1 id="Introducing-Social-Psychology"><a href="#Introducing-Social-Psychology" class="headerlink" title="Introducing Social Psychology"></a>Introducing Social Psychology</h1><hr>
+<h1 id="What-is-social-psychology-and-how-is-it-different-from-other-disciplines"><a href="#What-is-social-psychology-and-how-is-it-different-from-other-disciplines" class="headerlink" title="What is social psychology, and how is it different from other disciplines ?"></a>What is social psychology, and how is it different from other disciplines ?</h1><ul>
+<li>Social influence 社會影響</li>
+<li>It is the <strong>scientific study</strong> of the way in which people&#39;s thoughts, feelings, and behaviors are <strong>influenced</strong> by the real or imagined presence of other people (實證 empirical)</li>
+</ul>
+<h2 id="Social-psychology-philosophy-science-and-common-sense"><a href="#Social-psychology-philosophy-science-and-common-sense" class="headerlink" title="Social psychology, philosophy, science and common sense"></a>Social psychology, philosophy, science and common sense</h2><ul>
+<li>Social psychology versus philosophy<ul>
+<li>Address many of the same questions</li>
+<li>But social psychology explores them <strong>scientifically</strong></li>
+</ul>
+</li>
+<li>Social psychology versus common sense<ul>
+<li>Common sense = folk wisdom</li>
+<li>Social psychologists predict behavior by forming hypotheses and testing them scientifically</li>
+</ul>
+</li>
+</ul>
+<h2 id="How-social-psychology-differs-from-its-closest-cousins"><a href="#How-social-psychology-differs-from-its-closest-cousins" class="headerlink" title="How social psychology differs from its closest cousins"></a>How social psychology differs from its closest cousins</h2><ul>
+<li>Social psychology versus personality psychology<ul>
+<li>Personality psychology<ul>
+<li>Focus on individual difference</li>
+<li>Ignores social influence</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Social psychology versus other social sciences<ul>
+<li>Difference in level of analys</li>
+</ul>
+</li>
+<li>Social psychology versus sociology<ul>
+<li>Difference in level of analysis<ul>
+<li>Sociology focus on society at large</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="The-goal-of-social-psychology"><a href="#The-goal-of-social-psychology" class="headerlink" title="The goal of social psychology"></a>The goal of social psychology</h2><ul>
+<li>Identify <strong>universal properties of human nature</strong> that make everyone susceptible to social influence, regardless of social class or culture</li>
+<li>Identify why a particular society or group within a society produces behavior (e.g., aggression) in its members</li>
+</ul>
+<h1 id="Why-does-it-matter-how-people-explain-and-interpret-events-and-their-own-and-others-39-behavior"><a href="#Why-does-it-matter-how-people-explain-and-interpret-events-and-their-own-and-others-39-behavior" class="headerlink" title="Why does it matter how people explain and interpret events - and their own and others&#39; behavior"></a>Why does it matter how people explain and interpret events - and their own and others&#39; behavior</h1><h2 id="The-power-of-the-situation"><a href="#The-power-of-the-situation" class="headerlink" title="The power of the situation"></a>The power of the situation</h2><h2 id="The-importance-of-explanation"><a href="#The-importance-of-explanation" class="headerlink" title="The importance of explanation"></a>The importance of explanation</h2><ul>
+<li>Fundamental attribution error (FAE) 基本歸因偏誤<ul>
+<li>The tendency to explain our own and other people&#39;s behavior entirely <strong>in terms of personality traits</strong></li>
+<li>Underestimating the power of social influence<ul>
+<li>When we underestimate the power of social influence, we gain a feeling of false security<ul>
+<li>Increase personal vulnerablilty to possibly destructive social influence</li>
+<li>Lulls(放鬆警惕) us into lowering our guard</li>
+</ul>
+</li>
+<li>By failing to fully appreciate the power of the situation, we tend to<ul>
+<li>Oversimplify complex situation</li>
+<li><strong>Decrease our understanding of the true causes</strong></li>
+<li><strong>Blame the victim</strong> when people are overpowered by social forces</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="The-importance-of-interpretation"><a href="#The-importance-of-interpretation" class="headerlink" title="The importance of interpretation"></a>The importance of interpretation</h2><ul>
+<li>How humans will behave in a given situation is not determined by the objective conditions of a situation but rather <strong>how they perceive it (construal 解讀)</strong></li>
+<li>What exactly do we mean by the social situation ?</li>
+<li>One strategy<ul>
+<li>Identify the objective properties of the situation</li>
+<li>Document the behaviors that follow from these objective properties</li>
+</ul>
+</li>
+<li>Behaviorism 行為主義: an objective worldview<ul>
+<li>A school of psychology maintaining that to understand human behavior, one need consider <strong>only reinforcing effects of environment</strong></li>
+<li>Choose not to deal with cognition, thinking, and feeling (too vague)</li>
+<li>Behaviorism ignores construal of the situation<ul>
+<li>Inadequate for understanding the social world</li>
+</ul>
+</li>
+<li><strong>Look at the situation from the viewpoint of the people in it, to see how they construe the world around them</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="Subjectivity-of-the-social-situation-情境的主觀性"><a href="#Subjectivity-of-the-social-situation-情境的主觀性" class="headerlink" title="Subjectivity of the social situation 情境的主觀性"></a>Subjectivity of the social situation 情境的主觀性</h2><ul>
+<li><strong>Emphasis on construal</strong>, the way people interpret the social situation, has its roots in Gestalt psychology</li>
+<li>Gestalt psychology 完形心理學<ul>
+<li>A school of psychology stressing the importance of studying the <strong>subjective way in which an object appears in people&#39;s minds</strong> (the gestalt or &quot;whole&quot;) rather than the objective, physical atributes of the object</li>
+<li>Founded in Germany</li>
+</ul>
+</li>
+</ul>
+<h1 id="What-happens-when-people-39-s-need-to-feel-good-about-themselves-conflicts-with-their-need-to-be-accurate"><a href="#What-happens-when-people-39-s-need-to-feel-good-about-themselves-conflicts-with-their-need-to-be-accurate" class="headerlink" title="What happens when people&#39;s need to feel good about themselves conflicts with their need to be accurate ?"></a>What happens when people&#39;s need to feel good about themselves conflicts with their need to be accurate ?</h1><h2 id="Where-construals-come-from-basic-human-motives"><a href="#Where-construals-come-from-basic-human-motives" class="headerlink" title="Where construals come from: basic human motives"></a>Where construals come from: basic human motives</h2><h2 id="Two-central-motives"><a href="#Two-central-motives" class="headerlink" title="Two central motives"></a>Two central motives</h2><ul>
+<li>The need ot feel good about ourselves (自尊取向)<ul>
+<li>Many people have a strong need to maintain reasonably high self-esteem</li>
+<li><strong>People will often distort the world in order to feel good about themselves instead of representing the world accurately</strong></li>
+<li>Suffering and self-justification 受苦與自我合理化<ul>
+<li>The more unpleasant the procedure the participants underwnet to get into a group, the better they liked the group<ul>
+<li>Human beings are motivated to maintain a positive picture of themselves, <strong>in part by justfying their past behavior</strong></li>
+<li>Under certain conditions, this leads them to do things that at first glance might seem surprising or paradoxical</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The need to be accurate (社會認知取向)<ul>
+<li>Takes into account how people think about the world<ul>
+<li>We <strong>try to gain accurate understanding so we can make effectice judgments and decisions</strong></li>
+<li>But we <strong>typically act on the basis of incompletely and inaccurately interpreted information</strong> (cognitive bias ?)</li>
+</ul>
+</li>
+<li>Social cognition<ul>
+<li>The social cognition perspective views people as &quot;amateur sleuths&quot; doing their best to <strong>understand and predict their social world</strong></li>
+<li>How people think about themselves and the social world</li>
+<li><strong>How people select, interpret, remember, and use social information to make judgments and decisions</strong></li>
+</ul>
+</li>
+<li>Expectations about the social world<ul>
+<li>Our expectations can even change the nature of the social world</li>
+<li>Self-fulfilling prophecy 自證預言<ul>
+<li>Teachers expecting specific students to perform will often<ul>
+<li>pay more attention to them</li>
+<li>listen to them with more respect</li>
+<li>call on them more frequently</li>
+<li>encourage them</li>
+<li>tyr to teach them more challenging material</li>
+</ul>
+</li>
+<li>This ,in turn, helps these students feel<ul>
+<li>happier</li>
+<li>more respected</li>
+<li>more motivated</li>
+<li>smarter</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Social-psychology-and-social-problems"><a href="#Social-psychology-and-social-problems" class="headerlink" title="Social psychology and social problems"></a>Social psychology and social problems</h2><ul>
+<li>Why study social influence ?<ul>
+<li><strong>We are curious</strong></li>
+</ul>
+</li>
+</ul>
 
-      
-        
-          
-          Introducing Social Psychology
-What is social psychology, and how is it different from other disciplines ?
-Social influence 社會影響
-It is the scientific s
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/26/20190426-social-psy-note-ch1/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/04/08/20190408-psy-note-ch9/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
       <meta itemprop="name" content="Eugene Yang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="3ugeneYang.§ite">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/08/20190408-psy-note-ch9/" itemprop="url">[Intro. to Psy Course Note] Ch 9</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/04/08/20190408-psy-note-ch9/" class="post-title-link" itemprop="url">[Intro. to Psy Course Note] Ch 9</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-08T10:13:38+08:00">
-                2019-04-08
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <time title="Created: 2019-04-08 10:13:38" itemprop="dateCreated datePublished" datetime="2019-04-08T10:13:38+08:00">2019-04-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-04-26 07:30:21" itemprop="dateModified" datetime="2019-04-26T07:30:21+08:00">2019-04-26</time>
+              </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -498,127 +441,139 @@ It is the scientific s
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          
-          Intelligence
-How is human intelligence defined and measured ?
-Crystallized Intelligence 結晶智力: ability to solve problems using &quot;already acquired&q
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/08/20190408-psy-note-ch9/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+          <h1 id="Intelligence"><a href="#Intelligence" class="headerlink" title="Intelligence"></a>Intelligence</h1><hr>
+<h1 id="How-is-human-intelligence-defined-and-measured"><a href="#How-is-human-intelligence-defined-and-measured" class="headerlink" title="How is human intelligence defined and measured ?"></a>How is human intelligence defined and measured ?</h1><ul>
+<li>Crystallized Intelligence 結晶智力: ability to solve problems using &quot;already acquired&quot; knowledge<ul>
+<li>Measured by tests of vocabulary, arithmetic , and general information</li>
+<li>Recurring, concrete challenges</li>
+</ul>
+</li>
+<li>Fluid Intelligence 流體智力: ability to solve novel problems involving perceptual speed or rapid insight (ability to see complex relationships and solve problems)<ul>
+<li>Measured by tests of block designs and spatial visualization</li>
+<li>Novel, abstract problems</li>
+</ul>
+</li>
+<li>Aptitudes 性向<ul>
+<li>Aptitude: capacity for learning certain abilities</li>
+<li>Special aptitude test: test that predicts whether you will succeed in a single area</li>
+<li>Multiple aptitude test: test that measures two or more types of ability</li>
+<li>General intelligence test: test that assesses a wide variety of mental abilities</li>
+</ul>
+</li>
+</ul>
+<h1 id="What-are-typical-IQ-tests-like"><a href="#What-are-typical-IQ-tests-like" class="headerlink" title="What are typical IQ tests like ?"></a>What are typical IQ tests like ?</h1><ul>
+<li>Reliability 信度 and validity 效度<ul>
+<li>Psychometric test: any measurement of a person’s mental functions</li>
+<li>Reliability: a reliable psychometric test must give approximately the &quot;same score&quot; each time a person takes it</li>
+<li>Validity: a valid psychometric test should &quot;measure what it claims to measure&quot;</li>
+</ul>
+</li>
+<li>Objective testing<ul>
+<li>Objective test 客觀的測驗: a test (IQ or otherwise) is objective if it gives the same score when corrected by different people</li>
+<li>Test standardization 標準化: first, it means standard procedures are used in giving the test and, second, individual test scores are compared to norms常模, or average scores made by a large group of people like those for whom the test was designed</li>
+</ul>
+</li>
+<li>Stanford-Binet Intelligence Scale</li>
+<li>SB5 five cognitive factors<ul>
+<li>Fluid reasoning: ability to reason in &quot;unfamiliar situation&quot;</li>
+<li>Knowledge: knowledge about a wide range of topics</li>
+<li>Quantitative reasoning: ability to solve problems &quot;involving numbers&quot;</li>
+<li>Visual-spatial processing</li>
+<li>Working memory</li>
+</ul>
+</li>
+<li>Wechsler tests<ul>
+<li>Wechsler Adult Intelligence Test, 4th Edition (WAIS-IV)</li>
+<li>Wechsler Intelligence Scale for Children, 4th Edition (WISC-IV)</li>
+<li>Like the SB5 the Wechsler tests yield<ul>
+<li>A single overall intelligence score</li>
+<li>A separate score for performance (nonverbal) intelligence</li>
+<li>A separate score for verbal (language-or symbol-oriented) intelligence.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Group tests<ul>
+<li>Individual intelligence test: designed to be given to a single person by a trained specialist (e.g., SB5 and the Wechsler tests)</li>
+<li>Group intelligence tests can be given to a large group of people with minimal supervision (e.g., Army Alpha, SAT Reasoning Test, American College Test, (ACT), College Qualification Test (CQT))</li>
+</ul>
+</li>
+</ul>
+<h1 id="How-do-IQ-scores-relate-to-age-sex-and-occupation"><a href="#How-do-IQ-scores-relate-to-age-sex-and-occupation" class="headerlink" title="How do IQ scores relate to age, sex, and occupation ?"></a>How do IQ scores relate to age, sex, and occupation ?</h1><ul>
+<li>Mental age 心智年齡: average intellectual performance</li>
+<li>Chronological age 實歲: person’s age in years</li>
+<li>(Ratio)IQ=MA/CA * 100(比例)智商</li>
+<li>Deviation IQ 差異智商: scores based on a person’s relative standing in his or her age group; how far above or below average a person’s score is, relative to other scores</li>
+<li>Variations in intelligence<ul>
+<li>Normal (bell-shaped) curve: distribution of observed IQ scores; most scores fall close to the average, and very few are found at the extremes</li>
+<li>IQ and age: stable after middle childhood</li>
+<li>IQ and sex: Men and women do not appear to differ in overall intelligence</li>
+<li>IQ and achievement: a strong correlation (about .50 exists between IQ and school grades</li>
+</ul>
+</li>
+<li>Gifted children<ul>
+<li>Have a high IQ (usually above 130) or special talents or abilities (play Mozart at age 5)</li>
+<li>Gifted or not, successful people are persistent and motivated to learn</li>
+</ul>
+</li>
+</ul>
+<h1 id="What-does-IQ-tell-us-about-genius"><a href="#What-does-IQ-tell-us-about-genius" class="headerlink" title="What does IQ tell us about genius ?"></a>What does IQ tell us about genius ?</h1><h1 id="What-causes-intellectual-disability"><a href="#What-causes-intellectual-disability" class="headerlink" title="What causes intellectual disability ?"></a>What causes intellectual disability ?</h1><h1 id="How-do-heredity-and-environment-affect-intelligence"><a href="#How-do-heredity-and-environment-affect-intelligence" class="headerlink" title="How do heredity and environment affect intelligence ?"></a>How do heredity and environment affect intelligence ?</h1><h1 id="Are-there-alternative-views-of-intelligence"><a href="#Are-there-alternative-views-of-intelligence" class="headerlink" title="Are there alternative views of intelligence ?"></a>Are there alternative views of intelligence ?</h1><h1 id="How-can-emotional-intelligence-help-me-in-my-personal-and-professional-life"><a href="#How-can-emotional-intelligence-help-me-in-my-personal-and-professional-life" class="headerlink" title="How can emotional intelligence help me in my personal and professional life ?"></a>How can emotional intelligence help me in my personal and professional life ?</h1>
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/04/08/20190408-ComputerSecurity-note-ch4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
       <meta itemprop="name" content="Eugene Yang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="3ugeneYang.§ite">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/08/20190408-ComputerSecurity-note-ch4/" itemprop="url">[Intro. to Computer Security Course Note] Ch 4</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/04/08/20190408-ComputerSecurity-note-ch4/" class="post-title-link" itemprop="url">[Intro. to Computer Security Course Note] Ch 4</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-08T08:06:38+08:00">
-                2019-04-08
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <time title="Created: 2019-04-08 08:06:38" itemprop="dateCreated datePublished" datetime="2019-04-08T08:06:38+08:00">2019-04-08</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-06-24 19:08:57" itemprop="dateModified" datetime="2019-06-24T19:08:57+08:00">2019-06-24</time>
+              </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -626,128 +581,363 @@ Crystallized Intelligence 結晶智力: ability to solve problems using &quot;al
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          
-          Ch4. Access ControlAccess control: the central element of computer security
-
-Principal Objectives of Computer Security
-Prevent unauthorized users from
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/08/20190408-ComputerSecurity-note-ch4/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+          <h1 id="Ch4-Access-Control"><a href="#Ch4-Access-Control" class="headerlink" title="Ch4. Access Control"></a>Ch4. Access Control</h1><p><strong>Access control: the central element of computer security</strong></p>
+<hr>
+<h1 id="Principal-Objectives-of-Computer-Security"><a href="#Principal-Objectives-of-Computer-Security" class="headerlink" title="Principal Objectives of Computer Security"></a>Principal Objectives of Computer Security</h1><ul>
+<li><strong>Prevent unauthorized users</strong> from gaining access to recources</li>
+<li><strong>Prevent legitimate users</strong> from accessing resources in an <strong>unauthorized manner</strong></li>
+<li><strong>Enable legitimate users</strong> to access resources in an <strong>authorized manner</strong></li>
+</ul>
+<h1 id="Access-Control-Principles"><a href="#Access-Control-Principles" class="headerlink" title="Access Control Principles"></a>Access Control Principles</h1><h2 id="Access-Control-Context"><a href="#Access-Control-Context" class="headerlink" title="Access Control Context"></a>Access Control Context</h2><ul>
+<li><strong>Authentication</strong>: verification that user / system credentials are valid</li>
+<li><strong>Authorization</strong>: the granting of a right or permission to a system entity ro access a system resource</li>
+<li><strong>Audit</strong>: an independent examination of system records and activities<ul>
+<li>To test for adequacy of system controls</li>
+<li>To ensure compliance with established policy and operational procedures</li>
+<li>To detect breaches in security</li>
+<li>To recommend any indicated changes in control, policy ans procedures</li>
+</ul>
+</li>
+</ul>
+<h2 id="Access-Control-Policies"><a href="#Access-Control-Policies" class="headerlink" title="Access Control Policies"></a>Access Control Policies</h2><ul>
+<li>Discretionary access control (DAC)<ul>
+<li><strong>Based on the identity of the requestor</strong>, and on access rules stating what requestors are (or are not) allowed to do</li>
+<li>Why discretionary ? <strong>An entity might have access rights to enable another entity to access some resource</strong></li>
+</ul>
+</li>
+<li>Mandatory access control (MAC)<ul>
+<li>Based on security clearances of system entities, and on security labels of resources</li>
+<li>Why mandatory ? An entity that has clearance to access a resource <strong>may not enable another entity to access that resource</strong></li>
+</ul>
+</li>
+<li>Role-based access control (RBAC)<ul>
+<li><strong>Based on the roles that users have</strong>, and on rules stating what accesses are allowed to given roles</li>
+</ul>
+</li>
+<li>Attribute-based access control (ABAC)<ul>
+<li>Based on attributes of the user, the resource to be accessed, and current environmental conditions</li>
+</ul>
+</li>
+</ul>
+<h1 id="Subjects-Objects-and-Access-Rights"><a href="#Subjects-Objects-and-Access-Rights" class="headerlink" title="Subjects, Objects, and Access Rights"></a>Subjects, Objects, and Access Rights</h1><h2 id="Subject"><a href="#Subject" class="headerlink" title="Subject"></a>Subject</h2><ul>
+<li>An entity capable of accessing objects</li>
+<li>3 classes<ul>
+<li>Owner</li>
+<li>Group</li>
+<li>World (include all users)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><ul>
+<li>A resource to which access is controlled</li>
+</ul>
+<h2 id="Access-Rights"><a href="#Access-Rights" class="headerlink" title="Access Rights"></a>Access Rights</h2><ul>
+<li>Describes the way in which a subject may access an object</li>
+<li>Could include<ul>
+<li>Read</li>
+<li>Write</li>
+<li>Execute</li>
+<li>Delete</li>
+<li>Create</li>
+<li>Search</li>
+</ul>
+</li>
+</ul>
+<h1 id="Discretionary-任意-Access-Control"><a href="#Discretionary-任意-Access-Control" class="headerlink" title="Discretionary(任意) Access Control"></a>Discretionary(任意) Access Control</h1><ul>
+<li>A general approach: access<ul>
+<li>Subjects vs. Objects</li>
+<li>Each entry: access right
+<img src="https://i.imgur.com/tq8TCV9.jpg" alt=""></li>
+</ul>
+</li>
+</ul>
+<h2 id="Decomposition-Method-1"><a href="#Decomposition-Method-1" class="headerlink" title="Decomposition Method 1"></a>Decomposition Method 1</h2><ul>
+<li>Access controls lists (ACL): decomposed by columns (objects)<ul>
+<li>For each object, an ACL lists users and their permitted access rights</li>
+<li>Default set of rights: users that are not explicitly listed</li>
+<li>Convenient: determining which subjects have which access rights to a particular resource</li>
+<li>Inconvenient: determining the access rights available to a specific user</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://i.imgur.com/qLg79Cx.jpg" alt=""></p>
+<h2 id="Decomposition-Method-2"><a href="#Decomposition-Method-2" class="headerlink" title="Decomposition Method 2"></a>Decomposition Method 2</h2><ul>
+<li>Capability tickets: decomposed by rows (subject)<ul>
+<li>A capability tickets specifies authorized objects and operations for a particular user</li>
+<li>Convenient / inconvenient: opposite to ACLs</li>
+</ul>
+</li>
+<li>Have greater security problem than ACLs. Why ?<ul>
+<li>Tickets may be dispersed around the system<ul>
+<li>Integrity of the ticket must be protected, guaranteed, and unforgeable</li>
+</ul>
+</li>
+<li>2 solutions<ul>
+<li>OS holds all tickets on behalf of users</li>
+<li>An unforgeable token in the capability</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://i.imgur.com/c8dOwQp.jpg" alt=""></p>
+<h2 id="Another-Approach-Authorized-Table"><a href="#Another-Approach-Authorized-Table" class="headerlink" title="Another Approach: Authorized Table"></a>Another Approach: Authorized Table</h2><p>就資料庫的感覺
+<img src="https://i.imgur.com/dwSDlbg.jpg" alt=""></p>
+<h2 id="A-General-Access-Control-Model-for-DAC"><a href="#A-General-Access-Control-Model-for-DAC" class="headerlink" title="A General Access Control Model for DAC"></a>A General Access Control Model for DAC</h2><ul>
+<li>3 requirements<ul>
+<li>Representing the protection state</li>
+<li>Enforcing access rights</li>
+<li>Allowing subjects to alter the protection state in certain ways</li>
+</ul>
+</li>
+<li>Concepts<ul>
+<li>As usual: a set of subjects, objects, and rules</li>
+<li>New: protection state</li>
+</ul>
+</li>
+<li>Protection states<ul>
+<li>Processes: delete, stop (block), and wake up</li>
+<li>Devices: read / write, operation control, and block / unblock</li>
+<li>Memory locations or regions: read / write</li>
+<li>SubjectsL grant or delete access rights of objects</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://i.imgur.com/eqWUu9L.jpg" alt=""></p>
+<h2 id="More-Flexible-Model-Protection-Domains"><a href="#More-Flexible-Model-Protection-Domains" class="headerlink" title="More Flexible Model: Protection Domains"></a>More Flexible Model: Protection Domains</h2><ul>
+<li>A set of objects together with access rights to those objects<ul>
+<li>r.g., Access matrix</li>
+</ul>
+</li>
+<li>Recal security design principles: Least privilege<ul>
+<li>Every process and every user of the system should operate using the least set of privileges necessary to perform the task</li>
+</ul>
+</li>
+<li>More general concpet: <strong>minimize the access rights that any user of process has at any one time</strong></li>
+<li>Association between a process and a domain can be static or dynamic<ul>
+<li>e.g., Aprocess: a sequence of procedures require different access rights</li>
+</ul>
+</li>
+<li>One form: distinction mode in many OSes (e.g., UNIX)<ul>
+<li>User mode: certain areas of memory are protected amd certain instructions may not be executed</li>
+<li>Kernel mode</li>
+</ul>
+</li>
+</ul>
+<h1 id="Example-UNIX-File-Access-Control"><a href="#Example-UNIX-File-Access-Control" class="headerlink" title="Example: UNIX File Access Control"></a>Example: UNIX File Access Control</h1><ul>
+<li>UNIX files are administered using inodes (index node)</li>
+<li>Directories are structured in a hierarchical tree</li>
+</ul>
+<h2 id="Traditional-UNIX-File-Access-Control"><a href="#Traditional-UNIX-File-Access-Control" class="headerlink" title="Traditional UNIX File Access Control"></a>Traditional UNIX File Access Control</h2><ul>
+<li>UNIX user: a unique user identification number (user ID)<ul>
+<li>A member of a primary group, and possibly other groups</li>
+<li>Each group is identified by a group ID</li>
+</ul>
+</li>
+<li>Each file / directory: 12 protection bits<ul>
+<li>FIrst 9 bits: read, write, execute</li>
+<li>Last 3 bits: setUID, setGID, and sticky bit</li>
+<li><img src="https://i.imgur.com/BjGSBEo.jpg" alt=""></li>
+</ul>
+</li>
+<li>SetUID / SetGID bits<ul>
+<li>Known as the effective user ID and effective group ID</li>
+<li>System temporarily grants a real user with the rights of the file owner / group in addition to the real user&#39;s rights</li>
+<li>For directories<ul>
+<li>SetGID: newly created files will inherit the group of this directory, rather than the primary group ID of the user who created this file</li>
+<li>SetUID is ignored</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Sticky bit<ul>
+<li>Files: the system should retain the file contents in memory following execution (no longer used)</li>
+<li>Directories: only the owner of any file in the directory can rename, move, or delete that file</li>
+</ul>
+</li>
+<li>superuser</li>
+<li>Issues<ul>
+<li>No scalability, difficult to manage (user group 會弄得很冗)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Modern-UNIX-Access-Control-Access-Control-Lists-ACLs"><a href="#Modern-UNIX-Access-Control-Access-Control-Lists-ACLs" class="headerlink" title="Modern UNIX Access Control: Access Control Lists (ACLs)"></a>Modern UNIX Access Control: Access Control Lists (ACLs)</h2><ul>
+<li>Supported by many modern UNIX-based OSes<ul>
+<li>Extended ACL vs. minimal ACL (traditional)</li>
+</ul>
+</li>
+<li>FreeBSD<ul>
+<li>Any number of users and groups can be assigned to a file<ul>
+<li>Each with 3 protection bits</li>
+</ul>
+</li>
+<li>A file need not have an ACL, may be protected solely by traditional access control</li>
+<li>An additional protection bit: whether the file has an extended ACL</li>
+</ul>
+</li>
+<li>Extended ACLs are used with the following strategies<ul>
+<li>Owner and other classes remain the same</li>
+<li>Group class specifies the permissions for the owner group for this file</li>
+<li>Additional named users and named groups may be associated with the file</li>
+<li><img src="https://i.imgur.com/0guYtCw.jpg" alt=""></li>
+</ul>
+</li>
+</ul>
+<h1 id="Role-Based-Access-Control"><a href="#Role-Based-Access-Control" class="headerlink" title="Role-Based Access Control"></a>Role-Based Access Control</h1><ul>
+<li><strong>Based on the roles that users assume</strong>, instead of their identities</li>
+<li>Widespread commercial use and an area of active research</li>
+<li><strong>Many-to-many relationship</strong><ul>
+<li>Users to roles</li>
+<li>Roles to resources</li>
+</ul>
+</li>
+</ul>
+<h2 id="RBAC-Reference-Models"><a href="#RBAC-Reference-Models" class="headerlink" title="RBAC Reference Models"></a>RBAC Reference Models</h2><ul>
+<li>4 modes<ul>
+<li>RBAC~0~: minimum functionality</li>
+<li>RBAC~1~: RBAC~0~ + role hierarchies</li>
+<li>RBAC~2~: RBAC~0~ + constrains</li>
+<li>RBAC~3~: RBAC~0~ + RBAC~1~ + RBAC~2~</li>
+<li><img src="https://i.imgur.com/iRzlddw.jpg" alt=""></li>
+</ul>
+</li>
+</ul>
+<h2 id="RBAC-0-Base-Model"><a href="#RBAC-0-Base-Model" class="headerlink" title="RBAC~0~: Base Model"></a>RBAC~0~: Base Model</h2><ul>
+<li>User: an individual that has access to this computer system</li>
+<li>Role: a named job function (authority level)</li>
+<li>Permission: an approval of a particular mode of access to one or more objects</li>
+<li>Session: a mapping between a user and set of roles to which a user is assigned</li>
+</ul>
+<p><img src="https://i.imgur.com/ILEUUqz.jpg" alt=""></p>
+<h2 id="RBAC-1-Role-Hierarchies"><a href="#RBAC-1-Role-Hierarchies" class="headerlink" title="RBAC~1~: Role Hierarchies"></a>RBAC~1~: Role Hierarchies</h2><ul>
+<li>Roles with greater responsibility: greater authority to access resources</li>
+</ul>
+<h2 id="RBAC-2-Constrains"><a href="#RBAC-2-Constrains" class="headerlink" title="RBAC~2~: Constrains"></a>RBAC~2~: Constrains</h2><ul>
+<li>Adapting RBAC to the specifics of administrative and security policies in an organization<ul>
+<li>Mutually exclusive roles<ul>
+<li><strong>A user can be assigned to only one role in the set</strong></li>
+<li><strong>Any permission can be granted to only one role in the set</strong></li>
+<li><strong>Non-Overlapping permissions</strong></li>
+</ul>
+</li>
+<li>Cardinality(基數)</li>
+<li>Prerequesite role<ul>
+<li>e.g., <strong>a user can be assigned to a higher role only if it is already assigned an lower role</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Attribute-Based-Access-Control"><a href="#Attribute-Based-Access-Control" class="headerlink" title="Attribute-Based Access Control"></a>Attribute-Based Access Control</h1><ul>
+<li>Define authorizations that express <strong>conditions</strong> on properties of both the resource and the subject</li>
+<li>Strength: <strong>flexibility, expressive power</strong></li>
+<li>Drawback: 運算較多，花時間</li>
+</ul>
+<h2 id="ABAC-Model-Attributes"><a href="#ABAC-Model-Attributes" class="headerlink" title="ABAC Model: Attributes"></a>ABAC Model: Attributes</h2><ul>
+<li>Subject attributes<ul>
+<li>A subject is an <strong>active</strong> entity that causes info. to flow among objects or changes the system state</li>
+<li>Attributes define the identity and characteristics of the subject<ul>
+<li>e.g., name, job title</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Object attributes<ul>
+<li>An object (or resource) is a <strong>passive</strong> system-related entity containing or receiving info.</li>
+<li>Objects have attributes that can be leveraged to make access control decisions<ul>
+<li>file name, file size, creator</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Environment attributes<ul>
+<li>The operational, technical, and even situational environment or context in which the info. access occurs<ul>
+<li>e.g., current date, time</li>
+</ul>
+</li>
+<li>Have so far been largely ignored in most access control policies</li>
+</ul>
+</li>
+</ul>
+<h2 id="ABAC-Model-Distinguishable"><a href="#ABAC-Model-Distinguishable" class="headerlink" title="ABAC Model: Distinguishable"></a>ABAC Model: Distinguishable</h2><ul>
+<li>Controls access to objects by evaluating rules against the attributes of entities (subject and object), operations, and the environment</li>
+<li>Capable of enforcing DAC, RBAC, and MAC concepts</li>
+<li>Fine-grained access control: allows an unlimited number of attributes to be combined to satisfy any access control rule</li>
+</ul>
+<h2 id="ABAC-Logical-Architecture"><a href="#ABAC-Logical-Architecture" class="headerlink" title="ABAC Logical Architecture"></a>ABAC Logical Architecture</h2><ul>
+<li>4 independent sources of info. used for the access control decision</li>
+<li>Powerful, flexible, <strong>but cost is large</strong></li>
+<li><img src="https://i.imgur.com/oTcMBXC.jpg" alt=""></li>
+</ul>
+<h2 id="ACL-Trust-Chain"><a href="#ACL-Trust-Chain" class="headerlink" title="ACL Trust Chain"></a>ACL Trust Chain</h2><p><img src="https://i.imgur.com/Ae0QSIV.jpg" alt=""></p>
+<h2 id="ABAC-Trust-Chain"><a href="#ABAC-Trust-Chain" class="headerlink" title="ABAC Trust Chain"></a>ABAC Trust Chain</h2><p><img src="https://i.imgur.com/z2rPj67.jpg" alt=""></p>
+<h2 id="ABAC-Policies"><a href="#ABAC-Policies" class="headerlink" title="ABAC Policies"></a>ABAC Policies</h2><ul>
+<li>A policy is a <strong>set of rules</strong> and relationships that govern allowable behavior within an organization<ul>
+<li>Based on<br>1. Privileges of subjects<br>2. How resources or objects are to be protected<br>3. Under which environment conditions</li>
+</ul>
+</li>
+<li>An ABAC policy model<ul>
+<li><img src="https://i.imgur.com/SRtbv2w.jpg" alt=""></li>
+</ul>
+</li>
+</ul>
+<h1 id="Case-Study-RBAC-System-for-a-Bank"><a href="#Case-Study-RBAC-System-for-a-Bank" class="headerlink" title="Case Study: RBAC System for a Bank"></a>Case Study: RBAC System for a Bank</h1>
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/04/07/20190407-psy-note-ch7/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
       <meta itemprop="name" content="Eugene Yang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="3ugeneYang.§ite">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/07/20190407-psy-note-ch7/" itemprop="url">[Intro. to Psy Course Note] Ch 7</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/04/07/20190407-psy-note-ch7/" class="post-title-link" itemprop="url">[Intro. to Psy Course Note] Ch 7</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-07T10:18:03+08:00">
-                2019-04-07
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <time title="Created: 2019-04-07 10:18:03" itemprop="dateCreated datePublished" datetime="2019-04-07T10:18:03+08:00">2019-04-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-04-26 07:30:33" itemprop="dateModified" datetime="2019-04-26T07:30:33+08:00">2019-04-26</time>
+              </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -755,128 +945,372 @@ Prevent unauthorized users from
     <div class="post-body" itemprop="articleBody">
 
       
-      
+          <h1 id="Memory"><a href="#Memory" class="headerlink" title="Memory"></a>Memory</h1><hr>
+<h1 id="Stage-of-memory"><a href="#Stage-of-memory" class="headerlink" title="Stage of memory"></a>Stage of memory</h1><ul>
+<li>3 stages of memory: Atkinson-Schiffrin Model<ul>
+<li>Memory: active system that receives, stores, organizes, alters, and recovers information</li>
+<li>Sensory memory 感覺記憶</li>
+<li>Short-term memory (STM) 短期記憶</li>
+<li>Long-term memory (LTM) 長期記憶</li>
+</ul>
+</li>
+<li>Key peocesses<ul>
+<li>Encoding 收錄: converting info into a usable form</li>
+<li>Storage</li>
+<li>Retrieval 提取</li>
+</ul>
+</li>
+<li>Sensory memory: stores an exact copy of incoming info for a few seconds or less (either what is seen or heard)<ul>
+<li>We are normally unaware of sensory memory</li>
+<li>Selective attention to sensory memory transfers information to STM</li>
+<li>Iconic memory 影像記憶 (半秒)</li>
+<li>Echoic memory (2秒)</li>
+</ul>
+</li>
+</ul>
+<h1 id="Short-term-working-memory"><a href="#Short-term-working-memory" class="headerlink" title="Short-term (working) memory"></a>Short-term (working) memory</h1><ul>
+<li>We are consciously aware of short-term memories</li>
+<li>Encoding in STM is usually phonetic, by sound</li>
+<li>Very sensitive to interruption or interference</li>
+<li>Working memory: part of STM, like a mental scratchpad</li>
+<li>保留最近的經驗 or 從 LTM 提取</li>
+<li>Rehearsal in STM<ul>
+<li>Maintenance rehearsal 維持性複誦<ul>
+<li>Rote rehearsal (rote learning) 反覆複誦: the use of repetition to transfer information to LTM; &quot;not very effective&quot;</li>
+</ul>
+</li>
+<li>Elaborative processing / rehearsal 精緻性處理 / 複誦: links new information with existing memories and knowledge in LTM; more effective way to transfer information to LTM</li>
+</ul>
+</li>
+<li>Chunking in STM</li>
+</ul>
+<h1 id="Long-term-memory"><a href="#Long-term-memory" class="headerlink" title="Long-term memory"></a>Long-term memory</h1><ul>
+<li>Encoding in LTM is usually based on meaning</li>
+<li>20 memories<ul>
+<li>American: me</li>
+<li>Chinese: us</li>
+</ul>
+</li>
+<li>LTM memories are only rarely permanent</li>
+<li>Elaborative processing can revise memories on basis of reasoning or adding new, possibly false, information<ul>
+<li>False memories 虛假記憶: can seem accurate but they &quot;never happened&quot;</li>
+<li>Source confusion 來源混淆: occurs when the origins of a memory are &quot;misremembered&quot;</li>
+</ul>
+</li>
+<li>Organize memories<ul>
+<li>Network model 網路模型: LTM stored as a network of linked ideas</li>
+<li>Reintegration 重整: memories that are reconstructed or expanded by starting with one memory and then following network of links to related memories</li>
+<li>Cognitive interview 認知晤談: using reintegration to improve the memory of eyewitnesses (Geiselman &amp; Fisher, 1987)<ul>
+<li>Use of various cues and strategies to improve eyewitness memory</li>
+<li>Recreating the crime scene and witnesses revisit the scene in their imagination or in person</li>
+<li>35% more correct information than standard questioning</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Types of LTM<ul>
+<li>Procedural (skilled) memory 程序記憶: LTM for conditioned responses and learned skills (how to do things)</li>
+<li>Declarative (fact) memory 陳述性記憶: LTM for factual information<ul>
+<li>Semantic memory 語意記憶: part of declarative memory for impersonal facts and everyday knowledge</li>
+<li>Episodic memory 個人事件記憶 / 情節記憶: part of declarative memory for personal experiences linked with specific times and places</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Measuring-memory"><a href="#Measuring-memory" class="headerlink" title="Measuring memory"></a>Measuring memory</h1><ul>
+<li>You either remember or you don&#39;t ? not really</li>
+<li>Partial memories are common<ul>
+<li>Tip-of-the-tongue (TOT) state: feeling that a memory is available but not quite retrievable</li>
+<li>Feeling of knowing: feeling that allows people to predict beforehand whether they will be able to remember something</li>
+<li>Déjà vu 似曾相識: the feeling that you have already experienced a situation that you are experiencing for the first time</li>
+</ul>
+</li>
+<li>Recall 回憶: direct retrieval of facts or info<ul>
+<li>Hardest to recall items in the middle of an ordered list; known as the &quot;serial position effect&quot; 序列位置效應</li>
+<li>Easier to remember first and last items in a list</li>
+</ul>
+</li>
+<li>Recognition: previously learned material is correctly identified<ul>
+<li>Usually superior to recall</li>
+<li>Distractors 誘答選項: false items included with a correct item<ul>
+<li>Wrong choices on multiple-choice tests</li>
+</ul>
+</li>
+<li>How to prevent false identification of witnesses (black, tall, young)<ul>
+<li>It’s better to have all the distractors look like the person witnesses described</li>
+<li>Witnesses should be warned that the culprit may not be present</li>
+<li>Better to show one photo at a time (a sequential lineup). for each photo, the witness must decide whether the person is the culprit before another photo is shown</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Relearning: <ul>
+<li>Used to measure memory of prior learning</li>
+<li>Savings scores 省時分數: amount of time saved when relearning info</li>
+</ul>
+</li>
+<li>Implicit and explicit memories<ul>
+<li>Explicit memory 外顯記憶: past experiences that are &quot;consciously&quot; brought to mind</li>
+<li>Implicit memory 內隱記憶: a memory not known to exist; memory that is &quot;unconsciously&quot; retrieved<ul>
+<li>Priming 促發: when cues are used to activate hidden memories</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Forgetting"><a href="#Forgetting" class="headerlink" title="Forgetting"></a>Forgetting</h1><ul>
+<li>Forgetting in LTM<ul>
+<li>Curve of forgetting 遺忘曲線: graph that shows the amount of memory information remembered after varying lengths of time</li>
+<li>Nonsense syllables 無意義音節: meaningless three-letter words (fej, quf) that test learning and forgetting</li>
+</ul>
+</li>
+<li>Encoding failure in LTM<ul>
+<li>Encoding failure 收錄失敗: when a memory was never formed in the first place; failure to store sufficient info to form a useful memory</li>
+<li>Other people may all &quot;look alike&quot; due to encoding failure (臉盲?)</li>
+</ul>
+</li>
+<li>Storage failure in LTM<ul>
+<li>Memory traces 記憶痕跡: &quot;physical changes&quot; in nerve cells or brain activity that occur when memories are stored</li>
+<li>Memory decay 記憶(痕跡)衰退: when memory traces become weaker; fading or weakening of memories</li>
+<li>Disuse 不用: theory that memory traces weaken when memories are not periodically used or retrieved</li>
+</ul>
+</li>
+<li>Retrieval failure in LTM: cue-dependent forgetting<ul>
+<li>Cue-dependent forgetting 線索依賴的遺忘: failure to access memories due to the &quot;missing of retrieval cues&quot;</li>
+<li>Availability 可獲得性: a memory is available when it is stored in LTM</li>
+<li>Accessibility 易取性: a memory is accessible in LTM when it can be successfully retrieved</li>
+<li>Information in LTM can be available but NOT accessible</li>
+<li>Memory cue 記憶線索: any stimulus associated with a memory; usually enhances retrieval of a memory<ul>
+<li>A person may &quot;forget&quot; (be inaccessible) if cues are missing at retrieval time</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>State-dependent learning 狀態依賴式記憶<ul>
+<li>State-dependent learning 狀態關連學習: when memory retrieval is influenced by bodily state at time of learning; if your body state is the same at the time of learning AND the time of retrieval, retrieval will be improved</li>
+<li>The effect of mood on memory: emotional cues and memory<ul>
+<li>When you are happy, more likely to remember recent happy events</li>
+<li>When you are in a bad mood, more likely to remember unpleasant events</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Interference 干擾<ul>
+<li>Tendency for new memories to impair retrieval of older memories, and the reverse</li>
+<li>Retroactive interference 逆向干擾: tendency for new memories to interfere with retrieval of old memories (新的搞舊的)</li>
+<li>Proactive interference 前向干擾: prior learning inhibits (interferes with) recall of later learning (舊的搞新的)</li>
+</ul>
+</li>
+<li>Transfer of training<ul>
+<li>Positive transfer 正遷移: mastery of one task aids learning or performing another<ul>
+<li>Riding a bicycle (balance and turn) and riding a motorcycle</li>
+</ul>
+</li>
+<li>Negative transfer 負遷移: mastery of one task conflicts with learning or performing another<ul>
+<li>Back up a car and back up a car with a trailer attached to it</li>
+<li>A pull-type handle on a door that must be pushed open</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Repression and suppression<ul>
+<li>Repression 潛抑: &quot;unconsciously&quot; pushing painful, embarrassing, or threatening memories out of awareness / consciousness<ul>
+<li>Motivated forgetting</li>
+</ul>
+</li>
+<li>Suppression 壓抑: &quot;consciously&quot; putting something painful or threatening out of mind or trying to keep it from entering awareness<ul>
+<li>To avoid thoughts associated with a painful emotional event</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>The recovered memory / false memory debate 記憶恢復或假記憶的爭論<ul>
+<li>&quot;Recovered&quot; repressed memories of sexual abuse</li>
+<li>It is easy to create false memories by using hypnosis</li>
+<li>Studies of false memories: Elizabeth Loftus<ul>
+<li>Misinformation and false memory</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Eyewitness memory 證人記憶<ul>
+<li>Elizabeth Loftus (1979)</li>
+<li>Postevent information 事後訊息可以造成扭曲<ul>
+<li>Speed estimate-smash: 40+ mile/hr; contact: 30 mile/hr</li>
+<li>Broken glass? Smash: 1/3; contact 14% (其實沒有)</li>
+</ul>
+</li>
+<li>Misinformation effect 錯誤訊息效應<ul>
+<li>Stop / yield misleading question study: stop sign (75% correct recognition) vs. yield sign (41% correct) (originally: a stop sign)</li>
+</ul>
+</li>
+<li>More confidence, higher accuracy ? NO</li>
+<li>Children’s memory and witness: Steven Ceciand colleagues<ul>
+<li>Younger children are not reliable</li>
+<li>Under pressure, provide what adults want</li>
+<li>Mix others’ stories with own experiences</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Memory-and-brain"><a href="#Memory-and-brain" class="headerlink" title="Memory and brain"></a>Memory and brain</h1><ul>
+<li>Consolidation<ul>
+<li>Consolidation 固化: forming a LTM in the brain</li>
+<li>Retrograde amnesia 回溯性失憶症 / &quot;逆向&quot;失憶症: forgetting events that occurred before an injury or trauma</li>
+<li>Anterograde amnesia 前向失憶症 / &quot;順向&quot;失憶症: forgetting events that follow an injury or trauma</li>
+<li>Electroconvulsive shock (ECS): mild electrical shock passed through the brain can prevent consolidation of any memory being formed at the time</li>
+</ul>
+</li>
+<li>Memory formation and the hippocampus<ul>
+<li>Hippocampus 海馬迴: brain structure associated with emotion and transfer of information passing from STM into LTM</li>
+<li>If damaged, person can no longer &quot;create&quot; LTM and thus will always live in the present</li>
+<li>Memories prior to damage will remain intact</li>
+<li>H.M.</li>
+</ul>
+</li>
+<li>Memory, stress, and emotion<ul>
+<li>Flashbulb memory 閃光燈記憶: especially vivid and detailed recollection of an emotional event (during times of personal tragedy, accident, or other emotionally significant events, e.g.,9/11 2001 &amp; 921 earthquake)</li>
+<li>Includes both positive and negative experiences; great confidence is placed in them even though they may be inaccurate</li>
+<li>Due to involvement of limbic system 邊緣系統</li>
+</ul>
+</li>
+<li>long-term potentiation 長效增益<ul>
+<li>Brain mechanism used to form lasting memories by strengthening the connection between neurons that become more active at the same time</li>
+</ul>
+</li>
+</ul>
+<h1 id="Exceptional-memory"><a href="#Exceptional-memory" class="headerlink" title="Exceptional memory"></a>Exceptional memory</h1><ul>
+<li>Eidetic imagery 全現心像 (photographic memory 如照片般清晰的記憶): occurs when a person (usually a child) has visual images clear enough to be scanned or retained for at least 30 seconds<ul>
+<li>Usually projected onto a &quot;plain&quot; surface, like a blank piece of paper</li>
+<li>Usually disappears during adolescence and is rare by adulthood (8% of preadolescent children, no adults)</li>
+</ul>
+</li>
+<li>Jill Price: exceptional episodic memory (highly superior autobiographical memory)<ul>
+<li>&quot;…I run my entire life through my head every day and it drives me crazy!!!&quot;</li>
+<li>He had to devise ways to forget (such as writing on a piece of paper and then burn it)</li>
+</ul>
+</li>
+<li>Mr. S: exceptional semantic memory<ul>
+<li>Special memory tricks: mnemonics</li>
+</ul>
+</li>
+</ul>
+<h1 id="Improving-memory"><a href="#Improving-memory" class="headerlink" title="Improving memory"></a>Improving memory</h1><ul>
+<li>Encoding strategies<ul>
+<li>Use &quot;chunking&quot; to organize information</li>
+<li>Use &quot;mental images&quot;</li>
+<li>Elaborative processing: look for connections to existing knowledge</li>
+<li>Whole learning vs. part learning (study the largest meaningful amount of information you can at one time)<ul>
+<li>Short, organized info -&gt; whole learning</li>
+<li>Long, complicated info -&gt; part learning</li>
+<li>Progressive-part method 遞進分習法: for very long or complex material, break a learning task into a series of shorter sections (A, AB, ABC)</li>
+</ul>
+</li>
+<li>Beware serial position 序列位置: since most errors occur while remembering the middle of the list, spend more study time there</li>
+<li>Encode retrieval cues: stimuli that aid retrieval are most effective if they were present during encoding; engage in more elaborative encoding to increase the number of available retrieval cues</li>
+<li>Overlearning 過度學習: continue studying beyond bare mastery</li>
+<li>Spaced practice 分散練習: alternate short study sessions with brief rest periods; better than massed practice, studying for long periods without rest periods (chunking)</li>
+</ul>
+</li>
+<li>Retrieval strategies<ul>
+<li>Cognitive interview: hits for recapturing context and jogging memories<ul>
+<li>Say or write down everything you can remember</li>
+<li>Recall events or information in different orders</li>
+<li>Recall from different viewpoints</li>
+<li>Mentally return to the context of encoding</li>
+</ul>
+</li>
+<li>Retrieval practice: practice retrieval (e.g., through recitation) for feedback<ul>
+<li>Knowledge of results: lets you check progress</li>
+<li>Recitation: summarizing aloud while learning</li>
+</ul>
+</li>
+<li>Extend how long you remember: lengthen the amount of time between retrieval practice</li>
+<li>Clear your mind and prepare your body<ul>
+<li>Lack of sleep decreases retention; sleep aids consolidation</li>
+<li>Hunger decreases retention</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Mnemonics-memory-quot-Trick-quot"><a href="#Mnemonics-memory-quot-Trick-quot" class="headerlink" title="Mnemonics: memory &quot;Trick&quot;"></a>Mnemonics: memory &quot;Trick&quot;</h1><ul>
+<li>Any kind of memory system or aid<ul>
+<li>Makes things meaningful</li>
+<li>Makes info familiar</li>
+<li>Uses mental pictures</li>
+<li>Forms bizarre, unusual, or exaggerated mental associations</li>
+</ul>
+</li>
+<li>Create Acrostics 藏頭詩</li>
+<li>Create Mental Images<ul>
+<li>Keyword method: aid to memory; using a familiar word or image to link two items</li>
+</ul>
+</li>
+<li>Create stories of chains: remember lists in order, forming an exaggerated association connecting item one to two, and so on<ul>
+<li>Method of Loci: take a mental walk, mentally walk along a familiar path, placing objects or ideas along the path</li>
+</ul>
+</li>
+</ul>
 
-      
-        
-          
-          Memory
-Stage of memory
-3 stages of memory: Atkinson-Schiffrin Model
-Memory: active system that receives, stores, organizes, alters, and recovers infor
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/07/20190407-psy-note-ch7/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/04/07/20190407-psy-note-ch6/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
       <meta itemprop="name" content="Eugene Yang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="3ugeneYang.§ite">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/04/07/20190407-psy-note-ch6/" itemprop="url">[Intro. to Psy Course Note] Ch 6</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/04/07/20190407-psy-note-ch6/" class="post-title-link" itemprop="url">[Intro. to Psy Course Note] Ch 6</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-07T10:07:43+08:00">
-                2019-04-07
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <time title="Created: 2019-04-07 10:07:43" itemprop="dateCreated datePublished" datetime="2019-04-07T10:07:43+08:00">2019-04-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-04-26 07:30:37" itemprop="dateModified" datetime="2019-04-26T07:30:37+08:00">2019-04-26</time>
+              </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -884,62 +1318,187 @@ Memory: active system that receives, stores, organizes, alters, and recovers inf
     <div class="post-body" itemprop="articleBody">
 
       
-      
+          <h1 id="Conditioning-and-Learning"><a href="#Conditioning-and-Learning" class="headerlink" title="Conditioning and Learning"></a>Conditioning and Learning</h1><hr>
+<h1 id="Some-types-of-learning"><a href="#Some-types-of-learning" class="headerlink" title="Some types of learning"></a>Some types of learning</h1><ul>
+<li>Learning</li>
+<li>Associative learning<ul>
+<li>2 types of associative learning: classical conditioning / operant conditioning</li>
+<li>Reinforcement: any event that increases the probability that a response will recur</li>
+<li>Antecedents: events that precede a response. more important in classical conditioning</li>
+<li>Consequences: effects that follow a response. more important in operant conditioning</li>
+</ul>
+</li>
+<li>Cognitive learning</li>
+</ul>
+<h1 id="Classical-conditioning"><a href="#Classical-conditioning" class="headerlink" title="Classical conditioning"></a>Classical conditioning</h1><ul>
+<li>Discovered by Ivan Pavlov, the Russian physiologist who studied digestion by presenting dogs with meat powder and measuring salivation</li>
+<li>Neutral stimulus 中性刺激: stimulus that does not evoke a response</li>
+<li>Conditioned stimulus 條件刺激: stimulus that evokes a response because it has been repeatedly paired with an unconditioned stimulus</li>
+<li>Unconditioned stimulus 無條件刺激: stimulus innately capable of eliciting a response</li>
+<li>Unconditioned response: innate reflex response elicited by an unconditioned stimulus</li>
+<li>Conditioned response: learned response elicited by a conditioned stimulus</li>
+<li>Unlike Pavlov, many psychologists think that classical conditioning involves cognition because it is related to information that might aid survival<ul>
+<li>Informational view: organisms look for associations among events</li>
+<li>Expectancy: expectation about how events are interconnected</li>
+</ul>
+</li>
+<li>principles of classical conditioning<ul>
+<li>Acquisition: training period in conditioning when a response is strengthened</li>
+<li>Higher-order conditioning 高層次制約: a conditioned stimulus is used to reinforce further learning; the CS is used as though it were a UCS</li>
+</ul>
+</li>
+<li>Extinction: weakening of a conditioned response through removal of reinforcement</li>
+<li>Spontaneous recovery: reappearance of a learned response following apparent extinction</li>
+<li>Generalization and discrimination<ul>
+<li>Stimulus generalization 刺激類化</li>
+<li>Stimulus discrimination 刺激區辨</li>
+</ul>
+</li>
+<li>Classical conditioning in humans<ul>
+<li>Phobia</li>
+<li>Conditioned emotional response (CER) 制約情緒反應</li>
+<li>Vicarious classical conditioning 替代古典制約: learning to respond emotionally to a stimulus by observing another’s emotional reactions</li>
+</ul>
+</li>
+<li>Overcoming phobias<ul>
+<li>Systematic desensitization: decreasing fear or anxiety by exposing phobic people gradually to feared stimuli while they stay calm and relaxed</li>
+</ul>
+</li>
+</ul>
+<h1 id="Operant-conditioning-Instrumental-Learning"><a href="#Operant-conditioning-Instrumental-Learning" class="headerlink" title="Operant conditioning (Instrumental Learning)"></a>Operant conditioning (Instrumental Learning)</h1><ul>
+<li>Learning is based on the consequences of responding; we associate responses with their consequences</li>
+<li>Law of effect (Edward Thorndike): the probability of a response is altered by the effect it has, so responses that lead to desired effects are repeated; those that lead to undesired effects are not</li>
+<li>Operant reinforcer: any event that follows a response and increases its likelihood of recurring</li>
+<li>Acquiring an operant response<ul>
+<li>Conditioning chamber (Skinner box): 關動物做實驗</li>
+<li>Animals actively emit behavior; consequences influence how frequently behavior occurs</li>
+<li>Response-contingent reinforcement 反應依仗強化: reinforcement given only after a desired response occurs</li>
+</ul>
+</li>
+<li>timing of reinforcement<ul>
+<li>Operant reinforcement most effective when given immediately after a correct response</li>
+<li>Response chaining: a linked series of actions that leads to reinforcement</li>
+<li>Superstitious behaviors: behaviors that are repeated because they appear to produce reinforcement (i.e., the timing is right), even though they are not necessary (動物可能發展出奇怪的儀式化反應；它可能輕敲自己的頭，轉圈子，以後腳站立，或是做一系列當餵食機開啟時，他正在做的行為。這些儀式化的行為，我們把它們歸類為迷信行為，因為動物看起來似乎相信它所做的行為使得食物丸出現，因為在這種情境裡獎賞與動物的行為無關，我們將它稱為非連鎖增強作用)</li>
+</ul>
+</li>
+<li>Shaping: 海洋公園訓練海狗那樣</li>
+<li>Operant extinction<ul>
+<li>When learned responses are NOT reinforced, they gradually fade away</li>
+<li>Negative attention seeking: using misbehavior to gain attention</li>
+<li>消除不良行為的方法 -&gt; 消弱，讓個體失去增強物，以降低不良行為發生頻率</li>
+</ul>
+</li>
+<li>Reinforcement contingencies 強化依仗性<ul>
+<li>Reinforcer 強化物</li>
+<li>Reinforcement 強化 (動作本身): increases probability of that behavior</li>
+<li>正強化: behavior is followed by delivery of appetitve stimulus</li>
+<li>負強化: behavior is followed by removal of aversive stimulusk</li>
+</ul>
+</li>
+<li>Punishment<ul>
+<li>Punisher 跟上面一樣概念</li>
+<li>Punishment -&gt; decreases probability of that behavior</li>
+<li>正懲罰: behavior is followed by delivery of aversive stimulus</li>
+<li>負懲罰: behavior is followed by removal of appetitive stimulus</li>
+<li>Downside of punishment<ul>
+<li>Aversive stimulus 嫌惡刺激: 不舒服的 stimulus</li>
+<li>Escape learning: learning to make a response to end an aversive stimulus</li>
+<li>Avoidance learning</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Stimulus control<ul>
+<li>Operant stimulus generalization 刺激類化</li>
+<li>Operant stimulus discrimination 刺激區辨</li>
+</ul>
+</li>
+<li>Operant reinforcers<ul>
+<li>Primary reinforcer 初級強化物: unlearned and natural; satisfies physiological needs (e.g., food, water, sex)<ul>
+<li>Intracranial stimulation (ICS) 顱內刺激: natural primary reinforcer; involves direct activation of brain’s &quot;pleasure centers&quot;</li>
+</ul>
+</li>
+<li>Secondary reinforcer 次級強化物: learned reinforcer (e.g., money, grades, approval, praise); gains reinforcing properties by associating with a primary reinforcer</li>
+<li>Token reinforcer 代幣強化物: tangible secondary reinforcer</li>
+<li>Social reinforcer 社會強化物: attention and approval provided by other people</li>
+</ul>
+</li>
+<li>Reinforcement concepts<ul>
+<li>Schedules of reinforcement</li>
+<li>Continuous reinforcement</li>
+<li>Partial reinforcement<ul>
+<li>Fixed ratio schedule 定比強化: a set number of correct responses must be made to obtain a reinforcer</li>
+<li>Variable ratio schedule 不定比強化: varied number of correct responses must be made to get a reinforcer</li>
+<li>Fixed interval schedule 定時強化</li>
+<li>Variable interval schedule 不定時強化</li>
+</ul>
+</li>
+<li>Partial reinforcement effect 部分強化效應: responses acquired with partial reinforcement are more resistant to extinction</li>
+</ul>
+</li>
+</ul>
+<h1 id="Cognitive-learning"><a href="#Cognitive-learning" class="headerlink" title="Cognitive learning"></a>Cognitive learning</h1><ul>
+<li>Higher-level learning involving thinking, knowing, understanding, and anticipating</li>
+<li>Latent learning 潛伏學習: occurs without obvious reinforcement and is not demonstrated (or is hidden) until reinforcement is provided</li>
+<li>Cognitive map 認知地圖: internal images or other mental representations of an area (maze, city, etc.) that underlie an ability to choose alternate paths to the same goal</li>
+<li>Feedback</li>
+<li>Learning aids<ul>
+<li>Programmed instruction: learning format that presents information in small amounts, gives immediate practice, and provides continuous feedback</li>
+<li>Computer-assisted instruction (CAI): learning aided by computer-presented information and exercises</li>
+<li>Serious games: CAI presented in a game format</li>
+<li>Educational simulations: imaginary situations or &quot;microworlds&quot; that simulate real-world problems</li>
+</ul>
+</li>
+<li>Discovery learning<ul>
+<li>Rote learning 機械式學習</li>
+<li>Base on insight &amp; understanding</li>
+</ul>
+</li>
+<li><p>Observational learning</p>
+<ul>
+<li>Occurs by watching and imitating actions of another person or by noting consequences of a person’s actions</li>
+<li>Model 模範</li>
+</ul>
+</li>
+<li><p>Self-management skills</p>
+</li>
+<li>Premack principle<ul>
+<li>Any high-frequency response can be used to reinforce a low-frequency response (e.g., no TV watching until you finish your homework)</li>
+<li>Self-recording: self-management based on keeping records of response frequencies</li>
+</ul>
+</li>
+<li>How to break bad habits<ul>
+<li>Alternate behavior: try to get the same reinforcement with a new response</li>
+<li>Break up response chains: scramble the chain of events that leads to an undesired response</li>
+<li>Reduce cues and antecedents: try to avoid, narrow down, or remove stimuli that elicit the bad habit</li>
+<li>Use covert sensitization and reward<ul>
+<li>Covert sensitization 隱藏式敏感化: the use of aversive imagery to reduce undesired behavior</li>
+<li>Covert reinforcement 隱藏式強化: the use of positive imagery to reinforce desired behavior</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 
-      
-        
-          
-          Conditioning and Learning
-Some types of learning
-Learning
-Associative learning
-2 types of associative learning: classical conditioning / operant condi
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/04/07/20190407-psy-note-ch6/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
-  </section>
+  </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/5/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/7/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
+    <a class="extend prev" rel="prev" href="/page/5/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><span class="page-number current">6</span><a class="page-number" href="/page/7/">7</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/7/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -947,162 +1506,150 @@ Associative learning
           </div>
           
 
-
-          
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
-        
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
-    
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
-      
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/20161224_132915.jpg"
-                alt="Eugene Yang" />
-            
-              <p class="site-author-name" itemprop="name">Eugene Yang</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/%20%7C%7C%20archive">
-              
-                  <span class="site-state-item-count">67</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
-                  <span class="site-state-item-name">tags</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Eugene Yang"
+      src="/images/20161224_132915.jpg">
+  <p class="site-author-name" itemprop="name">Eugene Yang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
           
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:eugene87222@gmail.com" title="E-Mail → mailto:eugene87222@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Eugene87222" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Eugene87222" rel="noopener" target="_blank"><i class="fa fa-fw fa-telegram"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/eugene87222" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/yanghc" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;yanghc" rel="noopener" target="_blank"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pinterest.com/eugene87222/" title="Pinterest → https:&#x2F;&#x2F;www.pinterest.com&#x2F;eugene87222&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw fa-pinterest"></i>Pinterest</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/eugene87222" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
 
-          <div class="links-of-author motion-element">
-            
-              
-                <span class="links-of-author-item">
-                  <a href="mailto:eugene87222@gmail.com" target="_blank" title="E-Mail">
-                    
-                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://t.me/Eugene87222" target="_blank" title="Telegram">
-                    
-                      <i class="fa fa-fw fa-telegram"></i>Telegram</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.facebook.com/eugene87222" target="_blank" title="Facebook">
-                    
-                      <i class="fa fa-fw fa-facebook"></i>Facebook</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.linkedin.com/in/yanghc" target="_blank" title="LinkedIn">
-                    
-                      <i class="fa fa-fw fa-linkedin"></i>LinkedIn</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.pinterest.com/eugene87222/" target="_blank" title="Pinterest">
-                    
-                      <i class="fa fa-fw fa-pinterest"></i>Pinterest</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/eugene87222" target="_blank" title="GitHub">
-                    
-                      <i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-            
-          </div>
 
-          
-          
 
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
+      </div>
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017-2020</span>
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Eugene Yang</span>
-
-  
 </div>
-
-
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  </div>
 
         
 <div class="busuanzi-count">
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
     </span>
-  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
 </div>
 
 
@@ -1112,125 +1659,26 @@ Associative learning
 
 
 
-        
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
+<script src="/js/utils.js"></script>
 
-
-
-
-
+<script src="/js/motion.js"></script>
 
 
+<script src="/js/schemes/pisces.js"></script>
 
 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  
-
-    
-
-    
-
-  
-
-
-
-
-	
-
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -1250,26 +1698,11 @@ Associative learning
 
 
 
-  
-
-
-
-
 
   
 
   
 
-  
-
-  
-  
-
-  
-
-  
-
-  
 
 </body>
 </html>

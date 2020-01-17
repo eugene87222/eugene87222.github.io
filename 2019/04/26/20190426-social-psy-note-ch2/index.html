@@ -1,130 +1,55 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="en">
+<html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/favicon.ico" color="#222">
 
-<script>
-	(function(){
-		if(''){
-			if(prompt('Password:') !== ''){
-				alert('Wrong password');
-				history.back()
-			}
-		}
-	})();
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://eugene87222.github.io').hostname,
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeIn","post_body":"fadeIn","coll_header":"fadeIn"}}
+  };
 </script>
 
-
-  
-  
-    
-    
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Kaushan Script:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
-
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.3">
-
-
-
-
-
-
-  <meta name="keywords" content="NCTU,psychology,note," />
-
-
-
-
-
-
-
-
-
-
-<meta name="description" content="Methodology: How Social Psychologists Do Research How do researches develop theories and hypotheses ?Fundamental principle Social influence can be studied scientifically  Hindsight Bias 事後聰明偏誤Tendency">
+  <meta name="description" content="Methodology: How Social Psychologists Do Research How do researches develop theories and hypotheses ?Fundamental principle Social influence can be studied scientifically  Hindsight Bias 事後聰明偏誤Tendency">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Social Psychology Course Note] Ch 2">
 <meta property="og:url" content="http://eugene87222.github.io/2019/04/26/20190426-social-psy-note-ch2/index.html">
@@ -139,246 +64,184 @@
 <meta property="article:tag" content="note">
 <meta name="twitter:card" content="summary">
 
+<link rel="canonical" href="http://eugene87222.github.io/2019/04/26/20190426-social-psy-note-ch2/">
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeIn","post_body":"fadeIn","coll_header":"fadeIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: false,
+    isPost: true
   };
 </script>
 
-
-
-  <link rel="canonical" href="http://eugene87222.github.io/2019/04/26/20190426-social-psy-note-ch2/"/>
-
-
-
-
-
   <title>[Social Psychology Course Note] Ch 2 | 3ugeneYang.§ite</title>
   
-
-
-
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-107694365-1', 'auto');
-  ga('send', 'pageview');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107694365-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-107694365-1');
+      }
+    </script>
 
 
 
 
 
-<meta name="generator" content="Hexo 4.2.0"></head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-  
-  
-    
-  
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-  <div class="container sidebar-position-left page-post-detail">
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+    <div>
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">3ugeneYang.§ite</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
   </div>
 
   <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
 </div>
 
+
 <nav class="site-nav">
   
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
-          <a href="/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
         <li class="menu-item menu-item-about">
-          <a href="/about/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            About
-          </a>
-        </li>
-      
-        
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
         <li class="menu-item menu-item-tags">
-          <a href="/tags/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
-          </a>
-        </li>
-      
-        
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
 
-  
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>Sitemap</a>
+
+  </li>
+  </ul>
+
 </nav>
-
-
-
- </div>
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content">
             
 
-  <div id="posts" class="posts-expand">
-    
-
-  
-
+  <div class="posts-expand">
+      
   
   
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block " lang="en">
     <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/04/26/20190426-social-psy-note-ch2/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
       <meta itemprop="name" content="Eugene Yang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="3ugeneYang.§ite">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">[Social Psychology Course Note] Ch 2</h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          [Social Psychology Course Note] Ch 2
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
+              <span class="post-meta-item-text">Posted on</span>
               
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-26T07:32:40+08:00">
-                2019-04-26
-              </time>
-            
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-            <span class="post-meta-divider">|</span>
-            <span class="page-pv"><i class="fa fa-file-o"></i>
-            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+              <time title="Created: 2019-04-26 07:32:40 / Modified: 07:33:55" itemprop="dateCreated datePublished" datetime="2019-04-26T07:32:40+08:00">2019-04-26</time>
             </span>
-          
 
           
-
-          
+            <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">Views: </span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
 
         </div>
       </header>
-    
 
     
     
     
     <div class="post-body" itemprop="articleBody">
-
-      
-      
 
       
         <h1 id="Methodology-How-Social-Psychologists-Do-Research"><a href="#Methodology-How-Social-Psychologists-Do-Research" class="headerlink" title="Methodology: How Social Psychologists Do Research"></a>Methodology: How Social Psychologists Do Research</h1><hr>
@@ -644,290 +507,198 @@
 <li>Must include at least one scientist, one nonscientist, and one person who is not affiliated with the institution</li>
 </ul>
 
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-      <div>
-        <ul class="post-copyright">
-  <li class="post-copyright-author">
-    <strong>Post author:</strong>
-    Eugene Yang
-  </li>
-  <li class="post-copyright-link">
-    <strong>Post link:</strong>
-    <a href="http://eugene87222.github.io/2019/04/26/20190426-social-psy-note-ch2/" title="[Social Psychology Course Note] Ch 2">http://eugene87222.github.io/2019/04/26/20190426-social-psy-note-ch2/</a>
-  </li>
-  <li class="post-copyright-license">
-    <strong>Copyright Notice: </strong>
-    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
-  </li>
-</ul>
-
-      </div>
-    
-
-    <footer class="post-footer">
-      
-        <div class="post-tags">
-          
-            <a href="/tags/NCTU/" rel="tag"># NCTU</a>
-          
-            <a href="/tags/psychology/" rel="tag"># psychology</a>
-          
-            <a href="/tags/note/" rel="tag"># note</a>
-          
-        </div>
-      
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2019/04/26/20190426-social-psy-note-ch1/" rel="next" title="[Social Psychology Course Note] Ch 1">
-                <i class="fa fa-chevron-left"></i> [Social Psychology Course Note] Ch 1
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/26/20190426-social-psy-note-ch3/" rel="prev" title="[Social Psychology Course Note] Ch 3">
-                [Social Psychology Course Note] Ch 3 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-
-    <div class="post-spread">
-      
-    </div>
-  </div>
-
-
-          </div>
-          
-
-
-          
-
-  
-    <div class="comments" id="comments">
-      <div id="disqus_thread">
-        <noscript>
-          Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
-        </noscript>
-      </div>
     </div>
 
-  
+    
+    
+    
 
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/NCTU/" rel="tag"># NCTU</a>
+              <a href="/tags/psychology/" rel="tag"># psychology</a>
+              <a href="/tags/note/" rel="tag"># note</a>
+          </div>
 
-
-        </div>
         
-          
-  
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/04/26/20190426-social-psy-note-ch1/" rel="prev" title="[Social Psychology Course Note] Ch 1">
+      <i class="fa fa-chevron-left"></i> [Social Psychology Course Note] Ch 1
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/04/26/20190426-social-psy-note-ch3/" rel="next" title="[Social Psychology Course Note] Ch 3">
+      [Social Psychology Course Note] Ch 3 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
   </div>
 
-  <aside id="sidebar" class="sidebar">
+
+          </div>
+          
     
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
-      
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
-
-      <section class="site-overview-wrap sidebar-panel">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/20161224_132915.jpg"
-                alt="Eugene Yang" />
-            
-              <p class="site-author-name" itemprop="name">Eugene Yang</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/%20%7C%7C%20archive">
-              
-                  <span class="site-state-item-count">67</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
-                  <span class="site-state-item-name">tags</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
-          
-
-          <div class="links-of-author motion-element">
-            
-              
-                <span class="links-of-author-item">
-                  <a href="mailto:eugene87222@gmail.com" target="_blank" title="E-Mail">
-                    
-                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://t.me/Eugene87222" target="_blank" title="Telegram">
-                    
-                      <i class="fa fa-fw fa-telegram"></i>Telegram</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.facebook.com/eugene87222" target="_blank" title="Facebook">
-                    
-                      <i class="fa fa-fw fa-facebook"></i>Facebook</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.linkedin.com/in/yanghc" target="_blank" title="LinkedIn">
-                    
-                      <i class="fa fa-fw fa-linkedin"></i>LinkedIn</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.pinterest.com/eugene87222/" target="_blank" title="Pinterest">
-                    
-                      <i class="fa fa-fw fa-pinterest"></i>Pinterest</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/eugene87222" target="_blank" title="GitHub">
-                    
-                      <i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-            
-          </div>
-
-          
-          
-
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
       <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Methodology-How-Social-Psychologists-Do-Research"><span class="nav-number">1.</span> <span class="nav-text">Methodology: How Social Psychologists Do Research</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-do-researches-develop-theories-and-hypotheses"><span class="nav-number">2.</span> <span class="nav-text">How do researches develop theories and hypotheses ?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Fundamental-principle"><span class="nav-number">2.1.</span> <span class="nav-text">Fundamental principle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hindsight-Bias-事後聰明偏誤"><span class="nav-number">2.2.</span> <span class="nav-text">Hindsight Bias 事後聰明偏誤</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Formulating-hypotheses-and-theories"><span class="nav-number">3.</span> <span class="nav-text">Formulating hypotheses and theories</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-are-the-strengths-and-weaknesses-of-various-research-designs-that-social-psychologists-use"><span class="nav-number">4.</span> <span class="nav-text">What are the strengths and weaknesses of various research designs that social psychologists use ?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-observational-method"><span class="nav-number">4.1.</span> <span class="nav-text">The observational method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-correlational-method"><span class="nav-number">4.2.</span> <span class="nav-text">The correlational method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Serveys"><span class="nav-number">4.3.</span> <span class="nav-text">Serveys</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-surveys"><span class="nav-number">4.3.1.</span> <span class="nav-text">Using surveys</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Advantages"><span class="nav-number">4.3.2.</span> <span class="nav-text">Advantages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Disadvantages"><span class="nav-number">4.3.3.</span> <span class="nav-text">Disadvantages</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Limits-of-the-correlational-method"><span class="nav-number">4.4.</span> <span class="nav-text">Limits of the correlational method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-experimental-method"><span class="nav-number">4.5.</span> <span class="nav-text">The experimental method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Internal-validity-in-experiments-內在效度"><span class="nav-number">4.6.</span> <span class="nav-text">Internal validity in experiments 內在效度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Random-assignment"><span class="nav-number">4.7.</span> <span class="nav-text">Random assignment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Probability-level-p-value"><span class="nav-number">4.8.</span> <span class="nav-text">Probability level (p-value)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Limits-of-experimental-method"><span class="nav-number">4.9.</span> <span class="nav-text">Limits of experimental method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#External-validity-in-experiments-外在效度"><span class="nav-number">4.10.</span> <span class="nav-text">External validity in experiments 外在效度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Improving-external-validity"><span class="nav-number">4.11.</span> <span class="nav-text">Improving external validity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Trade-off-between-internal-and-external-validity"><span class="nav-number">4.12.</span> <span class="nav-text">Trade-off between internal and external validity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Test-of-internal-and-external-validity"><span class="nav-number">4.13.</span> <span class="nav-text">Test of internal and external validity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-versus-applied-research"><span class="nav-number">4.14.</span> <span class="nav-text">Basic versus applied research</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-impact-do-cross-cultural-studies-the-evoluntionary-approach-and-social-neuroscience-research-have-on-the-way-in-which-scientists-investigate-social-behavior"><span class="nav-number">5.</span> <span class="nav-text">What impact do cross-cultural studies, the evoluntionary approach, and social neuroscience research have on the way in which scientists investigate social behavior ?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cross-cultural-research"><span class="nav-number">5.1.</span> <span class="nav-text">Cross-cultural research</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Issues-in-cross-cultural-research"><span class="nav-number">5.2.</span> <span class="nav-text">Issues in cross-cultural research</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-evolutionary-approach"><span class="nav-number">5.3.</span> <span class="nav-text">The evolutionary approach</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Evolutionary-psychology"><span class="nav-number">5.4.</span> <span class="nav-text">Evolutionary psychology</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Social-neuroscience"><span class="nav-number">5.5.</span> <span class="nav-text">Social neuroscience</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-do-social-psychologists-ensure-the-safety-and-welfare-of-their-research-participants-while-at-the-smae-time-testing-hypotheses-about-the-causes-of-social-behavior"><span class="nav-number">6.</span> <span class="nav-text">How do social psychologists ensure the safety and welfare of their research participants, while at the smae time testing hypotheses about the causes of social behavior ?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Two-goals-in-conflict"><span class="nav-number">6.1.</span> <span class="nav-text">Two goals in conflict</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deception-and-debriefing"><span class="nav-number">6.2.</span> <span class="nav-text">Deception and debriefing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Guidelines-for-ethical-research"><span class="nav-number">6.3.</span> <span class="nav-text">Guidelines for ethical research</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Methodology-How-Social-Psychologists-Do-Research"><span class="nav-number">1.</span> <span class="nav-text">Methodology: How Social Psychologists Do Research</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-do-researches-develop-theories-and-hypotheses"><span class="nav-number">2.</span> <span class="nav-text">How do researches develop theories and hypotheses ?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Fundamental-principle"><span class="nav-number">2.1.</span> <span class="nav-text">Fundamental principle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hindsight-Bias-事後聰明偏誤"><span class="nav-number">2.2.</span> <span class="nav-text">Hindsight Bias 事後聰明偏誤</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Formulating-hypotheses-and-theories"><span class="nav-number">3.</span> <span class="nav-text">Formulating hypotheses and theories</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-are-the-strengths-and-weaknesses-of-various-research-designs-that-social-psychologists-use"><span class="nav-number">4.</span> <span class="nav-text">What are the strengths and weaknesses of various research designs that social psychologists use ?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-observational-method"><span class="nav-number">4.1.</span> <span class="nav-text">The observational method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-correlational-method"><span class="nav-number">4.2.</span> <span class="nav-text">The correlational method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Serveys"><span class="nav-number">4.3.</span> <span class="nav-text">Serveys</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Using-surveys"><span class="nav-number">4.3.1.</span> <span class="nav-text">Using surveys</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Advantages"><span class="nav-number">4.3.2.</span> <span class="nav-text">Advantages</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Disadvantages"><span class="nav-number">4.3.3.</span> <span class="nav-text">Disadvantages</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Limits-of-the-correlational-method"><span class="nav-number">4.4.</span> <span class="nav-text">Limits of the correlational method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-experimental-method"><span class="nav-number">4.5.</span> <span class="nav-text">The experimental method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Internal-validity-in-experiments-內在效度"><span class="nav-number">4.6.</span> <span class="nav-text">Internal validity in experiments 內在效度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Random-assignment"><span class="nav-number">4.7.</span> <span class="nav-text">Random assignment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Probability-level-p-value"><span class="nav-number">4.8.</span> <span class="nav-text">Probability level (p-value)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Limits-of-experimental-method"><span class="nav-number">4.9.</span> <span class="nav-text">Limits of experimental method</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#External-validity-in-experiments-外在效度"><span class="nav-number">4.10.</span> <span class="nav-text">External validity in experiments 外在效度</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Improving-external-validity"><span class="nav-number">4.11.</span> <span class="nav-text">Improving external validity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Trade-off-between-internal-and-external-validity"><span class="nav-number">4.12.</span> <span class="nav-text">Trade-off between internal and external validity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Test-of-internal-and-external-validity"><span class="nav-number">4.13.</span> <span class="nav-text">Test of internal and external validity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-versus-applied-research"><span class="nav-number">4.14.</span> <span class="nav-text">Basic versus applied research</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#What-impact-do-cross-cultural-studies-the-evoluntionary-approach-and-social-neuroscience-research-have-on-the-way-in-which-scientists-investigate-social-behavior"><span class="nav-number">5.</span> <span class="nav-text">What impact do cross-cultural studies, the evoluntionary approach, and social neuroscience research have on the way in which scientists investigate social behavior ?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cross-cultural-research"><span class="nav-number">5.1.</span> <span class="nav-text">Cross-cultural research</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Issues-in-cross-cultural-research"><span class="nav-number">5.2.</span> <span class="nav-text">Issues in cross-cultural research</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-evolutionary-approach"><span class="nav-number">5.3.</span> <span class="nav-text">The evolutionary approach</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Evolutionary-psychology"><span class="nav-number">5.4.</span> <span class="nav-text">Evolutionary psychology</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Social-neuroscience"><span class="nav-number">5.5.</span> <span class="nav-text">Social neuroscience</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#How-do-social-psychologists-ensure-the-safety-and-welfare-of-their-research-participants-while-at-the-smae-time-testing-hypotheses-about-the-causes-of-social-behavior"><span class="nav-number">6.</span> <span class="nav-text">How do social psychologists ensure the safety and welfare of their research participants, while at the smae time testing hypotheses about the causes of social behavior ?</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Two-goals-in-conflict"><span class="nav-number">6.1.</span> <span class="nav-text">Two goals in conflict</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deception-and-debriefing"><span class="nav-number">6.2.</span> <span class="nav-text">Deception and debriefing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Guidelines-for-ethical-research"><span class="nav-number">6.3.</span> <span class="nav-text">Guidelines for ethical research</span></a></li></ol></li></ol></div>
+      </div>
       <!--/noindex-->
-      
 
-      
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Eugene Yang"
+      src="/images/20161224_132915.jpg">
+  <p class="site-author-name" itemprop="name">Eugene Yang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:eugene87222@gmail.com" title="E-Mail → mailto:eugene87222@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Eugene87222" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Eugene87222" rel="noopener" target="_blank"><i class="fa fa-fw fa-telegram"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/eugene87222" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/yanghc" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;yanghc" rel="noopener" target="_blank"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pinterest.com/eugene87222/" title="Pinterest → https:&#x2F;&#x2F;www.pinterest.com&#x2F;eugene87222&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw fa-pinterest"></i>Pinterest</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/eugene87222" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+      </div>
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017-2020</span>
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Eugene Yang</span>
-
-  
 </div>
-
-
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  </div>
 
         
 <div class="busuanzi-count">
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
     </span>
-  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
 </div>
 
 
@@ -937,180 +708,70 @@
 
 
 
-        
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  var disqus_config = function() {
+    this.page.url = "http://eugene87222.github.io/2019/04/26/20190426-social-psy-note-ch2/";
+    this.page.identifier = "2019/04/26/20190426-social-psy-note-ch2/";
+    this.page.title = "[Social Psychology Course Note] Ch 2";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://eugene87222.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
 </script>
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
-
-
-
-  
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
-<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  
-
-    
-
-    
-      <script type="text/javascript">
-        var disqus_config = function () {
-          this.page.url = 'http://eugene87222.github.io/2019/04/26/20190426-social-psy-note-ch2/';
-          this.page.identifier = '2019/04/26/20190426-social-psy-note-ch2/';
-          this.page.title = '[Social Psychology Course Note] Ch 2';
-        };
-        var d = document, s = d.createElement('script');
-        s.src = 'https://eugene87222.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', '' + +new Date());
-        (d.head || d.body).appendChild(s);
-      </script>
-    
-
-  
-
-
-
-
-	
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-  
-
-  
-
-  
-
-  
-  
-
-  
-
-  
-
-  
 
 </body>
 </html>

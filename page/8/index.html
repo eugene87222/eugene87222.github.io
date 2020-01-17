@@ -1,130 +1,55 @@
 <!DOCTYPE html>
-
-
-
-  
-
-
-<html class="theme-next pisces use-motion" lang="en">
+<html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
+  <link rel="mask-icon" href="/images/favicon.ico" color="#222">
 
-<script>
-	(function(){
-		if(''){
-			if(prompt('Password:') !== ''){
-				alert('Wrong password');
-				history.back()
-			}
-		}
-	})();
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+
+<script id="hexo-configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    hostname: new URL('http://eugene87222.github.io').hostname,
+    root: '/',
+    scheme: 'Pisces',
+    version: '7.7.0',
+    exturl: false,
+    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    copycode: {"enable":false,"show_result":false,"style":null},
+    back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
+    bookmark: {"enable":false,"color":"#222","save":"auto"},
+    fancybox: true,
+    mediumzoom: false,
+    lazyload: false,
+    pangu: false,
+    comments: {"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},
+    algolia: {
+      appID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    },
+    localsearch: {"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},
+    path: '',
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeIn","post_body":"fadeIn","coll_header":"fadeIn"}}
+  };
 </script>
 
-
-  
-  
-    
-    
-  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
-  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
-
-
-
-
-
-
-
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
-
-
-
-
-  
-  
-  
-  
-
-  
-    
-    
-  
-
-  
-
-  
-
-  
-    
-      
-    
-
-    
-  
-
-  
-
-  
-    
-    
-    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Kaushan Script:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  
-
-
-
-
-
-
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
-
-<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
-
-
-
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.3">
-
-
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.3">
-
-
-
-
-
-
-  <meta name="keywords" content="Hexo, NexT" />
-
-
-
-
-
-
-
-
-
-
-<meta property="og:type" content="website">
+  <meta property="og:type" content="website">
 <meta property="og:title" content="3ugeneYang.§ite">
 <meta property="og:url" content="http://eugene87222.github.io/page/8/index.html">
 <meta property="og:site_name" content="3ugeneYang.§ite">
@@ -132,236 +57,179 @@
 <meta property="article:author" content="Eugene Yang">
 <meta name="twitter:card" content="summary">
 
+<link rel="canonical" href="http://eugene87222.github.io/page/8/">
 
 
-<script type="text/javascript" id="hexo.configurations">
-  var NexT = window.NexT || {};
-  var CONFIG = {
-    root: '/',
-    scheme: 'Pisces',
-    version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
-    fancybox: true,
-    tabs: true,
-    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeIn","post_body":"fadeIn","coll_header":"fadeIn"}},
-    duoshuo: {
-      userId: '0',
-      author: 'Author'
-    },
-    algolia: {
-      applicationID: '',
-      apiKey: '',
-      indexName: '',
-      hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
-    }
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome: true,
+    isPost: false
   };
 </script>
 
-
-
-  <link rel="canonical" href="http://eugene87222.github.io/page/8/"/>
-
-
-
-
-
   <title>3ugeneYang.§ite</title>
   
-
-
-
-
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-107694365-1', 'auto');
-  ga('send', 'pageview');
-</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107694365-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-107694365-1');
+      }
+    </script>
 
 
 
 
 
-<meta name="generator" content="Hexo 4.2.0"></head>
 
-<body itemscope itemtype="http://schema.org/WebPage" lang="en">
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
 
-  
-  
-    
-  
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
 
-  <div class="container sidebar-position-left 
-  page-home">
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-wrapper">
-  <div class="site-meta ">
-    
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-meta">
 
-    <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+    <div>
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">3ugeneYang.§ite</span>
         <span class="logo-line-after"><i></i></span>
       </a>
     </div>
-      
-        <p class="site-subtitle"></p>
-      
   </div>
 
   <div class="site-nav-toggle">
-    <button>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-      <span class="btn-bar"></span>
-    </button>
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
   </div>
 </div>
 
+
 <nav class="site-nav">
   
-
-  
-    <ul id="menu" class="menu">
-      
-        
+  <ul id="menu" class="menu">
         <li class="menu-item menu-item-home">
-          <a href="/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
-            
-            Home
-          </a>
-        </li>
-      
-        
+
+    <a href="/" rel="section"><i class="fa fa-fw fa-home"></i>Home</a>
+
+  </li>
         <li class="menu-item menu-item-about">
-          <a href="/about/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
-            
-            About
-          </a>
-        </li>
-      
-        
+
+    <a href="/about/" rel="section"><i class="fa fa-fw fa-user"></i>About</a>
+
+  </li>
         <li class="menu-item menu-item-tags">
-          <a href="/tags/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
-            
-            Tags
-          </a>
-        </li>
-      
-        
+
+    <a href="/tags/" rel="section"><i class="fa fa-fw fa-tags"></i>Tags</a>
+
+  </li>
         <li class="menu-item menu-item-archives">
-          <a href="/archives/%20" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
-            
-            Archives
-          </a>
-        </li>
-      
 
-      
-    </ul>
-  
+    <a href="/archives/" rel="section"><i class="fa fa-fw fa-archive"></i>Archives</a>
 
-  
+  </li>
+        <li class="menu-item menu-item-sitemap">
+
+    <a href="/sitemap.xml" rel="section"><i class="fa fa-fw fa-sitemap"></i>Sitemap</a>
+
+  </li>
+  </ul>
+
 </nav>
-
-
-
- </div>
+</div>
     </header>
 
-    <main id="main" class="main">
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
-          <div id="content" class="content">
+          
+
+          <div class="content">
             
-  <section id="posts" class="posts-expand">
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <div class="posts-expand">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/01/26/20190126-photo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
       <meta itemprop="name" content="Eugene Yang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="3ugeneYang.§ite">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/01/26/20190126-photo/" itemprop="url">隨手拍#9</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/01/26/20190126-photo/" class="post-title-link" itemprop="url">隨手拍#9</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-01-26T22:00:36+08:00">
-                2019-01-26
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <time title="Created: 2019-01-26 22:00:36" itemprop="dateCreated datePublished" datetime="2019-01-26T22:00:36+08:00">2019-01-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-02-08 13:23:07" itemprop="dateModified" datetime="2019-02-08T13:23:07+08:00">2019-02-08</time>
+              </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -369,129 +237,67 @@
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          
-          
-Credit by Eugene Yang
-拍攝時間：2019/1/26拍攝地點：長洲渡輪碼頭  
-字有空再打
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/01/26/20190126-photo/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+          <p><img src="/image/20190126_152452_v2.jpg" alt="">
+Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
+<p>拍攝時間：2019/1/26<br>拍攝地點：長洲渡輪碼頭  </p>
+<p><em>字有空再打</em></p>
+<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d922.5304242932684!2d114.0278685180235!3d22.208661331958744!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1025087a8d2077e5!2z6ZW35rSy5rih6Lyq56K86aCt!5e0!3m2!1szh-TW!2stw!4v1549461933685" width="500" height="30" frameborder="0" style="border:0" allowfullscreen></iframe>
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2018/11/19/20181119-data-analysis-note/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
       <meta itemprop="name" content="Eugene Yang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="3ugeneYang.§ite">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/11/19/20181119-data-analysis-note/" itemprop="url">資料分析筆記</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/11/19/20181119-data-analysis-note/" class="post-title-link" itemprop="url">資料分析筆記</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-11-19T23:15:13+08:00">
-                2018-11-19
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <time title="Created: 2018-11-19 23:15:13" itemprop="dateCreated datePublished" datetime="2018-11-19T23:15:13+08:00">2018-11-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-02-08 13:21:51" itemprop="dateModified" datetime="2019-02-08T13:21:51+08:00">2019-02-08</time>
+              </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -499,131 +305,165 @@ Credit by Eugene Yang
     <div class="post-body" itemprop="articleBody">
 
       
-      
+          <h1 id="如何獲取資料"><a href="#如何獲取資料" class="headerlink" title="如何獲取資料"></a>如何獲取資料</h1><ol>
+<li><a href="https://scikit-learn.org/stable/datasets/index.html" target="_blank" rel="external">sklearn 內建的 dataset</a></li>
+<li><a href="https://www.kaggle.com/datasets?sortBy=votes&amp;group=featured" target="_blank" rel="external">Kaggle Dataset</a>(包含較多已整理的資料，不需要太多時間對資料做前處理)</li>
+<li><a href="https://developers.google.com/maps/documentation/?hl=zh-tw" target="_blank" rel="external">Google Map API</a>(好像要$$)</li>
+<li>各種政府提供的 Open data 平台(e.g. <a href="https://data.gov.tw/" target="_blank" rel="external">政府資料開放平台</a>, <a href="https://data.taipei/index" target="_blank" rel="external">台北市政府資料開放平台</a>)</li>
+</ol>
+<p>MEDIUM 進度 2.3 講</p>
+<h1 id="常見的資料分析方法"><a href="#常見的資料分析方法" class="headerlink" title="常見的資料分析方法"></a>常見的資料分析方法</h1><h2 id="一、描述統計-敘述統計"><a href="#一、描述統計-敘述統計" class="headerlink" title="一、描述統計(敘述統計)"></a>一、描述統計(敘述統計)</h2><p>透過對數據資料的圖像化處理，將資料摘要變為圖表，以直觀了解整體資料分布的情況。通常會使用的工具是頻數分布表與圖示法，如多邊圖、直方圖、餅圖、散點圖等。</p>
+<p>另外，也可以透過分析數據資料，以了解各變量內的觀察值集中與分散的情況。運用的工具有：集中量數，如平均數、中位數、眾數、幾何平均數、調和平均數。與變異量數，如全距、平均差、標準差、相對差、四分差。</p>
+<p>數據的次數分配情況，往往會呈現常態分布。為了表示測量數據與常態分布偏離的情況，會使用偏度、峰度這兩種統計數據。</p>
+<p>為了解個別觀察值在整體中所佔的位置，會需要將觀察值轉換為相對量數，如百分等級、標準分數、四分位數等。</p>
+<h3 id="缺失值"><a href="#缺失值" class="headerlink" title="缺失值"></a>缺失值</h3><ul>
+<li>完全變數: 不含缺失值</li>
+<li>三種主要的缺失<ul>
+<li>完全隨機缺失(missing completely at random, MCAR): 數據的缺失是完全隨機的，不依賴於任何變數，不影響樣本的無偏性。(e.g. 家庭地址缺失)</li>
+<li>隨機缺失(missing at random, MAR): 數據的缺失不是完全隨機的，該類數據的缺失可能依賴於其他完全變數。(e.g. 財務數據缺失情況可能與企業大小有關)</li>
+<li>非隨機缺失(missing not at random, MNAR): 數據的缺失與不完全變數自身的取值有關。(e.g. 高收入的族群較不願意提供家庭收入)</li>
+</ul>
+</li>
+<li>對於隨機缺失與非隨機缺失，刪除資料是不合適的，隨機缺失可以透過已知數據推估缺失值。</li>
+<li>缺失值填充<ul>
+<li>剔除法(List-wise deletion): 如果某筆數據漏了某個屬性的資料，就把該筆數據從分析中剔除。<strong>剔除法在缺失值比例小的話十分有效</strong>。然而，這種方法是以減少樣本量來換取資料的完整性，會造成資源的大量浪費，丟棄了大量的隱藏訊息。</li>
+<li>均值法(Mean imputation): 如果缺失數據是數值型態的話，就用該屬性的平均數填充缺失值；如果是非數值型態的話就用眾數的概念去填充。但這種方法會產生有偏估計，所以並不被推崇。而且該方法是建立在完全隨機缺失(MCAR)的假設之上，並且會<strong>造成變數的 Variance, Standard deviation 變小</strong>。</li>
+<li>最近鄰居(就是KNN啦，講中文誰知道)</li>
+<li>迴歸填充(Regression imputation): 對於連續取值的變數，可以利用線性回歸來擬合估計其取值。對於二值變數，可以利用logistic regression來估計其取值。</li>
+<li>決策樹(Decision tree): 利用不缺失某個屬性的樣本訓練決策樹，然後對於該屬性缺失的樣本即可利用訓練所得決策樹來預測所缺失的屬性取值。</li>
+<li>熱卡填充(Hot deck imputation): 對於一個含有缺失值的變數，<strong>尋找一個與他最為相似的數據並進行填充</strong>，判斷相似與否的標準 depends on 問題本身。利用 hot deck 填充數據後，其 standard deviation 與填充前較為相近。但在回歸函數中，容易使得誤差變大，而且這個很耗時。</li>
+<li>多重填充(Multiple imputation): 有點複雜還是直接 google 好了。</li>
+</ul>
+</li>
+</ul>
+<h3 id="常態性檢驗"><a href="#常態性檢驗" class="headerlink" title="常態性檢驗"></a>常態性檢驗</h3><p>很多統計方法都要求數值呈現或近似呈現常態分佈，所以得先進行常態性檢驗。</p>
+<ul>
+<li>非引數檢驗的K-量檢驗(這是什麼我也不知道)</li>
+<li><a href="https://en.wikipedia.org/wiki/Normal_probability_plot" target="_blank" rel="external">PP圖(probability plot graph)</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E5%88%86%E4%BD%8D%E5%9C%96" target="_blank" rel="external">QQ圖</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Shapiro%E2%80%93Wilk_test" target="_blank" rel="external">W檢驗</a>: 基於相關性的檢驗法，透過公式得到的相關係數越接近 1 代表數據越接近常態分佈。</li>
+<li><a href="http://publish.get.com.tw/bookpre_pdf/51MG022703-2.pdf" target="_blank" rel="external">動差法</a>: <a href="https://zh.wikipedia.org/wiki/%E7%9F%A9_(%E6%95%B8%E5%AD%B8" target="_blank" rel="external">動差是什麼</a>)</li>
+</ul>
+<h2 id="二、假設檢驗"><a href="#二、假設檢驗" class="headerlink" title="二、假設檢驗"></a>二、假設檢驗</h2><h3 id="引數檢驗"><a href="#引數檢驗" class="headerlink" title="引數檢驗"></a>引數檢驗</h3><p>在已知總體分佈的條件下(一般要求總體呈現常態分佈)對一些主要的引數(如均值、百分數、方差、相關係數等)進行的檢驗。</p>
+<ul>
+<li>U檢驗(Z檢驗): 當樣本較大時，樣本符合常態分布。 (大三上統計學講義)</li>
+<li>T檢驗: 當樣本較小時，樣本符合常態分布。 (大三上統計學講義)</li>
+<li>單樣本T檢驗: 推斷該樣本來自的總體平均μ與已知的某一總體平均數μ0(通常為理論值或標準值)有無差別。 <strong>(不懂)</strong></li>
+<li>配對樣本T檢驗: 當總體均數未知時，且兩個樣本可以配對，同對中的兩者在可能會影響處理效果的各種條件方面極為相似。 <strong>(不懂)</strong></li>
+<li>獨立雙樣本T檢驗: 無法找到在各方面極為相似的兩樣本作配對比較時使用。 <strong>(不懂)</strong></li>
+</ul>
+<h3 id="非引數檢驗"><a href="#非引數檢驗" class="headerlink" title="非引數檢驗"></a>非引數檢驗</h3><p>不考慮總體分佈是否已知，常常也不是針對總體引數，而是針對總體的某些一般性假設(e.g. 總體分佈的位罝是否相同，總體分佈是否常態)進行檢驗。</p>
+<ul>
+<li>適用情況: 順序型別的數據資料，這類資料的分佈形態一般是未知的。</li>
+<li>雖然是連續資料，但總體分佈形態未知或者非正態</li>
+<li>總體分佈雖然常態，資料也是連續型別，但樣本容量極小(10以下)</li>
+<li>主要方法 <strong>(全部晚點查)</strong><ul>
+<li>卡方檢驗</li>
+<li>秩和檢驗</li>
+<li>二項檢驗</li>
+<li>遊程檢驗</li>
+<li>K-量檢驗等</li>
+</ul>
+</li>
+</ul>
+<h2 id="三、信度分析"><a href="#三、信度分析" class="headerlink" title="三、信度分析"></a>三、信度分析</h2><p>檢查測量可信度。(e.g. 調查問卷的真實性)</p>
+<h3 id="外在信度"><a href="#外在信度" class="headerlink" title="外在信度"></a>外在信度</h3><p>不同時間測量時，量表的一致性程度。</p>
+<p>常用方法 -&gt; 重測信度: 將同一個測驗重複施測於同一樣本上。施測時間不同，但是方法一樣。求出各時間所得的測驗分數之相關係數，又稱為「再測信度」</p>
+<h3 id="內在信度"><a href="#內在信度" class="headerlink" title="內在信度"></a>內在信度</h3><p>每個量表是否測量到單一的概念，同時組成兩表的內在項目一致性如何。</p>
+<p>常用方法 -&gt; 分半信度: 通常是在不準備重測的情況下，我們就用分半信度來計算信度係數。(e.g. 如果有一份問卷，其中有十個問題涉及到女性歧視現象。利用分半信度時，可將十個問題隨機分成兩組，每組有五個問題，然後根據每組的測量結果來計算兩組的相關係數。)</p>
+<h2 id="四、列聯表分析"><a href="#四、列聯表分析" class="headerlink" title="四、列聯表分析"></a>四、列聯表分析</h2><p>用於分析離散型變數或定型變數之間是否存在相關性。</p>
+<p>對於二為數據，可以用卡方檢驗。</p>
+<p>對於三維的數據，可以用 Mentel-Haenszel 分層分析。(<a href="http://biostatdept.cmu.edu.tw/doc/epaper_a/paper/teaching_corner_042-1.pdf" target="_blank" rel="external">參考資料一</a>)(<a href="https://molecular-service-science.com/2012/08/20/chi-squared-test-and-three-way-table-and-simpson-paradox/" target="_blank" rel="external">參考資料二</a>)</p>
+<h2 id="五、相關分析"><a href="#五、相關分析" class="headerlink" title="五、相關分析"></a>五、相關分析</h2><p>研究<strong>現象之間</strong>是否存在某種依存關係，對具體有依存關係的現象探討相關方向及相關程度。</p>
+<h3 id="單相關"><a href="#單相關" class="headerlink" title="單相關"></a>單相關</h3><p>兩個因素之間的相關關係叫單相關，即研究時只涉及一個自變數一個因變數。</p>
+<h3 id="複相關"><a href="#複相關" class="headerlink" title="複相關"></a>複相關</h3><p>三個或三個以上因素的相關關係叫複相關，即研究時涉及兩個或兩個以上的自變數和因變數相關。</p>
+<h3 id="偏相關-淨相關、純相關"><a href="#偏相關-淨相關、純相關" class="headerlink" title="偏相關(淨相關、純相關)"></a>偏相關(淨相關、純相關)</h3><p>在某一現象與多種現象相關的場，當假定其他變數不變時，其中兩個變數之間的相關關係稱為偏相關。</p>
+<h2 id="六、變異數分析-方差分析"><a href="#六、變異數分析-方差分析" class="headerlink" title="六、變異數分析(方差分析)"></a>六、變異數分析(方差分析)</h2><p>使用時機: 各樣本必須是互相獨立的隨機樣本，各樣本來自常態分佈的母體，各母體變異數相等。(<a href="https://molecular-service-science.com/2012/08/20/chi-squared-test-and-three-way-table-and-simpson-paradox/" target="_blank" rel="external">參考資料一</a>)</p>
+<h3 id="單因素變異數分析"><a href="#單因素變異數分析" class="headerlink" title="單因素變異數分析"></a>單因素變異數分析</h3><p>一項檢驗只有一個影響因素；或者存在多個影響因素時，只分析一個因素與響應變數的關係。</p>
+<h3 id="多因素有互動變異數分析"><a href="#多因素有互動變異數分析" class="headerlink" title="多因素有互動變異數分析"></a>多因素有互動變異數分析</h3><p>一項實驗有多個影響因素，分析多個影響因素與響應變數的關係，<strong>同時考慮多個影響因素之間的關係。</strong></p>
+<h3 id="多因素無互動變異數分析"><a href="#多因素無互動變異數分析" class="headerlink" title="多因素無互動變異數分析"></a>多因素無互動變異數分析</h3><p>一項實驗有多個影響因素，分析多個影響因素與響應變數的關係，<strong>但是影響因素之間沒有關係或忽略其中的關係。</strong></p>
+<h2 id="七、迴歸分析"><a href="#七、迴歸分析" class="headerlink" title="七、迴歸分析"></a>七、迴歸分析</h2><h3 id="一元線性迴歸分析"><a href="#一元線性迴歸分析" class="headerlink" title="一元線性迴歸分析"></a>一元線性迴歸分析</h3><p><strong>只有一個自變數 X 與因變數 Y 有關</strong>，自變數 X 與因變數 Y 的關係就是一個二元一次方程式，X 與 Y 必須是連續型變數，因變數 Y 或其<a href="https://baike.baidu.com/item/%E6%AE%8B%E5%B7%AE" target="_blank" rel="external">殘差</a>必須呈現常態分佈。</p>
+<h3 id="多元線性迴歸分析"><a href="#多元線性迴歸分析" class="headerlink" title="多元線性迴歸分析"></a>多元線性迴歸分析</h3><p><strong>分析多個自變數與因變數 Y 的關係</strong>，X 與 Y 必須是連續型變數，因變數 Y 或其殘差必須呈現常態分佈。</p>
+<h1 id="以下全部都要查"><a href="#以下全部都要查" class="headerlink" title="以下全部都要查"></a>以下全部都要查</h1><ul>
+<li>變數篩選方式: 選擇最優迴歸方程的變數篩選法包括全模型法(CP法)、逐步迴歸法、向前引入(選取)法、向後剔除(選取)法。</li>
+<li>模型診斷方法<ul>
+<li>殘差檢驗: 觀測值與估計值的差值必須呈現正態分佈。</li>
+<li><a href="https://baike.baidu.com/item/%E5%BC%BA%E5%BD%B1%E5%93%8D%E7%82%B9" target="_blank" rel="external">強影響點</a>判斷: 尋找方式一般分為標準誤差法、Mahalanobis 距離法。</li>
+<li>共線性診斷<ul>
+<li>診斷方式: 容忍度、方差擴大因子法(又稱膨脹係數VIF)、特徵根判定法、條件指標CI、方差比例。</li>
+<li>處理方法: 增加樣本容量或選取另外的迴歸如主成分迴歸、嶺迴歸等。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="以上全部都要查"><a href="#以上全部都要查" class="headerlink" title="以上全部都要查"></a>以上全部都要查</h1><h3 id="Logistic-迴歸分析"><a href="#Logistic-迴歸分析" class="headerlink" title="Logistic 迴歸分析"></a>Logistic 迴歸分析</h3><p>線性迴歸模型要求因變數是連續的常態分佈，且自變數和因變數之間呈線性關係，而<strong>Logistic迴歸模型對因變數的分佈沒有要求</strong>，一般用於因變數是離散時的情況。</p>
+<h2 id="八、聚類分析"><a href="#八、聚類分析" class="headerlink" title="八、聚類分析"></a>八、聚類分析</h2><h2 id="九、判別分析"><a href="#九、判別分析" class="headerlink" title="九、判別分析"></a>九、判別分析</h2><h2 id="十、主成分分析"><a href="#十、主成分分析" class="headerlink" title="十、主成分分析"></a>十、主成分分析</h2><h2 id="十一、因子分析"><a href="#十一、因子分析" class="headerlink" title="十一、因子分析"></a>十一、因子分析</h2><h2 id="十二、時間排序分析"><a href="#十二、時間排序分析" class="headerlink" title="十二、時間排序分析"></a>十二、時間排序分析</h2><h2 id="十三、生存分析"><a href="#十三、生存分析" class="headerlink" title="十三、生存分析"></a>十三、生存分析</h2><h2 id="十四、典型相關分析"><a href="#十四、典型相關分析" class="headerlink" title="十四、典型相關分析"></a>十四、典型相關分析</h2><h2 id="十五、ROC-分析"><a href="#十五、ROC-分析" class="headerlink" title="十五、ROC 分析"></a>十五、ROC 分析</h2><h2 id="十六、其他分析方法"><a href="#十六、其他分析方法" class="headerlink" title="十六、其他分析方法"></a>十六、其他分析方法</h2><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
+<li><a href="https://medium.com/@yehjames" target="_blank" rel="external">Yeh James</a>的<strong>資料分析&amp;機器學習</strong>系列講義</li>
+<li><a href="https://itw01.com/VQ5QSEJ.html" target="_blank" rel="external">https://itw01.com/VQ5QSEJ.html</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%8F%8F%E8%BF%B0%E7%BB%9F%E8%AE%A1%E5%AD%A6" target="_blank" rel="external">https://zh.wikipedia.org/wiki/%E6%8F%8F%E8%BF%B0%E7%BB%9F%E8%AE%A1%E5%AD%A6</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/31584345" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/31584345</a></li>
+<li><a href="https://kknews.cc/zh-tw/tech/gvzkv38.html" target="_blank" rel="external">https://kknews.cc/zh-tw/tech/gvzkv38.html</a></li>
+<li><a href="https://blog.csdn.net/zziahgf/article/details/21024167" target="_blank" rel="external">https://blog.csdn.net/zziahgf/article/details/21024167</a></li>
+<li><a href="https://yamol.tw/note_book.php?bsid=5732&amp;noteid=16659" target="_blank" rel="external">https://yamol.tw/note_book.php?bsid=5732&amp;noteid=16659</a></li>
+</ul>
 
-      
-        
-          
-          如何獲取資料
-sklearn 內建的 dataset
-Kaggle Dataset(包含較多已整理的資料，不需要太多時間對資料做前處理)
-Google Map API(好像要$$)
-各種政府提供的 Open data 平台(e.g. 政府資料開放平台, 台北市政府資料開放平台)
-
-MEDIUM 進度
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/11/19/20181119-data-analysis-note/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2018/08/26/20180826-photo/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
       <meta itemprop="name" content="Eugene Yang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="3ugeneYang.§ite">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/26/20180826-photo/" itemprop="url">隨手拍#8</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/08/26/20180826-photo/" class="post-title-link" itemprop="url">隨手拍#8</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-26T14:24:58+08:00">
-                2018-08-26
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <time title="Created: 2018-08-26 14:24:58" itemprop="dateCreated datePublished" datetime="2018-08-26T14:24:58+08:00">2018-08-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-02-08 13:23:05" itemprop="dateModified" datetime="2019-02-08T13:23:05+08:00">2019-02-08</time>
+              </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -631,129 +471,67 @@ MEDIUM 進度
     <div class="post-body" itemprop="articleBody">
 
       
-      
-
-      
-        
-          
-          
-Credit by Eugene Yang
-拍攝時間：2018/7/7拍攝地點：象山六巨石觀景台  
-字有空再打
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/26/20180826-photo/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
+          <p><img src="/image/20180707_151642_2.jpg" alt="">
+Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
+<p>拍攝時間：2018/7/7<br>拍攝地點：象山六巨石觀景台  </p>
+<p><em>字有空再打</em></p>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.213471911184!2d121.57222661431942!3d25.026828583975746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abac541513f9%3A0x711d1ca1abf26dcc!2z6LGh5bGx5YWt5beo55-z6KeA5pmv5Y-w!5e0!3m2!1szh-TW!2stw!4v1535264816909" width="500" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2018/08/26/20180826/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
       <meta itemprop="name" content="Eugene Yang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="3ugeneYang.§ite">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/08/26/20180826/" itemprop="url">當兵雜記</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/08/26/20180826/" class="post-title-link" itemprop="url">當兵雜記</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-26T08:12:03+08:00">
-                2018-08-26
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <time title="Created: 2018-08-26 08:12:03" itemprop="dateCreated datePublished" datetime="2018-08-26T08:12:03+08:00">2018-08-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-02-08 13:23:03" itemprop="dateModified" datetime="2019-02-08T13:23:03+08:00">2019-02-08</time>
+              </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -761,125 +539,64 @@ Credit by Eugene Yang
     <div class="post-body" itemprop="articleBody">
 
       
-      
+          <p>下禮拜二就要退伍了，突然覺得時間的很快，一眨眼就過了七個禮拜，放假的時候總是覺得時間太快，在營區裡面一分鐘都顯得格外漫長。這兩個月下來，真要說學到什麼的話，大概就是知足惜福吧，在裡面很多東西都會受限。進了營區之後才會覺得自由很珍貴；吃了兩個月的不知道什麼東西，退伍之後大概也不會挑食了；營區斷電了，沒有冷氣沒有熱水澡，才知道營區外面世界的美好；宿營搭帳棚，隔天睡起來腰酸背痛的，才發現寢室真的很舒服。當了兵，才知道平淡的生活也是一種幸福。常常聽到老一輩的說：男生要當過兵才會變男人。儘管我們現在的役期跟以前的相比根本不算什麼，但我好像也能稍稍領悟到這句話。</p>
 
-      
-        
-          
-          下禮拜二就要退伍了，突然覺得時間的很快，一眨眼就過了七個禮拜，放假的時候總是覺得時間太快，在營區裡面一分鐘都顯得格外漫長。這兩個月下來，真要說學到什麼的話，大概就是知足惜福吧，在裡面很多東西都會受限。進了營區之後才會覺得自由很珍貴；吃了兩個月的不知道什麼東西，退伍之後大概也不會挑食了；營區斷電了，沒
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/08/26/20180826/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
-
-
-    
-      
-
-  
-
   
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+        
   
   
-  
-  <div class="post-block">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
     <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2018/07/14/20180714/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
       <meta itemprop="name" content="Eugene Yang">
       <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
     </span>
 
     <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="3ugeneYang.§ite">
     </span>
-
-    
       <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/07/14/20180714/" itemprop="url">當兵雜記</a></h1>
-        
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/07/14/20180714/" class="post-title-link" itemprop="url">當兵雜記</a>
+        </h1>
 
         <div class="post-meta">
-          <span class="post-time">
-            
+            <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="fa fa-calendar-o"></i>
               </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-14T12:00:49+08:00">
-                2018-07-14
-              </time>
-            
+              <span class="post-meta-item-text">Posted on</span>
 
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
+              <time title="Created: 2018-07-14 12:00:49" itemprop="dateCreated datePublished" datetime="2018-07-14T12:00:49+08:00">2018-07-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-02-08 13:23:01" itemprop="dateModified" datetime="2019-02-08T13:23:01+08:00">2019-02-08</time>
+              </span>
 
           
 
         </div>
       </header>
-    
 
     
     
@@ -887,59 +604,28 @@ Credit by Eugene Yang
     <div class="post-body" itemprop="articleBody">
 
       
-      
+          <p>還剩下六次休假就退伍了！！今年暑假一樣是去當兵，把剩下的兩個月役期服完之後就自由了，不過報到當天發生一點小插曲，差點就要變成逃兵。</p>
+<p>我 7/10 上午 8 點到下午 2 點要去後訓中心自行報到，可是我不知道為什麼手機日曆上面記成 7/11，7/10 當天上午還跟家人很悠閒的在賣場買東西，後來打開 FB 的時候看到許多同學已經在前往營區的路上，心中不免有些納悶，不放心的我還是打給了去年的同學，結果一問之下是 7/10 報到，當下馬上手刀衝去結帳櫃檯結帳，回家拿了黃埔袋之後馬上去火車站趕車 (還好我行李之前已經打包好了)，搭了中午 12 點的火車，所幸沿途都沒有誤點，順利在下午 1 點 33 分到達中壢，叫了輛計程車趕往營區，報到的時候是下午 1 點 57 分，精準壓線。結果後來從中隊長那邊得知，我是整個中隊最晚報到的，真的是還好最後有趕上。</p>
 
-      
-        
-          
-          還剩下六次休假就退伍了！！今年暑假一樣是去當兵，把剩下的兩個月役期服完之後就自由了，不過報到當天發生一點小插曲，差點就要變成逃兵。
-我 7/10 上午 8 點到下午 2 點要去後訓中心自行報到，可是我不知道為什麼手機日曆上面記成 7/11，7/10 當天上午還跟家人很悠閒的在賣場買東西，後來打開 F
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/07/14/20180714/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
       
     </div>
-    
-    
-    
 
     
-
     
-
     
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
+      <footer class="post-footer">
         <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
+      </footer>
   </article>
+  
+  
+  
 
-
-    
-  </section>
+  </div>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/7/">&lt;i class&#x3D;&quot;fa fa-angle-left&quot;&gt;&lt;&#x2F;i&gt;</a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/9/">&lt;i class&#x3D;&quot;fa fa-angle-right&quot;&gt;&lt;&#x2F;i&gt;</a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left" aria-label="Previous page"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><span class="space">&hellip;</span><a class="page-number" href="/page/14/">14</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right" aria-label="Next page"></i></a>
   </nav>
 
 
@@ -947,162 +633,150 @@ Credit by Eugene Yang
           </div>
           
 
-
-          
+<script>
+  window.addEventListener('tabs:register', () => {
+    let activeClass = CONFIG.comments.activeClass;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
 
         </div>
-        
           
   
-  <div class="sidebar-toggle">
-    <div class="sidebar-toggle-line-wrap">
-      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
-      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
-    </div>
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
-  <aside id="sidebar" class="sidebar">
-    
+  <aside class="sidebar">
     <div class="sidebar-inner">
 
-      
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
 
-      
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
-        <div class="site-overview">
-          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-            
-              <img class="site-author-image" itemprop="image"
-                src="/images/20161224_132915.jpg"
-                alt="Eugene Yang" />
-            
-              <p class="site-author-name" itemprop="name">Eugene Yang</p>
-              <p class="site-description motion-element" itemprop="description"></p>
-          </div>
-
-          <nav class="site-state motion-element">
-
-            
-              <div class="site-state-item site-state-posts">
-              
-                <a href="/archives/%20%7C%7C%20archive">
-              
-                  <span class="site-state-item-count">67</span>
-                  <span class="site-state-item-name">posts</span>
-                </a>
-              </div>
-            
-
-            
-
-            
-              
-              
-              <div class="site-state-item site-state-tags">
-                <a href="/tags/index.html">
-                  <span class="site-state-item-count">19</span>
-                  <span class="site-state-item-name">tags</span>
-                </a>
-              </div>
-            
-
-          </nav>
-
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Eugene Yang"
+      src="/images/20161224_132915.jpg">
+  <p class="site-author-name" itemprop="name">Eugene Yang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
           
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:eugene87222@gmail.com" title="E-Mail → mailto:eugene87222@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Eugene87222" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Eugene87222" rel="noopener" target="_blank"><i class="fa fa-fw fa-telegram"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/eugene87222" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fa fa-fw fa-facebook"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/yanghc" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;yanghc" rel="noopener" target="_blank"><i class="fa fa-fw fa-linkedin"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pinterest.com/eugene87222/" title="Pinterest → https:&#x2F;&#x2F;www.pinterest.com&#x2F;eugene87222&#x2F;" rel="noopener" target="_blank"><i class="fa fa-fw fa-pinterest"></i>Pinterest</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/eugene87222" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+      </span>
+  </div>
 
-          <div class="links-of-author motion-element">
-            
-              
-                <span class="links-of-author-item">
-                  <a href="mailto:eugene87222@gmail.com" target="_blank" title="E-Mail">
-                    
-                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://t.me/Eugene87222" target="_blank" title="Telegram">
-                    
-                      <i class="fa fa-fw fa-telegram"></i>Telegram</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.facebook.com/eugene87222" target="_blank" title="Facebook">
-                    
-                      <i class="fa fa-fw fa-facebook"></i>Facebook</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.linkedin.com/in/yanghc" target="_blank" title="LinkedIn">
-                    
-                      <i class="fa fa-fw fa-linkedin"></i>LinkedIn</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://www.pinterest.com/eugene87222/" target="_blank" title="Pinterest">
-                    
-                      <i class="fa fa-fw fa-pinterest"></i>Pinterest</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/eugene87222" target="_blank" title="GitHub">
-                    
-                      <i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-            
-          </div>
 
-          
-          
 
-          
-          
-
-          
-
-        </div>
-      </section>
-
-      
-
-      
+      </div>
 
     </div>
   </aside>
+  <div id="sidebar-dimmer"></div>
 
 
-        
       </div>
     </main>
 
-    <footer id="footer" class="footer">
+    <footer class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017-2020</span>
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Eugene Yang</span>
-
-  
 </div>
-
-
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> v4.2.0
+  </div>
+  <span class="post-meta-divider">|</span>
+  <div class="theme-info">Theme – <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.7.0
+  </div>
 
         
 <div class="busuanzi-count">
   <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-
-  
-    <span class="site-pv">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-      
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
     </span>
-  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
 </div>
 
 
@@ -1112,125 +786,26 @@ Credit by Eugene Yang
 
 
 
-        
       </div>
     </footer>
-
-    
-      <div class="back-to-top">
-        <i class="fa fa-arrow-up"></i>
-        
-      </div>
-    
-
-    
-
   </div>
 
   
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-<script type="text/javascript">
-  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
-    window.Promise = null;
-  }
-</script>
+<script src="/js/utils.js"></script>
 
-
-
-
-
+<script src="/js/motion.js"></script>
 
 
+<script src="/js/schemes/pisces.js"></script>
 
 
-  
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
-  
-
-  
-  
-    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-  
-
-
-  
-
-
-  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
-
-
-
-  
-  
-
-
-  <script type="text/javascript" src="/js/src/affix.js?v=5.1.3"></script>
-
-  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.3"></script>
-
-
-
-  
-
-  
-
-
-  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
-
-
-
-  
-
-
-  
-
-    
-
-    
-
-  
-
-
-
-
-	
-
+<script src="/js/next-boot.js"></script>
 
 
 
@@ -1250,26 +825,11 @@ Credit by Eugene Yang
 
 
 
-  
-
-
-
-
 
   
 
   
 
-  
-
-  
-  
-
-  
-
-  
-
-  
 
 </body>
 </html>
