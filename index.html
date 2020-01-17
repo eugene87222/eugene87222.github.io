@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Kaushan Script:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
@@ -28,7 +28,7 @@
     version: '7.7.0',
     exturl: false,
     sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
+    copycode: {"enable":true,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: true,
@@ -217,7 +217,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-01-18 00:33:02 / Modified: 00:33:18" itemprop="dateCreated datePublished" datetime="2020-01-18T00:33:02+08:00">2020-01-18</time>
+              <time title="Created: 2020-01-18 00:33:02 / Modified: 01:42:31" itemprop="dateCreated datePublished" datetime="2020-01-18T00:33:02+08:00">2020-01-18</time>
             </span>
 
           
@@ -231,227 +231,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>之前大三上剛開學的時候閒閒沒事，剛好那段時間正在選課，有鑑於每次登入選課系統都要打驗證碼（下圖），我自己是覺得很麻煩（到底有多懶），就想說用 Python 寫個自動登入的程式，不過選課系統的數字驗證碼長得不是很好看，去暴力搜尋每個數字感覺不太可行，後來決定先用 OpenCV 把數字切出來，再用機器學習去辨識數字，一開始寫的時候是直接用 <a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/tutorials/mnist" target="_blank" rel="noopener">tensorflow 的手寫數字辨識 CNN 模型</a>，不過因為 MNIST 的手寫數字跟選課系統的數字驗證碼書寫風格差異有點大，加上那時候用 OpenCV 做 preprocessing 理弄得亂七八糟（雖然現在的版本可能還是亂七八糟），所以數字辨識的準確度只有 85% 左右，根本沒辦法拿來登入選課系統，因為其中一個數字打錯就整個都錯了。</p>
-<p><img src="/image/2020-01-16_230643.png" alt=""></p>
-<p>之後事情開始變多，得念書考試寫作業，只好把這個東西暫時擱置，一直等到現在大四上結束，才有空繼續把它完成。下面的介紹主要就分成實作方法跟實驗結果兩個部分。</p>
-<h1 id="實作方法"><a href="#實作方法" class="headerlink" title="實作方法"></a>實作方法</h1><h2 id="開發環境"><a href="#開發環境" class="headerlink" title="開發環境"></a>開發環境</h2><ul>
-<li>Windows 10 Home</li>
-<li>Python 3.6.4</li>
-<li>Python packages: OpenCV, Numpy, Pillow, Requests, scikit learn, Selenium</li>
-</ul>
-<h2 id="蒐集-training-data"><a href="#蒐集-training-data" class="headerlink" title="蒐集 training data"></a>蒐集 training data</h2><p>這邊就簡單地用 <code>requests</code> 來抓圖片，一共下載了 7000 張。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">image_url = <span class="string">'https://course.nctu.edu.tw/function/Safecode.asp'</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">7000</span>):</span><br><span class="line">    image = requests.get(image_url)</span><br><span class="line">    <span class="keyword">with</span> open(<span class="string">f"<span class="subst">&#123;config[<span class="string">'PATH'</span>][<span class="string">'DOWNLOAD'</span>]&#125;</span>/<span class="subst">&#123;i&#125;</span>.jpg"</span>, <span class="string">'wb+'</span>) <span class="keyword">as</span> file:</span><br><span class="line">        file.write(image.content)</span><br></pre></td></tr></table></figure>
-
-<h2 id="Preprocessing"><a href="#Preprocessing" class="headerlink" title="Preprocessing"></a>Preprocessing</h2><p>我們用這下面張圖來解說。</p>
-<img src="/image/3.jpg" width="50%"/>
-
-<p>首先會把驗證碼統一調整大小至 50 乘 100，然後把驗證碼加白框（怕數字太靠近圖片邊緣，之後在切割的時候會不好處理），再來把圖片轉乘灰階，因為有些數字的顏色較淺，轉乘灰階之後還要利用 <code>cv2.adaptiveThreshold</code> 把數字從背景中分離出來。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">image = cv2.imread(filename)</span><br><span class="line">image = cv2.resize(image, (<span class="number">100</span>, <span class="number">50</span>))</span><br><span class="line">image = cv2.copyMakeBorder(image, <span class="number">5</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">5</span>, cv2.BORDER_CONSTANT, value=(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>))</span><br><span class="line">image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)</span><br><span class="line">image = cv2.adaptiveThreshold(image, <span class="number">255</span>, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, <span class="number">11</span>, <span class="number">2</span>)</span><br><span class="line">image = cv2.threshold(image, <span class="number">170</span>, <span class="number">255</span>, cv2.THRESH_BINARY)[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-
-<img src="/image/3_gray.jpg" width="50%"/>
-
-<p>如上圖所示，這時候的圖片還是有雜訊（背景的黑點點），根據 <a href="https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_filtering/py_filtering.html" target="_blank" rel="noopener">OpenCV Python Tutorial</a> 上面有關 Medium Filtering 的介紹：<strong>This is highly effective in removing salt-and-pepper noise</strong>，接著用 <code>cv2.medianBlur</code> 來去除背景的雜訊。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">image = cv2.medianBlur(image, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-<p>處理完後會像下面這個樣子，仔細觀察其實可以發現在降噪的過程中，&quot;3&quot;跟&quot;9&quot;有部分筆劃感覺也被去除了，這部分我現在還想不到可以怎麼改善，我相信一定有更好的處理方法，如果讀者有什麼想法也可以留言或寫信告訴我。</p>
-<img src="/image/3_blur.jpg" width="50%"/>
-
-<h2 id="切割數字"><a href="#切割數字" class="headerlink" title="切割數字"></a>切割數字</h2><p>把雜訊去掉後，下一步就是把驗證碼裡面的數字切割出來，OpenCV 裡面有個很方便的函數 <code>cv2.findContours</code> 可以直接將輪廓標出來。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">contours, hierarchy = cv2.findContours(img_blur_gray, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)</span><br></pre></td></tr></table></figure>
-<p><code>cv2.findContours</code> 有三個主要的參數，第一個當然就是要被檢測的圖片，第二個是 <code>mode</code>，用來指定要使用哪種模式檢測輪廓，我們使用 <code>cv2.RETR_TREE</code> 來建立一個樹狀結構的輪廓，第三個參數是 <code>method</code>，用以選擇輪廓的近似方法，如果用 <code>cv2.CHAIN_APPROX_NONE</code> 的話，OpenCV 會將輪廓上的所有點存下來，假如今天碰到一個矩形的輪廓，那矩形的四條邊都會被存起來，但其實我們只要知道四個頂點的座標就夠了，所以改用 <code>cv2.CHAIN_APPROX_SIMPLE</code>。</p>
-<p>接著來看 <code>cv2.findContours</code> 回傳的資料，該函數會回傳兩個東西，一個是輪廓本身（<code>contours</code>），一個是每個輪廓對應的屬性（<code>hierarchy</code>），<code>contours</code> 裡面包含每個輪廓的點，如果是矩形輪廓就有四個點，五角形就有五個點，依此類推；<code>hierarchy</code> 則是輪廓的樹狀結構，每個輪廓都對應到 <code>hierarchy</code> 當中的四個元素，分別是&quot;後一個輪廓&quot;、&quot;前一個輪廓&quot;、&quot;父輪廓&quot;、&quot;被自己包起來的輪廓編號&quot;。</p>
-<p>這邊我們只會使用到 <code>contours</code>，首先用 <code>cv2.drawContours</code> 把輪廓畫出來看看：</p>
-<img src="/image/3_highlight.jpg" width="50%"/>
-
-<p>可以發現偵測到的輪廓是多邊形，但是我們的目的是要切割出數字所在的矩形區域，可以用 <code>cv2.boundingRect</code> 來算出包含整個輪廓的最小矩形。</p>
-<img src="/image/3_ori_contour.jpg" width="50%"/>
-
-<p>算完後會長這樣，相信大家也注意到了，上圖的&quot;4&quot;會有兩個輪廓，一個是&quot;4&quot;的外圍的輪廓，一個是&quot;4&quot;中間空洞的輪廓，用 <code>cv2.boundingRect</code> 計算完後會產生兩個矩形，就是分別對應這兩個輪廓，但是只有外圍那個才是我們想要的，所以還要加一些判斷式來檢查，最後的程式碼會長這樣。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">valid = []</span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> contours:</span><br><span class="line">    x, y, w, h = cv2.boundingRect(c)</span><br><span class="line">    <span class="keyword">if</span> (w &lt; <span class="number">8</span> <span class="keyword">and</span> h &lt; <span class="number">8</span>) <span class="keyword">or</span> (w &gt; <span class="number">25</span> <span class="keyword">and</span> h &gt; <span class="number">25</span>) <span class="keyword">or</span> w &gt; <span class="number">40</span> <span class="keyword">or</span> h &gt; <span class="number">40</span>:</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    valid.append((x, y, w, h))</span><br><span class="line">contours = valid</span><br></pre></td></tr></table></figure>
-<p>這邊還有一點要注意，可以看到上圖的&quot;3&quot;被切成兩個部分，之所以會這樣可能是與先前提到降噪的問題有關，為了解決這種情況，我另外寫了一個用來合併矩形的函數。因為當這種情況發生時，兩個矩形通常會有部分區域重疊（上圖的&quot;3&quot;就是這樣），至於實作方面，我們可以透過 logical AND 來檢查是否重疊，每個矩形都對應到一張 60 乘 110 的圖，矩形所在的地方標&quot;1&quot;，其他地方標&quot;0&quot;，把兩張圖做 AND 就知道有沒有相交了，下面是合併矩形的程式碼。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">contours.sort(key=<span class="keyword">lambda</span> x: x[<span class="number">0</span>])</span><br><span class="line">frame = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(contours)):</span><br><span class="line">    x, y, w, h = contours[i]</span><br><span class="line">    frame.append(cv2.rectangle(np.zeros((<span class="number">60</span>, <span class="number">110</span>)), (x, y), (x+w, y+h), <span class="number">1</span>, <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line">status = np.zeros(len(frame))</span><br><span class="line">intermediate = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(frame)):</span><br><span class="line">    <span class="keyword">if</span> status[i]:</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">if</span> i == len(frame) - <span class="number">1</span>:</span><br><span class="line">        status[i] = <span class="number">1</span></span><br><span class="line">        intermediate.append(contours[i])</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    intersect = np.logical_and(frame[i], frame[i + <span class="number">1</span>])</span><br><span class="line">    <span class="keyword">if</span> <span class="literal">True</span> <span class="keyword">in</span> intersect:</span><br><span class="line">        x = min(contours[i][<span class="number">0</span>], contours[i + <span class="number">1</span>][<span class="number">0</span>])</span><br><span class="line">        y = min(contours[i][<span class="number">1</span>], contours[i + <span class="number">1</span>][<span class="number">1</span>])</span><br><span class="line">        w = max(contours[i][<span class="number">0</span>] + contours[i][<span class="number">2</span>], contours[i + <span class="number">1</span>][<span class="number">0</span>] + contours[i + <span class="number">1</span>][<span class="number">2</span>]) - x</span><br><span class="line">        h = max(contours[i][<span class="number">1</span>] + contours[i][<span class="number">3</span>], contours[i + <span class="number">1</span>][<span class="number">1</span>] + contours[i + <span class="number">1</span>][<span class="number">3</span>]) - y</span><br><span class="line">        <span class="keyword">if</span> w &lt;= <span class="number">20</span> <span class="keyword">and</span> h &lt;= <span class="number">20</span>:</span><br><span class="line">            status[i] = <span class="number">1</span></span><br><span class="line">            status[i + <span class="number">1</span>] = <span class="number">1</span></span><br><span class="line">            intermediate.append((x, y, w, h))</span><br><span class="line">    <span class="keyword">if</span> status[i] != <span class="number">1</span>:</span><br><span class="line">        status[i] = <span class="number">1</span></span><br><span class="line">        intermediate.append(contours[i])</span><br><span class="line"></span><br><span class="line">contours = final_contours</span><br></pre></td></tr></table></figure>
-<p>簡單說明一下，前五行先把矩形由左到右排序，並畫出每個矩形對應的 60 乘 110 的圖，第七行的 <code>state</code> 是用來記錄該矩形處理了沒，因為矩形已經排序過，所以第 <code>i</code> 個矩形只可能與第 <code>i + 1</code> 個相交，如果相交的話就將兩者合併，並在 <code>state</code> 中將第 <code>i</code> 與 <code>i + 1</code> 個紀錄為已處理的狀態。注意第 22 行的判斷式，因為有時候會發生兩個數字靠很近，導致矩形相交，這時就要檢查矩形的大小，如果超過單一數字的矩形大小（這邊設定為 20），就代表過程中誤將兩個數字合在一起了，不應該採用該合併後的結果。下圖是合併之後的結果。</p>
-<img src="/image/3_final_contour.jpg" width="50%"/>
-
-<h2 id="Train-model"><a href="#Train-model" class="headerlink" title="Train model"></a>Train model</h2><p>每張驗證碼會切出五個數字，7000 張驗證碼總共有 35000 個數字，切割完數字後就可以開始訓練辨識用的模型了，一開始是想用 unsupervised learning 的方式去學習，畢竟切出來的三萬多張圖也沒有標 label，想說讓電腦自己去做 clustering，於是就用 scikit learn 提供的 KMeans 來訓練模型，但是做出來的準確度有夠低，一方面是因為 KMeans 只能找 local minimum，如果初始化爛掉了那就很可能會繼續爛下去，另一方面是有些數字其實長得很像，像是&quot;3&quot;寫醜一點就很像&quot;8&quot;，或許改用 Spectral Clustering 會比較好一點，不過後來還是決定先用 supervised 的方式，Spectral Clustering 之後有空再說。</p>
-<p>因為改用 supervised，所以我自己手動標了 700 張數字，每個數字各 100 張（驗證碼只會出現 3、4、5、6、7、8、9 這七種數字），然後用 scikit learn 的 SVM 來訓練。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">train</span><span class="params">()</span></span></span><br><span class="line">    X = []</span><br><span class="line">    y = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">3</span>, <span class="number">10</span>):</span><br><span class="line">        <span class="keyword">for</span> filename <span class="keyword">in</span> os.listdir(<span class="string">f"<span class="subst">&#123;config[<span class="string">'PATH'</span>][<span class="string">'PARTITION'</span>]&#125;</span>/<span class="subst">&#123;i&#125;</span>"</span>):</span><br><span class="line">            img = openImage(<span class="string">f"<span class="subst">&#123;config[<span class="string">'PATH'</span>][<span class="string">'PARTITION'</span>]&#125;</span>/<span class="subst">&#123;i&#125;</span>/<span class="subst">&#123;filename&#125;</span>"</span>)</span><br><span class="line">            X.append(img)</span><br><span class="line">            y.append(i)</span><br><span class="line">    model = svm.SVC()</span><br><span class="line">    model.fit(X, y)</span><br><span class="line">    <span class="keyword">return</span> model</span><br></pre></td></tr></table></figure>
-<p>訓練完第一版模型之後，我打算用這個模型來處理剩下的 34300 張數字，主要流程就是 SVM 每標註完 2000 張數字後，會訓練一個新版本的 SVM，再用這個新的模型去標註，一直重複這些動作直到所有圖片都標好 label，我那麼懶怎麼可能自己手動跑這些步驟呢，當然是直接寫 Python 讓電腦全部自己完成，以下是程式碼。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">model = train()</span><br><span class="line"></span><br><span class="line">iteration = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> filename <span class="keyword">in</span> os.listdir(config[<span class="string">'PATH'</span>][<span class="string">'PARTITION'</span>]):</span><br><span class="line">        <span class="keyword">if</span> len(filename) != <span class="number">1</span>:</span><br><span class="line">            img = cv2.imread(<span class="string">f"<span class="subst">&#123;config[<span class="string">'PATH'</span>][<span class="string">'PARTITION'</span>]&#125;</span>/<span class="subst">&#123;filename&#125;</span>"</span>)</span><br><span class="line">            img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line">            img = img.ravel()</span><br><span class="line">            ans = model.predict([img])[<span class="number">0</span>]</span><br><span class="line">            shutil.move(<span class="string">f"<span class="subst">&#123;config[<span class="string">'PATH'</span>][<span class="string">'PARTITION'</span>]&#125;</span>/<span class="subst">&#123;filename&#125;</span>"</span>, </span><br><span class="line">                        <span class="string">f"<span class="subst">&#123;config[<span class="string">'PATH'</span>][<span class="string">'PARTITION'</span>]&#125;</span>/<span class="subst">&#123;ans&#125;</span>/<span class="subst">&#123;filename&#125;</span>"</span>)</span><br><span class="line">            count += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> count == <span class="number">2000</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">    iteration += <span class="number">1</span></span><br><span class="line">    print(<span class="string">f'Iter: <span class="subst">&#123;iteration&#125;</span>'</span>)</span><br><span class="line">    model = train()</span><br><span class="line">    <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
-<p>全部跑完之後發現這七個數字的出現頻率都還滿平均的，每個數字大約出現五千次左右，至於準確度的部分我並沒有特別去測，不過整個流程跑完之後我有去檢查每個 label 所在的資料夾，35000 張數字只有不到 5 張被放錯地方（標錯 label）。</p>
-<h2 id="登入系統"><a href="#登入系統" class="headerlink" title="登入系統"></a>登入系統</h2><p>模型訓練好後，就可以開始嘗試登入選課系統了，不過第一個碰到的問題就是如何從網頁畫面中取得驗證碼，因為驗證碼是透過 <a href="https://course.nctu.edu.tw/function/Safecode.asp" target="_blank" rel="noopener">https://course.nctu.edu.tw/function/Safecode.asp</a> 隨機產生的，沒辦法直接用 <code>requests</code> 從網頁裡面抓圖片，或許 Python 有辦法抓網頁載入時後台的資訊，但是我不知道怎麼做 QQ，所以後來決定直接把視窗 resize 成固定大小，再用 Selenium 抓特定的區塊，接著就是把抓到的驗證碼丟給切割數字的函數，再把切出來的五個數字拿去辨識，這部分的程式碼因為沒有什麼比較需要解釋的，只是一些 Selenium 的操作（自動點擊、輸入文字等），所以就不放上來了。</p>
-<h1 id="實驗結果"><a href="#實驗結果" class="headerlink" title="實驗結果"></a>實驗結果</h1><p>下面是我錄的小短片，驗證碼的辨識準確度跟辨識速度都有不錯的表現，我後來也寫了一個簡單的 BAT 檔，要登入的時候點兩下就好了，整體下來感覺還不錯，但就是敗在 Selenium 的開瀏覽器的速度，如果能夠再快一點就好了。然後程式碼的部分我都放在 <a href="https://github.com/eugene87222/NCTU-LetMeFillTheCAPTCHA" target="_blank" rel="noopener">Github</a> 上面了，有興趣的讀者可以去玩玩看，有什麼問題或想法也歡迎寫信告訴我。</p>
-<iframe width="560" height="315" src="https://www.youtube.com/embed/UV738erwCus" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
+          又在寫莫名其妙的東西了
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/01/18/20191219-get-rid-of-captcha/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
         
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/11/24/20171029-collection/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
-      <meta itemprop="name" content="Eugene Yang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="3ugeneYang.§ite">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/11/24/20171029-collection/" class="post-title-link" itemprop="url">收藏分享(持續更新)</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-              
-
-              <time title="Created: 2019-11-24 14:59:41 / Modified: 15:02:19" itemprop="dateCreated datePublished" datetime="2019-11-24T14:59:41+08:00">2019-11-24</time>
-            </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h2 id="優質-Blog-Good-Blogs"><a href="#優質-Blog-Good-Blogs" class="headerlink" title="優質 Blog / Good Blogs"></a>優質 Blog / Good Blogs</h2><ul>
-<li><a href="http://mropengate.blogspot.com/" target="_blank" rel="external">Mr. Opengate</a></li>
-<li><a href="https://nickcano.com/" target="_blank" rel="external">Nick Cano</a></li>
-<li><a href="https://kb.hitcon.org/" target="_blank" rel="external">HITCON Knowledge Base</a></li>
-<li><a href="https://aji.tw/" target="_blank" rel="external">部落格 | 宅吉便</a></li>
-<li><a href="https://morvanzhou.github.io/tutorials/" target="_blank" rel="external">莫烦 Python</a></li>
-<li><a href="https://blog.csdn.net/eastmount?t=1&amp;orderby=UpdateTime" target="_blank" rel="external">杨秀璋的专栏 - CSDN博客</a></li>
-</ul>
-<h2 id="資安、CTF-Computer-Security"><a href="#資安、CTF-Computer-Security" class="headerlink" title="資安、CTF / Computer Security"></a>資安、CTF / Computer Security</h2><ul>
-<li><a href="https://kb.hitcon.org/post/162189657177/%E5%9C%8B%E7%B6%B2%E4%B8%AD%E5%BF%83-cdx-%E7%B6%93%E9%A9%97%E5%88%86%E4%BA%AB" target="_blank" rel="external">國網中心 CDX 經驗分享</a></li>
-<li><a href="https://pwnable.kr/index.php" target="_blank" rel="external">PWNABLE.KR</a></li>
-<li><a href="https://pwnable.tw/" target="_blank" rel="external">PWNABLE.TW</a></li>
-<li><a href="https://gotyour.pw/" target="_blank" rel="external">Got Your PW</a></li>
-<li><a href="https://bamboofox.github.io/" target="_blank" rel="external">Bamboofox Official Blog</a></li>
-<li><a href="https://speakerdeck.com/aaaddress1/binary-ninja-101-windows-binary-reversing-from-zero-to-master" target="_blank" rel="external">Binary Ninja 101: Windows Binary Reversing from Zero to Master </a></li>
-<li><a href="https://www.duckll.tw/2017/11/blog-post.html" target="_blank" rel="external">我想學資安 從哪裡開始呢 - DuckLL</a></li>
-<li><a href="https://ctf-wiki.github.io/ctf-wiki/" target="_blank" rel="external">CTF Wiki</a></li>
-</ul>
-<h2 id="Machine-Learning"><a href="#Machine-Learning" class="headerlink" title="Machine Learning"></a>Machine Learning</h2><ul>
-<li><a href="https://www.theverge.com/2019/10/15/20914575/openai-dactyl-robotic-hand-rubiks-cube-one-handed-solve-dexterity-ai?fbclid=IwAR0V2LoBQfBdYxSDvRg0OTqX-Fzy97cCiCAHXLkdj8eJ2J1NqNDnkCBX0Pw" target="_blank" rel="external">OpenAI’s AI-powered robot learned how to solve a Rubik’s cube one-handed</a></li>
-<li><a href="https://ardianumam.wordpress.com/machine-learning/#english" target="_blank" rel="external">Machine Learning and Pattern Recognition</a></li>
-<li><a href="https://mp.weixin.qq.com/s/cl3HBzt_u1Edp35YLmBVsw" target="_blank" rel="external">比Tiny YOLOv3小8倍，性能提升11个点，4MB的网络也能做目标检测</a></li>
-<li><a href="http://cpmarkchang.logdown.com/posts/189108-machine-learning-perceptron-algorithm" target="_blank" rel="external">機器學習 -- Perceptron Algorithm</a></li>
-<li><a href="http://mropengate.blogspot.com/2016/10/ai-ch165-tensorflow.html" target="_blank" rel="external">AI - Ch16.5 類神經網路實作 - TensorFlow 介紹與入門教學 | Mr. Opengate</a></li>
-<li><a href="https://medium.com/@yehjames/%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90-%E6%A9%9F%E5%99%A8%E5%AD%B8%E7%BF%92-%E7%AC%AC5-1%E8%AC%9B-%E5%8D%B7%E7%A9%8D%E7%A5%9E%E7%B6%93%E7%B6%B2%E7%B5%A1%E4%BB%8B%E7%B4%B9-convolutional-neural-network-4f8249d65d4f" target="_blank" rel="external">[資料分析&amp;機器學習] 第5.1講: 卷積神經網絡介紹(Convolutional Neural Network)</a></li>
-<li><a href="https://medium.com/@gau820827/%E6%95%99%E9%9B%BB%E8%85%A6%E7%95%AB%E7%95%AB-%E5%88%9D%E5%BF%83%E8%80%85%E7%9A%84%E7%94%9F%E6%88%90%E5%BC%8F%E5%B0%8D%E6%8A%97%E7%B6%B2%E8%B7%AF-gan-%E5%85%A5%E9%96%80%E7%AD%86%E8%A8%98-tensorflow-python3-dfad71662952" target="_blank" rel="external">教電腦畫畫：初心者的生成式對抗網路(GAN)入門筆記（TensorFlow + Python3） – Yi-Hsiang Kao – Medium</a></li>
-</ul>
-<h2 id="Natural-Language-Processing"><a href="#Natural-Language-Processing" class="headerlink" title="Natural Language Processing"></a>Natural Language Processing</h2><ul>
-<li><a href="https://medium.com/pyladies-taiwan/%E8%87%AA%E7%84%B6%E8%AA%9E%E8%A8%80%E8%99%95%E7%90%86%E5%85%A5%E9%96%80-word2vec%E5%B0%8F%E5%AF%A6%E4%BD%9C-f8832d9677c8" target="_blank" rel="external">自然語言處理入門- Word2vec小實作 – PyLadies Taiwan – Medium</a></li>
-<li><a href="https://medium.com/pyladies-taiwan/%E4%BB%A5-jieba-%E8%88%87-gensim-%E6%8E%A2%E7%B4%A2%E6%96%87%E6%9C%AC%E4%B8%BB%E9%A1%8C-%E4%BA%94%E6%9C%88%E5%A4%A9%E4%BA%BA%E7%94%9F%E7%84%A1%E9%99%90%E5%85%AC%E5%8F%B8%E6%AD%8C%E8%A9%9E%E5%88%86%E6%9E%90-i-cd2147b89083" target="_blank" rel="external">以 jieba 與 gensim 探索文本主題：五月天人生無限公司歌詞分析 – PyLadies Taiwan – Medium</a></li>
-<li><a href="http://zake7749.github.io/2016/08/28/word2vec-with-gensim/#" target="_blank" rel="external">以 gensim 訓練中文詞向量 | 雷德麥的藏書閣</a> <a href="https://github.com/zake7749/word2vec-tutorial" target="_blank" rel="external">(程式碼)</a></li>
-<li><a href="http://zake7749.github.io/2016/08/30/chatterbot-with-word2vec/" target="_blank" rel="external">基於詞向量的主題匹配 | 雷德麥的藏書閣</a> <a href="https://github.com/zake7749/Chatbot" target="_blank" rel="external">(程式碼)</a></li>
-<li><a href="https://city.shaform.com/zh/2014/11/04/word2vec/" target="_blank" rel="external">用中文資料測試 word2vec · 翼之都</a></li>
-<li><a href="https://blog.csdn.net/itplus/article/details/37969519" target="_blank" rel="external">word2vec 中的数学原理详解 - CSDN博客</a></li>
-<li><a href="https://www.jianshu.com/p/362cb98ed586" target="_blank" rel="external">gensim TF-IDF模型中文关键词抽取 - 简书</a></li>
-<li><a href="https://blog.csdn.net/u010105243/article/details/53352155" target="_blank" rel="external">使用Gensim建立bow TFIDF LSI模型对文本相似度计算 - CSDN博客</a></li>
-<li><a href="https://blog.csdn.net/scotfield_msn/article/details/72904651" target="_blank" rel="external">NLP 主题抽取 Topic LDA代码实践 gensim包 代码 - CSDN博客</a></li>
-<li><a href="https://blog.csdn.net/john_xyz/article/details/54731403" target="_blank" rel="external">gensim学习笔记（一）- Vector space model - CSDN博客</a></li>
-<li><a href="https://blog.csdn.net/John_xyz/article/details/54744413" target="_blank" rel="external">gensim学习笔记 (二) - Topic and transformations(TF-IDF, LSI) - CSDN博客</a></li>
-</ul>
-<h2 id="爬蟲大小事-Cralwer"><a href="#爬蟲大小事-Cralwer" class="headerlink" title="爬蟲大小事 / Cralwer"></a>爬蟲大小事 / Cralwer</h2><ul>
-<li><a href="https://www.dcard.tw/f/dcard/p/224157736" target="_blank" rel="external">dcard 爬蟲疑問</a></li>
-<li><a href="https://www.dcard.tw/_api/forums/" target="_blank" rel="external">dcard API</a></li>
-<li><a href="https://medium.com/pyradise/%E5%9C%A8%E9%9B%B2%E7%AB%AF%E4%BC%BA%E6%9C%8D%E5%99%A8%E4%B8%8A%E5%88%A9%E7%94%A8-python-selenium-%E6%93%B7%E5%8F%96%E7%B6%B2%E7%AB%99%E8%B3%87%E6%96%99-b42fcc9a3b93" target="_blank" rel="external">在雲端伺服器上利用 Python Selenium 擷取網站資料 – Pyradise – Medium</a></li>
-</ul>
-<h2 id="Linux"><a href="#Linux" class="headerlink" title="Linux"></a>Linux</h2><ul>
-<li><a href="http://www.nparikh.org/unix/prompt.php" target="_blank" rel="external">Customizing your shell prompt</a></li>
-<li><a href="https://www.freebsd.org/doc/zh_TW/books/handbook/disks-adding.html" target="_blank" rel="external">freeBSD 加入磁碟</a></li>
-<li><a href="http://linux.vbird.org/" target="_blank" rel="external">鳥哥的 Linux 私房菜</a></li>
-</ul>
-<h2 id="CS-延伸閱讀-未分類-Computer-Science"><a href="#CS-延伸閱讀-未分類-Computer-Science" class="headerlink" title="CS 延伸閱讀 (未分類) / Computer Science"></a>CS 延伸閱讀 (未分類) / Computer Science</h2><ul>
-<li><a href="https://hackmd.io/p/HkW8LjRfl#/" target="_blank" rel="external">Bot Development</a></li>
-<li><a href="https://medium.com/@nick03008/gitlab-ci-%E5%85%A5%E9%96%80%E7%AD%86%E8%A8%98-%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6%E7%AF%87-156455e2ad9f" target="_blank" rel="external">Gitlab-CI 入門實作教學 - 單元測試篇</a></li>
-<li><a href="https://medium.com/@dboyliao/pybind11-%E5%85%A5%E9%96%80%E7%8E%A9%E6%A8%82%E6%89%8B%E8%A8%98-9da22f6193f2" target="_blank" rel="external">pybind11 入門玩樂手記 (一)</a></li>
-<li><a href="https://w3c.hexschool.com/%E5%AE%A2%E5%BA%A7%E6%8A%95%E7%A8%BF/how-web-applications-work-8d691e4f?fbclid=IwAR1NUniFfIMhQggXk9T1N1XxiQlg04tTHbKt8sBCCvAKfYunPBjYibtOOmk" target="_blank" rel="external">[熱門面試題] 從輸入網址列到渲染畫面，過程經歷了什麼事？</a></li>
-<li><a href="https://hackmd.io/s/HkgaMUc24" target="_blank" rel="external">Python Telegram Bot 教學 (by 陳達仁)</a></li>
-<li><a href="https://medium.com/deepquestai/ai-apis-available-on-windows-with-deepstack-native-3f500d33b7ed?fbclid=IwAR10xMguNZFxDFnmpNt0xgtdVptkCMj3wGgF7l78n89_1bUYwjTcpYKLuiM" target="_blank" rel="external">Introducing DeepStack AI Server for Windows</a></li>
-<li><a href="https://medium.com/100-days-of-algorithms/tagged/algorithms?fbclid=IwAR34Lqt5Kn45Fut8pAgRAq4Im0imLbZHzw4VnA454WzFQt7rgSlzuj-OT80" target="_blank" rel="external">100 days of algorithms</a></li>
-<li><a href="https://www.acodersjourney.com/top-25-cplusplus-api-design-mistakes-and-how-to-avoid-them/" target="_blank" rel="external">Top 25 C++ API design mistakes and how to avoid them </a></li>
-<li><a href="https://hackmd.io/Ti0G1z5zR9GBv5MctULMZw" target="_blank" rel="external">密碼學概論 - 陳榮傑 (hackmd 共筆)</a></li>
-<li><a href="https://ai.google/education/#%3Fmodal_active=none" target="_blank" rel="external">Education – Google AI</a></li>
-<li><a href="http://mropengate.blogspot.com/2018/01/makefile.html" target="_blank" rel="external">簡單學 makefile：makefile 介紹與範例程式 | Mr. Opengate</a></li>
-<li><a href="http://mropengate.blogspot.com/2015/06/formal-language.html" target="_blank" rel="external">[系列文目錄] 正規語言 Formal Language | Mr. Opengate</a></li>
-<li><a href="https://levirve.github.io/blog/2016/hexo-deploy-through-travisci/" target="_blank" rel="external">使用 Travis CI 自動發布 hexo 到 Github pages | Salas&#39;</a></li>
-<li><a href="https://google.github.io/styleguide/pyguide.html" target="_blank" rel="external">Google Python Style Guide</a></li>
-<li><a href="https://aji.tw/python%E4%BD%A0%E5%88%B0%E5%BA%95%E6%98%AF%E5%9C%A8__%E5%BA%95%E7%B7%9A__%E4%BB%80%E9%BA%BC%E5%95%A6/" target="_blank" rel="external">Python，你到底是在__底線__什麼啦！| 宅吉便</a></li>
-<li><a href="https://medium.com/@m50816m50816/latex%E5%AD%B8%E7%BF%92%E7%AD%86%E8%A8%98-%E5%AE%89%E8%A3%9D%E7%AF%87-with-sublime-text-3-on-win10-49b6c216e2d" target="_blank" rel="external">[LaTeX學習筆記]安裝篇 (with Sublime Text 3 on Win10) – 陳麒升 – Medium</a></li>
-<li><a href="https://medium.com/pyradise/60%E7%A7%92%E6%90%9E%E6%87%82firestore%E8%B3%87%E6%96%99%E7%B5%90%E6%A7%8B-c61ba6206cba" target="_blank" rel="external">60秒搞懂firestore資料結構 – Pyradise – Medium</a></li>
-<li><a href="https://medium.com/monospace-tw/%E4%BB%8B%E9%9D%A2%E8%A8%AD%E8%A8%88%E5%B8%AB%E8%BD%89%E8%81%B7%E4%B9%8B%E8%B7%AF-dcd9a19aa1dc?sk=c6b3e8556cda8df8a02f265a41519d01" target="_blank" rel="external">介面設計師轉職之路 – Monospace – Medium</a></li>
-<li><a href="https://plot.ly/api/" target="_blank" rel="external">Plotly API libraries</a></li>
-<li><a href="https://medium.com/deep-learning-turkey/google-colab-free-gpu-tutorial-e113627b9f5d" target="_blank" rel="external">Google Colab Free GPU Tutorial – Deep Learning Turkey – Medium</a></li>
-<li><a href="https://hom-wang.gitbooks.io/verilog-hdl/content/" target="_blank" rel="external">Verilog HDL 教學講義</a></li>
-<li><a href="https://chi_gitbook.gitbooks.io/personal-note/content/zu_he_yu_yan_yu_ji_suan_ji_zu_zhi.html" target="_blank" rel="external">組合語言與計算機組織 · 課程筆記</a></li>
-</ul>
-<h2 id="國家地理-National-Geography"><a href="#國家地理-National-Geography" class="headerlink" title="國家地理 / National Geography"></a>國家地理 / National Geography</h2><ul>
-<li><a href="https://www.natgeomedia.com/news/editorpick/32757?doing_wp_cron=1521019353.6385700702667236328125" target="_blank" rel="external">浣熊洗棉花糖，真是因為蠢萌嗎？ - 國家地理雜誌中文網</a></li>
-<li><a href="https://www.natgeomedia.com/news/ngnews/73294" target="_blank" rel="external">實驗室中的人羊混種－揭露詳情 - 國家地理雜誌中文網</a></li>
-</ul>
-<h2 id="泛科學-PanSci"><a href="#泛科學-PanSci" class="headerlink" title="泛科學 / PanSci"></a>泛科學 / PanSci</h2><ul>
-<li><a href="http://pansci.asia/archives/137321" target="_blank" rel="external">霍金的加州理工時光：粒子物理、X射線與黑洞賭局</a></li>
-<li><a href="http://pansci.asia/archives/72480" target="_blank" rel="external">愛的萬物論：為什麼我們會相愛、背叛和分開？</a></li>
-<li><a href="http://pansci.asia/archives/136623" target="_blank" rel="external">三倍體複製蝦全面入侵——進擊の大理石紋螯蝦（上）</a></li>
-<li><a href="http://pansci.asia/archives/136629" target="_blank" rel="external">缺乏遺傳多樣性的孤雌生殖，註定死路一條？——進擊の大理石紋螯蝦（下）</a></li>
-</ul>
-<h2 id="旅遊-Travel"><a href="#旅遊-Travel" class="headerlink" title="旅遊 / Travel"></a>旅遊 / Travel</h2><ul>
-<li><a href="https://www.vogue.com.tw/feature/travel/content-34341.html" target="_blank" rel="external">被地圖遺忘的地方！卡帕多細亞的地下城</a></li>
-<li><a href="https://gooshuo.tw/article/536" target="_blank" rel="external">日本第一星空村 長野縣阿智村</a></li>
-<li><a href="https://gooshuo.tw/article/651" target="_blank" rel="external">漂浮在碧綠湖水上的無人秘境車站 靜岡縣奧大井湖上站！</a></li>
-</ul>
-<h2 id="動物-Animals"><a href="#動物-Animals" class="headerlink" title="動物 / Animals"></a>動物 / Animals</h2><ul>
-<li><a href="https://pets.ettoday.net/news/1107576#ixzz5A1WyfqVe" target="_blank" rel="external">影片小女孩爆哭！牧羊犬嚇到「球都掉了」　嘴開開衝上前關心</a></li>
-<li><a href="https://pets.ettoday.net/news/869905#ixzz5A1X76irb" target="_blank" rel="external">「你看過這隻貓嗎？」好心路人想幫找　近看卻傻眼：…可惡</a></li>
-<li><a href="https://pets.ettoday.net/news/1115029#ixzz5A1WZdU3n" target="_blank" rel="external">竟然偷吃我飼料！阿金把貓弟弟叼走　媽傻眼：別扔出去啊啊啊</a></li>
-<li><a href="http://www.epochtimes.com/b5/17/12/18/n9967372.htm" target="_blank" rel="external">汪星人穿越柵欄逃家 主人僅靠「這根東西」成功攔截</a></li>
-<li><a href="https://www.facebook.com/NowJustLaugh.TW/posts/1982056361827700" target="_blank" rel="external">大貓行列！</a>twitter <a href="https://twitter.com/dk_art?lang=en" target="_blank" rel="external">@dk_art</a></li>
-<li><a href="https://www.facebook.com/peanutnews/videos/1867436036604009/" target="_blank" rel="external">喵星人如何在零下20°的雪地裡生活呢？</a></li>
-<li><a href="https://www.facebook.com/odanobunagafire/posts/1458553057584971" target="_blank" rel="external">貓貓攝影失敗大賽||(=´ω`=)</a></li>
-<li><a href="https://www.facebook.com/odanobunagafire/posts/1461142400659370" target="_blank" rel="external">鼠鼠攝影失敗大賽(=´ϖ`=)</a></li>
-</ul>
-<h2 id="其他-Other"><a href="#其他-Other" class="headerlink" title="其他 / Other"></a>其他 / Other</h2><ul>
-<li><a href="https://medium.com/@Johann016/%E5%A6%82%E4%BD%95%E9%96%B1%E8%AE%80%E4%B8%80%E7%AF%87%E5%AD%B8%E8%A1%93%E8%AB%96%E6%96%87-cedb2f0d7cd0" target="_blank" rel="external">如何閱讀一篇學術論文 – 黃岳涵 – Medium</a></li>
-<li><a href="http://root.eng.tw/" target="_blank" rel="external">Eng.tw 每日字根</a></li>
-<li><a href="https://www.youtube.com/watch?v=U_7qPitWoAo" target="_blank" rel="external">SITCON 2018 開場動畫</a></li>
-<li><a href="https://www.facebook.com/groups/MusikmesseFrankfurt/permalink/10155348138108848/" target="_blank" rel="external">Despacito, sube me la radio, ballad !!! info@prestigeventi.com</a></li>
-<li><a href="https://www.ettoday.net/news/20180316/1131802.htm" target="_blank" rel="external">學生實習該不該領薪？</a></li>
-<li><a href="https://www.facebook.com/NowJustLaugh.TW/videos/1975330192500317/" target="_blank" rel="external">複線甩尾！</a>twitter <a href="https://twitter.com/crocklego?lang=en" target="_blank" rel="external">@crocklego</a></li>
-<li><a href="https://www.ettoday.net/dalemon/post/33581#ixzz5A1XvNwnO" target="_blank" rel="external">歪頭！看得出左右是同一張照片嗎？基礎幻術第一課：斜塔錯覺</a></li>
-<li><a href="https://www.facebook.com/jamesiscurly2/posts/323607634825593" target="_blank" rel="external">醫生梗懶人包總整理</a></li>
-<li><a href="https://www.facebook.com/ETtoday/videos/1752335874802569/" target="_blank" rel="external">鼻子被老爸「隔空拔走」 小男孩崩潰：快裝回去！</a></li>
-<li><a href="https://www.facebook.com/1533865249957605/photos/a.1533866239957506.1073741826.1533865249957605/1639364909407638/?type=3&amp;theater" target="_blank" rel="external">HCOONa+瑪踏塔</a></li>
-<li><a href="https://www.facebook.com/BoredPandaArt/videos/764156053771522/" target="_blank" rel="external">Surreal 3D art</a> by <a href="https://www.facebook.com/extraweg/?fref=mentions" target="_blank" rel="external">extraweg.com</a></li>
-<li><a href="https://www.facebook.com/diplyhumor/videos/887752821366322/" target="_blank" rel="external">How Engineers Play Basketball</a></li>
-</ul>
-
       
     </div>
 
@@ -835,6 +623,252 @@
 </li>
 <li>Prerequisite: the web page <strong>cannot be encrypted</strong></li>
 <li><img src="https://i.imgur.com/PMubRxS.png" width="60%"></li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch23/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
+      <meta itemprop="name" content="Eugene Yang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="3ugeneYang.§ite">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/24/20190624-ComputerSecurity-note-ch23/" class="post-title-link" itemprop="url">[Intro. to Computer Security Course Note] Ch 23</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-06-24 20:02:05" itemprop="dateCreated datePublished" datetime="2019-06-24T20:02:05+08:00">2019-06-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-18 09:25:53" itemprop="dateModified" datetime="2019-08-18T09:25:53+08:00">2019-08-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Ch23-Internet-Authentication-Applications"><a href="#Ch23-Internet-Authentication-Applications" class="headerlink" title="Ch23. Internet Authentication Applications"></a>Ch23. Internet Authentication Applications</h1><hr>
+<h1 id="Kerberos"><a href="#Kerberos" class="headerlink" title="Kerberos"></a>Kerberos</h1><ul>
+<li>A software utility available both in the public domain and in commercially supported versions</li>
+<li>The defacto standard for remote authentication</li>
+<li>A trusted third party authentication service<ul>
+<li>Clients and servers trust Kerberos to mediate their mutual authentication</li>
+<li>Requires that<ul>
+<li>A user proves his or her identity for each service invoked</li>
+<li>Optionally, services prove their identity to clients</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Security-Issues-between-Clients-and-Servers"><a href="#Security-Issues-between-Clients-and-Servers" class="headerlink" title="Security Issues between Clients and Servers?"></a>Security Issues between Clients and Servers?</h2><ul>
+<li>In an unprotected network environment, any client can apply to any server for server</li>
+<li>Obvious security risk?<ul>
+<li>Impersonation: an opponent can <strong>pretend to be another client</strong> and obtain unauthorized privileges on server machines</li>
+</ul>
+</li>
+<li>Countermeasure<ul>
+<li>Confirm the identities of clients</li>
+</ul>
+</li>
+<li>Alternative: using an <strong>authentication server (AS)</strong><ul>
+<li>Once the AS has verified the user&#39;s identity, it can pass this information on to an application server</li>
+</ul>
+</li>
+</ul>
+<h2 id="Kerberos-Overview"><a href="#Kerberos-Overview" class="headerlink" title="Kerberos Overview"></a>Kerberos Overview</h2><ul>
+<li>AS shares a unique secret key with each server</li>
+<li>Session key: one-time encryption key</li>
+<li>Ticket and session key are both encrypted using the user&#39;s password as the encryption key</li>
+<li>Password is never passed over the network</li>
+<li><img src="https://i.imgur.com/uhVkfXL.jpg" alt=""><ol>
+<li>User logs on to workstation and requests service on host</li>
+<li>AS verifies user&#39;s access right in database, creates ticket-granting ticket and section key. Results are encrypted using key derived from user&#39;s password</li>
+<li>Workstation prompts user for password to decrypt incoming message, then send ticket and authenticator that contains user&#39;s name, network address and time to TGS</li>
+<li>TGS decrypts ticket and authenticator, verifies requests then creates ticket for requested application server</li>
+<li>Workstation sends ticket and authenticator to host</li>
+<li>Host verifies that ticket and authenticator match, then grants access to service. If mutual authentication is required, server returns an authenticator</li>
+</ol>
+</li>
+<li>Ticket: a set of credentials<ul>
+<li>User&#39;s ID, server&#39;s ID, timestamp, lifetime</li>
+</ul>
+</li>
+<li>Entire ticket is encrypted using a secret DES key shared by the AS and the server</li>
+<li>Why TGS?<ul>
+<li>Query the user for his password for each service<ul>
+<li>Inconvenient</li>
+</ul>
+</li>
+<li>Store the password in memory for the duration of the logon session<ul>
+<li>有安全風險</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>TGS: a ticket to get more ticket</li>
+<li>How to counter the following threats for ticket-granting ticket?<ul>
+<li>Ticket may be stolen and reused<ul>
+<li>Timestamp</li>
+</ul>
+</li>
+<li>Alteration of the ticket<ul>
+<li>Encrypted with a secret key <strong>known only to the AS and TGS</strong></li>
+</ul>
+</li>
+<li>User spoofing<ul>
+<li>Authentication based on the encryption with the user&#39;s password</li>
+</ul>
+</li>
+<li>Reply attack<ul>
+<li>Authenticator, which is not reusable</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Kerberos-Realms"><a href="#Kerberos-Realms" class="headerlink" title="Kerberos Realms"></a>Kerberos Realms</h2><ul>
+<li>A Kerberos realm: full-service Kerberos environment<ul>
+<li>A Kerberos server</li>
+<li>A number of clients<ul>
+<li>Each registers with the Kerberos server; the <strong>server holds a database</strong> for the user ID/password</li>
+</ul>
+</li>
+<li>A number of app servers<ul>
+<li>Each registers with the Kerberos server <strong>and shares a secret key</strong> with it</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Interrealm-Authentication"><a href="#Interrealm-Authentication" class="headerlink" title="Interrealm Authentication"></a>Interrealm Authentication</h2><ul>
+<li>不同 realm 的 Kerberos server 彼此 shares a secret key</li>
+<li>Kerberos servers are registered with each other</li>
+</ul>
+<h2 id="Kerberos-Version-4-amp-5"><a href="#Kerberos-Version-4-amp-5" class="headerlink" title="Kerberos Version 4 &amp; 5"></a>Kerberos Version 4 &amp; 5</h2><ul>
+<li>4: most widely used in late 1980s</li>
+<li>5:<ul>
+<li>Introduced in 1993, updated in 2005</li>
+<li>AES is the default choice (DES in v4)</li>
+<li>Authentication forwarding<ul>
+<li>Enabling a client to access a server and have that server access another server on behalf of the client</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Performance-Issues"><a href="#Performance-Issues" class="headerlink" title="Performance Issues"></a>Performance Issues</h2><ul>
+<li>Very little performance impact in a large-scale environment<ul>
+<li>If the system is properly configured</li>
+<li>The amount of traffic needed for the granting ticket: modest</li>
+</ul>
+</li>
+<li>Does it require a dedicated platform?<ul>
+<li>Not wise to run it on the same machine as a resource-intensive app</li>
+<li>Its security is best assured by placing it on a <strong>separate, isolated machine</strong></li>
+</ul>
+</li>
+<li>How about using multiple realms to maintain performance?<ul>
+<li>Probably not</li>
+<li>The motivation of multiple realms is administrative</li>
+</ul>
+</li>
+</ul>
+<h1 id="X-509"><a href="#X-509" class="headerlink" title="X.509"></a>X.509</h1><h2 id="X-509-Public-key-Certificate"><a href="#X-509-Public-key-Certificate" class="headerlink" title="X.509: Public-key Certificate"></a>X.509: Public-key Certificate</h2><ul>
+<li>A certificate<ul>
+<li>Linking a public key with the identity of the key&#39;s owner</li>
+<li>The whole block signed by a trusted third party</li>
+</ul>
+</li>
+<li>Third party: certificate authority (CA)</li>
+<li>User can present his public key to the authority in a secure manner ad obtain a certificate</li>
+<li><img src="https://i.imgur.com/wTwLgCn.png" width="60%"></li>
+</ul>
+<h2 id="X-509-1"><a href="#X-509-1" class="headerlink" title="X.509"></a>X.509</h2><ul>
+<li>A certificate revocation list (CRL)<ul>
+<li>Signed by the issuer</li>
+<li>Containing a serial number of a certificate and the revocation date</li>
+</ul>
+</li>
+<li>When receiving a certificate, an app should determine whether it has been revoked<ul>
+<li>Check CRL</li>
+<li>Very few apps do this due to <strong>high overheads</strong></li>
+</ul>
+</li>
+<li>A lightweight protocol for the revocation in RFC 6960</li>
+<li>Hash signature<ul>
+<li>Using <strong>SHA-2, SHA-2</strong> now</li>
+</ul>
+</li>
+</ul>
+<h1 id="Public-Key-Infrastructure-PKI"><a href="#Public-Key-Infrastructure-PKI" class="headerlink" title="Public-Key Infrastructure (PKI)"></a>Public-Key Infrastructure (PKI)</h1><ul>
+<li>RFC 4949: the set of hardware, software, people, policies, and procedures needed to create, manage, store, distribute, and revoke digital certificates <strong>based on asymmetric cryptography</strong></li>
+<li><img src="https://i.imgur.com/dUmMB13.png" width="60%"></li>
+</ul>
+<h2 id="CA-in-Trust-Store"><a href="#CA-in-Trust-Store" class="headerlink" title="CA in Trust Store"></a>CA in Trust Store</h2><ul>
+<li>Either directly sign &quot;end-user&quot; certificates</li>
+<li>Or sign a small number of &quot;Intermediate-CAs&quot;</li>
+<li>All the hierarchy are very small, and all are equally trusted</li>
+</ul>
+<h2 id="Issues-with-the-PKI-Model"><a href="#Issues-with-the-PKI-Model" class="headerlink" title="Issues with the PKI Model"></a>Issues with the PKI Model</h2><ul>
+<li>Issue 1: reliance on the user to make an informed decision when there is a problem verifying a certificate</li>
+<li>Issue 2: assuming that all of the CAs in the &quot;trust store&quot; are equally trusted, equally well managed, and apply equivalent policies</li>
+<li>Issue 3: different implementations, in the various web browsers and OS, use different &quot;trust stores&quot;<ul>
+<li>Present different security views to users</li>
+</ul>
+</li>
+</ul>
+<h2 id="Improve-the-X-509-Certificates"><a href="#Improve-the-X-509-Certificates" class="headerlink" title="Improve the X.509 Certificates"></a>Improve the X.509 Certificates</h2><ul>
+<li>Recognize that many apps do not require formal linking of a public key to a verified identity</li>
+<li>Improvement 1: confirming continuity in time<ul>
+<li>Apps keep a record of certificate details for all sites they visit</li>
+</ul>
+</li>
+<li>Improvement 2: confirming continuity in space<ul>
+<li>Using a number of widely separated &quot;network notary(公證人) servers&quot; that keep records of certificates for all sites they view</li>
+</ul>
+</li>
 </ul>
 
       

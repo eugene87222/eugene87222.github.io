@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Kaushan Script:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
@@ -28,7 +28,7 @@
     version: '7.7.0',
     exturl: false,
     sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
+    copycode: {"enable":true,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: true,
@@ -188,275 +188,6 @@
             
 
   <div class="posts-expand">
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch10/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
-      <meta itemprop="name" content="Eugene Yang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="3ugeneYang.§ite">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/24/20190624-ComputerSecurity-note-ch10/" class="post-title-link" itemprop="url">[Intro. to Computer Security Course Note] Ch 10</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-06-24 19:50:36" itemprop="dateCreated datePublished" datetime="2019-06-24T19:50:36+08:00">2019-06-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-18 09:25:53" itemprop="dateModified" datetime="2019-08-18T09:25:53+08:00">2019-08-18</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Ch10-Buffer-Overflow"><a href="#Ch10-Buffer-Overflow" class="headerlink" title="Ch10. Buffer Overflow"></a>Ch10. Buffer Overflow</h1><p><strong>Buffer overrun</strong>
-<strong>Buffer overwrite</strong></p>
-<hr>
-<h1 id="Buffer-overflow-basics"><a href="#Buffer-overflow-basics" class="headerlink" title="Buffer overflow basics"></a>Buffer overflow basics</h1><ul>
-<li>Programming error: a process attempts to store data <strong>beyond the limits of a fixed sized buffer</strong></li>
-</ul>
-<h2 id="Needs-for-the-Attacker-Exploiting-a-Buffer-Overflow"><a href="#Needs-for-the-Attacker-Exploiting-a-Buffer-Overflow" class="headerlink" title="Needs for the Attacker: Exploiting a Buffer Overflow"></a>Needs for the Attacker: Exploiting a Buffer Overflow</h2><ul>
-<li>To identify a buffer overflow vulnerability in some program</li>
-<li>To understand how that buffer will be stored in the process memory</li>
-</ul>
-<h2 id="How-to-Identify-Vulnerable-Programs"><a href="#How-to-Identify-Vulnerable-Programs" class="headerlink" title="How to Identify Vulnerable Programs"></a>How to Identify Vulnerable Programs</h2><ul>
-<li>Inspecting the program source</li>
-<li>Tracing the execution of programs as they process oversized input</li>
-<li>Using tools to automatically identity potentially vulnerable programs</li>
-</ul>
-<h2 id="Why-Programs-are-not-Necessarily-Protected"><a href="#Why-Programs-are-not-Necessarily-Protected" class="headerlink" title="Why Programs are not Necessarily Protected"></a>Why Programs are not Necessarily Protected</h2><ul>
-<li>Basic machine level<ul>
-<li>Data&#39;s interpretation: entirely determined by the function of the instructions</li>
-<li>Responsibility on the assembly language programmer: ensuring that the correct interpretation is placed on any saved value</li>
-</ul>
-</li>
-<li>Assembly language programs<ul>
-<li>The greatest access to the resources</li>
-</ul>
-</li>
-<li>Modern high-level programming languages (e.g., Java, Python)<ul>
-<li>Not vulnerable to buffer overflows: flexibility and safety<ul>
-<li>More data to be saved are not allowed</li>
-</ul>
-</li>
-<li>Costs in resource use</li>
-<li>Limiting the usefulness in writing code</li>
-</ul>
-</li>
-<li>Between these two extremes: C and related languages<ul>
-<li>Have many modern high-level control structures and data type abstractions</li>
-<li>But, allow direct access to low-level resources</li>
-</ul>
-</li>
-</ul>
-<h1 id="Stack-overflows"><a href="#Stack-overflows" class="headerlink" title="Stack overflows"></a>Stack overflows</h1><h2 id="Stack-Buffer-Overflows"><a href="#Stack-Buffer-Overflows" class="headerlink" title="Stack Buffer Overflows"></a>Stack Buffer Overflows</h2><ul>
-<li>Also referred to as <strong>stack smashing</strong></li>
-</ul>
-<h2 id="Some-Common-Unsafe-C-Standard-Library"><a href="#Some-Common-Unsafe-C-Standard-Library" class="headerlink" title="Some Common Unsafe C Standard Library"></a>Some Common Unsafe C Standard Library</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">gets(<span class="keyword">char</span> *str)</div><div class="line"><span class="built_in">sprintf</span>(<span class="keyword">char</span> *str, <span class="keyword">char</span> *format, ...)</div><div class="line"><span class="built_in">strcat</span>(<span class="keyword">char</span> *dest, <span class="keyword">char</span> *src)</div><div class="line"><span class="built_in">strcpy</span>(<span class="keyword">char</span> *dest, <span class="keyword">char</span> *src)</div><div class="line"><span class="built_in">vsprintf</span>(<span class="keyword">char</span> *str, <span class="keyword">char</span> *fmt, va_list ap)</div></pre></td></tr></table></figure>
-<h2 id="Shellcode"><a href="#Shellcode" class="headerlink" title="Shellcode"></a>Shellcode</h2><ul>
-<li>Code supplied by the attacker<ul>
-<li><strong>Often save in buffer being overflowed</strong></li>
-<li>Traditionally transferred control to a user command-line interpreter (shell)</li>
-</ul>
-</li>
-<li>Simply machine code<ul>
-<li>Specific to processor and operating system</li>
-</ul>
-</li>
-<li>Many sites and tools have been developed that automate this process</li>
-</ul>
-<h1 id="Defending-against-buffer-overflows"><a href="#Defending-against-buffer-overflows" class="headerlink" title="Defending against buffer overflows"></a>Defending against buffer overflows</h1><ul>
-<li>Two broad defense approaches<ul>
-<li>Compile-time defenses<ul>
-<li>Aim to detect harden programs to resist attacks in <strong>new</strong> programs</li>
-<li>Choice of programming languages<ul>
-<li>Use modern high-level language</li>
-<li>Pros: not vulnerable to buffer overflow (<a href="#Why-Programs-are-not-Necessarily-Protected">上面</a>有提到)</li>
-<li>Cons: Access to some low-level instructions and hardware resources is lost (<a href="#Why-Programs-are-not-Necessarily-Protected">上面</a>有提到)</li>
-</ul>
-</li>
-<li>Safe coding techniques<ul>
-<li>C designers placed much more emphasis on space efficiency and performance considerations than on type safety<ul>
-<li>Assumed programmers would exercise due care in writing code</li>
-</ul>
-</li>
-<li>Programmers need to inspect the code and rewrite any unsafe coding</li>
-<li>Codes not only for normal successful execution<ul>
-<li><strong>But, constantly aware of how things might go wrong</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Languages extensions and use of safe libraries<ul>
-<li>Handling dynamically allocated memory: <strong>more problematic</strong><ul>
-<li><strong>The size of info. is not available at compile time</strong></li>
-</ul>
-</li>
-<li>Requiring an extension and the use of library routines<ul>
-<li>Cons:<ul>
-<li>Generally, there is a performance penalty</li>
-<li>Programs and libraries <strong>need to be recompiled with the modified compiler</strong></li>
-<li>Feasible for new OSes, but likely to <strong>have problems with third-party apps</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Stack protection mechanisms<ul>
-<li>Add function entry and exit code to check for signs of corruption<ul>
-<li>Stackguard: best known protection mechanism -&gt; a GCC compiler extension</li>
-<li>Function entry code: writing a <strong>canary value</strong> below the old frame pointer address</li>
-<li>Function exit code: checking that the <strong>canary value</strong> has not changed</li>
-<li>The <strong>canary value</strong>: unpredictable and different on different systems</li>
-<li>Cons:<ul>
-<li>All programs needing protection <strong>need to be recompiled</strong></li>
-<li>The structure of the stack frame has changed: causing problems with programs, e.g., debuggers</li>
-</ul>
-</li>
-<li>Has been used to recompiled an entire Linux distribution</li>
-</ul>
-</li>
-<li>Another variants: Stackshield and Return Address Defender (RAD)<ul>
-<li>Also GCC extension: including additional function entry and exit code</li>
-<li><strong>Do not alter</strong> the structure of the stack frame</li>
-<li>Function entry code: <strong>writing a copy of the return address to a safe region of memory</strong></li>
-<li>Function exit code: <strong>checking the return address in the stack frame against the save copy</strong></li>
-<li>Compatible with unmodified debuggers <strong>Why?</strong></li>
-<li><strong>Programs must be recompiled</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Run-time defenses<ul>
-<li>Aim to detect and abort attacks in <strong>existing</strong> programs</li>
-<li>Can be deployed as OS updates to provide protection<ul>
-<li>Compile-time approaches: <strong>usually requires recompilation of existing programs</strong></li>
-<li>Involving changes to the memory management</li>
-</ul>
-</li>
-<li>Executable Address Space Protection<ul>
-<li>Block the execution of code on the stack<ul>
-<li>Against the attacks: copying machine code into the targeted buffer and then transferring execution to it</li>
-</ul>
-</li>
-<li>Tag pages of virtual memory as being nonexecutable<ul>
-<li>Requires support from memory management unit (MMU)</li>
-<li>Long existed on SPARC used by Solaris</li>
-<li>Recent addition of the no-execute bit in the x86 family</li>
-<li>A standard feature in recent Oses</li>
-</ul>
-</li>
-<li>Cons:<ul>
-<li>Unable to support executable stack code</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Address space randomization<ul>
-<li>Manipulate location of key data structure<ul>
-<li>Stack, heap, global data</li>
-<li>Using random shift for each process</li>
-<li>Large address range on modern systems: wasting some has negligible impact</li>
-</ul>
-</li>
-<li>Randomize location of heap buffers</li>
-<li>Random location of standard library functions</li>
-</ul>
-</li>
-<li>Guard pages<ul>
-<li>Place guard pages between critical regions of memory<ul>
-<li>Flagged in MMU as illegal addresses</li>
-<li>Any attempted access aborts process</li>
-</ul>
-</li>
-<li>Further extension places guard pages between stack frames and heap buffers<ul>
-<li><strong>Cost in execution time</strong> to support the large number of page mappings necessary</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="Other-forms-of-overflow-attacks"><a href="#Other-forms-of-overflow-attacks" class="headerlink" title="Other forms of overflow attacks"></a>Other forms of overflow attacks</h1><h2 id="Replacement-stack-frame"><a href="#Replacement-stack-frame" class="headerlink" title="Replacement stack frame"></a>Replacement stack frame</h2><h2 id="Return-to-system-call"><a href="#Return-to-system-call" class="headerlink" title="Return to system call"></a>Return to system call</h2><h2 id="Heap-overflows"><a href="#Heap-overflows" class="headerlink" title="Heap overflows"></a>Heap overflows</h2><ul>
-<li>Attack buffer located in heap<ul>
-<li><strong>Typically located above program code</strong></li>
-<li>Memory is requested by programs to use in dynamic data structures (such as linked lists of records)</li>
-</ul>
-</li>
-<li>No return address<ul>
-<li>Hence no easy transfer of control</li>
-<li>May have function pointers to be exploited</li>
-<li>Or manipulate management data structure</li>
-</ul>
-</li>
-<li><strong>Defenses</strong><ul>
-<li>Making the heap non-executable</li>
-<li><strong>Randomizing the allocation</strong></li>
-</ul>
-</li>
-</ul>
-<h2 id="Global-data-area-overflows"><a href="#Global-data-area-overflows" class="headerlink" title="Global data area overflows"></a>Global data area overflows</h2><ul>
-<li><p>Attacks buffer located in global data</p>
-<ul>
-<li>Aim to overwrite function pointer later called</li>
-</ul>
-</li>
-<li><p><strong>Defenses</strong></p>
-<ul>
-<li><strong>Non executable or random</strong> global data region</li>
-<li>Move function pointers or use guard pages</li>
-</ul>
-</li>
-</ul>
-<h2 id="Other-types-of-overflows"><a href="#Other-types-of-overflows" class="headerlink" title="Other types of overflows"></a>Other types of overflows</h2>
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
         
   
   
@@ -1574,6 +1305,394 @@
 </li>
 </ul>
 <h1 id="Database-Access-Control"><a href="#Database-Access-Control" class="headerlink" title="Database Access Control"></a>Database Access Control</h1><h1 id="Inference"><a href="#Inference" class="headerlink" title="Inference"></a>Inference</h1><h1 id="Database-Encryption"><a href="#Database-Encryption" class="headerlink" title="Database Encryption"></a>Database Encryption</h1><h1 id="Cloud-Computing"><a href="#Cloud-Computing" class="headerlink" title="Cloud Computing"></a>Cloud Computing</h1><h1 id="Cloud-Security-Risks-and-Countermeasures"><a href="#Cloud-Security-Risks-and-Countermeasures" class="headerlink" title="Cloud Security Risks and Countermeasures"></a>Cloud Security Risks and Countermeasures</h1><h1 id="Cloud-Security-as-a-Service"><a href="#Cloud-Security-as-a-Service" class="headerlink" title="Cloud Security as a Service"></a>Cloud Security as a Service</h1>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
+      <meta itemprop="name" content="Eugene Yang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="3ugeneYang.§ite">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/24/20190624-ComputerSecurity-note-ch3/" class="post-title-link" itemprop="url">[Intro. to Computer Security Course Note] Ch 3</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-06-24 19:33:38" itemprop="dateCreated datePublished" datetime="2019-06-24T19:33:38+08:00">2019-06-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-18 09:25:53" itemprop="dateModified" datetime="2019-08-18T09:25:53+08:00">2019-08-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Ch3-User-Authentication"><a href="#Ch3-User-Authentication" class="headerlink" title="Ch3. User Authentication"></a>Ch3. User Authentication</h1><hr>
+<h1 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h1><ul>
+<li>Thee process of verifying an identity claimed by or for a system entity</li>
+<li>Consist of two steps<ul>
+<li>Identification step: presenting an identifier to the security system</li>
+<li>Verification step: presenting or generating authentication info. that corroborates(鞏固) the binding between the entity and their identifier</li>
+</ul>
+</li>
+</ul>
+<h1 id="Electronic-User-Authentication-Model"><a href="#Electronic-User-Authentication-Model" class="headerlink" title="Electronic User Authentication Model"></a>Electronic User Authentication Model</h1><p><img src="https://i.imgur.com/kCuOAL5.jpg" alt=""></p>
+<h2 id="Cornerstone"><a href="#Cornerstone" class="headerlink" title="Cornerstone"></a>Cornerstone</h2><ul>
+<li>Credential<ul>
+<li>Paper credential<br>e.g., 護照那些、身分證</li>
+<li>E-authentication credential: an object or data structure<ul>
+<li>Authoritatively binds an identity (via an identifier) and (optionally) additional attributes</li>
+<li>To at least one token (or authenticator) possessed and controlled by a subscriber</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Token<ul>
+<li><strong>Something that the Claimant possess and controls is used to authenticate the Claimant&#39;s identity</strong></li>
+<li>Typically a cryptographic module or <strong>password</strong></li>
+<li>Also named as <strong>authenticator</strong></li>
+</ul>
+</li>
+<li>Authentication establishes confidence that the Claimant has possession of an authenticator(s) bound to the credential, and (optional) the attribute values of the subscriber</li>
+<li><img src="https://i.imgur.com/4JUgWvd.jpg" alt=""></li>
+</ul>
+<h2 id="Role-of-each-Entity"><a href="#Role-of-each-Entity" class="headerlink" title="Role of each Entity"></a>Role of each Entity</h2><p><img src="https://i.imgur.com/aS8wmR5.jpg" alt=""></p>
+<h2 id="Tokens-Authenticators"><a href="#Tokens-Authenticators" class="headerlink" title="Tokens (Authenticators)"></a>Tokens (Authenticators)</h2><p>Something the individual know, possess, is, does</p>
+<h2 id="Digital-Identity-Model"><a href="#Digital-Identity-Model" class="headerlink" title="Digital Identity Model"></a>Digital Identity Model</h2><h1 id="Password-based-Authentication"><a href="#Password-based-Authentication" class="headerlink" title="Password-based Authentication"></a>Password-based Authentication</h1><h2 id="The-User-ID"><a href="#The-User-ID" class="headerlink" title="The User ID"></a>The User ID</h2><ul>
+<li><strong>Determines the user&#39;s privileges</strong></li>
+<li>Used in discretionary access control</li>
+</ul>
+<h2 id="Attacks-Countermeasures"><a href="#Attacks-Countermeasures" class="headerlink" title="Attacks / Countermeasures"></a>Attacks / Countermeasures</h2><ul>
+<li>Offline dictionary attack<ul>
+<li>Obtain the system&#39;s password file (password stored in hash value)</li>
+<li>Search for valid passwords with hash values of commonly used passwords</li>
+<li>Countermeasure:<br>prevent unauthorized access to the password file<br>intrusion detection measures to identify a compromise</li>
+</ul>
+</li>
+<li>Specific account attack<ul>
+<li>一直 try 密碼 try 到對為止，或是被 ban</li>
+</ul>
+</li>
+<li>Popular password attack<ul>
+<li>Try popular passwords against a wide range of user IDs</li>
+<li>Countermeasure:<br>inhibiting the selection by users of common passwords<br>scanning the IP addr. of auth requests and client cookies for submission patterns</li>
+</ul>
+</li>
+<li>Password guessing against single user<ul>
+<li>Gain knowledge about the account owner and password policies and use them th guess the password</li>
+<li>Countermeasure:<br>enforcement of password policies that make passwords difficult to guess</li>
+</ul>
+</li>
+<li>Workstation hijacking<ul>
+<li>Wait until a logged-in workstation is unattended</li>
+<li>Countermeasure:<br>automatically logging the workstation out after a period of inactivity</li>
+</ul>
+</li>
+<li>Exploiting user mistakes<ul>
+<li>把密碼寫在桌上、把密碼傳來傳去(Email, SNS)、用預設密碼</li>
+</ul>
+</li>
+<li>Exploiting multiple password uses<ul>
+<li>Different network devices share the same or similar password for a given user</li>
+<li>Countermeasure:<br><strong>JUST DON&#39;T</strong></li>
+</ul>
+</li>
+<li>Password sniffing / phishing<ul>
+<li>Passwords are transmitted without ecryption (http, ftp)</li>
+<li>Phishing web pages</li>
+<li>Countermeasure:<br>encryption, inputting passwords with trusted devices and environments</li>
+</ul>
+</li>
+</ul>
+<h2 id="Use-of-Hashed-Passwords"><a href="#Use-of-Hashed-Passwords" class="headerlink" title="Use of Hashed Passwords"></a>Use of Hashed Passwords</h2><p>A widely used password security technique
+<img src="https://i.imgur.com/pXvHbHR.jpg" alt=""></p>
+<ul>
+<li>Salt<ul>
+<li>Prevent duplicate passwords from being visible in the password file (同樣的密碼會有不同的 hash code)</li>
+<li>Greatly increases the difficulty of offline dictionary attacks</li>
+<li>Nearly impossible to find out wether a person has used the same password on multiple systems</li>
+</ul>
+</li>
+<li>2 threats<ul>
+<li>Password guessing on the machine</li>
+<li>Password guessing on another machine</li>
+</ul>
+</li>
+</ul>
+<h2 id="Old-Implementation-of-UNIX-Password-Scheme"><a href="#Old-Implementation-of-UNIX-Password-Scheme" class="headerlink" title="Old Implementation of UNIX Password Scheme"></a>Old Implementation of UNIX Password Scheme</h2><ul>
+<li>Password: up to 8 characters<ul>
+<li>Serving as the key input to DES</li>
+</ul>
+</li>
+<li>Modified DES encryption</li>
+<li>Repeated for a total of 25 encryption (slow hash function)</li>
+<li>Has been regarded as inadequate (key length is too short)</li>
+</ul>
+<h2 id="Improved-Implementation"><a href="#Improved-Implementation" class="headerlink" title="Improved Implementation"></a>Improved Implementation</h2><ul>
+<li>Recommended hash function is based on MD5<ul>
+<li>Salt: up to 48-bit</li>
+<li>Password length unlimited</li>
+<li><strong>128-bit hash value</strong> -&gt; <strong>increase overhead for cracking</strong></li>
+<li>Slowdown: an inner loop with 1000 iterations</li>
+</ul>
+</li>
+<li>Bcrypt: developed for OpenBSD based on the Blowfish symmetric block cipher<ul>
+<li>Most secure version of UNIX hash / salt scheme</li>
+<li><strong>128-bit salt, 192-bit hash value</strong> -&gt; <strong>increase overhead for cracking</strong></li>
+<li>Configurable cost variable (number of iterations) -&gt; depends on how important the password is</li>
+</ul>
+</li>
+</ul>
+<h2 id="Password-Cracking-of-User-chosen-Passwords"><a href="#Password-Cracking-of-User-chosen-Passwords" class="headerlink" title="Password Cracking of User-chosen Passwords"></a>Password Cracking of User-chosen Passwords</h2><ul>
+<li>Traditional appoaches<ul>
+<li>Dictionary attack<ul>
+<li>Countermeasure:<br><strong>slow hash function</strong></li>
+</ul>
+</li>
+<li>Password crackers exploit that fact that people choose easily guessable passwords</li>
+<li>Rainbow table attacks<ul>
+<li><strong>Pre-compute</strong> tables with hash values for all salts</li>
+<li>Countermeasure:<br>a sufficiently <strong>large salt value and large hash length</strong></li>
+<li>Combination of brute-force and dictionary</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Modern-Approaches-for-Password-Cracking"><a href="#Modern-Approaches-for-Password-Cracking" class="headerlink" title="Modern Approaches for Password Cracking"></a>Modern Approaches for Password Cracking</h2><ul>
+<li>Complex password policy</li>
+</ul>
+<h2 id="Major-Countermeasures"><a href="#Major-Countermeasures" class="headerlink" title="Major Countermeasures"></a>Major Countermeasures</h2><ul>
+<li>Password file access control<ul>
+<li>2 mechanisms<ul>
+<li>Access control: makes the password file availble only to privileged users</li>
+<li><strong>Shadow password file (store the hash code separately)</strong></li>
+</ul>
+</li>
+<li>Vulnerabilities<ul>
+<li>Weakness in the OS that allows access to the file</li>
+<li>Accident with permissions making it readable</li>
+<li>Users with same password on other systems</li>
+<li>Weakness in physical security may provide access to backup media</li>
+<li>Sniffing network traffic</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Password selection strategies<ul>
+<li>User education</li>
+<li>Computer-generated passwords</li>
+<li>Reactive password checking<ul>
+<li>System preiodically run its own password cracker to find guessable passwords</li>
+</ul>
+</li>
+<li>Complex password policy or proactive password checker</li>
+</ul>
+</li>
+<li>Proactive password checking<ul>
+<li>Rule enforcement<ul>
+<li>But, attacker can follow the guideline to design cracker</li>
+</ul>
+</li>
+<li>Password cracker<ul>
+<li>Compile a large dictionary of <strong>bad</strong> passwords not to use</li>
+<li>But, it is <strong>space-consuming and time-consuming</strong></li>
+<li>Can we use a hash function to address the issue ? <ul>
+<li>Yes, can only reduce time</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Bloom filter: a space-efficient probabilistic data structure<ul>
+<li>Used to test whether an element is a member of a set</li>
+<li>A bit array of _m_ bits, and _k_ different hash functions</li>
+<li>But, <strong>false positive matches are possible</strong></li>
+<li>Space adventage: do not store the data items</li>
+</ul>
+</li>
+<li>Applied to the password checking<ul>
+<li>Used to build a table based on dictionary</li>
+<li>Check desired password against this table</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Token-based-Authentication"><a href="#Token-based-Authentication" class="headerlink" title="Token-based Authentication"></a>Token-based Authentication</h1><table style="">
+    <tr>
+        <th style="font-weight: normal;">Card Type</th>
+        <th style="font-weight: normal;">Defining Feature</th>
+        <th style="font-weight: normal;">Example</th>
+    </tr>
+    <tr>
+        <th style="font-weight: lighter;">Embossed</th>
+        <th style="font-weight: lighter;">Raised characters only, on front</th>
+        <th style="font-weight: lighter;">Old credit card</th>
+    </tr>
+    <tr>
+        <th style="font-weight: lighter;">Magnetic stripe</th>
+        <th style="font-weight: lighter;">Magnetic bar on back, characters on front</th>
+        <th style="font-weight: lighter;">Band card</th>
+    </tr>
+    <tr>
+        <th style="font-weight: lighter;">Electronic memory</th>
+        <th style="font-weight: lighter;">Electronic memory inside</th>
+        <th style="font-weight: lighter;">ATM, credit cards</th>
+    </tr>
+    <tr>
+        <th style="font-weight: lighter;">Smart Contact / Contactless</th>
+        <th style="font-weight: lighter;">Electroni memory and processor inside<br>Electronic contacts exposed on surface<br>Radio antenna embedded inside</th>
+        <th style="font-weight: lighter;">SIM card, Biometric ID card</th>
+    </tr>
+</table>
+
+<h2 id="Memory-Cards"><a href="#Memory-Cards" class="headerlink" title="Memory Cards"></a>Memory Cards</h2><ul>
+<li>Functions<ul>
+<li>Can store <strong>but do not process data</strong> (都說是 memory 了)</li>
+<li>Can include an internal electronic memory</li>
+</ul>
+</li>
+<li>Most common: the bank card with a magnetic stripe on the back</li>
+<li>Usage<ul>
+<li>Alone for physical access (e.g., hotel room)</li>
+<li>Combined with a password or PIN: provides significantly greater security</li>
+</ul>
+</li>
+<li>Drawbacks<ul>
+<li><strong>A special reader is required</strong></li>
+<li>Token loss</li>
+<li>User dissatisfaction</li>
+</ul>
+</li>
+</ul>
+<h2 id="Smart-Tokens"><a href="#Smart-Tokens" class="headerlink" title="Smart Tokens"></a>Smart Tokens</h2><ul>
+<li>Categorized along four dimensions<ul>
+<li>Physical characteristics<ul>
+<li>Include an embedded microprocessor</li>
+</ul>
+</li>
+<li>User interface</li>
+<li>Electronic interface<ul>
+<li><strong>Required by a smart card or other to communicate with a compatible reader / writer</strong></li>
+<li>Contact: direct contact between a card reader and a conductive contact plate on the card</li>
+<li>Contactless: both the reader and the card have an antenna</li>
+</ul>
+</li>
+<li>Authentication protocol<ul>
+<li>Static<ul>
+<li>User authenticates himself or herself to the token</li>
+<li>Token authenticates the user to the computer</li>
+</ul>
+</li>
+<li>Dynamic password generator<ul>
+<li><strong>Token generates a unique password periodically (e.g., every minute)</strong></li>
+<li>Initialized and synchronized for the token and the computer</li>
+</ul>
+</li>
+<li>Challenge-response<ul>
+<li><strong>Computer generates a challenge</strong></li>
+<li><strong>Token generates a response to the challenge</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Most-Important-Smart-Cards"><a href="#Most-Important-Smart-Cards" class="headerlink" title="Most Important: Smart Cards"></a>Most Important: Smart Cards</h2><ul>
+<li>Contains an <strong>entire microprocessor</strong><ul>
+<li>Including processor, memorym I/O ports</li>
+</ul>
+</li>
+<li>3 types of memory<ul>
+<li>Read-only memory (ROM)</li>
+<li>Electronic erasable programmable ROM (EEPROM)</li>
+<li>Random access memory (RAM)</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://i.imgur.com/WKdF0eh.jpg" alt=""></p>
+<h1 id="Biometric-Authentication"><a href="#Biometric-Authentication" class="headerlink" title="Biometric Authentication"></a>Biometric Authentication</h1><ul>
+<li>Based on unique physical characteristics<ul>
+<li>Static: fingerprints, facial characteristics</li>
+<li>Dynamic: 聲音有的沒的</li>
+</ul>
+</li>
+<li>Relies on pattern recongnition technologies</li>
+</ul>
+<p><img src="https://i.imgur.com/gjbBlcI.jpg" alt=""></p>
+<h1 id="Remote-user-Authentication"><a href="#Remote-user-Authentication" class="headerlink" title="Remote user Authentication"></a>Remote user Authentication</h1><p>More security threats
+General solution: challenge-response protocols
+<img src="https://i.imgur.com/jmhl7HR.jpg" alt="">
+<img src="https://i.imgur.com/X0fPVz2.jpg" alt=""></p>
+<h1 id="Security-Issues-for-User-Authentication"><a href="#Security-Issues-for-User-Authentication" class="headerlink" title="Security Issues for User Authentication"></a>Security Issues for User Authentication</h1><ul>
+<li>Client attacks: masquerade as a legitimate user<ul>
+<li>Countermeasure: strong passwords and limited attempts</li>
+</ul>
+</li>
+<li>Host attacks: steals the user file where passwords, token passcodes, or biometric templates are stored<ul>
+<li>Countermeasure: strong access control</li>
+</ul>
+</li>
+<li>Eavesdropping(竊聽)<ul>
+<li>Countermeasure: multifactor authentication and anomaly detection</li>
+</ul>
+</li>
+<li>Relay: repeats a previously captured user response<ul>
+<li>Countermeasure: a random number in challenge-response protocols</li>
+</ul>
+</li>
+<li>Trojan horse: installation of rogue cilent or capture device<ul>
+<li>Countermeasure: authentication of client or capture device within trusted security perimeter</li>
+</ul>
+</li>
+<li>Denial of service: lockout by multiple failed authentications<ul>
+<li>Countermeasure: multifactor with token</li>
+</ul>
+</li>
+</ul>
+
       
     </div>
 

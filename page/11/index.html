@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Kaushan Script:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
@@ -28,7 +28,7 @@
     version: '7.7.0',
     exturl: false,
     sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
+    copycode: {"enable":true,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: true,
@@ -188,83 +188,6 @@
             
 
   <div class="posts-expand">
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2018/02/16/20180227-PTT-crawler-5/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
-      <meta itemprop="name" content="Eugene Yang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="3ugeneYang.§ite">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2018/02/16/20180227-PTT-crawler-5/" class="post-title-link" itemprop="url">[爬蟲] PTT - 5</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2018-02-16 13:43:25" itemprop="dateCreated datePublished" datetime="2018-02-16T13:43:25+08:00">2018-02-16</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-04-08 10:28:46" itemprop="dateModified" datetime="2019-04-08T10:28:46+08:00">2019-04-08</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>上一篇 <a href="https://eugene87222.github.io/2018/02/15/PTT-crawler-4/">爬蟲 / PTT - 4</a> 已經說明如何用 Pool 快速取得所有的文章連結了，這次要用這些文章連結去取得每篇文章內文。</p>
-<h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
-<li>Windows 10 家用版</li>
-<li>python 3.6.4</li>
-</ul>
-<p>我們一樣可以很直覺地用 for 取得每一篇內文，像下面這樣<br>(parse_get_article 是取自上一篇所整理的函數，all_post_meta 則是取自上一篇文末的程式碼)
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">contents = list()</div><div class="line"><span class="keyword">for</span> post_meta <span class="keyword">in</span> all_post_meta:</div><div class="line">    content = parse_get_article(post_meta[<span class="string">'link'</span>])</div><div class="line">    contents.append(article)</div></pre></td></tr></table></figure></p>
-<p>但我們在上一篇已經知道如何使用 Pool 了，所以可以改成這樣
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</div><div class="line">    post_links = [entry[<span class="string">'link'</span>] <span class="keyword">for</span> entry <span class="keyword">in</span> all_post_meta]</div><div class="line">    all_post_content = list()</div><div class="line">    <span class="keyword">with</span> Pool(<span class="number">10</span>) <span class="keyword">as</span> p:</div><div class="line">        contents = p.map(parse_get_article, post_links)</div></pre></td></tr></table></figure></p>
-<p>執行後得到的 contents 裡面就是每一篇的文章內文，現在把內文跟文章資訊拼在一起
-<figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">all_post = list()</div><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(all_post_meta)):</div><div class="line">    all_post.append(&#123;</div><div class="line">        <span class="string">'title'</span>: post_list[i][<span class="string">'title'</span>], </div><div class="line">        <span class="string">'link'</span>: post_list[i][<span class="string">'link'</span>], </div><div class="line">        <span class="string">'date'</span>: post_list[i][<span class="string">'date'</span>],</div><div class="line">        <span class="string">'author'</span>: post_list[i][<span class="string">'author'</span>], </div><div class="line">        <span class="string">'push'</span>: post_list[i][<span class="string">'push'</span>], </div><div class="line">        <span class="string">'content'</span>: contents[i]</div><div class="line">    &#125;)</div></pre></td></tr></table></figure></p>
-<p>如此一來 all_post 就包含所有文章的 [ 標題、網址、發布日期、作者、推文數、內文 ] 了。</p>
-<p>PTT 爬蟲就到這邊告一段落了，前前後後共寫了五篇，文章中某些程式碼都是跟上篇或上上篇有所關連，從中間看可能會看不懂，如果可以的話還是建議從 <a href="https://eugene87222.github.io/2018/02/10/PTT-crawler-1/">第一篇</a> 開始看。</p>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
         
   
   
@@ -591,6 +514,72 @@
 <p>這邊為什麼用 find 而不是 findAll，因為每個 row 裡面只會有一個 class=&quot;title&quot;。
 接著利用 [&#39;href&#39;] 可以取得 class=&quot;title&quot; 裡面的連結，.text 可以提取出 block 裡面的文字，再將這些資訊一 一存入 list 中。</p>
 <p>目前為止我們已經可以從文章列表抓出我們要的每天文章的資訊了，現在只有抓一頁文章列表， 後面幾篇文章會講如何抓很多頁以及如何進一步取出每篇文章的內文。</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2018/02/07/20180207/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
+      <meta itemprop="name" content="Eugene Yang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="3ugeneYang.§ite">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2018/02/07/20180207/" class="post-title-link" itemprop="url">雜記</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-02-07 00:25:55" itemprop="dateCreated datePublished" datetime="2018-02-07T00:25:55+08:00">2018-02-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-02-08 13:23:22" itemprop="dateModified" datetime="2019-02-08T13:23:22+08:00">2019-02-08</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>前幾個禮拜在 Facebook 上看到學長在問有沒有人想打工寫程式，國網中心在徵工讀生。我想說寒假閒閒的找點事情做也好，所以就跟學長報名了，剛好面試那天本來就要去新竹聚餐，聚餐完匆匆趕去學校集合，大家再一起去面談。在交大待了一年半還是第一次走南大門，跟北大門的景觀差異蠻大的 (我覺得啦)，北大門出去是交流道，所以什麼都沒有，只有幾間小餐館跟一個加油站；南大門出去好多科技公司、還有一些國家單位的研究中心，國網中心離學校不遠，南大門出去走五分鐘就到了。</p>
+<p>當天的面試跟我想像的面試不太一樣，與其說面試倒還比較像聊天，談談從進大學到現在做了什麼、對於哪方面的工作項目比較有興趣，印象中有三個，資料分析、爬蟲、機器學習，我現在大二才剛要下學期，到目前為止也沒修過資料分析相關課程，只有機器學習概論勉強沾上邊，對於資料分析還有機器學習也就沒那麼有把握做好，所以就選了爬蟲，那邊的人也請我在寒假時練習爬論壇，過完年開學會去國網中心開會，到時候再看看詳細工作內容是什麼。</p>
 
       
     </div>

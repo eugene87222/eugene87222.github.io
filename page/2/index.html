@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Kaushan Script:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
@@ -28,7 +28,7 @@
     version: '7.7.0',
     exturl: false,
     sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
+    copycode: {"enable":true,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: true,
@@ -188,252 +188,6 @@
             
 
   <div class="posts-expand">
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch23/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
-      <meta itemprop="name" content="Eugene Yang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="3ugeneYang.§ite">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/24/20190624-ComputerSecurity-note-ch23/" class="post-title-link" itemprop="url">[Intro. to Computer Security Course Note] Ch 23</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-06-24 20:02:05" itemprop="dateCreated datePublished" datetime="2019-06-24T20:02:05+08:00">2019-06-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-18 09:25:53" itemprop="dateModified" datetime="2019-08-18T09:25:53+08:00">2019-08-18</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Ch23-Internet-Authentication-Applications"><a href="#Ch23-Internet-Authentication-Applications" class="headerlink" title="Ch23. Internet Authentication Applications"></a>Ch23. Internet Authentication Applications</h1><hr>
-<h1 id="Kerberos"><a href="#Kerberos" class="headerlink" title="Kerberos"></a>Kerberos</h1><ul>
-<li>A software utility available both in the public domain and in commercially supported versions</li>
-<li>The defacto standard for remote authentication</li>
-<li>A trusted third party authentication service<ul>
-<li>Clients and servers trust Kerberos to mediate their mutual authentication</li>
-<li>Requires that<ul>
-<li>A user proves his or her identity for each service invoked</li>
-<li>Optionally, services prove their identity to clients</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Security-Issues-between-Clients-and-Servers"><a href="#Security-Issues-between-Clients-and-Servers" class="headerlink" title="Security Issues between Clients and Servers?"></a>Security Issues between Clients and Servers?</h2><ul>
-<li>In an unprotected network environment, any client can apply to any server for server</li>
-<li>Obvious security risk?<ul>
-<li>Impersonation: an opponent can <strong>pretend to be another client</strong> and obtain unauthorized privileges on server machines</li>
-</ul>
-</li>
-<li>Countermeasure<ul>
-<li>Confirm the identities of clients</li>
-</ul>
-</li>
-<li>Alternative: using an <strong>authentication server (AS)</strong><ul>
-<li>Once the AS has verified the user&#39;s identity, it can pass this information on to an application server</li>
-</ul>
-</li>
-</ul>
-<h2 id="Kerberos-Overview"><a href="#Kerberos-Overview" class="headerlink" title="Kerberos Overview"></a>Kerberos Overview</h2><ul>
-<li>AS shares a unique secret key with each server</li>
-<li>Session key: one-time encryption key</li>
-<li>Ticket and session key are both encrypted using the user&#39;s password as the encryption key</li>
-<li>Password is never passed over the network</li>
-<li><img src="https://i.imgur.com/uhVkfXL.jpg" alt=""><ol>
-<li>User logs on to workstation and requests service on host</li>
-<li>AS verifies user&#39;s access right in database, creates ticket-granting ticket and section key. Results are encrypted using key derived from user&#39;s password</li>
-<li>Workstation prompts user for password to decrypt incoming message, then send ticket and authenticator that contains user&#39;s name, network address and time to TGS</li>
-<li>TGS decrypts ticket and authenticator, verifies requests then creates ticket for requested application server</li>
-<li>Workstation sends ticket and authenticator to host</li>
-<li>Host verifies that ticket and authenticator match, then grants access to service. If mutual authentication is required, server returns an authenticator</li>
-</ol>
-</li>
-<li>Ticket: a set of credentials<ul>
-<li>User&#39;s ID, server&#39;s ID, timestamp, lifetime</li>
-</ul>
-</li>
-<li>Entire ticket is encrypted using a secret DES key shared by the AS and the server</li>
-<li>Why TGS?<ul>
-<li>Query the user for his password for each service<ul>
-<li>Inconvenient</li>
-</ul>
-</li>
-<li>Store the password in memory for the duration of the logon session<ul>
-<li>有安全風險</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>TGS: a ticket to get more ticket</li>
-<li>How to counter the following threats for ticket-granting ticket?<ul>
-<li>Ticket may be stolen and reused<ul>
-<li>Timestamp</li>
-</ul>
-</li>
-<li>Alteration of the ticket<ul>
-<li>Encrypted with a secret key <strong>known only to the AS and TGS</strong></li>
-</ul>
-</li>
-<li>User spoofing<ul>
-<li>Authentication based on the encryption with the user&#39;s password</li>
-</ul>
-</li>
-<li>Reply attack<ul>
-<li>Authenticator, which is not reusable</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Kerberos-Realms"><a href="#Kerberos-Realms" class="headerlink" title="Kerberos Realms"></a>Kerberos Realms</h2><ul>
-<li>A Kerberos realm: full-service Kerberos environment<ul>
-<li>A Kerberos server</li>
-<li>A number of clients<ul>
-<li>Each registers with the Kerberos server; the <strong>server holds a database</strong> for the user ID/password</li>
-</ul>
-</li>
-<li>A number of app servers<ul>
-<li>Each registers with the Kerberos server <strong>and shares a secret key</strong> with it</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Interrealm-Authentication"><a href="#Interrealm-Authentication" class="headerlink" title="Interrealm Authentication"></a>Interrealm Authentication</h2><ul>
-<li>不同 realm 的 Kerberos server 彼此 shares a secret key</li>
-<li>Kerberos servers are registered with each other</li>
-</ul>
-<h2 id="Kerberos-Version-4-amp-5"><a href="#Kerberos-Version-4-amp-5" class="headerlink" title="Kerberos Version 4 &amp; 5"></a>Kerberos Version 4 &amp; 5</h2><ul>
-<li>4: most widely used in late 1980s</li>
-<li>5:<ul>
-<li>Introduced in 1993, updated in 2005</li>
-<li>AES is the default choice (DES in v4)</li>
-<li>Authentication forwarding<ul>
-<li>Enabling a client to access a server and have that server access another server on behalf of the client</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Performance-Issues"><a href="#Performance-Issues" class="headerlink" title="Performance Issues"></a>Performance Issues</h2><ul>
-<li>Very little performance impact in a large-scale environment<ul>
-<li>If the system is properly configured</li>
-<li>The amount of traffic needed for the granting ticket: modest</li>
-</ul>
-</li>
-<li>Does it require a dedicated platform?<ul>
-<li>Not wise to run it on the same machine as a resource-intensive app</li>
-<li>Its security is best assured by placing it on a <strong>separate, isolated machine</strong></li>
-</ul>
-</li>
-<li>How about using multiple realms to maintain performance?<ul>
-<li>Probably not</li>
-<li>The motivation of multiple realms is administrative</li>
-</ul>
-</li>
-</ul>
-<h1 id="X-509"><a href="#X-509" class="headerlink" title="X.509"></a>X.509</h1><h2 id="X-509-Public-key-Certificate"><a href="#X-509-Public-key-Certificate" class="headerlink" title="X.509: Public-key Certificate"></a>X.509: Public-key Certificate</h2><ul>
-<li>A certificate<ul>
-<li>Linking a public key with the identity of the key&#39;s owner</li>
-<li>The whole block signed by a trusted third party</li>
-</ul>
-</li>
-<li>Third party: certificate authority (CA)</li>
-<li>User can present his public key to the authority in a secure manner ad obtain a certificate</li>
-<li><img src="https://i.imgur.com/wTwLgCn.png" width="60%"></li>
-</ul>
-<h2 id="X-509-1"><a href="#X-509-1" class="headerlink" title="X.509"></a>X.509</h2><ul>
-<li>A certificate revocation list (CRL)<ul>
-<li>Signed by the issuer</li>
-<li>Containing a serial number of a certificate and the revocation date</li>
-</ul>
-</li>
-<li>When receiving a certificate, an app should determine whether it has been revoked<ul>
-<li>Check CRL</li>
-<li>Very few apps do this due to <strong>high overheads</strong></li>
-</ul>
-</li>
-<li>A lightweight protocol for the revocation in RFC 6960</li>
-<li>Hash signature<ul>
-<li>Using <strong>SHA-2, SHA-2</strong> now</li>
-</ul>
-</li>
-</ul>
-<h1 id="Public-Key-Infrastructure-PKI"><a href="#Public-Key-Infrastructure-PKI" class="headerlink" title="Public-Key Infrastructure (PKI)"></a>Public-Key Infrastructure (PKI)</h1><ul>
-<li>RFC 4949: the set of hardware, software, people, policies, and procedures needed to create, manage, store, distribute, and revoke digital certificates <strong>based on asymmetric cryptography</strong></li>
-<li><img src="https://i.imgur.com/dUmMB13.png" width="60%"></li>
-</ul>
-<h2 id="CA-in-Trust-Store"><a href="#CA-in-Trust-Store" class="headerlink" title="CA in Trust Store"></a>CA in Trust Store</h2><ul>
-<li>Either directly sign &quot;end-user&quot; certificates</li>
-<li>Or sign a small number of &quot;Intermediate-CAs&quot;</li>
-<li>All the hierarchy are very small, and all are equally trusted</li>
-</ul>
-<h2 id="Issues-with-the-PKI-Model"><a href="#Issues-with-the-PKI-Model" class="headerlink" title="Issues with the PKI Model"></a>Issues with the PKI Model</h2><ul>
-<li>Issue 1: reliance on the user to make an informed decision when there is a problem verifying a certificate</li>
-<li>Issue 2: assuming that all of the CAs in the &quot;trust store&quot; are equally trusted, equally well managed, and apply equivalent policies</li>
-<li>Issue 3: different implementations, in the various web browsers and OS, use different &quot;trust stores&quot;<ul>
-<li>Present different security views to users</li>
-</ul>
-</li>
-</ul>
-<h2 id="Improve-the-X-509-Certificates"><a href="#Improve-the-X-509-Certificates" class="headerlink" title="Improve the X.509 Certificates"></a>Improve the X.509 Certificates</h2><ul>
-<li>Recognize that many apps do not require formal linking of a public key to a verified identity</li>
-<li>Improvement 1: confirming continuity in time<ul>
-<li>Apps keep a record of certificate details for all sites they visit</li>
-</ul>
-</li>
-<li>Improvement 2: confirming continuity in space<ul>
-<li>Using a number of widely separated &quot;network notary(公證人) servers&quot; that keep records of certificates for all sites they view</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
         
   
   
@@ -1654,6 +1408,275 @@
 <li>Character set should be specified</li>
 </ul>
 
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
+      <meta itemprop="name" content="Eugene Yang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="3ugeneYang.§ite">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/24/20190624-ComputerSecurity-note-ch10/" class="post-title-link" itemprop="url">[Intro. to Computer Security Course Note] Ch 10</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-06-24 19:50:36" itemprop="dateCreated datePublished" datetime="2019-06-24T19:50:36+08:00">2019-06-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2019-08-18 09:25:53" itemprop="dateModified" datetime="2019-08-18T09:25:53+08:00">2019-08-18</time>
+              </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="Ch10-Buffer-Overflow"><a href="#Ch10-Buffer-Overflow" class="headerlink" title="Ch10. Buffer Overflow"></a>Ch10. Buffer Overflow</h1><p><strong>Buffer overrun</strong>
+<strong>Buffer overwrite</strong></p>
+<hr>
+<h1 id="Buffer-overflow-basics"><a href="#Buffer-overflow-basics" class="headerlink" title="Buffer overflow basics"></a>Buffer overflow basics</h1><ul>
+<li>Programming error: a process attempts to store data <strong>beyond the limits of a fixed sized buffer</strong></li>
+</ul>
+<h2 id="Needs-for-the-Attacker-Exploiting-a-Buffer-Overflow"><a href="#Needs-for-the-Attacker-Exploiting-a-Buffer-Overflow" class="headerlink" title="Needs for the Attacker: Exploiting a Buffer Overflow"></a>Needs for the Attacker: Exploiting a Buffer Overflow</h2><ul>
+<li>To identify a buffer overflow vulnerability in some program</li>
+<li>To understand how that buffer will be stored in the process memory</li>
+</ul>
+<h2 id="How-to-Identify-Vulnerable-Programs"><a href="#How-to-Identify-Vulnerable-Programs" class="headerlink" title="How to Identify Vulnerable Programs"></a>How to Identify Vulnerable Programs</h2><ul>
+<li>Inspecting the program source</li>
+<li>Tracing the execution of programs as they process oversized input</li>
+<li>Using tools to automatically identity potentially vulnerable programs</li>
+</ul>
+<h2 id="Why-Programs-are-not-Necessarily-Protected"><a href="#Why-Programs-are-not-Necessarily-Protected" class="headerlink" title="Why Programs are not Necessarily Protected"></a>Why Programs are not Necessarily Protected</h2><ul>
+<li>Basic machine level<ul>
+<li>Data&#39;s interpretation: entirely determined by the function of the instructions</li>
+<li>Responsibility on the assembly language programmer: ensuring that the correct interpretation is placed on any saved value</li>
+</ul>
+</li>
+<li>Assembly language programs<ul>
+<li>The greatest access to the resources</li>
+</ul>
+</li>
+<li>Modern high-level programming languages (e.g., Java, Python)<ul>
+<li>Not vulnerable to buffer overflows: flexibility and safety<ul>
+<li>More data to be saved are not allowed</li>
+</ul>
+</li>
+<li>Costs in resource use</li>
+<li>Limiting the usefulness in writing code</li>
+</ul>
+</li>
+<li>Between these two extremes: C and related languages<ul>
+<li>Have many modern high-level control structures and data type abstractions</li>
+<li>But, allow direct access to low-level resources</li>
+</ul>
+</li>
+</ul>
+<h1 id="Stack-overflows"><a href="#Stack-overflows" class="headerlink" title="Stack overflows"></a>Stack overflows</h1><h2 id="Stack-Buffer-Overflows"><a href="#Stack-Buffer-Overflows" class="headerlink" title="Stack Buffer Overflows"></a>Stack Buffer Overflows</h2><ul>
+<li>Also referred to as <strong>stack smashing</strong></li>
+</ul>
+<h2 id="Some-Common-Unsafe-C-Standard-Library"><a href="#Some-Common-Unsafe-C-Standard-Library" class="headerlink" title="Some Common Unsafe C Standard Library"></a>Some Common Unsafe C Standard Library</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">gets(<span class="keyword">char</span> *str)</div><div class="line"><span class="built_in">sprintf</span>(<span class="keyword">char</span> *str, <span class="keyword">char</span> *format, ...)</div><div class="line"><span class="built_in">strcat</span>(<span class="keyword">char</span> *dest, <span class="keyword">char</span> *src)</div><div class="line"><span class="built_in">strcpy</span>(<span class="keyword">char</span> *dest, <span class="keyword">char</span> *src)</div><div class="line"><span class="built_in">vsprintf</span>(<span class="keyword">char</span> *str, <span class="keyword">char</span> *fmt, va_list ap)</div></pre></td></tr></table></figure>
+<h2 id="Shellcode"><a href="#Shellcode" class="headerlink" title="Shellcode"></a>Shellcode</h2><ul>
+<li>Code supplied by the attacker<ul>
+<li><strong>Often save in buffer being overflowed</strong></li>
+<li>Traditionally transferred control to a user command-line interpreter (shell)</li>
+</ul>
+</li>
+<li>Simply machine code<ul>
+<li>Specific to processor and operating system</li>
+</ul>
+</li>
+<li>Many sites and tools have been developed that automate this process</li>
+</ul>
+<h1 id="Defending-against-buffer-overflows"><a href="#Defending-against-buffer-overflows" class="headerlink" title="Defending against buffer overflows"></a>Defending against buffer overflows</h1><ul>
+<li>Two broad defense approaches<ul>
+<li>Compile-time defenses<ul>
+<li>Aim to detect harden programs to resist attacks in <strong>new</strong> programs</li>
+<li>Choice of programming languages<ul>
+<li>Use modern high-level language</li>
+<li>Pros: not vulnerable to buffer overflow (<a href="#Why-Programs-are-not-Necessarily-Protected">上面</a>有提到)</li>
+<li>Cons: Access to some low-level instructions and hardware resources is lost (<a href="#Why-Programs-are-not-Necessarily-Protected">上面</a>有提到)</li>
+</ul>
+</li>
+<li>Safe coding techniques<ul>
+<li>C designers placed much more emphasis on space efficiency and performance considerations than on type safety<ul>
+<li>Assumed programmers would exercise due care in writing code</li>
+</ul>
+</li>
+<li>Programmers need to inspect the code and rewrite any unsafe coding</li>
+<li>Codes not only for normal successful execution<ul>
+<li><strong>But, constantly aware of how things might go wrong</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Languages extensions and use of safe libraries<ul>
+<li>Handling dynamically allocated memory: <strong>more problematic</strong><ul>
+<li><strong>The size of info. is not available at compile time</strong></li>
+</ul>
+</li>
+<li>Requiring an extension and the use of library routines<ul>
+<li>Cons:<ul>
+<li>Generally, there is a performance penalty</li>
+<li>Programs and libraries <strong>need to be recompiled with the modified compiler</strong></li>
+<li>Feasible for new OSes, but likely to <strong>have problems with third-party apps</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Stack protection mechanisms<ul>
+<li>Add function entry and exit code to check for signs of corruption<ul>
+<li>Stackguard: best known protection mechanism -&gt; a GCC compiler extension</li>
+<li>Function entry code: writing a <strong>canary value</strong> below the old frame pointer address</li>
+<li>Function exit code: checking that the <strong>canary value</strong> has not changed</li>
+<li>The <strong>canary value</strong>: unpredictable and different on different systems</li>
+<li>Cons:<ul>
+<li>All programs needing protection <strong>need to be recompiled</strong></li>
+<li>The structure of the stack frame has changed: causing problems with programs, e.g., debuggers</li>
+</ul>
+</li>
+<li>Has been used to recompiled an entire Linux distribution</li>
+</ul>
+</li>
+<li>Another variants: Stackshield and Return Address Defender (RAD)<ul>
+<li>Also GCC extension: including additional function entry and exit code</li>
+<li><strong>Do not alter</strong> the structure of the stack frame</li>
+<li>Function entry code: <strong>writing a copy of the return address to a safe region of memory</strong></li>
+<li>Function exit code: <strong>checking the return address in the stack frame against the save copy</strong></li>
+<li>Compatible with unmodified debuggers <strong>Why?</strong></li>
+<li><strong>Programs must be recompiled</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Run-time defenses<ul>
+<li>Aim to detect and abort attacks in <strong>existing</strong> programs</li>
+<li>Can be deployed as OS updates to provide protection<ul>
+<li>Compile-time approaches: <strong>usually requires recompilation of existing programs</strong></li>
+<li>Involving changes to the memory management</li>
+</ul>
+</li>
+<li>Executable Address Space Protection<ul>
+<li>Block the execution of code on the stack<ul>
+<li>Against the attacks: copying machine code into the targeted buffer and then transferring execution to it</li>
+</ul>
+</li>
+<li>Tag pages of virtual memory as being nonexecutable<ul>
+<li>Requires support from memory management unit (MMU)</li>
+<li>Long existed on SPARC used by Solaris</li>
+<li>Recent addition of the no-execute bit in the x86 family</li>
+<li>A standard feature in recent Oses</li>
+</ul>
+</li>
+<li>Cons:<ul>
+<li>Unable to support executable stack code</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Address space randomization<ul>
+<li>Manipulate location of key data structure<ul>
+<li>Stack, heap, global data</li>
+<li>Using random shift for each process</li>
+<li>Large address range on modern systems: wasting some has negligible impact</li>
+</ul>
+</li>
+<li>Randomize location of heap buffers</li>
+<li>Random location of standard library functions</li>
+</ul>
+</li>
+<li>Guard pages<ul>
+<li>Place guard pages between critical regions of memory<ul>
+<li>Flagged in MMU as illegal addresses</li>
+<li>Any attempted access aborts process</li>
+</ul>
+</li>
+<li>Further extension places guard pages between stack frames and heap buffers<ul>
+<li><strong>Cost in execution time</strong> to support the large number of page mappings necessary</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Other-forms-of-overflow-attacks"><a href="#Other-forms-of-overflow-attacks" class="headerlink" title="Other forms of overflow attacks"></a>Other forms of overflow attacks</h1><h2 id="Replacement-stack-frame"><a href="#Replacement-stack-frame" class="headerlink" title="Replacement stack frame"></a>Replacement stack frame</h2><h2 id="Return-to-system-call"><a href="#Return-to-system-call" class="headerlink" title="Return to system call"></a>Return to system call</h2><h2 id="Heap-overflows"><a href="#Heap-overflows" class="headerlink" title="Heap overflows"></a>Heap overflows</h2><ul>
+<li>Attack buffer located in heap<ul>
+<li><strong>Typically located above program code</strong></li>
+<li>Memory is requested by programs to use in dynamic data structures (such as linked lists of records)</li>
+</ul>
+</li>
+<li>No return address<ul>
+<li>Hence no easy transfer of control</li>
+<li>May have function pointers to be exploited</li>
+<li>Or manipulate management data structure</li>
+</ul>
+</li>
+<li><strong>Defenses</strong><ul>
+<li>Making the heap non-executable</li>
+<li><strong>Randomizing the allocation</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="Global-data-area-overflows"><a href="#Global-data-area-overflows" class="headerlink" title="Global data area overflows"></a>Global data area overflows</h2><ul>
+<li><p>Attacks buffer located in global data</p>
+<ul>
+<li>Aim to overwrite function pointer later called</li>
+</ul>
+</li>
+<li><p><strong>Defenses</strong></p>
+<ul>
+<li><strong>Non executable or random</strong> global data region</li>
+<li>Move function pointers or use guard pages</li>
+</ul>
+</li>
+</ul>
+<h2 id="Other-types-of-overflows"><a href="#Other-types-of-overflows" class="headerlink" title="Other types of overflows"></a>Other types of overflows</h2>
       
     </div>
 

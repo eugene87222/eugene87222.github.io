@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="/css/main.css">
 
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic|Kaushan Script:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
@@ -28,7 +28,7 @@
     version: '7.7.0',
     exturl: false,
     sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
-    copycode: {"enable":false,"show_result":false,"style":null},
+    copycode: {"enable":true,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
     fancybox: true,
@@ -188,394 +188,6 @@
             
 
   <div class="posts-expand">
-        
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch3/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/20161224_132915.jpg">
-      <meta itemprop="name" content="Eugene Yang">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="3ugeneYang.§ite">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          
-            <a href="/2019/06/24/20190624-ComputerSecurity-note-ch3/" class="post-title-link" itemprop="url">[Intro. to Computer Security Course Note] Ch 3</a>
-        </h1>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              <span class="post-meta-item-text">Posted on</span>
-
-              <time title="Created: 2019-06-24 19:33:38" itemprop="dateCreated datePublished" datetime="2019-06-24T19:33:38+08:00">2019-06-24</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-18 09:25:53" itemprop="dateModified" datetime="2019-08-18T09:25:53+08:00">2019-08-18</time>
-              </span>
-
-          
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <h1 id="Ch3-User-Authentication"><a href="#Ch3-User-Authentication" class="headerlink" title="Ch3. User Authentication"></a>Ch3. User Authentication</h1><hr>
-<h1 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h1><ul>
-<li>Thee process of verifying an identity claimed by or for a system entity</li>
-<li>Consist of two steps<ul>
-<li>Identification step: presenting an identifier to the security system</li>
-<li>Verification step: presenting or generating authentication info. that corroborates(鞏固) the binding between the entity and their identifier</li>
-</ul>
-</li>
-</ul>
-<h1 id="Electronic-User-Authentication-Model"><a href="#Electronic-User-Authentication-Model" class="headerlink" title="Electronic User Authentication Model"></a>Electronic User Authentication Model</h1><p><img src="https://i.imgur.com/kCuOAL5.jpg" alt=""></p>
-<h2 id="Cornerstone"><a href="#Cornerstone" class="headerlink" title="Cornerstone"></a>Cornerstone</h2><ul>
-<li>Credential<ul>
-<li>Paper credential<br>e.g., 護照那些、身分證</li>
-<li>E-authentication credential: an object or data structure<ul>
-<li>Authoritatively binds an identity (via an identifier) and (optionally) additional attributes</li>
-<li>To at least one token (or authenticator) possessed and controlled by a subscriber</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Token<ul>
-<li><strong>Something that the Claimant possess and controls is used to authenticate the Claimant&#39;s identity</strong></li>
-<li>Typically a cryptographic module or <strong>password</strong></li>
-<li>Also named as <strong>authenticator</strong></li>
-</ul>
-</li>
-<li>Authentication establishes confidence that the Claimant has possession of an authenticator(s) bound to the credential, and (optional) the attribute values of the subscriber</li>
-<li><img src="https://i.imgur.com/4JUgWvd.jpg" alt=""></li>
-</ul>
-<h2 id="Role-of-each-Entity"><a href="#Role-of-each-Entity" class="headerlink" title="Role of each Entity"></a>Role of each Entity</h2><p><img src="https://i.imgur.com/aS8wmR5.jpg" alt=""></p>
-<h2 id="Tokens-Authenticators"><a href="#Tokens-Authenticators" class="headerlink" title="Tokens (Authenticators)"></a>Tokens (Authenticators)</h2><p>Something the individual know, possess, is, does</p>
-<h2 id="Digital-Identity-Model"><a href="#Digital-Identity-Model" class="headerlink" title="Digital Identity Model"></a>Digital Identity Model</h2><h1 id="Password-based-Authentication"><a href="#Password-based-Authentication" class="headerlink" title="Password-based Authentication"></a>Password-based Authentication</h1><h2 id="The-User-ID"><a href="#The-User-ID" class="headerlink" title="The User ID"></a>The User ID</h2><ul>
-<li><strong>Determines the user&#39;s privileges</strong></li>
-<li>Used in discretionary access control</li>
-</ul>
-<h2 id="Attacks-Countermeasures"><a href="#Attacks-Countermeasures" class="headerlink" title="Attacks / Countermeasures"></a>Attacks / Countermeasures</h2><ul>
-<li>Offline dictionary attack<ul>
-<li>Obtain the system&#39;s password file (password stored in hash value)</li>
-<li>Search for valid passwords with hash values of commonly used passwords</li>
-<li>Countermeasure:<br>prevent unauthorized access to the password file<br>intrusion detection measures to identify a compromise</li>
-</ul>
-</li>
-<li>Specific account attack<ul>
-<li>一直 try 密碼 try 到對為止，或是被 ban</li>
-</ul>
-</li>
-<li>Popular password attack<ul>
-<li>Try popular passwords against a wide range of user IDs</li>
-<li>Countermeasure:<br>inhibiting the selection by users of common passwords<br>scanning the IP addr. of auth requests and client cookies for submission patterns</li>
-</ul>
-</li>
-<li>Password guessing against single user<ul>
-<li>Gain knowledge about the account owner and password policies and use them th guess the password</li>
-<li>Countermeasure:<br>enforcement of password policies that make passwords difficult to guess</li>
-</ul>
-</li>
-<li>Workstation hijacking<ul>
-<li>Wait until a logged-in workstation is unattended</li>
-<li>Countermeasure:<br>automatically logging the workstation out after a period of inactivity</li>
-</ul>
-</li>
-<li>Exploiting user mistakes<ul>
-<li>把密碼寫在桌上、把密碼傳來傳去(Email, SNS)、用預設密碼</li>
-</ul>
-</li>
-<li>Exploiting multiple password uses<ul>
-<li>Different network devices share the same or similar password for a given user</li>
-<li>Countermeasure:<br><strong>JUST DON&#39;T</strong></li>
-</ul>
-</li>
-<li>Password sniffing / phishing<ul>
-<li>Passwords are transmitted without ecryption (http, ftp)</li>
-<li>Phishing web pages</li>
-<li>Countermeasure:<br>encryption, inputting passwords with trusted devices and environments</li>
-</ul>
-</li>
-</ul>
-<h2 id="Use-of-Hashed-Passwords"><a href="#Use-of-Hashed-Passwords" class="headerlink" title="Use of Hashed Passwords"></a>Use of Hashed Passwords</h2><p>A widely used password security technique
-<img src="https://i.imgur.com/pXvHbHR.jpg" alt=""></p>
-<ul>
-<li>Salt<ul>
-<li>Prevent duplicate passwords from being visible in the password file (同樣的密碼會有不同的 hash code)</li>
-<li>Greatly increases the difficulty of offline dictionary attacks</li>
-<li>Nearly impossible to find out wether a person has used the same password on multiple systems</li>
-</ul>
-</li>
-<li>2 threats<ul>
-<li>Password guessing on the machine</li>
-<li>Password guessing on another machine</li>
-</ul>
-</li>
-</ul>
-<h2 id="Old-Implementation-of-UNIX-Password-Scheme"><a href="#Old-Implementation-of-UNIX-Password-Scheme" class="headerlink" title="Old Implementation of UNIX Password Scheme"></a>Old Implementation of UNIX Password Scheme</h2><ul>
-<li>Password: up to 8 characters<ul>
-<li>Serving as the key input to DES</li>
-</ul>
-</li>
-<li>Modified DES encryption</li>
-<li>Repeated for a total of 25 encryption (slow hash function)</li>
-<li>Has been regarded as inadequate (key length is too short)</li>
-</ul>
-<h2 id="Improved-Implementation"><a href="#Improved-Implementation" class="headerlink" title="Improved Implementation"></a>Improved Implementation</h2><ul>
-<li>Recommended hash function is based on MD5<ul>
-<li>Salt: up to 48-bit</li>
-<li>Password length unlimited</li>
-<li><strong>128-bit hash value</strong> -&gt; <strong>increase overhead for cracking</strong></li>
-<li>Slowdown: an inner loop with 1000 iterations</li>
-</ul>
-</li>
-<li>Bcrypt: developed for OpenBSD based on the Blowfish symmetric block cipher<ul>
-<li>Most secure version of UNIX hash / salt scheme</li>
-<li><strong>128-bit salt, 192-bit hash value</strong> -&gt; <strong>increase overhead for cracking</strong></li>
-<li>Configurable cost variable (number of iterations) -&gt; depends on how important the password is</li>
-</ul>
-</li>
-</ul>
-<h2 id="Password-Cracking-of-User-chosen-Passwords"><a href="#Password-Cracking-of-User-chosen-Passwords" class="headerlink" title="Password Cracking of User-chosen Passwords"></a>Password Cracking of User-chosen Passwords</h2><ul>
-<li>Traditional appoaches<ul>
-<li>Dictionary attack<ul>
-<li>Countermeasure:<br><strong>slow hash function</strong></li>
-</ul>
-</li>
-<li>Password crackers exploit that fact that people choose easily guessable passwords</li>
-<li>Rainbow table attacks<ul>
-<li><strong>Pre-compute</strong> tables with hash values for all salts</li>
-<li>Countermeasure:<br>a sufficiently <strong>large salt value and large hash length</strong></li>
-<li>Combination of brute-force and dictionary</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Modern-Approaches-for-Password-Cracking"><a href="#Modern-Approaches-for-Password-Cracking" class="headerlink" title="Modern Approaches for Password Cracking"></a>Modern Approaches for Password Cracking</h2><ul>
-<li>Complex password policy</li>
-</ul>
-<h2 id="Major-Countermeasures"><a href="#Major-Countermeasures" class="headerlink" title="Major Countermeasures"></a>Major Countermeasures</h2><ul>
-<li>Password file access control<ul>
-<li>2 mechanisms<ul>
-<li>Access control: makes the password file availble only to privileged users</li>
-<li><strong>Shadow password file (store the hash code separately)</strong></li>
-</ul>
-</li>
-<li>Vulnerabilities<ul>
-<li>Weakness in the OS that allows access to the file</li>
-<li>Accident with permissions making it readable</li>
-<li>Users with same password on other systems</li>
-<li>Weakness in physical security may provide access to backup media</li>
-<li>Sniffing network traffic</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Password selection strategies<ul>
-<li>User education</li>
-<li>Computer-generated passwords</li>
-<li>Reactive password checking<ul>
-<li>System preiodically run its own password cracker to find guessable passwords</li>
-</ul>
-</li>
-<li>Complex password policy or proactive password checker</li>
-</ul>
-</li>
-<li>Proactive password checking<ul>
-<li>Rule enforcement<ul>
-<li>But, attacker can follow the guideline to design cracker</li>
-</ul>
-</li>
-<li>Password cracker<ul>
-<li>Compile a large dictionary of <strong>bad</strong> passwords not to use</li>
-<li>But, it is <strong>space-consuming and time-consuming</strong></li>
-<li>Can we use a hash function to address the issue ? <ul>
-<li>Yes, can only reduce time</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Bloom filter: a space-efficient probabilistic data structure<ul>
-<li>Used to test whether an element is a member of a set</li>
-<li>A bit array of _m_ bits, and _k_ different hash functions</li>
-<li>But, <strong>false positive matches are possible</strong></li>
-<li>Space adventage: do not store the data items</li>
-</ul>
-</li>
-<li>Applied to the password checking<ul>
-<li>Used to build a table based on dictionary</li>
-<li>Check desired password against this table</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="Token-based-Authentication"><a href="#Token-based-Authentication" class="headerlink" title="Token-based Authentication"></a>Token-based Authentication</h1><table style="">
-    <tr>
-        <th style="font-weight: normal;">Card Type</th>
-        <th style="font-weight: normal;">Defining Feature</th>
-        <th style="font-weight: normal;">Example</th>
-    </tr>
-    <tr>
-        <th style="font-weight: lighter;">Embossed</th>
-        <th style="font-weight: lighter;">Raised characters only, on front</th>
-        <th style="font-weight: lighter;">Old credit card</th>
-    </tr>
-    <tr>
-        <th style="font-weight: lighter;">Magnetic stripe</th>
-        <th style="font-weight: lighter;">Magnetic bar on back, characters on front</th>
-        <th style="font-weight: lighter;">Band card</th>
-    </tr>
-    <tr>
-        <th style="font-weight: lighter;">Electronic memory</th>
-        <th style="font-weight: lighter;">Electronic memory inside</th>
-        <th style="font-weight: lighter;">ATM, credit cards</th>
-    </tr>
-    <tr>
-        <th style="font-weight: lighter;">Smart Contact / Contactless</th>
-        <th style="font-weight: lighter;">Electroni memory and processor inside<br>Electronic contacts exposed on surface<br>Radio antenna embedded inside</th>
-        <th style="font-weight: lighter;">SIM card, Biometric ID card</th>
-    </tr>
-</table>
-
-<h2 id="Memory-Cards"><a href="#Memory-Cards" class="headerlink" title="Memory Cards"></a>Memory Cards</h2><ul>
-<li>Functions<ul>
-<li>Can store <strong>but do not process data</strong> (都說是 memory 了)</li>
-<li>Can include an internal electronic memory</li>
-</ul>
-</li>
-<li>Most common: the bank card with a magnetic stripe on the back</li>
-<li>Usage<ul>
-<li>Alone for physical access (e.g., hotel room)</li>
-<li>Combined with a password or PIN: provides significantly greater security</li>
-</ul>
-</li>
-<li>Drawbacks<ul>
-<li><strong>A special reader is required</strong></li>
-<li>Token loss</li>
-<li>User dissatisfaction</li>
-</ul>
-</li>
-</ul>
-<h2 id="Smart-Tokens"><a href="#Smart-Tokens" class="headerlink" title="Smart Tokens"></a>Smart Tokens</h2><ul>
-<li>Categorized along four dimensions<ul>
-<li>Physical characteristics<ul>
-<li>Include an embedded microprocessor</li>
-</ul>
-</li>
-<li>User interface</li>
-<li>Electronic interface<ul>
-<li><strong>Required by a smart card or other to communicate with a compatible reader / writer</strong></li>
-<li>Contact: direct contact between a card reader and a conductive contact plate on the card</li>
-<li>Contactless: both the reader and the card have an antenna</li>
-</ul>
-</li>
-<li>Authentication protocol<ul>
-<li>Static<ul>
-<li>User authenticates himself or herself to the token</li>
-<li>Token authenticates the user to the computer</li>
-</ul>
-</li>
-<li>Dynamic password generator<ul>
-<li><strong>Token generates a unique password periodically (e.g., every minute)</strong></li>
-<li>Initialized and synchronized for the token and the computer</li>
-</ul>
-</li>
-<li>Challenge-response<ul>
-<li><strong>Computer generates a challenge</strong></li>
-<li><strong>Token generates a response to the challenge</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Most-Important-Smart-Cards"><a href="#Most-Important-Smart-Cards" class="headerlink" title="Most Important: Smart Cards"></a>Most Important: Smart Cards</h2><ul>
-<li>Contains an <strong>entire microprocessor</strong><ul>
-<li>Including processor, memorym I/O ports</li>
-</ul>
-</li>
-<li>3 types of memory<ul>
-<li>Read-only memory (ROM)</li>
-<li>Electronic erasable programmable ROM (EEPROM)</li>
-<li>Random access memory (RAM)</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://i.imgur.com/WKdF0eh.jpg" alt=""></p>
-<h1 id="Biometric-Authentication"><a href="#Biometric-Authentication" class="headerlink" title="Biometric Authentication"></a>Biometric Authentication</h1><ul>
-<li>Based on unique physical characteristics<ul>
-<li>Static: fingerprints, facial characteristics</li>
-<li>Dynamic: 聲音有的沒的</li>
-</ul>
-</li>
-<li>Relies on pattern recongnition technologies</li>
-</ul>
-<p><img src="https://i.imgur.com/gjbBlcI.jpg" alt=""></p>
-<h1 id="Remote-user-Authentication"><a href="#Remote-user-Authentication" class="headerlink" title="Remote user Authentication"></a>Remote user Authentication</h1><p>More security threats
-General solution: challenge-response protocols
-<img src="https://i.imgur.com/jmhl7HR.jpg" alt="">
-<img src="https://i.imgur.com/X0fPVz2.jpg" alt=""></p>
-<h1 id="Security-Issues-for-User-Authentication"><a href="#Security-Issues-for-User-Authentication" class="headerlink" title="Security Issues for User Authentication"></a>Security Issues for User Authentication</h1><ul>
-<li>Client attacks: masquerade as a legitimate user<ul>
-<li>Countermeasure: strong passwords and limited attempts</li>
-</ul>
-</li>
-<li>Host attacks: steals the user file where passwords, token passcodes, or biometric templates are stored<ul>
-<li>Countermeasure: strong access control</li>
-</ul>
-</li>
-<li>Eavesdropping(竊聽)<ul>
-<li>Countermeasure: multifactor authentication and anomaly detection</li>
-</ul>
-</li>
-<li>Relay: repeats a previously captured user response<ul>
-<li>Countermeasure: a random number in challenge-response protocols</li>
-</ul>
-</li>
-<li>Trojan horse: installation of rogue cilent or capture device<ul>
-<li>Countermeasure: authentication of client or capture device within trusted security perimeter</li>
-</ul>
-</li>
-<li>Denial of service: lockout by multiple failed authentications<ul>
-<li>Countermeasure: multifactor with token</li>
-</ul>
-</li>
-</ul>
-
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
         
   
   
@@ -1642,6 +1254,240 @@ Make developers aware of where security mechanisms are required</p>
 <li>People feel their freedom to perform a certain behavior is threatened, an unpleasant state of reactance is aroused, which they can reduce by performing the threatened behavior</li>
 </ul>
 </li>
+</ul>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+        
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block home" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/06/17/20190617-social-psy-note-ch6/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/20161224_132915.jpg">
+      <meta itemprop="name" content="Eugene Yang">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="3ugeneYang.§ite">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          
+            <a href="/2019/06/17/20190617-social-psy-note-ch6/" class="post-title-link" itemprop="url">[Social Psychology Course Note] Ch 6</a>
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2019-06-17 23:54:15 / Modified: 23:55:23" itemprop="dateCreated datePublished" datetime="2019-06-17T23:54:15+08:00">2019-06-17</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="The-Need-to-Justify-Our-Actions-The-Costs-and-Benefits-of-Dissonance-Reduction"><a href="#The-Need-to-Justify-Our-Actions-The-Costs-and-Benefits-of-Dissonance-Reduction" class="headerlink" title="The Need to Justify Our Actions: The Costs and Benefits of Dissonance Reduction"></a>The Need to Justify Our Actions: The Costs and Benefits of Dissonance Reduction</h1><hr>
+<h1 id="What-is-cognitive-dissonance-and-how-do-people-avoid-dissonance-to-maintain-a-positive-self-image"><a href="#What-is-cognitive-dissonance-and-how-do-people-avoid-dissonance-to-maintain-a-positive-self-image" class="headerlink" title="What is cognitive dissonance, and how do people avoid dissonance to maintain a positive self-image ?"></a>What is cognitive dissonance, and how do people avoid dissonance to maintain a positive self-image ?</h1><ul>
+<li>When confronted with unfavorable view of self<ul>
+<li>Experience discomfort</li>
+</ul>
+</li>
+</ul>
+<h2 id="When-cognitions-conflict"><a href="#When-cognitions-conflict" class="headerlink" title="When cognitions conflict"></a>When cognitions conflict</h2><ul>
+<li>Cognitive dissonance<ul>
+<li>Discomfort that people feel when <strong>two cognitions (beliefs,attitudes) conflict</strong>, or when they <strong>behave in ways that are inconsistent with their conception of themselves</strong></li>
+</ul>
+</li>
+<li>Important and provocative social psychological theory</li>
+<li>Threats to self-image<ul>
+<li>Induces powerful, upsetting dissonance</li>
+</ul>
+</li>
+</ul>
+<h2 id="4-ways-to-reduce-dissonance"><a href="#4-ways-to-reduce-dissonance" class="headerlink" title="4 ways to reduce dissonance"></a>4 ways to reduce dissonance</h2><ul>
+<li>Change behavior</li>
+<li>Justify behavior by changing one of the dissonance cognitions</li>
+<li>Justify behavior by adding new cognitions</li>
+</ul>
+<h2 id="Self-affirmation-自我肯定"><a href="#Self-affirmation-自我肯定" class="headerlink" title="Self-affirmation 自我肯定"></a>Self-affirmation 自我肯定</h2><ul>
+<li>Bolster(支撐) the self-concept</li>
+<li>Reducing dissonance by adding a cognition about other positive attributes</li>
+</ul>
+<h2 id="Impact-bias-衝擊偏誤"><a href="#Impact-bias-衝擊偏誤" class="headerlink" title="Impact bias 衝擊偏誤"></a>Impact bias 衝擊偏誤</h2><ul>
+<li>The tendency to <strong>overestimate the intensity and duration of our emotional reactions to future negative events</strong></li>
+</ul>
+<h2 id="Why-we-overestimate-the-pain-of-disappointment"><a href="#Why-we-overestimate-the-pain-of-disappointment" class="headerlink" title="Why we overestimate the pain of disappointment"></a>Why we overestimate the pain of disappointment</h2><ul>
+<li>Why does impact bias occur ?<ul>
+<li><strong>Process of reducing dissonance is largely unconscious</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="Dissonance-and-the-self-concept"><a href="#Dissonance-and-the-self-concept" class="headerlink" title="Dissonance and the self-concept"></a>Dissonance and the self-concept</h2><ul>
+<li>Dissonance most painful when one of the cognitions is about the self<ul>
+<li><strong>Particularly true for those with high self-esteem</strong></li>
+</ul>
+</li>
+<li>Temporary blows to self-esteem can lead to greater behaviors consistent with low opinion of the self (e.g., cheat)</li>
+<li>People less likely to cheat when their self-concept of &quot;not being a cheater&quot; is invoked</li>
+</ul>
+<h2 id="Decisions"><a href="#Decisions" class="headerlink" title="Decisions"></a>Decisions</h2><ul>
+<li>Every time we make a decision, we experience dissonance<ul>
+<li>Chosen alternative has some negative aspects</li>
+<li>Rejected alternative has some positive aspects</li>
+<li>得不到的最好</li>
+</ul>
+</li>
+</ul>
+<h2 id="Distorting-our-likes-and-dislikes"><a href="#Distorting-our-likes-and-dislikes" class="headerlink" title="Distorting our likes and dislikes"></a>Distorting our likes and dislikes</h2><ul>
+<li>Distort likes and dislikes<ul>
+<li>Downplay<ul>
+<li>Negative aspects of chosen alternative</li>
+<li>Positive aspects of rejected alternative</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Postdecision dissonance 決策後的失調</li>
+</ul>
+<h2 id="Permanence-of-the-decision-決策的永久性"><a href="#Permanence-of-the-decision-決策的永久性" class="headerlink" title="Permanence of the decision 決策的永久性"></a>Permanence of the decision 決策的永久性</h2><ul>
+<li>More important decisions = more dissonance</li>
+<li>Greater performance = more dissonance</li>
+</ul>
+<h2 id="Creating-the-illusion-of-irrevocablility-製造不可反悔的錯覺"><a href="#Creating-the-illusion-of-irrevocablility-製造不可反悔的錯覺" class="headerlink" title="Creating the illusion of irrevocablility 製造不可反悔的錯覺"></a>Creating the illusion of irrevocablility 製造不可反悔的錯覺</h2><ul>
+<li>When decisions are permanent (irrevocable)<ul>
+<li>Dissonance increases</li>
+<li>Motivation to reduce dissonance increases</li>
+</ul>
+</li>
+<li>Lowballing 低球法<ul>
+<li>Salesperson induces a customer to agree to purchase a product at a very low cost, subsequently claims it was an error, and then raise the price</li>
+<li>Frequently, the customer will agree to make the purchase at the inflated price</li>
+</ul>
+</li>
+</ul>
+<h2 id="3-reasons-lowballing-works"><a href="#3-reasons-lowballing-works" class="headerlink" title="3 reasons lowballing works"></a>3 reasons lowballing works</h2><ul>
+<li>Sense of commitment</li>
+<li>Sense of commitment triggers the anticipation of an exciting event</li>
+<li>Price only slightly higher that other prices elsewhere</li>
+</ul>
+<h2 id="The-decision-to-behave-immorally"><a href="#The-decision-to-behave-immorally" class="headerlink" title="The decision to behave immorally"></a>The decision to behave immorally</h2><ul>
+<li>Moral dilemmas<ul>
+<li>Implications for self-esteem</li>
+</ul>
+</li>
+<li>Dissonance reduction<ul>
+<li>People may behave either more ethically or less ethically in the future</li>
+</ul>
+</li>
+<li>Example: cheating on a test<ul>
+<li>Dissonance<ul>
+<li>Positive view of self inconsistent with dishonest behavior</li>
+</ul>
+</li>
+<li>How to reduce dissonance ?<ul>
+<li>Change attitude about cheating<ul>
+<li>&quot;Not a big deal, everyone does it&quot;</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="How-does-cognitive-dissonance-operate-in-everyday-life-and-what-are-some-constructive-ways-of-reducing-it"><a href="#How-does-cognitive-dissonance-operate-in-everyday-life-and-what-are-some-constructive-ways-of-reducing-it" class="headerlink" title="How does cognitive dissonance operate in everyday life, and what are some constructive ways of reducing it ?"></a>How does cognitive dissonance operate in everyday life, and what are some constructive ways of reducing it ?</h1><h2 id="The-justification-of-effort-為付出的努力辯護"><a href="#The-justification-of-effort-為付出的努力辯護" class="headerlink" title="The justification of effort 為付出的努力辯護"></a>The justification of effort 為付出的努力辯護</h2><ul>
+<li>People may interpret ambiguities in a positive way when it helps to justify effort</li>
+<li>The tendency for individuals to <strong>increase their liking for something they have worked hard to attain</strong></li>
+</ul>
+<h2 id="External-versus-internal-justification"><a href="#External-versus-internal-justification" class="headerlink" title="External versus internal justification"></a>External versus internal justification</h2><ul>
+<li>External justification 外部理由</li>
+<li>Internal justification 內部理由<ul>
+<li>e.g. one&#39;s attitude or behavior</li>
+</ul>
+</li>
+</ul>
+<h2 id="Counterattitudinal-advocacy-反態度主張"><a href="#Counterattitudinal-advocacy-反態度主張" class="headerlink" title="Counterattitudinal advocacy 反態度主張"></a>Counterattitudinal advocacy 反態度主張</h2><ul>
+<li>Stating an opinion or attitude that tuns counter to one&#39;s private belief or attitude</li>
+</ul>
+<h2 id="Punishment-and-self-persuasion"><a href="#Punishment-and-self-persuasion" class="headerlink" title="Punishment and self-persuasion"></a>Punishment and self-persuasion</h2><ul>
+<li>If threat of punishment for engaging in a forbidden behavior is <strong>severe</strong><ul>
+<li>There is sufficient external justification for refraining from behavior</li>
+</ul>
+</li>
+<li>If punishment is <strong>less severe</strong><ul>
+<li>There is insufficient external justification</li>
+<li>Creates greater need for <strong>internal justification</strong><ul>
+<li>Change attitudes via <strong>self-persuasion</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Insufficient punishment</li>
+<li>When external justification for resisting an object or activity is insufficient<ul>
+<li>Dissonance is aroused</li>
+<li>Reduce dissonance by<ul>
+<li>Self-persuasion<ul>
+<li>e.g., devaluing forbidden activity or object</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="The-lasting-effects-of-self-persuasion"><a href="#The-lasting-effects-of-self-persuasion" class="headerlink" title="The lasting effects of self-persuasion"></a>The lasting effects of self-persuasion</h2><ul>
+<li>IV = severity of threatened punishment<ul>
+<li>1/2 children: threat of mild punishment if they disobeyed and played with toy</li>
+<li>1/2 children: threat of severe punishment</li>
+</ul>
+</li>
+<li>DV: rating of toy attractiveness</li>
+<li>Self-persuasion<ul>
+<li>A long-lasting form of attitude change that results from attempts at self-justification</li>
+</ul>
+</li>
+</ul>
+<h2 id="The-hypocrisy-paradigm-虛偽-偽善典範"><a href="#The-hypocrisy-paradigm-虛偽-偽善典範" class="headerlink" title="The hypocrisy paradigm 虛偽 / 偽善典範"></a>The hypocrisy paradigm 虛偽 / 偽善典範</h2><ul>
+<li>Induce hypocrisy 虛偽 / 偽善誘導<ul>
+<li>Make person aware of conflict between<ul>
+<li>Attitudes</li>
+<li>Behavior</li>
+</ul>
+</li>
+<li>Hypocrisy creates dissonance</li>
+<li>Reduce dissonance by changing behavior<ul>
+<li>e.g., attitudes about condoms and use of condoms</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Students in the hypocrisy condition were subsequently more likely to buy condoms than students in any of other conditions</li>
 </ul>
 
       
