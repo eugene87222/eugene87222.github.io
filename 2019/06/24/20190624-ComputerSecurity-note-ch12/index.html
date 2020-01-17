@@ -125,19 +125,21 @@
 
 
 <meta name="description" content="Ch12. Operating System Security IntroductionSystem Security Planning The first step in deploying a new system is planning A wide security assessment of the organization To maximize security while mini">
-<meta name="keywords" content="NCTU,note,computer security">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Intro. to Computer Security Course Note] Ch 12">
 <meta property="og:url" content="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch12/index.html">
 <meta property="og:site_name" content="3ugeneYang.§ite">
 <meta property="og:description" content="Ch12. Operating System Security IntroductionSystem Security Planning The first step in deploying a new system is planning A wide security assessment of the organization To maximize security while mini">
-<meta property="og:locale" content="en">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.imgur.com/a5cfdKu.png">
 <meta property="og:image" content="https://i.imgur.com/tCGCtqx.png">
-<meta property="og:updated_time" content="2019-08-18T01:25:53.880Z">
+<meta property="article:published_time" content="2019-06-24T11:57:00.000Z">
+<meta property="article:modified_time" content="2019-08-18T01:25:53.880Z">
+<meta property="article:author" content="Eugene Yang">
+<meta property="article:tag" content="NCTU">
+<meta property="article:tag" content="note">
+<meta property="article:tag" content="computer security">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[Intro. to Computer Security Course Note] Ch 12">
-<meta name="twitter:description" content="Ch12. Operating System Security IntroductionSystem Security Planning The first step in deploying a new system is planning A wide security assessment of the organization To maximize security while mini">
 <meta name="twitter:image" content="https://i.imgur.com/a5cfdKu.png">
 
 
@@ -193,7 +195,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
@@ -239,7 +241,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -249,7 +251,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -259,7 +261,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -269,7 +271,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -569,7 +571,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div>
@@ -624,9 +626,9 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -639,7 +641,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -712,7 +714,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch12-Operating-System-Security"><span class="nav-number">1.</span> <span class="nav-text">Ch12. Operating System Security</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#System-Security-Planning"><span class="nav-number">2.1.</span> <span class="nav-text">System Security Planning</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Operating-System-Hardening"><span class="nav-number">3.</span> <span class="nav-text">Operating System Hardening</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Application-Security"><span class="nav-number">4.</span> <span class="nav-text">Application Security</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Security-Maintenance"><span class="nav-number">5.</span> <span class="nav-text">Security Maintenance</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-Unix-Security"><span class="nav-number">6.</span> <span class="nav-text">Linux/Unix Security</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Windows-Security"><span class="nav-number">7.</span> <span class="nav-text">Windows Security</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Virtualization-Security"><span class="nav-number">8.</span> <span class="nav-text">Virtualization Security</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hypervisor"><span class="nav-number">8.1.</span> <span class="nav-text">Hypervisor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Two-Types-of-Hypervisor"><span class="nav-number">8.2.</span> <span class="nav-text">Two Types of Hypervisor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#New-Type-Container-APp-Virtualization"><span class="nav-number">8.3.</span> <span class="nav-text">New Type: Container/APp Virtualization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Securing-Virtualization-Systems"><span class="nav-number">8.4.</span> <span class="nav-text">Securing Virtualization Systems</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch12-Operating-System-Security"><span class="nav-number">1.</span> <span class="nav-text">Ch12. Operating System Security</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#System-Security-Planning"><span class="nav-number">2.1.</span> <span class="nav-text">System Security Planning</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Operating-System-Hardening"><span class="nav-number">3.</span> <span class="nav-text">Operating System Hardening</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Application-Security"><span class="nav-number">4.</span> <span class="nav-text">Application Security</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Security-Maintenance"><span class="nav-number">5.</span> <span class="nav-text">Security Maintenance</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-Unix-Security"><span class="nav-number">6.</span> <span class="nav-text">Linux&#x2F;Unix Security</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Windows-Security"><span class="nav-number">7.</span> <span class="nav-text">Windows Security</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Virtualization-Security"><span class="nav-number">8.</span> <span class="nav-text">Virtualization Security</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hypervisor"><span class="nav-number">8.1.</span> <span class="nav-text">Hypervisor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Two-Types-of-Hypervisor"><span class="nav-number">8.2.</span> <span class="nav-text">Two Types of Hypervisor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#New-Type-Container-APp-Virtualization"><span class="nav-number">8.3.</span> <span class="nav-text">New Type: Container&#x2F;APp Virtualization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Securing-Virtualization-Systems"><span class="nav-number">8.4.</span> <span class="nav-text">Securing Virtualization Systems</span></a></li></ol></li></ol></div>
             
 
           </div>

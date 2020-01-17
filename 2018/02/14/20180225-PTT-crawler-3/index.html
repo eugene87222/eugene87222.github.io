@@ -124,19 +124,22 @@
 
 
 
-<meta name="description" content="之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，爬蟲 / PTT - 1、爬蟲 / PTT - 2，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。 環境 Windows 10 家用版 python 3.6.4  取得討論版總頁數我們先觀察文章列表頁的網址，以八卦版為例，到八卦版首頁點選&amp;quot;上頁&amp;quot;，">
-<meta name="keywords" content="tutorial,python,crawler,PTT">
+<meta name="description" content="之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，爬蟲 &#x2F; PTT - 1、爬蟲 &#x2F; PTT - 2，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。 環境 Windows 10 家用版 python 3.6.4  取得討論版總頁數我們先觀察文章列表頁的網址，以八卦版為例，到八卦版首頁點選&quot;上頁&quot;，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[爬蟲] PTT - 3">
 <meta property="og:url" content="http://eugene87222.github.io/2018/02/14/20180225-PTT-crawler-3/index.html">
 <meta property="og:site_name" content="3ugeneYang.§ite">
-<meta property="og:description" content="之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，爬蟲 / PTT - 1、爬蟲 / PTT - 2，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。 環境 Windows 10 家用版 python 3.6.4  取得討論版總頁數我們先觀察文章列表頁的網址，以八卦版為例，到八卦版首頁點選&amp;quot;上頁&amp;quot;，">
-<meta property="og:locale" content="en">
+<meta property="og:description" content="之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，爬蟲 &#x2F; PTT - 1、爬蟲 &#x2F; PTT - 2，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。 環境 Windows 10 家用版 python 3.6.4  取得討論版總頁數我們先觀察文章列表頁的網址，以八卦版為例，到八卦版首頁點選&quot;上頁&quot;，">
+<meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://eugene87222.github.io/image/pagination_class.gif">
-<meta property="og:updated_time" content="2019-04-08T02:29:16.172Z">
+<meta property="article:published_time" content="2018-02-14T15:30:46.000Z">
+<meta property="article:modified_time" content="2020-01-17T04:24:17.615Z">
+<meta property="article:author" content="Eugene Yang">
+<meta property="article:tag" content="tutorial">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="crawler">
+<meta property="article:tag" content="PTT">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[爬蟲] PTT - 3">
-<meta name="twitter:description" content="之前已經說明如何取得單一頁的文章列表，還有如何分析文章頁取得內文，想複習的話可以看看這兩篇文章，爬蟲 / PTT - 1、爬蟲 / PTT - 2，今天要討論如何透過討論版總頁數取得 10 頁、50 頁甚至近千頁的文章列表頁網址。 環境 Windows 10 家用版 python 3.6.4  取得討論版總頁數我們先觀察文章列表頁的網址，以八卦版為例，到八卦版首頁點選&amp;quot;上頁&amp;quot;，">
 <meta name="twitter:image" content="http://eugene87222.github.io/image/pagination_class.gif">
 
 
@@ -192,7 +195,7 @@
 
 
 
-</head>
+<meta name="generator" content="Hexo 4.2.0"></head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
@@ -238,7 +241,7 @@
       
         
         <li class="menu-item menu-item-home">
-          <a href="/" rel="section">
+          <a href="/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
             
@@ -248,7 +251,7 @@
       
         
         <li class="menu-item menu-item-about">
-          <a href="/about/" rel="section">
+          <a href="/about/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
             
@@ -258,7 +261,7 @@
       
         
         <li class="menu-item menu-item-tags">
-          <a href="/tags/" rel="section">
+          <a href="/tags/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
             
@@ -268,7 +271,7 @@
       
         
         <li class="menu-item menu-item-archives">
-          <a href="/archives/" rel="section">
+          <a href="/archives/%20" rel="section">
             
               <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
             
@@ -395,7 +398,7 @@
 <p>&quot;上頁&quot;在第二個 class=&quot;btn&quot; 裡面，所以是 pagination[1]，取出&quot;上頁&quot;的連結後把前面 &#39;/bbs/Gossiping/index&#39; 這段字串拿掉 (用 replace 替換成空字串就好了)，然後第四行這邊用到了 python 的 <a href="http://python-reference.readthedocs.io/en/latest/docs/brackets/slicing.html" target="_blank" rel="external">slice</a> 把字串尾巴的 &quot;.html&quot; 移除，剩下來的部分就是數字了，不過現在的數字是 string 型態，要轉換成 int 才能夠做加減的動作，這邊為什麼還要加一呢？因為我們抓到的數字是最新一頁的&quot;上頁&quot;的，所以還要加一才會是目前的總頁數。</p>
 <h1 id="取得文章列表頁網址"><a href="#取得文章列表頁網址" class="headerlink" title="取得文章列表頁網址"></a>取得文章列表頁網址</h1><p>有了總頁數就可以得到每個文章列表頁的網址了，上面講過最舊頁是 1，一直累加上去到最新頁。<br>假設現在有 100 頁列表，那最新的一頁就會是 100，假設我們想爬 20 頁，寫成 C 大概會長這樣
 <figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">100</span>; i&gt;<span class="number">100</span><span class="number">-20</span>; i--)&#123;</div><div class="line">    <span class="comment">// url = 'https://www.ptt.cc/bbs/Gossiping/index' + i + '.html'</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>在 python 裡面可以用 range() 來達成，這邊只會大略說明 range() 怎麼用，想深入了解的話可以到<a href="https://docs.python.org/3/library/functions.html#func-range" target="_blank" rel="external">Python Built-in Functions</a>看。</p>
+<p>在 python 裡面可以用 range() 來達成，這邊只會大略說明 range() 怎麼用，想深入了解的話可以到 <a href="https://docs.python.org/3/library/functions.html#func-range" target="_blank" rel="external">Python Built-in Functions</a>看。</p>
 <p>上面的 C 寫成 python 的 range() 就是
 <figure class="highlight python"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">100</span>, <span class="number">100</span><span class="number">-20</span>, <span class="number">-1</span>):</div><div class="line">    <span class="comment"># url = 'https://www.ptt.cc/bbs/Gossiping/index' + i + '.html'</span></div></pre></td></tr></table></figure></p>
 <p>range() 裡面第一個參數放的是開始的值，第二個是結束的值，第三個是每一步的間隔，第三個可放可不放，預設是 1。range(100, 100-20, -1) 的意思就是從 100 開始，到 100-20 也就是 80 結束 (不包含 80)，第三個參數 step 設成 -1 就是每次遞減 1 的概念，所以如果把 range(100, 100-20, -1) 印出來就會得到從 100 到 81 這 20 個數字。</p>
@@ -502,7 +505,7 @@
       <div id="disqus_thread">
         <noscript>
           Please enable JavaScript to view the
-          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+          <a href="https://disqus.com/?ref_noscript" target="_blank" rel="noopener">comments powered by Disqus.</a>
         </noscript>
       </div>
     </div>
@@ -557,9 +560,9 @@
             
               <div class="site-state-item site-state-posts">
               
-                <a href="/archives/">
+                <a href="/archives/%20%7C%7C%20archive">
               
-                  <span class="site-state-item-count">66</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -572,7 +575,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
