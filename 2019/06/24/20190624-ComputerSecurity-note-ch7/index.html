@@ -27,7 +27,7 @@
     scheme: 'Pisces',
     version: '7.7.0',
     exturl: false,
-    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    sidebar: {"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -332,7 +332,9 @@
 <li>High enough to keep the known TCP connections table filled</li>
 </ul>
 </li>
-<li><img src="https://i.imgur.com/Ux7iT2k.png" width="60%"></li>
+<li><img src="https://i.imgur.com/Ux7iT2k.png" width="60%"/>
+
+</li>
 </ul>
 <h1 id="Flooding-Attacks"><a href="#Flooding-Attacks" class="headerlink" title="Flooding Attacks"></a>Flooding Attacks</h1><ul>
 <li>Classified based on network protocols</li>
@@ -396,7 +398,9 @@
 <li><strong>Legitimate incoming calls are not allowed</strong></li>
 </ul>
 </li>
-<li><img src="https://i.imgur.com/kCFxdBZ.png" width="60%"></li>
+<li><img src="https://i.imgur.com/kCFxdBZ.png" width="60%"/>
+
+</li>
 </ul>
 <h2 id="HTTP-based-Attacks-HTTP-Flood"><a href="#HTTP-based-Attacks-HTTP-Flood" class="headerlink" title="HTTP-based Attacks: HTTP Flood"></a>HTTP-based Attacks: HTTP Flood</h2><ul>
 <li>Bombards Web servers with HTTP requests</li>
@@ -424,7 +428,8 @@
 <li>Reflection attacks</li>
 <li>Amplification attacks</li>
 </ul>
-<h2 id="Reflection-Attacks"><a href="#Reflection-Attacks" class="headerlink" title="Reflection Attacks"></a>Reflection Attacks</h2><p><img src="https://i.imgur.com/NujYhcG.png" width="60%"></p>
+<h2 id="Reflection-Attacks"><a href="#Reflection-Attacks" class="headerlink" title="Reflection Attacks"></a>Reflection Attacks</h2><img src="https://i.imgur.com/NujYhcG.png" width="60%"/>
+
 <h2 id="Amplification-Attacks"><a href="#Amplification-Attacks" class="headerlink" title="Amplification Attacks"></a>Amplification Attacks</h2><ul>
 <li>Directing the request to the broadcast address for some network<ul>
 <li>But, TCP services cannot be used for this attack</li>
@@ -442,7 +447,8 @@
 <li>Amplification: small request -&gt; larger response</li>
 <li>Targeting servers that support the <strong>extended DNS features</strong></li>
 </ul>
-<h1 id="Defenses-Against-DoS-Attacks"><a href="#Defenses-Against-DoS-Attacks" class="headerlink" title="Defenses Against DoS Attacks"></a>Defenses Against DoS Attacks</h1><p><img src="https://i.imgur.com/z8nlErd.png" width="60%"></p>
+<h1 id="Defenses-Against-DoS-Attacks"><a href="#Defenses-Against-DoS-Attacks" class="headerlink" title="Defenses Against DoS Attacks"></a>Defenses Against DoS Attacks</h1><img src="https://i.imgur.com/z8nlErd.png" width="60%"/>
+
 <h2 id="DoS-Attack-Prevention-Flooding-Attacks"><a href="#DoS-Attack-Prevention-Flooding-Attacks" class="headerlink" title="DoS Attack Prevention: Flooding Attacks"></a>DoS Attack Prevention: Flooding Attacks</h2><ul>
 <li>Block spoofed src. addr.</li>
 <li>Filters may be used to ensure path back to the claimed src. addr.<ul>
@@ -452,8 +458,8 @@
 <li>Imposing limits on the rate of some specific types of packets</li>
 </ul>
 <h2 id="DoS-Attack-Prevention-SYN-Spoofing-Attacks"><a href="#DoS-Attack-Prevention-SYN-Spoofing-Attacks" class="headerlink" title="DoS Attack Prevention: SYN Spoofing Attacks"></a>DoS Attack Prevention: SYN Spoofing Attacks</h2><ul>
-<li><a href="https://zh.wikipedia.org/wiki/SYN_cookie" target="_blank" rel="external">SYN cookie</a><ul>
-<li>Cons: <a href="https://zh.wikipedia.org/wiki/SYN_cookie#%E7%BC%BA%E9%99%B7" target="_blank" rel="external">https://zh.wikipedia.org/wiki/SYN_cookie#%E7%BC%BA%E9%99%B7</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/SYN_cookie" target="_blank" rel="noopener">SYN cookie</a><ul>
+<li>Cons: <a href="https://zh.wikipedia.org/wiki/SYN_cookie#%E7%BC%BA%E9%99%B7" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/SYN_cookie#%E7%BC%BA%E9%99%B7</a></li>
 </ul>
 </li>
 <li>Selective drop: dropping an entry for an incomplete connection from the TCP connections table when it overflows</li>

@@ -27,7 +27,7 @@
     scheme: 'Pisces',
     version: '7.7.0',
     exturl: false,
-    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    sidebar: {"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -238,10 +238,10 @@
 
       
           <h1 id="如何獲取資料"><a href="#如何獲取資料" class="headerlink" title="如何獲取資料"></a>如何獲取資料</h1><ol>
-<li><a href="https://scikit-learn.org/stable/datasets/index.html" target="_blank" rel="external">sklearn 內建的 dataset</a></li>
-<li><a href="https://www.kaggle.com/datasets?sortBy=votes&amp;group=featured" target="_blank" rel="external">Kaggle Dataset</a>(包含較多已整理的資料，不需要太多時間對資料做前處理)</li>
-<li><a href="https://developers.google.com/maps/documentation/?hl=zh-tw" target="_blank" rel="external">Google Map API</a>(好像要$$)</li>
-<li>各種政府提供的 Open data 平台(e.g. <a href="https://data.gov.tw/" target="_blank" rel="external">政府資料開放平台</a>, <a href="https://data.taipei/index" target="_blank" rel="external">台北市政府資料開放平台</a>)</li>
+<li><a href="https://scikit-learn.org/stable/datasets/index.html" target="_blank" rel="noopener">sklearn 內建的 dataset</a></li>
+<li><a href="https://www.kaggle.com/datasets?sortBy=votes&group=featured" target="_blank" rel="noopener">Kaggle Dataset</a>(包含較多已整理的資料，不需要太多時間對資料做前處理)</li>
+<li><a href="https://developers.google.com/maps/documentation/?hl=zh-tw" target="_blank" rel="noopener">Google Map API</a>(好像要$$)</li>
+<li>各種政府提供的 Open data 平台(e.g. <a href="https://data.gov.tw/" target="_blank" rel="noopener">政府資料開放平台</a>, <a href="https://data.taipei/index" target="_blank" rel="noopener">台北市政府資料開放平台</a>)</li>
 </ol>
 <p>MEDIUM 進度 2.3 講</p>
 <h1 id="常見的資料分析方法"><a href="#常見的資料分析方法" class="headerlink" title="常見的資料分析方法"></a>常見的資料分析方法</h1><h2 id="一、描述統計-敘述統計"><a href="#一、描述統計-敘述統計" class="headerlink" title="一、描述統計(敘述統計)"></a>一、描述統計(敘述統計)</h2><p>透過對數據資料的圖像化處理，將資料摘要變為圖表，以直觀了解整體資料分布的情況。通常會使用的工具是頻數分布表與圖示法，如多邊圖、直方圖、餅圖、散點圖等。</p>
@@ -271,10 +271,10 @@
 <h3 id="常態性檢驗"><a href="#常態性檢驗" class="headerlink" title="常態性檢驗"></a>常態性檢驗</h3><p>很多統計方法都要求數值呈現或近似呈現常態分佈，所以得先進行常態性檢驗。</p>
 <ul>
 <li>非引數檢驗的K-量檢驗(這是什麼我也不知道)</li>
-<li><a href="https://en.wikipedia.org/wiki/Normal_probability_plot" target="_blank" rel="external">PP圖(probability plot graph)</a></li>
-<li><a href="https://zh.wikipedia.org/wiki/%E5%88%86%E4%BD%8D%E5%9C%96" target="_blank" rel="external">QQ圖</a></li>
-<li><a href="https://en.wikipedia.org/wiki/Shapiro%E2%80%93Wilk_test" target="_blank" rel="external">W檢驗</a>: 基於相關性的檢驗法，透過公式得到的相關係數越接近 1 代表數據越接近常態分佈。</li>
-<li><a href="http://publish.get.com.tw/bookpre_pdf/51MG022703-2.pdf" target="_blank" rel="external">動差法</a>: <a href="https://zh.wikipedia.org/wiki/%E7%9F%A9_(%E6%95%B8%E5%AD%B8" target="_blank" rel="external">動差是什麼</a>)</li>
+<li><a href="https://en.wikipedia.org/wiki/Normal_probability_plot" target="_blank" rel="noopener">PP圖(probability plot graph)</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E5%88%86%E4%BD%8D%E5%9C%96" target="_blank" rel="noopener">QQ圖</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Shapiro%E2%80%93Wilk_test" target="_blank" rel="noopener">W檢驗</a>: 基於相關性的檢驗法，透過公式得到的相關係數越接近 1 代表數據越接近常態分佈。</li>
+<li><a href="http://publish.get.com.tw/bookpre_pdf/51MG022703-2.pdf" target="_blank" rel="noopener">動差法</a>: <a href="https://zh.wikipedia.org/wiki/%E7%9F%A9_(%E6%95%B8%E5%AD%B8)" target="_blank" rel="noopener">動差是什麼</a></li>
 </ul>
 <h2 id="二、假設檢驗"><a href="#二、假設檢驗" class="headerlink" title="二、假設檢驗"></a>二、假設檢驗</h2><h3 id="引數檢驗"><a href="#引數檢驗" class="headerlink" title="引數檢驗"></a>引數檢驗</h3><p>在已知總體分佈的條件下(一般要求總體呈現常態分佈)對一些主要的引數(如均值、百分數、方差、相關係數等)進行的檢驗。</p>
 <ul>
@@ -305,22 +305,22 @@
 <p>常用方法 -&gt; 分半信度: 通常是在不準備重測的情況下，我們就用分半信度來計算信度係數。(e.g. 如果有一份問卷，其中有十個問題涉及到女性歧視現象。利用分半信度時，可將十個問題隨機分成兩組，每組有五個問題，然後根據每組的測量結果來計算兩組的相關係數。)</p>
 <h2 id="四、列聯表分析"><a href="#四、列聯表分析" class="headerlink" title="四、列聯表分析"></a>四、列聯表分析</h2><p>用於分析離散型變數或定型變數之間是否存在相關性。</p>
 <p>對於二為數據，可以用卡方檢驗。</p>
-<p>對於三維的數據，可以用 Mentel-Haenszel 分層分析。(<a href="http://biostatdept.cmu.edu.tw/doc/epaper_a/paper/teaching_corner_042-1.pdf" target="_blank" rel="external">參考資料一</a>)(<a href="https://molecular-service-science.com/2012/08/20/chi-squared-test-and-three-way-table-and-simpson-paradox/" target="_blank" rel="external">參考資料二</a>)</p>
+<p>對於三維的數據，可以用 Mentel-Haenszel 分層分析。(<a href="http://biostatdept.cmu.edu.tw/doc/epaper_a/paper/teaching_corner_042-1.pdf" target="_blank" rel="noopener">參考資料一</a>)(<a href="https://molecular-service-science.com/2012/08/20/chi-squared-test-and-three-way-table-and-simpson-paradox/" target="_blank" rel="noopener">參考資料二</a>)</p>
 <h2 id="五、相關分析"><a href="#五、相關分析" class="headerlink" title="五、相關分析"></a>五、相關分析</h2><p>研究<strong>現象之間</strong>是否存在某種依存關係，對具體有依存關係的現象探討相關方向及相關程度。</p>
 <h3 id="單相關"><a href="#單相關" class="headerlink" title="單相關"></a>單相關</h3><p>兩個因素之間的相關關係叫單相關，即研究時只涉及一個自變數一個因變數。</p>
 <h3 id="複相關"><a href="#複相關" class="headerlink" title="複相關"></a>複相關</h3><p>三個或三個以上因素的相關關係叫複相關，即研究時涉及兩個或兩個以上的自變數和因變數相關。</p>
 <h3 id="偏相關-淨相關、純相關"><a href="#偏相關-淨相關、純相關" class="headerlink" title="偏相關(淨相關、純相關)"></a>偏相關(淨相關、純相關)</h3><p>在某一現象與多種現象相關的場，當假定其他變數不變時，其中兩個變數之間的相關關係稱為偏相關。</p>
-<h2 id="六、變異數分析-方差分析"><a href="#六、變異數分析-方差分析" class="headerlink" title="六、變異數分析(方差分析)"></a>六、變異數分析(方差分析)</h2><p>使用時機: 各樣本必須是互相獨立的隨機樣本，各樣本來自常態分佈的母體，各母體變異數相等。(<a href="https://molecular-service-science.com/2012/08/20/chi-squared-test-and-three-way-table-and-simpson-paradox/" target="_blank" rel="external">參考資料一</a>)</p>
+<h2 id="六、變異數分析-方差分析"><a href="#六、變異數分析-方差分析" class="headerlink" title="六、變異數分析(方差分析)"></a>六、變異數分析(方差分析)</h2><p>使用時機: 各樣本必須是互相獨立的隨機樣本，各樣本來自常態分佈的母體，各母體變異數相等。(<a href="https://molecular-service-science.com/2012/08/20/chi-squared-test-and-three-way-table-and-simpson-paradox/" target="_blank" rel="noopener">參考資料一</a>)</p>
 <h3 id="單因素變異數分析"><a href="#單因素變異數分析" class="headerlink" title="單因素變異數分析"></a>單因素變異數分析</h3><p>一項檢驗只有一個影響因素；或者存在多個影響因素時，只分析一個因素與響應變數的關係。</p>
 <h3 id="多因素有互動變異數分析"><a href="#多因素有互動變異數分析" class="headerlink" title="多因素有互動變異數分析"></a>多因素有互動變異數分析</h3><p>一項實驗有多個影響因素，分析多個影響因素與響應變數的關係，<strong>同時考慮多個影響因素之間的關係。</strong></p>
 <h3 id="多因素無互動變異數分析"><a href="#多因素無互動變異數分析" class="headerlink" title="多因素無互動變異數分析"></a>多因素無互動變異數分析</h3><p>一項實驗有多個影響因素，分析多個影響因素與響應變數的關係，<strong>但是影響因素之間沒有關係或忽略其中的關係。</strong></p>
-<h2 id="七、迴歸分析"><a href="#七、迴歸分析" class="headerlink" title="七、迴歸分析"></a>七、迴歸分析</h2><h3 id="一元線性迴歸分析"><a href="#一元線性迴歸分析" class="headerlink" title="一元線性迴歸分析"></a>一元線性迴歸分析</h3><p><strong>只有一個自變數 X 與因變數 Y 有關</strong>，自變數 X 與因變數 Y 的關係就是一個二元一次方程式，X 與 Y 必須是連續型變數，因變數 Y 或其<a href="https://baike.baidu.com/item/%E6%AE%8B%E5%B7%AE" target="_blank" rel="external">殘差</a>必須呈現常態分佈。</p>
+<h2 id="七、迴歸分析"><a href="#七、迴歸分析" class="headerlink" title="七、迴歸分析"></a>七、迴歸分析</h2><h3 id="一元線性迴歸分析"><a href="#一元線性迴歸分析" class="headerlink" title="一元線性迴歸分析"></a>一元線性迴歸分析</h3><p><strong>只有一個自變數 X 與因變數 Y 有關</strong>，自變數 X 與因變數 Y 的關係就是一個二元一次方程式，X 與 Y 必須是連續型變數，因變數 Y 或其<a href="https://baike.baidu.com/item/%E6%AE%8B%E5%B7%AE" target="_blank" rel="noopener">殘差</a>必須呈現常態分佈。</p>
 <h3 id="多元線性迴歸分析"><a href="#多元線性迴歸分析" class="headerlink" title="多元線性迴歸分析"></a>多元線性迴歸分析</h3><p><strong>分析多個自變數與因變數 Y 的關係</strong>，X 與 Y 必須是連續型變數，因變數 Y 或其殘差必須呈現常態分佈。</p>
 <h1 id="以下全部都要查"><a href="#以下全部都要查" class="headerlink" title="以下全部都要查"></a>以下全部都要查</h1><ul>
 <li>變數篩選方式: 選擇最優迴歸方程的變數篩選法包括全模型法(CP法)、逐步迴歸法、向前引入(選取)法、向後剔除(選取)法。</li>
 <li>模型診斷方法<ul>
 <li>殘差檢驗: 觀測值與估計值的差值必須呈現正態分佈。</li>
-<li><a href="https://baike.baidu.com/item/%E5%BC%BA%E5%BD%B1%E5%93%8D%E7%82%B9" target="_blank" rel="external">強影響點</a>判斷: 尋找方式一般分為標準誤差法、Mahalanobis 距離法。</li>
+<li><a href="https://baike.baidu.com/item/%E5%BC%BA%E5%BD%B1%E5%93%8D%E7%82%B9" target="_blank" rel="noopener">強影響點</a>判斷: 尋找方式一般分為標準誤差法、Mahalanobis 距離法。</li>
 <li>共線性診斷<ul>
 <li>診斷方式: 容忍度、方差擴大因子法(又稱膨脹係數VIF)、特徵根判定法、條件指標CI、方差比例。</li>
 <li>處理方法: 增加樣本容量或選取另外的迴歸如主成分迴歸、嶺迴歸等。</li>
@@ -331,13 +331,13 @@
 </ul>
 <h1 id="以上全部都要查"><a href="#以上全部都要查" class="headerlink" title="以上全部都要查"></a>以上全部都要查</h1><h3 id="Logistic-迴歸分析"><a href="#Logistic-迴歸分析" class="headerlink" title="Logistic 迴歸分析"></a>Logistic 迴歸分析</h3><p>線性迴歸模型要求因變數是連續的常態分佈，且自變數和因變數之間呈線性關係，而<strong>Logistic迴歸模型對因變數的分佈沒有要求</strong>，一般用於因變數是離散時的情況。</p>
 <h2 id="八、聚類分析"><a href="#八、聚類分析" class="headerlink" title="八、聚類分析"></a>八、聚類分析</h2><h2 id="九、判別分析"><a href="#九、判別分析" class="headerlink" title="九、判別分析"></a>九、判別分析</h2><h2 id="十、主成分分析"><a href="#十、主成分分析" class="headerlink" title="十、主成分分析"></a>十、主成分分析</h2><h2 id="十一、因子分析"><a href="#十一、因子分析" class="headerlink" title="十一、因子分析"></a>十一、因子分析</h2><h2 id="十二、時間排序分析"><a href="#十二、時間排序分析" class="headerlink" title="十二、時間排序分析"></a>十二、時間排序分析</h2><h2 id="十三、生存分析"><a href="#十三、生存分析" class="headerlink" title="十三、生存分析"></a>十三、生存分析</h2><h2 id="十四、典型相關分析"><a href="#十四、典型相關分析" class="headerlink" title="十四、典型相關分析"></a>十四、典型相關分析</h2><h2 id="十五、ROC-分析"><a href="#十五、ROC-分析" class="headerlink" title="十五、ROC 分析"></a>十五、ROC 分析</h2><h2 id="十六、其他分析方法"><a href="#十六、其他分析方法" class="headerlink" title="十六、其他分析方法"></a>十六、其他分析方法</h2><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
-<li><a href="https://medium.com/@yehjames" target="_blank" rel="external">Yeh James</a>的<strong>資料分析&amp;機器學習</strong>系列講義</li>
-<li><a href="https://itw01.com/VQ5QSEJ.html" target="_blank" rel="external">https://itw01.com/VQ5QSEJ.html</a></li>
-<li><a href="https://zh.wikipedia.org/wiki/%E6%8F%8F%E8%BF%B0%E7%BB%9F%E8%AE%A1%E5%AD%A6" target="_blank" rel="external">https://zh.wikipedia.org/wiki/%E6%8F%8F%E8%BF%B0%E7%BB%9F%E8%AE%A1%E5%AD%A6</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/31584345" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/31584345</a></li>
-<li><a href="https://kknews.cc/zh-tw/tech/gvzkv38.html" target="_blank" rel="external">https://kknews.cc/zh-tw/tech/gvzkv38.html</a></li>
-<li><a href="https://blog.csdn.net/zziahgf/article/details/21024167" target="_blank" rel="external">https://blog.csdn.net/zziahgf/article/details/21024167</a></li>
-<li><a href="https://yamol.tw/note_book.php?bsid=5732&amp;noteid=16659" target="_blank" rel="external">https://yamol.tw/note_book.php?bsid=5732&amp;noteid=16659</a></li>
+<li><a href="https://medium.com/@yehjames" target="_blank" rel="noopener">Yeh James</a>的<strong>資料分析&amp;機器學習</strong>系列講義</li>
+<li><a href="https://itw01.com/VQ5QSEJ.html" target="_blank" rel="noopener">https://itw01.com/VQ5QSEJ.html</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/%E6%8F%8F%E8%BF%B0%E7%BB%9F%E8%AE%A1%E5%AD%A6" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/%E6%8F%8F%E8%BF%B0%E7%BB%9F%E8%AE%A1%E5%AD%A6</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/31584345" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/31584345</a></li>
+<li><a href="https://kknews.cc/zh-tw/tech/gvzkv38.html" target="_blank" rel="noopener">https://kknews.cc/zh-tw/tech/gvzkv38.html</a></li>
+<li><a href="https://blog.csdn.net/zziahgf/article/details/21024167" target="_blank" rel="noopener">https://blog.csdn.net/zziahgf/article/details/21024167</a></li>
+<li><a href="https://yamol.tw/note_book.php?bsid=5732&amp;noteid=16659" target="_blank" rel="noopener">https://yamol.tw/note_book.php?bsid=5732&amp;noteid=16659</a></li>
 </ul>
 
       

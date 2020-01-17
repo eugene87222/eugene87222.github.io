@@ -27,7 +27,7 @@
     scheme: 'Pisces',
     version: '7.7.0',
     exturl: false,
-    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    sidebar: {"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -293,7 +293,8 @@
 <h1 id="Stack-overflows"><a href="#Stack-overflows" class="headerlink" title="Stack overflows"></a>Stack overflows</h1><h2 id="Stack-Buffer-Overflows"><a href="#Stack-Buffer-Overflows" class="headerlink" title="Stack Buffer Overflows"></a>Stack Buffer Overflows</h2><ul>
 <li>Also referred to as <strong>stack smashing</strong></li>
 </ul>
-<h2 id="Some-Common-Unsafe-C-Standard-Library"><a href="#Some-Common-Unsafe-C-Standard-Library" class="headerlink" title="Some Common Unsafe C Standard Library"></a>Some Common Unsafe C Standard Library</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">gets(<span class="keyword">char</span> *str)</div><div class="line"><span class="built_in">sprintf</span>(<span class="keyword">char</span> *str, <span class="keyword">char</span> *format, ...)</div><div class="line"><span class="built_in">strcat</span>(<span class="keyword">char</span> *dest, <span class="keyword">char</span> *src)</div><div class="line"><span class="built_in">strcpy</span>(<span class="keyword">char</span> *dest, <span class="keyword">char</span> *src)</div><div class="line"><span class="built_in">vsprintf</span>(<span class="keyword">char</span> *str, <span class="keyword">char</span> *fmt, va_list ap)</div></pre></td></tr></table></figure>
+<h2 id="Some-Common-Unsafe-C-Standard-Library"><a href="#Some-Common-Unsafe-C-Standard-Library" class="headerlink" title="Some Common Unsafe C Standard Library"></a>Some Common Unsafe C Standard Library</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gets(<span class="keyword">char</span> *str)</span><br><span class="line"><span class="built_in">sprintf</span>(<span class="keyword">char</span> *str, <span class="keyword">char</span> *format, ...)</span><br><span class="line"><span class="built_in">strcat</span>(<span class="keyword">char</span> *dest, <span class="keyword">char</span> *src)</span><br><span class="line"><span class="built_in">strcpy</span>(<span class="keyword">char</span> *dest, <span class="keyword">char</span> *src)</span><br><span class="line"><span class="built_in">vsprintf</span>(<span class="keyword">char</span> *str, <span class="keyword">char</span> *fmt, va_list ap)</span><br></pre></td></tr></table></figure>
+
 <h2 id="Shellcode"><a href="#Shellcode" class="headerlink" title="Shellcode"></a>Shellcode</h2><ul>
 <li>Code supplied by the attacker<ul>
 <li><strong>Often save in buffer being overflowed</strong></li>

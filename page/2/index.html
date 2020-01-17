@@ -27,7 +27,7 @@
     scheme: 'Pisces',
     version: '7.7.0',
     exturl: false,
-    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    sidebar: {"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -248,12 +248,13 @@
         <th style="font-weight: lighter;">Secure/Multipurpose Internet Mail Extension<br>Based on RSA<br>Provides the ability to sign and/or encrypt e-mail messages</th>
     </tr>
     <tr>
-        <th style="font-weight: lighter;"><img src="https://i.imgur.com/o9mUChP.png" width="60%"></th>
-        <th style="font-weight: lighter;"><img src="https://i.imgur.com/aCLJAAC.png" width="60%"></th>
+        <th style="font-weight: lighter;"><img src="https://i.imgur.com/o9mUChP.png" width="60%"/></th>
+        <th style="font-weight: lighter;"><img src="https://i.imgur.com/aCLJAAC.png" width="60%"/></th>
     </tr>
 </table>
 
-<h2 id="Typical-S-MIME-Process-for-Creating-an-S-MIME-Message"><a href="#Typical-S-MIME-Process-for-Creating-an-S-MIME-Message" class="headerlink" title="Typical S/MIME Process for Creating an S/MIME Message"></a>Typical S/MIME Process for Creating an S/MIME Message</h2><p><img src="https://i.imgur.com/fB0mxph.png" width="60%"></p>
+<h2 id="Typical-S-MIME-Process-for-Creating-an-S-MIME-Message"><a href="#Typical-S-MIME-Process-for-Creating-an-S-MIME-Message" class="headerlink" title="Typical S/MIME Process for Creating an S/MIME Message"></a>Typical S/MIME Process for Creating an S/MIME Message</h2><img src="https://i.imgur.com/fB0mxph.png" width="60%"/>
+
 <h2 id="S-MIME-Functions"><a href="#S-MIME-Functions" class="headerlink" title="S/MIME Functions"></a>S/MIME Functions</h2><ul>
 <li>Enveloped data<ul>
 <li>Encrypted content and associated keys</li>
@@ -301,7 +302,9 @@
 <li>Composed of MTAs</li>
 </ul>
 </li>
-<li><img src="https://i.imgur.com/QGcBAS8.png" width="60%"></li>
+<li><img src="https://i.imgur.com/QGcBAS8.png" width="60%"/>
+
+</li>
 </ul>
 <h2 id="Why-DKIM"><a href="#Why-DKIM" class="headerlink" title="Why DKIM"></a>Why DKIM</h2><ul>
 <li>An email authentication technique that is transparent to the end user</li>
@@ -324,8 +327,9 @@
 <li>MDA = mail delivery agent</li>
 <li>MSA = mail submission agent</li>
 <li>MTA = message transfer agent</li>
-<li>MUA = message user agent
-<img src="https://i.imgur.com/JX8yM8c.png" width="60%"></li>
+<li>MUA = message user agent<img src="https://i.imgur.com/JX8yM8c.png" width="60%"/>
+
+</li>
 </ul>
 <h1 id="Secure-Sockets-Layer-SSL-and-Transport-Layer-Security-TLS"><a href="#Secure-Sockets-Layer-SSL-and-Transport-Layer-Security-TLS" class="headerlink" title="Secure Sockets Layer (SSL) and Transport Layer Security (TLS)"></a>Secure Sockets Layer (SSL) and Transport Layer Security (TLS)</h1><ul>
 <li>Secure Socket Layer (SSL)<ul>
@@ -344,7 +348,9 @@
 </li>
 </ul>
 <h2 id="SSL-TLS-Protocol-Stack"><a href="#SSL-TLS-Protocol-Stack" class="headerlink" title="SSL/TLS Protocol Stack"></a>SSL/TLS Protocol Stack</h2><ul>
-<li><img src="https://i.imgur.com/cV2D1ER.png" width="60%"></li>
+<li><img src="https://i.imgur.com/cV2D1ER.png" width="60%"/>
+
+</li>
 </ul>
 <h2 id="TLS-Concepts"><a href="#TLS-Concepts" class="headerlink" title="TLS Concepts"></a>TLS Concepts</h2><ul>
 <li>TLS Connection<ul>
@@ -363,7 +369,9 @@
 </li>
 </ul>
 <h2 id="TLS-Record-Protocol-Operation"><a href="#TLS-Record-Protocol-Operation" class="headerlink" title="TLS Record Protocol Operation"></a>TLS Record Protocol Operation</h2><ul>
-<li><img src="https://i.imgur.com/tsZPibK.png" width="60%"></li>
+<li><img src="https://i.imgur.com/tsZPibK.png" width="60%"/>
+
+</li>
 </ul>
 <h2 id="Handshake-Protocol"><a href="#Handshake-Protocol" class="headerlink" title="Handshake Protocol"></a>Handshake Protocol</h2><ul>
 <li>TLS 最複雜的部份</li>
@@ -371,10 +379,14 @@
 <li>Authenticate each other -&gt; Negotiate encryption and MAC algorithms -&gt; Negotiate cyrptographic keys to be used</li>
 <li>Exchanges has four phases</li>
 </ul>
-<h2 id="Handshake-Protocol-Action-1-phase-1-amp-2"><a href="#Handshake-Protocol-Action-1-phase-1-amp-2" class="headerlink" title="Handshake Protocol Action 1 (phase 1 &amp; 2)"></a>Handshake Protocol Action 1 (phase 1 &amp; 2)</h2><p><img src="https://i.imgur.com/zgyfypi.png" width="60%"></p>
-<h2 id="Handshake-Protocol-Action-2-phase-3-amp-4"><a href="#Handshake-Protocol-Action-2-phase-3-amp-4" class="headerlink" title="Handshake Protocol Action 2 (phase 3 &amp; 4)"></a>Handshake Protocol Action 2 (phase 3 &amp; 4)</h2><p><img src="https://i.imgur.com/Nfv18KU.png" width="60%"></p>
-<h2 id="ClientHello-RFC"><a href="#ClientHello-RFC" class="headerlink" title="ClientHello (RFC)"></a>ClientHello (RFC)</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> &#123;</span></div><div class="line">   ProtocolVersion client_version;</div><div class="line">   Random random;</div><div class="line">   SessionID session_id;</div><div class="line">   CipherSuite cipher_suites &lt;<span class="number">2.</span><span class="number">.2</span>^<span class="number">16</span><span class="number">-2</span>&gt;;</div><div class="line">   CompressionMethod compression_methods &lt;<span class="number">1.</span><span class="number">.2</span>^<span class="number">8</span><span class="number">-1</span>&gt;;</div><div class="line">&#125; ClientHello;</div></pre></td></tr></table></figure>
-<h2 id="ServerHello-RFC"><a href="#ServerHello-RFC" class="headerlink" title="ServerHello (RFC)"></a>ServerHello (RFC)</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">struct</span> &#123;</span></div><div class="line">   ProtocolVersion server_version;</div><div class="line">   Random random;</div><div class="line">   SessionID session_id;</div><div class="line">   CipherSuite cipher_suite;</div><div class="line">   CompressionMethod compression_method;</div><div class="line">&#125; ServerHello;</div></pre></td></tr></table></figure>
+<h2 id="Handshake-Protocol-Action-1-phase-1-amp-2"><a href="#Handshake-Protocol-Action-1-phase-1-amp-2" class="headerlink" title="Handshake Protocol Action 1 (phase 1 &amp; 2)"></a>Handshake Protocol Action 1 (phase 1 &amp; 2)</h2><img src="https://i.imgur.com/zgyfypi.png" width="60%"/>
+
+<h2 id="Handshake-Protocol-Action-2-phase-3-amp-4"><a href="#Handshake-Protocol-Action-2-phase-3-amp-4" class="headerlink" title="Handshake Protocol Action 2 (phase 3 &amp; 4)"></a>Handshake Protocol Action 2 (phase 3 &amp; 4)</h2><img src="https://i.imgur.com/Nfv18KU.png" width="60%"/>
+
+<h2 id="ClientHello-RFC"><a href="#ClientHello-RFC" class="headerlink" title="ClientHello (RFC)"></a>ClientHello (RFC)</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">   ProtocolVersion client_version;</span><br><span class="line">   Random <span class="built_in">random</span>;</span><br><span class="line">   SessionID session_id;</span><br><span class="line">   CipherSuite cipher_suites &lt;<span class="number">2.</span><span class="number">.2</span>^<span class="number">16</span><span class="number">-2</span>&gt;;</span><br><span class="line">   CompressionMethod compression_methods &lt;<span class="number">1.</span><span class="number">.2</span>^<span class="number">8</span><span class="number">-1</span>&gt;;</span><br><span class="line">&#125; ClientHello;</span><br></pre></td></tr></table></figure>
+
+<h2 id="ServerHello-RFC"><a href="#ServerHello-RFC" class="headerlink" title="ServerHello (RFC)"></a>ServerHello (RFC)</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">   ProtocolVersion server_version;</span><br><span class="line">   Random <span class="built_in">random</span>;</span><br><span class="line">   SessionID session_id;</span><br><span class="line">   CipherSuite cipher_suite;</span><br><span class="line">   CompressionMethod compression_method;</span><br><span class="line">&#125; ServerHello;</span><br></pre></td></tr></table></figure>
+
 <h2 id="Four-TLS-specific-protocols"><a href="#Four-TLS-specific-protocols" class="headerlink" title="Four TLS specific protocols"></a>Four TLS specific protocols</h2><ul>
 <li>Change Cipher Spec Protocol<ul>
 <li>One of four TLS specific protocols that use the TLS Record Protocol</li>
@@ -411,8 +423,10 @@
 </ul>
 </li>
 </ul>
-<h2 id="SSL-TLS-Attacks"><a href="#SSL-TLS-Attacks" class="headerlink" title="SSL/TLS Attacks"></a>SSL/TLS Attacks</h2><p><img src="https://i.imgur.com/fHCcQVE.png" width="60%"></p>
-<h2 id="The-Heartbleed-Exploit-Source-BAE-Systems"><a href="#The-Heartbleed-Exploit-Source-BAE-Systems" class="headerlink" title="The Heartbleed Exploit (Source: BAE Systems)"></a>The Heartbleed Exploit (Source: BAE Systems)</h2><p><img src="https://i.imgur.com/SAQRWwv.png" width="60%"></p>
+<h2 id="SSL-TLS-Attacks"><a href="#SSL-TLS-Attacks" class="headerlink" title="SSL/TLS Attacks"></a>SSL/TLS Attacks</h2><img src="https://i.imgur.com/fHCcQVE.png" width="60%"/>
+
+<h2 id="The-Heartbleed-Exploit-Source-BAE-Systems"><a href="#The-Heartbleed-Exploit-Source-BAE-Systems" class="headerlink" title="The Heartbleed Exploit (Source: BAE Systems)"></a>The Heartbleed Exploit (Source: BAE Systems)</h2><img src="https://i.imgur.com/SAQRWwv.png" width="60%"/>
+
 <h1 id="HTTPS-HTTP-over-SSL-TLS"><a href="#HTTPS-HTTP-over-SSL-TLS" class="headerlink" title="HTTPS (HTTP over SSL/TLS)"></a>HTTPS (HTTP over SSL/TLS)</h1><ul>
 <li>Secure communication between a Web browser and a Web server</li>
 <li>Build into all modern Web browsers<ul>
@@ -426,7 +440,8 @@
 </ul>
 </li>
 </ul>
-<h2 id="IPSec-v-s-SSL-TLS"><a href="#IPSec-v-s-SSL-TLS" class="headerlink" title="IPSec v.s. SSL/TLS"></a>IPSec v.s. SSL/TLS</h2><p><img src="https://i.imgur.com/NLQtElg.png" width="60%"></p>
+<h2 id="IPSec-v-s-SSL-TLS"><a href="#IPSec-v-s-SSL-TLS" class="headerlink" title="IPSec v.s. SSL/TLS"></a>IPSec v.s. SSL/TLS</h2><img src="https://i.imgur.com/NLQtElg.png" width="60%"/>
+
 <h2 id="Applications-of-IPSec"><a href="#Applications-of-IPSec" class="headerlink" title="Applications of IPSec"></a>Applications of IPSec</h2><ul>
 <li>Secure branch office connectivity over the Internet</li>
 <li>Secure remote access over the Internet</li>
@@ -494,15 +509,15 @@
 </ul>
 <h2 id="Two-IPSec-Operation-Modes"><a href="#Two-IPSec-Operation-Modes" class="headerlink" title="Two IPSec Operation Modes"></a>Two IPSec Operation Modes</h2><ul>
 <li>Transport and tunnel modes</li>
-<li><img src="https://i.imgur.com/dPmSPN6.png" width="60%"></li>
+<li><img src="https://i.imgur.com/dPmSPN6.png" width="60%"/></li>
 <li><table style="">
   <tr>
       <th style="font-weight: normal;">Transport Mode</th>
       <th style="font-weight: normal;">Tunnel Mode</th>
   </tr>
   <tr>
-      <th style="font-weight: lighter;">Provides protection to the payload of an IP packet<br>Typically used for end-to-end communication <strong>between two hosts</strong><br>ESP protects the <strong>IP payload</strong> but not the IP header</th>
-      <th style="font-weight: lighter;">Provides protection to the <strong>entire IP packet</strong><br>Entire original packet travels through a tunnel from one point to another<br>Used when one or both ends of a security association are a security gateway<br>Hosts on networks behind firewalls may engage in secure communications without implementing IPSec</th>
+      <th style="font-weight: lighter;">Provides protection to the payload of an IP packet<br>Typically used for end-to-end communication __between two hosts__<br>ESP protects the __IP payload__ but not the IP header</th>
+      <th style="font-weight: lighter;">Provides protection to the __entire IP packet__<br>Entire original packet travels through a tunnel from one point to another<br>Used when one or both ends of a security association are a security gateway<br>Hosts on networks behind firewalls may engage in secure communications without implementing IPSec</th>
   </tr>
 </table>
 
@@ -510,20 +525,24 @@
 </ul>
 <h2 id="Encapsulating-Security-Payload"><a href="#Encapsulating-Security-Payload" class="headerlink" title="Encapsulating Security Payload"></a>Encapsulating Security Payload</h2><ul>
 <li>Providing authentication and confidentiality services</li>
-<li><img src="https://i.imgur.com/xzPy2dV.png" width="60%"></li>
+<li><img src="https://i.imgur.com/xzPy2dV.png" width="60%"/>
+
+</li>
 </ul>
 <h2 id="IPSec-AH-ESP"><a href="#IPSec-AH-ESP" class="headerlink" title="IPSec: AH + ESP"></a>IPSec: AH + ESP</h2><ul>
 <li>IP AH only<ul>
-<li><img src="https://i.imgur.com/gih8yFX.png" width="60%"></li>
+<li><img src="https://i.imgur.com/gih8yFX.png" width="60%"/></li>
 </ul>
 </li>
 <li>IP AH + ESP<ul>
 <li>Transport mode<ul>
-<li><img src="https://i.imgur.com/KJw67Ky.png" width="60%"></li>
+<li><img src="https://i.imgur.com/KJw67Ky.png" width="60%"/></li>
 </ul>
 </li>
 <li>Tunnel mode<ul>
-<li><img src="https://i.imgur.com/xmR09TT.png" width="60%"></li>
+<li><img src="https://i.imgur.com/xmR09TT.png" width="60%"/>
+
+</li>
 </ul>
 </li>
 </ul>
@@ -663,7 +682,7 @@
 </li>
 </ul>
 <h2 id="Two-Types-of-Hypervisor"><a href="#Two-Types-of-Hypervisor" class="headerlink" title="Two Types of Hypervisor"></a>Two Types of Hypervisor</h2><ul>
-<li><img src="https://i.imgur.com/a5cfdKu.png" width="60%"></li>
+<li><img src="https://i.imgur.com/a5cfdKu.png" width="60%"/></li>
 <li>Key differences<ul>
 <li>Typically, type 1 performs better, <strong>more secure</strong>, <strong>用在 server 上</strong></li>
 <li>Type 2: enabling virtualization without needing to dedicate a server to that function, <strong>用在 client 上</strong></li>
@@ -671,7 +690,7 @@
 </li>
 </ul>
 <h2 id="New-Type-Container-APp-Virtualization"><a href="#New-Type-Container-APp-Virtualization" class="headerlink" title="New Type: Container/APp Virtualization"></a>New Type: Container/APp Virtualization</h2><ul>
-<li><img src="https://i.imgur.com/tCGCtqx.png" width="60%"></li>
+<li><img src="https://i.imgur.com/tCGCtqx.png" width="60%"/></li>
 <li>Reducing overhead: no need of resources to run a separate OS for each app</li>
 <li>But, 安全風險較高</li>
 </ul>
@@ -766,7 +785,9 @@
 </li>
 </ul>
 <h2 id="Wireless-Network-Threats"><a href="#Wireless-Network-Threats" class="headerlink" title="Wireless Network Threats"></a>Wireless Network Threats</h2><ul>
-<li><img src="https://i.imgur.com/aQb2KPb.png" width="60%"></li>
+<li><img src="https://i.imgur.com/aQb2KPb.png" width="60%"/>
+
+</li>
 </ul>
 <h2 id="Wireless-Security-Measures"><a href="#Wireless-Security-Measures" class="headerlink" title="Wireless Security Measures"></a>Wireless Security Measures</h2><ul>
 <li>Securing wireless transmissions<ul>
@@ -789,11 +810,14 @@
 <li>Prevent rogue APs and other authorized devices</li>
 </ul>
 </li>
-<li><img src="https://i.imgur.com/snYWqt6.png" width="60%"></li>
+<li><img src="https://i.imgur.com/snYWqt6.png" width="60%"/>
+
+</li>
 </ul>
 </li>
 </ul>
-<h2 id="Wireless-Network-Security-Techniques"><a href="#Wireless-Network-Security-Techniques" class="headerlink" title="Wireless Network Security Techniques"></a>Wireless Network Security Techniques</h2><p><img src="https://i.imgur.com/M4Dkdlb.png" width="60%"></p>
+<h2 id="Wireless-Network-Security-Techniques"><a href="#Wireless-Network-Security-Techniques" class="headerlink" title="Wireless Network Security Techniques"></a>Wireless Network Security Techniques</h2><img src="https://i.imgur.com/M4Dkdlb.png" width="60%"/>
+
 <h1 id="Mobile-Device-Security"><a href="#Mobile-Device-Security" class="headerlink" title="Mobile Device Security"></a>Mobile Device Security</h1><ul>
 <li>An organization&#39;s networks must accommodate<ul>
 <li>Growing use of new devices</li>
@@ -807,7 +831,9 @@
 </li>
 </ul>
 <h2 id="Security-Threats"><a href="#Security-Threats" class="headerlink" title="Security Threats"></a>Security Threats</h2><ul>
-<li><img src="https://i.imgur.com/10rJp5U.png" width="60%"></li>
+<li><img src="https://i.imgur.com/10rJp5U.png" width="60%"/>
+
+</li>
 </ul>
 <h2 id="Mobile-Device-Security-Strategy"><a href="#Mobile-Device-Security-Strategy" class="headerlink" title="Mobile Device Security Strategy"></a>Mobile Device Security Strategy</h2><ul>
 <li>Device security</li>
@@ -820,7 +846,9 @@
 <li>Firewall</li>
 </ul>
 </li>
-<li><img src="https://i.imgur.com/veezYlX.png" width="60%"></li>
+<li><img src="https://i.imgur.com/veezYlX.png" width="60%"/>
+
+</li>
 </ul>
 <h1 id="IEEE-802-11-Wireless-LAN-Overview"><a href="#IEEE-802-11-Wireless-LAN-Overview" class="headerlink" title="IEEE 802.11 Wireless LAN Overview"></a>IEEE 802.11 Wireless LAN Overview</h1><h2 id="Terminology-amp-Services"><a href="#Terminology-amp-Services" class="headerlink" title="Terminology &amp; Services"></a>Terminology &amp; Services</h2><ul>
 <li>Access point (AP)<ul>
@@ -841,7 +869,7 @@
 </li>
 <li>Extended service set (ESS)<ul>
 <li>A set of one or more interconnected BSSs and integrated LANs that appear as a single BSS to the LLC layer at any station associated with one of these BSS</li>
-<li><img src="https://i.imgur.com/pZpfprh.png" width="60%"></li>
+<li><img src="https://i.imgur.com/pZpfprh.png" width="60%"/></li>
 </ul>
 </li>
 <li>MAC protocol data unit (MPDU)<ul>
@@ -856,7 +884,9 @@
 <li>Any device that contains an IEEE 802.11 conferment MAC and physical layer</li>
 </ul>
 </li>
-<li><img src="https://i.imgur.com/iF0ugu7.png" width="60%"></li>
+<li><img src="https://i.imgur.com/iF0ugu7.png" width="60%"/>
+
+</li>
 </ul>
 <h2 id="Distribution-of-Messages-within-a-DS"><a href="#Distribution-of-Messages-within-a-DS" class="headerlink" title="Distribution of Messages within a DS"></a>Distribution of Messages within a DS</h2><ul>
 <li>Two services involved<ul>
@@ -906,8 +936,10 @@
 </ul>
 </li>
 </ul>
-<h2 id="IEEE-802-11-Protocol-Stack"><a href="#IEEE-802-11-Protocol-Stack" class="headerlink" title="IEEE 802.11 Protocol Stack"></a>IEEE 802.11 Protocol Stack</h2><p><img src="https://i.imgur.com/W99PYik.png" width="60%"></p>
-<h2 id="General-IEEE-802-MPDU-Format"><a href="#General-IEEE-802-MPDU-Format" class="headerlink" title="General IEEE 802 MPDU Format"></a>General IEEE 802 MPDU Format</h2><p><img src="https://i.imgur.com/J7C1ZFj.png" width="60%"></p>
+<h2 id="IEEE-802-11-Protocol-Stack"><a href="#IEEE-802-11-Protocol-Stack" class="headerlink" title="IEEE 802.11 Protocol Stack"></a>IEEE 802.11 Protocol Stack</h2><img src="https://i.imgur.com/W99PYik.png" width="60%"/>
+
+<h2 id="General-IEEE-802-MPDU-Format"><a href="#General-IEEE-802-MPDU-Format" class="headerlink" title="General IEEE 802 MPDU Format"></a>General IEEE 802 MPDU Format</h2><img src="https://i.imgur.com/J7C1ZFj.png" width="60%"/>
+
 <h1 id="IEEE-802-11i-Wireless-LAN-Overview"><a href="#IEEE-802-11i-Wireless-LAN-Overview" class="headerlink" title="IEEE 802.11i Wireless LAN Overview"></a>IEEE 802.11i Wireless LAN Overview</h1><ul>
 <li>Wired Equivalent Privacy (WEP) algorithm<ul>
 <li>802.11 privacy</li>
@@ -919,14 +951,14 @@
 </ul>
 </li>
 <li>Robust Security Network (RSN)<ul>
-<li><img src="https://i.imgur.com/CO4gSdy.png" width="60%"></li>
-<li><img src="https://i.imgur.com/grye5ly.png" width="60%"></li>
+<li><img src="https://i.imgur.com/CO4gSdy.png" width="60%"/></li>
+<li><img src="https://i.imgur.com/grye5ly.png" width="60%"/></li>
 </ul>
 </li>
 <li>Wi-Fi Alliance certifies vendors in compliance with the full 802.11i (WPA2)</li>
 </ul>
 <h2 id="Five-Phases-of-Operation-for-an-RSN"><a href="#Five-Phases-of-Operation-for-an-RSN" class="headerlink" title="Five Phases of Operation for an RSN"></a>Five Phases of Operation for an RSN</h2><ul>
-<li><img src="https://i.imgur.com/DC85X70.png" width="60%"></li>
+<li><img src="https://i.imgur.com/DC85X70.png" width="60%"/></li>
 <li>Phase 1: Discovery Phase<ul>
 <li>Security capabilities<ul>
 <li>Confidentiality and MPDU integrity protocols</li>
@@ -942,9 +974,9 @@
 <li>IEEE 802.11x, pre-shared key</li>
 </ul>
 </li>
-<li><img src="https://i.imgur.com/eMsu6xU.png" width="60%"></li>
+<li><img src="https://i.imgur.com/eMsu6xU.png" width="60%"/></li>
 <li>802.1X Access Control<ul>
-<li><img src="https://i.imgur.com/3DRfr6p.png" width="60%"></li>
+<li><img src="https://i.imgur.com/3DRfr6p.png" width="60%"/></li>
 </ul>
 </li>
 </ul>
@@ -961,11 +993,11 @@
 <li>Secure key delivery</li>
 </ul>
 </li>
-<li><img src="https://i.imgur.com/DGzgnYn.png" width="60%"></li>
+<li><img src="https://i.imgur.com/DGzgnYn.png" width="60%"/></li>
 <li>EAP Authentication Protocol<ul>
 <li>Initiated by the server (authenticator)</li>
 <li>Authentication is mutual between the client and authentication server</li>
-<li><img src="https://i.imgur.com/a72D2Os.png" width="60%"></li>
+<li><img src="https://i.imgur.com/a72D2Os.png" width="60%"/></li>
 </ul>
 </li>
 <li>Popular EAP Methods<ul>
@@ -991,7 +1023,7 @@
 <li>EAP-MSCHAPv2 (Microsoft&#39;s Challenge Handshake Authentication Protocol)</li>
 </ul>
 </li>
-<li><img src="https://i.imgur.com/iFSalIT.png" width="60%"></li>
+<li><img src="https://i.imgur.com/iFSalIT.png" width="60%"/></li>
 </ul>
 </li>
 </ul>
@@ -1008,7 +1040,7 @@
 </li>
 <li>Pairwise transient key (PTK)</li>
 <li>Hierarchy<ul>
-<li><img src="https://i.imgur.com/ZQP8XmI.png" width="60%"></li>
+<li><img src="https://i.imgur.com/ZQP8XmI.png" width="60%"/></li>
 </ul>
 </li>
 </ul>
@@ -1017,18 +1049,18 @@
 <li>Group master key (GMK)</li>
 <li>Group temporal key (GTK)</li>
 <li>Hierarchy<ul>
-<li><img src="https://i.imgur.com/kgkCdCe.png" width="60%"></li>
+<li><img src="https://i.imgur.com/kgkCdCe.png" width="60%"/></li>
 </ul>
 </li>
 </ul>
 </li>
 <li>IEEE 802.11i Phases of Operation<ul>
 <li>4-way Handshake<ul>
-<li><img src="https://i.imgur.com/2Jdydjt.png" width="60%"></li>
+<li><img src="https://i.imgur.com/2Jdydjt.png" width="60%"/></li>
 </ul>
 </li>
 <li>Group Key Handshake<ul>
-<li><img src="https://i.imgur.com/RvAPxOY.png" width="60%"></li>
+<li><img src="https://i.imgur.com/RvAPxOY.png" width="60%"/></li>
 </ul>
 </li>
 </ul>
@@ -1077,7 +1109,7 @@
 <li>A pseudorandom bit stream: HMAC-SHA-1<ul>
 <li>A message and a key (at least 160 bits) -&gt; 160-bit hash value</li>
 <li>SHA-1 property: change of a single bit -&gt; a new hash value with no apparent connect</li>
-<li><img src="https://i.imgur.com/k4Mkwzd.png" width="60%"></li>
+<li><img src="https://i.imgur.com/k4Mkwzd.png" width="60%"/></li>
 <li>PTK:<ul>
 <li>K = PMK</li>
 <li>A = &quot;Pairwise key expansion&quot;</li>
@@ -1212,11 +1244,11 @@
       <th style="font-weight: normal;">Defensive Programming</th>
   </tr>
   <tr>
-      <th style="font-weight: lighter;">Attention on the steps needed for success<br>- Follow the normal flow of execution of the program<br>- But <strong>not consider every potential point of failure</strong><br>Often make assumptions: type of inputs and environment</th>
-      <th style="font-weight: lighter;">The assumptions need to be validated by the program<br><strong>All potential failures handled gracefully and safely</strong><br>But, increase codes and time spent</th>
+      <th style="font-weight: lighter;">Attention on the steps needed for success<br>- Follow the normal flow of execution of the program<br>- But __not consider every potential point of failure__<br>Often make assumptions: type of inputs and environment</th>
+      <th style="font-weight: lighter;">The assumptions need to be validated by the program<br>__All potential failures handled gracefully and safely__<br>But, increase codes and time spent</th>
   </tr>
   <tr>
-      <th style="font-weight: lighter;">When changes are required<br>- Focus on the cahnges required and <strong>what needs to be achieved</strong></th>
+      <th style="font-weight: lighter;">When changes are required<br>- Focus on the cahnges required and __what needs to be achieved__</th>
       <th style="font-weight: lighter;">Must carefully check any assumptions made<br>Check and handle all possible errors<br>Carefully check any interactions with existing code</th>
   </tr>
 </table>
@@ -1514,7 +1546,8 @@
 <h1 id="Stack-overflows"><a href="#Stack-overflows" class="headerlink" title="Stack overflows"></a>Stack overflows</h1><h2 id="Stack-Buffer-Overflows"><a href="#Stack-Buffer-Overflows" class="headerlink" title="Stack Buffer Overflows"></a>Stack Buffer Overflows</h2><ul>
 <li>Also referred to as <strong>stack smashing</strong></li>
 </ul>
-<h2 id="Some-Common-Unsafe-C-Standard-Library"><a href="#Some-Common-Unsafe-C-Standard-Library" class="headerlink" title="Some Common Unsafe C Standard Library"></a>Some Common Unsafe C Standard Library</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">gets(<span class="keyword">char</span> *str)</div><div class="line"><span class="built_in">sprintf</span>(<span class="keyword">char</span> *str, <span class="keyword">char</span> *format, ...)</div><div class="line"><span class="built_in">strcat</span>(<span class="keyword">char</span> *dest, <span class="keyword">char</span> *src)</div><div class="line"><span class="built_in">strcpy</span>(<span class="keyword">char</span> *dest, <span class="keyword">char</span> *src)</div><div class="line"><span class="built_in">vsprintf</span>(<span class="keyword">char</span> *str, <span class="keyword">char</span> *fmt, va_list ap)</div></pre></td></tr></table></figure>
+<h2 id="Some-Common-Unsafe-C-Standard-Library"><a href="#Some-Common-Unsafe-C-Standard-Library" class="headerlink" title="Some Common Unsafe C Standard Library"></a>Some Common Unsafe C Standard Library</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gets(<span class="keyword">char</span> *str)</span><br><span class="line"><span class="built_in">sprintf</span>(<span class="keyword">char</span> *str, <span class="keyword">char</span> *format, ...)</span><br><span class="line"><span class="built_in">strcat</span>(<span class="keyword">char</span> *dest, <span class="keyword">char</span> *src)</span><br><span class="line"><span class="built_in">strcpy</span>(<span class="keyword">char</span> *dest, <span class="keyword">char</span> *src)</span><br><span class="line"><span class="built_in">vsprintf</span>(<span class="keyword">char</span> *str, <span class="keyword">char</span> *fmt, va_list ap)</span><br></pre></td></tr></table></figure>
+
 <h2 id="Shellcode"><a href="#Shellcode" class="headerlink" title="Shellcode"></a>Shellcode</h2><ul>
 <li>Code supplied by the attacker<ul>
 <li><strong>Often save in buffer being overflowed</strong></li>

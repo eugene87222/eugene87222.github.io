@@ -27,7 +27,7 @@
     scheme: 'Pisces',
     version: '7.7.0',
     exturl: false,
-    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    sidebar: {"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -378,11 +378,11 @@
 </ul>
 </li>
 <li>One-way (pre-image resistant)<ul>
-<li>For any given code _h_, it is <strong>computationally infeasible</strong> to find _x_ such that <strong><em>H(x) = h</em></strong></li>
+<li>For any given code <em>h</em>, it is <strong>computationally infeasible</strong> to find <em>x</em> such that <strong><em>H(x) = h</em></strong></li>
 </ul>
 </li>
 <li>Second pre-image (weak collision) resistant<ul>
-<li><strong>For any given block _x_</strong>, it is computationally infeasible to find <em>y != x</em> with <em>H(y) = H(x)</em></li>
+<li><strong>For any given block <em>x</em></strong>, it is computationally infeasible to find <em>y != x</em> with <em>H(y) = H(x)</em></li>
 </ul>
 </li>
 <li>Collision (strong collision) resistant<ul>

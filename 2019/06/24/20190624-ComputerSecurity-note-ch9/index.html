@@ -27,7 +27,7 @@
     scheme: 'Pisces',
     version: '7.7.0',
     exturl: false,
-    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    sidebar: {"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -327,7 +327,7 @@
 </ul>
 <h1 id="Types-of-firewalls"><a href="#Types-of-firewalls" class="headerlink" title="Types of firewalls"></a>Types of firewalls</h1><ul>
 <li>General model<ul>
-<li><img src="https://i.imgur.com/4vXYlX3.png" width="60%"></li>
+<li><img src="https://i.imgur.com/4vXYlX3.png" width="60%"/></li>
 </ul>
 </li>
 <li>Four major types<ul>
@@ -339,7 +339,7 @@
 </li>
 </ul>
 <h2 id="Packet-Filtering-Firewall"><a href="#Packet-Filtering-Firewall" class="headerlink" title="Packet Filtering Firewall"></a>Packet Filtering Firewall</h2><ul>
-<li><img src="https://i.imgur.com/tGZgY8k.png" width="60%"></li>
+<li><img src="https://i.imgur.com/tGZgY8k.png" width="60%"/></li>
 <li>Applying a set of rules to each incoming and outgoing IP packet<ul>
 <li>Rules based on matches in the IP or TCP header for packets in both directions</li>
 <li>Matches: determining whether to forward or discard the packet</li>
@@ -360,7 +360,7 @@
 </li>
 <li>Example:<ul>
 <li>Allowing inbound and outbound email traffic but to block all other traffic</li>
-<li><img src="https://i.imgur.com/dxHEwhG.png" width="60%"></li>
+<li><img src="https://i.imgur.com/dxHEwhG.png" width="60%"/></li>
 <li>Problem 1: rule 4 allows external traffic to any dest. port above 1023</li>
 <li>Problem 2: new rule 4 allows an outside machine to send packets with src. port 23 to internal machines</li>
 </ul>
@@ -409,7 +409,7 @@
 </li>
 </ul>
 <h2 id="Stateful-Inspection-Firewall"><a href="#Stateful-Inspection-Firewall" class="headerlink" title="Stateful Inspection Firewall"></a>Stateful Inspection Firewall</h2><ul>
-<li><img src="https://i.imgur.com/BAXpYQ1.png" width="60%"></li>
+<li><img src="https://i.imgur.com/BAXpYQ1.png" width="60%"/></li>
 <li>Tightening rules for TCP traffic by creating a directory of outbound TCP connections<ul>
 <li>狀態檢視防火牆不僅採用封包過濾類似的方法來監控網路傳輸，還會更進一步檢查封包資料流的內容與行為，並非只是單純地過濾個別封包</li>
 <li>持續追蹤連接狀態直到結束連線為止，藉以判斷是否為有效的連線而允許封包通過</li>
@@ -419,7 +419,7 @@
 <li>Cons: 無法處理應用層協定</li>
 </ul>
 <h2 id="Application-Proxy-Firewall"><a href="#Application-Proxy-Firewall" class="headerlink" title="Application Proxy Firewall"></a>Application Proxy Firewall</h2><ul>
-<li><img src="https://i.imgur.com/FChl0uN.png" width="60%"></li>
+<li><img src="https://i.imgur.com/FChl0uN.png" width="60%"/></li>
 <li>App-level<ul>
 <li>User contacts it using a TCP/IP app</li>
 <li>Must have proxy codes for specific apps</li>
@@ -430,7 +430,7 @@
 <li>Cons: <strong>additional processing overhead</strong> on each connection</li>
 </ul>
 <h2 id="Circuit-level-Proxy-Firewall"><a href="#Circuit-level-Proxy-Firewall" class="headerlink" title="Circuit-level Proxy Firewall"></a>Circuit-level Proxy Firewall</h2><ul>
-<li><img src="https://i.imgur.com/4auWNcM.png" width="60%"></li>
+<li><img src="https://i.imgur.com/4auWNcM.png" width="60%"/></li>
 <li>Splitting a TCP connection<ul>
 <li>One between itself and a TCP insider</li>
 <li>One between itself and a TCP outsider</li>
@@ -463,10 +463,8 @@
 <h2 id="Firewall-Basing"><a href="#Firewall-Basing" class="headerlink" title="Firewall Basing"></a>Firewall Basing</h2><ul>
 <li>Stand-alone firewall (basing host)<ul>
 <li>A system identified by the firewall administrator as a critical strong point in the network&#39;s security</li>
-<li><img src="https://i.imgur.com/KEHfsgO.png" width="60%"><ul>
-<li>Running secure OS, only essential services -&gt; a hardened system</li>
-</ul>
-</li>
+<li><img src="https://i.imgur.com/KEHfsgO.png" width="60%"/>
+ - Running secure OS, only essential services -> a hardened system</li>
 <li>May require authentication to access proxy or host</li>
 <li>Each proxy<ul>
 <li>Can restrict features, hosts accessed</li>
@@ -512,7 +510,9 @@
 <h1 id="Firewall-location-and-configurations"><a href="#Firewall-location-and-configurations" class="headerlink" title="Firewall location and configurations"></a>Firewall location and configurations</h1><h2 id="DMZ-networks"><a href="#DMZ-networks" class="headerlink" title="DMZ networks"></a>DMZ networks</h2><ul>
 <li>DMZ (Demilitarized Zone): a small network isolated from the private network</li>
 <li>Systems located on DMZ networks: externally accessible but need some protections</li>
-<li><img src="https://i.imgur.com/9sNvWxc.png" width="60%"></li>
+<li><img src="https://i.imgur.com/9sNvWxc.png" width="60%"/>
+
+</li>
 </ul>
 <h2 id="Virtual-private-networks-VPN"><a href="#Virtual-private-networks-VPN" class="headerlink" title="Virtual private networks (VPN)"></a>Virtual private networks (VPN)</h2><ul>
 <li>Containing a set of computers<ul>
@@ -538,12 +538,14 @@
 <li>Stand-alone firewalls</li>
 </ul>
 </li>
-<li><img src="https://i.imgur.com/E3ZQIYt.png" width="60%"></li>
+<li><img src="https://i.imgur.com/E3ZQIYt.png" width="60%"/></li>
 <li>May use both an internal and external DMZ</li>
 <li>External DMZ: <strong>less protection</strong></li>
 </ul>
 <h2 id="Summary-of-firewall-locations-and-topologies"><a href="#Summary-of-firewall-locations-and-topologies" class="headerlink" title="Summary of firewall locations and topologies"></a>Summary of firewall locations and topologies</h2><ul>
-<li><img src="https://i.imgur.com/B7hAKAO.png" width="60%"></li>
+<li><img src="https://i.imgur.com/B7hAKAO.png" width="60%"/>
+
+</li>
 </ul>
 <h1 id="Intrusion-prevention-systems-IPS"><a href="#Intrusion-prevention-systems-IPS" class="headerlink" title="Intrusion prevention systems (IPS)"></a>Intrusion prevention systems (IPS)</h1><ul>
 <li>Like an IDS<ul>
@@ -585,7 +587,9 @@
 <li>Typical methods used by a NIPS device to <strong>identify malicious packets</strong></li>
 </ul>
 <h2 id="Distributed-Hybrid-IPS"><a href="#Distributed-Hybrid-IPS" class="headerlink" title="Distributed/Hybrid IPS"></a>Distributed/Hybrid IPS</h2><ul>
-<li><img src="https://i.imgur.com/6li4RMx.png" width="60%"></li>
+<li><img src="https://i.imgur.com/6li4RMx.png" width="60%"/>
+
+</li>
 </ul>
 <h1 id="Example-Unified-Threat-Management-Product"><a href="#Example-Unified-Threat-Management-Product" class="headerlink" title="Example: Unified Threat Management Product"></a>Example: Unified Threat Management Product</h1>
     </div>

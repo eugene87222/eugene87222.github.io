@@ -27,7 +27,7 @@
     scheme: 'Pisces',
     version: '7.7.0',
     exturl: false,
-    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    sidebar: {"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -352,11 +352,11 @@
 </ul>
 </li>
 <li>One-way (pre-image resistant)<ul>
-<li>For any given code _h_, it is <strong>computationally infeasible</strong> to find _x_ such that <strong><em>H(x) = h</em></strong></li>
+<li>For any given code <em>h</em>, it is <strong>computationally infeasible</strong> to find <em>x</em> such that <strong><em>H(x) = h</em></strong></li>
 </ul>
 </li>
 <li>Second pre-image (weak collision) resistant<ul>
-<li><strong>For any given block _x_</strong>, it is computationally infeasible to find <em>y != x</em> with <em>H(y) = H(x)</em></li>
+<li><strong>For any given block <em>x</em></strong>, it is computationally infeasible to find <em>y != x</em> with <em>H(y) = H(x)</em></li>
 </ul>
 </li>
 <li>Collision (strong collision) resistant<ul>
@@ -555,7 +555,7 @@ System integrity: system performs well in an unimpaired manner</p>
     </tr>
 </table>
 
-<h1 id="Security-Functional-Requirements"><a href="#Security-Functional-Requirements" class="headerlink" title="Security Functional Requirements"></a>Security Functional Requirements</h1><h2 id="Technical-Measures"><a href="#Technical-Measures" class="headerlink" title="Technical Measures"></a>Technical Measures</h2><h2 id="Management-Controls-Procedures"><a href="#Management-Controls-Procedures" class="headerlink" title="Management Controls / Procedures"></a>Management Controls / Procedures</h2><h2 id="Overlapping-Technical-Management"><a href="#Overlapping-Technical-Management" class="headerlink" title="Overlapping Technical / Management"></a>Overlapping Technical / Management</h2><h1 id="Fundamental-Security-Design"><a href="#Fundamental-Security-Design" class="headerlink" title="Fundamental Security Design "></a><a href="http://www.informit.com/articles/article.aspx?p=30487&amp;seqNum=2" target="_blank" rel="external">Fundamental Security Design </a></h1><h2 id="Economy-of-Mechanisnm"><a href="#Economy-of-Mechanisnm" class="headerlink" title="Economy of Mechanisnm"></a>Economy of Mechanisnm</h2><p>Design should be as simple as possible</p>
+<h1 id="Security-Functional-Requirements"><a href="#Security-Functional-Requirements" class="headerlink" title="Security Functional Requirements"></a>Security Functional Requirements</h1><h2 id="Technical-Measures"><a href="#Technical-Measures" class="headerlink" title="Technical Measures"></a>Technical Measures</h2><h2 id="Management-Controls-Procedures"><a href="#Management-Controls-Procedures" class="headerlink" title="Management Controls / Procedures"></a>Management Controls / Procedures</h2><h2 id="Overlapping-Technical-Management"><a href="#Overlapping-Technical-Management" class="headerlink" title="Overlapping Technical / Management"></a>Overlapping Technical / Management</h2><h1 id="Fundamental-Security-Design"><a href="#Fundamental-Security-Design" class="headerlink" title="Fundamental Security Design "></a><a href="http://www.informit.com/articles/article.aspx?p=30487&seqNum=2" target="_blank" rel="noopener">Fundamental Security Design </a></h1><h2 id="Economy-of-Mechanisnm"><a href="#Economy-of-Mechanisnm" class="headerlink" title="Economy of Mechanisnm"></a>Economy of Mechanisnm</h2><p>Design should be as simple as possible</p>
 <h2 id="Fail-safe-Defaults"><a href="#Fail-safe-Defaults" class="headerlink" title="Fail-safe Defaults"></a>Fail-safe Defaults</h2><p>Access decisions should be based on permission rather than exclusion</p>
 <h2 id="Complete-Mediation"><a href="#Complete-Mediation" class="headerlink" title="Complete Mediation"></a>Complete Mediation</h2><p>Every access must be check against the access control mechanism</p>
 <h2 id="Open-Design"><a href="#Open-Design" class="headerlink" title="Open Design"></a>Open Design</h2><p>就把設計公開</p>
@@ -1195,7 +1195,7 @@ Make developers aware of where security mechanisms are required</p>
 <li>Personally relevant ?<ul>
 <li>Yes, then use <strong>logical</strong>, <strong>fact-based</strong> arguments</li>
 <li>No, might use <strong>peripheral route</strong></li>
-<li>Peripheral route leads to attitude change that is _not long lasting__</li>
+<li>Peripheral route leads to attitude change that is <em>not long lasting_</em></li>
 <li>Goal to make product personally relevant</li>
 </ul>
 </li>

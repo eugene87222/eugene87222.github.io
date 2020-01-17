@@ -27,7 +27,7 @@
     scheme: 'Pisces',
     version: '7.7.0',
     exturl: false,
-    sidebar: {"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},
+    sidebar: {"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},
     copycode: {"enable":true,"show_result":false,"style":null},
     back2top: {"enable":true,"sidebar":false,"scrollpercent":false},
     bookmark: {"enable":false,"color":"#222","save":"auto"},
@@ -300,7 +300,7 @@
 </ul>
 <h1 id="Types-of-firewalls"><a href="#Types-of-firewalls" class="headerlink" title="Types of firewalls"></a>Types of firewalls</h1><ul>
 <li>General model<ul>
-<li><img src="https://i.imgur.com/4vXYlX3.png" width="60%"></li>
+<li><img src="https://i.imgur.com/4vXYlX3.png" width="60%"/></li>
 </ul>
 </li>
 <li>Four major types<ul>
@@ -312,7 +312,7 @@
 </li>
 </ul>
 <h2 id="Packet-Filtering-Firewall"><a href="#Packet-Filtering-Firewall" class="headerlink" title="Packet Filtering Firewall"></a>Packet Filtering Firewall</h2><ul>
-<li><img src="https://i.imgur.com/tGZgY8k.png" width="60%"></li>
+<li><img src="https://i.imgur.com/tGZgY8k.png" width="60%"/></li>
 <li>Applying a set of rules to each incoming and outgoing IP packet<ul>
 <li>Rules based on matches in the IP or TCP header for packets in both directions</li>
 <li>Matches: determining whether to forward or discard the packet</li>
@@ -333,7 +333,7 @@
 </li>
 <li>Example:<ul>
 <li>Allowing inbound and outbound email traffic but to block all other traffic</li>
-<li><img src="https://i.imgur.com/dxHEwhG.png" width="60%"></li>
+<li><img src="https://i.imgur.com/dxHEwhG.png" width="60%"/></li>
 <li>Problem 1: rule 4 allows external traffic to any dest. port above 1023</li>
 <li>Problem 2: new rule 4 allows an outside machine to send packets with src. port 23 to internal machines</li>
 </ul>
@@ -382,7 +382,7 @@
 </li>
 </ul>
 <h2 id="Stateful-Inspection-Firewall"><a href="#Stateful-Inspection-Firewall" class="headerlink" title="Stateful Inspection Firewall"></a>Stateful Inspection Firewall</h2><ul>
-<li><img src="https://i.imgur.com/BAXpYQ1.png" width="60%"></li>
+<li><img src="https://i.imgur.com/BAXpYQ1.png" width="60%"/></li>
 <li>Tightening rules for TCP traffic by creating a directory of outbound TCP connections<ul>
 <li>狀態檢視防火牆不僅採用封包過濾類似的方法來監控網路傳輸，還會更進一步檢查封包資料流的內容與行為，並非只是單純地過濾個別封包</li>
 <li>持續追蹤連接狀態直到結束連線為止，藉以判斷是否為有效的連線而允許封包通過</li>
@@ -392,7 +392,7 @@
 <li>Cons: 無法處理應用層協定</li>
 </ul>
 <h2 id="Application-Proxy-Firewall"><a href="#Application-Proxy-Firewall" class="headerlink" title="Application Proxy Firewall"></a>Application Proxy Firewall</h2><ul>
-<li><img src="https://i.imgur.com/FChl0uN.png" width="60%"></li>
+<li><img src="https://i.imgur.com/FChl0uN.png" width="60%"/></li>
 <li>App-level<ul>
 <li>User contacts it using a TCP/IP app</li>
 <li>Must have proxy codes for specific apps</li>
@@ -403,7 +403,7 @@
 <li>Cons: <strong>additional processing overhead</strong> on each connection</li>
 </ul>
 <h2 id="Circuit-level-Proxy-Firewall"><a href="#Circuit-level-Proxy-Firewall" class="headerlink" title="Circuit-level Proxy Firewall"></a>Circuit-level Proxy Firewall</h2><ul>
-<li><img src="https://i.imgur.com/4auWNcM.png" width="60%"></li>
+<li><img src="https://i.imgur.com/4auWNcM.png" width="60%"/></li>
 <li>Splitting a TCP connection<ul>
 <li>One between itself and a TCP insider</li>
 <li>One between itself and a TCP outsider</li>
@@ -436,10 +436,8 @@
 <h2 id="Firewall-Basing"><a href="#Firewall-Basing" class="headerlink" title="Firewall Basing"></a>Firewall Basing</h2><ul>
 <li>Stand-alone firewall (basing host)<ul>
 <li>A system identified by the firewall administrator as a critical strong point in the network&#39;s security</li>
-<li><img src="https://i.imgur.com/KEHfsgO.png" width="60%"><ul>
-<li>Running secure OS, only essential services -&gt; a hardened system</li>
-</ul>
-</li>
+<li><img src="https://i.imgur.com/KEHfsgO.png" width="60%"/>
+ - Running secure OS, only essential services -> a hardened system</li>
 <li>May require authentication to access proxy or host</li>
 <li>Each proxy<ul>
 <li>Can restrict features, hosts accessed</li>
@@ -485,7 +483,9 @@
 <h1 id="Firewall-location-and-configurations"><a href="#Firewall-location-and-configurations" class="headerlink" title="Firewall location and configurations"></a>Firewall location and configurations</h1><h2 id="DMZ-networks"><a href="#DMZ-networks" class="headerlink" title="DMZ networks"></a>DMZ networks</h2><ul>
 <li>DMZ (Demilitarized Zone): a small network isolated from the private network</li>
 <li>Systems located on DMZ networks: externally accessible but need some protections</li>
-<li><img src="https://i.imgur.com/9sNvWxc.png" width="60%"></li>
+<li><img src="https://i.imgur.com/9sNvWxc.png" width="60%"/>
+
+</li>
 </ul>
 <h2 id="Virtual-private-networks-VPN"><a href="#Virtual-private-networks-VPN" class="headerlink" title="Virtual private networks (VPN)"></a>Virtual private networks (VPN)</h2><ul>
 <li>Containing a set of computers<ul>
@@ -511,12 +511,14 @@
 <li>Stand-alone firewalls</li>
 </ul>
 </li>
-<li><img src="https://i.imgur.com/E3ZQIYt.png" width="60%"></li>
+<li><img src="https://i.imgur.com/E3ZQIYt.png" width="60%"/></li>
 <li>May use both an internal and external DMZ</li>
 <li>External DMZ: <strong>less protection</strong></li>
 </ul>
 <h2 id="Summary-of-firewall-locations-and-topologies"><a href="#Summary-of-firewall-locations-and-topologies" class="headerlink" title="Summary of firewall locations and topologies"></a>Summary of firewall locations and topologies</h2><ul>
-<li><img src="https://i.imgur.com/B7hAKAO.png" width="60%"></li>
+<li><img src="https://i.imgur.com/B7hAKAO.png" width="60%"/>
+
+</li>
 </ul>
 <h1 id="Intrusion-prevention-systems-IPS"><a href="#Intrusion-prevention-systems-IPS" class="headerlink" title="Intrusion prevention systems (IPS)"></a>Intrusion prevention systems (IPS)</h1><ul>
 <li>Like an IDS<ul>
@@ -558,7 +560,9 @@
 <li>Typical methods used by a NIPS device to <strong>identify malicious packets</strong></li>
 </ul>
 <h2 id="Distributed-Hybrid-IPS"><a href="#Distributed-Hybrid-IPS" class="headerlink" title="Distributed/Hybrid IPS"></a>Distributed/Hybrid IPS</h2><ul>
-<li><img src="https://i.imgur.com/6li4RMx.png" width="60%"></li>
+<li><img src="https://i.imgur.com/6li4RMx.png" width="60%"/>
+
+</li>
 </ul>
 <h1 id="Example-Unified-Threat-Management-Product"><a href="#Example-Unified-Threat-Management-Product" class="headerlink" title="Example: Unified Threat Management Product"></a>Example: Unified Threat Management Product</h1>
       
@@ -705,9 +709,11 @@
 </ul>
 </li>
 <li>Based on the assumption: <strong>the behavior of the intruder differs from that of a legitimate user</strong></li>
-<li><img src="https://i.imgur.com/8P6HWh5.png" width="60%"></li>
+<li><img src="https://i.imgur.com/8P6HWh5.png" width="60%"/></li>
 <li>Requirements<ul>
-<li><img src="https://i.imgur.com/1jMZDGI.png" width="60%"></li>
+<li><img src="https://i.imgur.com/1jMZDGI.png" width="60%"/>
+
+</li>
 </ul>
 </li>
 </ul>
@@ -793,9 +799,11 @@
 </ul>
 <h2 id="Anomaly-HIDS"><a href="#Anomaly-HIDS" class="headerlink" title="Anomaly HIDS"></a>Anomaly HIDS</h2><ul>
 <li>Gathering the system call traces using an OS hook, e.g., BSM (Basic Security Module) audit module</li>
-<li><img src="https://i.imgur.com/8iqLVMW.png" width="60%"></li>
+<li><img src="https://i.imgur.com/8iqLVMW.png" width="60%"/></li>
 <li>Using traces of key DDL function calls</li>
-<li><img src="https://i.imgur.com/LZF69G9.png" width="60%"></li>
+<li><img src="https://i.imgur.com/LZF69G9.png" width="60%"/>
+
+</li>
 </ul>
 <h2 id="Signature-of-Heuristic-HIDS"><a href="#Signature-of-Heuristic-HIDS" class="headerlink" title="Signature of Heuristic HIDS"></a>Signature of Heuristic HIDS</h2><ul>
 <li>Using database of<ul>
@@ -816,7 +824,9 @@
 </li>
 </ul>
 </li>
-<li><img src="https://i.imgur.com/gmjnQoT.png" width="60%"></li>
+<li><img src="https://i.imgur.com/gmjnQoT.png" width="60%"/>
+
+</li>
 </ul>
 <h1 id="Network-based-intrusion-detection"><a href="#Network-based-intrusion-detection" class="headerlink" title="Network-based intrusion detection"></a>Network-based intrusion detection</h1><ul>
 <li>Difference between NIDS and HIDS<ul>
@@ -846,9 +856,12 @@
 <li>Pros: <strong>more efficient</strong>, doesn&#39;t contribute to packet delay</li>
 </ul>
 </li>
-<li><img src="https://i.imgur.com/Voj6A8Z.png" width="60%"></li>
+<li><img src="https://i.imgur.com/Voj6A8Z.png" width="60%"/>
+
+</li>
 </ul>
-<h2 id="NIDS-Sensor-Deployment"><a href="#NIDS-Sensor-Deployment" class="headerlink" title="NIDS Sensor Deployment"></a>NIDS Sensor Deployment</h2><p><img src="https://i.imgur.com/XKd9cMc.png" width="60%"></p>
+<h2 id="NIDS-Sensor-Deployment"><a href="#NIDS-Sensor-Deployment" class="headerlink" title="NIDS Sensor Deployment"></a>NIDS Sensor Deployment</h2><img src="https://i.imgur.com/XKd9cMc.png" width="60%"/>
+
 <h1 id="Distributed-or-hybrid-intrusion-detection"><a href="#Distributed-or-hybrid-intrusion-detection" class="headerlink" title="Distributed or hybrid intrusion detection"></a>Distributed or hybrid intrusion detection</h1><ul>
 <li>Due to two key problems confronting IDSs<ul>
 <li>These tools <strong>may not recognize new threats</strong> or modifications of existing threats</li>
@@ -884,7 +897,8 @@
 <li>If compromised, could be used to initiate attacks on other systems</li>
 </ul>
 </li>
-<li><img src="https://i.imgur.com/706SH8j.png" width="60%"></li>
+<li><img src="https://i.imgur.com/706SH8j.png" width="60%"/>
+</li>
 </ul>
 
       
@@ -1027,7 +1041,9 @@
 <li>High enough to keep the known TCP connections table filled</li>
 </ul>
 </li>
-<li><img src="https://i.imgur.com/Ux7iT2k.png" width="60%"></li>
+<li><img src="https://i.imgur.com/Ux7iT2k.png" width="60%"/>
+
+</li>
 </ul>
 <h1 id="Flooding-Attacks"><a href="#Flooding-Attacks" class="headerlink" title="Flooding Attacks"></a>Flooding Attacks</h1><ul>
 <li>Classified based on network protocols</li>
@@ -1091,7 +1107,9 @@
 <li><strong>Legitimate incoming calls are not allowed</strong></li>
 </ul>
 </li>
-<li><img src="https://i.imgur.com/kCFxdBZ.png" width="60%"></li>
+<li><img src="https://i.imgur.com/kCFxdBZ.png" width="60%"/>
+
+</li>
 </ul>
 <h2 id="HTTP-based-Attacks-HTTP-Flood"><a href="#HTTP-based-Attacks-HTTP-Flood" class="headerlink" title="HTTP-based Attacks: HTTP Flood"></a>HTTP-based Attacks: HTTP Flood</h2><ul>
 <li>Bombards Web servers with HTTP requests</li>
@@ -1119,7 +1137,8 @@
 <li>Reflection attacks</li>
 <li>Amplification attacks</li>
 </ul>
-<h2 id="Reflection-Attacks"><a href="#Reflection-Attacks" class="headerlink" title="Reflection Attacks"></a>Reflection Attacks</h2><p><img src="https://i.imgur.com/NujYhcG.png" width="60%"></p>
+<h2 id="Reflection-Attacks"><a href="#Reflection-Attacks" class="headerlink" title="Reflection Attacks"></a>Reflection Attacks</h2><img src="https://i.imgur.com/NujYhcG.png" width="60%"/>
+
 <h2 id="Amplification-Attacks"><a href="#Amplification-Attacks" class="headerlink" title="Amplification Attacks"></a>Amplification Attacks</h2><ul>
 <li>Directing the request to the broadcast address for some network<ul>
 <li>But, TCP services cannot be used for this attack</li>
@@ -1137,7 +1156,8 @@
 <li>Amplification: small request -&gt; larger response</li>
 <li>Targeting servers that support the <strong>extended DNS features</strong></li>
 </ul>
-<h1 id="Defenses-Against-DoS-Attacks"><a href="#Defenses-Against-DoS-Attacks" class="headerlink" title="Defenses Against DoS Attacks"></a>Defenses Against DoS Attacks</h1><p><img src="https://i.imgur.com/z8nlErd.png" width="60%"></p>
+<h1 id="Defenses-Against-DoS-Attacks"><a href="#Defenses-Against-DoS-Attacks" class="headerlink" title="Defenses Against DoS Attacks"></a>Defenses Against DoS Attacks</h1><img src="https://i.imgur.com/z8nlErd.png" width="60%"/>
+
 <h2 id="DoS-Attack-Prevention-Flooding-Attacks"><a href="#DoS-Attack-Prevention-Flooding-Attacks" class="headerlink" title="DoS Attack Prevention: Flooding Attacks"></a>DoS Attack Prevention: Flooding Attacks</h2><ul>
 <li>Block spoofed src. addr.</li>
 <li>Filters may be used to ensure path back to the claimed src. addr.<ul>
@@ -1147,8 +1167,8 @@
 <li>Imposing limits on the rate of some specific types of packets</li>
 </ul>
 <h2 id="DoS-Attack-Prevention-SYN-Spoofing-Attacks"><a href="#DoS-Attack-Prevention-SYN-Spoofing-Attacks" class="headerlink" title="DoS Attack Prevention: SYN Spoofing Attacks"></a>DoS Attack Prevention: SYN Spoofing Attacks</h2><ul>
-<li><a href="https://zh.wikipedia.org/wiki/SYN_cookie" target="_blank" rel="external">SYN cookie</a><ul>
-<li>Cons: <a href="https://zh.wikipedia.org/wiki/SYN_cookie#%E7%BC%BA%E9%99%B7" target="_blank" rel="external">https://zh.wikipedia.org/wiki/SYN_cookie#%E7%BC%BA%E9%99%B7</a></li>
+<li><a href="https://zh.wikipedia.org/wiki/SYN_cookie" target="_blank" rel="noopener">SYN cookie</a><ul>
+<li>Cons: <a href="https://zh.wikipedia.org/wiki/SYN_cookie#%E7%BC%BA%E9%99%B7" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/SYN_cookie#%E7%BC%BA%E9%99%B7</a></li>
 </ul>
 </li>
 <li>Selective drop: dropping an entry for an incomplete connection from the TCP connections table when it overflows</li>
@@ -1546,7 +1566,7 @@
 </li>
 <li>Bloom filter: a space-efficient probabilistic data structure<ul>
 <li>Used to test whether an element is a member of a set</li>
-<li>A bit array of _m_ bits, and _k_ different hash functions</li>
+<li>A bit array of <em>m</em> bits, and <em>k</em> different hash functions</li>
 <li>But, <strong>false positive matches are possible</strong></li>
 <li>Space adventage: do not store the data items</li>
 </ul>
