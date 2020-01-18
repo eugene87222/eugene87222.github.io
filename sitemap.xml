@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://eugene87222.github.io/about/index.html</loc>
+    
+    <lastmod>2020-01-18T03:39:06.256Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://eugene87222.github.io/2018/11/19/20181119-data-analysis-note/</loc>
     
     <lastmod>2020-01-18T03:33:00.277Z</lastmod>
@@ -467,13 +474,6 @@
     <loc>http://eugene87222.github.io/2018/03/18/20180318-test/</loc>
     
     <lastmod>2020-01-18T03:03:18.807Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/about/index.html</loc>
-    
-    <lastmod>2020-01-15T04:05:55.680Z</lastmod>
     
   </url>
   
