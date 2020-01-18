@@ -212,7 +212,7 @@ span.exturl {
 a:hover,
 span.exturl:hover {
   border-bottom-color: #222;
-  color: #222;
+  color: #fc6423;
 }
 iframe,
 img,
@@ -884,8 +884,8 @@ pre .javascript .function {
   margin-right: 0;
 }
 .pagination .page-number.current {
-  background: #ccc;
-  border-top-color: #ccc;
+  background: #999;
+  border-top-color: #999;
   color: #fff;
 }
 @media (max-width: 767px) {
@@ -1186,7 +1186,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #9c4f41;
+  background: #0626a8;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -1555,18 +1555,10 @@ pre .javascript .function {
   margin-top: 40px;
   text-align: center;
 }
-.use-motion .post-block,
-.use-motion .pagination,
-.use-motion .comments {
-  opacity: 0;
-}
 .use-motion .post-header {
   opacity: 0;
 }
 .use-motion .post-body {
-  opacity: 0;
-}
-.use-motion .collection-header {
   opacity: 0;
 }
 .posts-collapse {
@@ -1879,7 +1871,7 @@ pre .javascript .function {
 }
 .post-nav-item a:hover {
   border-bottom: none;
-  color: #222;
+  color: #fc6423;
 }
 .post-nav-item a:active {
   top: 2px;
@@ -2169,7 +2161,7 @@ ul.breadcrumb li + li:last-child {
   margin: 10px;
 }
 .tag-cloud a:hover {
-  color: #222 !important;
+  color: #fc6423 !important;
 }
 .header {
   margin: 0 auto;
