@@ -223,7 +223,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-18 09:25:53" itemprop="dateModified" datetime="2019-08-18T09:25:53+08:00">2019-08-18</time>
+                <time title="Modified: 2020-01-18 11:12:19" itemprop="dateModified" datetime="2020-01-18T11:12:19+08:00">2020-01-18</time>
               </span>
 
           
@@ -237,213 +237,15 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Ch2-Cryptographic-Tools"><a href="#Ch2-Cryptographic-Tools" class="headerlink" title="Ch2. Cryptographic Tools"></a>Ch2. Cryptographic Tools</h1><hr>
-<h1 id="Confidentiality-with-Symmetric-Encryption"><a href="#Confidentiality-with-Symmetric-Encryption" class="headerlink" title="Confidentiality with Symmetric Encryption"></a>Confidentiality with Symmetric Encryption</h1><h2 id="Symmetric-Encryption"><a href="#Symmetric-Encryption" class="headerlink" title="Symmetric Encryption"></a>Symmetric Encryption</h2><ul>
-<li>Universal technique for providing confidentiality for transmitted of stored data</li>
-<li><strong>Single-key encryption</strong></li>
-</ul>
-<h2 id="2-Requirements"><a href="#2-Requirements" class="headerlink" title="2 Requirements"></a>2 Requirements</h2><ul>
-<li>Strong encryption algo.</li>
-<li>Sender and receiver must have obtained copies of the key in a secure fashion and must keep the key secret</li>
-</ul>
-<p><img src="https://i.imgur.com/1QCQHqw.jpg" alt=""></p>
-<h2 id="Attacking"><a href="#Attacking" class="headerlink" title="Attacking"></a>Attacking</h2><ul>
-<li>Cryptanalytic attacks<ul>
-<li>Rely on<br>1. nature of algo.<br>2. <strong>general characteristics</strong> of plaintext<br>3. sample plaintext-ciphertext pairs</li>
-<li><strong>Exploit the characteristics</strong> of the algo. to deduce a specific plaintext or key</li>
-</ul>
-</li>
-<li>Brute-force attacks<ul>
-<li>On average half of all possible keys must be tried to achieve success</li>
-<li>Knowledge about the expected plaintext!</li>
-</ul>
-</li>
-</ul>
-<h2 id="Symmetric-Block-Excryption-Algo"><a href="#Symmetric-Block-Excryption-Algo" class="headerlink" title="Symmetric Block Excryption Algo."></a>Symmetric Block Excryption Algo.</h2><p><img src="https://i.imgur.com/btkbqin.jpg" alt=""></p>
-<ul>
-<li>DES Encryption Standard<ul>
-<li>Key length too short<ul>
-<li>56 bits -&gt; 2^56^ = 7.2 x 10^16^ possible keys (很快就破了)</li>
-</ul>
-</li>
-<li>e.g. data encryption algo.</li>
-</ul>
-</li>
-<li>Triple DES (3DES)<ul>
-<li>Repeats basic DES algo. 3 times using 2 or 3 unique keys<br>(key size: 112 or 168 bits)</li>
-<li>Key length 比較長</li>
-<li>Underlying algo. is tje same as DES</li>
-<li>Drawbacks<ul>
-<li>Not effetient (3 次 DES，瘋子)</li>
-<li>64-bit block size -&gt; not effecient / secure</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Advanced Encryption Standard (AES)<ul>
-<li>Widely available in commercial products</li>
-<li>128-bit data and 128 / 192 / 256 bit keys</li>
-</ul>
-</li>
-</ul>
-<p><img src="https://i.imgur.com/ZQnCJL4.jpg" alt=""></p>
-<h2 id="Practical-Security-Issues"><a href="#Practical-Security-Issues" class="headerlink" title="Practical Security Issues"></a>Practical Security Issues</h2><ul>
-<li>Symmetric encryption: applied to a unit of data larger than a single 64-bit or 128-bit block<br>e.g., E-mail messages, network packets, database records</li>
-<li>Simplest approach: <strong>electronic codebook (ECB)</strong><ul>
-<li>Multiple-block encryption</li>
-<li>Each block of plaintext is encrypted using the same key</li>
-<li><img src="https://i.imgur.com/ChX8spK.jpg" alt=""></li>
-</ul>
-</li>
-<li>Issue: cryptanalysts may <strong>exploit regularities</strong> in the plaintext</li>
-<li>How to overcome the weakness of ECB<ul>
-<li><strong>Cipher Block Chaining (CBC)</strong></li>
-<li><img src="https://i.imgur.com/7bQF42O.jpg" alt=""></li>
-</ul>
-</li>
-</ul>
-<h2 id="Block-Stream-Ciphers"><a href="#Block-Stream-Ciphers" class="headerlink" title="Block / Stream Ciphers"></a>Block / Stream Ciphers</h2><ul>
-<li>Block Cipher<ul>
-<li>Can reuse key</li>
-<li>More common</li>
-<li>Usage: file transfer, e-mail, database</li>
-</ul>
-</li>
-<li>Stream Cipher<ul>
-<li>Faster (XOR), less code</li>
-<li>Usage: communication</li>
-</ul>
-</li>
-</ul>
-<h1 id="Meseage-Authentication-and-Hash-Function"><a href="#Meseage-Authentication-and-Hash-Function" class="headerlink" title="Meseage Authentication and Hash Function"></a>Meseage Authentication and Hash Function</h1><h2 id="2-Major-Aspects"><a href="#2-Major-Aspects" class="headerlink" title="2 Major Aspects"></a>2 Major Aspects</h2><ul>
-<li>Message content: not altered</li>
-<li>Message source: authentic</li>
-</ul>
-<h2 id="Another-Aspect"><a href="#Another-Aspect" class="headerlink" title="Another Aspect"></a>Another Aspect</h2><ul>
-<li>Messafe timeliness / sequence: not artificially delayed or replayed</li>
-</ul>
-<h2 id="Can-we-use-symmetric-encryption"><a href="#Can-we-use-symmetric-encryption" class="headerlink" title="Can we use symmetric encryption ?"></a>Can we use symmetric encryption ?</h2><ul>
-<li>Not necessary. content may not need to be encrpyted</li>
-</ul>
-<h2 id="Message-Authentication-w-o-Encrpytion-gt-Auth-tag"><a href="#Message-Authentication-w-o-Encrpytion-gt-Auth-tag" class="headerlink" title="Message Authentication w/o Encrpytion -&gt; Auth. tag"></a>Message Authentication w/o Encrpytion -&gt; <strong>Auth. tag</strong></h2><ul>
-<li>Message authentication code (MAC)<ul>
-<li>Use a secret key to generate small block of data</li>
-<li>Assumption: two communicating parties share the secret key</li>
-<li><img src="https://i.imgur.com/hRSFsdZ.jpg" alt=""></li>
-<li>Does message authentication really need encrpytion of the message ?<ul>
-<li><strong>NO!!</strong></li>
-<li>不需要 reversible</li>
-<li>Only need a way to generate a <strong>tag which can verify message</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>One-way hash function<ul>
-<li>The hash value ensures only unaltered contents. How about authentic source ?</li>
-</ul>
-</li>
-</ul>
-<h2 id="Hash-Function-w-Symmetric-Encryption"><a href="#Hash-Function-w-Symmetric-Encryption" class="headerlink" title="Hash Function w/ Symmetric Encryption"></a>Hash Function w/ Symmetric Encryption</h2><p><img src="https://i.imgur.com/zV6G66Q.jpg" alt=""></p>
-<h2 id="Hash-Function-w-Public-key-Encryption"><a href="#Hash-Function-w-Public-key-Encryption" class="headerlink" title="Hash Function w/ Public-key Encryption"></a>Hash Function w/ Public-key Encryption</h2><p><img src="https://i.imgur.com/ZEUIfRY.jpg" alt=""></p>
-<h2 id="Hash-Function-w-o-Encryption-Keyed-Hash-MAC"><a href="#Hash-Function-w-o-Encryption-Keyed-Hash-MAC" class="headerlink" title="Hash Function w/o Encryption: Keyed Hash MAC"></a>Hash Function w/o Encryption: Keyed Hash MAC</h2><p><img src="https://i.imgur.com/poIeWKd.jpg" alt=""></p>
-<h2 id="Secure-Hash-Functions"><a href="#Secure-Hash-Functions" class="headerlink" title="Secure Hash Functions"></a>Secure Hash Functions</h2><ul>
-<li>Easy to compute<ul>
-<li>Making both hardware and software implementations practical</li>
-</ul>
-</li>
-<li>One-way (pre-image resistant)<ul>
-<li>For any given code <em>h</em>, it is <strong>computationally infeasible</strong> to find <em>x</em> such that <strong><em>H(x) = h</em></strong></li>
-</ul>
-</li>
-<li>Second pre-image (weak collision) resistant<ul>
-<li><strong>For any given block <em>x</em></strong>, it is computationally infeasible to find <em>y != x</em> with <em>H(y) = H(x)</em></li>
-</ul>
-</li>
-<li>Collision (strong collision) resistant<ul>
-<li>It is computationally infeasible to find <strong>any pair <em>(x, y)</em></strong> such that <em>H(y) = H(x)</em></li>
-</ul>
-</li>
-</ul>
-<h2 id="Security-of-Hash-Functions"><a href="#Security-of-Hash-Functions" class="headerlink" title="Security of Hash Functions"></a>Security of Hash Functions</h2><ul>
-<li>2 attack approaches<ul>
-<li>Cryptanalysis<br>exploits logical weaknesses in algo.</li>
-<li>Brute-force<br>depends solely on the length of the hash code</li>
-</ul>
-</li>
-<li>Security strength against brute-force attacks<ul>
-<li>Preimage resistant: 2^n^</li>
-<li>Second preimage resistant: 2^n^</li>
-<li>Collision resistant: 2^n/2^</li>
-</ul>
-</li>
-<li>Most widely used hash algo.: Secure Hash Algo. (SHA)</li>
-<li>Applications of hash functions<ul>
-<li>Message authentication</li>
-<li>Digital signature</li>
-<li>Passwords</li>
-<li>Intrusion detection</li>
-</ul>
-</li>
-</ul>
-<h1 id="Public-Key-Encryption"><a href="#Public-Key-Encryption" class="headerlink" title="Public-Key Encryption"></a>Public-Key Encryption</h1><p>Asymmetric algo.
-Based on mathematical functions</p>
-<h2 id="3-Common-Misconceptions-about-Public-key-Encryption"><a href="#3-Common-Misconceptions-about-Public-key-Encryption" class="headerlink" title="3 Common Misconceptions about Public-key Encryption"></a>3 Common Misconceptions about Public-key Encryption</h2><ul>
-<li>More secure than symmetric ones</li>
-<li>A general purpose technique that has made symmetric ones obsolete</li>
-<li>Key distribution is trivial</li>
-</ul>
-<h2 id="Requirements-for-Public-key-Cryptosystems"><a href="#Requirements-for-Public-key-Cryptosystems" class="headerlink" title="Requirements for Public-key Cryptosystems"></a>Requirements for Public-key Cryptosystems</h2><ul>
-<li>Computationally easy<ul>
-<li>To create key pairs</li>
-<li>For sender knowing public key to encrypt messages</li>
-<li>For receiver knowing private key to decrypt ciphertext</li>
-</ul>
-</li>
-<li>Computationally infeasible for opponebt knowing public key<ul>
-<li>To determine private key</li>
-<li>To recover original message which is encrypted by public key</li>
-</ul>
-</li>
-</ul>
-<h2 id="Encryption-Algo-and-Applications"><a href="#Encryption-Algo-and-Applications" class="headerlink" title="Encryption Algo. and Applications"></a>Encryption Algo. and Applications</h2><p><img src="https://i.imgur.com/bp1McGw.jpg" alt=""></p>
-<ul>
-<li>RSA: widely acepted and implemented</li>
-<li>Diffie-Hellman</li>
-<li>Digital Signature Standard: 就只能處理 digital signature</li>
-<li>Elliptic Curve: offer equal security for a far smaller bit size</li>
-</ul>
-<h1 id="Digital-Signatures-and-Key-Management"><a href="#Digital-Signatures-and-Key-Management" class="headerlink" title="Digital Signatures and Key Management"></a>Digital Signatures and Key Management</h1><h2 id="Digital-Signature"><a href="#Digital-Signature" class="headerlink" title="Digital Signature"></a>Digital Signature</h2><h2 id="Public-key-Certificates-secure-distribution-of-public-keys"><a href="#Public-key-Certificates-secure-distribution-of-public-keys" class="headerlink" title="Public-key Certificates: secure distribution of public keys"></a>Public-key Certificates: secure distribution of public keys</h2><ul>
-<li>Public key distribution<ul>
-<li>Any person can release his / her public key</li>
-<li>But, anyone can forge such a public announcement</li>
-</ul>
-</li>
-<li>Solution: public-key certificate<ul>
-<li>Certificate: a public key + a user ID of the key owner</li>
-<li>The whole block signed by a trusted third party, CA (Certificate Authority)</li>
-<li>Certificate also includes CA info. and validity period</li>
-</ul>
-</li>
-<li>X.509 standard</li>
-<li><img src="https://i.imgur.com/TkRsil3.jpg" alt=""></li>
-</ul>
-<h2 id="Symmetric-Key-Exchange-using-Public-key-Encryption-temporary-key-creation-for-message-encryption"><a href="#Symmetric-Key-Exchange-using-Public-key-Encryption-temporary-key-creation-for-message-encryption" class="headerlink" title="Symmetric Key Exchange using Public-key Encryption: temporary key creation for message encryption"></a>Symmetric Key Exchange using Public-key Encryption: temporary key creation for message encryption</h2><ul>
-<li>Diffie-Hellman key exchange<ul>
-<li>No authentication of two communicating partners</li>
-</ul>
-</li>
-</ul>
-<h2 id="Digital-Envelopes-distribution-of-secret-keys"><a href="#Digital-Envelopes-distribution-of-secret-keys" class="headerlink" title="Digital Envelopes: distribution of secret keys"></a>Digital Envelopes: distribution of secret keys</h2><p><img src="https://i.imgur.com/ty5DUpW.jpg" alt="">
-Can also be used to deliver a symmetric key only</p>
-<h1 id="Random-and-Pseudorandom-Numbers"><a href="#Random-and-Pseudorandom-Numbers" class="headerlink" title="Random and Pseudorandom Numbers"></a>Random and Pseudorandom Numbers</h1><h2 id="2-Distinct-Requirements-of-Random-Numbers"><a href="#2-Distinct-Requirements-of-Random-Numbers" class="headerlink" title="2 Distinct Requirements of Random Numbers"></a>2 Distinct Requirements of Random Numbers</h2><ul>
-<li>Randomness<ul>
-<li>Uniform distribution (easy to verify)</li>
-<li>Independence (difficult to verify)</li>
-</ul>
-</li>
-<li>Unpredictability</li>
-</ul>
-
+           
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/06/24/20190624-ComputerSecurity-note-ch2/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -493,7 +295,7 @@ Can also be used to deliver a symmetric key only</p>
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-08-18 09:25:53" itemprop="dateModified" datetime="2019-08-18T09:25:53+08:00">2019-08-18</time>
+                <time title="Modified: 2020-01-18 11:12:16" itemprop="dateModified" datetime="2020-01-18T11:12:16+08:00">2020-01-18</time>
               </span>
 
           
@@ -507,93 +309,15 @@ Can also be used to deliver a symmetric key only</p>
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Ch1-Overview"><a href="#Ch1-Overview" class="headerlink" title="Ch1. Overview"></a>Ch1. Overview</h1><hr>
-<h1 id="3-Key"><a href="#3-Key" class="headerlink" title="3 Key"></a>3 Key</h1><h2 id="Confidentiality"><a href="#Confidentiality" class="headerlink" title="Confidentiality"></a>Confidentiality</h2><p>Assure that private or confidential info is not disclosed to unauthorized individuals
-Privacy: Assure that individuals control or influence what info related to them may be collectd and stored</p>
-<h2 id="Integrity"><a href="#Integrity" class="headerlink" title="Integrity"></a>Integrity</h2><p>Data integrity: info are <strong>changed only in a specified / authorized manner</strong>
-System integrity: system performs well in an unimpaired manner</p>
-<h2 id="Availability"><a href="#Availability" class="headerlink" title="Availability"></a>Availability</h2><p>Assure that system works promptly and service is not denied to authorized users</p>
-<h1 id="Other-2"><a href="#Other-2" class="headerlink" title="Other 2"></a>Other 2</h1><h2 id="Authenticity"><a href="#Authenticity" class="headerlink" title="Authenticity"></a>Authenticity</h2><p>Property is genuine and able to be verified and trusted</p>
-<h2 id="Accountability"><a href="#Accountability" class="headerlink" title="Accountability"></a>Accountability</h2><p>Requirement for actions of an entity to <strong>be traced</strong> uniquely to that entity</p>
-<h1 id="Model-of-Computer-Security"><a href="#Model-of-Computer-Security" class="headerlink" title="Model of Computer Security"></a>Model of Computer Security</h1><h2 id="Vulnerability"><a href="#Vulnerability" class="headerlink" title="Vulnerability"></a>Vulnerability</h2><p>Weakness</p>
-<ul>
-<li>Corrupt: loss of integrity</li>
-<li>Leaky: loss of confidentiality</li>
-<li>Unavailability or very slow</li>
-</ul>
-<p>Threat
-<strong>Capable of exploiting vulnerability</strong></p>
-<p>Attack</p>
-<ul>
-<li>Passive: make use of info, but doesn&#39;t affect system resources</li>
-<li>Active: alter system resources</li>
-<li>Inside: by an authorized user (using in a way not approved)</li>
-<li>Outside: by an unauthorized user</li>
-</ul>
-<p>Countermeasures</p>
-<h1 id="Security-Concepts-Relationships"><a href="#Security-Concepts-Relationships" class="headerlink" title="Security Concepts / Relationships"></a>Security Concepts / Relationships</h1><p><img src="https://i.imgur.com/ff0Bwch.jpg" alt=""></p>
-<h1 id="Threats-Attacks"><a href="#Threats-Attacks" class="headerlink" title="Threats / Attacks"></a>Threats / Attacks</h1><table style="">
-    <tr>
-        <th style="font-weight: normal;">Threat Consequence</th>
-        <th style="font-weight: normal;">Threat Action (Attack)</th>
-    </tr>
-    <tr>
-        <th style="font-weight: lighter;">Unauthorized Disclosure<br>- threats to confidnentiality</th>
-        <th style="font-weight: lighter;">1. Explosure<br>2. Interception<br>3. Inference (推斷)<br>4. Intrusion</th>
-    </tr>
-    <tr>
-        <th style="font-weight: lighter;">Deception<br>- threats to integrity</th>
-        <th style="font-weight: lighter;">1. Masquerade<br>2. Falsification<br>3. Repudiation (否認)</th>
-    </tr>
-    <tr>
-        <th style="font-weight: lighter;">Disruption<br>- threats to availability / system integrity</th>
-        <th style="font-weight: lighter;">1. Incapacitation<br>2. Corruption: alters system operation<br>3. Obstruction</th>
-    </tr>
-    <tr>
-        <th style="font-weight: lighter;">Usurpation (篡奪)<br>- threats to system integrity</th>
-        <th style="font-weight: lighter;">1. Misappropriation<br>2. Misuse</th>
-    </tr>
-</table>
-
-<h1 id="Security-Functional-Requirements"><a href="#Security-Functional-Requirements" class="headerlink" title="Security Functional Requirements"></a>Security Functional Requirements</h1><h2 id="Technical-Measures"><a href="#Technical-Measures" class="headerlink" title="Technical Measures"></a>Technical Measures</h2><h2 id="Management-Controls-Procedures"><a href="#Management-Controls-Procedures" class="headerlink" title="Management Controls / Procedures"></a>Management Controls / Procedures</h2><h2 id="Overlapping-Technical-Management"><a href="#Overlapping-Technical-Management" class="headerlink" title="Overlapping Technical / Management"></a>Overlapping Technical / Management</h2><h1 id="Fundamental-Security-Design"><a href="#Fundamental-Security-Design" class="headerlink" title="Fundamental Security Design "></a><a href="http://www.informit.com/articles/article.aspx?p=30487&seqNum=2" target="_blank" rel="noopener">Fundamental Security Design </a></h1><h2 id="Economy-of-Mechanisnm"><a href="#Economy-of-Mechanisnm" class="headerlink" title="Economy of Mechanisnm"></a>Economy of Mechanisnm</h2><p>Design should be as simple as possible</p>
-<h2 id="Fail-safe-Defaults"><a href="#Fail-safe-Defaults" class="headerlink" title="Fail-safe Defaults"></a>Fail-safe Defaults</h2><p>Access decisions should be based on permission rather than exclusion</p>
-<h2 id="Complete-Mediation"><a href="#Complete-Mediation" class="headerlink" title="Complete Mediation"></a>Complete Mediation</h2><p>Every access must be check against the access control mechanism</p>
-<h2 id="Open-Design"><a href="#Open-Design" class="headerlink" title="Open Design"></a>Open Design</h2><p>就把設計公開</p>
-<h2 id="Separation-of-Privilege"><a href="#Separation-of-Privilege" class="headerlink" title="Separation of Privilege"></a>Separation of Privilege</h2><p>大家的權限不一樣</p>
-<h2 id="Least-Privilege"><a href="#Least-Privilege" class="headerlink" title="Least Privilege"></a>Least Privilege</h2><h2 id="Least-Common-Mechanism"><a href="#Least-Common-Mechanism" class="headerlink" title="Least Common Mechanism"></a>Least Common Mechanism</h2><h2 id="Psychological-Acceptability"><a href="#Psychological-Acceptability" class="headerlink" title="Psychological Acceptability"></a>Psychological Acceptability</h2><p>Should not interfere unduly with the work of users or hinder the usability or accessibility of resources</p>
-<h2 id="Isolation"><a href="#Isolation" class="headerlink" title="Isolation"></a>Isolation</h2><h2 id="Encapsulation"><a href="#Encapsulation" class="headerlink" title="Encapsulation"></a>Encapsulation</h2><p>A specific form of isolation based on object-oriented functionality</p>
-<h2 id="Modularity"><a href="#Modularity" class="headerlink" title="Modularity"></a>Modularity</h2><p>就包成 module</p>
-<h2 id="Layering"><a href="#Layering" class="headerlink" title="Layering"></a>Layering</h2><p>Use of multiple,  overlapping protection approaches</p>
-<h2 id="Least-Astonishment"><a href="#Least-Astonishment" class="headerlink" title="Least Astonishment"></a>Least Astonishment</h2><h1 id="Attack-Surfaces"><a href="#Attack-Surfaces" class="headerlink" title="Attack Surfaces"></a>Attack Surfaces</h1><p><img src="https://i.imgur.com/EgglfHs.jpg" alt="">
-Make developers aware of where security mechanisms are required</p>
-<h1 id="Attack-Trees"><a href="#Attack-Trees" class="headerlink" title="Attack Trees"></a>Attack Trees</h1><ul>
-<li>Root: the attack goal</li>
-<li>Leaf: different ways to initial an attack</li>
-<li>Each node (other than a leaf): AND / OR node</li>
-</ul>
-<p>Why ?</p>
-<ul>
-<li>Effectively exploit the info available on attack pattern</li>
-<li>Document security attacks in a structured form that reveals key vulnerabilities</li>
-<li>Can know how to design system / coutnermeasures</li>
-</ul>
-<h1 id="Computer-Security-Strategy"><a href="#Computer-Security-Strategy" class="headerlink" title="Computer Security Strategy"></a>Computer Security Strategy</h1><h2 id="3-Aspects"><a href="#3-Aspects" class="headerlink" title="3 Aspects"></a>3 Aspects</h2><ul>
-<li>Specification / policy: what is the security scheme supposed to do ?</li>
-<li>Implementation / mechanisms: how to ?</li>
-<li>Correctness / assurance: does it work ?</li>
-</ul>
-<h2 id="Security-Policy"><a href="#Security-Policy" class="headerlink" title="Security Policy"></a>Security Policy</h2><ul>
-<li>A formal statement of rules and practices</li>
-<li>A security manager needs to consider<ul>
-<li><strong>value</strong> of assets being protected</li>
-<li><strong>vulnerabilities</strong> of the system</li>
-<li><strong>potential threats</strong> and the likehood of attacks</li>
-<li>trade-off: ease of use v.s. security</li>
-<li>trade-off: cost of security v.s. cost of failure and recovery</li>
-</ul>
-</li>
-</ul>
-<h2 id="Security-Implementation-Assurance"><a href="#Security-Implementation-Assurance" class="headerlink" title="Security Implementation / Assurance"></a>Security Implementation / Assurance</h2>
+           
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/06/24/20190624-ComputerSecurity-note-ch1/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -643,7 +367,7 @@ Make developers aware of where security mechanisms are required</p>
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-06-18 16:07:24" itemprop="dateModified" datetime="2019-06-18T16:07:24+08:00">2019-06-18</time>
+                <time title="Modified: 2020-01-18 11:12:13" itemprop="dateModified" datetime="2020-01-18T11:12:13+08:00">2020-01-18</time>
               </span>
 
           
@@ -657,223 +381,15 @@ Make developers aware of where security mechanisms are required</p>
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Conformity-Influencing-Behavior-從眾-影響行為"><a href="#Conformity-Influencing-Behavior-從眾-影響行為" class="headerlink" title="Conformity: Influencing Behavior 從眾: 影響行為"></a>Conformity: Influencing Behavior 從眾: 影響行為</h1><blockquote>
-<p>It were not best that we should all think alike; it is difference of opinion that makes horse races.<br>- Mark Twain</p>
-</blockquote>
-<h1 id="What-is-conformity-and-why-does-it-occur"><a href="#What-is-conformity-and-why-does-it-occur" class="headerlink" title="What is conformity, and why does it occur ?"></a>What is conformity, and why does it occur ?</h1><ul>
-<li>American culture<ul>
-<li>Stresses the importance of <strong>not conforming</strong></li>
-<li>Celebrates the rugged individualist</li>
-</ul>
-</li>
-<li>Conformity 從眾<ul>
-<li><strong>A change in one&#39;s behavior due to the real or imagined influence of other people</strong></li>
-</ul>
-</li>
-</ul>
-<h1 id="How-does-informational-social-influence-motivate-people-to-conform"><a href="#How-does-informational-social-influence-motivate-people-to-conform" class="headerlink" title="How does informational social influence motivate people to conform ?"></a>How does informational social influence motivate people to conform ?</h1><h2 id="Informational-social-influence-訊息性社會影響-the-need-to-know-what-is-quot-right-quot"><a href="#Informational-social-influence-訊息性社會影響-the-need-to-know-what-is-quot-right-quot" class="headerlink" title="Informational social influence 訊息性社會影響: the need to know what is &quot;right&quot;"></a>Informational social influence 訊息性社會影響: the need to know what is &quot;right&quot;</h2><ul>
-<li>Informational social influence<ul>
-<li>The influence of other people that leads us to conform because we see them as a <strong>source of information</strong> to guide our behavior</li>
-<li>We conform because we believe that others&#39; interpretation of an ambiguous situation is <strong>more correct</strong> than ours and will help us choose an appropriate course of action</li>
-</ul>
-</li>
-</ul>
-<h2 id="Private-acceptance-私下接納"><a href="#Private-acceptance-私下接納" class="headerlink" title="Private acceptance 私下接納"></a>Private acceptance 私下接納</h2><ul>
-<li>Conforming to other people&#39;s behavior out of a genuine belief that what they are doing or saying is right</li>
-<li>Informational social influence often results in private acceptance</li>
-</ul>
-<h2 id="Public-compliance-公開順從"><a href="#Public-compliance-公開順從" class="headerlink" title="Public compliance 公開順從"></a>Public compliance 公開順從</h2><ul>
-<li>Conforming to other people&#39;s behavior publicly <strong>without necessarily believing in what we are doing or saying</strong></li>
-</ul>
-<h2 id="Conformity-and-task-importance"><a href="#Conformity-and-task-importance" class="headerlink" title="Conformity and task importance"></a>Conformity and task importance</h2><ul>
-<li>Eyewitness conformity when picking &quot;perpetrators&quot; 犯罪者 out of police lineups</li>
-<li>Manipulate importance of task<ul>
-<li>High importance: expect to receive $20 for accurate identification, used to develop real task</li>
-<li>Low importance: just another PSYC experiment</li>
-<li>Confederates gave incorrect answers</li>
-</ul>
-</li>
-<li><strong>More conformity when important</strong></li>
-</ul>
-<h2 id="When-informational-conformity-backfires-當訊息性遵從引發逆火"><a href="#When-informational-conformity-backfires-當訊息性遵從引發逆火" class="headerlink" title="When informational conformity backfires 當訊息性遵從引發逆火"></a>When informational conformity backfires 當訊息性遵從引發逆火</h2><ul>
-<li>Contagion 心理傳染</li>
-<li>Mass psychogenic illness 集體心因性疾病<ul>
-<li>The occurrence, in a group of people, of <strong>similar physical symptoms with no known physical cause</strong></li>
-</ul>
-</li>
-</ul>
-<h2 id="Mass-psychogenic-illness-and-other-forms-of-conformity"><a href="#Mass-psychogenic-illness-and-other-forms-of-conformity" class="headerlink" title="Mass psychogenic illness and other forms of conformity"></a>Mass psychogenic illness and other forms of conformity</h2><ul>
-<li>Mass media<ul>
-<li>Plays a powerful role in spreading psychogenic illness</li>
-<li><strong>Has power to stop contagion</strong></li>
-</ul>
-</li>
-</ul>
-<h2 id="When-will-people-conform-to-informational-social-influence"><a href="#When-will-people-conform-to-informational-social-influence" class="headerlink" title="When will people conform to informational social influence ?"></a>When will people conform to informational social influence ?</h2><ul>
-<li>When the situation is<ul>
-<li><strong>ambiguous</strong><ul>
-<li>Ambiguity is the most crucial variable</li>
-</ul>
-</li>
-<li><strong>a crisis</strong><ul>
-<li>Need to act immediately</li>
-<li>May be scared, panicked</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>When other people are experts</li>
-</ul>
-<h2 id="Informational-social-influence-and-emergencies"><a href="#Informational-social-influence-and-emergencies" class="headerlink" title="Informational social influence and emergencies"></a>Informational social influence and emergencies</h2><ul>
-<li>Emergency = crisis situation</li>
-</ul>
-<h2 id="To-resist-informational-social-influence"><a href="#To-resist-informational-social-influence" class="headerlink" title="To resist informational social influence"></a>To resist informational social influence</h2><ul>
-<li><strong>Ask yourself critical questions</strong></li>
-</ul>
-<h1 id="How-does-normative-social-influence-motivate-people-to-conform"><a href="#How-does-normative-social-influence-motivate-people-to-conform" class="headerlink" title="How does normative social influence motivate people to conform ?"></a>How does normative social influence motivate people to conform ?</h1><h2 id="Normative-social-influence-規範性社會影響-the-need-to-be-accepted"><a href="#Normative-social-influence-規範性社會影響-the-need-to-be-accepted" class="headerlink" title="Normative social influence 規範性社會影響: the need to be accepted"></a>Normative social influence 規範性社會影響: the need to be accepted</h2><ul>
-<li>Humans are a social species</li>
-<li>Other people are important to our well-being</li>
-<li>Normative social influence<ul>
-<li>The influence of other people that leads us to conform <strong>in order to be liked and accepted by them</strong>; this type of conformity results in public compliance with the group&#39;s beliefs and behaviors but not necessarily private acceptance of those beliefs and behaviors</li>
-</ul>
-</li>
-<li>Social norms 社會規範</li>
-</ul>
-<h2 id="Conformity-and-social-approval-從眾與社會認同"><a href="#Conformity-and-social-approval-從眾與社會認同" class="headerlink" title="Conformity and social approval 從眾與社會認同"></a>Conformity and social approval 從眾與社會認同</h2><ul>
-<li>Asch&#39;s line judgment studies<ul>
-<li><img src="https://i.imgur.com/5KFDBFJ.png" alt=""></li>
-</ul>
-</li>
-<li>Classic normative reasons for conforming<ul>
-<li>Don&#39;t want to feel peculiar</li>
-<li>Don&#39;t want to feel like a fool</li>
-<li>Belief that what others think is important, even if they are strangers</li>
-</ul>
-</li>
-</ul>
-<h2 id="Normative-social-influence"><a href="#Normative-social-influence" class="headerlink" title="Normative social influence"></a>Normative social influence</h2><ul>
-<li>Usually results in <strong>public compliance without private acceptance</strong><ul>
-<li>One goes along with the group even if he or she do not believe in the group&#39;s actions or think the group&#39;s action are wrong</li>
-</ul>
-</li>
-</ul>
-<h2 id="Sherif-39-s-and-Asch-39-s-studies-of-conformity-summary"><a href="#Sherif-39-s-and-Asch-39-s-studies-of-conformity-summary" class="headerlink" title="Sherif&#39;s and Asch&#39;s studies of conformity summary"></a>Sherif&#39;s and Asch&#39;s studies of conformity summary</h2><ul>
-<li>Sherif<ul>
-<li>Ambiguous stimuli</li>
-<li>Conformity occurred<ul>
-<li><strong>Private acceptance</strong><ul>
-<li>need to know <strong>what&#39;s right</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Asch<ul>
-<li>Unambiguous stimuli</li>
-<li>Conformity occurred<ul>
-<li><strong>Public compliance</strong><ul>
-<li>need to <strong>be accepted</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Conformity-and-brain-imaging-fMRI"><a href="#Conformity-and-brain-imaging-fMRI" class="headerlink" title="Conformity and brain imaging (fMRI)"></a>Conformity and brain imaging (fMRI)</h2><ul>
-<li>When participants conformed to group (gave incorrect answer)<ul>
-<li>Vision and perception areas active in brain</li>
-</ul>
-</li>
-<li>When participants disagreed (gave correct answer)<ul>
-<li>Different brain areas active<ul>
-<li>Amygdala 扁桃腺<ul>
-<li>Negative emotions</li>
-</ul>
-</li>
-<li>Right caudate(尾狀) nucleus<ul>
-<li>Modulating social behavior</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="The-importance-of-being-accurate-revisited"><a href="#The-importance-of-being-accurate-revisited" class="headerlink" title="The importance of being accurate revisited"></a>The importance of being accurate revisited</h2><ul>
-<li>What happens when it is important to people to be accurate ?<ul>
-<li>These people conform less to answers of the group that are obviously wrong</li>
-</ul>
-</li>
-<li>But they still conform sometimes</li>
-<li>Conformity can occur<ul>
-<li>Even when the group is wrong</li>
-<li>The correct answer is obvious</li>
-<li>There are strong incentives to be accurate</li>
-</ul>
-</li>
-<li>People find it difficult to risk social disapproval<ul>
-<li><strong>Even by strangers</strong></li>
-</ul>
-</li>
-</ul>
-<h2 id="Consequences-of-resisting-normative-social-influence"><a href="#Consequences-of-resisting-normative-social-influence" class="headerlink" title="Consequences of resisting normative social influence"></a>Consequences of resisting normative social influence</h2><h2 id="When-will-people-conform-to-normative-social-influence"><a href="#When-will-people-conform-to-normative-social-influence" class="headerlink" title="When will people conform to normative social influence ?"></a>When will people conform to normative social influence ?</h2><ul>
-<li>Social impact theory 社會衝擊論<ul>
-<li>The idea that conforming to social influence depends on<ul>
-<li>Strength<ul>
-<li>Importance of group to person</li>
-</ul>
-</li>
-<li>Immediacy 接近<ul>
-<li><strong>Closeness in time and space</strong></li>
-</ul>
-</li>
-<li>Number of people in the group</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="How-can-people-use-the-knowledge-of-social-influence-to-influence-others"><a href="#How-can-people-use-the-knowledge-of-social-influence-to-influence-others" class="headerlink" title="How can people use the knowledge of social influence to influence others ?"></a>How can people use the knowledge of social influence to influence others ?</h1><h2 id="Gender-differences-in-conformity"><a href="#Gender-differences-in-conformity" class="headerlink" title="Gender differences in conformity"></a>Gender differences in conformity</h2><ul>
-<li>Gender of the person conducting conformity studies makes a difference<ul>
-<li>Male researchers more likely than female researchers to find that men were less influenceable</li>
-</ul>
-</li>
-</ul>
-<h2 id="The-dark-side-of-social-influence-propaganda"><a href="#The-dark-side-of-social-influence-propaganda" class="headerlink" title="The dark side of social influence - propaganda"></a>The dark side of social influence - propaganda</h2><ul>
-<li>Propaganda 宣傳(政治、宗教)<ul>
-<li>Systematic attempts to manipulate thoughts and behavior of others</li>
-</ul>
-</li>
-<li>Informational social influence<ul>
-<li>Incorrect information<ul>
-<li>But builds in pre-existing beliefs</li>
-</ul>
-</li>
-<li>Normative social influence</li>
-</ul>
-</li>
-</ul>
-<h2 id="How-to-resist-inappropriate-normative-social-influence"><a href="#How-to-resist-inappropriate-normative-social-influence" class="headerlink" title="How to resist inappropriate normative social influence"></a>How to resist inappropriate normative social influence</h2><ul>
-<li>Be aware that it exists</li>
-<li>Take action<ul>
-<li><strong>Try to find an ally</strong></li>
-</ul>
-</li>
-<li>Conforming most of the time, &quot;earns&quot; occasional deviation without consequences</li>
-</ul>
-<h2 id="Idiosyncrasy-credits-個人風格存款-特立獨行信用"><a href="#Idiosyncrasy-credits-個人風格存款-特立獨行信用" class="headerlink" title="Idiosyncrasy credits 個人風格存款 / 特立獨行信用"></a>Idiosyncrasy credits 個人風格存款 / 特立獨行信用</h2><ul>
-<li>The tolerance a person earns, over time, by conforming to group norms; if enough idiosyncrasy credits are earned, the person can, on occasion behave defiantly(違抗) without retribution(懲罰) from the group</li>
-</ul>
-<h2 id="Minority-influence-when-the-few-influence-the-many"><a href="#Minority-influence-when-the-few-influence-the-many" class="headerlink" title="Minority influence when the few influence the many"></a>Minority influence when the few influence the many</h2><ul>
-<li><strong>Consistency</strong> is key<ul>
-<li>People with minority views must express the same view over time</li>
-</ul>
-</li>
-<li>Members of the minority opinion must agree with one another</li>
-</ul>
-<h1 id="What-have-studies-demonstrate-people-39-s-willingness-to-obey-authority-figures"><a href="#What-have-studies-demonstrate-people-39-s-willingness-to-obey-authority-figures" class="headerlink" title="What have studies demonstrate people&#39;s willingness to obey authority figures ?"></a>What have studies demonstrate people&#39;s willingness to obey authority figures ?</h1>
+           
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/06/17/20190617-social-psy-note-ch8/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -923,7 +439,7 @@ Make developers aware of where security mechanisms are required</p>
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2019-06-18 16:07:12" itemprop="dateModified" datetime="2019-06-18T16:07:12+08:00">2019-06-18</time>
+                <time title="Modified: 2020-01-18 11:12:10" itemprop="dateModified" datetime="2020-01-18T11:12:10+08:00">2020-01-18</time>
               </span>
 
           
@@ -937,325 +453,15 @@ Make developers aware of where security mechanisms are required</p>
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="Attitudes-and-Attitude-Change-Influencing-Thoughts-and-Feelings"><a href="#Attitudes-and-Attitude-Change-Influencing-Thoughts-and-Feelings" class="headerlink" title="Attitudes and Attitude Change: Influencing Thoughts and Feelings"></a>Attitudes and Attitude Change: Influencing Thoughts and Feelings</h1><hr>
-<h1 id="What-are-the-different-kinds-of-attitudes-and-on-what-are-they-based"><a href="#What-are-the-different-kinds-of-attitudes-and-on-what-are-they-based" class="headerlink" title="What are the different kinds of attitudes and on what are they based ?"></a>What are the different kinds of attitudes and on what are they based ?</h1><ul>
-<li>Attitudes<ul>
-<li>Evaluations of people, objects, and ideas</li>
-</ul>
-</li>
-</ul>
-<h2 id="The-nature-and-origin-of-attitudes"><a href="#The-nature-and-origin-of-attitudes" class="headerlink" title="The nature and origin of attitudes"></a>The nature and origin of attitudes</h2><ul>
-<li>People are not neutral observers of the world<ul>
-<li>They <strong>evaluate what they encounter</strong></li>
-<li>They form attitudes</li>
-</ul>
-</li>
-<li>Attitudes are made up of three components<ul>
-<li>Affective 情感的<ul>
-<li>Emotional reaction</li>
-</ul>
-</li>
-<li>Behavioral</li>
-<li>Cognitive</li>
-</ul>
-</li>
-</ul>
-<h2 id="Where-do-attitudes-come-from"><a href="#Where-do-attitudes-come-from" class="headerlink" title="Where do attitudes come from ?"></a>Where do attitudes come from ?</h2><ul>
-<li>Genetic origins ?<ul>
-<li>Identical twins share more attitudes that fraternal twins</li>
-<li>Indirect function of our genes<ul>
-<li>Temperament, personality</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Social experience</li>
-</ul>
-<h2 id="Cognitively-based-attitude-以認知為基礎的態度"><a href="#Cognitively-based-attitude-以認知為基礎的態度" class="headerlink" title="Cognitively based attitude 以認知為基礎的態度"></a>Cognitively based attitude 以認知為基礎的態度</h2><h2 id="Affectively-based-attitude-以情感為基礎的態度"><a href="#Affectively-based-attitude-以情感為基礎的態度" class="headerlink" title="Affectively based attitude 以情感為基礎的態度"></a>Affectively based attitude 以情感為基礎的態度</h2><ul>
-<li>Affectively based attitudes don&#39;t come from examining facts<ul>
-<li>Where do they come from ?<ul>
-<li>Values 價值觀</li>
-<li>Sensory reaction 感官反應</li>
-<li>Aesthetic reaction 美感反應</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Behaviorally-based-attitude-以行為為基礎的態度"><a href="#Behaviorally-based-attitude-以行為為基礎的態度" class="headerlink" title="Behaviorally based attitude 以行為為基礎的態度"></a>Behaviorally based attitude 以行為為基礎的態度</h2><ul>
-<li>An attitude based on <strong>observations</strong> of how one behaves toward an attitude object</li>
-</ul>
-<h2 id="Self-perception-theory-自我知覺論"><a href="#Self-perception-theory-自我知覺論" class="headerlink" title="Self-perception theory 自我知覺論"></a>Self-perception theory 自我知覺論</h2><ul>
-<li>Sometimes people do not know how they feel until they see how they behave<ul>
-<li>Can form our attitudes based on our <strong>observations</strong> of our own behavior</li>
-</ul>
-</li>
-<li>People infer their attitude from their behavior only under certain conditions<ul>
-<li>When initial attitude is weak or <strong>ambiguous</strong></li>
-<li>When no other plausible explanation for behavior</li>
-</ul>
-</li>
-</ul>
-<h2 id="Explicit-versus-implicit-attitudes"><a href="#Explicit-versus-implicit-attitudes" class="headerlink" title="Explicit versus implicit attitudes"></a>Explicit versus implicit attitudes</h2><ul>
-<li>Explicit attitudes<ul>
-<li>Attitudes that we consciously endorse and can easily report</li>
-</ul>
-</li>
-<li>Implicit attitudes<ul>
-<li>Attitudes that are involuntary, uncontrollable, and at times unconscious 非自願、不可控制、有時沒意識到的</li>
-</ul>
-</li>
-</ul>
-<h1 id="Under-what-conditions-do-attitudes-predict-behavior"><a href="#Under-what-conditions-do-attitudes-predict-behavior" class="headerlink" title="Under what conditions do attitudes predict behavior ?"></a>Under what conditions do attitudes predict behavior ?</h1><h2 id="Predicting-spontaneous-behaviors"><a href="#Predicting-spontaneous-behaviors" class="headerlink" title="Predicting spontaneous behaviors"></a>Predicting spontaneous behaviors</h2><ul>
-<li>Attitudes will predict spontaneous behavior only when they are highly accessible to people</li>
-<li><strong>Attitude accessibility</strong> 態度可接近性<ul>
-<li><strong>The strength of the association between an attitude object and a person&#39;s evaluation of that object</strong>, measured by the <strong>speed</strong> with which people can report how they feel about the object</li>
-</ul>
-</li>
-</ul>
-<h2 id="Predicting-deliberative-behavior-預測深思行為"><a href="#Predicting-deliberative-behavior-預測深思行為" class="headerlink" title="Predicting deliberative behavior 預測深思行為"></a>Predicting deliberative behavior 預測深思行為</h2><ul>
-<li>Theory of planned behavior 規劃行為論<ul>
-<li>People&#39;s intentions are the best predictors of their deliberate behaviors</li>
-</ul>
-</li>
-<li>Specific attitudes<ul>
-<li>Only specific attitudes can be expected to predict that behavior</li>
-</ul>
-</li>
-<li>Subjective norms 主觀規範<ul>
-<li>We also need to measure people&#39;s subjective norms - their beliefs about how people they care about will view the behavior in question</li>
-</ul>
-</li>
-<li>Perceived behavioral control 知覺到的行為控制力<ul>
-<li>Intentions are influenced by the ease with which they believe they can perform the behavior</li>
-</ul>
-</li>
-</ul>
-<h1 id="How-do-internal-and-external-factors-lead-to-attitude-change"><a href="#How-do-internal-and-external-factors-lead-to-attitude-change" class="headerlink" title="How do internal and external factors lead to attitude change ?"></a>How do internal and external factors lead to attitude change ?</h1><h2 id="Attitude-changes-and-social-influence"><a href="#Attitude-changes-and-social-influence" class="headerlink" title="Attitude changes and social influence"></a>Attitude changes and social influence</h2><ul>
-<li>When attitudes change, it is often due to social influence<ul>
-<li>This is why social psychologists are interested</li>
-<li>Attitudes are social phenomena</li>
-</ul>
-</li>
-</ul>
-<h2 id="Changing-attitudes-by-changing-behavior"><a href="#Changing-attitudes-by-changing-behavior" class="headerlink" title="Changing attitudes by changing behavior"></a>Changing attitudes by changing behavior</h2><ul>
-<li>People experience dissonance<ul>
-<li>When their image is threatened</li>
-<li>When they cannot explain behavior with external justifications<ul>
-<li>Leads to finding internal justification for behavior</li>
-<li><strong>Brings your attitude and your behavior closer together</strong> (equals attitude change)</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Persuasive-communications-and-attitude-change"><a href="#Persuasive-communications-and-attitude-change" class="headerlink" title="Persuasive communications and attitude change"></a>Persuasive communications and attitude change</h2><ul>
-<li>Communication <strong>advocating a particular side of an issue</strong></li>
-<li>How should you construct a message so that it would really change people&#39;s attitudes ?</li>
-<li><strong>Yale attitude change approach</strong><ul>
-<li>&quot;Who said what to whom&quot;<ul>
-<li>Who: the <strong>source</strong> of the <strong>communication</strong></li>
-<li>What: the <strong>nature</strong> of the <strong>communication</strong></li>
-<li>Whom: the <strong>nature</strong> of the <strong>audience</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="The-central-an-peripheral-routes-to-persuasion-中心與周邊說服路徑"><a href="#The-central-an-peripheral-routes-to-persuasion-中心與周邊說服路徑" class="headerlink" title="The central an peripheral routes to persuasion 中心與周邊說服路徑"></a>The central an peripheral routes to persuasion 中心與周邊說服路徑</h2><ul>
-<li><strong>Elaboration likelihood model</strong> 推敲可能性模型<ul>
-<li>Central route<ul>
-<li>When people <strong>are motivated</strong> and <strong>have the ability to pay attention</strong> to the arguments in the communication</li>
-<li>Persuasion<ul>
-<li>Elaborate on a persuasive communication<ul>
-<li>Listening carefully to and thinking about the arguments</li>
-<li>Occurs when people <strong>have both the ability and the motivation</strong> to listen carefully</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Peripheral route<ul>
-<li>When people <strong>do not pay attention</strong> to the arguments but are instead swayed by surface characteristics</li>
-<li>Persuasion<ul>
-<li>People do not elaborate on the arguments</li>
-<li>People can be swayed by <strong>peripheral cues</strong>, such as by who delivers a persuasive message rather than by the strength of the message itself. An example is when consumers buy certain products because a celebrity tweets about them (代言)</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="The-motivation-to-pay-attention-to-the-arguments"><a href="#The-motivation-to-pay-attention-to-the-arguments" class="headerlink" title="The motivation to pay attention to the arguments"></a>The motivation to pay attention to the arguments</h2><ul>
-<li>Personal relevance of the topic</li>
-<li>People high in the need for cognition<ul>
-<li>Form attitudes through central route</li>
-</ul>
-</li>
-<li>People low in the need for cognition<ul>
-<li>Rely in peripheral cues</li>
-</ul>
-</li>
-</ul>
-<h2 id="The-ability-to-pay-attention-to-the-arguments"><a href="#The-ability-to-pay-attention-to-the-arguments" class="headerlink" title="The ability to pay attention to the arguments"></a>The ability to pay attention to the arguments</h2><ul>
-<li>When people are unable to pay close attention to the arguments, they are swayed more by peripheral cues<ul>
-<li>Status of communicators</li>
-<li>Liking or trusting communicators</li>
-</ul>
-</li>
-<li>Someone with a weak argument can still be persuasive if they <strong>distract their audience</strong></li>
-</ul>
-<h2 id="How-to-achieve-long-lasting-attitude-change"><a href="#How-to-achieve-long-lasting-attitude-change" class="headerlink" title="How to achieve long-lasting attitude change"></a>How to achieve long-lasting attitude change</h2><ul>
-<li>People who <strong>base their attitudes on a careful analysis</strong> of the arguments will be<ul>
-<li>More likely to maintain the attitude</li>
-<li>More likely to behave consistently with this attitude</li>
-<li><strong>More resistant to counter-persuasion</strong></li>
-</ul>
-</li>
-</ul>
-<h2 id="Fear-arousing-communications"><a href="#Fear-arousing-communications" class="headerlink" title="Fear-arousing communications"></a>Fear-arousing communications</h2><ul>
-<li>Persuasive messages that attempt to <strong>change people&#39;s attitudes by arousing their fear</strong></li>
-<li>Strong amounts of fear fail if they overwhelm people<ul>
-<li><strong>Become defensive</strong></li>
-<li>Deny importance of threat</li>
-<li><strong>Cannot think rationally about issue</strong></li>
-</ul>
-</li>
-<li>Do fear-arousing communications work ?<ul>
-<li><strong>Modern amounts</strong> of fear work best</li>
-<li>Provide information on how to reduce fear</li>
-</ul>
-</li>
-</ul>
-<h2 id="Emotions-as-a-heuristic"><a href="#Emotions-as-a-heuristic" class="headerlink" title="Emotions as a heuristic"></a>Emotions as a heuristic</h2><ul>
-<li>Heuristic-systematic model of persuasion<ul>
-<li>Systematically processing the merits(價值) of the arguments</li>
-<li>When using peripheral route<ul>
-<li><strong>Use mental shortcuts</strong> (heuristics)</li>
-<li>Use emotions as heuristic to determine attitude</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Advertisers and retailers want to create good feelings about their product<ul>
-<li>Pair product with appealing music or showing pleasant images<ul>
-<li>Hope people will attribute feelings to the product</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Emotion-and-different-types-of-attitudes"><a href="#Emotion-and-different-types-of-attitudes" class="headerlink" title="Emotion and different types of attitudes"></a>Emotion and different types of attitudes</h2><ul>
-<li>Several studies have shown that it is best to &quot;fight fire with fire&quot;<ul>
-<li>If an attitude is <strong>cognitively based</strong><ul>
-<li>Change it with <strong>rational arguments</strong></li>
-</ul>
-</li>
-<li>If an attitude is <strong>affectively based</strong><ul>
-<li>Change it with <strong>emotional appeals</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Some ads stress the objective merits of a product<ul>
-<li>$$$, reliability, efficiency</li>
-</ul>
-</li>
-<li>Other ads stress emotions and values<ul>
-<li>Sex, beauty, youthfulness</li>
-</ul>
-</li>
-</ul>
-<h2 id="Attitude-change-and-the-body"><a href="#Attitude-change-and-the-body" class="headerlink" title="Attitude change and the body"></a>Attitude change and the body</h2><ul>
-<li><strong>Body posture plays a significant role in attitude change</strong></li>
-</ul>
-<h1 id="How-does-advertising-work-to-change-people-39-s-attitudes"><a href="#How-does-advertising-work-to-change-people-39-s-attitudes" class="headerlink" title="How does advertising work to change people&#39;s attitudes ?"></a>How does advertising work to change people&#39;s attitudes ?</h1><h2 id="Advertising-can-change-attitudes"><a href="#Advertising-can-change-attitudes" class="headerlink" title="Advertising can change attitudes"></a>Advertising can change attitudes</h2><ul>
-<li>People more influenced by advertising than they think</li>
-<li>Split cable market tests<ul>
-<li>Advertisers work with cable companies and stores</li>
-<li>Show commercial to randomly selected group of people and keep track of purchase</li>
-<li>Results of over 300 of these reveal ads effective especially for new products</li>
-</ul>
-</li>
-<li>Public health campaigns<ul>
-<li>Meta-analysis on ads and substance use among youths encouraging</li>
-<li>Television and radio better than print ads</li>
-</ul>
-</li>
-</ul>
-<h2 id="How-advertising-works"><a href="#How-advertising-works" class="headerlink" title="How advertising works"></a>How advertising works</h2><ul>
-<li>Many take <strong>emotional approach</strong> of attitude change<ul>
-<li>Little difference between brands</li>
-<li><strong>Associate product with excitement, youth, sexual attraction</strong></li>
-</ul>
-</li>
-<li>Attitudes that are more cognitively based<ul>
-<li>Personally relevant ?<ul>
-<li>Yes, then use <strong>logical</strong>, <strong>fact-based</strong> arguments</li>
-<li>No, might use <strong>peripheral route</strong></li>
-<li>Peripheral route leads to attitude change that is <em>not long lasting_</em></li>
-<li>Goal to make product personally relevant</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="Subliminal-advertising-a-form-of-mind-control"><a href="#Subliminal-advertising-a-form-of-mind-control" class="headerlink" title="Subliminal advertising: a form of mind control ?"></a>Subliminal advertising: a form of mind control ?</h2><ul>
-<li>There is no evidence that the types of subliminal messages encountered in everyday life have any influence on people&#39;s behavior</li>
-<li>Subliminal messages 閾下知覺訊息<ul>
-<li>Words or pictures that are <strong>not consciously perceived</strong> but may nevertheless influence people&#39;s judgments, attitudes, and behavior</li>
-</ul>
-</li>
-</ul>
-<h2 id="Laboratory-evidence-for-subliminal-influence"><a href="#Laboratory-evidence-for-subliminal-influence" class="headerlink" title="Laboratory evidence for subliminal influence"></a>Laboratory evidence for subliminal influence</h2><ul>
-<li>Evidence for subliminal influence in carefully controlled laboratory conditions</li>
-<li>Subliminal effects <strong>require a controlled environment</strong><ul>
-<li>Correct illumination of the room</li>
-<li><strong>No distraction</strong></li>
-<li>Right distance from screen</li>
-</ul>
-</li>
-<li>Limitations<ul>
-<li>No evidence that subliminal message can get people to act counter to wishes, values, or personalities</li>
-</ul>
-</li>
-</ul>
-<h2 id="Advertising-stereotypes-and-culture"><a href="#Advertising-stereotypes-and-culture" class="headerlink" title="Advertising, stereotypes, and culture"></a>Advertising, stereotypes, and culture</h2><ul>
-<li>Advertisements transmit cultural stereotypes in their words and images, <strong>subtly linking products with desired images</strong></li>
-<li>Advertisements can also <strong>reinforce and perpetuate stereotypical ways</strong> of thinking about social groups</li>
-<li>Advertising both <strong>reflects and shapes the biases present in our society</strong>, as demonstrated by the divergent responses to a 2013 Cheerios ad featuring an interracial family</li>
-</ul>
-<h2 id="Gender-stereotypes-and-expectations"><a href="#Gender-stereotypes-and-expectations" class="headerlink" title="Gender stereotypes and expectations"></a>Gender stereotypes and expectations</h2><ul>
-<li>Gender stereotypes are particularly pervasive in advertising imagery</li>
-<li><strong>Gender roles</strong></li>
-</ul>
-<h2 id="Culture-and-advertising"><a href="#Culture-and-advertising" class="headerlink" title="Culture and advertising"></a>Culture and advertising</h2><ul>
-<li>Western cultures<ul>
-<li>Ads stress independence</li>
-<li>&quot;It&#39;s easy when you have the right shoes&quot;</li>
-<li>May base attitudes more on <strong>individuality and self-improvement</strong></li>
-</ul>
-</li>
-<li>Eastern cultures<ul>
-<li>Ads stress interdependence</li>
-<li>&quot;The shoes for your family&quot;</li>
-<li>May base attitudes more on standing in <strong>social group</strong></li>
-</ul>
-</li>
-</ul>
-<h1 id="What-are-some-strategies-for-resisting-efforts-at-persuasion"><a href="#What-are-some-strategies-for-resisting-efforts-at-persuasion" class="headerlink" title="What are some strategies for resisting efforts at persuasion ?"></a>What are some strategies for resisting efforts at persuasion ?</h1><h2 id="Attitude-inoculation-態度預防接種"><a href="#Attitude-inoculation-態度預防接種" class="headerlink" title="Attitude inoculation 態度預防接種"></a>Attitude inoculation 態度預防接種</h2><p>Making people immune to attempts to change their attitudes <strong>by initially exposing them to small doses of the arguments against their position</strong></p>
-<h2 id="Being-alert-to-product-placement-置入性行銷"><a href="#Being-alert-to-product-placement-置入性行銷" class="headerlink" title="Being alert to product placement 置入性行銷"></a>Being alert to product placement 置入性行銷</h2><ul>
-<li>Before kids watch TV or go off to the movies, it is good to remind them that they are likely to encounter several attempts to change their attitudes</li>
-</ul>
-<h2 id="Resisting-peer-pressure"><a href="#Resisting-peer-pressure" class="headerlink" title="Resisting peer pressure"></a>Resisting peer pressure</h2><h2 id="When-persuasion-attempts-boomerang-reactance-theory"><a href="#When-persuasion-attempts-boomerang-reactance-theory" class="headerlink" title="When persuasion attempts boomerang: reactance theory"></a>When persuasion attempts boomerang: reactance theory</h2><ul>
-<li>Reactance theory 抗拒論<ul>
-<li>People feel their freedom to perform a certain behavior is threatened, an unpleasant state of reactance is aroused, which they can reduce by performing the threatened behavior</li>
-</ul>
-</li>
-</ul>
-
+           
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/06/17/20190617-social-psy-note-ch7/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -1297,10 +503,16 @@ Make developers aware of where security mechanisms are required</p>
                 <i class="fa fa-calendar-o"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2019-06-17 23:54:15 / Modified: 23:55:23" itemprop="dateCreated datePublished" datetime="2019-06-17T23:54:15+08:00">2019-06-17</time>
+              <time title="Created: 2019-06-17 23:54:15" itemprop="dateCreated datePublished" datetime="2019-06-17T23:54:15+08:00">2019-06-17</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-01-18 11:12:08" itemprop="dateModified" datetime="2020-01-18T11:12:08+08:00">2020-01-18</time>
+              </span>
 
           
 
@@ -1313,183 +525,15 @@ Make developers aware of where security mechanisms are required</p>
     <div class="post-body" itemprop="articleBody">
 
       
-          <h1 id="The-Need-to-Justify-Our-Actions-The-Costs-and-Benefits-of-Dissonance-Reduction"><a href="#The-Need-to-Justify-Our-Actions-The-Costs-and-Benefits-of-Dissonance-Reduction" class="headerlink" title="The Need to Justify Our Actions: The Costs and Benefits of Dissonance Reduction"></a>The Need to Justify Our Actions: The Costs and Benefits of Dissonance Reduction</h1><hr>
-<h1 id="What-is-cognitive-dissonance-and-how-do-people-avoid-dissonance-to-maintain-a-positive-self-image"><a href="#What-is-cognitive-dissonance-and-how-do-people-avoid-dissonance-to-maintain-a-positive-self-image" class="headerlink" title="What is cognitive dissonance, and how do people avoid dissonance to maintain a positive self-image ?"></a>What is cognitive dissonance, and how do people avoid dissonance to maintain a positive self-image ?</h1><ul>
-<li>When confronted with unfavorable view of self<ul>
-<li>Experience discomfort</li>
-</ul>
-</li>
-</ul>
-<h2 id="When-cognitions-conflict"><a href="#When-cognitions-conflict" class="headerlink" title="When cognitions conflict"></a>When cognitions conflict</h2><ul>
-<li>Cognitive dissonance<ul>
-<li>Discomfort that people feel when <strong>two cognitions (beliefs,attitudes) conflict</strong>, or when they <strong>behave in ways that are inconsistent with their conception of themselves</strong></li>
-</ul>
-</li>
-<li>Important and provocative social psychological theory</li>
-<li>Threats to self-image<ul>
-<li>Induces powerful, upsetting dissonance</li>
-</ul>
-</li>
-</ul>
-<h2 id="4-ways-to-reduce-dissonance"><a href="#4-ways-to-reduce-dissonance" class="headerlink" title="4 ways to reduce dissonance"></a>4 ways to reduce dissonance</h2><ul>
-<li>Change behavior</li>
-<li>Justify behavior by changing one of the dissonance cognitions</li>
-<li>Justify behavior by adding new cognitions</li>
-</ul>
-<h2 id="Self-affirmation-自我肯定"><a href="#Self-affirmation-自我肯定" class="headerlink" title="Self-affirmation 自我肯定"></a>Self-affirmation 自我肯定</h2><ul>
-<li>Bolster(支撐) the self-concept</li>
-<li>Reducing dissonance by adding a cognition about other positive attributes</li>
-</ul>
-<h2 id="Impact-bias-衝擊偏誤"><a href="#Impact-bias-衝擊偏誤" class="headerlink" title="Impact bias 衝擊偏誤"></a>Impact bias 衝擊偏誤</h2><ul>
-<li>The tendency to <strong>overestimate the intensity and duration of our emotional reactions to future negative events</strong></li>
-</ul>
-<h2 id="Why-we-overestimate-the-pain-of-disappointment"><a href="#Why-we-overestimate-the-pain-of-disappointment" class="headerlink" title="Why we overestimate the pain of disappointment"></a>Why we overestimate the pain of disappointment</h2><ul>
-<li>Why does impact bias occur ?<ul>
-<li><strong>Process of reducing dissonance is largely unconscious</strong></li>
-</ul>
-</li>
-</ul>
-<h2 id="Dissonance-and-the-self-concept"><a href="#Dissonance-and-the-self-concept" class="headerlink" title="Dissonance and the self-concept"></a>Dissonance and the self-concept</h2><ul>
-<li>Dissonance most painful when one of the cognitions is about the self<ul>
-<li><strong>Particularly true for those with high self-esteem</strong></li>
-</ul>
-</li>
-<li>Temporary blows to self-esteem can lead to greater behaviors consistent with low opinion of the self (e.g., cheat)</li>
-<li>People less likely to cheat when their self-concept of &quot;not being a cheater&quot; is invoked</li>
-</ul>
-<h2 id="Decisions"><a href="#Decisions" class="headerlink" title="Decisions"></a>Decisions</h2><ul>
-<li>Every time we make a decision, we experience dissonance<ul>
-<li>Chosen alternative has some negative aspects</li>
-<li>Rejected alternative has some positive aspects</li>
-<li>得不到的最好</li>
-</ul>
-</li>
-</ul>
-<h2 id="Distorting-our-likes-and-dislikes"><a href="#Distorting-our-likes-and-dislikes" class="headerlink" title="Distorting our likes and dislikes"></a>Distorting our likes and dislikes</h2><ul>
-<li>Distort likes and dislikes<ul>
-<li>Downplay<ul>
-<li>Negative aspects of chosen alternative</li>
-<li>Positive aspects of rejected alternative</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Postdecision dissonance 決策後的失調</li>
-</ul>
-<h2 id="Permanence-of-the-decision-決策的永久性"><a href="#Permanence-of-the-decision-決策的永久性" class="headerlink" title="Permanence of the decision 決策的永久性"></a>Permanence of the decision 決策的永久性</h2><ul>
-<li>More important decisions = more dissonance</li>
-<li>Greater performance = more dissonance</li>
-</ul>
-<h2 id="Creating-the-illusion-of-irrevocablility-製造不可反悔的錯覺"><a href="#Creating-the-illusion-of-irrevocablility-製造不可反悔的錯覺" class="headerlink" title="Creating the illusion of irrevocablility 製造不可反悔的錯覺"></a>Creating the illusion of irrevocablility 製造不可反悔的錯覺</h2><ul>
-<li>When decisions are permanent (irrevocable)<ul>
-<li>Dissonance increases</li>
-<li>Motivation to reduce dissonance increases</li>
-</ul>
-</li>
-<li>Lowballing 低球法<ul>
-<li>Salesperson induces a customer to agree to purchase a product at a very low cost, subsequently claims it was an error, and then raise the price</li>
-<li>Frequently, the customer will agree to make the purchase at the inflated price</li>
-</ul>
-</li>
-</ul>
-<h2 id="3-reasons-lowballing-works"><a href="#3-reasons-lowballing-works" class="headerlink" title="3 reasons lowballing works"></a>3 reasons lowballing works</h2><ul>
-<li>Sense of commitment</li>
-<li>Sense of commitment triggers the anticipation of an exciting event</li>
-<li>Price only slightly higher that other prices elsewhere</li>
-</ul>
-<h2 id="The-decision-to-behave-immorally"><a href="#The-decision-to-behave-immorally" class="headerlink" title="The decision to behave immorally"></a>The decision to behave immorally</h2><ul>
-<li>Moral dilemmas<ul>
-<li>Implications for self-esteem</li>
-</ul>
-</li>
-<li>Dissonance reduction<ul>
-<li>People may behave either more ethically or less ethically in the future</li>
-</ul>
-</li>
-<li>Example: cheating on a test<ul>
-<li>Dissonance<ul>
-<li>Positive view of self inconsistent with dishonest behavior</li>
-</ul>
-</li>
-<li>How to reduce dissonance ?<ul>
-<li>Change attitude about cheating<ul>
-<li>&quot;Not a big deal, everyone does it&quot;</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="How-does-cognitive-dissonance-operate-in-everyday-life-and-what-are-some-constructive-ways-of-reducing-it"><a href="#How-does-cognitive-dissonance-operate-in-everyday-life-and-what-are-some-constructive-ways-of-reducing-it" class="headerlink" title="How does cognitive dissonance operate in everyday life, and what are some constructive ways of reducing it ?"></a>How does cognitive dissonance operate in everyday life, and what are some constructive ways of reducing it ?</h1><h2 id="The-justification-of-effort-為付出的努力辯護"><a href="#The-justification-of-effort-為付出的努力辯護" class="headerlink" title="The justification of effort 為付出的努力辯護"></a>The justification of effort 為付出的努力辯護</h2><ul>
-<li>People may interpret ambiguities in a positive way when it helps to justify effort</li>
-<li>The tendency for individuals to <strong>increase their liking for something they have worked hard to attain</strong></li>
-</ul>
-<h2 id="External-versus-internal-justification"><a href="#External-versus-internal-justification" class="headerlink" title="External versus internal justification"></a>External versus internal justification</h2><ul>
-<li>External justification 外部理由</li>
-<li>Internal justification 內部理由<ul>
-<li>e.g. one&#39;s attitude or behavior</li>
-</ul>
-</li>
-</ul>
-<h2 id="Counterattitudinal-advocacy-反態度主張"><a href="#Counterattitudinal-advocacy-反態度主張" class="headerlink" title="Counterattitudinal advocacy 反態度主張"></a>Counterattitudinal advocacy 反態度主張</h2><ul>
-<li>Stating an opinion or attitude that tuns counter to one&#39;s private belief or attitude</li>
-</ul>
-<h2 id="Punishment-and-self-persuasion"><a href="#Punishment-and-self-persuasion" class="headerlink" title="Punishment and self-persuasion"></a>Punishment and self-persuasion</h2><ul>
-<li>If threat of punishment for engaging in a forbidden behavior is <strong>severe</strong><ul>
-<li>There is sufficient external justification for refraining from behavior</li>
-</ul>
-</li>
-<li>If punishment is <strong>less severe</strong><ul>
-<li>There is insufficient external justification</li>
-<li>Creates greater need for <strong>internal justification</strong><ul>
-<li>Change attitudes via <strong>self-persuasion</strong></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Insufficient punishment</li>
-<li>When external justification for resisting an object or activity is insufficient<ul>
-<li>Dissonance is aroused</li>
-<li>Reduce dissonance by<ul>
-<li>Self-persuasion<ul>
-<li>e.g., devaluing forbidden activity or object</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h2 id="The-lasting-effects-of-self-persuasion"><a href="#The-lasting-effects-of-self-persuasion" class="headerlink" title="The lasting effects of self-persuasion"></a>The lasting effects of self-persuasion</h2><ul>
-<li>IV = severity of threatened punishment<ul>
-<li>1/2 children: threat of mild punishment if they disobeyed and played with toy</li>
-<li>1/2 children: threat of severe punishment</li>
-</ul>
-</li>
-<li>DV: rating of toy attractiveness</li>
-<li>Self-persuasion<ul>
-<li>A long-lasting form of attitude change that results from attempts at self-justification</li>
-</ul>
-</li>
-</ul>
-<h2 id="The-hypocrisy-paradigm-虛偽-偽善典範"><a href="#The-hypocrisy-paradigm-虛偽-偽善典範" class="headerlink" title="The hypocrisy paradigm 虛偽 / 偽善典範"></a>The hypocrisy paradigm 虛偽 / 偽善典範</h2><ul>
-<li>Induce hypocrisy 虛偽 / 偽善誘導<ul>
-<li>Make person aware of conflict between<ul>
-<li>Attitudes</li>
-<li>Behavior</li>
-</ul>
-</li>
-<li>Hypocrisy creates dissonance</li>
-<li>Reduce dissonance by changing behavior<ul>
-<li>e.g., attitudes about condoms and use of condoms</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Students in the hypocrisy condition were subsequently more likely to buy condoms than students in any of other conditions</li>
-</ul>
-
+           
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2019/06/17/20190617-social-psy-note-ch6/">
+                Read more &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 

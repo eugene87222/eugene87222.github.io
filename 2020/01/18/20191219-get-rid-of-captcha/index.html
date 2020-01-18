@@ -49,12 +49,12 @@
   };
 </script>
 
-  <meta name="description" content="又在寫莫名其妙的東西了">
+  <meta name="description" content="之前大三上剛開學的時候閒閒沒事，剛好那段時間正在選課，有鑑於每次登入選課系統都要打驗證碼（下圖），我自己是覺得很麻煩（到底有多懶），就想說用 Python 寫個自動登入的程式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="用機器學習的方式登入選課系統">
 <meta property="og:url" content="http://eugene87222.github.io/2020/01/18/20191219-get-rid-of-captcha/index.html">
 <meta property="og:site_name" content="3ugeneYang.§ite">
-<meta property="og:description" content="又在寫莫名其妙的東西了">
+<meta property="og:description" content="之前大三上剛開學的時候閒閒沒事，剛好那段時間正在選課，有鑑於每次登入選課系統都要打驗證碼（下圖），我自己是覺得很麻煩（到底有多懶），就想說用 Python 寫個自動登入的程式">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://eugene87222.github.io/image/2020-01-16_230643.png">
 <meta property="og:image" content="http://eugene87222.github.io/image/3.jpg">
@@ -64,7 +64,7 @@
 <meta property="og:image" content="http://eugene87222.github.io/image/3_ori_contour.jpg">
 <meta property="og:image" content="http://eugene87222.github.io/image/3_final_contour.jpg">
 <meta property="article:published_time" content="2020-01-17T16:33:02.000Z">
-<meta property="article:modified_time" content="2020-01-17T17:47:25.637Z">
+<meta property="article:modified_time" content="2020-01-18T03:16:02.666Z">
 <meta property="article:author" content="Eugene Yang">
 <meta property="article:tag" content="python">
 <meta property="article:tag" content="machine learning">
@@ -231,7 +231,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-01-18 00:33:02 / Modified: 01:47:25" itemprop="dateCreated datePublished" datetime="2020-01-18T00:33:02+08:00">2020-01-18</time>
+              <time title="Created: 2020-01-18 00:33:02 / Modified: 11:16:02" itemprop="dateCreated datePublished" datetime="2020-01-18T00:33:02+08:00">2020-01-18</time>
             </span>
 
           
@@ -242,7 +242,6 @@
               <span class="post-meta-item-text">Views: </span>
               <span id="busuanzi_value_page_pv"></span>
             </span>
-            <div class="post-description">又在寫莫名其妙的東西了</div>
 
         </div>
       </header>
@@ -253,7 +252,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>之前大三上剛開學的時候閒閒沒事，剛好那段時間正在選課，有鑑於每次登入選課系統都要打驗證碼（下圖），我自己是覺得很麻煩（到底有多懶），就想說用 Python 寫個自動登入的程式，不過選課系統的數字驗證碼長得不是很好看，去暴力搜尋每個數字感覺不太可行，後來決定先用 OpenCV 把數字切出來，再用機器學習去辨識數字，一開始寫的時候是直接用 <a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/tutorials/mnist" target="_blank" rel="noopener">tensorflow 的手寫數字辨識 CNN 模型</a>，不過因為 MNIST 的手寫數字跟選課系統的數字驗證碼書寫風格差異有點大，加上那時候用 OpenCV 做 preprocessing 理弄得亂七八糟（雖然現在的版本可能還是亂七八糟），所以數字辨識的準確度只有 85% 左右，根本沒辦法拿來登入選課系統，因為其中一個數字打錯就整個都錯了。</p>
+        <p>之前大三上剛開學的時候閒閒沒事，剛好那段時間正在選課，有鑑於每次登入選課系統都要打驗證碼（下圖），我自己是覺得很麻煩（到底有多懶），就想說用 Python 寫個自動登入的程式<a id="more"></a>，不過選課系統的數字驗證碼長得不是很好看，去暴力搜尋每個數字感覺不太可行，後來決定先用 OpenCV 把數字切出來，再用機器學習去辨識數字，一開始寫的時候是直接用 <a href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/tutorials/mnist" target="_blank" rel="noopener">tensorflow 的手寫數字辨識 CNN 模型</a>，不過因為 MNIST 的手寫數字跟選課系統的數字驗證碼書寫風格差異有點大，加上那時候用 OpenCV 做 preprocessing 理弄得亂七八糟（雖然現在的版本可能還是亂七八糟），所以數字辨識的準確度只有 85% 左右，根本沒辦法拿來登入選課系統，因為其中一個數字打錯就整個都錯了。</p>
 <p><img src="/image/2020-01-16_230643.png" alt=""></p>
 <p>之後事情開始變多，得念書考試寫作業，只好把這個東西暫時擱置，一直等到現在大四上結束，才有空繼續把它完成。下面的介紹主要就分成實作方法跟實驗結果兩個部分。</p>
 <h1 id="實作方法"><a href="#實作方法" class="headerlink" title="實作方法"></a>實作方法</h1><h2 id="開發環境"><a href="#開發環境" class="headerlink" title="開發環境"></a>開發環境</h2><ul>
