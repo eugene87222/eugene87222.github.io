@@ -58,7 +58,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://eugene87222.github.io/image/gossiping_screenshot.PNG">
 <meta property="article:published_time" content="2018-02-13T07:31:08.000Z">
-<meta property="article:modified_time" content="2020-01-18T03:27:13.509Z">
+<meta property="article:modified_time" content="2020-01-18T13:31:09.824Z">
 <meta property="article:author" content="Eugene Yang">
 <meta property="article:tag" content="tutorial">
 <meta property="article:tag" content="python">
@@ -234,7 +234,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-18 11:27:13" itemprop="dateModified" datetime="2020-01-18T11:27:13+08:00">2020-01-18</time>
+                <time title="Modified: 2020-01-18 21:31:09" itemprop="dateModified" datetime="2020-01-18T21:31:09+08:00">2020-01-18</time>
               </span>
 
           
@@ -257,18 +257,18 @@
       
         <p>上一篇 <a href="https://eugene87222.github.io/2018/02/10/PTT-crawler-1/">爬蟲 / PTT - 1</a> 已經講過怎麼取得八卦版首頁的文章列表了，忘記細節的可以回去看看，這次要來講如何取得文章內文<a id="more"></a>。</p>
 <h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
-<li>Windows 10 家用版</li>
-<li>python 3.6.4</li>
+<li>Windows 10 Home</li>
+<li>Python 3.6.4</li>
 </ul>
-<h1 id="如何取得內文"><a href="#如何取得內文" class="headerlink" title="如何取得內文"></a>如何取得內文</h1><h2 id="取得網頁原始碼"><a href="#取得網頁原始碼" class="headerlink" title="取得網頁原始碼"></a>取得網頁原始碼</h2><p>我在八卦版上隨便挑了一篇文章，<a href="https://www.ptt.cc/bbs/Gossiping/M.1518773576.A.14A.html" target="_blank" rel="noopener">文章傳送門</a>，一樣使用 requests.get 並用 BeautifulSoup 包起來。</p>
+<h1 id="如何取得內文"><a href="#如何取得內文" class="headerlink" title="如何取得內文"></a>如何取得內文</h1><h2 id="取得網頁原始碼"><a href="#取得網頁原始碼" class="headerlink" title="取得網頁原始碼"></a>取得網頁原始碼</h2><p>我在八卦版上隨便挑了一篇文章，<a href="https://www.ptt.cc/bbs/Gossiping/M.1518773576.A.14A.html" target="_blank" rel="noopener">文章傳送門</a>，一樣使用 <code>requests.get</code> 並用 BeautifulSoup 包起來。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">res = requests.get(</span><br><span class="line">    url=<span class="string">'https://www.ptt.cc/bbs/Gossiping/M.1518773576.A.14A.html'</span>,</span><br><span class="line">    cookies=&#123;<span class="string">'over18'</span>:<span class="string">'1'</span>&#125;</span><br><span class="line">)</span><br><span class="line">html = res.text</span><br><span class="line">content = BeautifulSoup(html.text)</span><br></pre></td></tr></table></figure>
 
 <h2 id="分析原始碼"><a href="#分析原始碼" class="headerlink" title="分析原始碼"></a>分析原始碼</h2><p>先來看看文章頁面
 <img src="/image/gossiping_screenshot.PNG" alt="">
-整個黃色框框是 id=&quot;main-content&quot;，我們只要裡面的紅色框框部分，也就是文章的內文。</p>
+整個黃色框框是 <code>id=&quot;main-content&quot;</code>，我們只要裡面的紅色框框部分，也就是文章的內文。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">shift = content.findAll(<span class="string">'div'</span>,[<span class="string">'article-metaline'</span>, <span class="string">'article-metaline-right'</span>, <span class="string">'push'</span>])</span><br><span class="line"><span class="keyword">if</span> shift:</span><br><span class="line">    <span class="keyword">for</span> elem <span class="keyword">in</span> shift:</span><br><span class="line">        elem = elem.extract()</span><br><span class="line">main_content = content.find(id=<span class="string">'main-content'</span>)</span><br><span class="line"><span class="keyword">if</span> main_content:</span><br><span class="line">    content = main_content.text.lstrip().rstrip()</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    content = <span class="string">'None'</span></span><br></pre></td></tr></table></figure>
-<p>article-metaline、article-metaline-right 是上面 [ 作者、標題、時間 ] 那個區塊；push 則是推文的部分，這兩個部份都不要，我們可以用 extract() 來移除我們不要的部分，處理好之後 id=&quot;main-content&quot; 裡面就只剩下紅色框框的東西了，一樣用 .text 即可取得裡面的文字，另外文章頭尾可能會有多餘的空白，可以利用 lstrip 與 rstrip 來將其移除。  </p>
-<p>截至目前我們已經可以透過文章列表頁取得每篇文章的資訊 (文章連結、作者、時間等)，並且進一步取得個別的內文，下一次會介紹怎麼抓取更多頁的文章列表，並且用 python 的 standard library 來加速爬蟲。</p>
+<p><code>article-metaline</code>、<code>article-metaline-right</code> 是上面&quot;作者、標題、時間&quot;那個區塊；<code>push</code> 則是推文的部分，這兩個部份都不要，我們可以用 <code>extract()</code> 來移除我們不要的部分，處理好之後 <code>id=&quot;main-content&quot;</code> 裡面就只剩下紅色框框的東西了，一樣用 <code>.text</code> 取得裡面的文字，另外文章頭尾可能會有多餘的空白，可以利用 <code>strip</code> 將其移除。  </p>
+<p>截至目前我們已經可以透過文章列表頁取得每篇文章的資訊（文章連結、作者、時間等），並且進一步取得個別的內文，下一次會介紹怎麼抓取更多頁的文章列表，並且用 Python 的 standard library 來加速爬蟲。</p>
 
     </div>
 

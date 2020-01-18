@@ -57,7 +57,7 @@
 <meta property="og:description" content="上一篇 爬蟲 &#x2F; PTT - 4 已經說明如何用 Pool 快速取得所有的文章連結了，這次要用這些文章連結去取得每篇文章內文">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2018-02-16T05:43:25.000Z">
-<meta property="article:modified_time" content="2020-01-18T03:27:23.172Z">
+<meta property="article:modified_time" content="2020-01-18T13:33:06.514Z">
 <meta property="article:author" content="Eugene Yang">
 <meta property="article:tag" content="tutorial">
 <meta property="article:tag" content="python">
@@ -232,7 +232,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-18 11:27:23" itemprop="dateModified" datetime="2020-01-18T11:27:23+08:00">2020-01-18</time>
+                <time title="Modified: 2020-01-18 21:33:06" itemprop="dateModified" datetime="2020-01-18T21:33:06+08:00">2020-01-18</time>
               </span>
 
           
@@ -253,20 +253,18 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>上一篇 <a href="https://eugene87222.github.io/2018/02/15/PTT-crawler-4/">爬蟲 / PTT - 4</a> 已經說明如何用 Pool 快速取得所有的文章連結了，這次要用這些文章連結去取得每篇文章內文<a id="more"></a>。</p>
+        <p>上一篇 <a href="https://eugene87222.github.io/2018/02/15/PTT-crawler-4/">爬蟲 / PTT - 4</a> 已經說明如何用 <code>Pool</code> 快速取得所有的文章連結了，這次要用這些文章連結去取得每篇文章內文<a id="more"></a>。</p>
 <h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
-<li>Windows 10 家用版</li>
-<li>python 3.6.4</li>
+<li>Windows 10 Home</li>
+<li>Python 3.6.4</li>
 </ul>
-<p>我們一樣可以很直覺地用 for 取得每一篇內文，像下面這樣<br>(parse_get_article 是取自上一篇所整理的函數，all_post_meta 則是取自上一篇文末的程式碼)</p>
+<p>我們一樣可以很直覺地用 for loop 取得每一篇內文，像下面這樣（<code>parse_get_article</code> 是取自上一篇所整理的函數，<code>all_post_meta</code> 則是取自上一篇文末的程式碼）</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">contents = list()</span><br><span class="line"><span class="keyword">for</span> post_meta <span class="keyword">in</span> all_post_meta:</span><br><span class="line">    content = parse_get_article(post_meta[<span class="string">'link'</span>])</span><br><span class="line">    contents.append(article)</span><br></pre></td></tr></table></figure>
-
-<p>但我們在上一篇已經知道如何使用 Pool 了，所以可以改成這樣</p>
+<p>但我們在上一篇已經知道如何使用 <code>Pool</code> 了，所以可以改成這樣</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    post_links = [entry[<span class="string">'link'</span>] <span class="keyword">for</span> entry <span class="keyword">in</span> all_post_meta]</span><br><span class="line">    all_post_content = list()</span><br><span class="line">    <span class="keyword">with</span> Pool(<span class="number">10</span>) <span class="keyword">as</span> p:</span><br><span class="line">        contents = p.map(parse_get_article, post_links)</span><br></pre></td></tr></table></figure>
-<p>執行後得到的 contents 裡面就是每一篇的文章內文，現在把內文跟文章資訊拼在一起</p>
+<p>執行後得到的 <code>contents</code> 裡面就是每一篇的文章內文，現在把內文跟文章資訊拼在一起</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">all_post = list()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(all_post_meta)):</span><br><span class="line">    all_post.append(&#123;</span><br><span class="line">        <span class="string">'title'</span>: post_list[i][<span class="string">'title'</span>], </span><br><span class="line">        <span class="string">'link'</span>: post_list[i][<span class="string">'link'</span>], </span><br><span class="line">        <span class="string">'date'</span>: post_list[i][<span class="string">'date'</span>],</span><br><span class="line">        <span class="string">'author'</span>: post_list[i][<span class="string">'author'</span>], </span><br><span class="line">        <span class="string">'push'</span>: post_list[i][<span class="string">'push'</span>], </span><br><span class="line">        <span class="string">'content'</span>: contents[i]</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
-
-<p>如此一來 all_post 就包含所有文章的 [ 標題、網址、發布日期、作者、推文數、內文 ] 了。</p>
+<p>如此一來 <code>all_post</code> 就包含所有文章的&quot;標題、網址、發布日期、作者、推文數、內文&quot;了。</p>
 <p>PTT 爬蟲就到這邊告一段落了，前前後後共寫了五篇，文章中某些程式碼都是跟上篇或上上篇有所關連，從中間看可能會看不懂，如果可以的話還是建議從 <a href="https://eugene87222.github.io/2018/02/10/PTT-crawler-1/">第一篇</a> 開始看。</p>
 
     </div>
