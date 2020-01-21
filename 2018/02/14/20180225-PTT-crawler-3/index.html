@@ -58,7 +58,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://eugene87222.github.io/image/pagination_class.gif">
 <meta property="article:published_time" content="2018-02-14T15:30:46.000Z">
-<meta property="article:modified_time" content="2020-01-18T13:20:46.033Z">
+<meta property="article:modified_time" content="2020-01-20T14:10:19.390Z">
 <meta property="article:author" content="Eugene Yang">
 <meta property="article:tag" content="tutorial">
 <meta property="article:tag" content="python">
@@ -234,7 +234,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-18 21:20:46" itemprop="dateModified" datetime="2020-01-18T21:20:46+08:00">2020-01-18</time>
+                <time title="Modified: 2020-01-20 22:10:19" itemprop="dateModified" datetime="2020-01-20T22:10:19+08:00">2020-01-20</time>
               </span>
 
           
@@ -264,10 +264,10 @@
 <h2 id="取得網頁原始碼"><a href="#取得網頁原始碼" class="headerlink" title="取得網頁原始碼"></a>取得網頁原始碼</h2><p>一樣使用 <code>request.get</code> 拿到八卦版首頁的原始碼，然後再用 BeautifulSoup 包起來。</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">res = requests.get(</span><br><span class="line">    url=<span class="string">'https://www.ptt.cc/bbs/Gossiping/index.html'</span>,</span><br><span class="line">    cookies=&#123;<span class="string">'over18'</span>:<span class="string">'1'</span>&#125;</span><br><span class="line">)</span><br><span class="line">html = res.text</span><br><span class="line">content = BeautifulSoup(html.text)</span><br></pre></td></tr></table></figure>
 
-<h2 id="分析原始碼，取得總頁數"><a href="#分析原始碼，取得總頁數" class="headerlink" title="分析原始碼，取得總頁數"></a>分析原始碼，取得總頁數</h2><p>先打開瀏覽器到八卦版首頁按下 f12 觀察一下，&quot;最舊、上頁、下頁、最新&quot;這幾個按鈕被包在 <code>class=&quot;btn-group-paging&quot;</code> 底下的 <code>class=&quot;btn&quot;</code> 裡面。
+<h2 id="分析原始碼，取得總頁數"><a href="#分析原始碼，取得總頁數" class="headerlink" title="分析原始碼，取得總頁數"></a>分析原始碼，取得總頁數</h2><p>先打開瀏覽器到八卦版首頁按下 f12 觀察一下，「最舊、上頁、下頁、最新」這幾個按鈕被包在 <code>class=&quot;btn-group-paging&quot;</code> 底下的 <code>class=&quot;btn&quot;</code> 裡面。
 <img src="/image/pagination_class.gif" alt=""></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">pagination = content.find(<span class="string">'div'</span>, &#123;<span class="string">'class'</span>:<span class="string">'btn-group-paging'</span>&#125;).findAll(<span class="string">'a'</span>, &#123;<span class="string">'class'</span>:<span class="string">'btn'</span>&#125;)</span><br><span class="line">next_page = pagination[<span class="number">1</span>][<span class="string">'href'</span>]</span><br><span class="line">total_page = next_page.replace(<span class="string">'/bbs/Gossiping/index'</span>, <span class="string">''</span>)</span><br><span class="line">total_page = int(total_page[:<span class="number">-5</span>]) + <span class="number">1</span></span><br></pre></td></tr></table></figure>
-<p>&quot;上頁&quot;在第二個 <code>class=&quot;btn&quot;</code> 裡面，所以是 pagination[1]，取出&quot;上頁&quot;的連結後把前面 &#39;/bbs/Gossiping/index&#39; 這段字串拿掉 (用 <code>replace</code> 替換成空字串就好了)，然後第四行這邊用到了 Python 的 <a href="http://python-reference.readthedocs.io/en/latest/docs/brackets/slicing.html" target="_blank" rel="noopener">slice</a> 把字串尾巴的 &quot;.html&quot; 移除，剩下來的部分就是數字了，不過現在的數字是 string 型態，要轉換成 int 才能夠做加減的動作，這邊為什麼還要加一呢？因為我們抓到的數字是最新一頁的&quot;上頁&quot;的，所以還要加一才會是目前的總頁數。</p>
+<p>「上頁」在第二個 <code>class=&quot;btn&quot;</code> 裡面，所以是 pagination[1]，取出「上頁」的連結後把前面 &#39;/bbs/Gossiping/index&#39; 這段字串拿掉 (用 <code>replace</code> 替換成空字串就好了)，然後第四行這邊用到了 Python 的 <a href="http://python-reference.readthedocs.io/en/latest/docs/brackets/slicing.html" target="_blank" rel="noopener">slice</a> 把字串尾巴的 &quot;.html&quot; 移除，剩下來的部分就是數字了，不過現在的數字是 string 型態，要轉換成 int 才能夠做加減的動作，這邊為什麼還要加一呢？因為我們抓到的數字是最新一頁的&quot;上頁&quot;的，所以還要加一才會是目前的總頁數。</p>
 <h1 id="取得文章列表頁網址"><a href="#取得文章列表頁網址" class="headerlink" title="取得文章列表頁網址"></a>取得文章列表頁網址</h1><p>有了總頁數就可以得到每個文章列表頁的網址了，上面講過最舊頁是 1，一直累加上去到最新頁。假設現在有 100 頁列表，那最新的一頁就會是 100，假設我們想爬 20 頁，寫成 C 大概會長這樣：</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">100</span>; i &gt; <span class="number">100</span><span class="number">-20</span>; i--) &#123;</span><br><span class="line">    <span class="comment">// url = 'https://www.ptt.cc/bbs/Gossiping/index' + i + '.html'</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在 Python 裡面可以用 <code>range()</code> 來達成，這邊只會大略說明 <code>range()</code> 怎麼用，想深入了解的話可以到 <a href="https://docs.python.org/3/library/functions.html#func-range" target="_blank" rel="noopener">Python Built-in Functions</a> 看。</p>
@@ -404,7 +404,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">69</span>
+          <span class="site-state-item-count">70</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>

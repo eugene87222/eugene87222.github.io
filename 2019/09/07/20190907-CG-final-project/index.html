@@ -49,15 +49,15 @@
   };
 </script>
 
-  <meta name="description" content="我在大三下學期的時候修了一門多媒體所開的「電腦動畫與特效」，並於製作了一個小動畫作為這堂課的期末專題，想說在這邊跟大家分享一下製作動畫時的一些心路歷程">
+  <meta name="description" content="我在大三下學期的時候修了一門多媒體所開的「電腦動畫與特效」，並製作了一個小動畫作為這堂課的期末專題，想說在這邊跟大家分享一下製作動畫時的一些心路歷程">
 <meta property="og:type" content="article">
 <meta property="og:title" content="電腦動畫與特效期末專題">
 <meta property="og:url" content="http://eugene87222.github.io/2019/09/07/20190907-CG-final-project/index.html">
 <meta property="og:site_name" content="3ugeneYang.§ite">
-<meta property="og:description" content="我在大三下學期的時候修了一門多媒體所開的「電腦動畫與特效」，並於製作了一個小動畫作為這堂課的期末專題，想說在這邊跟大家分享一下製作動畫時的一些心路歷程">
+<meta property="og:description" content="我在大三下學期的時候修了一門多媒體所開的「電腦動畫與特效」，並製作了一個小動畫作為這堂課的期末專題，想說在這邊跟大家分享一下製作動畫時的一些心路歷程">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2019-09-07T03:19:51.000Z">
-<meta property="article:modified_time" content="2020-01-18T04:23:35.306Z">
+<meta property="article:modified_time" content="2020-01-20T14:20:14.190Z">
 <meta property="article:author" content="Eugene Yang">
 <meta property="article:tag" content="NCTU">
 <meta property="article:tag" content="computer animation">
@@ -230,7 +230,7 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-01-18 12:23:35" itemprop="dateModified" datetime="2020-01-18T12:23:35+08:00">2020-01-18</time>
+                <time title="Modified: 2020-01-20 22:20:14" itemprop="dateModified" datetime="2020-01-20T22:20:14+08:00">2020-01-20</time>
               </span>
 
           
@@ -251,11 +251,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>我在大三下學期的時候修了一門多媒體所開的「電腦動畫與特效」，並於製作了一個小動畫作為這堂課的期末專題，想說在這邊跟大家分享一下製作動畫時的一些心路歷程<a id="more"></a>。</p>
+        <p>我在大三下學期的時候修了一門多媒體所開的「電腦動畫與特效」，並製作了一個小動畫作為這堂課的期末專題，想說在這邊跟大家分享一下製作動畫時的一些心路歷程<a id="more"></a>。</p>
 <blockquote>
 <p>P.S. 因為做動畫的當下沒有打算寫這篇，所以也沒有把製作的過程截圖下來，之後有時間再把整個製作流程 run 一遍，並把截圖補上</p>
 </blockquote>
-<h1 id="製作動機"><a href="#製作動機" class="headerlink" title="製作動機"></a>製作動機</h1><p>源自於 Youtube 上面用子彈射擊各種物體的慢動作影片。<br>(影片相關連結：<a href="https://www.youtube.com/watch?v=_rFYhLt7Dlo" target="_blank" rel="noopener">https://www.youtube.com/watch?v=_rFYhLt7Dlo</a>)</p>
+<h1 id="製作動機"><a href="#製作動機" class="headerlink" title="製作動機"></a>製作動機</h1><p>源自於 Youtube 上面用子彈射擊各種物體的慢動作影片。<br>（影片相關連結：<a href="https://www.youtube.com/watch?v=_rFYhLt7Dlo）" target="_blank" rel="noopener">https://www.youtube.com/watch?v=_rFYhLt7Dlo）</a></p>
 <h1 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h1><ul>
 <li>結合剛體碎裂與流體的模擬，嘗試模擬子彈射穿盛裝液體的容器的場景</li>
 <li>盡可能提高動畫的擬真性</li>
@@ -269,12 +269,12 @@
 </ul>
 <p>如果將上述三種面向全部模擬出來的話會最接近現實的情況，但是由於硬體設備的不足以及整個模擬的過程過於複雜，後來便決定將碰撞過程拆分成兩個大面向個別處理。</p>
 <h2 id="剛體層面"><a href="#剛體層面" class="headerlink" title="剛體層面"></a>剛體層面</h2><p>先模擬子彈射擊未盛裝液體的杯子，並將模擬結果存起來。</p>
-<h2 id="流體層面"><a href="#流體層面" class="headerlink" title="流體層面"></a>流體層面</h2><p>將先前的動畫模擬結果匯入到專門實作流體的軟體當中，直接將流體加入動畫中。此時因為杯子的破碎方式是固定的(先前的存檔)，所以流體並不會對子彈以及杯子碎塊造成力以及位置上的影響，流體只是單純照著杯子的碎裂方式去移動。</p>
+<h2 id="流體層面"><a href="#流體層面" class="headerlink" title="流體層面"></a>流體層面</h2><p>將先前的動畫模擬結果匯入到專門實作流體的軟體當中，直接將流體加入動畫中。此時因為杯子的破碎方式是固定的（先前的存檔），所以流體並不會對子彈以及杯子碎塊造成力以及位置上的影響，流體只是單純照著杯子的碎裂方式去移動。</p>
 <h1 id="實作流程"><a href="#實作流程" class="headerlink" title="實作流程"></a>實作流程</h1><p>場景：子彈射擊裝有液體的酒杯
 用 <a href="https://www.autodesk.com/products/maya/overview" target="_blank" rel="noopener">Maya</a> 作為建模以及模擬剛體碎裂的程式，並使用 <a href="http://www.nextlimit.com/realflow/" target="_blank" rel="noopener">RealFlow</a> 處理流體模擬。</p>
 <h2 id="在-Maya-中模擬酒杯碎裂"><a href="#在-Maya-中模擬酒杯碎裂" class="headerlink" title="在 Maya 中模擬酒杯碎裂"></a>在 <a href="https://www.autodesk.com/products/maya/overview" target="_blank" rel="noopener">Maya</a> 中模擬酒杯碎裂</h2><p>首先在 <a href="https://www.autodesk.com/products/maya/overview" target="_blank" rel="noopener">Maya</a> 裡面建模，包含地板、牆壁、酒杯與子彈。</p>
 <ul>
-<li>使用 <a href="https://www.autodesk.com/products/maya/overview" target="_blank" rel="noopener">Maya</a> 的 plugin - <a href="https://www.pulldownit.com/" target="_blank" rel="noopener">Pulldownit</a>，來將物體隨機碎裂成多個碎塊，在設定子彈與酒杯的物理屬性(kinematics rigid body 與 passive rigid body)。比較需要注意的是，地板與牆壁等障礙物也要設定屬性，這樣酒杯與子彈才不會穿透進地板或牆壁裡面。</li>
+<li>使用 <a href="https://www.autodesk.com/products/maya/overview" target="_blank" rel="noopener">Maya</a> 的 plugin - <a href="https://www.pulldownit.com/" target="_blank" rel="noopener">Pulldownit</a>，來將物體隨機碎裂成多個碎塊，在設定子彈與酒杯的物理屬性（kinematics rigid body 與 passive rigid body）。比較需要注意的是，地板與牆壁等障礙物也要設定屬性，這樣酒杯與子彈才不會穿透進地板或牆壁裡面。</li>
 <li>設定子彈的 key frame，也就是設定在特定時間下，子彈的位置。設定好之後 Maya 會自行計算物體的移動速度。</li>
 <li>模擬子彈射擊的過程，並將模擬出來的動畫輸出成 .sd 檔案。</li>
 </ul>
@@ -410,7 +410,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">69</span>
+          <span class="site-state-item-count">70</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
