@@ -5,6 +5,7 @@ tags:
   - psychology
   - note
 date: 2019-04-26 07:34:16
+description: ' '
 ---
 
 # Social Cognition: How We Think About the Social World

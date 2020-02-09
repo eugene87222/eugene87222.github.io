@@ -5,6 +5,7 @@ tags:
   - psychology
   - note
 date: 2019-04-26 07:35:46
+description: ' '
 ---
 
 # Social Perception: How We Come to Understand Other People

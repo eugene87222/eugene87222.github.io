@@ -4,16 +4,17 @@ tags:
   - computer animation
   - NCTU
 date: 2019-09-07 11:19:51
+# description: ' '
 ---
 
 
-我在大三下學期的時候修了一門多媒體所開的「電腦動畫與特效」，並於製作了一個小動畫作為這堂課的期末專題，想說在這邊跟大家分享一下製作動畫時的一些心路歷程。
+我在大三下學期的時候修了一門多媒體所開的「電腦動畫與特效」，並製作了一個小動畫作為這堂課的期末專題，想說在這邊跟大家分享一下製作動畫時的一些心路歷程<!-- more -->。
 > P.S. 因為做動畫的當下沒有打算寫這篇，所以也沒有把製作的過程截圖下來，之後有時間再把整個製作流程 run 一遍，並把截圖補上
 
 # 製作動機
 
 源自於 Youtube 上面用子彈射擊各種物體的慢動作影片。  
-(影片相關連結：https://www.youtube.com/watch?v=_rFYhLt7Dlo)
+（影片相關連結：https://www.youtube.com/watch?v=_rFYhLt7Dlo）
 
 # 目標
 
@@ -36,7 +37,7 @@ date: 2019-09-07 11:19:51
 
 ## 流體層面
 
-將先前的動畫模擬結果匯入到專門實作流體的軟體當中，直接將流體加入動畫中。此時因為杯子的破碎方式是固定的(先前的存檔)，所以流體並不會對子彈以及杯子碎塊造成力以及位置上的影響，流體只是單純照著杯子的碎裂方式去移動。
+將先前的動畫模擬結果匯入到專門實作流體的軟體當中，直接將流體加入動畫中。此時因為杯子的破碎方式是固定的（先前的存檔），所以流體並不會對子彈以及杯子碎塊造成力以及位置上的影響，流體只是單純照著杯子的碎裂方式去移動。
 
 # 實作流程
 
@@ -47,7 +48,7 @@ date: 2019-09-07 11:19:51
 
 首先在 [Maya](https://www.autodesk.com/products/maya/overview) 裡面建模，包含地板、牆壁、酒杯與子彈。
 
-- 使用 [Maya](https://www.autodesk.com/products/maya/overview) 的 plugin - [Pulldownit](https://www.pulldownit.com/)，來將物體隨機碎裂成多個碎塊，在設定子彈與酒杯的物理屬性(kinematics rigid body 與 passive rigid body)。比較需要注意的是，地板與牆壁等障礙物也要設定屬性，這樣酒杯與子彈才不會穿透進地板或牆壁裡面。
+- 使用 [Maya](https://www.autodesk.com/products/maya/overview) 的 plugin - [Pulldownit](https://www.pulldownit.com/)，來將物體隨機碎裂成多個碎塊，在設定子彈與酒杯的物理屬性（kinematics rigid body 與 passive rigid body）。比較需要注意的是，地板與牆壁等障礙物也要設定屬性，這樣酒杯與子彈才不會穿透進地板或牆壁裡面。
 - 設定子彈的 key frame，也就是設定在特定時間下，子彈的位置。設定好之後 Maya 會自行計算物體的移動速度。
 - 模擬子彈射擊的過程，並將模擬出來的動畫輸出成 .sd 檔案。
 

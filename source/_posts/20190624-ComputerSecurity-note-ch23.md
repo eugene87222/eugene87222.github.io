@@ -5,6 +5,7 @@ tags:
   - computer security
   - note
 date: 2019-06-24 20:02:05
+description: ' '
 ---
 
 # Ch23. Internet Authentication Applications

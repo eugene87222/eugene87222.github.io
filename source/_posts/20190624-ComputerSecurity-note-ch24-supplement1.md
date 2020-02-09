@@ -5,6 +5,7 @@ tags:
   - computer security
   - note
 date: 2019-06-24 20:05:53
+description: ' '
 ---
 
 # Ch24 Supplement. Phishing Attacks in Wi-Fi Networks

@@ -5,6 +5,7 @@ tags:
   - computer security
   - note
 date: 2019-06-24 20:06:14
+description: ' '
 ---
 
 # Ch24 Supplement. Cellular Network Security

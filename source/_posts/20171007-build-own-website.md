@@ -1,7 +1,10 @@
 ---
 title: 用 Github 建立靜態網頁
 date: 2017-10-7 14:00:49
-tags: [tutorial,web development]
+tags: 
+  - tutorial
+  - web development
+description: ' '
 ---
 
 # 靜態網頁跟動態網頁的差別
@@ -12,7 +15,7 @@ tags: [tutorial,web development]
 
 ## 動態網頁
 
-網頁除了 HTML 外還會包含其他網頁程式(ASP、Perl、PHP、JSP等)以及資料庫(SQL)，動態網頁可以透過程式語言結合資料庫的方式，設計出可互動的網頁。特點是以資料庫技術為基礎，可降低網頁維護的工作量，且因為可交互，得以實現更多功能。
+網頁除了 HTML 外還會包含其他網頁程式（ASP、Perl、PHP、JSP　等）以及資料庫（SQL），動態網頁可以透過程式語言結合資料庫的方式，設計出可互動的網頁。特點是以資料庫技術為基礎，可降低網頁維護的工作量，且因為可交互，得以實現更多功能。
 
 ## 小結論
 
@@ -20,8 +23,8 @@ tags: [tutorial,web development]
 
 # 用 Gituhb 建立網頁
 
-首先要申請一個 [Github](https://github.com/) 帳號([點我申請](https://github.com/))。
+首先要申請一個 [Github](https://github.com/) 帳號（[點我申請](https://github.com/)）。
 
-[Github](https://github.com/) 提供兩種 [Github Pages](https://pages.github.com/)，這邊只說明如何建立 "User/Organization site"，首先建立一個 repository 並且將這個 repository 命名為 username.github.io (不要真的寫 username，請改成自己的帳號名稱)，並且將 repository 設成 public，建立好直接把 index.html 等檔案放上去就好了，[Github Pages](https://pages.github.com/) 支援 html、css、javascript 與 markdown。當文件都上傳好之後，在瀏覽器上的網址列輸入 username.github.io 就可以看見剛剛建立的個人網頁了，如果發現 404 Not Found 也不用擔心，代表 Github 還在處理你的檔案，再等待一會就能看到自己獨一無二的網頁了。
+[Github](https://github.com/) 提供兩種 [Github Pages](https://pages.github.com/)，這邊只說明如何建立「User/Organization site」，首先建立一個 repository 並且將這個 repository 命名為 username.github.io（不要真的寫 username，請改成自己的帳號名稱），並且將 repository 設成 public，建立好直接把 index.html 等檔案放上去就好了，[Github Pages](https://pages.github.com/) 支援 html、css、javascript 與 markdown。當文件都上傳好之後，在瀏覽器上的網址列輸入 username.github.io 就可以看見剛剛建立的個人網頁了，如果發現 404 Not Found 也不用擔心，代表 Github 還在處理你的檔案，再等待一會就能看到自己獨一無二的網頁了。
 
-當然這只是建立個人網頁的其中一種方法，這邊並沒有對 [Github](https://github.com/) 提供的 "Project site" 多做介紹，有興趣的朋友可以直接到 [Github Pages](https://pages.github.com/) 上面看看。
+當然這只是建立個人網頁的其中一種方法，這邊並沒有對 [Github](https://github.com/) 提供的「Project site」多做介紹，有興趣的朋友可以直接到 [Github Pages](https://pages.github.com/) 上面看看。

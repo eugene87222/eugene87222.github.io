@@ -5,6 +5,7 @@ tags:
   - psychology
   - note
 date: 2019-06-17 23:54:15
+description: ' '
 ---
 
 # The Need to Justify Our Actions: The Costs and Benefits of Dissonance Reduction

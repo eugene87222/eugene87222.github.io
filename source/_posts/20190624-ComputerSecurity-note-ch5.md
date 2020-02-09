@@ -5,6 +5,7 @@ tags:
   - computer security
   - note
 date: 2019-06-24 19:37:38
+description: ' '
 ---
 
 # Ch5. Database and Cloud Security

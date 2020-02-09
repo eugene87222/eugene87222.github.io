@@ -1,7 +1,9 @@
 ---
 title: 個人網頁更新!!
 date: 2017-10-5 13:59:59
-tags: [notice]
+tags: 
+  - notice
+description: ' '
 ---
 
 # 終於更新了!!
@@ -10,11 +12,10 @@ tags: [notice]
 
 ![](/image/old-ver.jpg)
 
-真的很陽春 ORZ......沒有架構可言，後來又再花點時間到處看別人的網頁，逛逛 [Pinterest](https://www.pinterest.com/)，真心推薦 [Pinterest] (https://www.pinterest.com/)這個充滿設計網站，看了很多概念跟架構，最後花了一個晚上把原本空空的網頁翻新，變成現在這樣
+真的很陽春 ORZ......沒有架構可言，後來又再花點時間到處看別人的網頁，逛逛 [Pinterest](https://www.pinterest.com/)，真心推薦 [Pinterest] (https://www.pinterest.com/) 這個充滿設計網站，看了很多概念跟架構，最後花了一個晚上把原本空空的網頁翻新，變成現在這樣
 
 ![](/image/new-ver.jpg)
 
-跟之前比起來多了點組織結構 (我自己是這麼認為啦)，之後希望能夠在這邊分享一些東西或在發點文章，一邊記錄生活點滴。
+跟之前比起來多了點組織結構（我自己是這麼認為啦），之後希望能夠在這邊分享一些東西或在發點文章，一邊記錄生活點滴。
 
-> 註：
-> [W3school (上面提供了各種寫網頁會用到的語言的教學)](https://www.w3schools.com/)
+> 註：[W3school](https://www.w3schools.com/)

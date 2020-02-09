@@ -5,6 +5,7 @@ tags:
   - psychology
   - note
 date: 2019-04-26 07:17:28
+description: ' '
 ---
 
 # Introducing Social Psychology

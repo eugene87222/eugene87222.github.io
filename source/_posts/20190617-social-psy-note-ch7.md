@@ -5,6 +5,7 @@ tags:
   - psychology
   - note
 date: 2019-06-17 23:54:57
+description: ' '
 ---
 
 # Attitudes and Attitude Change: Influencing Thoughts and Feelings

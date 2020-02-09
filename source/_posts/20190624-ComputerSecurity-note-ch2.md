@@ -5,6 +5,7 @@ tags:
   - computer security
   - note
 date: 2019-06-24 19:26:04
+description: ' '
 ---
 
 # Ch2. Cryptographic Tools

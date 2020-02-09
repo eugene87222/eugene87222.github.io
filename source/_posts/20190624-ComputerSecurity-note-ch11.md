@@ -5,6 +5,7 @@ tags:
   - computer security
   - note
 date: 2019-06-24 19:51:32
+description: ' '
 ---
 
 # Ch11. Software Security

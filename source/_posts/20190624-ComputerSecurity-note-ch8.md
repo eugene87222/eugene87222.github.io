@@ -5,6 +5,7 @@ tags:
   - computer security
   - note
 date: 2019-06-24 19:44:56
+description: ' '
 ---
 
 # Ch8. Intrusion Detection
