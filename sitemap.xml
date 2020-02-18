@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://eugene87222.github.io/about/index.html</loc>
+    
+    <lastmod>2020-02-18T14:48:31.137Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://eugene87222.github.io/2020/01/18/20200118-photo/</loc>
     
     <lastmod>2020-02-18T11:49:41.029Z</lastmod>
@@ -173,13 +180,6 @@
     <loc>http://eugene87222.github.io/2018/02/10/20180224-PTT-crawler-1/</loc>
     
     <lastmod>2020-01-18T13:13:34.816Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/about/index.html</loc>
-    
-    <lastmod>2020-01-18T08:57:04.735Z</lastmod>
     
   </url>
   
