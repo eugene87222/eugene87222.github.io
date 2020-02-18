@@ -1,5 +1,5 @@
 ---
-title: 收藏分享(持續更新)
+title: 收藏分享（持續更新）
 date: 2017-10-29 14:59:41
 tags: 
     - collection
@@ -16,21 +16,12 @@ top: true
 - [莫烦 Python](https://morvanzhou.github.io/tutorials/)
 - [杨秀璋的专栏 - CSDN博客](https://blog.csdn.net/eastmount?t=1&orderby=UpdateTime)
 
-# 資安、CTF / Computer Security
-
-- 2020.01 [OpenSSL Heartbleed 全球駭客的殺戮祭典，你參與了嗎？](https://devco.re/blog/2014/04/11/openssl-heartbleed-how-to-hack-how-to-protect/)
-- 2020.01 [OpenSSL CVE-2014-0160 Heartbleed 嚴重漏洞](https://devco.re/blog/2014/04/09/openssl-heartbleed-CVE-2014-0160/)
-- 2019.12 [國網中心 CDX 經驗分享](https://kb.hitcon.org/post/162189657177/%E5%9C%8B%E7%B6%B2%E4%B8%AD%E5%BF%83-cdx-%E7%B6%93%E9%A9%97%E5%88%86%E4%BA%AB)
-- 2019.03 [PWNABLE.KR](https://pwnable.kr/index.php)
-- 2019.03 [PWNABLE.TW](https://pwnable.tw/)
-- 2019.03 [Got Your PW](https://gotyour.pw/)
-- 2019.03 [Bamboofox Official Blog](https://bamboofox.github.io/)
-- 2019.03 [Binary Ninja 101: Windows Binary Reversing from Zero to Master ](https://speakerdeck.com/aaaddress1/binary-ninja-101-windows-binary-reversing-from-zero-to-master)
-- 2019.03 [我想學資安 從哪裡開始呢 - DuckLL](https://www.duckll.tw/2017/11/blog-post.html)
-- 2019.03 [CTF Wiki](https://ctf-wiki.github.io/ctf-wiki/)
-
 # 機器學習 / Machine Learning
 
+- 2020.02 [The 3 Deep Learning Frameworks For End-to-End Speech Recognition That Power Your Devices](https://heartbeat.fritz.ai/the-3-deep-learning-frameworks-for-end-to-end-speech-recognition-that-power-your-devices-37b891ddc380)
+- 2020.02 [用 CartoonGAN 及 TensorFlow 2 生成新海誠與宮崎駿動畫](https://leemeng.tw/generate-anime-using-cartoongan-and-tensorflow2.html)
+- 2020.02 [ 讓 AI 寫點金庸：如何用 TensorFlow 2.0 及 TensorFlow.js 寫天龍八部](https://leemeng.tw/how-to-generate-interesting-text-with-tensorflow2-and-tensorflow-js.html)
+- 2020.01 [機器學習基石(Machine Learning Foundations) 机器学习基石 课后习题链接汇总](https://blog.csdn.net/a1015553840/article/details/51085129)
 - 2020.01 [世上最生動的 PCA：直觀理解並應用主成分分析](https://leemeng.tw/essence-of-principal-component-analysis.html?fbclid=IwAR1ugh3sC3ZovEpyunol_W9zh9tecGTz9Q_2It0WzEOKoECIOFXqAD51IAs)
 - 2019.12 [Alec Radford's animations for optimization algorithms](http://www.denizyuret.com/2015/03/alec-radfords-animations-for.html)
 - 2019.10 [OpenAI’s AI-powered robot learned how to solve a Rubik’s cube one-handed](https://www.theverge.com/2019/10/15/20914575/openai-dactyl-robotic-hand-rubiks-cube-one-handed-solve-dexterity-ai?fbclid=IwAR0V2LoBQfBdYxSDvRg0OTqX-Fzy97cCiCAHXLkdj8eJ2J1NqNDnkCBX0Pw)
@@ -60,6 +51,19 @@ top: true
 - 2018.05 [dcard 爬蟲疑問](https://www.dcard.tw/f/dcard/p/224157736)
 - 2018.05 [dcard API](https://www.dcard.tw/_api/forums/)
 - 2018.04 [在雲端伺服器上利用 Python Selenium 擷取網站資料 – Pyradise – Medium](https://medium.com/pyradise/%E5%9C%A8%E9%9B%B2%E7%AB%AF%E4%BC%BA%E6%9C%8D%E5%99%A8%E4%B8%8A%E5%88%A9%E7%94%A8-python-selenium-%E6%93%B7%E5%8F%96%E7%B6%B2%E7%AB%99%E8%B3%87%E6%96%99-b42fcc9a3b93)
+
+# 資安、CTF / Computer Security
+
+- 2020.01 [OpenSSL Heartbleed 全球駭客的殺戮祭典，你參與了嗎？](https://devco.re/blog/2014/04/11/openssl-heartbleed-how-to-hack-how-to-protect/)
+- 2020.01 [OpenSSL CVE-2014-0160 Heartbleed 嚴重漏洞](https://devco.re/blog/2014/04/09/openssl-heartbleed-CVE-2014-0160/)
+- 2019.12 [國網中心 CDX 經驗分享](https://kb.hitcon.org/post/162189657177/%E5%9C%8B%E7%B6%B2%E4%B8%AD%E5%BF%83-cdx-%E7%B6%93%E9%A9%97%E5%88%86%E4%BA%AB)
+- 2019.03 [PWNABLE.KR](https://pwnable.kr/index.php)
+- 2019.03 [PWNABLE.TW](https://pwnable.tw/)
+- 2019.03 [Got Your PW](https://gotyour.pw/)
+- 2019.03 [Bamboofox Official Blog](https://bamboofox.github.io/)
+- 2019.03 [Binary Ninja 101: Windows Binary Reversing from Zero to Master ](https://speakerdeck.com/aaaddress1/binary-ninja-101-windows-binary-reversing-from-zero-to-master)
+- 2019.03 [我想學資安 從哪裡開始呢 - DuckLL](https://www.duckll.tw/2017/11/blog-post.html)
+- 2019.03 [CTF Wiki](https://ctf-wiki.github.io/ctf-wiki/)
 
 # Linux
 
@@ -105,22 +109,40 @@ top: true
 - [三倍體複製蝦全面入侵——進擊の大理石紋螯蝦（上）](http://pansci.asia/archives/136623)
 - [缺乏遺傳多樣性的孤雌生殖，註定死路一條？——進擊の大理石紋螯蝦（下）](http://pansci.asia/archives/136629)
 
+# 可愛貓貓 / Cats
+
+- 2020.02 [搶食物貓貓](https://media.giphy.com/media/llsfFyBViKxp1mfRUQ/giphy.gif#.XjunOh-6EYY.facebook)
+- 2020.02 [殺手貓貓](https://www.gif-vif.com/Agent-kitty/?fbrefresh=23&fbclid=IwAR1GcTBtWiOO2YuUZBZ2FAtPFXUc--uuLXuI5dG3n9OCrYF3mc_Xks0n-Ns)
+- 2020.02 [洋芋片貓貓](https://www.gif-vif.com/What-kind-of-chips-is-this/?fbrefresh=23)
+- 2020.02 [毛手毛腳](https://www.gif-vif.com/I-want-makeup/?fbrefresh=23&fbclid=IwAR39KixGQcO31CkgIkJSceyK5moY490r_vlaZ265SzVyCLdYBHkpuvnBZR4)
+- 2020.02 [停車貓貓](https://giphy.com/gifs/parking-fluYfyYrkP5Ys)
+- 2020.02 [戲精貓貓](https://giphy.com/gifs/justviralnet-funny-animal-acting-LqroqS6BkH4gmffEDM)
+- 2020.02 [黑貓貓](https://giphy.com/gifs/justviralnet-cat-angry-animal-RH1ZXHKTDSH52baPcG)
+- 2020.02 [抱抱貓貓](https://giphy.com/gifs/cat-hug-MBrmhKiiFwXy8)
+- 2020.02 [臭臉貓貓](https://www.gifng.com/animals/33155/?fbclid=IwAR0RcFy-rRk1zJR8FhIdslDzXV6vaMvz2WehPdN50ommhiKV2oOu3ys9aL8)
+- 2020.02 [可愛貓貓](https://giphy.com/gifs/d8KycwRIJRApftKEgO?fbclid=IwAR0A_0LCcG1v6XQ1tVx9GK8TKjLyWLpFs8eKpzNcgjvlHJymcf9_0QMmsjw)
+- 2020.02 [海豚貓貓](https://giphy.com/gifs/v4vnX6bnCSjFS)
+- 2020.01 [太陽眼鏡貓貓](https://www.gif-vif.com/Catto-got-swag/?fbrefresh=23)
+- 2020.01 [搶食貓貓](https://yay-gif.com/2341-42-2/)
+- 2020.01 [別人家的貓永遠不會讓我失望](https://giphy.com/gifs/cute-aww-eyebleach-74Ob9q9VMgvIiviIXM)
+- 2020.01 [狗狗貓貓](https://imgur.com/ab18mol)
+- [「你看過這隻貓嗎？」好心路人想幫找　近看卻傻眼：…可惡](https://pets.ettoday.net/news/869905#ixzz5A1X76irb)
+- [大貓行列！](https://www.facebook.com/NowJustLaugh.TW/posts/1982056361827700)twitter [@dk_art](https://twitter.com/dk_art?lang=en)
+- [喵星人如何在零下20°的雪地裡生活呢？](https://www.facebook.com/peanutnews/videos/1867436036604009/)
+- [貓貓攝影失敗大賽||(=´ω\`=)](https://www.facebook.com/odanobunagafire/posts/1458553057584971)
+
+# 其他動物 / Animals
+
+- [影片小女孩爆哭！牧羊犬嚇到「球都掉了」　嘴開開衝上前關心](https://pets.ettoday.net/news/1107576#ixzz5A1WyfqVe)
+- [竟然偷吃我飼料！阿金把貓弟弟叼走　媽傻眼：別扔出去啊啊啊](https://pets.ettoday.net/news/1115029#ixzz5A1WZdU3n)
+- [汪星人穿越柵欄逃家 主人僅靠「這根東西」成功攔截](http://www.epochtimes.com/b5/17/12/18/n9967372.htm)
+- [鼠鼠攝影失敗大賽(=´ϖ\`=)](https://www.facebook.com/odanobunagafire/posts/1461142400659370)
+
 # 旅遊 / Travel
 
 - [被地圖遺忘的地方！卡帕多細亞的地下城](https://www.vogue.com.tw/feature/travel/content-34341.html)
 - [日本第一星空村 長野縣阿智村](https://gooshuo.tw/article/536)
 - [漂浮在碧綠湖水上的無人秘境車站 靜岡縣奧大井湖上站！](https://gooshuo.tw/article/651)
-
-# 動物 / Animals
-
-- [影片小女孩爆哭！牧羊犬嚇到「球都掉了」　嘴開開衝上前關心](https://pets.ettoday.net/news/1107576#ixzz5A1WyfqVe)
-- [「你看過這隻貓嗎？」好心路人想幫找　近看卻傻眼：…可惡](https://pets.ettoday.net/news/869905#ixzz5A1X76irb)
-- [竟然偷吃我飼料！阿金把貓弟弟叼走　媽傻眼：別扔出去啊啊啊](https://pets.ettoday.net/news/1115029#ixzz5A1WZdU3n)
-- [汪星人穿越柵欄逃家 主人僅靠「這根東西」成功攔截](http://www.epochtimes.com/b5/17/12/18/n9967372.htm)
-- [大貓行列！](https://www.facebook.com/NowJustLaugh.TW/posts/1982056361827700)twitter [@dk_art](https://twitter.com/dk_art?lang=en)
-- [喵星人如何在零下20°的雪地裡生活呢？](https://www.facebook.com/peanutnews/videos/1867436036604009/)
-- [貓貓攝影失敗大賽||(=´ω\`=)](https://www.facebook.com/odanobunagafire/posts/1458553057584971)
-- [鼠鼠攝影失敗大賽(=´ϖ\`=)](https://www.facebook.com/odanobunagafire/posts/1461142400659370)
 
 # 其他 / Other
 

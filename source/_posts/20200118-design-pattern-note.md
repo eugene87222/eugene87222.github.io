@@ -19,7 +19,7 @@ top: true
         （擷取自 ithome 系列文、wiki，自己的想法）
     - From wiki
         （擷取自 wiki）
-    - wiki 的 diagram
+    - wiki 上面的 UML
     - Reference 來源
 
 # S.O.L.I.D.
@@ -120,6 +120,8 @@ The abstract factory pattern provides a way to __encapsulate a group of individu
 > Reference:  
 > [DBA說換資料庫的帳號密碼，結果我花了一天改連線資訊$#&@#! (Factory 工廠模式) ](https://ithelp.ithome.com.tw/articles/10194363)
 
+---
+
 ### Builder
 
 #### 情境（from [ithome](https://ithelp.ithome.com.tw/articles/10194814)）
@@ -147,6 +149,8 @@ The intent of the Builder design pattern is to __separate the construction of a 
 > Reference:  
 > [為什麼裝潢師傅做出來的不是我想要的? 你需要... (Builder 建造者模式)](https://ithelp.ithome.com.tw/articles/10194814)
 
+---
+
 ### Factory Method
 
 #### From [wiki](https://en.wikipedia.org/wiki/Factory_method_pattern)
@@ -158,6 +162,8 @@ In class-based programming, the factory method pattern is a creational pattern t
 
 > Reference:  
 > [參考範例](https://en.wikipedia.org/wiki/Factory_method_pattern#Python)
+
+---
 
 ### Prototype
 
@@ -185,6 +191,8 @@ The prototype pattern is a creational design pattern in software development. It
 > Reference:  
 > [收到一筆要建立複製人軍隊的訂單怎麼辦? (Prototype 原型模式)](https://ithelp.ithome.com.tw/articles/10194600)
 
+---
+
 ### Singleton
 
 #### 情境（from [ithome](https://ithelp.ithome.com.tw/articles/10196899)）
@@ -198,6 +206,8 @@ In software engineering, the singleton pattern is a software design pattern that
 
 > Reference:  
 > [別再因為發號碼牌重複被客訴! (Singleton 單例模式)](https://ithelp.ithome.com.tw/articles/10196899)
+
+---
 
 ## Structural design patterns
 
@@ -227,6 +237,8 @@ In software engineering, the adapter pattern is a software design pattern (also 
 > Reference:  
 > [江湖走跳，轉接頭很重要! (Adapter 適配器模式)](https://ithelp.ithome.com.tw/articles/10194158)
 
+---
+
 ### Bridge
 
 #### 情境（from [ithome](https://ithelp.ithome.com.tw/articles/10193914)）
@@ -253,6 +265,8 @@ The bridge pattern is a design pattern used in software engineering that is mean
 > Reference:  
 > [橋來橋去! 以需求大化小，小化無(抽象)為目標! (Bridge 橋接模式)](https://ithelp.ithome.com.tw/articles/10193914)
 
+---
+
 ### Composite
 
 #### 情境（from [ithome](https://ithelp.ithome.com.tw/articles/10195044)）
@@ -265,13 +279,15 @@ The bridge pattern is a design pattern used in software engineering that is mean
 
 In software engineering, the composite pattern is a partitioning design pattern. The composite pattern describes a group of objects that are treated the same way as a single instance of the same type of object. __The intent of a composite is to "compose" objects into tree structures to represent part-whole hierarchies__. Implementing the composite pattern lets clients treat individual objects and compositions uniformly.
 
-Composite __should be used when clients ignore the difference between compositions of objects and individual objects__. If programmers find that they are using multiple objects in the same way, and often have nearly identical code to handle each of them, then composite is a good choice; it is less complex in this situation to treat primitives and composites as homogeneous. 
+Composite __should be used when clients ignore the difference between compositions of objects and individual objects__. If programmers find that they are using multiple objects in the same way, and often have nearly identical code to handle each of them, then composite is a good choice; it is less complex in this situation to treat primitives and composites as homogeneous.
 
 > ![](https://upload.wikimedia.org/wikipedia/commons/6/65/W3sDesign_Composite_Design_Pattern_UML.jpg)
 > from [wiki](https://en.wikipedia.org/wiki/Composite_pattern)
 
 > Reference:  
 > [老闆最大的興趣：異動組織! 但是下個月又調回來了... (Composite 組合模式)](https://ithelp.ithome.com.tw/articles/10195044)
+
+---
 
 ### Decorator
 
@@ -287,13 +303,15 @@ Composite __should be used when clients ignore the difference between compositio
 
 #### From [wiki](https://en.wikipedia.org/wiki/Decorator_pattern)
 
-In object-oriented programming, the decorator pattern is a design pattern that __allows behavior to be added to an individual object, dynamically, without affecting the behavior of other objects from the same class__. The decorator pattern is often useful for adhering to the Single Responsibility Principle, as it allows functionality to be divided between classes with unique areas of concern. The decorator pattern is __structurally nearly identical to the chain of responsibility pattern__, the difference being that in a chain of responsibility, exactly one of the classes handles the request, while for the decorator, all classes handle the request. 
+In object-oriented programming, the decorator pattern is a design pattern that __allows behavior to be added to an individual object, dynamically, without affecting the behavior of other objects from the same class__. The decorator pattern is often useful for adhering to the Single Responsibility Principle, as it allows functionality to be divided between classes with unique areas of concern. The decorator pattern is __structurally nearly identical to the chain of responsibility pattern__, the difference being that in a chain of responsibility, exactly one of the classes handles the request, while for the decorator, all classes handle the request.
 
 > ![](https://upload.wikimedia.org/wikipedia/commons/8/83/W3sDesign_Decorator_Design_Pattern_UML.jpg)
 > from [wiki](https://en.wikipedia.org/wiki/Decorator_pattern)
 
 > Reference:  
 > [標準永遠有例外! 但是千萬不要以為自己可以改標準... (Decorator 裝飾者模式)](https://ithelp.ithome.com.tw/articles/10195207)
+
+---
 
 ### Facade
 
@@ -327,6 +345,8 @@ __Developers often use the facade design pattern when a system is very complex o
 > ReferenceL  
 > [不用看書就會，但不一定會唸的... (Facade 外觀模式)](https://ithelp.ithome.com.tw/articles/10193671)
 
+---
+
 ### Flyweight
 
 #### 情境（from [ithome](https://ithelp.ithome.com.tw/articles/10195427)）
@@ -348,13 +368,15 @@ __Developers often use the facade design pattern when a system is very complex o
 
 #### From [wiki](https://en.wikipedia.org/wiki/Flyweight_pattern)
 
-A flyweight is an object that __minimizes memory usage by sharing as much data as possible with other similar objects__; it is a way to use objects in large numbers when a simple repeated representation would use an unacceptable amount of memory. Often some parts of the object state can be shared, and it is common practice to hold them in external data structures and pass them to the objects temporarily when they are used. 
+A flyweight is an object that __minimizes memory usage by sharing as much data as possible with other similar objects__; it is a way to use objects in large numbers when a simple repeated representation would use an unacceptable amount of memory. Often some parts of the object state can be shared, and it is common practice to hold them in external data structures and pass them to the objects temporarily when they are used.
 
 > ![](https://upload.wikimedia.org/wikipedia/commons/4/4e/W3sDesign_Flyweight_Design_Pattern_UML.jpg)
 > from [wiki](https://en.wikipedia.org/wiki/Flyweight_pattern)
 
 > Reference:  
 > [程式碼也需要瘦身! (Flyweight 享元模式)](https://ithelp.ithome.com.tw/articles/10195427)
+
+---
 
 ### Proxy
 
@@ -400,6 +422,8 @@ A proxy, in its most general form, is a class functioning as an interface to som
 > Reference:  
 > [老闆說給客戶的報價要有彈性! 但是只能多算不能少算! (Proxy 代理模式)](https://ithelp.ithome.com.tw/articles/10195625)
 
+---
+
 ## Behavioral design patterns
 
 ### Chain of responsibility
@@ -425,7 +449,28 @@ In object-oriented design, the chain-of-responsibility pattern is a design patte
 > Reference:  
 > [職場第一條規則：事情不要接了傻傻做，而是要交給負責的人! (Chain of Responsibility 職責鍊模式)](https://ithelp.ithome.com.tw/articles/10193451)
 
-### Command 未完成
+---
+
+### Command
+
+#### 設計
+
+- 何時適合用 Command 呢？
+  - 當需要執行多個對象
+  - 且對象需要抽換策略和抽換執行策略的邏輯
+
+#### From [wiki](https://en.wikipedia.org/wiki/Command_pattern)
+
+Four terms always associated with the command pattern are __command, receiver, invoker and client__. A command object knows about receiver and invokes a method of the receiver. Values for parameters of the receiver method are stored in the command. The receiver object to execute these methods is also stored in the command object by aggregation. The receiver then does the work when the execute() method in command is called. An invoker object knows how to execute a command, and optionally does bookkeeping about the command execution. The invoker does not know anything about a concrete command, it knows only about the command interface. Invoker object(s), command objects and receiver objects are held by a client object, the client decides which receiver objects it assigns to the command objects, and which commands it assigns to the invoker. The client decides which commands to execute at which points. To execute a command, it passes the command object to the invoker object.
+
+> ![](https://upload.wikimedia.org/wikipedia/commons/c/c8/W3sDesign_Command_Design_Pattern_UML.jpg)
+> from [wiki](https://en.wikipedia.org/wiki/Command_pattern)
+
+> Reference:  
+> [讓你當一天艾森豪，來指揮諾曼地登陸作戰! (Command 命令模式)](https://ithelp.ithome.com.tw/articles/10196669)
+
+---
+
 ### Interpreter
 
 #### 情境（from [ithome](https://ithelp.ithome.com.tw/articles/10193177)）
@@ -450,11 +495,148 @@ In computer programming, the interpreter pattern is a design pattern that specif
 > Reference:   
 > [雞同鴨講也可以通! (Interpreter 解譯器模式)](https://ithelp.ithome.com.tw/articles/10193177)
 
-### Iterator 未完成
-### Mediator 未完成
-### Memento 未完成
-### Observer 未完成
-### State 未完成
+---
+
+### Iterator
+
+#### 情境（from [ithome](https://ithelp.ithome.com.tw/articles/10196545)）
+
+> As a 電商老闆  
+> I want 舉辦行銷活動，購物車結帳時：  
+>   - 書籍雜誌：會員相同類別10本以上八折優惠  
+>   - 生活用品：會員相同品項$1,000以上九折優惠  
+>
+> So that 提高網站轉換率及營收
+
+#### From [wiki](https://en.wikipedia.org/wiki/Iterator_pattern)
+
+In object-oriented programming, the iterator pattern is a design pattern in which an iterator __is used to traverse a container and access the container's elements__. The iterator pattern decouples algorithms from containers; in some cases, algorithms are necessarily container-specific and thus cannot be decoupled.
+
+> ![](https://upload.wikimedia.org/wikipedia/commons/c/c5/W3sDesign_Iterator_Design_Pattern_UML.jpg)
+> from [wiki](https://en.wikipedia.org/wiki/Iterator_pattern)
+
+> Reference:  
+> [你每天在用，但是可能不知道的... (Iterator 迭代器模式)](https://ithelp.ithome.com.tw/articles/10196545)
+
+---
+
+### Mediator
+
+#### 情境（from [ithome](https://ithelp.ithome.com.tw/articles/10195923)）
+
+> As a 銀行行員  
+> I want 計算客戶評分時，可採用
+>  - 各金融商品之評分模型但分別給與權重
+>  - 各金融商品之評分模型，加總後作平均
+>
+> So that 參考各模組之評分，達到KYC客戶風險評估之目的
+
+#### 設計
+
+- 在 Mediator 中定義兩種角色（各自需建立抽象及實作類別）
+  - Colleague：合作的對象，並且透過 Mediator 與其他對像溝通
+  - Mediator：中介者，他知道所有合作的對象，並且協調這些對像協同作業
+
+#### From [wiki](https://en.wikipedia.org/wiki/Mediator_pattern)
+
+In software engineering, the mediator pattern defines an object that __encapsulates how a set of objects interact__. This pattern is considered to be a behavioral pattern due to the way it can alter the program's running behavior.
+
+In object-oriented programming, programs often consist of many classes. Business logic and computation are distributed among these classes. However, as more classes are added to a program, especially during maintenance and/or refactoring, the problem of communication between these classes may become more complex. This makes the program harder to read and maintain. Furthermore, it can become difficult to change the program, since any change may affect code in several other classes.
+
+__With the mediator pattern, communication between objects is encapsulated within a mediator object__. Objects no longer communicate directly with each other, but instead communicate through the mediator. This reduces the dependencies between communicating objects, thereby reducing coupling. 
+
+> ![](https://upload.wikimedia.org/wikipedia/commons/9/92/W3sDesign_Mediator_Design_Pattern_UML.jpg)
+> from [wiki](https://en.wikipedia.org/wiki/Mediator_pattern)
+
+> Reference:  
+> [別再孤軍奮戰! 做好做滿第一件事情先找到能調用資源的人! (Mediator 中介者模式)](https://ithelp.ithome.com.tw/articles/10195923)
+> [Python實現設計模式--08.中介者模式（Mediator Pattern）](https://www.twblogs.net/a/5b8edfe02b7177188348679e)
+
+---
+
+### Memento
+
+#### 情境（from [ithome](https://ithelp.ithome.com.tw/articles/10196102)）
+
+> As a 電子表單使用者  
+> I want 系統可以在我填寫表單時，提供記錄草稿的功能，儲存該張表單後，即刪除該單所有草稿，但若未儲存，則須保留草稿  
+> So that 避免臨時無法完成表單而造成已填寫之資料遺失情況
+
+#### 設計
+
+- 在 Memento 中，定義了以下角色
+  - Originator：擁有要被儲存的資料
+  - Memento：State
+  - Caretaker（管理人）：管理與儲存 Memento（由 Originator 提供），提供存取的介面
+
+#### From [wiki](https://en.wikipedia.org/wiki/Memento_pattern)
+
+The memento pattern is a software design pattern that __provides the ability to restore an object to its previous state (undo via rollback)__.
+
+The memento pattern is implemented with three objects: __the originator, a caretaker and a memento__. The originator is some object that has an internal state. The caretaker is going to do something to the originator, but wants to be able to undo the change. The caretaker first asks the originator for a memento object. Then it does whatever operation (or sequence of operations) it was going to do. To roll back to the state before the operations, it returns the memento object to the originator. The memento object itself is an opaque object (one which the caretaker cannot, or should not, change). When using this pattern, care should be taken if the originator may change other objects or resources - the memento pattern operates on a single object.
+
+Classic examples of the memento pattern include the seed of a pseudorandom number generator (it will always produce the same sequence thereafter when initialized with the seed state) and the state in a finite state machine.
+
+> ![](https://upload.wikimedia.org/wikipedia/commons/3/38/W3sDesign_Memento_Design_Pattern_UML.jpg)
+> from [wiki](https://en.wikipedia.org/wiki/Memento_pattern)
+
+> Reference:  
+> [想不起昨天做了什麼? 吃銀杏和記憶口香糖不如試試... (Memento 備忘錄模式)](https://ithelp.ithome.com.tw/articles/10196102)
+
+---
+
+### Observer
+
+#### From [wiki](https://en.wikipedia.org/wiki/Observer_pattern)
+
+The observer pattern is a software design pattern in which __an object, called the subject, maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods__.
+
+It is mainly used to implement distributed event handling systems, in "event driven" software. In those systems, the subject is usually called a "stream of events" or "stream source of events", while the observers are called "sink of events". The stream nomenclature simulates or adapts to a physical setup where the observers are physically separated and have no control over the emitted events of the subject/stream-source. This pattern then perfectly suits any process where data arrives through I/O, that is, where data is not available to the CPU at startup, but can arrive "randomly" (HTTP requests, GPIO data, user input from keyboard/mouse/..., distributed databases and blockchains, ...). Most modern languages have built-in "event" constructs which implement the observer pattern components. While not mandatory most 'observers' implementations will use background threads listening for subject events and other support mechanism from the kernel (Linux epoll, ...)
+
+> ![](https://upload.wikimedia.org/wikipedia/commons/0/01/W3sDesign_Observer_Design_Pattern_UML.jpg)
+> from [wiki](https://en.wikipedia.org/wiki/Observer_pattern)
+
+> Reference:  
+> [察言觀色! 敵不動，我不動! (Observer 觀察者模式)](https://ithelp.ithome.com.tw/articles/10196777)
+
+---
+
+### State
+
+#### 情境（from [ithome](https://ithelp.ithome.com.tw/articles/10196254)）
+
+> As a 提需求單的使用者  
+> I want 需求單管理系統支援在某個需求的狀態改變時，記錄時間並以Email通知同仁  
+> So that 任何人可以輕易的識別目前需求的狀態
+
+#### 設計
+
+- 實作 State 的方式
+  - 建立每一種狀態的類別，它們定義了該狀態下要做那些事，以及決定下一個狀態
+  - 建立存放狀態的對象（Context），它具有改變狀態的權力
+- State v.s. Chain of Responsibility
+  - State 和 Chain of Responsibility 都可以解決有順序、多重判斷、執行邏輯的問題，e.g. IF ELSE，SWITCH CASE
+  - 兩者的差別
+    - State
+      - 由 Context 控制何時轉換及執行狀態
+      - 對像透過__已定義好的順序__轉換狀態
+    - Chain of Responsibility
+      - 對象只能決定何時發起鏈上的第一個點（Handler），鏈上其他的點接續完成作業
+      - __對像能在開始作業前，改變職責鏈的順序__
+
+#### From [wiki](https://en.wikipedia.org/wiki/State_pattern)
+
+The state pattern is a behavioral software design pattern that __allows an object to alter its behavior when its internal state changes__. This pattern is close to the concept of __finite-state machines__. The state pattern can be interpreted as a strategy pattern, which is able to switch a strategy through invocations of methods defined in the pattern's interface.
+
+The state pattern is used in computer programming to encapsulate varying behavior for the same object, based on its internal state. __This can be a cleaner way for an object to change its behavior at runtime without resorting to conditional statements and thus improve maintainability__.
+
+> ![](https://upload.wikimedia.org/wikipedia/commons/e/ec/W3sDesign_State_Design_Pattern_UML.jpg)
+> from [wiki](https://en.wikipedia.org/wiki/State_pattern)
+
+> Reference:  
+> [別讓老闆和USER再問你好了沒? 隨時更新工作狀態吧! (State 狀態模式)](https://ithelp.ithome.com.tw/articles/10196254)
+
+---
 
 ### Strategy
 
@@ -478,9 +660,72 @@ In computer programming, the strategy pattern (also known as the policy pattern)
 > Reference:  
 > [謀略設計模式! 學習首重策略! (Strategy 策略模式) ](https://ithelp.ithome.com.tw/articles/10192935)
 
-### Template 未完成
-### Visitor 未完成
+---
 
-https://ithelp.ithome.com.tw/articles/10192379
-https://github.com/KarateJB/eBooks/tree/master/Design%20Patterns
-https://en.wikipedia.org/wiki/Design_Patterns
+### Template
+
+#### 情境（from [ithome](https://ithelp.ithome.com.tw/articles/10195762)）
+
+> As a 銀行交易員  
+> I want 在衍生性金融商品管理系統可以自動比價  
+> So that 提供獲利及損失模型，讓客戶理解投資風險
+
+#### 設計
+
+- 就宣告一個 template class 然後繼承它，並實作其 abstract method
+
+#### From [wiki](https://en.wikipedia.org/wiki/Template_method_pattern)
+
+The template method is a method in a superclass, usually an abstract superclass, and __defines the skeleton of an operation in terms of a number of high-level steps__. These steps are themselves implemented by additional helper methods in the same class as the template method.
+
+> ![](https://upload.wikimedia.org/wikipedia/commons/2/2a/W3sDesign_Template_Method_Design_Pattern_UML.jpg)
+> from [wiki](https://en.wikipedia.org/wiki/Template_method_pattern)
+
+> Reference:  
+> [一樣米養百種人! (Template Method 樣板方法)](https://ithelp.ithome.com.tw/articles/10195762)
+
+---
+
+### Visitor
+
+#### 情境（from [ithome](https://ithelp.ithome.com.tw/articles/10196407)）
+
+> As a 電商老闆
+> I want 舉辦行銷活動，購物車結帳時：
+>   - 書籍雜誌：會員相同類別10本以上八折優惠
+>   - 生活用品：會員相同品項$1,000以上九折優惠
+>
+> So that 提高網站轉換率及營收
+
+#### 設計
+
+- Visitor 是 Strategy 的延伸
+  - 在 Strategy 中，我們__只讓一個對象__執行注入的策略
+  - 在 Visitor 中，我們可以__讓很多對象__依序執行注入的策略
+- 使用時機：
+  - Strategy 是設計來對__一個物件__注入不同處理邏輯
+  - Visitor 是設計來對__多個物件__注入處理邏輯（當然也可以對單一個物件注入不同處理邏輯）
+  - Strategy 簡單，適用於多數場合
+  - Visitor 使用 Strategy 的概念，適用於有多個實作類別或是子類別，而且每個類別需要特別的處理邏輯
+
+#### From [wiki](https://en.wikipedia.org/wiki/Visitor_pattern)
+
+In object-oriented programming and software engineering, the visitor design pattern is a way of __separating an algorithm from an object structure on which it operates__. A practical result of this separation is the ability to __add new operations to existing object structures without modifying the structures__. __It is one way to follow the open/closed principle__.
+
+In essence, the visitor allows adding new virtual functions to a family of classes, without modifying the classes. Instead, a visitor class is created that implements all of the appropriate specializations of the virtual function. The visitor takes the instance reference as input, and implements the goal through double dispatch.
+
+> ![](https://upload.wikimedia.org/wikipedia/commons/0/00/W3sDesign_Visitor_Design_Pattern_UML.jpg)
+> from [wiki](https://en.wikipedia.org/wiki/Visitor_pattern)
+
+> Reference:  
+> [優惠方案每天變! 購物車怎麼結帳才不會算到手抽筋? (Visitor 訪問者模式)](https://ithelp.ithome.com.tw/articles/10196407)
+
+---
+
+[ithome](https://ithelp.ithome.com.tw/articles/10192379)
+
+[wiki](https://en.wikipedia.org/wiki/Design_Patterns)
+
+[OPENHOME](https://openhome.cc/Gossip/DesignPattern/)
+
+[台部落](https://www.twblogs.net/c/5b8d0ace2b7177188339c4ac/)
