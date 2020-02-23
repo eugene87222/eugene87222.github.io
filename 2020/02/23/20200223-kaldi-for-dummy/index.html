@@ -57,7 +57,7 @@
 <meta property="og:description" content="最近開始接觸語音辨識，經過一翻搜尋後，在網路上找到幾個相關的 toolkit，分別是 CMUSphinx、Kaldi 還有 Mozilla 的 DeepSpeech。CMUSphinx 是由卡內基美隆大學開發的，DeepSpeech 則是由 Mozilla 基於百度的 Deep Speech 研究所開發的，百度發的論文在這邊，有興趣的可以去看一下，這裡就不對這些語音辨識工具多做介紹了，文章把重點放">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-02-23T07:41:27.000Z">
-<meta property="article:modified_time" content="2020-02-23T13:16:27.711Z">
+<meta property="article:modified_time" content="2020-02-23T15:05:11.065Z">
 <meta property="article:author" content="Eugene Yang">
 <meta property="article:tag" content="tutorial">
 <meta property="article:tag" content="machine learning">
@@ -226,7 +226,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2020-02-23 15:41:27 / Modified: 21:16:27" itemprop="dateCreated datePublished" datetime="2020-02-23T15:41:27+08:00">2020-02-23</time>
+              <time title="Created: 2020-02-23 15:41:27 / Modified: 23:05:11" itemprop="dateCreated datePublished" datetime="2020-02-23T15:41:27+08:00">2020-02-23</time>
             </span>
 
           
@@ -275,6 +275,9 @@
 </ul>
 <p>在剛剛建立的 digits 資料夾裡面建立一個名為 digits_audio 的資料夾，在 digits_audio 裡面再建立兩個資料夾 train 跟 test，然後把先前下載好的錄音檔裡面的 train 跟 test 分別放到剛剛建立的 train 跟 test 裡面。</p>
 <h2 id="聲學資料"><a href="#聲學資料" class="headerlink" title="聲學資料"></a>聲學資料</h2><p>建立好錄音檔後，還得告訴 <a href="http://kaldi-asr.org/" target="_blank" rel="noopener">Kaldi</a> 一些關於這些聲音的資訊，首先先在 digits 下建立一個 data 資料夾，然後在 data 裡面一樣建立 train 跟 test，接著分別在 train 跟 test 裡面依序建立以下這些檔案：</p>
+<blockquote>
+<p>我相信不會有人想要自己一行一行打這些檔案（我自己就不想），所以我寫了幾個簡單的 script 來自動產生這些檔案（除了 spk2gender），連結在<a href="https://gist.github.com/eugene87222/437942ac45dedf8cb8f6a2e350df6c91" target="_blank" rel="noopener">這裡</a>，不過建議大家先把下面關於檔案的說明都看完，了解檔案格式之後再跑 script。</p>
+</blockquote>
 <h3 id="spk2gender"><a href="#spk2gender" class="headerlink" title="spk2gender"></a>spk2gender</h3><p>這個檔案是關於說話的人的性別，格式如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;speakerID&gt; &lt;gender&gt;</span><br></pre></td></tr></table></figure>
 <p><code>speakerID</code> 可以當成是說話的人的名字，前提是這些名字不重複，<code>gender</code> 就是性別，男生是 <code>m</code>，女生是 <code>f</code>，就我們的錄音檔來看，<code>speakerID</code> 就是 1 到 8，前五個是男生，後三個是女生，所以檔案內容會像下面這樣：</p>
