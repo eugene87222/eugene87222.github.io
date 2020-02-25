@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://eugene87222.github.io/about/index.html</loc>
+    
+    <lastmod>2020-02-25T14:20:44.284Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://eugene87222.github.io/2018/11/19/20181119-data-analysis-note/</loc>
     
     <lastmod>2020-02-25T05:47:07.897Z</lastmod>
@@ -299,13 +306,6 @@
     <loc>http://eugene87222.github.io/2020/02/23/20200223-kaldi-for-dummy/</loc>
     
     <lastmod>2020-02-23T15:05:11.065Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/about/index.html</loc>
-    
-    <lastmod>2020-02-18T14:48:31.137Z</lastmod>
     
   </url>
   
