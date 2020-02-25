@@ -2,16 +2,303 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://eugene87222.github.io/2020/02/23/20200223-kaldi-for-dummy/</loc>
+    <loc>http://eugene87222.github.io/2018/11/19/20181119-data-analysis-note/</loc>
     
-    <lastmod>2020-02-23T15:05:11.065Z</lastmod>
+    <lastmod>2020-02-25T05:47:07.897Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://eugene87222.github.io/2017/10/29/20171029-collection/</loc>
     
-    <lastmod>2020-02-20T15:09:25.417Z</lastmod>
+    <lastmod>2020-02-25T05:47:02.368Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/04/06/20190406-psy-note-ch1/</loc>
+    
+    <lastmod>2020-02-25T05:46:48.188Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/04/06/20190406-psy-note-ch2/</loc>
+    
+    <lastmod>2020-02-25T05:46:46.367Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/04/06/20190406-psy-note-ch3/</loc>
+    
+    <lastmod>2020-02-25T05:46:44.653Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/04/06/20190406-psy-note-ch5/</loc>
+    
+    <lastmod>2020-02-25T05:46:42.781Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/04/07/20190407-psy-note-ch6/</loc>
+    
+    <lastmod>2020-02-25T05:46:41.094Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/04/07/20190407-psy-note-ch7/</loc>
+    
+    <lastmod>2020-02-25T05:46:39.369Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/04/08/20190408-ComputerSecurity-note-ch4/</loc>
+    
+    <lastmod>2020-02-25T05:46:37.710Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/04/08/20190408-psy-note-ch9/</loc>
+    
+    <lastmod>2020-02-25T05:46:35.651Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/04/26/20190426-social-psy-note-ch1/</loc>
+    
+    <lastmod>2020-02-25T05:46:33.256Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/04/26/20190426-social-psy-note-ch2/</loc>
+    
+    <lastmod>2020-02-25T05:46:31.694Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2018/02/10/20180224-PTT-crawler-1/</loc>
+    
+    <lastmod>2020-02-25T05:46:28.128Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2018/02/13/20180225-PTT-crawler-2/</loc>
+    
+    <lastmod>2020-02-25T05:46:25.556Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2018/02/14/20180225-PTT-crawler-3/</loc>
+    
+    <lastmod>2020-02-25T05:46:21.346Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2018/02/15/20180226-PTT-crawler-4/</loc>
+    
+    <lastmod>2020-02-25T05:46:18.611Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2018/02/16/20180227-PTT-crawler-5/</loc>
+    
+    <lastmod>2020-02-25T05:46:14.876Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2018/02/18/20180227-PTT-crawler-sum/</loc>
+    
+    <lastmod>2020-02-25T05:46:11.110Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/04/26/20190426-social-psy-note-ch4/</loc>
+    
+    <lastmod>2020-02-25T05:45:57.267Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/06/17/20190617-social-psy-note-ch5/</loc>
+    
+    <lastmod>2020-02-25T05:45:55.494Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/06/17/20190617-social-psy-note-ch6/</loc>
+    
+    <lastmod>2020-02-25T05:45:53.730Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/06/17/20190617-social-psy-note-ch7/</loc>
+    
+    <lastmod>2020-02-25T05:45:51.846Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/06/17/20190617-social-psy-note-ch8/</loc>
+    
+    <lastmod>2020-02-25T05:45:50.041Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch1/</loc>
+    
+    <lastmod>2020-02-25T05:45:47.761Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch2/</loc>
+    
+    <lastmod>2020-02-25T05:45:45.993Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch3/</loc>
+    
+    <lastmod>2020-02-25T05:45:44.163Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch5/</loc>
+    
+    <lastmod>2020-02-25T05:45:42.313Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch7/</loc>
+    
+    <lastmod>2020-02-25T05:45:40.451Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch8/</loc>
+    
+    <lastmod>2020-02-25T05:45:38.467Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch9/</loc>
+    
+    <lastmod>2020-02-25T05:45:36.650Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch10/</loc>
+    
+    <lastmod>2020-02-25T05:45:34.122Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch11/</loc>
+    
+    <lastmod>2020-02-25T05:45:32.386Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch12/</loc>
+    
+    <lastmod>2020-02-25T05:45:29.260Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch22/</loc>
+    
+    <lastmod>2020-02-25T05:45:26.891Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/04/26/20190426-social-psy-note-ch3/</loc>
+    
+    <lastmod>2020-02-25T05:45:24.865Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch24/</loc>
+    
+    <lastmod>2020-02-25T05:45:17.818Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch24-supplement1/</loc>
+    
+    <lastmod>2020-02-25T05:45:15.283Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch24-supplement2/</loc>
+    
+    <lastmod>2020-02-25T05:45:13.149Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2020/01/18/20191219-get-rid-of-captcha/</loc>
+    
+    <lastmod>2020-02-25T05:45:09.550Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch23/</loc>
+    
+    <lastmod>2020-02-25T05:44:56.711Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2017/10/07/20171007-build-own-website/</loc>
+    
+    <lastmod>2020-02-25T05:44:51.553Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2020/01/18/20200118-design-pattern-note/</loc>
+    
+    <lastmod>2020-02-25T05:44:09.784Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/2020/02/23/20200223-kaldi-for-dummy/</loc>
+    
+    <lastmod>2020-02-23T15:05:11.065Z</lastmod>
     
   </url>
   
@@ -47,20 +334,6 @@
     <loc>http://eugene87222.github.io/2020/01/21/20200120-undergrad-4-1/</loc>
     
     <lastmod>2020-02-15T13:58:20.704Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2020/01/18/20200118-design-pattern-note/</loc>
-    
-    <lastmod>2020-02-10T04:39:26.023Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2018/11/19/20181119-data-analysis-note/</loc>
-    
-    <lastmod>2020-02-01T07:47:23.277Z</lastmod>
     
   </url>
   
@@ -142,55 +415,6 @@
   </url>
   
   <url>
-    <loc>http://eugene87222.github.io/2020/01/18/20191219-get-rid-of-captcha/</loc>
-    
-    <lastmod>2020-01-20T14:17:04.706Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2018/02/13/20180225-PTT-crawler-2/</loc>
-    
-    <lastmod>2020-01-20T14:15:04.861Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2018/02/16/20180227-PTT-crawler-5/</loc>
-    
-    <lastmod>2020-01-20T14:13:45.894Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2017/10/07/20171007-build-own-website/</loc>
-    
-    <lastmod>2020-01-20T14:12:30.688Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2018/02/14/20180225-PTT-crawler-3/</loc>
-    
-    <lastmod>2020-01-20T14:10:19.390Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2018/02/15/20180226-PTT-crawler-4/</loc>
-    
-    <lastmod>2020-01-20T14:08:37.433Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2018/02/10/20180224-PTT-crawler-1/</loc>
-    
-    <lastmod>2020-01-18T13:13:34.816Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://eugene87222.github.io/2018/08/26/20180826/</loc>
     
     <lastmod>2020-01-18T03:30:39.465Z</lastmod>
@@ -215,13 +439,6 @@
     <loc>http://eugene87222.github.io/2018/03/23/20180323-photo/</loc>
     
     <lastmod>2020-01-18T03:29:22.898Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2018/02/18/20180227-PTT-crawler-sum/</loc>
-    
-    <lastmod>2020-01-18T03:27:46.384Z</lastmod>
     
   </url>
   
@@ -285,223 +502,6 @@
     <loc>http://eugene87222.github.io/2017/10/15/20171015-poinko/</loc>
     
     <lastmod>2020-01-18T03:13:01.412Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch24-supplement2/</loc>
-    
-    <lastmod>2020-01-18T03:12:50.085Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch24-supplement1/</loc>
-    
-    <lastmod>2020-01-18T03:12:48.028Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch24/</loc>
-    
-    <lastmod>2020-01-18T03:12:45.603Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch23/</loc>
-    
-    <lastmod>2020-01-18T03:12:43.526Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch22/</loc>
-    
-    <lastmod>2020-01-18T03:12:41.532Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch12/</loc>
-    
-    <lastmod>2020-01-18T03:12:39.353Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch11/</loc>
-    
-    <lastmod>2020-01-18T03:12:36.034Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch10/</loc>
-    
-    <lastmod>2020-01-18T03:12:34.126Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch9/</loc>
-    
-    <lastmod>2020-01-18T03:12:31.817Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch8/</loc>
-    
-    <lastmod>2020-01-18T03:12:29.880Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch7/</loc>
-    
-    <lastmod>2020-01-18T03:12:27.162Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch5/</loc>
-    
-    <lastmod>2020-01-18T03:12:24.283Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch3/</loc>
-    
-    <lastmod>2020-01-18T03:12:22.023Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch2/</loc>
-    
-    <lastmod>2020-01-18T03:12:19.264Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch1/</loc>
-    
-    <lastmod>2020-01-18T03:12:16.653Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/06/17/20190617-social-psy-note-ch8/</loc>
-    
-    <lastmod>2020-01-18T03:12:13.098Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/06/17/20190617-social-psy-note-ch7/</loc>
-    
-    <lastmod>2020-01-18T03:12:10.577Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/06/17/20190617-social-psy-note-ch6/</loc>
-    
-    <lastmod>2020-01-18T03:12:08.160Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/06/17/20190617-social-psy-note-ch5/</loc>
-    
-    <lastmod>2020-01-18T03:12:05.442Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/04/26/20190426-social-psy-note-ch4/</loc>
-    
-    <lastmod>2020-01-18T03:12:02.807Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/04/26/20190426-social-psy-note-ch3/</loc>
-    
-    <lastmod>2020-01-18T03:12:00.308Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/04/26/20190426-social-psy-note-ch2/</loc>
-    
-    <lastmod>2020-01-18T03:11:57.673Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/04/26/20190426-social-psy-note-ch1/</loc>
-    
-    <lastmod>2020-01-18T03:11:55.085Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/04/08/20190408-psy-note-ch9/</loc>
-    
-    <lastmod>2020-01-18T03:11:52.414Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/04/08/20190408-ComputerSecurity-note-ch4/</loc>
-    
-    <lastmod>2020-01-18T03:11:49.892Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/04/07/20190407-psy-note-ch7/</loc>
-    
-    <lastmod>2020-01-18T03:11:47.152Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/04/07/20190407-psy-note-ch6/</loc>
-    
-    <lastmod>2020-01-18T03:11:44.468Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/04/06/20190406-psy-note-ch5/</loc>
-    
-    <lastmod>2020-01-18T03:11:41.526Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/04/06/20190406-psy-note-ch3/</loc>
-    
-    <lastmod>2020-01-18T03:11:38.540Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/04/06/20190406-psy-note-ch2/</loc>
-    
-    <lastmod>2020-01-18T03:11:36.231Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/2019/04/06/20190406-psy-note-ch1/</loc>
-    
-    <lastmod>2020-01-18T03:11:33.100Z</lastmod>
     
   </url>
   
