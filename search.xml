@@ -1746,267 +1746,6 @@ from <a href="https://en.wikipedia.org/wiki/Visitor_pattern" target="_blank" rel
       </tags>
   </entry>
   <entry>
-    <title>[Intro. to Computer Security Course Note] Ch 11</title>
-    <url>/2019/06/24/20190624-ComputerSecurity-note-ch11/</url>
-    <content><![CDATA[<h1 id="Ch11-Software-Security"><a href="#Ch11-Software-Security" class="headerlink" title="Ch11. Software Security"></a>Ch11. Software Security</h1><hr>
-<h1 id="Software-Security-Issues"><a href="#Software-Security-Issues" class="headerlink" title="Software Security Issues"></a>Software Security Issues</h1><ul>
-<li>Many vulnerabilities result from <strong>poor programming practices</strong></li>
-<li>Consequences from insufficient checking/validation of data and error codes in programs</li>
-</ul>
-<h2 id="Software-Error-Categories"><a href="#Software-Error-Categories" class="headerlink" title="Software Error Categories"></a>Software Error Categories</h2><ul>
-<li>Insecure interaction between components<ul>
-<li>SQL injection</li>
-<li>Cross-site scripting</li>
-<li>Open redirect</li>
-</ul>
-</li>
-<li>Risky resource management<ul>
-<li>Classical buffer overflow</li>
-<li>Path traversal</li>
-<li>DOwnload of code without integrity check</li>
-</ul>
-</li>
-<li>Porous(多孔的) defenses<ul>
-<li><strong>Missing</strong> authentication for critical function</li>
-<li><strong>Missing</strong> authorization</li>
-<li><strong>Missing</strong> encryption of sensitive data</li>
-</ul>
-</li>
-</ul>
-<h2 id="Software-Security-Software-Quality-Reliability"><a href="#Software-Security-Software-Quality-Reliability" class="headerlink" title="Software Security: Software Quality/Reliability"></a>Software Security: Software Quality/Reliability</h2><ul>
-<li>Software Quality and Reliability<ul>
-<li>Concern: accidental failure of a program</li>
-<li>Not the total number of bugs, but <strong>how often</strong> they are triggered</li>
-<li>Improvement: structured design and testing to identity and eliminate bugs</li>
-</ul>
-</li>
-<li>Software Security<ul>
-<li>Attacker targets specific bugs that result in a failure that can be exploited</li>
-<li>Triggered by inputs that differ dramatically from what is usually expected</li>
-<li>Unlikely to be identified by common testing approaches</li>
-</ul>
-</li>
-</ul>
-<h2 id="Defensive-or-Secure-Programming"><a href="#Defensive-or-Secure-Programming" class="headerlink" title="Defensive or Secure Programming"></a>Defensive or Secure Programming</h2><ul>
-<li>The process of designing and implementing software: continue to function even when under attack</li>
-<li>Software written using this process<ul>
-<li>Detect erroneous conditions resulting from some attack</li>
-<li>Either continue <strong>executing safety, or fail gracefully</strong></li>
-</ul>
-</li>
-<li>Key rule: <strong>never assume anything</strong><ul>
-<li>Check all assumptions and handle any possible error states</li>
-</ul>
-</li>
-<li><table style="">
-  <tr>
-      <th style="font-weight: normal;">Typical programmers</th>
-      <th style="font-weight: normal;">Defensive Programming</th>
-  </tr>
-  <tr>
-      <th style="font-weight: lighter;">Attention on the steps needed for success<br>- Follow the normal flow of execution of the program<br>- But __not consider every potential point of failure__<br>Often make assumptions: type of inputs and environment</th>
-      <th style="font-weight: lighter;">The assumptions need to be validated by the program<br>__All potential failures handled gracefully and safely__<br>But, increase codes and time spent</th>
-  </tr>
-  <tr>
-      <th style="font-weight: lighter;">When changes are required<br>- Focus on the cahnges required and __what needs to be achieved__</th>
-      <th style="font-weight: lighter;">Must carefully check any assumptions made<br>Check and handle all possible errors<br>Carefully check any interactions with existing code</th>
-  </tr>
-</table>
-
-</li>
-</ul>
-<h2 id="Security-by-Design"><a href="#Security-by-Design" class="headerlink" title="Security by Design"></a>Security by Design</h2><ul>
-<li>Recent years have been increasing efforts to improve secure software development process<ul>
-<li>Software Assurance Forum for Excellence in Code (SAFECode)<ul>
-<li>Outlining industry best practices for software assurance</li>
-<li>Providing practical advice for secure software development</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="Handling-Program-Input"><a href="#Handling-Program-Input" class="headerlink" title="Handling Program Input"></a>Handling Program Input</h1><ul>
-<li>Incorrect handling is one of the most common failings</li>
-<li>Input is any source of data from outside and whose value is not explicitly known by the programmer</li>
-<li>All sources of input data must be identified</li>
-<li>Explicitly validate assumptions on size and type of values before use</li>
-<li>Two key areas of concern: <strong>size and interpretation</strong></li>
-</ul>
-<h2 id="Input-Size-amp-Buffer-Overflow"><a href="#Input-Size-amp-Buffer-Overflow" class="headerlink" title="Input Size &amp; Buffer Overflow"></a>Input Size &amp; Buffer Overflow</h2><ul>
-<li>Programmers often make assumptions: <strong>maximum expected size of input</strong><ul>
-<li>有可能會導致 buffer overflows</li>
-</ul>
-</li>
-<li>Testing may not identify the vulnerability<ul>
-<li>測資不夠完整</li>
-</ul>
-</li>
-<li>Safe programming practices</li>
-<li><strong>Safe coding regards any input as dangerous</strong></li>
-</ul>
-<h2 id="Interpretation-of-Program-Input"><a href="#Interpretation-of-Program-Input" class="headerlink" title="Interpretation of Program Input"></a>Interpretation of Program Input</h2><ul>
-<li>Program input may be binary or textual<ul>
-<li>Binary data: <strong>depends on encoding and is usually app-specific</strong></li>
-</ul>
-</li>
-<li>Failure to validate may result in an exploitable vulnerability</li>
-</ul>
-<h2 id="Injection-Attacks"><a href="#Injection-Attacks" class="headerlink" title="Injection Attacks"></a>Injection Attacks</h2><h2 id="Cross-site-Scripting-XSS-Attacks"><a href="#Cross-site-Scripting-XSS-Attacks" class="headerlink" title="Cross-site Scripting (XSS) Attacks"></a>Cross-site Scripting (XSS) Attacks</h2><ul>
-<li><strong>Input provided to a program by one user that is subsequently output to another user</strong><ul>
-<li>Assumption: all content from one site is <strong>equally trusted</strong> and hence is permitted to interact with other content from that site</li>
-<li>Attacks exploit this assumption and attempt to bypass the browser&#39;s security checks</li>
-</ul>
-</li>
-<li>Most common variant: XSS reflection</li>
-</ul>
-<h2 id="XSS-Reflection"><a href="#XSS-Reflection" class="headerlink" title="XSS Reflection"></a>XSS Reflection</h2><ul>
-<li>Consider the widespread use of guestbook programs<ul>
-<li>留言板那些的</li>
-</ul>
-</li>
-<li>Prevention: any user-supplied input should be examined</li>
-</ul>
-<h2 id="Validating-Input-Syntax"><a href="#Validating-Input-Syntax" class="headerlink" title="Validating Input Syntax"></a>Validating Input Syntax</h2><ul>
-<li>Input data should be compared against <strong>what is wanted</strong><ul>
-<li>using regular expression</li>
-<li>Whitelisting <strong>(more secure)</strong></li>
-</ul>
-</li>
-<li>Alternative is to compare the input data with <strong>known dangerous values</strong><ul>
-<li>Blacklisting</li>
-</ul>
-</li>
-</ul>
-<h2 id="Alternative-Encodings"><a href="#Alternative-Encodings" class="headerlink" title="Alternative Encodings"></a>Alternative Encodings</h2><ul>
-<li>Canonicalization: transforming input data into a single, standard, minimal representation<ul>
-<li>Once this is done the input data can be compared with a single representation of acceptable input values</li>
-</ul>
-</li>
-</ul>
-<h2 id="Validating-Numeric-Input"><a href="#Validating-Numeric-Input" class="headerlink" title="Validating Numeric Input"></a>Validating Numeric Input</h2><ul>
-<li>Internally stored in fixed sized value</li>
-<li>Must correctly interpret text form<ul>
-<li>Have issues comparing signed to unsigned</li>
-</ul>
-</li>
-</ul>
-<h2 id="Input-Fuzzing"><a href="#Input-Fuzzing" class="headerlink" title="Input Fuzzing"></a>Input Fuzzing</h2><ul>
-<li>Major issue of input texting: very large range of inputs</li>
-<li>Fuzzing: a software testing technique: using randomly generated data as inputs to a program<ul>
-<li>Simplicity and freedom from assumption</li>
-<li>Very low cost of generating large numbers of tests</li>
-</ul>
-</li>
-<li>Input can be randomly generated</li>
-<li>Conceptually very simple, but identifying only simple types of faults<ul>
-<li>Only triggered by a small number of very specific input values</li>
-</ul>
-</li>
-</ul>
-<h1 id="Writing-Safe-Program-Code"><a href="#Writing-Safe-Program-Code" class="headerlink" title="Writing Safe Program Code"></a>Writing Safe Program Code</h1><ul>
-<li>Key issues<ul>
-<li><strong>Correct</strong> algorithm implementation, machine instructions</li>
-<li><strong>Valid</strong> manipulate of data</li>
-</ul>
-</li>
-</ul>
-<h2 id="Correct-Algorithm-Implementation"><a href="#Correct-Algorithm-Implementation" class="headerlink" title="Correct Algorithm Implementation"></a>Correct Algorithm Implementation</h2><ul>
-<li>Not correctly implement all cases or variants of the problem<ul>
-<li>用對的方法重做一遍</li>
-</ul>
-</li>
-</ul>
-<h2 id="Correct-Machine-Instructions-for-algorithm"><a href="#Correct-Machine-Instructions-for-algorithm" class="headerlink" title="Correct Machine Instructions for algorithm"></a>Correct Machine Instructions for algorithm</h2><ul>
-<li><strong>Largely ignored by most programmers</strong><ul>
-<li>Assumption: 反正 compiler 會處理好</li>
-</ul>
-</li>
-<li>Malicious compiler programmer<ul>
-<li>Including instructions in the compiler to emit additional code</li>
-</ul>
-</li>
-<li>Countermeasure:<ul>
-<li>檢查檢查再檢查(source 跟 machine code)</li>
-</ul>
-</li>
-</ul>
-<h2 id="Correct-Data-Interpretation"><a href="#Correct-Data-Interpretation" class="headerlink" title="Correct Data Interpretation"></a>Correct Data Interpretation</h2><ul>
-<li>All data on a computer are stored as groups of binary bits</li>
-<li>Different languages provide varying capabilities for restriction and validating interpretation of data in variables</li>
-<li>Correct use of memory<ul>
-<li>Issue: allocation and management of dynamic memory storage (heap)</li>
-</ul>
-</li>
-</ul>
-<h2 id="Preventing-Race-Conditions-with-Shared-Memory"><a href="#Preventing-Race-Conditions-with-Shared-Memory" class="headerlink" title="Preventing Race Conditions with Shared Memory"></a>Preventing Race Conditions with Shared Memory</h2><ul>
-<li>Race condition</li>
-</ul>
-<h1 id="Interacting-with-the-OS-and-Other-Programs"><a href="#Interacting-with-the-OS-and-Other-Programs" class="headerlink" title="Interacting with the OS and Other Programs"></a>Interacting with the OS and Other Programs</h1><p> In general, programs do not run in isolation on most computer systems</p>
-<h2 id="Several-issues"><a href="#Several-issues" class="headerlink" title="Several issues"></a>Several issues</h2><ul>
-<li>Environment variables<ul>
-<li>沒辦法透過 reset PATH variable 解決<ul>
-<li><code>PATH=&quot;/sib:/bin:/usr/sbin:/usr/bin&quot;</code></li>
-<li>把 IFS environment variable 改調就可以繞過</li>
-</ul>
-</li>
-<li>Generally, writing secure, privileged shell scripts is very difficult</li>
-<li>Dynamic linking of libraries may be vulnerable<ul>
-<li>Library injection (LD_LIBRARY_PATH)</li>
-<li>Solution: using a <strong>statically linked executable</strong> or <strong>blocking the use of this env variable</strong> when the program executed runs with different privileges</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Using appropriate, least privileges<ul>
-<li>Root/Administrator privileges<ul>
-<li><strong>Major attack target</strong></li>
-<li>Good design partitions complex programs in smaller modules with needed privileges<ul>
-<li>A greater degree of isolation between components</li>
-<li><strong>Fewer consequences of a security breach in one component</strong></li>
-<li>Easier to test and verify</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Systems calls and standard library functions<ul>
-<li>The programs may not perform as expected<ul>
-<li>Incorrect assumptions made for the operations of the system calls and standard library functions</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Preventing race conditions with shared system resources<ul>
-<li>Need suitable synchronization mechanisms<ul>
-<li>e.g., lock</li>
-</ul>
-</li>
-<li>Lockfile</li>
-</ul>
-</li>
-<li>Safe temporary file use<ul>
-<li>Secure temporary file creation and use requires the use of <strong>random names and atomic operation</strong><ul>
-<li>:+1: mkstemp()</li>
-<li>:-1: <del>tmpfile(), tmpnam(), tempnam()</del></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Interacting with other programs</li>
-</ul>
-<h1 id="Handling-Program-Output"><a href="#Handling-Program-Output" class="headerlink" title="Handling Program Output"></a>Handling Program Output</h1><ul>
-<li>Programs must identify what is permissible output content</li>
-<li>Character set should be specified</li>
-</ul>
-]]></content>
-      <tags>
-        <tag>NCTU</tag>
-        <tag>note</tag>
-        <tag>computer security</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>[Intro. to Computer Security Course Note] Ch 24</title>
     <url>/2019/06/24/20190624-ComputerSecurity-note-ch24/</url>
     <content><![CDATA[<h1 id="Ch24-Wireless-Network-Security"><a href="#Ch24-Wireless-Network-Security" class="headerlink" title="Ch24. Wireless Network Security"></a>Ch24. Wireless Network Security</h1><hr>
@@ -2367,6 +2106,267 @@ from <a href="https://en.wikipedia.org/wiki/Visitor_pattern" target="_blank" rel
 </li>
 </ul>
 </li>
+</ul>
+]]></content>
+      <tags>
+        <tag>NCTU</tag>
+        <tag>note</tag>
+        <tag>computer security</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Intro. to Computer Security Course Note] Ch 11</title>
+    <url>/2019/06/24/20190624-ComputerSecurity-note-ch11/</url>
+    <content><![CDATA[<h1 id="Ch11-Software-Security"><a href="#Ch11-Software-Security" class="headerlink" title="Ch11. Software Security"></a>Ch11. Software Security</h1><hr>
+<h1 id="Software-Security-Issues"><a href="#Software-Security-Issues" class="headerlink" title="Software Security Issues"></a>Software Security Issues</h1><ul>
+<li>Many vulnerabilities result from <strong>poor programming practices</strong></li>
+<li>Consequences from insufficient checking/validation of data and error codes in programs</li>
+</ul>
+<h2 id="Software-Error-Categories"><a href="#Software-Error-Categories" class="headerlink" title="Software Error Categories"></a>Software Error Categories</h2><ul>
+<li>Insecure interaction between components<ul>
+<li>SQL injection</li>
+<li>Cross-site scripting</li>
+<li>Open redirect</li>
+</ul>
+</li>
+<li>Risky resource management<ul>
+<li>Classical buffer overflow</li>
+<li>Path traversal</li>
+<li>DOwnload of code without integrity check</li>
+</ul>
+</li>
+<li>Porous(多孔的) defenses<ul>
+<li><strong>Missing</strong> authentication for critical function</li>
+<li><strong>Missing</strong> authorization</li>
+<li><strong>Missing</strong> encryption of sensitive data</li>
+</ul>
+</li>
+</ul>
+<h2 id="Software-Security-Software-Quality-Reliability"><a href="#Software-Security-Software-Quality-Reliability" class="headerlink" title="Software Security: Software Quality/Reliability"></a>Software Security: Software Quality/Reliability</h2><ul>
+<li>Software Quality and Reliability<ul>
+<li>Concern: accidental failure of a program</li>
+<li>Not the total number of bugs, but <strong>how often</strong> they are triggered</li>
+<li>Improvement: structured design and testing to identity and eliminate bugs</li>
+</ul>
+</li>
+<li>Software Security<ul>
+<li>Attacker targets specific bugs that result in a failure that can be exploited</li>
+<li>Triggered by inputs that differ dramatically from what is usually expected</li>
+<li>Unlikely to be identified by common testing approaches</li>
+</ul>
+</li>
+</ul>
+<h2 id="Defensive-or-Secure-Programming"><a href="#Defensive-or-Secure-Programming" class="headerlink" title="Defensive or Secure Programming"></a>Defensive or Secure Programming</h2><ul>
+<li>The process of designing and implementing software: continue to function even when under attack</li>
+<li>Software written using this process<ul>
+<li>Detect erroneous conditions resulting from some attack</li>
+<li>Either continue <strong>executing safety, or fail gracefully</strong></li>
+</ul>
+</li>
+<li>Key rule: <strong>never assume anything</strong><ul>
+<li>Check all assumptions and handle any possible error states</li>
+</ul>
+</li>
+<li><table style="">
+  <tr>
+      <th style="font-weight: normal;">Typical programmers</th>
+      <th style="font-weight: normal;">Defensive Programming</th>
+  </tr>
+  <tr>
+      <th style="font-weight: lighter;">Attention on the steps needed for success<br>- Follow the normal flow of execution of the program<br>- But __not consider every potential point of failure__<br>Often make assumptions: type of inputs and environment</th>
+      <th style="font-weight: lighter;">The assumptions need to be validated by the program<br>__All potential failures handled gracefully and safely__<br>But, increase codes and time spent</th>
+  </tr>
+  <tr>
+      <th style="font-weight: lighter;">When changes are required<br>- Focus on the cahnges required and __what needs to be achieved__</th>
+      <th style="font-weight: lighter;">Must carefully check any assumptions made<br>Check and handle all possible errors<br>Carefully check any interactions with existing code</th>
+  </tr>
+</table>
+
+</li>
+</ul>
+<h2 id="Security-by-Design"><a href="#Security-by-Design" class="headerlink" title="Security by Design"></a>Security by Design</h2><ul>
+<li>Recent years have been increasing efforts to improve secure software development process<ul>
+<li>Software Assurance Forum for Excellence in Code (SAFECode)<ul>
+<li>Outlining industry best practices for software assurance</li>
+<li>Providing practical advice for secure software development</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Handling-Program-Input"><a href="#Handling-Program-Input" class="headerlink" title="Handling Program Input"></a>Handling Program Input</h1><ul>
+<li>Incorrect handling is one of the most common failings</li>
+<li>Input is any source of data from outside and whose value is not explicitly known by the programmer</li>
+<li>All sources of input data must be identified</li>
+<li>Explicitly validate assumptions on size and type of values before use</li>
+<li>Two key areas of concern: <strong>size and interpretation</strong></li>
+</ul>
+<h2 id="Input-Size-amp-Buffer-Overflow"><a href="#Input-Size-amp-Buffer-Overflow" class="headerlink" title="Input Size &amp; Buffer Overflow"></a>Input Size &amp; Buffer Overflow</h2><ul>
+<li>Programmers often make assumptions: <strong>maximum expected size of input</strong><ul>
+<li>有可能會導致 buffer overflows</li>
+</ul>
+</li>
+<li>Testing may not identify the vulnerability<ul>
+<li>測資不夠完整</li>
+</ul>
+</li>
+<li>Safe programming practices</li>
+<li><strong>Safe coding regards any input as dangerous</strong></li>
+</ul>
+<h2 id="Interpretation-of-Program-Input"><a href="#Interpretation-of-Program-Input" class="headerlink" title="Interpretation of Program Input"></a>Interpretation of Program Input</h2><ul>
+<li>Program input may be binary or textual<ul>
+<li>Binary data: <strong>depends on encoding and is usually app-specific</strong></li>
+</ul>
+</li>
+<li>Failure to validate may result in an exploitable vulnerability</li>
+</ul>
+<h2 id="Injection-Attacks"><a href="#Injection-Attacks" class="headerlink" title="Injection Attacks"></a>Injection Attacks</h2><h2 id="Cross-site-Scripting-XSS-Attacks"><a href="#Cross-site-Scripting-XSS-Attacks" class="headerlink" title="Cross-site Scripting (XSS) Attacks"></a>Cross-site Scripting (XSS) Attacks</h2><ul>
+<li><strong>Input provided to a program by one user that is subsequently output to another user</strong><ul>
+<li>Assumption: all content from one site is <strong>equally trusted</strong> and hence is permitted to interact with other content from that site</li>
+<li>Attacks exploit this assumption and attempt to bypass the browser&#39;s security checks</li>
+</ul>
+</li>
+<li>Most common variant: XSS reflection</li>
+</ul>
+<h2 id="XSS-Reflection"><a href="#XSS-Reflection" class="headerlink" title="XSS Reflection"></a>XSS Reflection</h2><ul>
+<li>Consider the widespread use of guestbook programs<ul>
+<li>留言板那些的</li>
+</ul>
+</li>
+<li>Prevention: any user-supplied input should be examined</li>
+</ul>
+<h2 id="Validating-Input-Syntax"><a href="#Validating-Input-Syntax" class="headerlink" title="Validating Input Syntax"></a>Validating Input Syntax</h2><ul>
+<li>Input data should be compared against <strong>what is wanted</strong><ul>
+<li>using regular expression</li>
+<li>Whitelisting <strong>(more secure)</strong></li>
+</ul>
+</li>
+<li>Alternative is to compare the input data with <strong>known dangerous values</strong><ul>
+<li>Blacklisting</li>
+</ul>
+</li>
+</ul>
+<h2 id="Alternative-Encodings"><a href="#Alternative-Encodings" class="headerlink" title="Alternative Encodings"></a>Alternative Encodings</h2><ul>
+<li>Canonicalization: transforming input data into a single, standard, minimal representation<ul>
+<li>Once this is done the input data can be compared with a single representation of acceptable input values</li>
+</ul>
+</li>
+</ul>
+<h2 id="Validating-Numeric-Input"><a href="#Validating-Numeric-Input" class="headerlink" title="Validating Numeric Input"></a>Validating Numeric Input</h2><ul>
+<li>Internally stored in fixed sized value</li>
+<li>Must correctly interpret text form<ul>
+<li>Have issues comparing signed to unsigned</li>
+</ul>
+</li>
+</ul>
+<h2 id="Input-Fuzzing"><a href="#Input-Fuzzing" class="headerlink" title="Input Fuzzing"></a>Input Fuzzing</h2><ul>
+<li>Major issue of input texting: very large range of inputs</li>
+<li>Fuzzing: a software testing technique: using randomly generated data as inputs to a program<ul>
+<li>Simplicity and freedom from assumption</li>
+<li>Very low cost of generating large numbers of tests</li>
+</ul>
+</li>
+<li>Input can be randomly generated</li>
+<li>Conceptually very simple, but identifying only simple types of faults<ul>
+<li>Only triggered by a small number of very specific input values</li>
+</ul>
+</li>
+</ul>
+<h1 id="Writing-Safe-Program-Code"><a href="#Writing-Safe-Program-Code" class="headerlink" title="Writing Safe Program Code"></a>Writing Safe Program Code</h1><ul>
+<li>Key issues<ul>
+<li><strong>Correct</strong> algorithm implementation, machine instructions</li>
+<li><strong>Valid</strong> manipulate of data</li>
+</ul>
+</li>
+</ul>
+<h2 id="Correct-Algorithm-Implementation"><a href="#Correct-Algorithm-Implementation" class="headerlink" title="Correct Algorithm Implementation"></a>Correct Algorithm Implementation</h2><ul>
+<li>Not correctly implement all cases or variants of the problem<ul>
+<li>用對的方法重做一遍</li>
+</ul>
+</li>
+</ul>
+<h2 id="Correct-Machine-Instructions-for-algorithm"><a href="#Correct-Machine-Instructions-for-algorithm" class="headerlink" title="Correct Machine Instructions for algorithm"></a>Correct Machine Instructions for algorithm</h2><ul>
+<li><strong>Largely ignored by most programmers</strong><ul>
+<li>Assumption: 反正 compiler 會處理好</li>
+</ul>
+</li>
+<li>Malicious compiler programmer<ul>
+<li>Including instructions in the compiler to emit additional code</li>
+</ul>
+</li>
+<li>Countermeasure:<ul>
+<li>檢查檢查再檢查(source 跟 machine code)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Correct-Data-Interpretation"><a href="#Correct-Data-Interpretation" class="headerlink" title="Correct Data Interpretation"></a>Correct Data Interpretation</h2><ul>
+<li>All data on a computer are stored as groups of binary bits</li>
+<li>Different languages provide varying capabilities for restriction and validating interpretation of data in variables</li>
+<li>Correct use of memory<ul>
+<li>Issue: allocation and management of dynamic memory storage (heap)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Preventing-Race-Conditions-with-Shared-Memory"><a href="#Preventing-Race-Conditions-with-Shared-Memory" class="headerlink" title="Preventing Race Conditions with Shared Memory"></a>Preventing Race Conditions with Shared Memory</h2><ul>
+<li>Race condition</li>
+</ul>
+<h1 id="Interacting-with-the-OS-and-Other-Programs"><a href="#Interacting-with-the-OS-and-Other-Programs" class="headerlink" title="Interacting with the OS and Other Programs"></a>Interacting with the OS and Other Programs</h1><p> In general, programs do not run in isolation on most computer systems</p>
+<h2 id="Several-issues"><a href="#Several-issues" class="headerlink" title="Several issues"></a>Several issues</h2><ul>
+<li>Environment variables<ul>
+<li>沒辦法透過 reset PATH variable 解決<ul>
+<li><code>PATH=&quot;/sib:/bin:/usr/sbin:/usr/bin&quot;</code></li>
+<li>把 IFS environment variable 改調就可以繞過</li>
+</ul>
+</li>
+<li>Generally, writing secure, privileged shell scripts is very difficult</li>
+<li>Dynamic linking of libraries may be vulnerable<ul>
+<li>Library injection (LD_LIBRARY_PATH)</li>
+<li>Solution: using a <strong>statically linked executable</strong> or <strong>blocking the use of this env variable</strong> when the program executed runs with different privileges</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Using appropriate, least privileges<ul>
+<li>Root/Administrator privileges<ul>
+<li><strong>Major attack target</strong></li>
+<li>Good design partitions complex programs in smaller modules with needed privileges<ul>
+<li>A greater degree of isolation between components</li>
+<li><strong>Fewer consequences of a security breach in one component</strong></li>
+<li>Easier to test and verify</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Systems calls and standard library functions<ul>
+<li>The programs may not perform as expected<ul>
+<li>Incorrect assumptions made for the operations of the system calls and standard library functions</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Preventing race conditions with shared system resources<ul>
+<li>Need suitable synchronization mechanisms<ul>
+<li>e.g., lock</li>
+</ul>
+</li>
+<li>Lockfile</li>
+</ul>
+</li>
+<li>Safe temporary file use<ul>
+<li>Secure temporary file creation and use requires the use of <strong>random names and atomic operation</strong><ul>
+<li>:+1: mkstemp()</li>
+<li>:-1: <del>tmpfile(), tmpnam(), tempnam()</del></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Interacting with other programs</li>
+</ul>
+<h1 id="Handling-Program-Output"><a href="#Handling-Program-Output" class="headerlink" title="Handling Program Output"></a>Handling Program Output</h1><ul>
+<li>Programs must identify what is permissible output content</li>
+<li>Character set should be specified</li>
 </ul>
 ]]></content>
       <tags>
@@ -8017,6 +8017,16 @@ Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
       </tags>
   </entry>
   <entry>
+    <title>TEST</title>
+    <url>/2018/03/18/20180318-test/</url>
+    <content><![CDATA[<p>TEST</p>
+<p>這篇文是從別的電腦上發的，直接把 markdown push 到 eugene87222.github.io 的 raw branch 並透過 travis CI 自動發布。</p>
+]]></content>
+      <tags>
+        <tag>other</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>雜記</title>
     <url>/2018/03/18/20180318/</url>
     <content><![CDATA[<p>有一陣子沒在這邊貼東西了。2 月底才剛開學就已經給自己安排了一堆事情，還好這學期修的學分也沒有很多，只有 18 個學分<a id="more"></a>，原本是 15 學分剛好壓線，不過只有 15 心裡感覺不是很踏實的所以又加選了一堂研究所的課，但是如果之後事情太多忙不過來可能會把它退掉 QQ。那堂研究所的課我認為是可以學到蠻多東西的，可是那堂課的 lab 一個接一個，我實在沒辦法這個禮拜學完程式 A 下個禮拜又學程式 B，我覺得太緊湊了。</p>
@@ -8027,16 +8037,6 @@ Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 ]]></content>
       <tags>
         <tag>diary</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>TEST</title>
-    <url>/2018/03/18/20180318-test/</url>
-    <content><![CDATA[<p>TEST</p>
-<p>這篇文是從別的電腦上發的，直接把 markdown push 到 eugene87222.github.io 的 raw branch 並透過 travis CI 自動發布。</p>
-]]></content>
-      <tags>
-        <tag>other</tag>
       </tags>
   </entry>
   <entry>
@@ -8369,6 +8369,7 @@ Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a><br>PS by <a h
 <li>2019.09 <a href="http://linux.vbird.org/" target="_blank" rel="noopener">鳥哥的 Linux 私房菜</a></li>
 </ul>
 <h1 id="CS-延伸閱讀-未分類-Computer-Science"><a href="#CS-延伸閱讀-未分類-Computer-Science" class="headerlink" title="CS 延伸閱讀 (未分類) / Computer Science"></a>CS 延伸閱讀 (未分類) / Computer Science</h1><ul>
+<li>2020.02 <a href="https://blog.addpipe.com/using-recorder-js-to-capture-wav-audio-in-your-html5-web-site/" target="_blank" rel="noopener">Using Recorder.js to capture WAV audio in HTML5 and upload it to your server or download locally</a></li>
 <li>2019.11 <a href="https://developer.mozilla.org/zh-TW/docs/Mozilla/Add-ons/WebExtensions/Your_first_WebExtension" target="_blank" rel="noopener">你的第一個 WebExtension</a></li>
 <li>2019.10 <a href="https://hackmd.io/p/HkW8LjRfl#/" target="_blank" rel="noopener">Bot Development</a></li>
 <li>2019.10 <a href="https://medium.com/@nick03008/gitlab-ci-%E5%85%A5%E9%96%80%E7%AD%86%E8%A8%98-%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6%E7%AF%87-156455e2ad9f" target="_blank" rel="noopener">Gitlab-CI 入門實作教學 - 單元測試篇</a></li>
@@ -8394,6 +8395,7 @@ Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a><br>PS by <a h
 <li>2018.02 <a href="https://chi_gitbook.gitbooks.io/personal-note/content/zu_he_yu_yan_yu_ji_suan_ji_zu_zhi.html" target="_blank" rel="noopener">組合語言與計算機組織 · 課程筆記</a></li>
 </ul>
 <h1 id="國家地理-National-Geography"><a href="#國家地理-National-Geography" class="headerlink" title="國家地理 / National Geography"></a>國家地理 / National Geography</h1><ul>
+<li><a href="https://www.natgeomedia.com/science/article/content-7930.html" target="_blank" rel="noopener">人類首次拍到黑洞，到底看到了什麼？</a></li>
 <li><a href="https://www.natgeomedia.com/news/editorpick/32757?doing_wp_cron=1521019353.6385700702667236328125" target="_blank" rel="noopener">浣熊洗棉花糖，真是因為蠢萌嗎？ - 國家地理雜誌中文網</a></li>
 <li><a href="https://www.natgeomedia.com/news/ngnews/73294" target="_blank" rel="noopener">實驗室中的人羊混種－揭露詳情 - 國家地理雜誌中文網</a></li>
 </ul>
@@ -8404,7 +8406,7 @@ Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a><br>PS by <a h
 <li><a href="http://pansci.asia/archives/136629" target="_blank" rel="noopener">缺乏遺傳多樣性的孤雌生殖，註定死路一條？——進擊の大理石紋螯蝦（下）</a></li>
 </ul>
 <h1 id="可愛貓貓-Cats"><a href="#可愛貓貓-Cats" class="headerlink" title="可愛貓貓 / Cats"></a>可愛貓貓 / Cats</h1><ul>
-<li>貓貓 GIF：<a href="https://media.giphy.com/media/llsfFyBViKxp1mfRUQ/giphy.gif#.XjunOh-6EYY.facebook" target="_blank" rel="noopener">搶食物貓貓</a>、<a href="https://www.gif-vif.com/Agent-kitty/?fbrefresh=23&fbclid=IwAR1GcTBtWiOO2YuUZBZ2FAtPFXUc--uuLXuI5dG3n9OCrYF3mc_Xks0n-Ns" target="_blank" rel="noopener">殺手貓貓</a>、<a href="https://www.gif-vif.com/What-kind-of-chips-is-this/?fbrefresh=23" target="_blank" rel="noopener">洋芋片貓貓</a>、<a href="https://www.gif-vif.com/I-want-makeup/?fbrefresh=23&fbclid=IwAR39KixGQcO31CkgIkJSceyK5moY490r_vlaZ265SzVyCLdYBHkpuvnBZR4" target="_blank" rel="noopener">毛手毛腳</a>、<a href="https://giphy.com/gifs/parking-fluYfyYrkP5Ys" target="_blank" rel="noopener">停車貓貓</a>、<a href="https://giphy.com/gifs/justviralnet-funny-animal-acting-LqroqS6BkH4gmffEDM" target="_blank" rel="noopener">戲精貓貓</a>、<a href="https://giphy.com/gifs/justviralnet-cat-angry-animal-RH1ZXHKTDSH52baPcG" target="_blank" rel="noopener">黑貓貓</a>、<a href="https://giphy.com/gifs/cat-hug-MBrmhKiiFwXy8" target="_blank" rel="noopener">抱抱貓貓</a>、<a href="https://www.gifng.com/animals/33155/?fbclid=IwAR0RcFy-rRk1zJR8FhIdslDzXV6vaMvz2WehPdN50ommhiKV2oOu3ys9aL8" target="_blank" rel="noopener">臭臉貓貓</a>、<a href="https://giphy.com/gifs/d8KycwRIJRApftKEgO?fbclid=IwAR0A_0LCcG1v6XQ1tVx9GK8TKjLyWLpFs8eKpzNcgjvlHJymcf9_0QMmsjw" target="_blank" rel="noopener">可愛貓貓</a>、<a href="https://giphy.com/gifs/v4vnX6bnCSjFS" target="_blank" rel="noopener">海豚貓貓</a>、<a href="https://www.gif-vif.com/Catto-got-swag/?fbrefresh=23" target="_blank" rel="noopener">太陽眼鏡貓貓</a>、<a href="https://yay-gif.com/2341-42-2/" target="_blank" rel="noopener">搶食貓貓</a>、<a href="https://giphy.com/gifs/cute-aww-eyebleach-74Ob9q9VMgvIiviIXM" target="_blank" rel="noopener">別人家的貓永遠不會讓我失望</a>、<a href="https://imgur.com/ab18mol" target="_blank" rel="noopener">狗狗貓貓</a></li>
+<li>貓貓 GIF：<a href="https://www.gifng.com/animals/34691/" target="_blank" rel="noopener">神邏輯貓貓</a>、<a href="https://media3.giphy.com/media/w8BZvDE5oKSCpSKjt6/giphy.gif" target="_blank" rel="noopener">液體貓貓</a>、<a href="https://www.alucinoconfeisbuk.com/2020/02/gato-en-estado-liquido.html?m=1" target="_blank" rel="noopener">一鍋貓貓</a>、<a href="https://www.gifng.com/animals/57253/" target="_blank" rel="noopener">瞬間移動貓貓</a>、<a href="https://www.gif-vif.com/Cats-are-expensive/?fbrefresh=23" target="_blank" rel="noopener">搶錢貓貓</a>、<a href="https://giphy.com/embed/llxKxm3hTzJcyiVc2w" target="_blank" rel="noopener">吹蠟燭貓貓</a>、<a href="https://gfycat.com/hospitablecomplicatedeastrussiancoursinghounds" target="_blank" rel="noopener">功夫貓貓</a>、<a href="https://www.gifng.com/animals/66791/" target="_blank" rel="noopener">別人的貓貓</a>、<a href="https://giphy.com/gifs/gL3bcZpn6uINzLq0M0" target="_blank" rel="noopener">招手貓貓</a>、<a href="https://gifyes.com/4255" target="_blank" rel="noopener">被魚打臉貓貓</a>、<a href="https://giphy.vip/Gif/No-You-Come-Here/584" target="_blank" rel="noopener">你給我過來貓貓</a>、<a href="https://66.media.tumblr.com/70ab617ac9a085a03bad028cfb80148f/1e2b548cfe1a38e7-92/s400x600/f8fad5833b08208380a9d1c5e6eadaf848372a94.gifv?fbclid=IwAR27f4CEzIkrqgidDQA_oV06JFVfJczcHV_tPZP8VFs2yCqjU8doLtHJ4O8" target="_blank" rel="noopener">打狗貓貓</a>、<a href="https://6gif.blogspot.com/2019/09/cat-jumps-table-toss-humans-reports-fail.html?fbclid=IwAR251vOdzt9KyJqbxjPpBm4Ry_4cbw1bhPfEebQu9oGcPVvsQ_EGa6kCO1M" target="_blank" rel="noopener">弄亂文件貓貓</a>、<a href="https://thumbs.gfycat.com/ViciousRecklessIrishdraughthorse-size_restricted.gif" target="_blank" rel="noopener">硬要玩貓貓</a>、<a href="https://www.gifng.com/animals/69037/?fbclid=IwAR22vwp4UAbb7hhlxg3AGO-Ja-7Hn5enpHeugW4gc6lBs50PP0UxlgRSWP4" target="_blank" rel="noopener">機關槍貓貓</a>、<a href="https://cs12.pikabu.ru/post_img/2020/03/01/10/158308360818683569.gif?fbclid=IwAR0-M_W2BTzAOybJflqK1DeSrA-FpGdOuoUYwA3tlKts1BBIgnz9gXCkMjs" target="_blank" rel="noopener">探戈貓貓</a>、<a href="https://www.gif-vif.com/The-boxing-match-i-am-interested-in" target="_blank" rel="noopener">照鏡子貓貓</a>、<a href="https://giphy.com/gifs/kaHkUm0t81fCOoh71e/html5" target="_blank" rel="noopener">騎車貓貓</a>、<a href="https://www.gif-vif.com/gifs/Improvise-Adapt-Overcome/?fbrefresh=23&fbclid=IwAR3y00TpRsnS8_NByCSV0Kh4VmQeN5JB35Wn595mPYXPwSR8ck1DyD9gFzg" target="_blank" rel="noopener">自己逗自己貓貓</a>、<a href="https://www.alucinoconfeisbuk.com/2020/03/que-viene-el-jefe.html?m=1" target="_blank" rel="noopener">躲書架貓貓</a>、<a href="https://www.gif-vif.com/how-hooman-how/?fbrefresh=23&fbclid=IwAR2if8pK2mm9YEk1Rfh-lty2MdQZ15-dWxhBQd_1mHEKltR0koQADoohtWo" target="_blank" rel="noopener">猜杯子貓貓</a>、<a href="https://www.gif-vif.com/boop-master/?fbrefresh=23" target="_blank" rel="noopener">螳螂貓貓</a>、<a href="https://thumbs.gfycat.com/CookedSatisfiedDwarfmongoose-size_restricted.gif" target="_blank" rel="noopener">亂鑽橘貓</a>、<a href="https://6gif.blogspot.com/2019/11/cat-enters-room-jumps-into-bed-lay-down.html?fbclid=IwAR0ZV2_nIHZsmX7oTDydAqbYUYSVwSKOkNa-4sOHqtue70tY-x3YVgnx9z0" target="_blank" rel="noopener">躺好貓貓</a>、<a href="https://giphy.com/embed/Vgg3LAqr08wcTGLO6z" target="_blank" rel="noopener">蓋被子貓貓</a>、<a href="https://www.gifng.com/animals/72405/" target="_blank" rel="noopener">集合貓貓</a>、<a href="https://lh3.googleusercontent.com/p/AF1QipMFAoMc5vlfVdm2ZWZrjMBXr6cNAH4e_ilQ9aPZ=s476-iv1294966?key=TGJUWDkzcTZLU3phUWNxSnNTR3BhTk9OcGs1Si1R&fbclid=IwAR0Jd2RC26tvwaaziIRrwN-iSowNrVt2kRm7O0_KA0paWXJ9xGsZTdbc7KM" target="_blank" rel="noopener">撥毛巾貓貓</a>、<a href="https://media.giphy.com/media/llsfFyBViKxp1mfRUQ/giphy.gif#.XjunOh-6EYY.facebook" target="_blank" rel="noopener">搶食物貓貓</a>、<a href="https://www.gif-vif.com/Agent-kitty/?fbrefresh=23&fbclid=IwAR1GcTBtWiOO2YuUZBZ2FAtPFXUc--uuLXuI5dG3n9OCrYF3mc_Xks0n-Ns" target="_blank" rel="noopener">殺手貓貓</a>、<a href="https://www.gif-vif.com/What-kind-of-chips-is-this/?fbrefresh=23" target="_blank" rel="noopener">洋芋片貓貓</a>、<a href="https://www.gif-vif.com/I-want-makeup/?fbrefresh=23&fbclid=IwAR39KixGQcO31CkgIkJSceyK5moY490r_vlaZ265SzVyCLdYBHkpuvnBZR4" target="_blank" rel="noopener">毛手毛腳</a>、<a href="https://giphy.com/gifs/parking-fluYfyYrkP5Ys" target="_blank" rel="noopener">停車貓貓</a>、<a href="https://giphy.com/gifs/justviralnet-funny-animal-acting-LqroqS6BkH4gmffEDM" target="_blank" rel="noopener">戲精貓貓</a>、<a href="https://giphy.com/gifs/justviralnet-cat-angry-animal-RH1ZXHKTDSH52baPcG" target="_blank" rel="noopener">黑貓貓</a>、<a href="https://giphy.com/gifs/cat-hug-MBrmhKiiFwXy8" target="_blank" rel="noopener">抱抱貓貓</a>、<a href="https://www.gifng.com/animals/33155/?fbclid=IwAR0RcFy-rRk1zJR8FhIdslDzXV6vaMvz2WehPdN50ommhiKV2oOu3ys9aL8" target="_blank" rel="noopener">臭臉貓貓</a>、<a href="https://giphy.com/gifs/d8KycwRIJRApftKEgO?fbclid=IwAR0A_0LCcG1v6XQ1tVx9GK8TKjLyWLpFs8eKpzNcgjvlHJymcf9_0QMmsjw" target="_blank" rel="noopener">可愛貓貓</a>、<a href="https://giphy.com/gifs/v4vnX6bnCSjFS" target="_blank" rel="noopener">海豚貓貓</a>、<a href="https://www.gif-vif.com/Catto-got-swag/?fbrefresh=23" target="_blank" rel="noopener">太陽眼鏡貓貓</a>、<a href="https://yay-gif.com/2341-42-2/" target="_blank" rel="noopener">搶食貓貓</a>、<a href="https://giphy.com/gifs/cute-aww-eyebleach-74Ob9q9VMgvIiviIXM" target="_blank" rel="noopener">別人家的貓永遠不會讓我失望</a>、<a href="https://imgur.com/ab18mol" target="_blank" rel="noopener">狗狗貓貓</a></li>
 <li><a href="https://pets.ettoday.net/news/869905#ixzz5A1X76irb" target="_blank" rel="noopener">「你看過這隻貓嗎？」好心路人想幫找　近看卻傻眼：…可惡</a></li>
 <li><a href="https://www.facebook.com/NowJustLaugh.TW/posts/1982056361827700" target="_blank" rel="noopener">大貓行列！</a>twitter <a href="https://twitter.com/dk_art?lang=en" target="_blank" rel="noopener">@dk_art</a></li>
 <li><a href="https://www.facebook.com/peanutnews/videos/1867436036604009/" target="_blank" rel="noopener">喵星人如何在零下20°的雪地裡生活呢？</a></li>
@@ -8422,6 +8424,7 @@ Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a><br>PS by <a h
 <li><a href="https://gooshuo.tw/article/651" target="_blank" rel="noopener">漂浮在碧綠湖水上的無人秘境車站 靜岡縣奧大井湖上站！</a></li>
 </ul>
 <h1 id="其他-Other"><a href="#其他-Other" class="headerlink" title="其他 / Other"></a>其他 / Other</h1><ul>
+<li><a href="https://swf.com.tw/?p=1361" target="_blank" rel="noopener">YouTube影片下載（二）：透過FFmpeg取得影片資訊、轉檔輸出、合併視訊和聲音</a></li>
 <li><a href="https://medium.com/@Johann016/%E5%A6%82%E4%BD%95%E9%96%B1%E8%AE%80%E4%B8%80%E7%AF%87%E5%AD%B8%E8%A1%93%E8%AB%96%E6%96%87-cedb2f0d7cd0" target="_blank" rel="noopener">如何閱讀一篇學術論文 – 黃岳涵 – Medium</a></li>
 <li><a href="http://root.eng.tw/" target="_blank" rel="noopener">Eng.tw 每日字根</a></li>
 <li><a href="https://www.youtube.com/watch?v=U_7qPitWoAo" target="_blank" rel="noopener">SITCON 2018 開場動畫</a></li>
