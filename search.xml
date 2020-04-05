@@ -126,8 +126,8 @@
   <entry>
     <title>隨手拍#12 - 台中秋紅谷</title>
     <url>/2020/02/18/20200218-photo/</url>
-    <content><![CDATA[<p><img src="https://i.imgur.com/RJhDT9G.jpg" alt="">
-Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
+    <content><![CDATA[<p><img src="/image/20200127_095800.jpg" alt="">
+Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 <p>拍攝時間：2020/1/27<br>拍攝地點：台中秋紅谷  </p>
 <p>農曆新年全家去台中走走～</p>
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3640.123177741741!2d120.6371489149892!3d24.167412484385483!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x34693df3fafff12d%3A0x154f59fcfc5ebfa4!2sMaple%20Garden!5e0!3m2!1sen!2stw!4v1582026114076!5m2!1sen!2stw" width="500" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>]]></content>
@@ -233,8 +233,8 @@ Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
   <entry>
     <title>隨手拍#11 - 櫻花</title>
     <url>/2020/01/18/20200118-photo/</url>
-    <content><![CDATA[<p><img src="https://i.imgur.com/fvm8qB5.jpg" alt="">
-Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
+    <content><![CDATA[<p><img src="/image/20200104.jpg" alt="">
+Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 <p>拍攝時間：2020/1/14<br>拍攝地點：新竹動物園旁邊</p>
 <p>趁著剛放寒假還待在新竹的時候還跟同學去新竹動物園看看，順便在附近晃晃。</p>
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3621.8405792005274!2d120.97514241500174!3d24.800911884082026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x346835dc4c21b743%3A0xc2e61e1a5a542c3f!2sHsinchu%20Park!5e0!3m2!1sen!2stw!4v1582026474086!5m2!1sen!2stw" width="500" height="300" frameborder="0" style="border:0;" allowfullscreen=""></iframe>]]></content>
@@ -1746,6 +1746,267 @@ from <a href="https://en.wikipedia.org/wiki/Visitor_pattern" target="_blank" rel
       </tags>
   </entry>
   <entry>
+    <title>[Intro. to Computer Security Course Note] Ch 11</title>
+    <url>/2019/06/24/20190624-ComputerSecurity-note-ch11/</url>
+    <content><![CDATA[<h1 id="Ch11-Software-Security"><a href="#Ch11-Software-Security" class="headerlink" title="Ch11. Software Security"></a>Ch11. Software Security</h1><hr>
+<h1 id="Software-Security-Issues"><a href="#Software-Security-Issues" class="headerlink" title="Software Security Issues"></a>Software Security Issues</h1><ul>
+<li>Many vulnerabilities result from <strong>poor programming practices</strong></li>
+<li>Consequences from insufficient checking/validation of data and error codes in programs</li>
+</ul>
+<h2 id="Software-Error-Categories"><a href="#Software-Error-Categories" class="headerlink" title="Software Error Categories"></a>Software Error Categories</h2><ul>
+<li>Insecure interaction between components<ul>
+<li>SQL injection</li>
+<li>Cross-site scripting</li>
+<li>Open redirect</li>
+</ul>
+</li>
+<li>Risky resource management<ul>
+<li>Classical buffer overflow</li>
+<li>Path traversal</li>
+<li>DOwnload of code without integrity check</li>
+</ul>
+</li>
+<li>Porous(多孔的) defenses<ul>
+<li><strong>Missing</strong> authentication for critical function</li>
+<li><strong>Missing</strong> authorization</li>
+<li><strong>Missing</strong> encryption of sensitive data</li>
+</ul>
+</li>
+</ul>
+<h2 id="Software-Security-Software-Quality-Reliability"><a href="#Software-Security-Software-Quality-Reliability" class="headerlink" title="Software Security: Software Quality/Reliability"></a>Software Security: Software Quality/Reliability</h2><ul>
+<li>Software Quality and Reliability<ul>
+<li>Concern: accidental failure of a program</li>
+<li>Not the total number of bugs, but <strong>how often</strong> they are triggered</li>
+<li>Improvement: structured design and testing to identity and eliminate bugs</li>
+</ul>
+</li>
+<li>Software Security<ul>
+<li>Attacker targets specific bugs that result in a failure that can be exploited</li>
+<li>Triggered by inputs that differ dramatically from what is usually expected</li>
+<li>Unlikely to be identified by common testing approaches</li>
+</ul>
+</li>
+</ul>
+<h2 id="Defensive-or-Secure-Programming"><a href="#Defensive-or-Secure-Programming" class="headerlink" title="Defensive or Secure Programming"></a>Defensive or Secure Programming</h2><ul>
+<li>The process of designing and implementing software: continue to function even when under attack</li>
+<li>Software written using this process<ul>
+<li>Detect erroneous conditions resulting from some attack</li>
+<li>Either continue <strong>executing safety, or fail gracefully</strong></li>
+</ul>
+</li>
+<li>Key rule: <strong>never assume anything</strong><ul>
+<li>Check all assumptions and handle any possible error states</li>
+</ul>
+</li>
+<li><table style="">
+  <tr>
+      <th style="font-weight: normal;">Typical programmers</th>
+      <th style="font-weight: normal;">Defensive Programming</th>
+  </tr>
+  <tr>
+      <th style="font-weight: lighter;">Attention on the steps needed for success<br>- Follow the normal flow of execution of the program<br>- But __not consider every potential point of failure__<br>Often make assumptions: type of inputs and environment</th>
+      <th style="font-weight: lighter;">The assumptions need to be validated by the program<br>__All potential failures handled gracefully and safely__<br>But, increase codes and time spent</th>
+  </tr>
+  <tr>
+      <th style="font-weight: lighter;">When changes are required<br>- Focus on the cahnges required and __what needs to be achieved__</th>
+      <th style="font-weight: lighter;">Must carefully check any assumptions made<br>Check and handle all possible errors<br>Carefully check any interactions with existing code</th>
+  </tr>
+</table>
+
+</li>
+</ul>
+<h2 id="Security-by-Design"><a href="#Security-by-Design" class="headerlink" title="Security by Design"></a>Security by Design</h2><ul>
+<li>Recent years have been increasing efforts to improve secure software development process<ul>
+<li>Software Assurance Forum for Excellence in Code (SAFECode)<ul>
+<li>Outlining industry best practices for software assurance</li>
+<li>Providing practical advice for secure software development</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Handling-Program-Input"><a href="#Handling-Program-Input" class="headerlink" title="Handling Program Input"></a>Handling Program Input</h1><ul>
+<li>Incorrect handling is one of the most common failings</li>
+<li>Input is any source of data from outside and whose value is not explicitly known by the programmer</li>
+<li>All sources of input data must be identified</li>
+<li>Explicitly validate assumptions on size and type of values before use</li>
+<li>Two key areas of concern: <strong>size and interpretation</strong></li>
+</ul>
+<h2 id="Input-Size-amp-Buffer-Overflow"><a href="#Input-Size-amp-Buffer-Overflow" class="headerlink" title="Input Size &amp; Buffer Overflow"></a>Input Size &amp; Buffer Overflow</h2><ul>
+<li>Programmers often make assumptions: <strong>maximum expected size of input</strong><ul>
+<li>有可能會導致 buffer overflows</li>
+</ul>
+</li>
+<li>Testing may not identify the vulnerability<ul>
+<li>測資不夠完整</li>
+</ul>
+</li>
+<li>Safe programming practices</li>
+<li><strong>Safe coding regards any input as dangerous</strong></li>
+</ul>
+<h2 id="Interpretation-of-Program-Input"><a href="#Interpretation-of-Program-Input" class="headerlink" title="Interpretation of Program Input"></a>Interpretation of Program Input</h2><ul>
+<li>Program input may be binary or textual<ul>
+<li>Binary data: <strong>depends on encoding and is usually app-specific</strong></li>
+</ul>
+</li>
+<li>Failure to validate may result in an exploitable vulnerability</li>
+</ul>
+<h2 id="Injection-Attacks"><a href="#Injection-Attacks" class="headerlink" title="Injection Attacks"></a>Injection Attacks</h2><h2 id="Cross-site-Scripting-XSS-Attacks"><a href="#Cross-site-Scripting-XSS-Attacks" class="headerlink" title="Cross-site Scripting (XSS) Attacks"></a>Cross-site Scripting (XSS) Attacks</h2><ul>
+<li><strong>Input provided to a program by one user that is subsequently output to another user</strong><ul>
+<li>Assumption: all content from one site is <strong>equally trusted</strong> and hence is permitted to interact with other content from that site</li>
+<li>Attacks exploit this assumption and attempt to bypass the browser&#39;s security checks</li>
+</ul>
+</li>
+<li>Most common variant: XSS reflection</li>
+</ul>
+<h2 id="XSS-Reflection"><a href="#XSS-Reflection" class="headerlink" title="XSS Reflection"></a>XSS Reflection</h2><ul>
+<li>Consider the widespread use of guestbook programs<ul>
+<li>留言板那些的</li>
+</ul>
+</li>
+<li>Prevention: any user-supplied input should be examined</li>
+</ul>
+<h2 id="Validating-Input-Syntax"><a href="#Validating-Input-Syntax" class="headerlink" title="Validating Input Syntax"></a>Validating Input Syntax</h2><ul>
+<li>Input data should be compared against <strong>what is wanted</strong><ul>
+<li>using regular expression</li>
+<li>Whitelisting <strong>(more secure)</strong></li>
+</ul>
+</li>
+<li>Alternative is to compare the input data with <strong>known dangerous values</strong><ul>
+<li>Blacklisting</li>
+</ul>
+</li>
+</ul>
+<h2 id="Alternative-Encodings"><a href="#Alternative-Encodings" class="headerlink" title="Alternative Encodings"></a>Alternative Encodings</h2><ul>
+<li>Canonicalization: transforming input data into a single, standard, minimal representation<ul>
+<li>Once this is done the input data can be compared with a single representation of acceptable input values</li>
+</ul>
+</li>
+</ul>
+<h2 id="Validating-Numeric-Input"><a href="#Validating-Numeric-Input" class="headerlink" title="Validating Numeric Input"></a>Validating Numeric Input</h2><ul>
+<li>Internally stored in fixed sized value</li>
+<li>Must correctly interpret text form<ul>
+<li>Have issues comparing signed to unsigned</li>
+</ul>
+</li>
+</ul>
+<h2 id="Input-Fuzzing"><a href="#Input-Fuzzing" class="headerlink" title="Input Fuzzing"></a>Input Fuzzing</h2><ul>
+<li>Major issue of input texting: very large range of inputs</li>
+<li>Fuzzing: a software testing technique: using randomly generated data as inputs to a program<ul>
+<li>Simplicity and freedom from assumption</li>
+<li>Very low cost of generating large numbers of tests</li>
+</ul>
+</li>
+<li>Input can be randomly generated</li>
+<li>Conceptually very simple, but identifying only simple types of faults<ul>
+<li>Only triggered by a small number of very specific input values</li>
+</ul>
+</li>
+</ul>
+<h1 id="Writing-Safe-Program-Code"><a href="#Writing-Safe-Program-Code" class="headerlink" title="Writing Safe Program Code"></a>Writing Safe Program Code</h1><ul>
+<li>Key issues<ul>
+<li><strong>Correct</strong> algorithm implementation, machine instructions</li>
+<li><strong>Valid</strong> manipulate of data</li>
+</ul>
+</li>
+</ul>
+<h2 id="Correct-Algorithm-Implementation"><a href="#Correct-Algorithm-Implementation" class="headerlink" title="Correct Algorithm Implementation"></a>Correct Algorithm Implementation</h2><ul>
+<li>Not correctly implement all cases or variants of the problem<ul>
+<li>用對的方法重做一遍</li>
+</ul>
+</li>
+</ul>
+<h2 id="Correct-Machine-Instructions-for-algorithm"><a href="#Correct-Machine-Instructions-for-algorithm" class="headerlink" title="Correct Machine Instructions for algorithm"></a>Correct Machine Instructions for algorithm</h2><ul>
+<li><strong>Largely ignored by most programmers</strong><ul>
+<li>Assumption: 反正 compiler 會處理好</li>
+</ul>
+</li>
+<li>Malicious compiler programmer<ul>
+<li>Including instructions in the compiler to emit additional code</li>
+</ul>
+</li>
+<li>Countermeasure:<ul>
+<li>檢查檢查再檢查(source 跟 machine code)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Correct-Data-Interpretation"><a href="#Correct-Data-Interpretation" class="headerlink" title="Correct Data Interpretation"></a>Correct Data Interpretation</h2><ul>
+<li>All data on a computer are stored as groups of binary bits</li>
+<li>Different languages provide varying capabilities for restriction and validating interpretation of data in variables</li>
+<li>Correct use of memory<ul>
+<li>Issue: allocation and management of dynamic memory storage (heap)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Preventing-Race-Conditions-with-Shared-Memory"><a href="#Preventing-Race-Conditions-with-Shared-Memory" class="headerlink" title="Preventing Race Conditions with Shared Memory"></a>Preventing Race Conditions with Shared Memory</h2><ul>
+<li>Race condition</li>
+</ul>
+<h1 id="Interacting-with-the-OS-and-Other-Programs"><a href="#Interacting-with-the-OS-and-Other-Programs" class="headerlink" title="Interacting with the OS and Other Programs"></a>Interacting with the OS and Other Programs</h1><p> In general, programs do not run in isolation on most computer systems</p>
+<h2 id="Several-issues"><a href="#Several-issues" class="headerlink" title="Several issues"></a>Several issues</h2><ul>
+<li>Environment variables<ul>
+<li>沒辦法透過 reset PATH variable 解決<ul>
+<li><code>PATH=&quot;/sib:/bin:/usr/sbin:/usr/bin&quot;</code></li>
+<li>把 IFS environment variable 改調就可以繞過</li>
+</ul>
+</li>
+<li>Generally, writing secure, privileged shell scripts is very difficult</li>
+<li>Dynamic linking of libraries may be vulnerable<ul>
+<li>Library injection (LD_LIBRARY_PATH)</li>
+<li>Solution: using a <strong>statically linked executable</strong> or <strong>blocking the use of this env variable</strong> when the program executed runs with different privileges</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Using appropriate, least privileges<ul>
+<li>Root/Administrator privileges<ul>
+<li><strong>Major attack target</strong></li>
+<li>Good design partitions complex programs in smaller modules with needed privileges<ul>
+<li>A greater degree of isolation between components</li>
+<li><strong>Fewer consequences of a security breach in one component</strong></li>
+<li>Easier to test and verify</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Systems calls and standard library functions<ul>
+<li>The programs may not perform as expected<ul>
+<li>Incorrect assumptions made for the operations of the system calls and standard library functions</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Preventing race conditions with shared system resources<ul>
+<li>Need suitable synchronization mechanisms<ul>
+<li>e.g., lock</li>
+</ul>
+</li>
+<li>Lockfile</li>
+</ul>
+</li>
+<li>Safe temporary file use<ul>
+<li>Secure temporary file creation and use requires the use of <strong>random names and atomic operation</strong><ul>
+<li>:+1: mkstemp()</li>
+<li>:-1: <del>tmpfile(), tmpnam(), tempnam()</del></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Interacting with other programs</li>
+</ul>
+<h1 id="Handling-Program-Output"><a href="#Handling-Program-Output" class="headerlink" title="Handling Program Output"></a>Handling Program Output</h1><ul>
+<li>Programs must identify what is permissible output content</li>
+<li>Character set should be specified</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>NCTU</tag>
+        <tag>note</tag>
+        <tag>computer security</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>[Intro. to Computer Security Course Note] Ch 24</title>
     <url>/2019/06/24/20190624-ComputerSecurity-note-ch24/</url>
     <content><![CDATA[<h1 id="Ch24-Wireless-Network-Security"><a href="#Ch24-Wireless-Network-Security" class="headerlink" title="Ch24. Wireless Network Security"></a>Ch24. Wireless Network Security</h1><hr>
@@ -2106,267 +2367,6 @@ from <a href="https://en.wikipedia.org/wiki/Visitor_pattern" target="_blank" rel
 </li>
 </ul>
 </li>
-</ul>
-]]></content>
-      <tags>
-        <tag>NCTU</tag>
-        <tag>note</tag>
-        <tag>computer security</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[Intro. to Computer Security Course Note] Ch 11</title>
-    <url>/2019/06/24/20190624-ComputerSecurity-note-ch11/</url>
-    <content><![CDATA[<h1 id="Ch11-Software-Security"><a href="#Ch11-Software-Security" class="headerlink" title="Ch11. Software Security"></a>Ch11. Software Security</h1><hr>
-<h1 id="Software-Security-Issues"><a href="#Software-Security-Issues" class="headerlink" title="Software Security Issues"></a>Software Security Issues</h1><ul>
-<li>Many vulnerabilities result from <strong>poor programming practices</strong></li>
-<li>Consequences from insufficient checking/validation of data and error codes in programs</li>
-</ul>
-<h2 id="Software-Error-Categories"><a href="#Software-Error-Categories" class="headerlink" title="Software Error Categories"></a>Software Error Categories</h2><ul>
-<li>Insecure interaction between components<ul>
-<li>SQL injection</li>
-<li>Cross-site scripting</li>
-<li>Open redirect</li>
-</ul>
-</li>
-<li>Risky resource management<ul>
-<li>Classical buffer overflow</li>
-<li>Path traversal</li>
-<li>DOwnload of code without integrity check</li>
-</ul>
-</li>
-<li>Porous(多孔的) defenses<ul>
-<li><strong>Missing</strong> authentication for critical function</li>
-<li><strong>Missing</strong> authorization</li>
-<li><strong>Missing</strong> encryption of sensitive data</li>
-</ul>
-</li>
-</ul>
-<h2 id="Software-Security-Software-Quality-Reliability"><a href="#Software-Security-Software-Quality-Reliability" class="headerlink" title="Software Security: Software Quality/Reliability"></a>Software Security: Software Quality/Reliability</h2><ul>
-<li>Software Quality and Reliability<ul>
-<li>Concern: accidental failure of a program</li>
-<li>Not the total number of bugs, but <strong>how often</strong> they are triggered</li>
-<li>Improvement: structured design and testing to identity and eliminate bugs</li>
-</ul>
-</li>
-<li>Software Security<ul>
-<li>Attacker targets specific bugs that result in a failure that can be exploited</li>
-<li>Triggered by inputs that differ dramatically from what is usually expected</li>
-<li>Unlikely to be identified by common testing approaches</li>
-</ul>
-</li>
-</ul>
-<h2 id="Defensive-or-Secure-Programming"><a href="#Defensive-or-Secure-Programming" class="headerlink" title="Defensive or Secure Programming"></a>Defensive or Secure Programming</h2><ul>
-<li>The process of designing and implementing software: continue to function even when under attack</li>
-<li>Software written using this process<ul>
-<li>Detect erroneous conditions resulting from some attack</li>
-<li>Either continue <strong>executing safety, or fail gracefully</strong></li>
-</ul>
-</li>
-<li>Key rule: <strong>never assume anything</strong><ul>
-<li>Check all assumptions and handle any possible error states</li>
-</ul>
-</li>
-<li><table style="">
-  <tr>
-      <th style="font-weight: normal;">Typical programmers</th>
-      <th style="font-weight: normal;">Defensive Programming</th>
-  </tr>
-  <tr>
-      <th style="font-weight: lighter;">Attention on the steps needed for success<br>- Follow the normal flow of execution of the program<br>- But __not consider every potential point of failure__<br>Often make assumptions: type of inputs and environment</th>
-      <th style="font-weight: lighter;">The assumptions need to be validated by the program<br>__All potential failures handled gracefully and safely__<br>But, increase codes and time spent</th>
-  </tr>
-  <tr>
-      <th style="font-weight: lighter;">When changes are required<br>- Focus on the cahnges required and __what needs to be achieved__</th>
-      <th style="font-weight: lighter;">Must carefully check any assumptions made<br>Check and handle all possible errors<br>Carefully check any interactions with existing code</th>
-  </tr>
-</table>
-
-</li>
-</ul>
-<h2 id="Security-by-Design"><a href="#Security-by-Design" class="headerlink" title="Security by Design"></a>Security by Design</h2><ul>
-<li>Recent years have been increasing efforts to improve secure software development process<ul>
-<li>Software Assurance Forum for Excellence in Code (SAFECode)<ul>
-<li>Outlining industry best practices for software assurance</li>
-<li>Providing practical advice for secure software development</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="Handling-Program-Input"><a href="#Handling-Program-Input" class="headerlink" title="Handling Program Input"></a>Handling Program Input</h1><ul>
-<li>Incorrect handling is one of the most common failings</li>
-<li>Input is any source of data from outside and whose value is not explicitly known by the programmer</li>
-<li>All sources of input data must be identified</li>
-<li>Explicitly validate assumptions on size and type of values before use</li>
-<li>Two key areas of concern: <strong>size and interpretation</strong></li>
-</ul>
-<h2 id="Input-Size-amp-Buffer-Overflow"><a href="#Input-Size-amp-Buffer-Overflow" class="headerlink" title="Input Size &amp; Buffer Overflow"></a>Input Size &amp; Buffer Overflow</h2><ul>
-<li>Programmers often make assumptions: <strong>maximum expected size of input</strong><ul>
-<li>有可能會導致 buffer overflows</li>
-</ul>
-</li>
-<li>Testing may not identify the vulnerability<ul>
-<li>測資不夠完整</li>
-</ul>
-</li>
-<li>Safe programming practices</li>
-<li><strong>Safe coding regards any input as dangerous</strong></li>
-</ul>
-<h2 id="Interpretation-of-Program-Input"><a href="#Interpretation-of-Program-Input" class="headerlink" title="Interpretation of Program Input"></a>Interpretation of Program Input</h2><ul>
-<li>Program input may be binary or textual<ul>
-<li>Binary data: <strong>depends on encoding and is usually app-specific</strong></li>
-</ul>
-</li>
-<li>Failure to validate may result in an exploitable vulnerability</li>
-</ul>
-<h2 id="Injection-Attacks"><a href="#Injection-Attacks" class="headerlink" title="Injection Attacks"></a>Injection Attacks</h2><h2 id="Cross-site-Scripting-XSS-Attacks"><a href="#Cross-site-Scripting-XSS-Attacks" class="headerlink" title="Cross-site Scripting (XSS) Attacks"></a>Cross-site Scripting (XSS) Attacks</h2><ul>
-<li><strong>Input provided to a program by one user that is subsequently output to another user</strong><ul>
-<li>Assumption: all content from one site is <strong>equally trusted</strong> and hence is permitted to interact with other content from that site</li>
-<li>Attacks exploit this assumption and attempt to bypass the browser&#39;s security checks</li>
-</ul>
-</li>
-<li>Most common variant: XSS reflection</li>
-</ul>
-<h2 id="XSS-Reflection"><a href="#XSS-Reflection" class="headerlink" title="XSS Reflection"></a>XSS Reflection</h2><ul>
-<li>Consider the widespread use of guestbook programs<ul>
-<li>留言板那些的</li>
-</ul>
-</li>
-<li>Prevention: any user-supplied input should be examined</li>
-</ul>
-<h2 id="Validating-Input-Syntax"><a href="#Validating-Input-Syntax" class="headerlink" title="Validating Input Syntax"></a>Validating Input Syntax</h2><ul>
-<li>Input data should be compared against <strong>what is wanted</strong><ul>
-<li>using regular expression</li>
-<li>Whitelisting <strong>(more secure)</strong></li>
-</ul>
-</li>
-<li>Alternative is to compare the input data with <strong>known dangerous values</strong><ul>
-<li>Blacklisting</li>
-</ul>
-</li>
-</ul>
-<h2 id="Alternative-Encodings"><a href="#Alternative-Encodings" class="headerlink" title="Alternative Encodings"></a>Alternative Encodings</h2><ul>
-<li>Canonicalization: transforming input data into a single, standard, minimal representation<ul>
-<li>Once this is done the input data can be compared with a single representation of acceptable input values</li>
-</ul>
-</li>
-</ul>
-<h2 id="Validating-Numeric-Input"><a href="#Validating-Numeric-Input" class="headerlink" title="Validating Numeric Input"></a>Validating Numeric Input</h2><ul>
-<li>Internally stored in fixed sized value</li>
-<li>Must correctly interpret text form<ul>
-<li>Have issues comparing signed to unsigned</li>
-</ul>
-</li>
-</ul>
-<h2 id="Input-Fuzzing"><a href="#Input-Fuzzing" class="headerlink" title="Input Fuzzing"></a>Input Fuzzing</h2><ul>
-<li>Major issue of input texting: very large range of inputs</li>
-<li>Fuzzing: a software testing technique: using randomly generated data as inputs to a program<ul>
-<li>Simplicity and freedom from assumption</li>
-<li>Very low cost of generating large numbers of tests</li>
-</ul>
-</li>
-<li>Input can be randomly generated</li>
-<li>Conceptually very simple, but identifying only simple types of faults<ul>
-<li>Only triggered by a small number of very specific input values</li>
-</ul>
-</li>
-</ul>
-<h1 id="Writing-Safe-Program-Code"><a href="#Writing-Safe-Program-Code" class="headerlink" title="Writing Safe Program Code"></a>Writing Safe Program Code</h1><ul>
-<li>Key issues<ul>
-<li><strong>Correct</strong> algorithm implementation, machine instructions</li>
-<li><strong>Valid</strong> manipulate of data</li>
-</ul>
-</li>
-</ul>
-<h2 id="Correct-Algorithm-Implementation"><a href="#Correct-Algorithm-Implementation" class="headerlink" title="Correct Algorithm Implementation"></a>Correct Algorithm Implementation</h2><ul>
-<li>Not correctly implement all cases or variants of the problem<ul>
-<li>用對的方法重做一遍</li>
-</ul>
-</li>
-</ul>
-<h2 id="Correct-Machine-Instructions-for-algorithm"><a href="#Correct-Machine-Instructions-for-algorithm" class="headerlink" title="Correct Machine Instructions for algorithm"></a>Correct Machine Instructions for algorithm</h2><ul>
-<li><strong>Largely ignored by most programmers</strong><ul>
-<li>Assumption: 反正 compiler 會處理好</li>
-</ul>
-</li>
-<li>Malicious compiler programmer<ul>
-<li>Including instructions in the compiler to emit additional code</li>
-</ul>
-</li>
-<li>Countermeasure:<ul>
-<li>檢查檢查再檢查(source 跟 machine code)</li>
-</ul>
-</li>
-</ul>
-<h2 id="Correct-Data-Interpretation"><a href="#Correct-Data-Interpretation" class="headerlink" title="Correct Data Interpretation"></a>Correct Data Interpretation</h2><ul>
-<li>All data on a computer are stored as groups of binary bits</li>
-<li>Different languages provide varying capabilities for restriction and validating interpretation of data in variables</li>
-<li>Correct use of memory<ul>
-<li>Issue: allocation and management of dynamic memory storage (heap)</li>
-</ul>
-</li>
-</ul>
-<h2 id="Preventing-Race-Conditions-with-Shared-Memory"><a href="#Preventing-Race-Conditions-with-Shared-Memory" class="headerlink" title="Preventing Race Conditions with Shared Memory"></a>Preventing Race Conditions with Shared Memory</h2><ul>
-<li>Race condition</li>
-</ul>
-<h1 id="Interacting-with-the-OS-and-Other-Programs"><a href="#Interacting-with-the-OS-and-Other-Programs" class="headerlink" title="Interacting with the OS and Other Programs"></a>Interacting with the OS and Other Programs</h1><p> In general, programs do not run in isolation on most computer systems</p>
-<h2 id="Several-issues"><a href="#Several-issues" class="headerlink" title="Several issues"></a>Several issues</h2><ul>
-<li>Environment variables<ul>
-<li>沒辦法透過 reset PATH variable 解決<ul>
-<li><code>PATH=&quot;/sib:/bin:/usr/sbin:/usr/bin&quot;</code></li>
-<li>把 IFS environment variable 改調就可以繞過</li>
-</ul>
-</li>
-<li>Generally, writing secure, privileged shell scripts is very difficult</li>
-<li>Dynamic linking of libraries may be vulnerable<ul>
-<li>Library injection (LD_LIBRARY_PATH)</li>
-<li>Solution: using a <strong>statically linked executable</strong> or <strong>blocking the use of this env variable</strong> when the program executed runs with different privileges</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Using appropriate, least privileges<ul>
-<li>Root/Administrator privileges<ul>
-<li><strong>Major attack target</strong></li>
-<li>Good design partitions complex programs in smaller modules with needed privileges<ul>
-<li>A greater degree of isolation between components</li>
-<li><strong>Fewer consequences of a security breach in one component</strong></li>
-<li>Easier to test and verify</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Systems calls and standard library functions<ul>
-<li>The programs may not perform as expected<ul>
-<li>Incorrect assumptions made for the operations of the system calls and standard library functions</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Preventing race conditions with shared system resources<ul>
-<li>Need suitable synchronization mechanisms<ul>
-<li>e.g., lock</li>
-</ul>
-</li>
-<li>Lockfile</li>
-</ul>
-</li>
-<li>Safe temporary file use<ul>
-<li>Secure temporary file creation and use requires the use of <strong>random names and atomic operation</strong><ul>
-<li>:+1: mkstemp()</li>
-<li>:-1: <del>tmpfile(), tmpnam(), tempnam()</del></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Interacting with other programs</li>
-</ul>
-<h1 id="Handling-Program-Output"><a href="#Handling-Program-Output" class="headerlink" title="Handling Program Output"></a>Handling Program Output</h1><ul>
-<li>Programs must identify what is permissible output content</li>
-<li>Character set should be specified</li>
 </ul>
 ]]></content>
       <tags>
@@ -7787,7 +7787,7 @@ Make developers aware of where security mechanisms are required</p>
     <title>隨手拍#10 - 縫紉機</title>
     <url>/2019/02/06/20190202-photo/</url>
     <content><![CDATA[<p><img src="/image/20190202_104308_v2.jpg" alt="">
-Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
+Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 <p>拍攝時間：2019/2/2<br>拍攝地點：家裡  </p>
 <p>媽媽的縫紉機～</p>
 ]]></content>
@@ -7799,7 +7799,7 @@ Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
     <title>隨手拍#9 - 長洲渡輪碼頭</title>
     <url>/2019/01/26/20190126-photo/</url>
     <content><![CDATA[<p><img src="/image/20190126_152452_v2.jpg" alt="">
-Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
+Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 <p>拍攝時間：2019/1/26<br>拍攝地點：長洲渡輪碼頭</p>
 <p><em>字有空再打</em></p>
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d922.5304242932684!2d114.0278685180235!3d22.208661331958744!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1025087a8d2077e5!2z6ZW35rSy5rih6Lyq56K86aCt!5e0!3m2!1szh-TW!2stw!4v1549461933685" width="500" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>]]></content>
@@ -7923,7 +7923,7 @@ Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
     <title>隨手拍#8 - 象山</title>
     <url>/2018/08/26/20180826-photo/</url>
     <content><![CDATA[<p><img src="/image/20180707_151642_2.jpg" alt="">
-Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
+Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 <p>拍攝時間：2018/7/7<br>拍攝地點：象山六巨石觀景台  </p>
 <p><em>字有空再打</em></p>
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3615.213471911184!2d121.57222661431942!3d25.026828583975746!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3442abac541513f9%3A0x711d1ca1abf26dcc!2z6LGh5bGx5YWt5beo55-z6KeA5pmv5Y-w!5e0!3m2!1szh-TW!2stw!4v1535264816909" width="500" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>]]></content>
@@ -7974,7 +7974,7 @@ Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
     <title>隨手拍#7 - 交大</title>
     <url>/2018/04/20/20180420-photo/</url>
     <content><![CDATA[<p><img src="/image/20180419_233921_v2.jpg" alt="">
-Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
+Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 <p>拍攝時間：2018/4/19<br>拍攝地點：交大操場旁邊馬路</p>
 <p>今天凌晨、昨天深夜在校園裡隨意走動拍照，經過球場、操場的時候看到很多人在運動，這個時間點不是應該要睡覺嗎？大家怎麼都還精神很好的感覺...在校園亂晃的時候也發現很多之前不曾注意過的地方。後來還跑到南大門外面，明明已經半夜十二點了馬路上還是很多車子，到底為什麼那麼晚還是一堆人，<del>大家真的都很不喜歡睡覺呢。</del></p>
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1280.6441605615796!2d120.99535821611032!3d24.788306868179223!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468360f15af2887%3A0xe17f8508df3ec120!2z5Lqk5aSn5o6S55CD5aC0!5e0!3m2!1sen!2stw!4v1524195506206" width="500" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>]]></content>
@@ -7986,7 +7986,7 @@ Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
     <title>隨手拍#6 - 清大</title>
     <url>/2018/03/30/20180329-photo/</url>
     <content><![CDATA[<p><img src="/image/20180328_182105_2.jpg" alt="">
-Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
+Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 <p>拍攝時間：2018/3/28<br>拍攝地點：清大校園某處（靠近交清小徑）</p>
 <p>當天下午跟同學去清大聽攝影展導覽，結束後在回宿舍的路上聽到怪鳥的叫聲，循著聲音的源頭在樹上發現了牠的身影，剛找到的時候牠是背對鏡頭的，想說等牠轉過來再拍照，一等就是五分鐘。</p>
 ]]></content>
@@ -7998,7 +7998,7 @@ Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
     <title>隨手拍#5 - 交大</title>
     <url>/2018/03/23/20180323-photo/</url>
     <content><![CDATA[<p><img src="/image/20180321_163505_1.jpg" alt="">
-Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
+Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 <p>拍攝時間：2018/3/23<br>拍攝地點：交大浩然圖書館</p>
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3622.23914149435!2d120.99679941454163!3d24.787263527249685!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x9d8d2713a6d09b34!2sNational+Chiao+Tung+University+Library!5e0!3m2!1sen!2stw!4v1521736460632" width="500" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>]]></content>
       <tags>
@@ -8043,7 +8043,7 @@ Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
     <title>隨手拍#4 - 社區</title>
     <url>/2018/02/23/20180223-photo/</url>
     <content><![CDATA[<p><img src="/image/20180209_171543.jpg" alt="">
-Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
+Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 <p>拍攝時間：2017/2/9<br>拍攝地點：社區旁  </p>
 <p>貓咪!!!!!</p>
 ]]></content>
@@ -8241,7 +8241,7 @@ Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
     <title>隨手拍#3 - 香港海洋公園</title>
     <url>/2018/01/31/20180131-photo/</url>
     <content><![CDATA[<p><img src="/image/20180127_154947.jpg" alt="">
-Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
+Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 <p>拍攝時間：2018/1/27<br>拍攝地點：香港海洋公園</p>
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d637.9015862774519!2d114.17468322639063!3d22.245923178828672!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1f34127bce8413a2!2z5rW35rSL5aWH6KeA!5e0!3m2!1sen!2stw!4v1517411317549" width="500" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>]]></content>
       <tags>
@@ -8279,7 +8279,7 @@ Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
     <title>隨手拍#2 - 交大校園</title>
     <url>/2017/12/14/20171214-photo/</url>
     <content><![CDATA[<p><img src="/image/20170323_172713.jpg" alt="">
-Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
+Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 <p>拍攝時間：2017/3/23<br>拍攝地點：交大校園</p>
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d761.474147211635!2d120.99707338215825!3d24.788539292784545!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3468360fae27ae61%3A0xef5b0c46b5948a18!2z5Lqk6YCa5aSn5a2456eR5a245LiA6aSo!5e0!3m2!1sen!2stw!4v1513250436415" width="500" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>]]></content>
       <tags>
@@ -8290,7 +8290,7 @@ Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
     <title>隨手拍#1 - 象山</title>
     <url>/2017/11/02/20171102-photo/</url>
     <content><![CDATA[<p><img src="/image/20170704_144828.jpg" alt="">
-Credit by <a href="https://eugene87222.github.io/">Eugene Yang</a><br>PS by <a href="https://www.facebook.com/andy.wu.391420" target="_blank" rel="noopener">Andy Wu</a> <a href="https://lifeneedsphotography.github.io/" target="_blank" rel="noopener">(Blog)</a></p>
+Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a><br>PS by <a href="https://www.facebook.com/andy.wu.391420" target="_blank" rel="noopener">Andy Wu</a> <a href="https://lifeneedsphotography.github.io/" target="_blank" rel="noopener">(Blog)</a></p>
 <p>拍攝時間：2017/7/4<br>拍攝地點：象山六巨石</p>
 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4164.3040289170285!2d121.57486873827403!3d25.02667472283293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x711d1ca1abf26dcc!2z6LGh5bGx5pSd5b2x5bmz5Y-w!5e0!3m2!1szh-TW!2stw!4v1509629953340" width="500" height="300" frameborder="0" style="border:0" allowfullscreen></iframe>
 
