@@ -672,8 +672,17 @@ from <a href="https://en.wikipedia.org/wiki/Visitor_pattern" target="_blank" rel
 </li>
 </ul>
 <h1 id="以上全部都要查"><a href="#以上全部都要查" class="headerlink" title="以上全部都要查"></a>以上全部都要查</h1><h3 id="Logistic-迴歸分析"><a href="#Logistic-迴歸分析" class="headerlink" title="Logistic 迴歸分析"></a>Logistic 迴歸分析</h3><p>線性迴歸模型要求因變數是連續的常態分佈，且自變數和因變數之間呈線性關係，而 <strong>Logistic迴歸模型對因變數的分佈沒有要求</strong>，一般用於因變數是離散時的情況。</p>
-<h2 id="八、聚類分析"><a href="#八、聚類分析" class="headerlink" title="八、聚類分析"></a>八、聚類分析</h2><h2 id="九、判別分析"><a href="#九、判別分析" class="headerlink" title="九、判別分析"></a>九、判別分析</h2><h2 id="十、主成分分析"><a href="#十、主成分分析" class="headerlink" title="十、主成分分析"></a>十、主成分分析</h2><h2 id="十一、因子分析"><a href="#十一、因子分析" class="headerlink" title="十一、因子分析"></a>十一、因子分析</h2><h2 id="十二、時間排序分析"><a href="#十二、時間排序分析" class="headerlink" title="十二、時間排序分析"></a>十二、時間排序分析</h2><h2 id="十三、生存分析"><a href="#十三、生存分析" class="headerlink" title="十三、生存分析"></a>十三、生存分析</h2><h2 id="十四、典型相關分析"><a href="#十四、典型相關分析" class="headerlink" title="十四、典型相關分析"></a>十四、典型相關分析</h2><h2 id="十五、ROC-分析"><a href="#十五、ROC-分析" class="headerlink" title="十五、ROC 分析"></a>十五、ROC 分析</h2><h2 id="十六、其他分析方法"><a href="#十六、其他分析方法" class="headerlink" title="十六、其他分析方法"></a>十六、其他分析方法</h2><h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
-<li><a href="https://medium.com/@yehjames" target="_blank" rel="noopener">Yeh James</a>的<strong>資料分析&amp;機器學習</strong>系列講義</li>
+<h2 id="八、聚類分析"><a href="#八、聚類分析" class="headerlink" title="八、聚類分析"></a>八、聚類分析</h2><p><em>待補</em></p>
+<h2 id="九、判別分析"><a href="#九、判別分析" class="headerlink" title="九、判別分析"></a>九、判別分析</h2><p><em>待補</em></p>
+<h2 id="十、主成分分析"><a href="#十、主成分分析" class="headerlink" title="十、主成分分析"></a>十、主成分分析</h2><p><em>待補</em></p>
+<h2 id="十一、因子分析"><a href="#十一、因子分析" class="headerlink" title="十一、因子分析"></a>十一、因子分析</h2><p><em>待補</em></p>
+<h2 id="十二、時間排序分析"><a href="#十二、時間排序分析" class="headerlink" title="十二、時間排序分析"></a>十二、時間排序分析</h2><p><em>待補</em></p>
+<h2 id="十三、生存分析"><a href="#十三、生存分析" class="headerlink" title="十三、生存分析"></a>十三、生存分析</h2><p><em>待補</em></p>
+<h2 id="十四、典型相關分析"><a href="#十四、典型相關分析" class="headerlink" title="十四、典型相關分析"></a>十四、典型相關分析</h2><p><em>待補</em></p>
+<h2 id="十五、ROC-分析"><a href="#十五、ROC-分析" class="headerlink" title="十五、ROC 分析"></a>十五、ROC 分析</h2><p><em>待補</em></p>
+<h2 id="十六、其他分析方法"><a href="#十六、其他分析方法" class="headerlink" title="十六、其他分析方法"></a>十六、其他分析方法</h2><p><em>待補</em></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
+<li><a href="https://medium.com/@yehjames" target="_blank" rel="noopener">Yeh James</a> 的<strong>資料分析&amp;機器學習</strong>系列講義</li>
 <li><a href="https://itw01.com/VQ5QSEJ.html" target="_blank" rel="noopener">https://itw01.com/VQ5QSEJ.html</a></li>
 <li><a href="https://zh.wikipedia.org/wiki/%E6%8F%8F%E8%BF%B0%E7%BB%9F%E8%AE%A1%E5%AD%A6" target="_blank" rel="noopener">https://zh.wikipedia.org/wiki/%E6%8F%8F%E8%BF%B0%E7%BB%9F%E8%AE%A1%E5%AD%A6</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/31584345" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/31584345</a></li>
@@ -8316,16 +8325,6 @@ Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
       </tags>
   </entry>
   <entry>
-    <title>TEST</title>
-    <url>/2018/03/18/20180318-test/</url>
-    <content><![CDATA[<p>TEST</p>
-<p>這篇文是從別的電腦上發的，直接把 markdown push 到 eugene87222.github.io 的 raw branch 並透過 travis CI 自動發布。</p>
-]]></content>
-      <tags>
-        <tag>other</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>雜記</title>
     <url>/2018/03/18/20180318/</url>
     <content><![CDATA[<p>有一陣子沒在這邊貼東西了。2 月底才剛開學就已經給自己安排了一堆事情，還好這學期修的學分也沒有很多，只有 18 個學分<a id="more"></a>，原本是 15 學分剛好壓線，不過只有 15 心裡感覺不是很踏實的所以又加選了一堂研究所的課，但是如果之後事情太多忙不過來可能會把它退掉 QQ。那堂研究所的課我認為是可以學到蠻多東西的，可是那堂課的 lab 一個接一個，我實在沒辦法這個禮拜學完程式 A 下個禮拜又學程式 B，我覺得太緊湊了。</p>
@@ -8336,6 +8335,16 @@ Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 ]]></content>
       <tags>
         <tag>diary</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>TEST</title>
+    <url>/2018/03/18/20180318-test/</url>
+    <content><![CDATA[<p>TEST</p>
+<p>這篇文是從別的電腦上發的，直接把 markdown push 到 eugene87222.github.io 的 raw branch 並透過 travis CI 自動發布。</p>
+]]></content>
+      <tags>
+        <tag>other</tag>
       </tags>
   </entry>
   <entry>
