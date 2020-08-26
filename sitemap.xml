@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://eugene87222.github.io//2020/08/20/20200808-Unique/</loc>
+    <loc>http://eugene87222.github.io//about/index.html</loc>
     
-    <lastmod>2020-08-20T04:05:20.939Z</lastmod>
+    <lastmod>2020-08-26T00:02:24.343Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://eugene87222.github.io//2017/10/29/20171029-collection/</loc>
     
-    <lastmod>2020-08-16T12:19:59.239Z</lastmod>
+    <lastmod>2020-08-26T00:01:22.927Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io//2020/08/20/20200808-Unique/</loc>
+    
+    <lastmod>2020-08-20T04:05:20.939Z</lastmod>
     
   </url>
   
@@ -26,13 +33,6 @@
     <loc>http://eugene87222.github.io//2020/02/23/20200223-kaldi-for-dummy/</loc>
     
     <lastmod>2020-08-09T13:39:39.988Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io//about/index.html</loc>
-    
-    <lastmod>2020-07-19T05:16:07.191Z</lastmod>
     
   </url>
   
