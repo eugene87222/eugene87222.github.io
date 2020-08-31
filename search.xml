@@ -692,8 +692,8 @@ from <a href="https://en.wikipedia.org/wiki/Visitor_pattern" target="_blank" rel
 </ul>
 ]]></content>
       <tags>
-        <tag>note</tag>
         <tag>data analysis</tag>
+        <tag>note</tag>
       </tags>
   </entry>
   <entry>
@@ -1469,8 +1469,8 @@ Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 - <img src="https://i.imgur.com/CJT2fK8.png" width="60%"/>
 <img src="https://i.imgur.com/aoJlTKS.png" width="60%"/>]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -1576,8 +1576,8 @@ Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 </ul>
 ]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -1772,8 +1772,8 @@ Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 </ul>
 ]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -2093,8 +2093,8 @@ Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 </ul>
 <h1 id="IPv4-and-IPv6-Security"><a href="#IPv4-and-IPv6-Security" class="headerlink" title="IPv4 and IPv6 Security"></a>IPv4 and IPv6 Security</h1>]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -2192,8 +2192,269 @@ Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 </ul>
 ]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
+        <tag>computer security</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>[Intro. to Computer Security Course Note] Ch 11</title>
+    <url>/2019/06/24/20190624-ComputerSecurity-note-ch11/</url>
+    <content><![CDATA[<h1 id="Ch11-Software-Security"><a href="#Ch11-Software-Security" class="headerlink" title="Ch11. Software Security"></a>Ch11. Software Security</h1><hr>
+<h1 id="Software-Security-Issues"><a href="#Software-Security-Issues" class="headerlink" title="Software Security Issues"></a>Software Security Issues</h1><ul>
+<li>Many vulnerabilities result from <strong>poor programming practices</strong></li>
+<li>Consequences from insufficient checking/validation of data and error codes in programs</li>
+</ul>
+<h2 id="Software-Error-Categories"><a href="#Software-Error-Categories" class="headerlink" title="Software Error Categories"></a>Software Error Categories</h2><ul>
+<li>Insecure interaction between components<ul>
+<li>SQL injection</li>
+<li>Cross-site scripting</li>
+<li>Open redirect</li>
+</ul>
+</li>
+<li>Risky resource management<ul>
+<li>Classical buffer overflow</li>
+<li>Path traversal</li>
+<li>DOwnload of code without integrity check</li>
+</ul>
+</li>
+<li>Porous(多孔的) defenses<ul>
+<li><strong>Missing</strong> authentication for critical function</li>
+<li><strong>Missing</strong> authorization</li>
+<li><strong>Missing</strong> encryption of sensitive data</li>
+</ul>
+</li>
+</ul>
+<h2 id="Software-Security-Software-Quality-Reliability"><a href="#Software-Security-Software-Quality-Reliability" class="headerlink" title="Software Security: Software Quality/Reliability"></a>Software Security: Software Quality/Reliability</h2><ul>
+<li>Software Quality and Reliability<ul>
+<li>Concern: accidental failure of a program</li>
+<li>Not the total number of bugs, but <strong>how often</strong> they are triggered</li>
+<li>Improvement: structured design and testing to identity and eliminate bugs</li>
+</ul>
+</li>
+<li>Software Security<ul>
+<li>Attacker targets specific bugs that result in a failure that can be exploited</li>
+<li>Triggered by inputs that differ dramatically from what is usually expected</li>
+<li>Unlikely to be identified by common testing approaches</li>
+</ul>
+</li>
+</ul>
+<h2 id="Defensive-or-Secure-Programming"><a href="#Defensive-or-Secure-Programming" class="headerlink" title="Defensive or Secure Programming"></a>Defensive or Secure Programming</h2><ul>
+<li>The process of designing and implementing software: continue to function even when under attack</li>
+<li>Software written using this process<ul>
+<li>Detect erroneous conditions resulting from some attack</li>
+<li>Either continue <strong>executing safety, or fail gracefully</strong></li>
+</ul>
+</li>
+<li>Key rule: <strong>never assume anything</strong><ul>
+<li>Check all assumptions and handle any possible error states</li>
+</ul>
+</li>
+<li><table style="">
+  <tr>
+      <th style="font-weight: normal;">Typical programmers</th>
+      <th style="font-weight: normal;">Defensive Programming</th>
+  </tr>
+  <tr>
+      <th style="font-weight: lighter;">Attention on the steps needed for success<br>- Follow the normal flow of execution of the program<br>- But __not consider every potential point of failure__<br>Often make assumptions: type of inputs and environment</th>
+      <th style="font-weight: lighter;">The assumptions need to be validated by the program<br>__All potential failures handled gracefully and safely__<br>But, increase codes and time spent</th>
+  </tr>
+  <tr>
+      <th style="font-weight: lighter;">When changes are required<br>- Focus on the cahnges required and __what needs to be achieved__</th>
+      <th style="font-weight: lighter;">Must carefully check any assumptions made<br>Check and handle all possible errors<br>Carefully check any interactions with existing code</th>
+  </tr>
+</table>
+
+</li>
+</ul>
+<h2 id="Security-by-Design"><a href="#Security-by-Design" class="headerlink" title="Security by Design"></a>Security by Design</h2><ul>
+<li>Recent years have been increasing efforts to improve secure software development process<ul>
+<li>Software Assurance Forum for Excellence in Code (SAFECode)<ul>
+<li>Outlining industry best practices for software assurance</li>
+<li>Providing practical advice for secure software development</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Handling-Program-Input"><a href="#Handling-Program-Input" class="headerlink" title="Handling Program Input"></a>Handling Program Input</h1><ul>
+<li>Incorrect handling is one of the most common failings</li>
+<li>Input is any source of data from outside and whose value is not explicitly known by the programmer</li>
+<li>All sources of input data must be identified</li>
+<li>Explicitly validate assumptions on size and type of values before use</li>
+<li>Two key areas of concern: <strong>size and interpretation</strong></li>
+</ul>
+<h2 id="Input-Size-amp-Buffer-Overflow"><a href="#Input-Size-amp-Buffer-Overflow" class="headerlink" title="Input Size &amp; Buffer Overflow"></a>Input Size &amp; Buffer Overflow</h2><ul>
+<li>Programmers often make assumptions: <strong>maximum expected size of input</strong><ul>
+<li>有可能會導致 buffer overflows</li>
+</ul>
+</li>
+<li>Testing may not identify the vulnerability<ul>
+<li>測資不夠完整</li>
+</ul>
+</li>
+<li>Safe programming practices</li>
+<li><strong>Safe coding regards any input as dangerous</strong></li>
+</ul>
+<h2 id="Interpretation-of-Program-Input"><a href="#Interpretation-of-Program-Input" class="headerlink" title="Interpretation of Program Input"></a>Interpretation of Program Input</h2><ul>
+<li>Program input may be binary or textual<ul>
+<li>Binary data: <strong>depends on encoding and is usually app-specific</strong></li>
+</ul>
+</li>
+<li>Failure to validate may result in an exploitable vulnerability</li>
+</ul>
+<h2 id="Injection-Attacks"><a href="#Injection-Attacks" class="headerlink" title="Injection Attacks"></a>Injection Attacks</h2><h2 id="Cross-site-Scripting-XSS-Attacks"><a href="#Cross-site-Scripting-XSS-Attacks" class="headerlink" title="Cross-site Scripting (XSS) Attacks"></a>Cross-site Scripting (XSS) Attacks</h2><ul>
+<li><strong>Input provided to a program by one user that is subsequently output to another user</strong><ul>
+<li>Assumption: all content from one site is <strong>equally trusted</strong> and hence is permitted to interact with other content from that site</li>
+<li>Attacks exploit this assumption and attempt to bypass the browser&#39;s security checks</li>
+</ul>
+</li>
+<li>Most common variant: XSS reflection</li>
+</ul>
+<h2 id="XSS-Reflection"><a href="#XSS-Reflection" class="headerlink" title="XSS Reflection"></a>XSS Reflection</h2><ul>
+<li>Consider the widespread use of guestbook programs<ul>
+<li>留言板那些的</li>
+</ul>
+</li>
+<li>Prevention: any user-supplied input should be examined</li>
+</ul>
+<h2 id="Validating-Input-Syntax"><a href="#Validating-Input-Syntax" class="headerlink" title="Validating Input Syntax"></a>Validating Input Syntax</h2><ul>
+<li>Input data should be compared against <strong>what is wanted</strong><ul>
+<li>using regular expression</li>
+<li>Whitelisting <strong>(more secure)</strong></li>
+</ul>
+</li>
+<li>Alternative is to compare the input data with <strong>known dangerous values</strong><ul>
+<li>Blacklisting</li>
+</ul>
+</li>
+</ul>
+<h2 id="Alternative-Encodings"><a href="#Alternative-Encodings" class="headerlink" title="Alternative Encodings"></a>Alternative Encodings</h2><ul>
+<li>Canonicalization: transforming input data into a single, standard, minimal representation<ul>
+<li>Once this is done the input data can be compared with a single representation of acceptable input values</li>
+</ul>
+</li>
+</ul>
+<h2 id="Validating-Numeric-Input"><a href="#Validating-Numeric-Input" class="headerlink" title="Validating Numeric Input"></a>Validating Numeric Input</h2><ul>
+<li>Internally stored in fixed sized value</li>
+<li>Must correctly interpret text form<ul>
+<li>Have issues comparing signed to unsigned</li>
+</ul>
+</li>
+</ul>
+<h2 id="Input-Fuzzing"><a href="#Input-Fuzzing" class="headerlink" title="Input Fuzzing"></a>Input Fuzzing</h2><ul>
+<li>Major issue of input texting: very large range of inputs</li>
+<li>Fuzzing: a software testing technique: using randomly generated data as inputs to a program<ul>
+<li>Simplicity and freedom from assumption</li>
+<li>Very low cost of generating large numbers of tests</li>
+</ul>
+</li>
+<li>Input can be randomly generated</li>
+<li>Conceptually very simple, but identifying only simple types of faults<ul>
+<li>Only triggered by a small number of very specific input values</li>
+</ul>
+</li>
+</ul>
+<h1 id="Writing-Safe-Program-Code"><a href="#Writing-Safe-Program-Code" class="headerlink" title="Writing Safe Program Code"></a>Writing Safe Program Code</h1><ul>
+<li>Key issues<ul>
+<li><strong>Correct</strong> algorithm implementation, machine instructions</li>
+<li><strong>Valid</strong> manipulate of data</li>
+</ul>
+</li>
+</ul>
+<h2 id="Correct-Algorithm-Implementation"><a href="#Correct-Algorithm-Implementation" class="headerlink" title="Correct Algorithm Implementation"></a>Correct Algorithm Implementation</h2><ul>
+<li>Not correctly implement all cases or variants of the problem<ul>
+<li>用對的方法重做一遍</li>
+</ul>
+</li>
+</ul>
+<h2 id="Correct-Machine-Instructions-for-algorithm"><a href="#Correct-Machine-Instructions-for-algorithm" class="headerlink" title="Correct Machine Instructions for algorithm"></a>Correct Machine Instructions for algorithm</h2><ul>
+<li><strong>Largely ignored by most programmers</strong><ul>
+<li>Assumption: 反正 compiler 會處理好</li>
+</ul>
+</li>
+<li>Malicious compiler programmer<ul>
+<li>Including instructions in the compiler to emit additional code</li>
+</ul>
+</li>
+<li>Countermeasure:<ul>
+<li>檢查檢查再檢查(source 跟 machine code)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Correct-Data-Interpretation"><a href="#Correct-Data-Interpretation" class="headerlink" title="Correct Data Interpretation"></a>Correct Data Interpretation</h2><ul>
+<li>All data on a computer are stored as groups of binary bits</li>
+<li>Different languages provide varying capabilities for restriction and validating interpretation of data in variables</li>
+<li>Correct use of memory<ul>
+<li>Issue: allocation and management of dynamic memory storage (heap)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Preventing-Race-Conditions-with-Shared-Memory"><a href="#Preventing-Race-Conditions-with-Shared-Memory" class="headerlink" title="Preventing Race Conditions with Shared Memory"></a>Preventing Race Conditions with Shared Memory</h2><ul>
+<li>Race condition</li>
+</ul>
+<h1 id="Interacting-with-the-OS-and-Other-Programs"><a href="#Interacting-with-the-OS-and-Other-Programs" class="headerlink" title="Interacting with the OS and Other Programs"></a>Interacting with the OS and Other Programs</h1><p> In general, programs do not run in isolation on most computer systems</p>
+<h2 id="Several-issues"><a href="#Several-issues" class="headerlink" title="Several issues"></a>Several issues</h2><ul>
+<li>Environment variables<ul>
+<li>沒辦法透過 reset PATH variable 解決<ul>
+<li><code>PATH=&quot;/sib:/bin:/usr/sbin:/usr/bin&quot;</code></li>
+<li>把 IFS environment variable 改調就可以繞過</li>
+</ul>
+</li>
+<li>Generally, writing secure, privileged shell scripts is very difficult</li>
+<li>Dynamic linking of libraries may be vulnerable<ul>
+<li>Library injection (LD_LIBRARY_PATH)</li>
+<li>Solution: using a <strong>statically linked executable</strong> or <strong>blocking the use of this env variable</strong> when the program executed runs with different privileges</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Using appropriate, least privileges<ul>
+<li>Root/Administrator privileges<ul>
+<li><strong>Major attack target</strong></li>
+<li>Good design partitions complex programs in smaller modules with needed privileges<ul>
+<li>A greater degree of isolation between components</li>
+<li><strong>Fewer consequences of a security breach in one component</strong></li>
+<li>Easier to test and verify</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Systems calls and standard library functions<ul>
+<li>The programs may not perform as expected<ul>
+<li>Incorrect assumptions made for the operations of the system calls and standard library functions</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Preventing race conditions with shared system resources<ul>
+<li>Need suitable synchronization mechanisms<ul>
+<li>e.g., lock</li>
+</ul>
+</li>
+<li>Lockfile</li>
+</ul>
+</li>
+<li>Safe temporary file use<ul>
+<li>Secure temporary file creation and use requires the use of <strong>random names and atomic operation</strong><ul>
+<li>:+1: mkstemp()</li>
+<li>:-1: <del>tmpfile(), tmpnam(), tempnam()</del></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Interacting with other programs</li>
+</ul>
+<h1 id="Handling-Program-Output"><a href="#Handling-Program-Output" class="headerlink" title="Handling Program Output"></a>Handling Program Output</h1><ul>
+<li>Programs must identify what is permissible output content</li>
+<li>Character set should be specified</li>
+</ul>
+]]></content>
+      <tags>
+        <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -2561,269 +2822,8 @@ Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 </ul>
 ]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
-        <tag>computer security</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>[Intro. to Computer Security Course Note] Ch 11</title>
-    <url>/2019/06/24/20190624-ComputerSecurity-note-ch11/</url>
-    <content><![CDATA[<h1 id="Ch11-Software-Security"><a href="#Ch11-Software-Security" class="headerlink" title="Ch11. Software Security"></a>Ch11. Software Security</h1><hr>
-<h1 id="Software-Security-Issues"><a href="#Software-Security-Issues" class="headerlink" title="Software Security Issues"></a>Software Security Issues</h1><ul>
-<li>Many vulnerabilities result from <strong>poor programming practices</strong></li>
-<li>Consequences from insufficient checking/validation of data and error codes in programs</li>
-</ul>
-<h2 id="Software-Error-Categories"><a href="#Software-Error-Categories" class="headerlink" title="Software Error Categories"></a>Software Error Categories</h2><ul>
-<li>Insecure interaction between components<ul>
-<li>SQL injection</li>
-<li>Cross-site scripting</li>
-<li>Open redirect</li>
-</ul>
-</li>
-<li>Risky resource management<ul>
-<li>Classical buffer overflow</li>
-<li>Path traversal</li>
-<li>DOwnload of code without integrity check</li>
-</ul>
-</li>
-<li>Porous(多孔的) defenses<ul>
-<li><strong>Missing</strong> authentication for critical function</li>
-<li><strong>Missing</strong> authorization</li>
-<li><strong>Missing</strong> encryption of sensitive data</li>
-</ul>
-</li>
-</ul>
-<h2 id="Software-Security-Software-Quality-Reliability"><a href="#Software-Security-Software-Quality-Reliability" class="headerlink" title="Software Security: Software Quality/Reliability"></a>Software Security: Software Quality/Reliability</h2><ul>
-<li>Software Quality and Reliability<ul>
-<li>Concern: accidental failure of a program</li>
-<li>Not the total number of bugs, but <strong>how often</strong> they are triggered</li>
-<li>Improvement: structured design and testing to identity and eliminate bugs</li>
-</ul>
-</li>
-<li>Software Security<ul>
-<li>Attacker targets specific bugs that result in a failure that can be exploited</li>
-<li>Triggered by inputs that differ dramatically from what is usually expected</li>
-<li>Unlikely to be identified by common testing approaches</li>
-</ul>
-</li>
-</ul>
-<h2 id="Defensive-or-Secure-Programming"><a href="#Defensive-or-Secure-Programming" class="headerlink" title="Defensive or Secure Programming"></a>Defensive or Secure Programming</h2><ul>
-<li>The process of designing and implementing software: continue to function even when under attack</li>
-<li>Software written using this process<ul>
-<li>Detect erroneous conditions resulting from some attack</li>
-<li>Either continue <strong>executing safety, or fail gracefully</strong></li>
-</ul>
-</li>
-<li>Key rule: <strong>never assume anything</strong><ul>
-<li>Check all assumptions and handle any possible error states</li>
-</ul>
-</li>
-<li><table style="">
-  <tr>
-      <th style="font-weight: normal;">Typical programmers</th>
-      <th style="font-weight: normal;">Defensive Programming</th>
-  </tr>
-  <tr>
-      <th style="font-weight: lighter;">Attention on the steps needed for success<br>- Follow the normal flow of execution of the program<br>- But __not consider every potential point of failure__<br>Often make assumptions: type of inputs and environment</th>
-      <th style="font-weight: lighter;">The assumptions need to be validated by the program<br>__All potential failures handled gracefully and safely__<br>But, increase codes and time spent</th>
-  </tr>
-  <tr>
-      <th style="font-weight: lighter;">When changes are required<br>- Focus on the cahnges required and __what needs to be achieved__</th>
-      <th style="font-weight: lighter;">Must carefully check any assumptions made<br>Check and handle all possible errors<br>Carefully check any interactions with existing code</th>
-  </tr>
-</table>
-
-</li>
-</ul>
-<h2 id="Security-by-Design"><a href="#Security-by-Design" class="headerlink" title="Security by Design"></a>Security by Design</h2><ul>
-<li>Recent years have been increasing efforts to improve secure software development process<ul>
-<li>Software Assurance Forum for Excellence in Code (SAFECode)<ul>
-<li>Outlining industry best practices for software assurance</li>
-<li>Providing practical advice for secure software development</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="Handling-Program-Input"><a href="#Handling-Program-Input" class="headerlink" title="Handling Program Input"></a>Handling Program Input</h1><ul>
-<li>Incorrect handling is one of the most common failings</li>
-<li>Input is any source of data from outside and whose value is not explicitly known by the programmer</li>
-<li>All sources of input data must be identified</li>
-<li>Explicitly validate assumptions on size and type of values before use</li>
-<li>Two key areas of concern: <strong>size and interpretation</strong></li>
-</ul>
-<h2 id="Input-Size-amp-Buffer-Overflow"><a href="#Input-Size-amp-Buffer-Overflow" class="headerlink" title="Input Size &amp; Buffer Overflow"></a>Input Size &amp; Buffer Overflow</h2><ul>
-<li>Programmers often make assumptions: <strong>maximum expected size of input</strong><ul>
-<li>有可能會導致 buffer overflows</li>
-</ul>
-</li>
-<li>Testing may not identify the vulnerability<ul>
-<li>測資不夠完整</li>
-</ul>
-</li>
-<li>Safe programming practices</li>
-<li><strong>Safe coding regards any input as dangerous</strong></li>
-</ul>
-<h2 id="Interpretation-of-Program-Input"><a href="#Interpretation-of-Program-Input" class="headerlink" title="Interpretation of Program Input"></a>Interpretation of Program Input</h2><ul>
-<li>Program input may be binary or textual<ul>
-<li>Binary data: <strong>depends on encoding and is usually app-specific</strong></li>
-</ul>
-</li>
-<li>Failure to validate may result in an exploitable vulnerability</li>
-</ul>
-<h2 id="Injection-Attacks"><a href="#Injection-Attacks" class="headerlink" title="Injection Attacks"></a>Injection Attacks</h2><h2 id="Cross-site-Scripting-XSS-Attacks"><a href="#Cross-site-Scripting-XSS-Attacks" class="headerlink" title="Cross-site Scripting (XSS) Attacks"></a>Cross-site Scripting (XSS) Attacks</h2><ul>
-<li><strong>Input provided to a program by one user that is subsequently output to another user</strong><ul>
-<li>Assumption: all content from one site is <strong>equally trusted</strong> and hence is permitted to interact with other content from that site</li>
-<li>Attacks exploit this assumption and attempt to bypass the browser&#39;s security checks</li>
-</ul>
-</li>
-<li>Most common variant: XSS reflection</li>
-</ul>
-<h2 id="XSS-Reflection"><a href="#XSS-Reflection" class="headerlink" title="XSS Reflection"></a>XSS Reflection</h2><ul>
-<li>Consider the widespread use of guestbook programs<ul>
-<li>留言板那些的</li>
-</ul>
-</li>
-<li>Prevention: any user-supplied input should be examined</li>
-</ul>
-<h2 id="Validating-Input-Syntax"><a href="#Validating-Input-Syntax" class="headerlink" title="Validating Input Syntax"></a>Validating Input Syntax</h2><ul>
-<li>Input data should be compared against <strong>what is wanted</strong><ul>
-<li>using regular expression</li>
-<li>Whitelisting <strong>(more secure)</strong></li>
-</ul>
-</li>
-<li>Alternative is to compare the input data with <strong>known dangerous values</strong><ul>
-<li>Blacklisting</li>
-</ul>
-</li>
-</ul>
-<h2 id="Alternative-Encodings"><a href="#Alternative-Encodings" class="headerlink" title="Alternative Encodings"></a>Alternative Encodings</h2><ul>
-<li>Canonicalization: transforming input data into a single, standard, minimal representation<ul>
-<li>Once this is done the input data can be compared with a single representation of acceptable input values</li>
-</ul>
-</li>
-</ul>
-<h2 id="Validating-Numeric-Input"><a href="#Validating-Numeric-Input" class="headerlink" title="Validating Numeric Input"></a>Validating Numeric Input</h2><ul>
-<li>Internally stored in fixed sized value</li>
-<li>Must correctly interpret text form<ul>
-<li>Have issues comparing signed to unsigned</li>
-</ul>
-</li>
-</ul>
-<h2 id="Input-Fuzzing"><a href="#Input-Fuzzing" class="headerlink" title="Input Fuzzing"></a>Input Fuzzing</h2><ul>
-<li>Major issue of input texting: very large range of inputs</li>
-<li>Fuzzing: a software testing technique: using randomly generated data as inputs to a program<ul>
-<li>Simplicity and freedom from assumption</li>
-<li>Very low cost of generating large numbers of tests</li>
-</ul>
-</li>
-<li>Input can be randomly generated</li>
-<li>Conceptually very simple, but identifying only simple types of faults<ul>
-<li>Only triggered by a small number of very specific input values</li>
-</ul>
-</li>
-</ul>
-<h1 id="Writing-Safe-Program-Code"><a href="#Writing-Safe-Program-Code" class="headerlink" title="Writing Safe Program Code"></a>Writing Safe Program Code</h1><ul>
-<li>Key issues<ul>
-<li><strong>Correct</strong> algorithm implementation, machine instructions</li>
-<li><strong>Valid</strong> manipulate of data</li>
-</ul>
-</li>
-</ul>
-<h2 id="Correct-Algorithm-Implementation"><a href="#Correct-Algorithm-Implementation" class="headerlink" title="Correct Algorithm Implementation"></a>Correct Algorithm Implementation</h2><ul>
-<li>Not correctly implement all cases or variants of the problem<ul>
-<li>用對的方法重做一遍</li>
-</ul>
-</li>
-</ul>
-<h2 id="Correct-Machine-Instructions-for-algorithm"><a href="#Correct-Machine-Instructions-for-algorithm" class="headerlink" title="Correct Machine Instructions for algorithm"></a>Correct Machine Instructions for algorithm</h2><ul>
-<li><strong>Largely ignored by most programmers</strong><ul>
-<li>Assumption: 反正 compiler 會處理好</li>
-</ul>
-</li>
-<li>Malicious compiler programmer<ul>
-<li>Including instructions in the compiler to emit additional code</li>
-</ul>
-</li>
-<li>Countermeasure:<ul>
-<li>檢查檢查再檢查(source 跟 machine code)</li>
-</ul>
-</li>
-</ul>
-<h2 id="Correct-Data-Interpretation"><a href="#Correct-Data-Interpretation" class="headerlink" title="Correct Data Interpretation"></a>Correct Data Interpretation</h2><ul>
-<li>All data on a computer are stored as groups of binary bits</li>
-<li>Different languages provide varying capabilities for restriction and validating interpretation of data in variables</li>
-<li>Correct use of memory<ul>
-<li>Issue: allocation and management of dynamic memory storage (heap)</li>
-</ul>
-</li>
-</ul>
-<h2 id="Preventing-Race-Conditions-with-Shared-Memory"><a href="#Preventing-Race-Conditions-with-Shared-Memory" class="headerlink" title="Preventing Race Conditions with Shared Memory"></a>Preventing Race Conditions with Shared Memory</h2><ul>
-<li>Race condition</li>
-</ul>
-<h1 id="Interacting-with-the-OS-and-Other-Programs"><a href="#Interacting-with-the-OS-and-Other-Programs" class="headerlink" title="Interacting with the OS and Other Programs"></a>Interacting with the OS and Other Programs</h1><p> In general, programs do not run in isolation on most computer systems</p>
-<h2 id="Several-issues"><a href="#Several-issues" class="headerlink" title="Several issues"></a>Several issues</h2><ul>
-<li>Environment variables<ul>
-<li>沒辦法透過 reset PATH variable 解決<ul>
-<li><code>PATH=&quot;/sib:/bin:/usr/sbin:/usr/bin&quot;</code></li>
-<li>把 IFS environment variable 改調就可以繞過</li>
-</ul>
-</li>
-<li>Generally, writing secure, privileged shell scripts is very difficult</li>
-<li>Dynamic linking of libraries may be vulnerable<ul>
-<li>Library injection (LD_LIBRARY_PATH)</li>
-<li>Solution: using a <strong>statically linked executable</strong> or <strong>blocking the use of this env variable</strong> when the program executed runs with different privileges</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Using appropriate, least privileges<ul>
-<li>Root/Administrator privileges<ul>
-<li><strong>Major attack target</strong></li>
-<li>Good design partitions complex programs in smaller modules with needed privileges<ul>
-<li>A greater degree of isolation between components</li>
-<li><strong>Fewer consequences of a security breach in one component</strong></li>
-<li>Easier to test and verify</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Systems calls and standard library functions<ul>
-<li>The programs may not perform as expected<ul>
-<li>Incorrect assumptions made for the operations of the system calls and standard library functions</li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Preventing race conditions with shared system resources<ul>
-<li>Need suitable synchronization mechanisms<ul>
-<li>e.g., lock</li>
-</ul>
-</li>
-<li>Lockfile</li>
-</ul>
-</li>
-<li>Safe temporary file use<ul>
-<li>Secure temporary file creation and use requires the use of <strong>random names and atomic operation</strong><ul>
-<li>:+1: mkstemp()</li>
-<li>:-1: <del>tmpfile(), tmpnam(), tempnam()</del></li>
-</ul>
-</li>
-</ul>
-</li>
-<li>Interacting with other programs</li>
-</ul>
-<h1 id="Handling-Program-Output"><a href="#Handling-Program-Output" class="headerlink" title="Handling Program Output"></a>Handling Program Output</h1><ul>
-<li>Programs must identify what is permissible output content</li>
-<li>Character set should be specified</li>
-</ul>
-]]></content>
-      <tags>
         <tag>NCTU</tag>
-        <tag>note</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -3038,8 +3038,8 @@ Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 </ul>
 <h2 id="Other-types-of-overflows"><a href="#Other-types-of-overflows" class="headerlink" title="Other types of overflows"></a>Other types of overflows</h2>]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -3375,8 +3375,8 @@ Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 </ul>
 <h1 id="Example-Unified-Threat-Management-Product"><a href="#Example-Unified-Threat-Management-Product" class="headerlink" title="Example: Unified Threat Management Product"></a>Example: Unified Threat Management Product</h1>]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -3657,8 +3657,8 @@ Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 </ul>
 ]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -3892,8 +3892,8 @@ Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 </ul>
 ]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -3973,8 +3973,8 @@ Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 </ul>
 <h1 id="Database-Access-Control"><a href="#Database-Access-Control" class="headerlink" title="Database Access Control"></a>Database Access Control</h1><h1 id="Inference"><a href="#Inference" class="headerlink" title="Inference"></a>Inference</h1><h1 id="Database-Encryption"><a href="#Database-Encryption" class="headerlink" title="Database Encryption"></a>Database Encryption</h1><h1 id="Cloud-Computing"><a href="#Cloud-Computing" class="headerlink" title="Cloud Computing"></a>Cloud Computing</h1><h1 id="Cloud-Security-Risks-and-Countermeasures"><a href="#Cloud-Security-Risks-and-Countermeasures" class="headerlink" title="Cloud Security Risks and Countermeasures"></a>Cloud Security Risks and Countermeasures</h1><h1 id="Cloud-Security-as-a-Service"><a href="#Cloud-Security-as-a-Service" class="headerlink" title="Cloud Security as a Service"></a>Cloud Security as a Service</h1>]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -4307,8 +4307,8 @@ General solution: challenge-response protocols
 </ul>
 ]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -4523,8 +4523,8 @@ Can also be used to deliver a symmetric key only</p>
 </ul>
 ]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -4619,8 +4619,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 <h2 id="Security-Implementation-Assurance"><a href="#Security-Implementation-Assurance" class="headerlink" title="Security Implementation / Assurance"></a>Security Implementation / Assurance</h2>]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -4845,8 +4845,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 <h1 id="What-have-studies-demonstrate-people-39-s-willingness-to-obey-authority-figures"><a href="#What-have-studies-demonstrate-people-39-s-willingness-to-obey-authority-figures" class="headerlink" title="What have studies demonstrate people&#39;s willingness to obey authority figures ?"></a>What have studies demonstrate people&#39;s willingness to obey authority figures ?</h1>]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -5173,8 +5173,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 ]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -5359,8 +5359,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 ]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -5634,8 +5634,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 ]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -5960,8 +5960,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 ]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -6210,8 +6210,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 ]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -6482,8 +6482,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 ]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -6638,8 +6638,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 ]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -6724,8 +6724,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 <h1 id="What-does-IQ-tell-us-about-genius"><a href="#What-does-IQ-tell-us-about-genius" class="headerlink" title="What does IQ tell us about genius ?"></a>What does IQ tell us about genius ?</h1><h1 id="What-causes-intellectual-disability"><a href="#What-causes-intellectual-disability" class="headerlink" title="What causes intellectual disability ?"></a>What causes intellectual disability ?</h1><h1 id="How-do-heredity-and-environment-affect-intelligence"><a href="#How-do-heredity-and-environment-affect-intelligence" class="headerlink" title="How do heredity and environment affect intelligence ?"></a>How do heredity and environment affect intelligence ?</h1><h1 id="Are-there-alternative-views-of-intelligence"><a href="#Are-there-alternative-views-of-intelligence" class="headerlink" title="Are there alternative views of intelligence ?"></a>Are there alternative views of intelligence ?</h1><h1 id="How-can-emotional-intelligence-help-me-in-my-personal-and-professional-life"><a href="#How-can-emotional-intelligence-help-me-in-my-personal-and-professional-life" class="headerlink" title="How can emotional intelligence help me in my personal and professional life ?"></a>How can emotional intelligence help me in my personal and professional life ?</h1>]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -7034,8 +7034,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 <h1 id="Case-Study-RBAC-System-for-a-Bank"><a href="#Case-Study-RBAC-System-for-a-Bank" class="headerlink" title="Case Study: RBAC System for a Bank"></a>Case Study: RBAC System for a Bank</h1>]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -7353,8 +7353,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 ]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -7526,8 +7526,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 ]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -7715,8 +7715,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 ]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -7920,8 +7920,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 ]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -8047,8 +8047,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 ]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -8230,8 +8230,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 ]]></content>
       <tags>
-        <tag>NCTU</tag>
         <tag>note</tag>
+        <tag>NCTU</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
