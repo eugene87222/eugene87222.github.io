@@ -754,6 +754,15 @@ from <a href="https://en.wikipedia.org/wiki/Visitor_pattern" target="_blank" rel
       </tags>
   </entry>
   <entry>
+    <title>新生體檢</title>
+    <url>/2020/09/11/20200911/</url>
+    <content><![CDATA[<p>紀錄一下今天發生的趣事（？），今天是研究所新生體檢，我的體檢時段是早上 10:35 到 11:10，因為抽血要空腹六到八小時，所以我前一天晚上 11:50 之後就沒有吃東西了，根據之前大一體檢的經驗，在這種低血糖的情況下抽血我很容易頭暈，果不其然，剛抽完回到座位之後我就開始暈了，原本只是想閉上眼睛休息一下，結果當我睜開眼睛之後，發現兩旁的人都站起來然後一副緊張的樣子，我手上的資料卡跟一些東西全部掉在地上，護理人員匆匆忙忙跑過來把波蜜果菜汁拿給我，聽他講我才知道原來我剛剛突然抽搐，當下真的完全沒有意識耶，我還以為是我睡著了，反正後來喝了完波蜜之後就好多了。</p>
+]]></content>
+      <tags>
+        <tag>diary</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>大一修課心得</title>
     <url>/2020/09/02/20200901-undergrad-1/</url>
     <content><![CDATA[<p>寫這篇文章的動機是因為前幾天同學告訴我，說我的網站被貼到 <a href="https://github.com/Cycatz/awesome-nctu" target="_blank" rel="noopener">Awesome NCTU</a> 上面，當下看到的時候有點驚訝，我的文章竟然也有被挖出來的一天，然後他把我歸類在課程心得那邊，我後來想了想，覺得網站上只有四上、四下的修課心得好像有點少，決定把大一到大三的也補一補，不過應該不會寫必修課的心得，因為每年必修課的開課教授其實都會變，寫了感覺參考價值也不大，所以就著重在選修跟通識就好，但就算是選修我可能也沒辦法寫太詳細 (´-ι_-｀)，畢竟是兩三年前的事情。</p>
@@ -800,8 +809,8 @@ from <a href="https://en.wikipedia.org/wiki/Visitor_pattern" target="_blank" rel
 <h3 id="推薦程度-★★★★☆"><a href="#推薦程度-★★★★☆" class="headerlink" title="推薦程度 ★★★★☆"></a>推薦程度 ★★★★☆</h3><p>推薦給會乖乖念考試的人，蠻輕鬆愉快的一門課，沒事的話可以修看看，對經濟學有些基本的認識也是不錯的。</p>
 ]]></content>
       <tags>
-        <tag>diary</tag>
         <tag>NCTU</tag>
+        <tag>diary</tag>
       </tags>
   </entry>
   <entry>
@@ -935,8 +944,8 @@ from <a href="https://en.wikipedia.org/wiki/Visitor_pattern" target="_blank" rel
 <h3 id="推薦程度-★★★★☆-1"><a href="#推薦程度-★★★★☆-1" class="headerlink" title="推薦程度 ★★★★☆"></a>推薦程度 ★★★★☆</h3><p>上課氣氛輕鬆愉悅，不知道要選什麼就來選英文課吧！</p>
 ]]></content>
       <tags>
-        <tag>diary</tag>
         <tag>NCTU</tag>
+        <tag>diary</tag>
       </tags>
   </entry>
   <entry>
@@ -1170,8 +1179,8 @@ Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 <h3 id="推薦程度-★★★☆☆-1"><a href="#推薦程度-★★★☆☆-1" class="headerlink" title="推薦程度 ★★★☆☆"></a>推薦程度 ★★★☆☆</h3><p>我自己很討厭歷史，但是因為要畢業只好選一堂歷史修。</p>
 ]]></content>
       <tags>
-        <tag>diary</tag>
         <tag>NCTU</tag>
+        <tag>diary</tag>
       </tags>
   </entry>
   <entry>
@@ -1387,8 +1396,8 @@ Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 - <img src="https://i.imgur.com/CJT2fK8.png" width="60%"/>
 <img src="https://i.imgur.com/aoJlTKS.png" width="60%"/>]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -1494,8 +1503,8 @@ Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 </ul>
 ]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -1690,8 +1699,8 @@ Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 </ul>
 ]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -2011,8 +2020,8 @@ Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 </ul>
 <h1 id="IPv4-and-IPv6-Security"><a href="#IPv4-and-IPv6-Security" class="headerlink" title="IPv4 and IPv6 Security"></a>IPv4 and IPv6 Security</h1>]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -2110,8 +2119,8 @@ Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 </ul>
 ]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -2479,8 +2488,8 @@ Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 </ul>
 ]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -2740,8 +2749,8 @@ Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 </ul>
 ]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -2956,8 +2965,8 @@ Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 </ul>
 <h2 id="Other-types-of-overflows"><a href="#Other-types-of-overflows" class="headerlink" title="Other types of overflows"></a>Other types of overflows</h2>]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -3293,8 +3302,8 @@ Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 </ul>
 <h1 id="Example-Unified-Threat-Management-Product"><a href="#Example-Unified-Threat-Management-Product" class="headerlink" title="Example: Unified Threat Management Product"></a>Example: Unified Threat Management Product</h1>]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -3575,8 +3584,8 @@ Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 </ul>
 ]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -3810,8 +3819,8 @@ Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 </ul>
 ]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -3891,8 +3900,8 @@ Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 </ul>
 <h1 id="Database-Access-Control"><a href="#Database-Access-Control" class="headerlink" title="Database Access Control"></a>Database Access Control</h1><h1 id="Inference"><a href="#Inference" class="headerlink" title="Inference"></a>Inference</h1><h1 id="Database-Encryption"><a href="#Database-Encryption" class="headerlink" title="Database Encryption"></a>Database Encryption</h1><h1 id="Cloud-Computing"><a href="#Cloud-Computing" class="headerlink" title="Cloud Computing"></a>Cloud Computing</h1><h1 id="Cloud-Security-Risks-and-Countermeasures"><a href="#Cloud-Security-Risks-and-Countermeasures" class="headerlink" title="Cloud Security Risks and Countermeasures"></a>Cloud Security Risks and Countermeasures</h1><h1 id="Cloud-Security-as-a-Service"><a href="#Cloud-Security-as-a-Service" class="headerlink" title="Cloud Security as a Service"></a>Cloud Security as a Service</h1>]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -4225,8 +4234,8 @@ General solution: challenge-response protocols
 </ul>
 ]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -4441,8 +4450,8 @@ Can also be used to deliver a symmetric key only</p>
 </ul>
 ]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -4537,8 +4546,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 <h2 id="Security-Implementation-Assurance"><a href="#Security-Implementation-Assurance" class="headerlink" title="Security Implementation / Assurance"></a>Security Implementation / Assurance</h2>]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -4763,8 +4772,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 <h1 id="What-have-studies-demonstrate-people-39-s-willingness-to-obey-authority-figures"><a href="#What-have-studies-demonstrate-people-39-s-willingness-to-obey-authority-figures" class="headerlink" title="What have studies demonstrate people&#39;s willingness to obey authority figures ?"></a>What have studies demonstrate people&#39;s willingness to obey authority figures ?</h1>]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -5091,8 +5100,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 ]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -5277,8 +5286,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 ]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -5552,8 +5561,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 ]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -5878,8 +5887,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 ]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -6128,8 +6137,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 ]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -6400,8 +6409,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 ]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -6556,8 +6565,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 ]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -6642,8 +6651,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 <h1 id="What-does-IQ-tell-us-about-genius"><a href="#What-does-IQ-tell-us-about-genius" class="headerlink" title="What does IQ tell us about genius ?"></a>What does IQ tell us about genius ?</h1><h1 id="What-causes-intellectual-disability"><a href="#What-causes-intellectual-disability" class="headerlink" title="What causes intellectual disability ?"></a>What causes intellectual disability ?</h1><h1 id="How-do-heredity-and-environment-affect-intelligence"><a href="#How-do-heredity-and-environment-affect-intelligence" class="headerlink" title="How do heredity and environment affect intelligence ?"></a>How do heredity and environment affect intelligence ?</h1><h1 id="Are-there-alternative-views-of-intelligence"><a href="#Are-there-alternative-views-of-intelligence" class="headerlink" title="Are there alternative views of intelligence ?"></a>Are there alternative views of intelligence ?</h1><h1 id="How-can-emotional-intelligence-help-me-in-my-personal-and-professional-life"><a href="#How-can-emotional-intelligence-help-me-in-my-personal-and-professional-life" class="headerlink" title="How can emotional intelligence help me in my personal and professional life ?"></a>How can emotional intelligence help me in my personal and professional life ?</h1>]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -6952,8 +6961,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 <h1 id="Case-Study-RBAC-System-for-a-Bank"><a href="#Case-Study-RBAC-System-for-a-Bank" class="headerlink" title="Case Study: RBAC System for a Bank"></a>Case Study: RBAC System for a Bank</h1>]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>computer security</tag>
       </tags>
   </entry>
@@ -7271,8 +7280,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 ]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -7444,8 +7453,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 ]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -7633,8 +7642,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 ]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -7838,8 +7847,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 ]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -7965,8 +7974,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 ]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -8148,8 +8157,8 @@ Make developers aware of where security mechanisms are required</p>
 </ul>
 ]]></content>
       <tags>
-        <tag>note</tag>
         <tag>NCTU</tag>
+        <tag>note</tag>
         <tag>psychology</tag>
       </tags>
   </entry>
@@ -8294,8 +8303,8 @@ Credited by <a href="https://eugene87222.github.io/">Eugene Yang</a></p>
 </ul>
 ]]></content>
       <tags>
-        <tag>data analysis</tag>
         <tag>note</tag>
+        <tag>data analysis</tag>
       </tags>
   </entry>
   <entry>
