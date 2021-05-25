@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
@@ -18,7 +18,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"eugene87222.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_header":"fadeIn","post_body":"fadeIn","post_block":"fadeIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"eugene87222.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeIn","post_body":"fadeIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="上一篇爬蟲 &#x2F; PTT - 4 已經說明如何用 Pool 快速取得所有的文章連結了，這次要用這些文章連結去取得每篇文章內文">
@@ -132,6 +132,11 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
         <li class="menu-item menu-item-about">
 
     <a href="/about/" rel="section"><i class="fa fa-info fa-fw"></i>About</a>
@@ -140,11 +145,6 @@
         <li class="menu-item menu-item-tags">
 
     <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
@@ -254,14 +254,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">Words count: </span>
-              <span>899</span>
+              <span>1k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">Reading time &asymp;</span>
-              <span>1 mins.</span>
+              <span>2 mins.</span>
             </span>
 
         </div>
@@ -273,17 +273,17 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>上一篇<a href="https://eugene87222.github.io/2018/02/15/PTT-crawler-4/">爬蟲 / PTT - 4</a> 已經說明如何用 <code>Pool</code> 快速取得所有的文章連結了，這次要用這些文章連結去取得每篇文章內文<a id="more"></a>。</p>
+        <p>上一篇<a href="https://eugene87222.github.io/2018/02/15/PTT-crawler-4/">爬蟲 / PTT - 4</a> 已經說明如何用 <code>Pool</code> 快速取得所有的文章連結了，這次要用這些文章連結去取得每篇文章內文<span id="more"></span>。</p>
 <h1 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h1><ul>
 <li>Windows 10 Home</li>
 <li>Python 3.6.4</li>
 </ul>
 <p>我們一樣可以很直覺地用 for loop 取得每一篇內文，像下面這樣（<code>parse_get_article</code> 是取自上一篇所整理的函數，<code>all_post_meta</code> 則是取自上一篇文末的程式碼）</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">contents = list()</span><br><span class="line"><span class="keyword">for</span> post_meta <span class="keyword">in</span> all_post_meta:</span><br><span class="line">    content = parse_get_article(post_meta[<span class="string">'link'</span>])</span><br><span class="line">    contents.append(article)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">contents = <span class="built_in">list</span>()</span><br><span class="line"><span class="keyword">for</span> post_meta <span class="keyword">in</span> all_post_meta:</span><br><span class="line">    content = parse_get_article(post_meta[<span class="string">&#x27;link&#x27;</span>])</span><br><span class="line">    contents.append(article)</span><br></pre></td></tr></table></figure>
 <p>但我們在上一篇已經知道如何使用 <code>Pool</code> 了，所以可以改成這樣</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    post_links = [entry[<span class="string">'link'</span>] <span class="keyword">for</span> entry <span class="keyword">in</span> all_post_meta]</span><br><span class="line">    all_post_content = list()</span><br><span class="line">    <span class="keyword">with</span> Pool(<span class="number">10</span>) <span class="keyword">as</span> p:</span><br><span class="line">        contents = p.map(parse_get_article, post_links)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    post_links = [entry[<span class="string">&#x27;link&#x27;</span>] <span class="keyword">for</span> entry <span class="keyword">in</span> all_post_meta]</span><br><span class="line">    all_post_content = <span class="built_in">list</span>()</span><br><span class="line">    <span class="keyword">with</span> Pool(<span class="number">10</span>) <span class="keyword">as</span> p:</span><br><span class="line">        contents = p.<span class="built_in">map</span>(parse_get_article, post_links)</span><br></pre></td></tr></table></figure>
 <p>執行後得到的 <code>contents</code> 裡面就是每一篇的文章內文，現在把內文跟文章資訊拼在一起</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">all_post = list()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(all_post_meta)):</span><br><span class="line">    all_post.append(&#123;</span><br><span class="line">        <span class="string">'title'</span>: post_list[i][<span class="string">'title'</span>], </span><br><span class="line">        <span class="string">'link'</span>: post_list[i][<span class="string">'link'</span>], </span><br><span class="line">        <span class="string">'date'</span>: post_list[i][<span class="string">'date'</span>],</span><br><span class="line">        <span class="string">'author'</span>: post_list[i][<span class="string">'author'</span>], </span><br><span class="line">        <span class="string">'push'</span>: post_list[i][<span class="string">'push'</span>], </span><br><span class="line">        <span class="string">'content'</span>: contents[i]</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">all_post = <span class="built_in">list</span>()</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(all_post_meta)):</span><br><span class="line">    all_post.append(&#123;</span><br><span class="line">        <span class="string">&#x27;title&#x27;</span>: post_list[i][<span class="string">&#x27;title&#x27;</span>], </span><br><span class="line">        <span class="string">&#x27;link&#x27;</span>: post_list[i][<span class="string">&#x27;link&#x27;</span>], </span><br><span class="line">        <span class="string">&#x27;date&#x27;</span>: post_list[i][<span class="string">&#x27;date&#x27;</span>],</span><br><span class="line">        <span class="string">&#x27;author&#x27;</span>: post_list[i][<span class="string">&#x27;author&#x27;</span>], </span><br><span class="line">        <span class="string">&#x27;push&#x27;</span>: post_list[i][<span class="string">&#x27;push&#x27;</span>], </span><br><span class="line">        <span class="string">&#x27;content&#x27;</span>: contents[i]</span><br><span class="line">    &#125;)</span><br></pre></td></tr></table></figure>
 <p>如此一來 <code>all_post</code> 就包含所有文章的&quot;標題、網址、發布日期、作者、推文數、內文&quot;了。</p>
 <p>PTT 爬蟲就到這邊告一段落了，前前後後共寫了五篇，文章中某些程式碼都是跟上篇或上上篇有所關連，從中間看可能會看不懂，如果可以的話還是建議從<a href="https://eugene87222.github.io/2018/02/10/PTT-crawler-1/">第一篇</a>開始看。</p>
 
@@ -396,7 +396,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#環境"><span class="nav-number">1.</span> <span class="nav-text">環境</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%92%B0%E5%A2%83"><span class="nav-number">1.</span> <span class="nav-text">環境</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

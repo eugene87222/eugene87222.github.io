@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico">
@@ -18,7 +18,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"eugene87222.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_header":"fadeIn","post_body":"fadeIn","post_block":"fadeIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"eugene87222.github.io","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeIn","post_body":"fadeIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta property="og:type" content="article">
@@ -147,6 +147,11 @@
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
         <li class="menu-item menu-item-about">
 
     <a href="/about/" rel="section"><i class="fa fa-info fa-fw"></i>About</a>
@@ -155,11 +160,6 @@
         <li class="menu-item menu-item-tags">
 
     <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
-
-  </li>
-        <li class="menu-item menu-item-archives">
-
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
         <li class="menu-item menu-item-sitemap">
@@ -435,9 +435,9 @@
 
 <h2 id="Handshake-Protocol-Action-2-phase-3-amp-4"><a href="#Handshake-Protocol-Action-2-phase-3-amp-4" class="headerlink" title="Handshake Protocol Action 2 (phase 3 &amp; 4)"></a>Handshake Protocol Action 2 (phase 3 &amp; 4)</h2><img src="https://i.imgur.com/Nfv18KU.png" width="60%"/>
 
-<h2 id="ClientHello-RFC"><a href="#ClientHello-RFC" class="headerlink" title="ClientHello (RFC)"></a>ClientHello (RFC)</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">   ProtocolVersion client_version;</span><br><span class="line">   Random <span class="built_in">random</span>;</span><br><span class="line">   SessionID session_id;</span><br><span class="line">   CipherSuite cipher_suites &lt;<span class="number">2.</span><span class="number">.2</span>^<span class="number">16</span><span class="number">-2</span>&gt;;</span><br><span class="line">   CompressionMethod compression_methods &lt;<span class="number">1.</span><span class="number">.2</span>^<span class="number">8</span><span class="number">-1</span>&gt;;</span><br><span class="line">&#125; ClientHello;</span><br></pre></td></tr></table></figure>
+<h2 id="ClientHello-RFC"><a href="#ClientHello-RFC" class="headerlink" title="ClientHello (RFC)"></a>ClientHello (RFC)</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">   ProtocolVersion client_version;</span><br><span class="line">   Random random;</span><br><span class="line">   SessionID session_id;</span><br><span class="line">   CipherSuite cipher_suites &lt;<span class="number">2.</span><span class="number">.2</span>^<span class="number">16</span><span class="number">-2</span>&gt;;</span><br><span class="line">   CompressionMethod compression_methods &lt;<span class="number">1.</span><span class="number">.2</span>^<span class="number">8</span><span class="number">-1</span>&gt;;</span><br><span class="line">&#125; ClientHello;</span><br></pre></td></tr></table></figure>
 
-<h2 id="ServerHello-RFC"><a href="#ServerHello-RFC" class="headerlink" title="ServerHello (RFC)"></a>ServerHello (RFC)</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">   ProtocolVersion server_version;</span><br><span class="line">   Random <span class="built_in">random</span>;</span><br><span class="line">   SessionID session_id;</span><br><span class="line">   CipherSuite cipher_suite;</span><br><span class="line">   CompressionMethod compression_method;</span><br><span class="line">&#125; ServerHello;</span><br></pre></td></tr></table></figure>
+<h2 id="ServerHello-RFC"><a href="#ServerHello-RFC" class="headerlink" title="ServerHello (RFC)"></a>ServerHello (RFC)</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">   ProtocolVersion server_version;</span><br><span class="line">   Random random;</span><br><span class="line">   SessionID session_id;</span><br><span class="line">   CipherSuite cipher_suite;</span><br><span class="line">   CompressionMethod compression_method;</span><br><span class="line">&#125; ServerHello;</span><br></pre></td></tr></table></figure>
 
 <h2 id="Four-TLS-specific-protocols"><a href="#Four-TLS-specific-protocols" class="headerlink" title="Four TLS specific protocols"></a>Four TLS specific protocols</h2><ul>
 <li>Change Cipher Spec Protocol<ul>
