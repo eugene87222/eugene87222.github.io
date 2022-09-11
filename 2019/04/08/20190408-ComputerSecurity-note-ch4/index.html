@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/image/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/image/favicon.ico">
+  <link rel="mask-icon" href="/image/favicon.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic%7CKaushan+Script:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"eugene87222.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="[Intro. to Computer Security Course Note] Ch 4">
+<meta property="og:url" content="http://eugene87222.github.io/2019/04/08/20190408-ComputerSecurity-note-ch4/index.html">
+<meta property="og:site_name" content="3ugeneYang.§ite">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.imgur.com/tq8TCV9.jpg">
+<meta property="og:image" content="https://i.imgur.com/qLg79Cx.jpg">
+<meta property="og:image" content="https://i.imgur.com/c8dOwQp.jpg">
+<meta property="og:image" content="https://i.imgur.com/dwSDlbg.jpg">
+<meta property="og:image" content="https://i.imgur.com/eqWUu9L.jpg">
+<meta property="og:image" content="https://i.imgur.com/BjGSBEo.jpg">
+<meta property="og:image" content="https://i.imgur.com/0guYtCw.jpg">
+<meta property="og:image" content="https://i.imgur.com/iRzlddw.jpg">
+<meta property="og:image" content="https://i.imgur.com/ILEUUqz.jpg">
+<meta property="og:image" content="https://i.imgur.com/oTcMBXC.jpg">
+<meta property="og:image" content="https://i.imgur.com/Ae0QSIV.jpg">
+<meta property="og:image" content="https://i.imgur.com/z2rPj67.jpg">
+<meta property="og:image" content="https://i.imgur.com/SRtbv2w.jpg">
+<meta property="article:published_time" content="2019-04-08T00:06:38.000Z">
+<meta property="article:modified_time" content="2020-02-25T05:46:37.710Z">
+<meta property="article:author" content="Eugene Yang">
+<meta property="article:tag" content="NCTU">
+<meta property="article:tag" content="note">
+<meta property="article:tag" content="computer security">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/tq8TCV9.jpg">
+
+
+<link rel="canonical" href="http://eugene87222.github.io/2019/04/08/20190408-ComputerSecurity-note-ch4/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://eugene87222.github.io/2019/04/08/20190408-ComputerSecurity-note-ch4/","path":"2019/04/08/20190408-ComputerSecurity-note-ch4/","title":"[Intro. to Computer Security Course Note] Ch 4"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>[Intro. to Computer Security Course Note] Ch 4 | 3ugeneYang.§ite</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107694365-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-107694365-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">3ugeneYang.§ite</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch4-Access-Control"><span class="nav-number">1.</span> <span class="nav-text">Ch4. Access Control</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Principal-Objectives-of-Computer-Security"><span class="nav-number">2.</span> <span class="nav-text">Principal Objectives of Computer Security</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Access-Control-Principles"><span class="nav-number">3.</span> <span class="nav-text">Access Control Principles</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Access-Control-Context"><span class="nav-number">3.1.</span> <span class="nav-text">Access Control Context</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Access-Control-Policies"><span class="nav-number">3.2.</span> <span class="nav-text">Access Control Policies</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Subjects-Objects-and-Access-Rights"><span class="nav-number">4.</span> <span class="nav-text">Subjects, Objects, and Access Rights</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Subject"><span class="nav-number">4.1.</span> <span class="nav-text">Subject</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object"><span class="nav-number">4.2.</span> <span class="nav-text">Object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Access-Rights"><span class="nav-number">4.3.</span> <span class="nav-text">Access Rights</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Discretionary-%E4%BB%BB%E6%84%8F-Access-Control"><span class="nav-number">5.</span> <span class="nav-text">Discretionary(任意) Access Control</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Decomposition-Method-1"><span class="nav-number">5.1.</span> <span class="nav-text">Decomposition Method 1</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Decomposition-Method-2"><span class="nav-number">5.2.</span> <span class="nav-text">Decomposition Method 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Another-Approach-Authorized-Table"><span class="nav-number">5.3.</span> <span class="nav-text">Another Approach: Authorized Table</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-General-Access-Control-Model-for-DAC"><span class="nav-number">5.4.</span> <span class="nav-text">A General Access Control Model for DAC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#More-Flexible-Model-Protection-Domains"><span class="nav-number">5.5.</span> <span class="nav-text">More Flexible Model: Protection Domains</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Example-UNIX-File-Access-Control"><span class="nav-number">6.</span> <span class="nav-text">Example: UNIX File Access Control</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Traditional-UNIX-File-Access-Control"><span class="nav-number">6.1.</span> <span class="nav-text">Traditional UNIX File Access Control</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Modern-UNIX-Access-Control-Access-Control-Lists-ACLs"><span class="nav-number">6.2.</span> <span class="nav-text">Modern UNIX Access Control: Access Control Lists (ACLs)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Role-Based-Access-Control"><span class="nav-number">7.</span> <span class="nav-text">Role-Based Access Control</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#RBAC-Reference-Models"><span class="nav-number">7.1.</span> <span class="nav-text">RBAC Reference Models</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RBAC0-Base-Model"><span class="nav-number">7.2.</span> <span class="nav-text">RBAC0: Base Model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RBAC1-Role-Hierarchies"><span class="nav-number">7.3.</span> <span class="nav-text">RBAC1: Role Hierarchies</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#RBAC2-Constrains"><span class="nav-number">7.4.</span> <span class="nav-text">RBAC2: Constrains</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Attribute-Based-Access-Control"><span class="nav-number">8.</span> <span class="nav-text">Attribute-Based Access Control</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ABAC-Model-Attributes"><span class="nav-number">8.1.</span> <span class="nav-text">ABAC Model: Attributes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ABAC-Model-Distinguishable"><span class="nav-number">8.2.</span> <span class="nav-text">ABAC Model: Distinguishable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ABAC-Logical-Architecture"><span class="nav-number">8.3.</span> <span class="nav-text">ABAC Logical Architecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ACL-Trust-Chain"><span class="nav-number">8.4.</span> <span class="nav-text">ACL Trust Chain</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ABAC-Trust-Chain"><span class="nav-number">8.5.</span> <span class="nav-text">ABAC Trust Chain</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ABAC-Policies"><span class="nav-number">8.6.</span> <span class="nav-text">ABAC Policies</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Case-Study-RBAC-System-for-a-Bank"><span class="nav-number">9.</span> <span class="nav-text">Case Study: RBAC System for a Bank</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Eugene Yang"
+      src="/image/IMG_1314.png">
+  <p class="site-author-name" itemprop="name">Eugene Yang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:eugene87222@gmail.com" title="E-Mail → mailto:eugene87222@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Eugene87222" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Eugene87222" rel="noopener" target="_blank"><i class="fa fa-paper-plane fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/eugene87222" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fab fa-facebook-square fa-fw"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/yanghc" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;yanghc" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pinterest.com/eugene87222/" title="Pinterest → https:&#x2F;&#x2F;www.pinterest.com&#x2F;eugene87222&#x2F;" rel="noopener" target="_blank"><i class="fab fa-pinterest fa-fw"></i>Pinterest</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/eugene87222" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/04/08/20190408-ComputerSecurity-note-ch4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/image/IMG_1314.png">
+      <meta itemprop="name" content="Eugene Yang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="3ugeneYang.§ite">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="[Intro. to Computer Security Course Note] Ch 4 | 3ugeneYang.§ite">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [Intro. to Computer Security Course Note] Ch 4
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2019-04-08 08:06:38" itemprop="dateCreated datePublished" datetime="2019-04-08T08:06:38+08:00">2019-04-08</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2020-02-25 13:46:37" itemprop="dateModified" datetime="2020-02-25T13:46:37+08:00">2020-02-25</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>7.2k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>7 mins.</span>
+    </span>
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Ch4-Access-Control"><a href="#Ch4-Access-Control" class="headerlink" title="Ch4. Access Control"></a>Ch4. Access Control</h1><p><strong>Access control: the central element of computer security</strong></p>
+<hr>
+<h1 id="Principal-Objectives-of-Computer-Security"><a href="#Principal-Objectives-of-Computer-Security" class="headerlink" title="Principal Objectives of Computer Security"></a>Principal Objectives of Computer Security</h1><ul>
+<li><strong>Prevent unauthorized users</strong> from gaining access to recources</li>
+<li><strong>Prevent legitimate users</strong> from accessing resources in an <strong>unauthorized manner</strong></li>
+<li><strong>Enable legitimate users</strong> to access resources in an <strong>authorized manner</strong></li>
+</ul>
+<h1 id="Access-Control-Principles"><a href="#Access-Control-Principles" class="headerlink" title="Access Control Principles"></a>Access Control Principles</h1><h2 id="Access-Control-Context"><a href="#Access-Control-Context" class="headerlink" title="Access Control Context"></a>Access Control Context</h2><ul>
+<li><strong>Authentication</strong>: verification that user &#x2F; system credentials are valid</li>
+<li><strong>Authorization</strong>: the granting of a right or permission to a system entity ro access a system resource</li>
+<li><strong>Audit</strong>: an independent examination of system records and activities<ul>
+<li>To test for adequacy of system controls</li>
+<li>To ensure compliance with established policy and operational procedures</li>
+<li>To detect breaches in security</li>
+<li>To recommend any indicated changes in control, policy ans procedures</li>
+</ul>
+</li>
+</ul>
+<h2 id="Access-Control-Policies"><a href="#Access-Control-Policies" class="headerlink" title="Access Control Policies"></a>Access Control Policies</h2><ul>
+<li>Discretionary access control (DAC)<ul>
+<li><strong>Based on the identity of the requestor</strong>, and on access rules stating what requestors are (or are not) allowed to do</li>
+<li>Why discretionary ? <strong>An entity might have access rights to enable another entity to access some resource</strong></li>
+</ul>
+</li>
+<li>Mandatory access control (MAC)<ul>
+<li>Based on security clearances of system entities, and on security labels of resources</li>
+<li>Why mandatory ? An entity that has clearance to access a resource <strong>may not enable another entity to access that resource</strong></li>
+</ul>
+</li>
+<li>Role-based access control (RBAC)<ul>
+<li><strong>Based on the roles that users have</strong>, and on rules stating what accesses are allowed to given roles</li>
+</ul>
+</li>
+<li>Attribute-based access control (ABAC)<ul>
+<li>Based on attributes of the user, the resource to be accessed, and current environmental conditions</li>
+</ul>
+</li>
+</ul>
+<h1 id="Subjects-Objects-and-Access-Rights"><a href="#Subjects-Objects-and-Access-Rights" class="headerlink" title="Subjects, Objects, and Access Rights"></a>Subjects, Objects, and Access Rights</h1><h2 id="Subject"><a href="#Subject" class="headerlink" title="Subject"></a>Subject</h2><ul>
+<li>An entity capable of accessing objects</li>
+<li>3 classes<ul>
+<li>Owner</li>
+<li>Group</li>
+<li>World (include all users)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><ul>
+<li>A resource to which access is controlled</li>
+</ul>
+<h2 id="Access-Rights"><a href="#Access-Rights" class="headerlink" title="Access Rights"></a>Access Rights</h2><ul>
+<li>Describes the way in which a subject may access an object</li>
+<li>Could include<ul>
+<li>Read</li>
+<li>Write</li>
+<li>Execute</li>
+<li>Delete</li>
+<li>Create</li>
+<li>Search</li>
+</ul>
+</li>
+</ul>
+<h1 id="Discretionary-任意-Access-Control"><a href="#Discretionary-任意-Access-Control" class="headerlink" title="Discretionary(任意) Access Control"></a>Discretionary(任意) Access Control</h1><ul>
+<li>A general approach: access<ul>
+<li>Subjects vs. Objects</li>
+<li>Each entry: access right<br><img src="https://i.imgur.com/tq8TCV9.jpg"></li>
+</ul>
+</li>
+</ul>
+<h2 id="Decomposition-Method-1"><a href="#Decomposition-Method-1" class="headerlink" title="Decomposition Method 1"></a>Decomposition Method 1</h2><ul>
+<li>Access controls lists (ACL): decomposed by columns (objects)<ul>
+<li>For each object, an ACL lists users and their permitted access rights</li>
+<li>Default set of rights: users that are not explicitly listed</li>
+<li>Convenient: determining which subjects have which access rights to a particular resource</li>
+<li>Inconvenient: determining the access rights available to a specific user</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://i.imgur.com/qLg79Cx.jpg"></p>
+<h2 id="Decomposition-Method-2"><a href="#Decomposition-Method-2" class="headerlink" title="Decomposition Method 2"></a>Decomposition Method 2</h2><ul>
+<li>Capability tickets: decomposed by rows (subject)<ul>
+<li>A capability tickets specifies authorized objects and operations for a particular user</li>
+<li>Convenient &#x2F; inconvenient: opposite to ACLs</li>
+</ul>
+</li>
+<li>Have greater security problem than ACLs. Why ?<ul>
+<li>Tickets may be dispersed around the system<ul>
+<li>Integrity of the ticket must be protected, guaranteed, and unforgeable</li>
+</ul>
+</li>
+<li>2 solutions<ul>
+<li>OS holds all tickets on behalf of users</li>
+<li>An unforgeable token in the capability</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://i.imgur.com/c8dOwQp.jpg"></p>
+<h2 id="Another-Approach-Authorized-Table"><a href="#Another-Approach-Authorized-Table" class="headerlink" title="Another Approach: Authorized Table"></a>Another Approach: Authorized Table</h2><p>就資料庫的感覺<br><img src="https://i.imgur.com/dwSDlbg.jpg"></p>
+<h2 id="A-General-Access-Control-Model-for-DAC"><a href="#A-General-Access-Control-Model-for-DAC" class="headerlink" title="A General Access Control Model for DAC"></a>A General Access Control Model for DAC</h2><ul>
+<li>3 requirements<ul>
+<li>Representing the protection state</li>
+<li>Enforcing access rights</li>
+<li>Allowing subjects to alter the protection state in certain ways</li>
+</ul>
+</li>
+<li>Concepts<ul>
+<li>As usual: a set of subjects, objects, and rules</li>
+<li>New: protection state</li>
+</ul>
+</li>
+<li>Protection states<ul>
+<li>Processes: delete, stop (block), and wake up</li>
+<li>Devices: read &#x2F; write, operation control, and block &#x2F; unblock</li>
+<li>Memory locations or regions: read &#x2F; write</li>
+<li>SubjectsL grant or delete access rights of objects</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://i.imgur.com/eqWUu9L.jpg"></p>
+<h2 id="More-Flexible-Model-Protection-Domains"><a href="#More-Flexible-Model-Protection-Domains" class="headerlink" title="More Flexible Model: Protection Domains"></a>More Flexible Model: Protection Domains</h2><ul>
+<li>A set of objects together with access rights to those objects<ul>
+<li>r.g., Access matrix</li>
+</ul>
+</li>
+<li>Recal security design principles: Least privilege<ul>
+<li>Every process and every user of the system should operate using the least set of privileges necessary to perform the task</li>
+</ul>
+</li>
+<li>More general concpet: <strong>minimize the access rights that any user of process has at any one time</strong></li>
+<li>Association between a process and a domain can be static or dynamic<ul>
+<li>e.g., Aprocess: a sequence of procedures require different access rights</li>
+</ul>
+</li>
+<li>One form: distinction mode in many OSes (e.g., UNIX)<ul>
+<li>User mode: certain areas of memory are protected amd certain instructions may not be executed</li>
+<li>Kernel mode</li>
+</ul>
+</li>
+</ul>
+<h1 id="Example-UNIX-File-Access-Control"><a href="#Example-UNIX-File-Access-Control" class="headerlink" title="Example: UNIX File Access Control"></a>Example: UNIX File Access Control</h1><ul>
+<li>UNIX files are administered using inodes (index node)</li>
+<li>Directories are structured in a hierarchical tree</li>
+</ul>
+<h2 id="Traditional-UNIX-File-Access-Control"><a href="#Traditional-UNIX-File-Access-Control" class="headerlink" title="Traditional UNIX File Access Control"></a>Traditional UNIX File Access Control</h2><ul>
+<li>UNIX user: a unique user identification number (user ID)<ul>
+<li>A member of a primary group, and possibly other groups</li>
+<li>Each group is identified by a group ID</li>
+</ul>
+</li>
+<li>Each file &#x2F; directory: 12 protection bits<ul>
+<li>FIrst 9 bits: read, write, execute</li>
+<li>Last 3 bits: setUID, setGID, and sticky bit</li>
+<li><img src="https://i.imgur.com/BjGSBEo.jpg"></li>
+</ul>
+</li>
+<li>SetUID &#x2F; SetGID bits<ul>
+<li>Known as the effective user ID and effective group ID</li>
+<li>System temporarily grants a real user with the rights of the file owner &#x2F; group in addition to the real user’s rights</li>
+<li>For directories<ul>
+<li>SetGID: newly created files will inherit the group of this directory, rather than the primary group ID of the user who created this file</li>
+<li>SetUID is ignored</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Sticky bit<ul>
+<li>Files: the system should retain the file contents in memory following execution (no longer used)</li>
+<li>Directories: only the owner of any file in the directory can rename, move, or delete that file</li>
+</ul>
+</li>
+<li>superuser</li>
+<li>Issues<ul>
+<li>No scalability, difficult to manage (user group 會弄得很冗)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Modern-UNIX-Access-Control-Access-Control-Lists-ACLs"><a href="#Modern-UNIX-Access-Control-Access-Control-Lists-ACLs" class="headerlink" title="Modern UNIX Access Control: Access Control Lists (ACLs)"></a>Modern UNIX Access Control: Access Control Lists (ACLs)</h2><ul>
+<li>Supported by many modern UNIX-based OSes<ul>
+<li>Extended ACL vs. minimal ACL (traditional)</li>
+</ul>
+</li>
+<li>FreeBSD<ul>
+<li>Any number of users and groups can be assigned to a file<ul>
+<li>Each with 3 protection bits</li>
+</ul>
+</li>
+<li>A file need not have an ACL, may be protected solely by traditional access control</li>
+<li>An additional protection bit: whether the file has an extended ACL</li>
+</ul>
+</li>
+<li>Extended ACLs are used with the following strategies<ul>
+<li>Owner and other classes remain the same</li>
+<li>Group class specifies the permissions for the owner group for this file</li>
+<li>Additional named users and named groups may be associated with the file</li>
+<li><img src="https://i.imgur.com/0guYtCw.jpg"></li>
+</ul>
+</li>
+</ul>
+<h1 id="Role-Based-Access-Control"><a href="#Role-Based-Access-Control" class="headerlink" title="Role-Based Access Control"></a>Role-Based Access Control</h1><ul>
+<li><strong>Based on the roles that users assume</strong>, instead of their identities</li>
+<li>Widespread commercial use and an area of active research</li>
+<li><strong>Many-to-many relationship</strong><ul>
+<li>Users to roles</li>
+<li>Roles to resources</li>
+</ul>
+</li>
+</ul>
+<h2 id="RBAC-Reference-Models"><a href="#RBAC-Reference-Models" class="headerlink" title="RBAC Reference Models"></a>RBAC Reference Models</h2><ul>
+<li>4 modes<ul>
+<li>RBAC<del>0</del>: minimum functionality</li>
+<li>RBAC<del>1</del>: RBAC<del>0</del> + role hierarchies</li>
+<li>RBAC<del>2</del>: RBAC<del>0</del> + constrains</li>
+<li>RBAC<del>3</del>: RBAC<del>0</del> + RBAC<del>1</del> + RBAC<del>2</del></li>
+<li><img src="https://i.imgur.com/iRzlddw.jpg"></li>
+</ul>
+</li>
+</ul>
+<h2 id="RBAC0-Base-Model"><a href="#RBAC0-Base-Model" class="headerlink" title="RBAC0: Base Model"></a>RBAC<del>0</del>: Base Model</h2><ul>
+<li>User: an individual that has access to this computer system</li>
+<li>Role: a named job function (authority level)</li>
+<li>Permission: an approval of a particular mode of access to one or more objects</li>
+<li>Session: a mapping between a user and set of roles to which a user is assigned</li>
+</ul>
+<p><img src="https://i.imgur.com/ILEUUqz.jpg"></p>
+<h2 id="RBAC1-Role-Hierarchies"><a href="#RBAC1-Role-Hierarchies" class="headerlink" title="RBAC1: Role Hierarchies"></a>RBAC<del>1</del>: Role Hierarchies</h2><ul>
+<li>Roles with greater responsibility: greater authority to access resources</li>
+</ul>
+<h2 id="RBAC2-Constrains"><a href="#RBAC2-Constrains" class="headerlink" title="RBAC2: Constrains"></a>RBAC<del>2</del>: Constrains</h2><ul>
+<li>Adapting RBAC to the specifics of administrative and security policies in an organization<ul>
+<li>Mutually exclusive roles<ul>
+<li><strong>A user can be assigned to only one role in the set</strong></li>
+<li><strong>Any permission can be granted to only one role in the set</strong></li>
+<li><strong>Non-Overlapping permissions</strong></li>
+</ul>
+</li>
+<li>Cardinality(基數)</li>
+<li>Prerequesite role<ul>
+<li>e.g., <strong>a user can be assigned to a higher role only if it is already assigned an lower role</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Attribute-Based-Access-Control"><a href="#Attribute-Based-Access-Control" class="headerlink" title="Attribute-Based Access Control"></a>Attribute-Based Access Control</h1><ul>
+<li>Define authorizations that express <strong>conditions</strong> on properties of both the resource and the subject</li>
+<li>Strength: <strong>flexibility, expressive power</strong></li>
+<li>Drawback: 運算較多，花時間</li>
+</ul>
+<h2 id="ABAC-Model-Attributes"><a href="#ABAC-Model-Attributes" class="headerlink" title="ABAC Model: Attributes"></a>ABAC Model: Attributes</h2><ul>
+<li>Subject attributes<ul>
+<li>A subject is an <strong>active</strong> entity that causes info. to flow among objects or changes the system state</li>
+<li>Attributes define the identity and characteristics of the subject<ul>
+<li>e.g., name, job title</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Object attributes<ul>
+<li>An object (or resource) is a <strong>passive</strong> system-related entity containing or receiving info.</li>
+<li>Objects have attributes that can be leveraged to make access control decisions<ul>
+<li>file name, file size, creator</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Environment attributes<ul>
+<li>The operational, technical, and even situational environment or context in which the info. access occurs<ul>
+<li>e.g., current date, time</li>
+</ul>
+</li>
+<li>Have so far been largely ignored in most access control policies</li>
+</ul>
+</li>
+</ul>
+<h2 id="ABAC-Model-Distinguishable"><a href="#ABAC-Model-Distinguishable" class="headerlink" title="ABAC Model: Distinguishable"></a>ABAC Model: Distinguishable</h2><ul>
+<li>Controls access to objects by evaluating rules against the attributes of entities (subject and object), operations, and the environment</li>
+<li>Capable of enforcing DAC, RBAC, and MAC concepts</li>
+<li>Fine-grained access control: allows an unlimited number of attributes to be combined to satisfy any access control rule</li>
+</ul>
+<h2 id="ABAC-Logical-Architecture"><a href="#ABAC-Logical-Architecture" class="headerlink" title="ABAC Logical Architecture"></a>ABAC Logical Architecture</h2><ul>
+<li>4 independent sources of info. used for the access control decision</li>
+<li>Powerful, flexible, <strong>but cost is large</strong></li>
+<li><img src="https://i.imgur.com/oTcMBXC.jpg"></li>
+</ul>
+<h2 id="ACL-Trust-Chain"><a href="#ACL-Trust-Chain" class="headerlink" title="ACL Trust Chain"></a>ACL Trust Chain</h2><p><img src="https://i.imgur.com/Ae0QSIV.jpg"></p>
+<h2 id="ABAC-Trust-Chain"><a href="#ABAC-Trust-Chain" class="headerlink" title="ABAC Trust Chain"></a>ABAC Trust Chain</h2><p><img src="https://i.imgur.com/z2rPj67.jpg"></p>
+<h2 id="ABAC-Policies"><a href="#ABAC-Policies" class="headerlink" title="ABAC Policies"></a>ABAC Policies</h2><ul>
+<li>A policy is a <strong>set of rules</strong> and relationships that govern allowable behavior within an organization<ul>
+<li>Based on<br>1. Privileges of subjects<br>2. How resources or objects are to be protected<br>3. Under which environment conditions</li>
+</ul>
+</li>
+<li>An ABAC policy model<ul>
+<li><img src="https://i.imgur.com/SRtbv2w.jpg"></li>
+</ul>
+</li>
+</ul>
+<h1 id="Case-Study-RBAC-System-for-a-Bank"><a href="#Case-Study-RBAC-System-for-a-Bank" class="headerlink" title="Case Study: RBAC System for a Bank"></a>Case Study: RBAC System for a Bank</h1>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Eugene Yang
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="http://eugene87222.github.io/2019/04/08/20190408-ComputerSecurity-note-ch4/" title="[Intro. to Computer Security Course Note] Ch 4">http://eugene87222.github.io/2019/04/08/20190408-ComputerSecurity-note-ch4/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/NCTU/" rel="tag"># NCTU</a>
+              <a href="/tags/note/" rel="tag"># note</a>
+              <a href="/tags/computer-security/" rel="tag"># computer security</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/04/07/20190407-psy-note-ch7/" rel="prev" title="[Intro. to Psy Course Note] Ch 7">
+                  <i class="fa fa-chevron-left"></i> [Intro. to Psy Course Note] Ch 7
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/04/08/20190408-psy-note-ch9/" rel="next" title="[Intro. to Psy Course Note] Ch 9">
+                  [Intro. to Psy Course Note] Ch 9 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eugene Yang</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">239k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">3:38</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"eugene87222","count":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

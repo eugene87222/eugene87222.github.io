@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/image/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/image/favicon.ico">
+  <link rel="mask-icon" href="/image/favicon.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic%7CKaushan+Script:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"eugene87222.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="[Intro. to Computer Security Course Note] Ch 9">
+<meta property="og:url" content="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch9/index.html">
+<meta property="og:site_name" content="3ugeneYang.§ite">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.imgur.com/4vXYlX3.png">
+<meta property="og:image" content="https://i.imgur.com/tGZgY8k.png">
+<meta property="og:image" content="https://i.imgur.com/dxHEwhG.png">
+<meta property="og:image" content="https://i.imgur.com/BAXpYQ1.png">
+<meta property="og:image" content="https://i.imgur.com/FChl0uN.png">
+<meta property="og:image" content="https://i.imgur.com/4auWNcM.png">
+<meta property="og:image" content="https://i.imgur.com/KEHfsgO.png">
+<meta property="og:image" content="https://i.imgur.com/9sNvWxc.png">
+<meta property="og:image" content="https://i.imgur.com/2iit5Ps.jpg">
+<meta property="og:image" content="https://i.imgur.com/DKZRSoO.jpg">
+<meta property="og:image" content="https://i.imgur.com/E3ZQIYt.png">
+<meta property="og:image" content="https://i.imgur.com/B7hAKAO.png">
+<meta property="og:image" content="https://i.imgur.com/6li4RMx.png">
+<meta property="article:published_time" content="2019-06-24T11:47:14.000Z">
+<meta property="article:modified_time" content="2020-02-25T05:45:36.650Z">
+<meta property="article:author" content="Eugene Yang">
+<meta property="article:tag" content="NCTU">
+<meta property="article:tag" content="note">
+<meta property="article:tag" content="computer security">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/4vXYlX3.png">
+
+
+<link rel="canonical" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch9/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch9/","path":"2019/06/24/20190624-ComputerSecurity-note-ch9/","title":"[Intro. to Computer Security Course Note] Ch 9"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>[Intro. to Computer Security Course Note] Ch 9 | 3ugeneYang.§ite</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107694365-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-107694365-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">3ugeneYang.§ite</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch9-Firewalls-and-Intrusion-Prevention-Systems"><span class="nav-number">1.</span> <span class="nav-text">Ch9. Firewalls and Intrusion Prevention Systems</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Need-for-Firewalls"><span class="nav-number">1.1.</span> <span class="nav-text">The Need for Firewalls</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Firewall-Characteristics-and-access-policy"><span class="nav-number">2.</span> <span class="nav-text">Firewall Characteristics and access policy</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Firewall-Characteristics"><span class="nav-number">2.1.</span> <span class="nav-text">Firewall Characteristics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Firewall-Access-Policy"><span class="nav-number">2.2.</span> <span class="nav-text">Firewall Access Policy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Characteristics-for-Control-Access"><span class="nav-number">2.3.</span> <span class="nav-text">Characteristics for Control Access</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Capabilities-and-Limitations"><span class="nav-number">2.4.</span> <span class="nav-text">Capabilities and Limitations</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Types-of-firewalls"><span class="nav-number">3.</span> <span class="nav-text">Types of firewalls</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Packet-Filtering-Firewall"><span class="nav-number">3.1.</span> <span class="nav-text">Packet Filtering Firewall</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Packet-Filtering-Possible-Attacks"><span class="nav-number">3.2.</span> <span class="nav-text">Packet Filtering: Possible Attacks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Traditional-Packet-Filtering-Weakness"><span class="nav-number">3.3.</span> <span class="nav-text">Traditional Packet Filtering: Weakness</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Stateful-Inspection-Firewall"><span class="nav-number">3.4.</span> <span class="nav-text">Stateful Inspection Firewall</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Application-Proxy-Firewall"><span class="nav-number">3.5.</span> <span class="nav-text">Application Proxy Firewall</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Circuit-level-Proxy-Firewall"><span class="nav-number">3.6.</span> <span class="nav-text">Circuit-level Proxy Firewall</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SOCKS-Circuit-level-Gateway"><span class="nav-number">3.7.</span> <span class="nav-text">SOCKS: Circuit-level Gateway</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Firewall-Basing"><span class="nav-number">3.8.</span> <span class="nav-text">Firewall Basing</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Firewall-location-and-configurations"><span class="nav-number">4.</span> <span class="nav-text">Firewall location and configurations</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#DMZ-networks"><span class="nav-number">4.1.</span> <span class="nav-text">DMZ networks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Virtual-private-networks-VPN"><span class="nav-number">4.2.</span> <span class="nav-text">Virtual private networks (VPN)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Distributed-firewalls"><span class="nav-number">4.3.</span> <span class="nav-text">Distributed firewalls</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Summary-of-firewall-locations-and-topologies"><span class="nav-number">4.4.</span> <span class="nav-text">Summary of firewall locations and topologies</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Intrusion-prevention-systems-IPS"><span class="nav-number">5.</span> <span class="nav-text">Intrusion prevention systems (IPS)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Host-based-IPS-HIPS"><span class="nav-number">5.1.</span> <span class="nav-text">Host-based IPS (HIPS)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Role-of-HIPS"><span class="nav-number">5.2.</span> <span class="nav-text">The Role of HIPS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Security-Practice-Defense-in-Depth-DiD"><span class="nav-number">5.3.</span> <span class="nav-text">Security Practice: Defense in Depth (DiD)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Network-based-IPS-NIPS"><span class="nav-number">5.4.</span> <span class="nav-text">Network-based IPS (NIPS)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Distributed-x2F-Hybrid-IPS"><span class="nav-number">5.5.</span> <span class="nav-text">Distributed&#x2F;Hybrid IPS</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Example-Unified-Threat-Management-Product"><span class="nav-number">6.</span> <span class="nav-text">Example: Unified Threat Management Product</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Eugene Yang"
+      src="/image/IMG_1314.png">
+  <p class="site-author-name" itemprop="name">Eugene Yang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:eugene87222@gmail.com" title="E-Mail → mailto:eugene87222@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Eugene87222" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Eugene87222" rel="noopener" target="_blank"><i class="fa fa-paper-plane fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/eugene87222" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fab fa-facebook-square fa-fw"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/yanghc" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;yanghc" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pinterest.com/eugene87222/" title="Pinterest → https:&#x2F;&#x2F;www.pinterest.com&#x2F;eugene87222&#x2F;" rel="noopener" target="_blank"><i class="fab fa-pinterest fa-fw"></i>Pinterest</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/eugene87222" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/image/IMG_1314.png">
+      <meta itemprop="name" content="Eugene Yang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="3ugeneYang.§ite">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="[Intro. to Computer Security Course Note] Ch 9 | 3ugeneYang.§ite">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [Intro. to Computer Security Course Note] Ch 9
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2019-06-24 19:47:14" itemprop="dateCreated datePublished" datetime="2019-06-24T19:47:14+08:00">2019-06-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2020-02-25 13:45:36" itemprop="dateModified" datetime="2020-02-25T13:45:36+08:00">2020-02-25</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>7.2k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>7 mins.</span>
+    </span>
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Ch9-Firewalls-and-Intrusion-Prevention-Systems"><a href="#Ch9-Firewalls-and-Intrusion-Prevention-Systems" class="headerlink" title="Ch9. Firewalls and Intrusion Prevention Systems"></a>Ch9. Firewalls and Intrusion Prevention Systems</h1><h2 id="The-Need-for-Firewalls"><a href="#The-Need-for-Firewalls" class="headerlink" title="The Need for Firewalls"></a>The Need for Firewalls</h2><ul>
+<li>Internet connectivity is essential</li>
+<li>Why not just equip each workstation &#x2F; server with strong security features?<ul>
+<li><strong>Not sufficient; Not cost-effective</strong></li>
+</ul>
+</li>
+<li>A single choke point between the protected network and the Internet<ul>
+<li>Complement to host-based security services</li>
+<li>Imposing security and auditing against Internet-based attacks</li>
+<li>A single computer systems or a set of two or more systems working together</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h1 id="Firewall-Characteristics-and-access-policy"><a href="#Firewall-Characteristics-and-access-policy" class="headerlink" title="Firewall Characteristics and access policy"></a>Firewall Characteristics and access policy</h1><h2 id="Firewall-Characteristics"><a href="#Firewall-Characteristics" class="headerlink" title="Firewall Characteristics"></a>Firewall Characteristics</h2><ul>
+<li>Design goals<ul>
+<li>Only authorized traffic, as defines by the local security policy, will be allowed to pass</li>
+<li>The firewall itself is immune to penetration</li>
+</ul>
+</li>
+</ul>
+<h2 id="Firewall-Access-Policy"><a href="#Firewall-Access-Policy" class="headerlink" title="Firewall Access Policy"></a>Firewall Access Policy</h2><ul>
+<li>Listing the types of traffic authorized</li>
+<li>Being developed from the org.’s info security risk assessment and policy</li>
+</ul>
+<h2 id="Characteristics-for-Control-Access"><a href="#Characteristics-for-Control-Access" class="headerlink" title="Characteristics for Control Access"></a>Characteristics for Control Access</h2><ul>
+<li>IP addr. and protocol values<ul>
+<li>Used by: packet filter and stateful inspection firewalls</li>
+<li>Limiting access to specific services</li>
+</ul>
+</li>
+<li>Application protocol<ul>
+<li>Used by: an app-level gateway</li>
+<li>Relaying an monitoring the exchange of info for specific app protocols</li>
+</ul>
+</li>
+<li>User identity<ul>
+<li>Identifying inside users using secure authentication technology, e.g., IPSec</li>
+</ul>
+</li>
+<li>Network activity<ul>
+<li>Considering time or request, e.g., only in business hours</li>
+<li>Rate of requests of other activity patterns, e.g., detecting scanning attempts</li>
+</ul>
+</li>
+</ul>
+<h2 id="Capabilities-and-Limitations"><a href="#Capabilities-and-Limitations" class="headerlink" title="Capabilities and Limitations"></a>Capabilities and Limitations</h2><ul>
+<li>Capabilities<ul>
+<li>A single choke point: keeping unauthorized traffic out and simplifying management</li>
+<li>A location for monitoring</li>
+<li>A convenient platform for Internet functions, e.g., NAT</li>
+<li>The platform for IPSec: implementing VPN</li>
+</ul>
+</li>
+<li>Limitations<ul>
+<li>Cannot protect against attacks bypassing the firewall</li>
+<li>An improperly secured wireless LAN may be accessed from outside</li>
+<li>Devices infected outside are attached and used internally</li>
+</ul>
+</li>
+</ul>
+<h1 id="Types-of-firewalls"><a href="#Types-of-firewalls" class="headerlink" title="Types of firewalls"></a>Types of firewalls</h1><ul>
+<li>General model<ul>
+<li><img src="https://i.imgur.com/4vXYlX3.png" width="60%"/></li>
+</ul>
+</li>
+<li>Four major types<ul>
+<li>Packet filtering firewall</li>
+<li>Stateful inspection firewall</li>
+<li>Application proxy firewall</li>
+<li>Circuit-level proxy firewall</li>
+</ul>
+</li>
+</ul>
+<h2 id="Packet-Filtering-Firewall"><a href="#Packet-Filtering-Firewall" class="headerlink" title="Packet Filtering Firewall"></a>Packet Filtering Firewall</h2><ul>
+<li><img src="https://i.imgur.com/tGZgY8k.png" width="60%"/></li>
+<li>Applying a set of rules to each incoming and outgoing IP packet<ul>
+<li>Rules based on matches in the IP or TCP header for packets in both directions</li>
+<li>Matches: determining whether to forward or discard the packet</li>
+<li>No match: a default action is taken<ul>
+<li>Discard: prohibit unless expressly permitted -&gt; more conservation, <strong>controlled, visible to users</strong></li>
+<li>Forward: permit unless expressly prohibited -&gt; easier to manage and use but <strong>less secure</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Filtering rules are based on info contained in a network packet<ul>
+<li>Src. IP addr.</li>
+<li>Dest. IP addr.</li>
+<li>Src. and dest. transport-level addr.</li>
+<li>IP protocol field</li>
+<li>Interface</li>
+</ul>
+</li>
+<li>Example:<ul>
+<li>Allowing inbound and outbound email traffic but to block all other traffic</li>
+<li><img src="https://i.imgur.com/dxHEwhG.png" width="60%"/></li>
+<li>Problem 1: rule 4 allows external traffic to any dest. port above 1023</li>
+<li>Problem 2: new rule 4 allows an outside machine to send packets with src. port 23 to internal machines</li>
+</ul>
+</li>
+<li>Pros<ul>
+<li>Simplicity</li>
+<li>Transparent to user</li>
+<li>Fast</li>
+</ul>
+</li>
+<li>Cons<ul>
+<li>Cannot prevent attacks that employ app specific vulnerabilities or functions</li>
+<li>Limited logging functionality</li>
+<li>Don’t support advanced user authentication, due to the lack of upper-layer functionality</li>
+<li>Vulnerable to attacks on TCP&#x2F;IP protocol issues</li>
+<li>Susceptible to security breaches caused by improper configurations</li>
+</ul>
+</li>
+</ul>
+<h2 id="Packet-Filtering-Possible-Attacks"><a href="#Packet-Filtering-Possible-Attacks" class="headerlink" title="Packet Filtering: Possible Attacks"></a>Packet Filtering: Possible Attacks</h2><ul>
+<li>IP addr. spoofing<ul>
+<li>src. IP 填 internal host 的 IP</li>
+<li>Countermeasure: discarding incoming packets with an inside src. addr.</li>
+</ul>
+</li>
+<li>Src. routing attacks<ul>
+<li>Attacker specifies the route that a packet should take</li>
+<li>Countermeasure: discarding all packets that just use this option</li>
+</ul>
+</li>
+<li>Tiny fragment attacks<ul>
+<li>Attacker uses the IP fragmentation option to create extremely small fragments and force the TCP header info into a separate packet fragment</li>
+<li>Countermeasure: enforcing the first fragment of a packet to contain a predefined minimum amount of the transport header</li>
+</ul>
+</li>
+</ul>
+<h2 id="Traditional-Packet-Filtering-Weakness"><a href="#Traditional-Packet-Filtering-Weakness" class="headerlink" title="Traditional Packet Filtering: Weakness"></a>Traditional Packet Filtering: Weakness</h2><ul>
+<li>Making decisions on an individual packet basis<ul>
+<li>Doesn’t take into consideration any higher-layer context</li>
+</ul>
+</li>
+<li>Must permit inbound network traffic on all the ports (&gt;&#x3D;1024) for TCP-based traffic<ul>
+<li>Server port: &lt; 1024 (well-known)</li>
+<li>Client port: 1024 ~ 65536 &lt;- <strong>vulnerability</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="Stateful-Inspection-Firewall"><a href="#Stateful-Inspection-Firewall" class="headerlink" title="Stateful Inspection Firewall"></a>Stateful Inspection Firewall</h2><ul>
+<li><img src="https://i.imgur.com/BAXpYQ1.png" width="60%"/></li>
+<li>Tightening rules for TCP traffic by creating a directory of outbound TCP connections<ul>
+<li>狀態檢視防火牆不僅採用封包過濾類似的方法來監控網路傳輸，還會更進一步檢查封包資料流的內容與行為，並非只是單純地過濾個別封包</li>
+<li>持續追蹤連接狀態直到結束連線為止，藉以判斷是否為有效的連線而允許封包通過</li>
+<li>建立每個連線階段的狀態表，然後根據此前後關聯狀況來判斷是否允許或拒絕此封包通過</li>
+</ul>
+</li>
+<li>Cons: 無法處理應用層協定</li>
+</ul>
+<h2 id="Application-Proxy-Firewall"><a href="#Application-Proxy-Firewall" class="headerlink" title="Application Proxy Firewall"></a>Application Proxy Firewall</h2><ul>
+<li><img src="https://i.imgur.com/FChl0uN.png" width="60%"/></li>
+<li>App-level<ul>
+<li>User contacts it using a TCP&#x2F;IP app</li>
+<li>Must have proxy codes for specific apps</li>
+<li>May restrict supported app features</li>
+</ul>
+</li>
+<li>Pros: more secure than packet filters</li>
+<li>Cons: <strong>additional processing overhead</strong> on each connection</li>
+</ul>
+<h2 id="Circuit-level-Proxy-Firewall"><a href="#Circuit-level-Proxy-Firewall" class="headerlink" title="Circuit-level Proxy Firewall"></a>Circuit-level Proxy Firewall</h2><ul>
+<li><img src="https://i.imgur.com/4auWNcM.png" width="60%"/></li>
+<li>Splitting a TCP connection<ul>
+<li>One between itself and a TCP insider</li>
+<li>One between itself and a TCP outsider</li>
+<li>Doesn’t examine the contents</li>
+</ul>
+</li>
+<li>Security: determining which connections are allowed<ul>
+<li>Typically used when inside users are trusted</li>
+</ul>
+</li>
+<li>To reduce the overhead of the app-level proxy firewall<ul>
+<li>Inbound: app-level proxy firewall</li>
+<li>Outbound: circuit-level proxy firewall</li>
+</ul>
+</li>
+</ul>
+<h2 id="SOCKS-Circuit-level-Gateway"><a href="#SOCKS-Circuit-level-Gateway" class="headerlink" title="SOCKS: Circuit-level Gateway"></a>SOCKS: Circuit-level Gateway</h2><ul>
+<li>A framework for client-server apps in TCP&#x2F;UDP domains to conveniently and securely use the services of a network firewall<ul>
+<li>Client app contacts SOCKS server, authenticates, and sends a relay request</li>
+<li>SOCKS server evaluate the request</li>
+</ul>
+</li>
+<li>Three components<ul>
+<li>SOCKS server</li>
+<li>SOCKS client library</li>
+<li>SOCKS-ified versions of programs (e.g., FTP, TELNET)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Firewall-Basing"><a href="#Firewall-Basing" class="headerlink" title="Firewall Basing"></a>Firewall Basing</h2><ul>
+<li>Stand-alone firewall (basing host)<ul>
+<li>A system identified by the firewall administrator as a critical strong point in the network’s security</li>
+<li><img src="https://i.imgur.com/KEHfsgO.png" width="60%"/>
+ - Running secure OS, only essential services -> a hardened system</li>
+<li>May require authentication to access proxy or host</li>
+<li>Each proxy<ul>
+<li>Can restrict features, hosts accessed</li>
+<li>Small, simple, checked for security</li>
+<li>Independent, non-privileged</li>
+<li>Limited disk use, hence <strong>read-only</strong> code</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Host-based (Server-based) firewall<ul>
+<li>Software modules: used to secure an individual host<ul>
+<li>Available in many OSes</li>
+<li>Filtering and restricting the flow of packets</li>
+<li>Common location: a server</li>
+</ul>
+</li>
+<li>Pros<ul>
+<li>Filtering rules can be tailored</li>
+<li>Protection is provided independent of topology</li>
+<li>Providing an additional layer of protection<ul>
+<li>Used in conjunction with stand-alone firewalls</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Personal firewall<ul>
+<li>Software modules on the personal computers</li>
+<li>Primary role: to deny unauthorized remote access<ul>
+<li>Can also monitor outgoing activity -&gt; worms and other malware</li>
+</ul>
+</li>
+<li>Practice<ul>
+<li>All inbound connections are denied except for those the user explicitly permits</li>
+<li>Outbound connections are usually allowed</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Firewall-location-and-configurations"><a href="#Firewall-location-and-configurations" class="headerlink" title="Firewall location and configurations"></a>Firewall location and configurations</h1><h2 id="DMZ-networks"><a href="#DMZ-networks" class="headerlink" title="DMZ networks"></a>DMZ networks</h2><ul>
+<li>DMZ (Demilitarized Zone): a small network isolated from the private network</li>
+<li>Systems located on DMZ networks: externally accessible but need some protections</li>
+<li><img src="https://i.imgur.com/9sNvWxc.png" width="60%"/></li>
+</ul>
+<h2 id="Virtual-private-networks-VPN"><a href="#Virtual-private-networks-VPN" class="headerlink" title="Virtual private networks (VPN)"></a>Virtual private networks (VPN)</h2><ul>
+<li>Containing a set of computers<ul>
+<li>Interconnecting by means of a relatively insecure network</li>
+<li>Making use of encryption and special protocols to provide security</li>
+</ul>
+</li>
+<li>Using encryption and authentication in the lower protocol layers to provides a secure connection through an insecure network<ul>
+<li>Most common protocol at the IP level: IPSec (Internet Protocol Security)</li>
+</ul>
+</li>
+<li><img src="https://i.imgur.com/2iit5Ps.jpg"></li>
+<li><img src="https://i.imgur.com/DKZRSoO.jpg"></li>
+</ul>
+<h2 id="Distributed-firewalls"><a href="#Distributed-firewalls" class="headerlink" title="Distributed firewalls"></a>Distributed firewalls</h2><ul>
+<li>Local protection: against internal attacks<ul>
+<li>Tailored to specific machines and apps</li>
+<li>Host-based firewalls on hundreds of servers ans workstation</li>
+<li>Personal firewalls on local and remote user system</li>
+</ul>
+</li>
+<li>Global protection: against internal and external attacks<ul>
+<li>Stand-alone firewalls</li>
+</ul>
+</li>
+<li><img src="https://i.imgur.com/E3ZQIYt.png" width="60%"/></li>
+<li>May use both an internal and external DMZ</li>
+<li>External DMZ: <strong>less protection</strong></li>
+</ul>
+<h2 id="Summary-of-firewall-locations-and-topologies"><a href="#Summary-of-firewall-locations-and-topologies" class="headerlink" title="Summary of firewall locations and topologies"></a>Summary of firewall locations and topologies</h2><ul>
+<li><img src="https://i.imgur.com/B7hAKAO.png" width="60%"/></li>
+</ul>
+<h1 id="Intrusion-prevention-systems-IPS"><a href="#Intrusion-prevention-systems-IPS" class="headerlink" title="Intrusion prevention systems (IPS)"></a>Intrusion prevention systems (IPS)</h1><ul>
+<li>Like an IDS<ul>
+<li>Types: Host-based, network-based, distributed&#x2F;hybrid</li>
+<li>Approaches: anomaly detection, or signature&#x2F;heuristic detection</li>
+</ul>
+</li>
+</ul>
+<h2 id="Host-based-IPS-HIPS"><a href="#Host-based-IPS-HIPS" class="headerlink" title="Host-based IPS (HIPS)"></a>Host-based IPS (HIPS)</h2><ul>
+<li>Alternative solution: sandbox<ul>
+<li>Suited to mobile code</li>
+<li>Quarantining such code in an isolated system area</li>
+</ul>
+</li>
+</ul>
+<h2 id="The-Role-of-HIPS"><a href="#The-Role-of-HIPS" class="headerlink" title="The Role of HIPS"></a>The Role of HIPS</h2><ul>
+<li>The main target for hackers and criminals: enterprise point<ul>
+<li>More popular than network devices to be attacked</li>
+</ul>
+</li>
+<li>Security vendors focus more on the endpoint security products<ul>
+<li>An integrated, single-product suit of functions</li>
+</ul>
+</li>
+<li>Pros: <strong>various tools work closely together</strong><ul>
+<li>Easy to manage</li>
+</ul>
+</li>
+</ul>
+<h2 id="Security-Practice-Defense-in-Depth-DiD"><a href="#Security-Practice-Defense-in-Depth-DiD" class="headerlink" title="Security Practice: Defense in Depth (DiD)"></a>Security Practice: Defense in Depth (DiD)</h2><ul>
+<li>A series of defensive mechanisms are layered to protect valuable info</li>
+<li>Using HIPS as one element in a DiD strategy<ul>
+<li>Together with network-level devices</li>
+</ul>
+</li>
+</ul>
+<h2 id="Network-based-IPS-NIPS"><a href="#Network-based-IPS-NIPS" class="headerlink" title="Network-based IPS (NIPS)"></a>Network-based IPS (NIPS)</h2><ul>
+<li>Inline with NIDS</li>
+<li>Typical methods used by a NIPS device to <strong>identify malicious packets</strong></li>
+</ul>
+<h2 id="Distributed-x2F-Hybrid-IPS"><a href="#Distributed-x2F-Hybrid-IPS" class="headerlink" title="Distributed&#x2F;Hybrid IPS"></a>Distributed&#x2F;Hybrid IPS</h2><ul>
+<li><img src="https://i.imgur.com/6li4RMx.png" width="60%"/></li>
+</ul>
+<h1 id="Example-Unified-Threat-Management-Product"><a href="#Example-Unified-Threat-Management-Product" class="headerlink" title="Example: Unified Threat Management Product"></a>Example: Unified Threat Management Product</h1>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Eugene Yang
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch9/" title="[Intro. to Computer Security Course Note] Ch 9">http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch9/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/NCTU/" rel="tag"># NCTU</a>
+              <a href="/tags/note/" rel="tag"># note</a>
+              <a href="/tags/computer-security/" rel="tag"># computer security</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/06/24/20190624-ComputerSecurity-note-ch8/" rel="prev" title="[Intro. to Computer Security Course Note] Ch 8">
+                  <i class="fa fa-chevron-left"></i> [Intro. to Computer Security Course Note] Ch 8
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/06/24/20190624-ComputerSecurity-note-ch10/" rel="next" title="[Intro. to Computer Security Course Note] Ch 10">
+                  [Intro. to Computer Security Course Note] Ch 10 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eugene Yang</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">239k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">3:38</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"eugene87222","count":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

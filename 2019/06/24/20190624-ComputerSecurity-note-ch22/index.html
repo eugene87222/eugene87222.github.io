@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/image/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/image/favicon.ico">
+  <link rel="mask-icon" href="/image/favicon.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic%7CKaushan+Script:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"eugene87222.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="[Intro. to Computer Security Course Note] Ch 22">
+<meta property="og:url" content="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch22/index.html">
+<meta property="og:site_name" content="3ugeneYang.§ite">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.imgur.com/o9mUChP.png">
+<meta property="og:image" content="https://i.imgur.com/aCLJAAC.png">
+<meta property="og:image" content="https://i.imgur.com/fB0mxph.png">
+<meta property="og:image" content="https://i.imgur.com/QGcBAS8.png">
+<meta property="og:image" content="https://i.imgur.com/JX8yM8c.png">
+<meta property="og:image" content="https://i.imgur.com/cV2D1ER.png">
+<meta property="og:image" content="https://i.imgur.com/tsZPibK.png">
+<meta property="og:image" content="https://i.imgur.com/zgyfypi.png">
+<meta property="og:image" content="https://i.imgur.com/Nfv18KU.png">
+<meta property="og:image" content="https://i.imgur.com/fHCcQVE.png">
+<meta property="og:image" content="https://i.imgur.com/SAQRWwv.png">
+<meta property="og:image" content="https://i.imgur.com/NLQtElg.png">
+<meta property="og:image" content="https://i.imgur.com/dPmSPN6.png">
+<meta property="og:image" content="https://i.imgur.com/xzPy2dV.png">
+<meta property="og:image" content="https://i.imgur.com/gih8yFX.png">
+<meta property="og:image" content="https://i.imgur.com/KJw67Ky.png">
+<meta property="og:image" content="https://i.imgur.com/xmR09TT.png">
+<meta property="article:published_time" content="2019-06-24T11:58:16.000Z">
+<meta property="article:modified_time" content="2020-02-25T05:45:26.891Z">
+<meta property="article:author" content="Eugene Yang">
+<meta property="article:tag" content="NCTU">
+<meta property="article:tag" content="note">
+<meta property="article:tag" content="computer security">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/o9mUChP.png">
+
+
+<link rel="canonical" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch22/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch22/","path":"2019/06/24/20190624-ComputerSecurity-note-ch22/","title":"[Intro. to Computer Security Course Note] Ch 22"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>[Intro. to Computer Security Course Note] Ch 22 | 3ugeneYang.§ite</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107694365-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-107694365-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">3ugeneYang.§ite</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch22-Internet-Security-Protocols-and-Standards"><span class="nav-number">1.</span> <span class="nav-text">Ch22. Internet Security Protocols and Standards</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Secure-E-mail"><span class="nav-number">2.</span> <span class="nav-text">Secure E-mail</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Typical-S-x2F-MIME-Process-for-Creating-an-S-x2F-MIME-Message"><span class="nav-number">2.1.</span> <span class="nav-text">Typical S&#x2F;MIME Process for Creating an S&#x2F;MIME Message</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#S-x2F-MIME-Functions"><span class="nav-number">2.2.</span> <span class="nav-text">S&#x2F;MIME Functions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Enveloped-Data-Using-Public-key-Infrastructure"><span class="nav-number">2.3.</span> <span class="nav-text">Enveloped Data Using Public-key Infrastructure</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Signed-and-Clear-signed-Data"><span class="nav-number">2.4.</span> <span class="nav-text">Signed and Clear-signed Data</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#DomainKeys-Identified-Mail-DKIM"><span class="nav-number">3.</span> <span class="nav-text">DomainKeys Identified Mail (DKIM)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Internet-Mail-Architecture"><span class="nav-number">3.1.</span> <span class="nav-text">Internet Mail Architecture</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Why-DKIM"><span class="nav-number">3.2.</span> <span class="nav-text">Why DKIM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Simple-Example-of-DKIM-Deployment"><span class="nav-number">3.3.</span> <span class="nav-text">Simple Example of DKIM Deployment</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Secure-Sockets-Layer-SSL-and-Transport-Layer-Security-TLS"><span class="nav-number">4.</span> <span class="nav-text">Secure Sockets Layer (SSL) and Transport Layer Security (TLS)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SSL-x2F-TLS-Protocol-Stack"><span class="nav-number">4.1.</span> <span class="nav-text">SSL&#x2F;TLS Protocol Stack</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TLS-Concepts"><span class="nav-number">4.2.</span> <span class="nav-text">TLS Concepts</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#TLS-Record-Protocol-Operation"><span class="nav-number">4.3.</span> <span class="nav-text">TLS Record Protocol Operation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Handshake-Protocol"><span class="nav-number">4.4.</span> <span class="nav-text">Handshake Protocol</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Handshake-Protocol-Action-1-phase-1-amp-2"><span class="nav-number">4.5.</span> <span class="nav-text">Handshake Protocol Action 1 (phase 1 &amp; 2)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Handshake-Protocol-Action-2-phase-3-amp-4"><span class="nav-number">4.6.</span> <span class="nav-text">Handshake Protocol Action 2 (phase 3 &amp; 4)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ClientHello-RFC"><span class="nav-number">4.7.</span> <span class="nav-text">ClientHello (RFC)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ServerHello-RFC"><span class="nav-number">4.8.</span> <span class="nav-text">ServerHello (RFC)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Four-TLS-specific-protocols"><span class="nav-number">4.9.</span> <span class="nav-text">Four TLS specific protocols</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SSL-x2F-TLS-Attacks"><span class="nav-number">4.10.</span> <span class="nav-text">SSL&#x2F;TLS Attacks</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Heartbleed-Exploit-Source-BAE-Systems"><span class="nav-number">4.11.</span> <span class="nav-text">The Heartbleed Exploit (Source: BAE Systems)</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#HTTPS-HTTP-over-SSL-x2F-TLS"><span class="nav-number">5.</span> <span class="nav-text">HTTPS (HTTP over SSL&#x2F;TLS)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#IPSec-v-s-SSL-x2F-TLS"><span class="nav-number">5.1.</span> <span class="nav-text">IPSec v.s. SSL&#x2F;TLS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Applications-of-IPSec"><span class="nav-number">5.2.</span> <span class="nav-text">Applications of IPSec</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Benefits-of-IPSec"><span class="nav-number">5.3.</span> <span class="nav-text">Benefits of IPSec</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Security-Associations"><span class="nav-number">5.4.</span> <span class="nav-text">Security Associations</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Two-IPSec-Operation-Modes"><span class="nav-number">5.5.</span> <span class="nav-text">Two IPSec Operation Modes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Encapsulating-Security-Payload"><span class="nav-number">5.6.</span> <span class="nav-text">Encapsulating Security Payload</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IPSec-AH-ESP"><span class="nav-number">5.7.</span> <span class="nav-text">IPSec: AH + ESP</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IPv4-and-IPv6-Security"><span class="nav-number">6.</span> <span class="nav-text">IPv4 and IPv6 Security</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Eugene Yang"
+      src="/image/IMG_1314.png">
+  <p class="site-author-name" itemprop="name">Eugene Yang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:eugene87222@gmail.com" title="E-Mail → mailto:eugene87222@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Eugene87222" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Eugene87222" rel="noopener" target="_blank"><i class="fa fa-paper-plane fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/eugene87222" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fab fa-facebook-square fa-fw"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/yanghc" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;yanghc" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pinterest.com/eugene87222/" title="Pinterest → https:&#x2F;&#x2F;www.pinterest.com&#x2F;eugene87222&#x2F;" rel="noopener" target="_blank"><i class="fab fa-pinterest fa-fw"></i>Pinterest</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/eugene87222" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch22/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/image/IMG_1314.png">
+      <meta itemprop="name" content="Eugene Yang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="3ugeneYang.§ite">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="[Intro. to Computer Security Course Note] Ch 22 | 3ugeneYang.§ite">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [Intro. to Computer Security Course Note] Ch 22
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2019-06-24 19:58:16" itemprop="dateCreated datePublished" datetime="2019-06-24T19:58:16+08:00">2019-06-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2020-02-25 13:45:26" itemprop="dateModified" datetime="2020-02-25T13:45:26+08:00">2020-02-25</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>6.7k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>6 mins.</span>
+    </span>
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Ch22-Internet-Security-Protocols-and-Standards"><a href="#Ch22-Internet-Security-Protocols-and-Standards" class="headerlink" title="Ch22. Internet Security Protocols and Standards"></a>Ch22. Internet Security Protocols and Standards</h1><hr>
+<h1 id="Secure-E-mail"><a href="#Secure-E-mail" class="headerlink" title="Secure E-mail"></a>Secure E-mail</h1><table style="">
+    <tr>
+        <th style="font-weight: normal;">MIME</th>
+        <th style="font-weight: normal;">S/MIME</th>
+    </tr>
+    <tr>
+        <th style="font-weight: lighter;">Extension to the old RFC 822 specification of an Internet mail format<br>- RFC 822 defines a simple heading with To, From, Subject<br>- Assu,es ASCII text format</th>
+        <th style="font-weight: lighter;">Secure/Multipurpose Internet Mail Extension<br>Based on RSA<br>Provides the ability to sign and/or encrypt e-mail messages</th>
+    </tr>
+    <tr>
+        <th style="font-weight: lighter;"><img src="https://i.imgur.com/o9mUChP.png" width="60%"/></th>
+        <th style="font-weight: lighter;"><img src="https://i.imgur.com/aCLJAAC.png" width="60%"/></th>
+    </tr>
+</table>
+
+<h2 id="Typical-S-x2F-MIME-Process-for-Creating-an-S-x2F-MIME-Message"><a href="#Typical-S-x2F-MIME-Process-for-Creating-an-S-x2F-MIME-Message" class="headerlink" title="Typical S&#x2F;MIME Process for Creating an S&#x2F;MIME Message"></a>Typical S&#x2F;MIME Process for Creating an S&#x2F;MIME Message</h2><img src="https://i.imgur.com/fB0mxph.png" width="60%"/>
+
+<h2 id="S-x2F-MIME-Functions"><a href="#S-x2F-MIME-Functions" class="headerlink" title="S&#x2F;MIME Functions"></a>S&#x2F;MIME Functions</h2><ul>
+<li>Enveloped data<ul>
+<li>Encrypted content and associated keys</li>
+</ul>
+</li>
+<li>Signed data<ul>
+<li>Encoded message + signed digest</li>
+</ul>
+</li>
+<li>Clear-signed data<ul>
+<li>Cleartext message + signed digest</li>
+</ul>
+</li>
+<li>Signed and enveloped data<ul>
+<li>Nesting of signed and encrypted entities</li>
+</ul>
+</li>
+</ul>
+<h2 id="Enveloped-Data-Using-Public-key-Infrastructure"><a href="#Enveloped-Data-Using-Public-key-Infrastructure" class="headerlink" title="Enveloped Data Using Public-key Infrastructure"></a>Enveloped Data Using Public-key Infrastructure</h2><ul>
+<li>M -&gt; 3DES(M) -&gt; X + 3DES(M) -&gt; ELGamal(X + 3DES(M))<ul>
+<li>M: message</li>
+<li>X: a session encryption key</li>
+<li>User recipient’s ELGamal’s public key to encrypt X + 3DES(M)</li>
+<li>ELGamal is based no the Diffie-Hellman public-key exchange algorithm</li>
+</ul>
+</li>
+<li><strong>Radix-64</strong> is used to convert the ciphertext to ACSII format</li>
+<li>Basic tool that permits widespread use of S&#x2F;MIME is the <strong>public-key certificate</strong></li>
+<li>S&#x2F;MIMNE uses certificates that conform to the international standard X.509.3</li>
+</ul>
+<h2 id="Signed-and-Clear-signed-Data"><a href="#Signed-and-Clear-signed-Data" class="headerlink" title="Signed and Clear-signed Data"></a>Signed and Clear-signed Data</h2><ul>
+<li>Signed data -&gt; Base64(content + sig)</li>
+<li>Clear-signed data -&gt; content + Base674(sig)</li>
+<li>DSS(SHA-1(MEssage), DSS-private-key)</li>
+<li>RSA(SHA-1&#x2F;MD5(Message), RSA-private-key)</li>
+<li><strong>Radix-64 or Base64</strong> mapping is used to map the signature and message into printable ASCII characters</li>
+</ul>
+<h1 id="DomainKeys-Identified-Mail-DKIM"><a href="#DomainKeys-Identified-Mail-DKIM" class="headerlink" title="DomainKeys Identified Mail (DKIM)"></a>DomainKeys Identified Mail (DKIM)</h1><ul>
+<li>A specification of cryptographically signing e-mail messages</li>
+<li>A proposed Internet standard</li>
+</ul>
+<h2 id="Internet-Mail-Architecture"><a href="#Internet-Mail-Architecture" class="headerlink" title="Internet Mail Architecture"></a>Internet Mail Architecture</h2><ul>
+<li>User world: MUA</li>
+<li>Transfer world: MHS<ul>
+<li>Composed of MTAs</li>
+</ul>
+</li>
+<li><img src="https://i.imgur.com/QGcBAS8.png" width="60%"/></li>
+</ul>
+<h2 id="Why-DKIM"><a href="#Why-DKIM" class="headerlink" title="Why DKIM"></a>Why DKIM</h2><ul>
+<li>An email authentication technique that is transparent to the end user</li>
+<li>Reasons<ul>
+<li>S&#x2F;MIME depends on both the sending and receiving users employing S&#x2F;MIME<ul>
+<li>But, the bulk of incoming mail does not use S&#x2F;MIME</li>
+<li><strong>S&#x2F;MIME signs only the message content</strong><ul>
+<li>Header information concerning origin can be compromised</li>
+</ul>
+</li>
+<li>Applied to all mail from cooperating domains</li>
+<li><strong>Preventing forgers from masquerading as good senders</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Simple-Example-of-DKIM-Deployment"><a href="#Simple-Example-of-DKIM-Deployment" class="headerlink" title="Simple Example of DKIM Deployment"></a>Simple Example of DKIM Deployment</h2><ul>
+<li>DNS &#x3D; domain name system</li>
+<li>MDA &#x3D; mail delivery agent</li>
+<li>MSA &#x3D; mail submission agent</li>
+<li>MTA &#x3D; message transfer agent</li>
+<li>MUA &#x3D; message user agent<img src="https://i.imgur.com/JX8yM8c.png" width="60%"/></li>
+</ul>
+<h1 id="Secure-Sockets-Layer-SSL-and-Transport-Layer-Security-TLS"><a href="#Secure-Sockets-Layer-SSL-and-Transport-Layer-Security-TLS" class="headerlink" title="Secure Sockets Layer (SSL) and Transport Layer Security (TLS)"></a>Secure Sockets Layer (SSL) and Transport Layer Security (TLS)</h1><ul>
+<li>Secure Socket Layer (SSL)<ul>
+<li>One of the most widely used security services</li>
+</ul>
+</li>
+<li>Transport Layer Security (TLS)<ul>
+<li>Becoming Internet standard RFC4346</li>
+<li>General-purpose service: as a set of protocols that rely on TCP</li>
+<li>Two implementation choices<ul>
+<li>As part of the underlying protocol suite: transparent to apps</li>
+<li>Be embedded in specific packages: e.g., most browsers come equipped with SSL</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="SSL-x2F-TLS-Protocol-Stack"><a href="#SSL-x2F-TLS-Protocol-Stack" class="headerlink" title="SSL&#x2F;TLS Protocol Stack"></a>SSL&#x2F;TLS Protocol Stack</h2><ul>
+<li><img src="https://i.imgur.com/cV2D1ER.png" width="60%"/></li>
+</ul>
+<h2 id="TLS-Concepts"><a href="#TLS-Concepts" class="headerlink" title="TLS Concepts"></a>TLS Concepts</h2><ul>
+<li>TLS Connection<ul>
+<li>A transport (in the OSI layering model definition) that provides a suitable type of service</li>
+<li>Peer-to-peer relationships</li>
+<li>Transient (暫時的)</li>
+<li>Every connection is associated with one session</li>
+</ul>
+</li>
+<li>TLS Session<ul>
+<li>An association between a client and a server</li>
+<li>Created by the <strong>handshake protocol</strong></li>
+<li><strong>Define a set of cryptographic security parameters</strong></li>
+<li>Used to avoid the expensive negotiation of new security parameters for each connection</li>
+</ul>
+</li>
+</ul>
+<h2 id="TLS-Record-Protocol-Operation"><a href="#TLS-Record-Protocol-Operation" class="headerlink" title="TLS Record Protocol Operation"></a>TLS Record Protocol Operation</h2><ul>
+<li><img src="https://i.imgur.com/tsZPibK.png" width="60%"/></li>
+</ul>
+<h2 id="Handshake-Protocol"><a href="#Handshake-Protocol" class="headerlink" title="Handshake Protocol"></a>Handshake Protocol</h2><ul>
+<li>TLS 最複雜的部份</li>
+<li><strong>Is used before any application data are transmitted</strong></li>
+<li>Authenticate each other -&gt; Negotiate encryption and MAC algorithms -&gt; Negotiate cyrptographic keys to be used</li>
+<li>Exchanges has four phases</li>
+</ul>
+<h2 id="Handshake-Protocol-Action-1-phase-1-amp-2"><a href="#Handshake-Protocol-Action-1-phase-1-amp-2" class="headerlink" title="Handshake Protocol Action 1 (phase 1 &amp; 2)"></a>Handshake Protocol Action 1 (phase 1 &amp; 2)</h2><img src="https://i.imgur.com/zgyfypi.png" width="60%"/>
+
+<h2 id="Handshake-Protocol-Action-2-phase-3-amp-4"><a href="#Handshake-Protocol-Action-2-phase-3-amp-4" class="headerlink" title="Handshake Protocol Action 2 (phase 3 &amp; 4)"></a>Handshake Protocol Action 2 (phase 3 &amp; 4)</h2><img src="https://i.imgur.com/Nfv18KU.png" width="60%"/>
+
+<h2 id="ClientHello-RFC"><a href="#ClientHello-RFC" class="headerlink" title="ClientHello (RFC)"></a>ClientHello (RFC)</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">   ProtocolVersion client_version;</span><br><span class="line">   Random random;</span><br><span class="line">   SessionID session_id;</span><br><span class="line">   CipherSuite cipher_suites &lt;<span class="number">2.</span><span class="number">.2</span>^<span class="number">16</span><span class="number">-2</span>&gt;;</span><br><span class="line">   CompressionMethod compression_methods &lt;<span class="number">1.</span><span class="number">.2</span>^<span class="number">8</span><span class="number">-1</span>&gt;;</span><br><span class="line">&#125; ClientHello;</span><br></pre></td></tr></table></figure>
+
+<h2 id="ServerHello-RFC"><a href="#ServerHello-RFC" class="headerlink" title="ServerHello (RFC)"></a>ServerHello (RFC)</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">struct</span> &#123;</span></span><br><span class="line">   ProtocolVersion server_version;</span><br><span class="line">   Random random;</span><br><span class="line">   SessionID session_id;</span><br><span class="line">   CipherSuite cipher_suite;</span><br><span class="line">   CompressionMethod compression_method;</span><br><span class="line">&#125; ServerHello;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Four-TLS-specific-protocols"><a href="#Four-TLS-specific-protocols" class="headerlink" title="Four TLS specific protocols"></a>Four TLS specific protocols</h2><ul>
+<li>Change Cipher Spec Protocol<ul>
+<li>One of four TLS specific protocols that use the TLS Record Protocol</li>
+<li>Simplest</li>
+<li>Consists of a single message which consists of a single byte with the value 1</li>
+<li>Sole purpose of this message is to <strong>cause pending state to be copied into the current state</strong></li>
+<li>Hence updating the cipher suite in use</li>
+</ul>
+</li>
+<li>Alert Protocol<ul>
+<li>Two bytes<ul>
+<li>1^st^ byte: warning (1), fatal (2)<ul>
+<li>For fatal, TLS implementation <strong>terminates</strong> the TLS connection</li>
+<li>For other TLS connections using the same TSL session, they may continue, <strong>but no new TLS connections may be established</strong></li>
+</ul>
+</li>
+<li>2^nd^: specific alert code (RFC5246-appendix)<ul>
+<li>close_notify(0), unexpected_message(10), etc</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Heartbeat Protocol<ul>
+<li>A periodic signal generated to indicate normal operation or to synchronize other parts of a system</li>
+<li>Typically used to <strong>monitor the availability of a protocol entity</strong></li>
+<li>Runs on top of the TLS Record Protocol</li>
+<li>Established during <strong>phase 1</strong> of the handshake protocol</li>
+<li>Each peer indicated whether it supports heartbeats</li>
+<li>Serves two purposes:</li>
+<li><strong>Assures the sender that the recipient is still alive</strong></li>
+<li>Generates activity across the connection <strong>during idle periods</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="SSL-x2F-TLS-Attacks"><a href="#SSL-x2F-TLS-Attacks" class="headerlink" title="SSL&#x2F;TLS Attacks"></a>SSL&#x2F;TLS Attacks</h2><img src="https://i.imgur.com/fHCcQVE.png" width="60%"/>
+
+<h2 id="The-Heartbleed-Exploit-Source-BAE-Systems"><a href="#The-Heartbleed-Exploit-Source-BAE-Systems" class="headerlink" title="The Heartbleed Exploit (Source: BAE Systems)"></a>The Heartbleed Exploit (Source: BAE Systems)</h2><img src="https://i.imgur.com/SAQRWwv.png" width="60%"/>
+
+<h1 id="HTTPS-HTTP-over-SSL-x2F-TLS"><a href="#HTTPS-HTTP-over-SSL-x2F-TLS" class="headerlink" title="HTTPS (HTTP over SSL&#x2F;TLS)"></a>HTTPS (HTTP over SSL&#x2F;TLS)</h1><ul>
+<li>Secure communication between a Web browser and a Web server</li>
+<li>Build into all modern Web browsers<ul>
+<li>Search engines do not support HTTPS</li>
+</ul>
+</li>
+<li>Connection initiation and closure<ul>
+<li>HTTP client act as TLS client</li>
+<li>TLS handshake -&gt; HTTP request</li>
+<li>Three levels: HTTP, TLS session, TCP</li>
+</ul>
+</li>
+</ul>
+<h2 id="IPSec-v-s-SSL-x2F-TLS"><a href="#IPSec-v-s-SSL-x2F-TLS" class="headerlink" title="IPSec v.s. SSL&#x2F;TLS"></a>IPSec v.s. SSL&#x2F;TLS</h2><img src="https://i.imgur.com/NLQtElg.png" width="60%"/>
+
+<h2 id="Applications-of-IPSec"><a href="#Applications-of-IPSec" class="headerlink" title="Applications of IPSec"></a>Applications of IPSec</h2><ul>
+<li>Secure branch office connectivity over the Internet</li>
+<li>Secure remote access over the Internet</li>
+<li>Establishing extranet and internet connectivity with partners</li>
+<li>Enhancing electronic commerce security</li>
+</ul>
+<h2 id="Benefits-of-IPSec"><a href="#Benefits-of-IPSec" class="headerlink" title="Benefits of IPSec"></a>Benefits of IPSec</h2><ul>
+<li>Strong security</li>
+<li>Resistant to bypass at a firewall</li>
+<li>Transparent to apps<ul>
+<li>No need to change software</li>
+</ul>
+</li>
+<li>Transparent  to end user<ul>
+<li>No need to train users on security mechanisms</li>
+</ul>
+</li>
+<li>Routing apps: prevent attackers from disrupting communications or diverting some traffic<ul>
+<li>A router advertisement from an authorized router</li>
+<li>A neighbor advertisement from an authorized router</li>
+<li>A redirect message from the router to which the initial packet was sent</li>
+<li>A routing update is nor forged</li>
+</ul>
+</li>
+<li>The Scope of IPSec<ul>
+<li>Two main functions<ul>
+<li>Encapsulating Security Payload (ESP): a combined authentication&#x2F;encryption function</li>
+<li>A key exchange function</li>
+</ul>
+</li>
+<li>VPN: both authentication and encryption are generally desired</li>
+<li>Authentication Header (AH): authentication-only function (deprecated)</li>
+</ul>
+</li>
+</ul>
+<h2 id="Security-Associations"><a href="#Security-Associations" class="headerlink" title="Security Associations"></a>Security Associations</h2><ul>
+<li>A key concept of IPSec<ul>
+<li>One-way relationship between a sender and a receiver</li>
+<li>Two-way secure exchange: two SAs are required</li>
+</ul>
+</li>
+<li>Uniquely identified by three parameters<ul>
+<li>Security parameter index (SPI)</li>
+<li>IP destination address</li>
+<li>Protocol identifier: AH or ESP</li>
+</ul>
+</li>
+<li>Characterized by the following parameters<ul>
+<li>Sequence number counter: 32-bit</li>
+<li>Sequence counter overflow: A flag -&gt; whether overflow -&gt; an auditable event</li>
+<li>Antireplay window: defining a sliding window</li>
+<li>AH information<ul>
+<li>Algorithm, keys, key lifetimes</li>
+</ul>
+</li>
+<li>ESP information<ul>
+<li>Algorithm, keys, init values, key lifetimes</li>
+</ul>
+</li>
+<li>Lifetime of this security association</li>
+<li>IPSec protocol mode: tunnel or transport</li>
+<li>Path MTU</li>
+</ul>
+</li>
+</ul>
+<h2 id="Two-IPSec-Operation-Modes"><a href="#Two-IPSec-Operation-Modes" class="headerlink" title="Two IPSec Operation Modes"></a>Two IPSec Operation Modes</h2><ul>
+<li>Transport and tunnel modes</li>
+<li><img src="https://i.imgur.com/dPmSPN6.png" width="60%"/></li>
+<li><table style="">
+  <tr>
+      <th style="font-weight: normal;">Transport Mode</th>
+      <th style="font-weight: normal;">Tunnel Mode</th>
+  </tr>
+  <tr>
+      <th style="font-weight: lighter;">Provides protection to the payload of an IP packet<br>Typically used for end-to-end communication __between two hosts__<br>ESP protects the __IP payload__ but not the IP header</th>
+      <th style="font-weight: lighter;">Provides protection to the __entire IP packet__<br>Entire original packet travels through a tunnel from one point to another<br>Used when one or both ends of a security association are a security gateway<br>Hosts on networks behind firewalls may engage in secure communications without implementing IPSec</th>
+  </tr>
+</table></li>
+</ul>
+<h2 id="Encapsulating-Security-Payload"><a href="#Encapsulating-Security-Payload" class="headerlink" title="Encapsulating Security Payload"></a>Encapsulating Security Payload</h2><ul>
+<li>Providing authentication and confidentiality services</li>
+<li><img src="https://i.imgur.com/xzPy2dV.png" width="60%"/></li>
+</ul>
+<h2 id="IPSec-AH-ESP"><a href="#IPSec-AH-ESP" class="headerlink" title="IPSec: AH + ESP"></a>IPSec: AH + ESP</h2><ul>
+<li>IP AH only<ul>
+<li><img src="https://i.imgur.com/gih8yFX.png" width="60%"/></li>
+</ul>
+</li>
+<li>IP AH + ESP<ul>
+<li>Transport mode<ul>
+<li><img src="https://i.imgur.com/KJw67Ky.png" width="60%"/></li>
+</ul>
+</li>
+<li>Tunnel mode<ul>
+<li><img src="https://i.imgur.com/xmR09TT.png" width="60%"/></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="IPv4-and-IPv6-Security"><a href="#IPv4-and-IPv6-Security" class="headerlink" title="IPv4 and IPv6 Security"></a>IPv4 and IPv6 Security</h1>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Eugene Yang
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch22/" title="[Intro. to Computer Security Course Note] Ch 22">http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch22/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/NCTU/" rel="tag"># NCTU</a>
+              <a href="/tags/note/" rel="tag"># note</a>
+              <a href="/tags/computer-security/" rel="tag"># computer security</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/06/24/20190624-ComputerSecurity-note-ch12/" rel="prev" title="[Intro. to Computer Security Course Note] Ch 12">
+                  <i class="fa fa-chevron-left"></i> [Intro. to Computer Security Course Note] Ch 12
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/06/24/20190624-ComputerSecurity-note-ch23/" rel="next" title="[Intro. to Computer Security Course Note] Ch 23">
+                  [Intro. to Computer Security Course Note] Ch 23 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eugene Yang</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">239k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">3:38</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"eugene87222","count":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

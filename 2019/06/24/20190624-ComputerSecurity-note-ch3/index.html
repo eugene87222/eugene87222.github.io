@@ -1,0 +1,767 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/image/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/image/favicon.ico">
+  <link rel="mask-icon" href="/image/favicon.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic%7CKaushan+Script:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"eugene87222.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="[Intro. to Computer Security Course Note] Ch 3">
+<meta property="og:url" content="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch3/index.html">
+<meta property="og:site_name" content="3ugeneYang.§ite">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.imgur.com/kCuOAL5.jpg">
+<meta property="og:image" content="https://i.imgur.com/4JUgWvd.jpg">
+<meta property="og:image" content="https://i.imgur.com/aS8wmR5.jpg">
+<meta property="og:image" content="https://i.imgur.com/pXvHbHR.jpg">
+<meta property="og:image" content="https://i.imgur.com/WKdF0eh.jpg">
+<meta property="og:image" content="https://i.imgur.com/gjbBlcI.jpg">
+<meta property="og:image" content="https://i.imgur.com/jmhl7HR.jpg">
+<meta property="og:image" content="https://i.imgur.com/X0fPVz2.jpg">
+<meta property="article:published_time" content="2019-06-24T11:33:38.000Z">
+<meta property="article:modified_time" content="2020-02-25T05:45:44.163Z">
+<meta property="article:author" content="Eugene Yang">
+<meta property="article:tag" content="NCTU">
+<meta property="article:tag" content="note">
+<meta property="article:tag" content="computer security">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/kCuOAL5.jpg">
+
+
+<link rel="canonical" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch3/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch3/","path":"2019/06/24/20190624-ComputerSecurity-note-ch3/","title":"[Intro. to Computer Security Course Note] Ch 3"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>[Intro. to Computer Security Course Note] Ch 3 | 3ugeneYang.§ite</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107694365-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-107694365-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">3ugeneYang.§ite</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch3-User-Authentication"><span class="nav-number">1.</span> <span class="nav-text">Ch3. User Authentication</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Definition"><span class="nav-number">2.</span> <span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Electronic-User-Authentication-Model"><span class="nav-number">3.</span> <span class="nav-text">Electronic User Authentication Model</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cornerstone"><span class="nav-number">3.1.</span> <span class="nav-text">Cornerstone</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Role-of-each-Entity"><span class="nav-number">3.2.</span> <span class="nav-text">Role of each Entity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tokens-Authenticators"><span class="nav-number">3.3.</span> <span class="nav-text">Tokens (Authenticators)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Digital-Identity-Model"><span class="nav-number">3.4.</span> <span class="nav-text">Digital Identity Model</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Password-based-Authentication"><span class="nav-number">4.</span> <span class="nav-text">Password-based Authentication</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-User-ID"><span class="nav-number">4.1.</span> <span class="nav-text">The User ID</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Attacks-x2F-Countermeasures"><span class="nav-number">4.2.</span> <span class="nav-text">Attacks &#x2F; Countermeasures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Use-of-Hashed-Passwords"><span class="nav-number">4.3.</span> <span class="nav-text">Use of Hashed Passwords</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Old-Implementation-of-UNIX-Password-Scheme"><span class="nav-number">4.4.</span> <span class="nav-text">Old Implementation of UNIX Password Scheme</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Improved-Implementation"><span class="nav-number">4.5.</span> <span class="nav-text">Improved Implementation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Password-Cracking-of-User-chosen-Passwords"><span class="nav-number">4.6.</span> <span class="nav-text">Password Cracking of User-chosen Passwords</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Modern-Approaches-for-Password-Cracking"><span class="nav-number">4.7.</span> <span class="nav-text">Modern Approaches for Password Cracking</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Major-Countermeasures"><span class="nav-number">4.8.</span> <span class="nav-text">Major Countermeasures</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Token-based-Authentication"><span class="nav-number">5.</span> <span class="nav-text">Token-based Authentication</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Memory-Cards"><span class="nav-number">5.1.</span> <span class="nav-text">Memory Cards</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Smart-Tokens"><span class="nav-number">5.2.</span> <span class="nav-text">Smart Tokens</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Most-Important-Smart-Cards"><span class="nav-number">5.3.</span> <span class="nav-text">Most Important: Smart Cards</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Biometric-Authentication"><span class="nav-number">6.</span> <span class="nav-text">Biometric Authentication</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Remote-user-Authentication"><span class="nav-number">7.</span> <span class="nav-text">Remote user Authentication</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Security-Issues-for-User-Authentication"><span class="nav-number">8.</span> <span class="nav-text">Security Issues for User Authentication</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Eugene Yang"
+      src="/image/IMG_1314.png">
+  <p class="site-author-name" itemprop="name">Eugene Yang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:eugene87222@gmail.com" title="E-Mail → mailto:eugene87222@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Eugene87222" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Eugene87222" rel="noopener" target="_blank"><i class="fa fa-paper-plane fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/eugene87222" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fab fa-facebook-square fa-fw"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/yanghc" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;yanghc" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pinterest.com/eugene87222/" title="Pinterest → https:&#x2F;&#x2F;www.pinterest.com&#x2F;eugene87222&#x2F;" rel="noopener" target="_blank"><i class="fab fa-pinterest fa-fw"></i>Pinterest</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/eugene87222" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch3/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/image/IMG_1314.png">
+      <meta itemprop="name" content="Eugene Yang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="3ugeneYang.§ite">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="[Intro. to Computer Security Course Note] Ch 3 | 3ugeneYang.§ite">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [Intro. to Computer Security Course Note] Ch 3
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2019-06-24 19:33:38" itemprop="dateCreated datePublished" datetime="2019-06-24T19:33:38+08:00">2019-06-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2020-02-25 13:45:44" itemprop="dateModified" datetime="2020-02-25T13:45:44+08:00">2020-02-25</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>7.1k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>6 mins.</span>
+    </span>
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Ch3-User-Authentication"><a href="#Ch3-User-Authentication" class="headerlink" title="Ch3. User Authentication"></a>Ch3. User Authentication</h1><hr>
+<h1 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h1><ul>
+<li>Thee process of verifying an identity claimed by or for a system entity</li>
+<li>Consist of two steps<ul>
+<li>Identification step: presenting an identifier to the security system</li>
+<li>Verification step: presenting or generating authentication info. that corroborates(鞏固) the binding between the entity and their identifier</li>
+</ul>
+</li>
+</ul>
+<h1 id="Electronic-User-Authentication-Model"><a href="#Electronic-User-Authentication-Model" class="headerlink" title="Electronic User Authentication Model"></a>Electronic User Authentication Model</h1><p><img src="https://i.imgur.com/kCuOAL5.jpg"></p>
+<h2 id="Cornerstone"><a href="#Cornerstone" class="headerlink" title="Cornerstone"></a>Cornerstone</h2><ul>
+<li>Credential<ul>
+<li>Paper credential<br>e.g., 護照那些、身分證</li>
+<li>E-authentication credential: an object or data structure<ul>
+<li>Authoritatively binds an identity (via an identifier) and (optionally) additional attributes</li>
+<li>To at least one token (or authenticator) possessed and controlled by a subscriber</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Token<ul>
+<li><strong>Something that the Claimant possess and controls is used to authenticate the Claimant’s identity</strong></li>
+<li>Typically a cryptographic module or <strong>password</strong></li>
+<li>Also named as <strong>authenticator</strong></li>
+</ul>
+</li>
+<li>Authentication establishes confidence that the Claimant has possession of an authenticator(s) bound to the credential, and (optional) the attribute values of the subscriber</li>
+<li><img src="https://i.imgur.com/4JUgWvd.jpg"></li>
+</ul>
+<h2 id="Role-of-each-Entity"><a href="#Role-of-each-Entity" class="headerlink" title="Role of each Entity"></a>Role of each Entity</h2><p><img src="https://i.imgur.com/aS8wmR5.jpg"></p>
+<h2 id="Tokens-Authenticators"><a href="#Tokens-Authenticators" class="headerlink" title="Tokens (Authenticators)"></a>Tokens (Authenticators)</h2><p>Something the individual know, possess, is, does</p>
+<h2 id="Digital-Identity-Model"><a href="#Digital-Identity-Model" class="headerlink" title="Digital Identity Model"></a>Digital Identity Model</h2><h1 id="Password-based-Authentication"><a href="#Password-based-Authentication" class="headerlink" title="Password-based Authentication"></a>Password-based Authentication</h1><h2 id="The-User-ID"><a href="#The-User-ID" class="headerlink" title="The User ID"></a>The User ID</h2><ul>
+<li><strong>Determines the user’s privileges</strong></li>
+<li>Used in discretionary access control</li>
+</ul>
+<h2 id="Attacks-x2F-Countermeasures"><a href="#Attacks-x2F-Countermeasures" class="headerlink" title="Attacks &#x2F; Countermeasures"></a>Attacks &#x2F; Countermeasures</h2><ul>
+<li>Offline dictionary attack<ul>
+<li>Obtain the system’s password file (password stored in hash value)</li>
+<li>Search for valid passwords with hash values of commonly used passwords</li>
+<li>Countermeasure:<br>prevent unauthorized access to the password file<br>intrusion detection measures to identify a compromise</li>
+</ul>
+</li>
+<li>Specific account attack<ul>
+<li>一直 try 密碼 try 到對為止，或是被 ban</li>
+</ul>
+</li>
+<li>Popular password attack<ul>
+<li>Try popular passwords against a wide range of user IDs</li>
+<li>Countermeasure:<br>inhibiting the selection by users of common passwords<br>scanning the IP addr. of auth requests and client cookies for submission patterns</li>
+</ul>
+</li>
+<li>Password guessing against single user<ul>
+<li>Gain knowledge about the account owner and password policies and use them th guess the password</li>
+<li>Countermeasure:<br>enforcement of password policies that make passwords difficult to guess</li>
+</ul>
+</li>
+<li>Workstation hijacking<ul>
+<li>Wait until a logged-in workstation is unattended</li>
+<li>Countermeasure:<br>automatically logging the workstation out after a period of inactivity</li>
+</ul>
+</li>
+<li>Exploiting user mistakes<ul>
+<li>把密碼寫在桌上、把密碼傳來傳去(Email, SNS)、用預設密碼</li>
+</ul>
+</li>
+<li>Exploiting multiple password uses<ul>
+<li>Different network devices share the same or similar password for a given user</li>
+<li>Countermeasure:<br><strong>JUST DON’T</strong></li>
+</ul>
+</li>
+<li>Password sniffing &#x2F; phishing<ul>
+<li>Passwords are transmitted without ecryption (http, ftp)</li>
+<li>Phishing web pages</li>
+<li>Countermeasure:<br>encryption, inputting passwords with trusted devices and environments</li>
+</ul>
+</li>
+</ul>
+<h2 id="Use-of-Hashed-Passwords"><a href="#Use-of-Hashed-Passwords" class="headerlink" title="Use of Hashed Passwords"></a>Use of Hashed Passwords</h2><p>A widely used password security technique<br><img src="https://i.imgur.com/pXvHbHR.jpg"></p>
+<ul>
+<li>Salt<ul>
+<li>Prevent duplicate passwords from being visible in the password file (同樣的密碼會有不同的 hash code)</li>
+<li>Greatly increases the difficulty of offline dictionary attacks</li>
+<li>Nearly impossible to find out wether a person has used the same password on multiple systems</li>
+</ul>
+</li>
+<li>2 threats<ul>
+<li>Password guessing on the machine</li>
+<li>Password guessing on another machine</li>
+</ul>
+</li>
+</ul>
+<h2 id="Old-Implementation-of-UNIX-Password-Scheme"><a href="#Old-Implementation-of-UNIX-Password-Scheme" class="headerlink" title="Old Implementation of UNIX Password Scheme"></a>Old Implementation of UNIX Password Scheme</h2><ul>
+<li>Password: up to 8 characters<ul>
+<li>Serving as the key input to DES</li>
+</ul>
+</li>
+<li>Modified DES encryption</li>
+<li>Repeated for a total of 25 encryption (slow hash function)</li>
+<li>Has been regarded as inadequate (key length is too short)</li>
+</ul>
+<h2 id="Improved-Implementation"><a href="#Improved-Implementation" class="headerlink" title="Improved Implementation"></a>Improved Implementation</h2><ul>
+<li>Recommended hash function is based on MD5<ul>
+<li>Salt: up to 48-bit</li>
+<li>Password length unlimited</li>
+<li><strong>128-bit hash value</strong> -&gt; <strong>increase overhead for cracking</strong></li>
+<li>Slowdown: an inner loop with 1000 iterations</li>
+</ul>
+</li>
+<li>Bcrypt: developed for OpenBSD based on the Blowfish symmetric block cipher<ul>
+<li>Most secure version of UNIX hash &#x2F; salt scheme</li>
+<li><strong>128-bit salt, 192-bit hash value</strong> -&gt; <strong>increase overhead for cracking</strong></li>
+<li>Configurable cost variable (number of iterations) -&gt; depends on how important the password is</li>
+</ul>
+</li>
+</ul>
+<h2 id="Password-Cracking-of-User-chosen-Passwords"><a href="#Password-Cracking-of-User-chosen-Passwords" class="headerlink" title="Password Cracking of User-chosen Passwords"></a>Password Cracking of User-chosen Passwords</h2><ul>
+<li>Traditional appoaches<ul>
+<li>Dictionary attack<ul>
+<li>Countermeasure:<br><strong>slow hash function</strong></li>
+</ul>
+</li>
+<li>Password crackers exploit that fact that people choose easily guessable passwords</li>
+<li>Rainbow table attacks<ul>
+<li><strong>Pre-compute</strong> tables with hash values for all salts</li>
+<li>Countermeasure:<br>a sufficiently <strong>large salt value and large hash length</strong></li>
+<li>Combination of brute-force and dictionary</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Modern-Approaches-for-Password-Cracking"><a href="#Modern-Approaches-for-Password-Cracking" class="headerlink" title="Modern Approaches for Password Cracking"></a>Modern Approaches for Password Cracking</h2><ul>
+<li>Complex password policy</li>
+</ul>
+<h2 id="Major-Countermeasures"><a href="#Major-Countermeasures" class="headerlink" title="Major Countermeasures"></a>Major Countermeasures</h2><ul>
+<li>Password file access control<ul>
+<li>2 mechanisms<ul>
+<li>Access control: makes the password file availble only to privileged users</li>
+<li><strong>Shadow password file (store the hash code separately)</strong></li>
+</ul>
+</li>
+<li>Vulnerabilities<ul>
+<li>Weakness in the OS that allows access to the file</li>
+<li>Accident with permissions making it readable</li>
+<li>Users with same password on other systems</li>
+<li>Weakness in physical security may provide access to backup media</li>
+<li>Sniffing network traffic</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Password selection strategies<ul>
+<li>User education</li>
+<li>Computer-generated passwords</li>
+<li>Reactive password checking<ul>
+<li>System preiodically run its own password cracker to find guessable passwords</li>
+</ul>
+</li>
+<li>Complex password policy or proactive password checker</li>
+</ul>
+</li>
+<li>Proactive password checking<ul>
+<li>Rule enforcement<ul>
+<li>But, attacker can follow the guideline to design cracker</li>
+</ul>
+</li>
+<li>Password cracker<ul>
+<li>Compile a large dictionary of <strong>bad</strong> passwords not to use</li>
+<li>But, it is <strong>space-consuming and time-consuming</strong></li>
+<li>Can we use a hash function to address the issue ? <ul>
+<li>Yes, can only reduce time</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Bloom filter: a space-efficient probabilistic data structure<ul>
+<li>Used to test whether an element is a member of a set</li>
+<li>A bit array of <em>m</em> bits, and <em>k</em> different hash functions</li>
+<li>But, <strong>false positive matches are possible</strong></li>
+<li>Space adventage: do not store the data items</li>
+</ul>
+</li>
+<li>Applied to the password checking<ul>
+<li>Used to build a table based on dictionary</li>
+<li>Check desired password against this table</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Token-based-Authentication"><a href="#Token-based-Authentication" class="headerlink" title="Token-based Authentication"></a>Token-based Authentication</h1><table style="">
+    <tr>
+        <th style="font-weight: normal;">Card Type</th>
+        <th style="font-weight: normal;">Defining Feature</th>
+        <th style="font-weight: normal;">Example</th>
+    </tr>
+    <tr>
+        <th style="font-weight: lighter;">Embossed</th>
+        <th style="font-weight: lighter;">Raised characters only, on front</th>
+        <th style="font-weight: lighter;">Old credit card</th>
+    </tr>
+    <tr>
+        <th style="font-weight: lighter;">Magnetic stripe</th>
+        <th style="font-weight: lighter;">Magnetic bar on back, characters on front</th>
+        <th style="font-weight: lighter;">Band card</th>
+    </tr>
+    <tr>
+        <th style="font-weight: lighter;">Electronic memory</th>
+        <th style="font-weight: lighter;">Electronic memory inside</th>
+        <th style="font-weight: lighter;">ATM, credit cards</th>
+    </tr>
+    <tr>
+        <th style="font-weight: lighter;">Smart Contact / Contactless</th>
+        <th style="font-weight: lighter;">Electroni memory and processor inside<br>Electronic contacts exposed on surface<br>Radio antenna embedded inside</th>
+        <th style="font-weight: lighter;">SIM card, Biometric ID card</th>
+    </tr>
+</table>
+
+<h2 id="Memory-Cards"><a href="#Memory-Cards" class="headerlink" title="Memory Cards"></a>Memory Cards</h2><ul>
+<li>Functions<ul>
+<li>Can store <strong>but do not process data</strong> (都說是 memory 了)</li>
+<li>Can include an internal electronic memory</li>
+</ul>
+</li>
+<li>Most common: the bank card with a magnetic stripe on the back</li>
+<li>Usage<ul>
+<li>Alone for physical access (e.g., hotel room)</li>
+<li>Combined with a password or PIN: provides significantly greater security</li>
+</ul>
+</li>
+<li>Drawbacks<ul>
+<li><strong>A special reader is required</strong></li>
+<li>Token loss</li>
+<li>User dissatisfaction</li>
+</ul>
+</li>
+</ul>
+<h2 id="Smart-Tokens"><a href="#Smart-Tokens" class="headerlink" title="Smart Tokens"></a>Smart Tokens</h2><ul>
+<li>Categorized along four dimensions<ul>
+<li>Physical characteristics<ul>
+<li>Include an embedded microprocessor</li>
+</ul>
+</li>
+<li>User interface</li>
+<li>Electronic interface<ul>
+<li><strong>Required by a smart card or other to communicate with a compatible reader &#x2F; writer</strong></li>
+<li>Contact: direct contact between a card reader and a conductive contact plate on the card</li>
+<li>Contactless: both the reader and the card have an antenna</li>
+</ul>
+</li>
+<li>Authentication protocol<ul>
+<li>Static<ul>
+<li>User authenticates himself or herself to the token</li>
+<li>Token authenticates the user to the computer</li>
+</ul>
+</li>
+<li>Dynamic password generator<ul>
+<li><strong>Token generates a unique password periodically (e.g., every minute)</strong></li>
+<li>Initialized and synchronized for the token and the computer</li>
+</ul>
+</li>
+<li>Challenge-response<ul>
+<li><strong>Computer generates a challenge</strong></li>
+<li><strong>Token generates a response to the challenge</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="Most-Important-Smart-Cards"><a href="#Most-Important-Smart-Cards" class="headerlink" title="Most Important: Smart Cards"></a>Most Important: Smart Cards</h2><ul>
+<li>Contains an <strong>entire microprocessor</strong><ul>
+<li>Including processor, memorym I&#x2F;O ports</li>
+</ul>
+</li>
+<li>3 types of memory<ul>
+<li>Read-only memory (ROM)</li>
+<li>Electronic erasable programmable ROM (EEPROM)</li>
+<li>Random access memory (RAM)</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://i.imgur.com/WKdF0eh.jpg"></p>
+<h1 id="Biometric-Authentication"><a href="#Biometric-Authentication" class="headerlink" title="Biometric Authentication"></a>Biometric Authentication</h1><ul>
+<li>Based on unique physical characteristics<ul>
+<li>Static: fingerprints, facial characteristics</li>
+<li>Dynamic: 聲音有的沒的</li>
+</ul>
+</li>
+<li>Relies on pattern recongnition technologies</li>
+</ul>
+<p><img src="https://i.imgur.com/gjbBlcI.jpg"></p>
+<h1 id="Remote-user-Authentication"><a href="#Remote-user-Authentication" class="headerlink" title="Remote user Authentication"></a>Remote user Authentication</h1><p>More security threats<br>General solution: challenge-response protocols<br><img src="https://i.imgur.com/jmhl7HR.jpg"><br><img src="https://i.imgur.com/X0fPVz2.jpg"></p>
+<h1 id="Security-Issues-for-User-Authentication"><a href="#Security-Issues-for-User-Authentication" class="headerlink" title="Security Issues for User Authentication"></a>Security Issues for User Authentication</h1><ul>
+<li>Client attacks: masquerade as a legitimate user<ul>
+<li>Countermeasure: strong passwords and limited attempts</li>
+</ul>
+</li>
+<li>Host attacks: steals the user file where passwords, token passcodes, or biometric templates are stored<ul>
+<li>Countermeasure: strong access control</li>
+</ul>
+</li>
+<li>Eavesdropping(竊聽)<ul>
+<li>Countermeasure: multifactor authentication and anomaly detection</li>
+</ul>
+</li>
+<li>Relay: repeats a previously captured user response<ul>
+<li>Countermeasure: a random number in challenge-response protocols</li>
+</ul>
+</li>
+<li>Trojan horse: installation of rogue cilent or capture device<ul>
+<li>Countermeasure: authentication of client or capture device within trusted security perimeter</li>
+</ul>
+</li>
+<li>Denial of service: lockout by multiple failed authentications<ul>
+<li>Countermeasure: multifactor with token</li>
+</ul>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Eugene Yang
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch3/" title="[Intro. to Computer Security Course Note] Ch 3">http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch3/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/NCTU/" rel="tag"># NCTU</a>
+              <a href="/tags/note/" rel="tag"># note</a>
+              <a href="/tags/computer-security/" rel="tag"># computer security</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/06/24/20190624-ComputerSecurity-note-ch2/" rel="prev" title="[Intro. to Computer Security Course Note] Ch 2">
+                  <i class="fa fa-chevron-left"></i> [Intro. to Computer Security Course Note] Ch 2
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/06/24/20190624-ComputerSecurity-note-ch5/" rel="next" title="[Intro. to Computer Security Course Note] Ch 5">
+                  [Intro. to Computer Security Course Note] Ch 5 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eugene Yang</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">239k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">3:38</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"eugene87222","count":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

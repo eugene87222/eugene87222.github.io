@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/image/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/image/favicon.ico">
+  <link rel="mask-icon" href="/image/favicon.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic%7CKaushan+Script:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"eugene87222.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="[Intro. to Computer Security Course Note] Ch 1">
+<meta property="og:url" content="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch1/index.html">
+<meta property="og:site_name" content="3ugeneYang.§ite">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.imgur.com/ff0Bwch.jpg">
+<meta property="og:image" content="https://i.imgur.com/EgglfHs.jpg">
+<meta property="article:published_time" content="2019-06-24T11:10:38.000Z">
+<meta property="article:modified_time" content="2020-02-25T05:45:47.761Z">
+<meta property="article:author" content="Eugene Yang">
+<meta property="article:tag" content="NCTU">
+<meta property="article:tag" content="note">
+<meta property="article:tag" content="computer security">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/ff0Bwch.jpg">
+
+
+<link rel="canonical" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch1/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch1/","path":"2019/06/24/20190624-ComputerSecurity-note-ch1/","title":"[Intro. to Computer Security Course Note] Ch 1"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>[Intro. to Computer Security Course Note] Ch 1 | 3ugeneYang.§ite</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107694365-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-107694365-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">3ugeneYang.§ite</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch1-Overview"><span class="nav-number">1.</span> <span class="nav-text">Ch1. Overview</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-Key"><span class="nav-number">2.</span> <span class="nav-text">3 Key</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Confidentiality"><span class="nav-number">2.1.</span> <span class="nav-text">Confidentiality</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Integrity"><span class="nav-number">2.2.</span> <span class="nav-text">Integrity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Availability"><span class="nav-number">2.3.</span> <span class="nav-text">Availability</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Other-2"><span class="nav-number">3.</span> <span class="nav-text">Other 2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Authenticity"><span class="nav-number">3.1.</span> <span class="nav-text">Authenticity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Accountability"><span class="nav-number">3.2.</span> <span class="nav-text">Accountability</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Model-of-Computer-Security"><span class="nav-number">4.</span> <span class="nav-text">Model of Computer Security</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Vulnerability"><span class="nav-number">4.1.</span> <span class="nav-text">Vulnerability</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Security-Concepts-x2F-Relationships"><span class="nav-number">5.</span> <span class="nav-text">Security Concepts &#x2F; Relationships</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Threats-x2F-Attacks"><span class="nav-number">6.</span> <span class="nav-text">Threats &#x2F; Attacks</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Security-Functional-Requirements"><span class="nav-number">7.</span> <span class="nav-text">Security Functional Requirements</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Technical-Measures"><span class="nav-number">7.1.</span> <span class="nav-text">Technical Measures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Management-Controls-x2F-Procedures"><span class="nav-number">7.2.</span> <span class="nav-text">Management Controls &#x2F; Procedures</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Overlapping-Technical-x2F-Management"><span class="nav-number">7.3.</span> <span class="nav-text">Overlapping Technical &#x2F; Management</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Fundamental-Security-Design"><span class="nav-number">8.</span> <span class="nav-text">Fundamental Security Design </span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Economy-of-Mechanisnm"><span class="nav-number">8.1.</span> <span class="nav-text">Economy of Mechanisnm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fail-safe-Defaults"><span class="nav-number">8.2.</span> <span class="nav-text">Fail-safe Defaults</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Complete-Mediation"><span class="nav-number">8.3.</span> <span class="nav-text">Complete Mediation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Open-Design"><span class="nav-number">8.4.</span> <span class="nav-text">Open Design</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Separation-of-Privilege"><span class="nav-number">8.5.</span> <span class="nav-text">Separation of Privilege</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Least-Privilege"><span class="nav-number">8.6.</span> <span class="nav-text">Least Privilege</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Least-Common-Mechanism"><span class="nav-number">8.7.</span> <span class="nav-text">Least Common Mechanism</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Psychological-Acceptability"><span class="nav-number">8.8.</span> <span class="nav-text">Psychological Acceptability</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Isolation"><span class="nav-number">8.9.</span> <span class="nav-text">Isolation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Encapsulation"><span class="nav-number">8.10.</span> <span class="nav-text">Encapsulation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Modularity"><span class="nav-number">8.11.</span> <span class="nav-text">Modularity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Layering"><span class="nav-number">8.12.</span> <span class="nav-text">Layering</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Least-Astonishment"><span class="nav-number">8.13.</span> <span class="nav-text">Least Astonishment</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Attack-Surfaces"><span class="nav-number">9.</span> <span class="nav-text">Attack Surfaces</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Attack-Trees"><span class="nav-number">10.</span> <span class="nav-text">Attack Trees</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Computer-Security-Strategy"><span class="nav-number">11.</span> <span class="nav-text">Computer Security Strategy</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Aspects"><span class="nav-number">11.1.</span> <span class="nav-text">3 Aspects</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Security-Policy"><span class="nav-number">11.2.</span> <span class="nav-text">Security Policy</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Security-Implementation-x2F-Assurance"><span class="nav-number">11.3.</span> <span class="nav-text">Security Implementation &#x2F; Assurance</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Eugene Yang"
+      src="/image/IMG_1314.png">
+  <p class="site-author-name" itemprop="name">Eugene Yang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:eugene87222@gmail.com" title="E-Mail → mailto:eugene87222@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Eugene87222" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Eugene87222" rel="noopener" target="_blank"><i class="fa fa-paper-plane fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/eugene87222" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fab fa-facebook-square fa-fw"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/yanghc" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;yanghc" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pinterest.com/eugene87222/" title="Pinterest → https:&#x2F;&#x2F;www.pinterest.com&#x2F;eugene87222&#x2F;" rel="noopener" target="_blank"><i class="fab fa-pinterest fa-fw"></i>Pinterest</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/eugene87222" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/image/IMG_1314.png">
+      <meta itemprop="name" content="Eugene Yang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="3ugeneYang.§ite">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="[Intro. to Computer Security Course Note] Ch 1 | 3ugeneYang.§ite">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [Intro. to Computer Security Course Note] Ch 1
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2019-06-24 19:10:38" itemprop="dateCreated datePublished" datetime="2019-06-24T19:10:38+08:00">2019-06-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2020-02-25 13:45:47" itemprop="dateModified" datetime="2020-02-25T13:45:47+08:00">2020-02-25</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>2.8k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Ch1-Overview"><a href="#Ch1-Overview" class="headerlink" title="Ch1. Overview"></a>Ch1. Overview</h1><hr>
+<h1 id="3-Key"><a href="#3-Key" class="headerlink" title="3 Key"></a>3 Key</h1><h2 id="Confidentiality"><a href="#Confidentiality" class="headerlink" title="Confidentiality"></a>Confidentiality</h2><p>Assure that private or confidential info is not disclosed to unauthorized individuals<br>Privacy: Assure that individuals control or influence what info related to them may be collectd and stored</p>
+<h2 id="Integrity"><a href="#Integrity" class="headerlink" title="Integrity"></a>Integrity</h2><p>Data integrity: info are <strong>changed only in a specified &#x2F; authorized manner</strong><br>System integrity: system performs well in an unimpaired manner</p>
+<h2 id="Availability"><a href="#Availability" class="headerlink" title="Availability"></a>Availability</h2><p>Assure that system works promptly and service is not denied to authorized users</p>
+<h1 id="Other-2"><a href="#Other-2" class="headerlink" title="Other 2"></a>Other 2</h1><h2 id="Authenticity"><a href="#Authenticity" class="headerlink" title="Authenticity"></a>Authenticity</h2><p>Property is genuine and able to be verified and trusted</p>
+<h2 id="Accountability"><a href="#Accountability" class="headerlink" title="Accountability"></a>Accountability</h2><p>Requirement for actions of an entity to <strong>be traced</strong> uniquely to that entity</p>
+<h1 id="Model-of-Computer-Security"><a href="#Model-of-Computer-Security" class="headerlink" title="Model of Computer Security"></a>Model of Computer Security</h1><h2 id="Vulnerability"><a href="#Vulnerability" class="headerlink" title="Vulnerability"></a>Vulnerability</h2><p>Weakness</p>
+<ul>
+<li>Corrupt: loss of integrity</li>
+<li>Leaky: loss of confidentiality</li>
+<li>Unavailability or very slow</li>
+</ul>
+<p>Threat<br><strong>Capable of exploiting vulnerability</strong></p>
+<p>Attack</p>
+<ul>
+<li>Passive: make use of info, but doesn’t affect system resources</li>
+<li>Active: alter system resources</li>
+<li>Inside: by an authorized user (using in a way not approved)</li>
+<li>Outside: by an unauthorized user</li>
+</ul>
+<p>Countermeasures</p>
+<h1 id="Security-Concepts-x2F-Relationships"><a href="#Security-Concepts-x2F-Relationships" class="headerlink" title="Security Concepts &#x2F; Relationships"></a>Security Concepts &#x2F; Relationships</h1><p><img src="https://i.imgur.com/ff0Bwch.jpg"></p>
+<h1 id="Threats-x2F-Attacks"><a href="#Threats-x2F-Attacks" class="headerlink" title="Threats &#x2F; Attacks"></a>Threats &#x2F; Attacks</h1><table style="">
+    <tr>
+        <th style="font-weight: normal;">Threat Consequence</th>
+        <th style="font-weight: normal;">Threat Action (Attack)</th>
+    </tr>
+    <tr>
+        <th style="font-weight: lighter;">Unauthorized Disclosure<br>- threats to confidnentiality</th>
+        <th style="font-weight: lighter;">1. Explosure<br>2. Interception<br>3. Inference (推斷)<br>4. Intrusion</th>
+    </tr>
+    <tr>
+        <th style="font-weight: lighter;">Deception<br>- threats to integrity</th>
+        <th style="font-weight: lighter;">1. Masquerade<br>2. Falsification<br>3. Repudiation (否認)</th>
+    </tr>
+    <tr>
+        <th style="font-weight: lighter;">Disruption<br>- threats to availability / system integrity</th>
+        <th style="font-weight: lighter;">1. Incapacitation<br>2. Corruption: alters system operation<br>3. Obstruction</th>
+    </tr>
+    <tr>
+        <th style="font-weight: lighter;">Usurpation (篡奪)<br>- threats to system integrity</th>
+        <th style="font-weight: lighter;">1. Misappropriation<br>2. Misuse</th>
+    </tr>
+</table>
+
+<h1 id="Security-Functional-Requirements"><a href="#Security-Functional-Requirements" class="headerlink" title="Security Functional Requirements"></a>Security Functional Requirements</h1><h2 id="Technical-Measures"><a href="#Technical-Measures" class="headerlink" title="Technical Measures"></a>Technical Measures</h2><h2 id="Management-Controls-x2F-Procedures"><a href="#Management-Controls-x2F-Procedures" class="headerlink" title="Management Controls &#x2F; Procedures"></a>Management Controls &#x2F; Procedures</h2><h2 id="Overlapping-Technical-x2F-Management"><a href="#Overlapping-Technical-x2F-Management" class="headerlink" title="Overlapping Technical &#x2F; Management"></a>Overlapping Technical &#x2F; Management</h2><h1 id="Fundamental-Security-Design"><a href="#Fundamental-Security-Design" class="headerlink" title="Fundamental Security Design "></a><a target="_blank" rel="noopener" href="http://www.informit.com/articles/article.aspx?p=30487&seqNum=2">Fundamental Security Design </a></h1><h2 id="Economy-of-Mechanisnm"><a href="#Economy-of-Mechanisnm" class="headerlink" title="Economy of Mechanisnm"></a>Economy of Mechanisnm</h2><p>Design should be as simple as possible</p>
+<h2 id="Fail-safe-Defaults"><a href="#Fail-safe-Defaults" class="headerlink" title="Fail-safe Defaults"></a>Fail-safe Defaults</h2><p>Access decisions should be based on permission rather than exclusion</p>
+<h2 id="Complete-Mediation"><a href="#Complete-Mediation" class="headerlink" title="Complete Mediation"></a>Complete Mediation</h2><p>Every access must be check against the access control mechanism</p>
+<h2 id="Open-Design"><a href="#Open-Design" class="headerlink" title="Open Design"></a>Open Design</h2><p>就把設計公開</p>
+<h2 id="Separation-of-Privilege"><a href="#Separation-of-Privilege" class="headerlink" title="Separation of Privilege"></a>Separation of Privilege</h2><p>大家的權限不一樣</p>
+<h2 id="Least-Privilege"><a href="#Least-Privilege" class="headerlink" title="Least Privilege"></a>Least Privilege</h2><h2 id="Least-Common-Mechanism"><a href="#Least-Common-Mechanism" class="headerlink" title="Least Common Mechanism"></a>Least Common Mechanism</h2><h2 id="Psychological-Acceptability"><a href="#Psychological-Acceptability" class="headerlink" title="Psychological Acceptability"></a>Psychological Acceptability</h2><p>Should not interfere unduly with the work of users or hinder the usability or accessibility of resources</p>
+<h2 id="Isolation"><a href="#Isolation" class="headerlink" title="Isolation"></a>Isolation</h2><h2 id="Encapsulation"><a href="#Encapsulation" class="headerlink" title="Encapsulation"></a>Encapsulation</h2><p>A specific form of isolation based on object-oriented functionality</p>
+<h2 id="Modularity"><a href="#Modularity" class="headerlink" title="Modularity"></a>Modularity</h2><p>就包成 module</p>
+<h2 id="Layering"><a href="#Layering" class="headerlink" title="Layering"></a>Layering</h2><p>Use of multiple,  overlapping protection approaches</p>
+<h2 id="Least-Astonishment"><a href="#Least-Astonishment" class="headerlink" title="Least Astonishment"></a>Least Astonishment</h2><h1 id="Attack-Surfaces"><a href="#Attack-Surfaces" class="headerlink" title="Attack Surfaces"></a>Attack Surfaces</h1><p><img src="https://i.imgur.com/EgglfHs.jpg"><br>Make developers aware of where security mechanisms are required</p>
+<h1 id="Attack-Trees"><a href="#Attack-Trees" class="headerlink" title="Attack Trees"></a>Attack Trees</h1><ul>
+<li>Root: the attack goal</li>
+<li>Leaf: different ways to initial an attack</li>
+<li>Each node (other than a leaf): AND &#x2F; OR node</li>
+</ul>
+<p>Why ?</p>
+<ul>
+<li>Effectively exploit the info available on attack pattern</li>
+<li>Document security attacks in a structured form that reveals key vulnerabilities</li>
+<li>Can know how to design system &#x2F; coutnermeasures</li>
+</ul>
+<h1 id="Computer-Security-Strategy"><a href="#Computer-Security-Strategy" class="headerlink" title="Computer Security Strategy"></a>Computer Security Strategy</h1><h2 id="3-Aspects"><a href="#3-Aspects" class="headerlink" title="3 Aspects"></a>3 Aspects</h2><ul>
+<li>Specification &#x2F; policy: what is the security scheme supposed to do ?</li>
+<li>Implementation &#x2F; mechanisms: how to ?</li>
+<li>Correctness &#x2F; assurance: does it work ?</li>
+</ul>
+<h2 id="Security-Policy"><a href="#Security-Policy" class="headerlink" title="Security Policy"></a>Security Policy</h2><ul>
+<li>A formal statement of rules and practices</li>
+<li>A security manager needs to consider<ul>
+<li><strong>value</strong> of assets being protected</li>
+<li><strong>vulnerabilities</strong> of the system</li>
+<li><strong>potential threats</strong> and the likehood of attacks</li>
+<li>trade-off: ease of use v.s. security</li>
+<li>trade-off: cost of security v.s. cost of failure and recovery</li>
+</ul>
+</li>
+</ul>
+<h2 id="Security-Implementation-x2F-Assurance"><a href="#Security-Implementation-x2F-Assurance" class="headerlink" title="Security Implementation &#x2F; Assurance"></a>Security Implementation &#x2F; Assurance</h2>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Eugene Yang
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch1/" title="[Intro. to Computer Security Course Note] Ch 1">http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch1/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/NCTU/" rel="tag"># NCTU</a>
+              <a href="/tags/note/" rel="tag"># note</a>
+              <a href="/tags/computer-security/" rel="tag"># computer security</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/06/17/20190617-social-psy-note-ch8/" rel="prev" title="[Social Psychology Course Note] Ch 8">
+                  <i class="fa fa-chevron-left"></i> [Social Psychology Course Note] Ch 8
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/06/24/20190624-ComputerSecurity-note-ch2/" rel="next" title="[Intro. to Computer Security Course Note] Ch 2">
+                  [Intro. to Computer Security Course Note] Ch 2 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eugene Yang</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">239k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">3:38</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"eugene87222","count":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

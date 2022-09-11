@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/image/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/image/favicon.ico">
+  <link rel="mask-icon" href="/image/favicon.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic%7CKaushan+Script:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"eugene87222.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="[Intro. to Computer Security Course Note] Ch 2">
+<meta property="og:url" content="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch2/index.html">
+<meta property="og:site_name" content="3ugeneYang.§ite">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.imgur.com/1QCQHqw.jpg">
+<meta property="og:image" content="https://i.imgur.com/btkbqin.jpg">
+<meta property="og:image" content="https://i.imgur.com/ZQnCJL4.jpg">
+<meta property="og:image" content="https://i.imgur.com/ChX8spK.jpg">
+<meta property="og:image" content="https://i.imgur.com/7bQF42O.jpg">
+<meta property="og:image" content="https://i.imgur.com/hRSFsdZ.jpg">
+<meta property="og:image" content="https://i.imgur.com/zV6G66Q.jpg">
+<meta property="og:image" content="https://i.imgur.com/ZEUIfRY.jpg">
+<meta property="og:image" content="https://i.imgur.com/poIeWKd.jpg">
+<meta property="og:image" content="https://i.imgur.com/bp1McGw.jpg">
+<meta property="og:image" content="https://i.imgur.com/TkRsil3.jpg">
+<meta property="og:image" content="https://i.imgur.com/ty5DUpW.jpg">
+<meta property="article:published_time" content="2019-06-24T11:26:04.000Z">
+<meta property="article:modified_time" content="2020-02-25T05:45:45.993Z">
+<meta property="article:author" content="Eugene Yang">
+<meta property="article:tag" content="NCTU">
+<meta property="article:tag" content="note">
+<meta property="article:tag" content="computer security">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.imgur.com/1QCQHqw.jpg">
+
+
+<link rel="canonical" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch2/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch2/","path":"2019/06/24/20190624-ComputerSecurity-note-ch2/","title":"[Intro. to Computer Security Course Note] Ch 2"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>[Intro. to Computer Security Course Note] Ch 2 | 3ugeneYang.§ite</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107694365-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-107694365-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">3ugeneYang.§ite</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch2-Cryptographic-Tools"><span class="nav-number">1.</span> <span class="nav-text">Ch2. Cryptographic Tools</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Confidentiality-with-Symmetric-Encryption"><span class="nav-number">2.</span> <span class="nav-text">Confidentiality with Symmetric Encryption</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Symmetric-Encryption"><span class="nav-number">2.1.</span> <span class="nav-text">Symmetric Encryption</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Requirements"><span class="nav-number">2.2.</span> <span class="nav-text">2 Requirements</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Attacking"><span class="nav-number">2.3.</span> <span class="nav-text">Attacking</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Symmetric-Block-Excryption-Algo"><span class="nav-number">2.4.</span> <span class="nav-text">Symmetric Block Excryption Algo.</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Practical-Security-Issues"><span class="nav-number">2.5.</span> <span class="nav-text">Practical Security Issues</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Block-x2F-Stream-Ciphers"><span class="nav-number">2.6.</span> <span class="nav-text">Block &#x2F; Stream Ciphers</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Meseage-Authentication-and-Hash-Function"><span class="nav-number">3.</span> <span class="nav-text">Meseage Authentication and Hash Function</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Major-Aspects"><span class="nav-number">3.1.</span> <span class="nav-text">2 Major Aspects</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Another-Aspect"><span class="nav-number">3.2.</span> <span class="nav-text">Another Aspect</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Can-we-use-symmetric-encryption"><span class="nav-number">3.3.</span> <span class="nav-text">Can we use symmetric encryption ?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Message-Authentication-w-x2F-o-Encrpytion-gt-Auth-tag"><span class="nav-number">3.4.</span> <span class="nav-text">Message Authentication w&#x2F;o Encrpytion -&gt; Auth. tag</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hash-Function-w-x2F-Symmetric-Encryption"><span class="nav-number">3.5.</span> <span class="nav-text">Hash Function w&#x2F; Symmetric Encryption</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hash-Function-w-x2F-Public-key-Encryption"><span class="nav-number">3.6.</span> <span class="nav-text">Hash Function w&#x2F; Public-key Encryption</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hash-Function-w-x2F-o-Encryption-Keyed-Hash-MAC"><span class="nav-number">3.7.</span> <span class="nav-text">Hash Function w&#x2F;o Encryption: Keyed Hash MAC</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Secure-Hash-Functions"><span class="nav-number">3.8.</span> <span class="nav-text">Secure Hash Functions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Security-of-Hash-Functions"><span class="nav-number">3.9.</span> <span class="nav-text">Security of Hash Functions</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Public-Key-Encryption"><span class="nav-number">4.</span> <span class="nav-text">Public-Key Encryption</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Common-Misconceptions-about-Public-key-Encryption"><span class="nav-number">4.1.</span> <span class="nav-text">3 Common Misconceptions about Public-key Encryption</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Requirements-for-Public-key-Cryptosystems"><span class="nav-number">4.2.</span> <span class="nav-text">Requirements for Public-key Cryptosystems</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Encryption-Algo-and-Applications"><span class="nav-number">4.3.</span> <span class="nav-text">Encryption Algo. and Applications</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Digital-Signatures-and-Key-Management"><span class="nav-number">5.</span> <span class="nav-text">Digital Signatures and Key Management</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Digital-Signature"><span class="nav-number">5.1.</span> <span class="nav-text">Digital Signature</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Public-key-Certificates-secure-distribution-of-public-keys"><span class="nav-number">5.2.</span> <span class="nav-text">Public-key Certificates: secure distribution of public keys</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Symmetric-Key-Exchange-using-Public-key-Encryption-temporary-key-creation-for-message-encryption"><span class="nav-number">5.3.</span> <span class="nav-text">Symmetric Key Exchange using Public-key Encryption: temporary key creation for message encryption</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Digital-Envelopes-distribution-of-secret-keys"><span class="nav-number">5.4.</span> <span class="nav-text">Digital Envelopes: distribution of secret keys</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Random-and-Pseudorandom-Numbers"><span class="nav-number">6.</span> <span class="nav-text">Random and Pseudorandom Numbers</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Distinct-Requirements-of-Random-Numbers"><span class="nav-number">6.1.</span> <span class="nav-text">2 Distinct Requirements of Random Numbers</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Eugene Yang"
+      src="/image/IMG_1314.png">
+  <p class="site-author-name" itemprop="name">Eugene Yang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:eugene87222@gmail.com" title="E-Mail → mailto:eugene87222@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Eugene87222" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Eugene87222" rel="noopener" target="_blank"><i class="fa fa-paper-plane fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/eugene87222" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fab fa-facebook-square fa-fw"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/yanghc" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;yanghc" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pinterest.com/eugene87222/" title="Pinterest → https:&#x2F;&#x2F;www.pinterest.com&#x2F;eugene87222&#x2F;" rel="noopener" target="_blank"><i class="fab fa-pinterest fa-fw"></i>Pinterest</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/eugene87222" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/image/IMG_1314.png">
+      <meta itemprop="name" content="Eugene Yang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="3ugeneYang.§ite">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="[Intro. to Computer Security Course Note] Ch 2 | 3ugeneYang.§ite">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [Intro. to Computer Security Course Note] Ch 2
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2019-06-24 19:26:04" itemprop="dateCreated datePublished" datetime="2019-06-24T19:26:04+08:00">2019-06-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2020-02-25 13:45:45" itemprop="dateModified" datetime="2020-02-25T13:45:45+08:00">2020-02-25</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>4.5k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>4 mins.</span>
+    </span>
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Ch2-Cryptographic-Tools"><a href="#Ch2-Cryptographic-Tools" class="headerlink" title="Ch2. Cryptographic Tools"></a>Ch2. Cryptographic Tools</h1><hr>
+<h1 id="Confidentiality-with-Symmetric-Encryption"><a href="#Confidentiality-with-Symmetric-Encryption" class="headerlink" title="Confidentiality with Symmetric Encryption"></a>Confidentiality with Symmetric Encryption</h1><h2 id="Symmetric-Encryption"><a href="#Symmetric-Encryption" class="headerlink" title="Symmetric Encryption"></a>Symmetric Encryption</h2><ul>
+<li>Universal technique for providing confidentiality for transmitted of stored data</li>
+<li><strong>Single-key encryption</strong></li>
+</ul>
+<h2 id="2-Requirements"><a href="#2-Requirements" class="headerlink" title="2 Requirements"></a>2 Requirements</h2><ul>
+<li>Strong encryption algo.</li>
+<li>Sender and receiver must have obtained copies of the key in a secure fashion and must keep the key secret</li>
+</ul>
+<p><img src="https://i.imgur.com/1QCQHqw.jpg"></p>
+<h2 id="Attacking"><a href="#Attacking" class="headerlink" title="Attacking"></a>Attacking</h2><ul>
+<li>Cryptanalytic attacks<ul>
+<li>Rely on<br>1. nature of algo.<br>2. <strong>general characteristics</strong> of plaintext<br>3. sample plaintext-ciphertext pairs</li>
+<li><strong>Exploit the characteristics</strong> of the algo. to deduce a specific plaintext or key</li>
+</ul>
+</li>
+<li>Brute-force attacks<ul>
+<li>On average half of all possible keys must be tried to achieve success</li>
+<li>Knowledge about the expected plaintext!</li>
+</ul>
+</li>
+</ul>
+<h2 id="Symmetric-Block-Excryption-Algo"><a href="#Symmetric-Block-Excryption-Algo" class="headerlink" title="Symmetric Block Excryption Algo."></a>Symmetric Block Excryption Algo.</h2><p><img src="https://i.imgur.com/btkbqin.jpg"></p>
+<ul>
+<li>DES Encryption Standard<ul>
+<li>Key length too short<ul>
+<li>56 bits -&gt; 2^56^ &#x3D; 7.2 x 10^16^ possible keys (很快就破了)</li>
+</ul>
+</li>
+<li>e.g. data encryption algo.</li>
+</ul>
+</li>
+<li>Triple DES (3DES)<ul>
+<li>Repeats basic DES algo. 3 times using 2 or 3 unique keys<br>(key size: 112 or 168 bits)</li>
+<li>Key length 比較長</li>
+<li>Underlying algo. is tje same as DES</li>
+<li>Drawbacks<ul>
+<li>Not effetient (3 次 DES，瘋子)</li>
+<li>64-bit block size -&gt; not effecient &#x2F; secure</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Advanced Encryption Standard (AES)<ul>
+<li>Widely available in commercial products</li>
+<li>128-bit data and 128 &#x2F; 192 &#x2F; 256 bit keys</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://i.imgur.com/ZQnCJL4.jpg"></p>
+<h2 id="Practical-Security-Issues"><a href="#Practical-Security-Issues" class="headerlink" title="Practical Security Issues"></a>Practical Security Issues</h2><ul>
+<li>Symmetric encryption: applied to a unit of data larger than a single 64-bit or 128-bit block<br>e.g., E-mail messages, network packets, database records</li>
+<li>Simplest approach: <strong>electronic codebook (ECB)</strong><ul>
+<li>Multiple-block encryption</li>
+<li>Each block of plaintext is encrypted using the same key</li>
+<li><img src="https://i.imgur.com/ChX8spK.jpg"></li>
+</ul>
+</li>
+<li>Issue: cryptanalysts may <strong>exploit regularities</strong> in the plaintext</li>
+<li>How to overcome the weakness of ECB<ul>
+<li><strong>Cipher Block Chaining (CBC)</strong></li>
+<li><img src="https://i.imgur.com/7bQF42O.jpg"></li>
+</ul>
+</li>
+</ul>
+<h2 id="Block-x2F-Stream-Ciphers"><a href="#Block-x2F-Stream-Ciphers" class="headerlink" title="Block &#x2F; Stream Ciphers"></a>Block &#x2F; Stream Ciphers</h2><ul>
+<li>Block Cipher<ul>
+<li>Can reuse key</li>
+<li>More common</li>
+<li>Usage: file transfer, e-mail, database</li>
+</ul>
+</li>
+<li>Stream Cipher<ul>
+<li>Faster (XOR), less code</li>
+<li>Usage: communication</li>
+</ul>
+</li>
+</ul>
+<h1 id="Meseage-Authentication-and-Hash-Function"><a href="#Meseage-Authentication-and-Hash-Function" class="headerlink" title="Meseage Authentication and Hash Function"></a>Meseage Authentication and Hash Function</h1><h2 id="2-Major-Aspects"><a href="#2-Major-Aspects" class="headerlink" title="2 Major Aspects"></a>2 Major Aspects</h2><ul>
+<li>Message content: not altered</li>
+<li>Message source: authentic</li>
+</ul>
+<h2 id="Another-Aspect"><a href="#Another-Aspect" class="headerlink" title="Another Aspect"></a>Another Aspect</h2><ul>
+<li>Messafe timeliness &#x2F; sequence: not artificially delayed or replayed</li>
+</ul>
+<h2 id="Can-we-use-symmetric-encryption"><a href="#Can-we-use-symmetric-encryption" class="headerlink" title="Can we use symmetric encryption ?"></a>Can we use symmetric encryption ?</h2><ul>
+<li>Not necessary. content may not need to be encrpyted</li>
+</ul>
+<h2 id="Message-Authentication-w-x2F-o-Encrpytion-gt-Auth-tag"><a href="#Message-Authentication-w-x2F-o-Encrpytion-gt-Auth-tag" class="headerlink" title="Message Authentication w&#x2F;o Encrpytion -&gt; Auth. tag"></a>Message Authentication w&#x2F;o Encrpytion -&gt; <strong>Auth. tag</strong></h2><ul>
+<li>Message authentication code (MAC)<ul>
+<li>Use a secret key to generate small block of data</li>
+<li>Assumption: two communicating parties share the secret key</li>
+<li><img src="https://i.imgur.com/hRSFsdZ.jpg"></li>
+<li>Does message authentication really need encrpytion of the message ?<ul>
+<li><strong>NO!!</strong></li>
+<li>不需要 reversible</li>
+<li>Only need a way to generate a <strong>tag which can verify message</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>One-way hash function<ul>
+<li>The hash value ensures only unaltered contents. How about authentic source ?</li>
+</ul>
+</li>
+</ul>
+<h2 id="Hash-Function-w-x2F-Symmetric-Encryption"><a href="#Hash-Function-w-x2F-Symmetric-Encryption" class="headerlink" title="Hash Function w&#x2F; Symmetric Encryption"></a>Hash Function w&#x2F; Symmetric Encryption</h2><p><img src="https://i.imgur.com/zV6G66Q.jpg"></p>
+<h2 id="Hash-Function-w-x2F-Public-key-Encryption"><a href="#Hash-Function-w-x2F-Public-key-Encryption" class="headerlink" title="Hash Function w&#x2F; Public-key Encryption"></a>Hash Function w&#x2F; Public-key Encryption</h2><p><img src="https://i.imgur.com/ZEUIfRY.jpg"></p>
+<h2 id="Hash-Function-w-x2F-o-Encryption-Keyed-Hash-MAC"><a href="#Hash-Function-w-x2F-o-Encryption-Keyed-Hash-MAC" class="headerlink" title="Hash Function w&#x2F;o Encryption: Keyed Hash MAC"></a>Hash Function w&#x2F;o Encryption: Keyed Hash MAC</h2><p><img src="https://i.imgur.com/poIeWKd.jpg"></p>
+<h2 id="Secure-Hash-Functions"><a href="#Secure-Hash-Functions" class="headerlink" title="Secure Hash Functions"></a>Secure Hash Functions</h2><ul>
+<li>Easy to compute<ul>
+<li>Making both hardware and software implementations practical</li>
+</ul>
+</li>
+<li>One-way (pre-image resistant)<ul>
+<li>For any given code <em>h</em>, it is <strong>computationally infeasible</strong> to find <em>x</em> such that <em><strong>H(x) &#x3D; h</strong></em></li>
+</ul>
+</li>
+<li>Second pre-image (weak collision) resistant<ul>
+<li><strong>For any given block <em>x</em></strong>, it is computationally infeasible to find <em>y !&#x3D; x</em> with <em>H(y) &#x3D; H(x)</em></li>
+</ul>
+</li>
+<li>Collision (strong collision) resistant<ul>
+<li>It is computationally infeasible to find <strong>any pair <em>(x, y)</em></strong> such that <em>H(y) &#x3D; H(x)</em></li>
+</ul>
+</li>
+</ul>
+<h2 id="Security-of-Hash-Functions"><a href="#Security-of-Hash-Functions" class="headerlink" title="Security of Hash Functions"></a>Security of Hash Functions</h2><ul>
+<li>2 attack approaches<ul>
+<li>Cryptanalysis<br>exploits logical weaknesses in algo.</li>
+<li>Brute-force<br>depends solely on the length of the hash code</li>
+</ul>
+</li>
+<li>Security strength against brute-force attacks<ul>
+<li>Preimage resistant: 2^n^</li>
+<li>Second preimage resistant: 2^n^</li>
+<li>Collision resistant: 2^n&#x2F;2^</li>
+</ul>
+</li>
+<li>Most widely used hash algo.: Secure Hash Algo. (SHA)</li>
+<li>Applications of hash functions<ul>
+<li>Message authentication</li>
+<li>Digital signature</li>
+<li>Passwords</li>
+<li>Intrusion detection</li>
+</ul>
+</li>
+</ul>
+<h1 id="Public-Key-Encryption"><a href="#Public-Key-Encryption" class="headerlink" title="Public-Key Encryption"></a>Public-Key Encryption</h1><p>Asymmetric algo.<br>Based on mathematical functions</p>
+<h2 id="3-Common-Misconceptions-about-Public-key-Encryption"><a href="#3-Common-Misconceptions-about-Public-key-Encryption" class="headerlink" title="3 Common Misconceptions about Public-key Encryption"></a>3 Common Misconceptions about Public-key Encryption</h2><ul>
+<li>More secure than symmetric ones</li>
+<li>A general purpose technique that has made symmetric ones obsolete</li>
+<li>Key distribution is trivial</li>
+</ul>
+<h2 id="Requirements-for-Public-key-Cryptosystems"><a href="#Requirements-for-Public-key-Cryptosystems" class="headerlink" title="Requirements for Public-key Cryptosystems"></a>Requirements for Public-key Cryptosystems</h2><ul>
+<li>Computationally easy<ul>
+<li>To create key pairs</li>
+<li>For sender knowing public key to encrypt messages</li>
+<li>For receiver knowing private key to decrypt ciphertext</li>
+</ul>
+</li>
+<li>Computationally infeasible for opponebt knowing public key<ul>
+<li>To determine private key</li>
+<li>To recover original message which is encrypted by public key</li>
+</ul>
+</li>
+</ul>
+<h2 id="Encryption-Algo-and-Applications"><a href="#Encryption-Algo-and-Applications" class="headerlink" title="Encryption Algo. and Applications"></a>Encryption Algo. and Applications</h2><p><img src="https://i.imgur.com/bp1McGw.jpg"></p>
+<ul>
+<li>RSA: widely acepted and implemented</li>
+<li>Diffie-Hellman</li>
+<li>Digital Signature Standard: 就只能處理 digital signature</li>
+<li>Elliptic Curve: offer equal security for a far smaller bit size</li>
+</ul>
+<h1 id="Digital-Signatures-and-Key-Management"><a href="#Digital-Signatures-and-Key-Management" class="headerlink" title="Digital Signatures and Key Management"></a>Digital Signatures and Key Management</h1><h2 id="Digital-Signature"><a href="#Digital-Signature" class="headerlink" title="Digital Signature"></a>Digital Signature</h2><h2 id="Public-key-Certificates-secure-distribution-of-public-keys"><a href="#Public-key-Certificates-secure-distribution-of-public-keys" class="headerlink" title="Public-key Certificates: secure distribution of public keys"></a>Public-key Certificates: secure distribution of public keys</h2><ul>
+<li>Public key distribution<ul>
+<li>Any person can release his &#x2F; her public key</li>
+<li>But, anyone can forge such a public announcement</li>
+</ul>
+</li>
+<li>Solution: public-key certificate<ul>
+<li>Certificate: a public key + a user ID of the key owner</li>
+<li>The whole block signed by a trusted third party, CA (Certificate Authority)</li>
+<li>Certificate also includes CA info. and validity period</li>
+</ul>
+</li>
+<li>X.509 standard</li>
+<li><img src="https://i.imgur.com/TkRsil3.jpg"></li>
+</ul>
+<h2 id="Symmetric-Key-Exchange-using-Public-key-Encryption-temporary-key-creation-for-message-encryption"><a href="#Symmetric-Key-Exchange-using-Public-key-Encryption-temporary-key-creation-for-message-encryption" class="headerlink" title="Symmetric Key Exchange using Public-key Encryption: temporary key creation for message encryption"></a>Symmetric Key Exchange using Public-key Encryption: temporary key creation for message encryption</h2><ul>
+<li>Diffie-Hellman key exchange<ul>
+<li>No authentication of two communicating partners</li>
+</ul>
+</li>
+</ul>
+<h2 id="Digital-Envelopes-distribution-of-secret-keys"><a href="#Digital-Envelopes-distribution-of-secret-keys" class="headerlink" title="Digital Envelopes: distribution of secret keys"></a>Digital Envelopes: distribution of secret keys</h2><p><img src="https://i.imgur.com/ty5DUpW.jpg"><br>Can also be used to deliver a symmetric key only</p>
+<h1 id="Random-and-Pseudorandom-Numbers"><a href="#Random-and-Pseudorandom-Numbers" class="headerlink" title="Random and Pseudorandom Numbers"></a>Random and Pseudorandom Numbers</h1><h2 id="2-Distinct-Requirements-of-Random-Numbers"><a href="#2-Distinct-Requirements-of-Random-Numbers" class="headerlink" title="2 Distinct Requirements of Random Numbers"></a>2 Distinct Requirements of Random Numbers</h2><ul>
+<li>Randomness<ul>
+<li>Uniform distribution (easy to verify)</li>
+<li>Independence (difficult to verify)</li>
+</ul>
+</li>
+<li>Unpredictability</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Eugene Yang
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch2/" title="[Intro. to Computer Security Course Note] Ch 2">http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch2/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/NCTU/" rel="tag"># NCTU</a>
+              <a href="/tags/note/" rel="tag"># note</a>
+              <a href="/tags/computer-security/" rel="tag"># computer security</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/06/24/20190624-ComputerSecurity-note-ch1/" rel="prev" title="[Intro. to Computer Security Course Note] Ch 1">
+                  <i class="fa fa-chevron-left"></i> [Intro. to Computer Security Course Note] Ch 1
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/06/24/20190624-ComputerSecurity-note-ch3/" rel="next" title="[Intro. to Computer Security Course Note] Ch 3">
+                  [Intro. to Computer Security Course Note] Ch 3 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eugene Yang</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">239k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">3:38</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"eugene87222","count":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

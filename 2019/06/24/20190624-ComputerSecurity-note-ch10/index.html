@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/image/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/image/favicon.ico">
+  <link rel="mask-icon" href="/image/favicon.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic%7CKaushan+Script:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"eugene87222.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta property="og:type" content="article">
+<meta property="og:title" content="[Intro. to Computer Security Course Note] Ch 10">
+<meta property="og:url" content="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch10/index.html">
+<meta property="og:site_name" content="3ugeneYang.§ite">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-06-24T11:50:36.000Z">
+<meta property="article:modified_time" content="2020-02-25T05:45:34.122Z">
+<meta property="article:author" content="Eugene Yang">
+<meta property="article:tag" content="NCTU">
+<meta property="article:tag" content="note">
+<meta property="article:tag" content="computer security">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch10/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch10/","path":"2019/06/24/20190624-ComputerSecurity-note-ch10/","title":"[Intro. to Computer Security Course Note] Ch 10"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>[Intro. to Computer Security Course Note] Ch 10 | 3ugeneYang.§ite</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107694365-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-107694365-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">3ugeneYang.§ite</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch10-Buffer-Overflow"><span class="nav-number">1.</span> <span class="nav-text">Ch10. Buffer Overflow</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Buffer-overflow-basics"><span class="nav-number">2.</span> <span class="nav-text">Buffer overflow basics</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Needs-for-the-Attacker-Exploiting-a-Buffer-Overflow"><span class="nav-number">2.1.</span> <span class="nav-text">Needs for the Attacker: Exploiting a Buffer Overflow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-Identify-Vulnerable-Programs"><span class="nav-number">2.2.</span> <span class="nav-text">How to Identify Vulnerable Programs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Why-Programs-are-not-Necessarily-Protected"><span class="nav-number">2.3.</span> <span class="nav-text">Why Programs are not Necessarily Protected</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Stack-overflows"><span class="nav-number">3.</span> <span class="nav-text">Stack overflows</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Stack-Buffer-Overflows"><span class="nav-number">3.1.</span> <span class="nav-text">Stack Buffer Overflows</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Some-Common-Unsafe-C-Standard-Library"><span class="nav-number">3.2.</span> <span class="nav-text">Some Common Unsafe C Standard Library</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Shellcode"><span class="nav-number">3.3.</span> <span class="nav-text">Shellcode</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Defending-against-buffer-overflows"><span class="nav-number">4.</span> <span class="nav-text">Defending against buffer overflows</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Other-forms-of-overflow-attacks"><span class="nav-number">5.</span> <span class="nav-text">Other forms of overflow attacks</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Replacement-stack-frame"><span class="nav-number">5.1.</span> <span class="nav-text">Replacement stack frame</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Return-to-system-call"><span class="nav-number">5.2.</span> <span class="nav-text">Return to system call</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Heap-overflows"><span class="nav-number">5.3.</span> <span class="nav-text">Heap overflows</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Global-data-area-overflows"><span class="nav-number">5.4.</span> <span class="nav-text">Global data area overflows</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Other-types-of-overflows"><span class="nav-number">5.5.</span> <span class="nav-text">Other types of overflows</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Eugene Yang"
+      src="/image/IMG_1314.png">
+  <p class="site-author-name" itemprop="name">Eugene Yang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:eugene87222@gmail.com" title="E-Mail → mailto:eugene87222@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Eugene87222" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Eugene87222" rel="noopener" target="_blank"><i class="fa fa-paper-plane fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/eugene87222" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fab fa-facebook-square fa-fw"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/yanghc" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;yanghc" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pinterest.com/eugene87222/" title="Pinterest → https:&#x2F;&#x2F;www.pinterest.com&#x2F;eugene87222&#x2F;" rel="noopener" target="_blank"><i class="fab fa-pinterest fa-fw"></i>Pinterest</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/eugene87222" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch10/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/image/IMG_1314.png">
+      <meta itemprop="name" content="Eugene Yang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="3ugeneYang.§ite">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="[Intro. to Computer Security Course Note] Ch 10 | 3ugeneYang.§ite">
+      <meta itemprop="description" content=" ">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          [Intro. to Computer Security Course Note] Ch 10
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2019-06-24 19:50:36" itemprop="dateCreated datePublished" datetime="2019-06-24T19:50:36+08:00">2019-06-24</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2020-02-25 13:45:34" itemprop="dateModified" datetime="2020-02-25T13:45:34+08:00">2020-02-25</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>5k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>5 mins.</span>
+    </span>
+</div>
+
+            <div class="post-description"> </div>
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <h1 id="Ch10-Buffer-Overflow"><a href="#Ch10-Buffer-Overflow" class="headerlink" title="Ch10. Buffer Overflow"></a>Ch10. Buffer Overflow</h1><p><strong>Buffer overrun</strong><br><strong>Buffer overwrite</strong></p>
+<hr>
+<h1 id="Buffer-overflow-basics"><a href="#Buffer-overflow-basics" class="headerlink" title="Buffer overflow basics"></a>Buffer overflow basics</h1><ul>
+<li>Programming error: a process attempts to store data <strong>beyond the limits of a fixed sized buffer</strong></li>
+</ul>
+<h2 id="Needs-for-the-Attacker-Exploiting-a-Buffer-Overflow"><a href="#Needs-for-the-Attacker-Exploiting-a-Buffer-Overflow" class="headerlink" title="Needs for the Attacker: Exploiting a Buffer Overflow"></a>Needs for the Attacker: Exploiting a Buffer Overflow</h2><ul>
+<li>To identify a buffer overflow vulnerability in some program</li>
+<li>To understand how that buffer will be stored in the process memory</li>
+</ul>
+<h2 id="How-to-Identify-Vulnerable-Programs"><a href="#How-to-Identify-Vulnerable-Programs" class="headerlink" title="How to Identify Vulnerable Programs"></a>How to Identify Vulnerable Programs</h2><ul>
+<li>Inspecting the program source</li>
+<li>Tracing the execution of programs as they process oversized input</li>
+<li>Using tools to automatically identity potentially vulnerable programs</li>
+</ul>
+<h2 id="Why-Programs-are-not-Necessarily-Protected"><a href="#Why-Programs-are-not-Necessarily-Protected" class="headerlink" title="Why Programs are not Necessarily Protected"></a>Why Programs are not Necessarily Protected</h2><ul>
+<li>Basic machine level<ul>
+<li>Data’s interpretation: entirely determined by the function of the instructions</li>
+<li>Responsibility on the assembly language programmer: ensuring that the correct interpretation is placed on any saved value</li>
+</ul>
+</li>
+<li>Assembly language programs<ul>
+<li>The greatest access to the resources</li>
+</ul>
+</li>
+<li>Modern high-level programming languages (e.g., Java, Python)<ul>
+<li>Not vulnerable to buffer overflows: flexibility and safety<ul>
+<li>More data to be saved are not allowed</li>
+</ul>
+</li>
+<li>Costs in resource use</li>
+<li>Limiting the usefulness in writing code</li>
+</ul>
+</li>
+<li>Between these two extremes: C and related languages<ul>
+<li>Have many modern high-level control structures and data type abstractions</li>
+<li>But, allow direct access to low-level resources</li>
+</ul>
+</li>
+</ul>
+<h1 id="Stack-overflows"><a href="#Stack-overflows" class="headerlink" title="Stack overflows"></a>Stack overflows</h1><h2 id="Stack-Buffer-Overflows"><a href="#Stack-Buffer-Overflows" class="headerlink" title="Stack Buffer Overflows"></a>Stack Buffer Overflows</h2><ul>
+<li>Also referred to as <strong>stack smashing</strong></li>
+</ul>
+<h2 id="Some-Common-Unsafe-C-Standard-Library"><a href="#Some-Common-Unsafe-C-Standard-Library" class="headerlink" title="Some Common Unsafe C Standard Library"></a>Some Common Unsafe C Standard Library</h2><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">gets(<span class="type">char</span> *str)</span><br><span class="line"><span class="built_in">sprintf</span>(<span class="type">char</span> *str, <span class="type">char</span> *format, ...)</span><br><span class="line"><span class="built_in">strcat</span>(<span class="type">char</span> *dest, <span class="type">char</span> *src)</span><br><span class="line"><span class="built_in">strcpy</span>(<span class="type">char</span> *dest, <span class="type">char</span> *src)</span><br><span class="line"><span class="built_in">vsprintf</span>(<span class="type">char</span> *str, <span class="type">char</span> *fmt, va_list ap)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Shellcode"><a href="#Shellcode" class="headerlink" title="Shellcode"></a>Shellcode</h2><ul>
+<li>Code supplied by the attacker<ul>
+<li><strong>Often save in buffer being overflowed</strong></li>
+<li>Traditionally transferred control to a user command-line interpreter (shell)</li>
+</ul>
+</li>
+<li>Simply machine code<ul>
+<li>Specific to processor and operating system</li>
+</ul>
+</li>
+<li>Many sites and tools have been developed that automate this process</li>
+</ul>
+<h1 id="Defending-against-buffer-overflows"><a href="#Defending-against-buffer-overflows" class="headerlink" title="Defending against buffer overflows"></a>Defending against buffer overflows</h1><ul>
+<li>Two broad defense approaches<ul>
+<li>Compile-time defenses<ul>
+<li>Aim to detect harden programs to resist attacks in <strong>new</strong> programs</li>
+<li>Choice of programming languages<ul>
+<li>Use modern high-level language</li>
+<li>Pros: not vulnerable to buffer overflow (<a href="#Why-Programs-are-not-Necessarily-Protected">上面</a>有提到)</li>
+<li>Cons: Access to some low-level instructions and hardware resources is lost (<a href="#Why-Programs-are-not-Necessarily-Protected">上面</a>有提到)</li>
+</ul>
+</li>
+<li>Safe coding techniques<ul>
+<li>C designers placed much more emphasis on space efficiency and performance considerations than on type safety<ul>
+<li>Assumed programmers would exercise due care in writing code</li>
+</ul>
+</li>
+<li>Programmers need to inspect the code and rewrite any unsafe coding</li>
+<li>Codes not only for normal successful execution<ul>
+<li><strong>But, constantly aware of how things might go wrong</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Languages extensions and use of safe libraries<ul>
+<li>Handling dynamically allocated memory: <strong>more problematic</strong><ul>
+<li><strong>The size of info. is not available at compile time</strong></li>
+</ul>
+</li>
+<li>Requiring an extension and the use of library routines<ul>
+<li>Cons:<ul>
+<li>Generally, there is a performance penalty</li>
+<li>Programs and libraries <strong>need to be recompiled with the modified compiler</strong></li>
+<li>Feasible for new OSes, but likely to <strong>have problems with third-party apps</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Stack protection mechanisms<ul>
+<li>Add function entry and exit code to check for signs of corruption<ul>
+<li>Stackguard: best known protection mechanism -&gt; a GCC compiler extension</li>
+<li>Function entry code: writing a <strong>canary value</strong> below the old frame pointer address</li>
+<li>Function exit code: checking that the <strong>canary value</strong> has not changed</li>
+<li>The <strong>canary value</strong>: unpredictable and different on different systems</li>
+<li>Cons:<ul>
+<li>All programs needing protection <strong>need to be recompiled</strong></li>
+<li>The structure of the stack frame has changed: causing problems with programs, e.g., debuggers</li>
+</ul>
+</li>
+<li>Has been used to recompiled an entire Linux distribution</li>
+</ul>
+</li>
+<li>Another variants: Stackshield and Return Address Defender (RAD)<ul>
+<li>Also GCC extension: including additional function entry and exit code</li>
+<li><strong>Do not alter</strong> the structure of the stack frame</li>
+<li>Function entry code: <strong>writing a copy of the return address to a safe region of memory</strong></li>
+<li>Function exit code: <strong>checking the return address in the stack frame against the save copy</strong></li>
+<li>Compatible with unmodified debuggers <strong>Why?</strong></li>
+<li><strong>Programs must be recompiled</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Run-time defenses<ul>
+<li>Aim to detect and abort attacks in <strong>existing</strong> programs</li>
+<li>Can be deployed as OS updates to provide protection<ul>
+<li>Compile-time approaches: <strong>usually requires recompilation of existing programs</strong></li>
+<li>Involving changes to the memory management</li>
+</ul>
+</li>
+<li>Executable Address Space Protection<ul>
+<li>Block the execution of code on the stack<ul>
+<li>Against the attacks: copying machine code into the targeted buffer and then transferring execution to it</li>
+</ul>
+</li>
+<li>Tag pages of virtual memory as being nonexecutable<ul>
+<li>Requires support from memory management unit (MMU)</li>
+<li>Long existed on SPARC used by Solaris</li>
+<li>Recent addition of the no-execute bit in the x86 family</li>
+<li>A standard feature in recent Oses</li>
+</ul>
+</li>
+<li>Cons:<ul>
+<li>Unable to support executable stack code</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Address space randomization<ul>
+<li>Manipulate location of key data structure<ul>
+<li>Stack, heap, global data</li>
+<li>Using random shift for each process</li>
+<li>Large address range on modern systems: wasting some has negligible impact</li>
+</ul>
+</li>
+<li>Randomize location of heap buffers</li>
+<li>Random location of standard library functions</li>
+</ul>
+</li>
+<li>Guard pages<ul>
+<li>Place guard pages between critical regions of memory<ul>
+<li>Flagged in MMU as illegal addresses</li>
+<li>Any attempted access aborts process</li>
+</ul>
+</li>
+<li>Further extension places guard pages between stack frames and heap buffers<ul>
+<li><strong>Cost in execution time</strong> to support the large number of page mappings necessary</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="Other-forms-of-overflow-attacks"><a href="#Other-forms-of-overflow-attacks" class="headerlink" title="Other forms of overflow attacks"></a>Other forms of overflow attacks</h1><h2 id="Replacement-stack-frame"><a href="#Replacement-stack-frame" class="headerlink" title="Replacement stack frame"></a>Replacement stack frame</h2><h2 id="Return-to-system-call"><a href="#Return-to-system-call" class="headerlink" title="Return to system call"></a>Return to system call</h2><h2 id="Heap-overflows"><a href="#Heap-overflows" class="headerlink" title="Heap overflows"></a>Heap overflows</h2><ul>
+<li>Attack buffer located in heap<ul>
+<li><strong>Typically located above program code</strong></li>
+<li>Memory is requested by programs to use in dynamic data structures (such as linked lists of records)</li>
+</ul>
+</li>
+<li>No return address<ul>
+<li>Hence no easy transfer of control</li>
+<li>May have function pointers to be exploited</li>
+<li>Or manipulate management data structure</li>
+</ul>
+</li>
+<li><strong>Defenses</strong><ul>
+<li>Making the heap non-executable</li>
+<li><strong>Randomizing the allocation</strong></li>
+</ul>
+</li>
+</ul>
+<h2 id="Global-data-area-overflows"><a href="#Global-data-area-overflows" class="headerlink" title="Global data area overflows"></a>Global data area overflows</h2><ul>
+<li><p>Attacks buffer located in global data</p>
+<ul>
+<li>Aim to overwrite function pointer later called</li>
+</ul>
+</li>
+<li><p><strong>Defenses</strong></p>
+<ul>
+<li><strong>Non executable or random</strong> global data region</li>
+<li>Move function pointers or use guard pages</li>
+</ul>
+</li>
+</ul>
+<h2 id="Other-types-of-overflows"><a href="#Other-types-of-overflows" class="headerlink" title="Other types of overflows"></a>Other types of overflows</h2>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Eugene Yang
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch10/" title="[Intro. to Computer Security Course Note] Ch 10">http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch10/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/NCTU/" rel="tag"># NCTU</a>
+              <a href="/tags/note/" rel="tag"># note</a>
+              <a href="/tags/computer-security/" rel="tag"># computer security</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/06/24/20190624-ComputerSecurity-note-ch9/" rel="prev" title="[Intro. to Computer Security Course Note] Ch 9">
+                  <i class="fa fa-chevron-left"></i> [Intro. to Computer Security Course Note] Ch 9
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/06/24/20190624-ComputerSecurity-note-ch24/" rel="next" title="[Intro. to Computer Security Course Note] Ch 24">
+                  [Intro. to Computer Security Course Note] Ch 24 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eugene Yang</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">239k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">3:38</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"eugene87222","count":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

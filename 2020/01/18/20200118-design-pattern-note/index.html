@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/image/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/image/favicon.ico">
+  <link rel="mask-icon" href="/image/favicon.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic%7CKaushan+Script:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"eugene87222.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="本篇文章為筆者在學習 design pattern 的一些筆記與摘要，並非完全原創，文章內容大多截取自維基百科與 Learning Design Pattern in 30 real-case practices系列（已取得作者同意）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Design Pattern 學習筆記">
+<meta property="og:url" content="http://eugene87222.github.io/2020/01/18/20200118-design-pattern-note/index.html">
+<meta property="og:site_name" content="3ugeneYang.§ite">
+<meta property="og:description" content="本篇文章為筆者在學習 design pattern 的一些筆記與摘要，並非完全原創，文章內容大多截取自維基百科與 Learning Design Pattern in 30 real-case practices系列（已取得作者同意）">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/9/96/Dependency_inversion.png">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/a/aa/W3sDesign_Abstract_Factory_Design_Pattern_UML.jpg">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/8/87/W3sDesign_Builder_Design_Pattern_UML.jpg">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/4/43/W3sDesign_Factory_Method_Design_Pattern_UML.jpg">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/c/c4/W3sDesign_Prototype_Design_Pattern_UML.jpg">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/e/e5/W3sDesign_Adapter_Design_Pattern_UML.jpg">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/f/fd/W3sDesign_Bridge_Design_Pattern_UML.jpg">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/6/65/W3sDesign_Composite_Design_Pattern_UML.jpg">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/8/83/W3sDesign_Decorator_Design_Pattern_UML.jpg">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/9/96/W3sDesign_Facade_Design_Pattern_UML.jpg">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/en/5/57/Example_of_Facade_design_pattern_in_UML.png">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/4/4e/W3sDesign_Flyweight_Design_Pattern_UML.jpg">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/6/6e/W3sDesign_Proxy_Design_Pattern_UML.jpg">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/6/6a/W3sDesign_Chain_of_Responsibility_Design_Pattern_UML.jpg">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/c/c8/W3sDesign_Command_Design_Pattern_UML.jpg">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/3/33/W3sDesign_Interpreter_Design_Pattern_UML.jpg">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/c/c5/W3sDesign_Iterator_Design_Pattern_UML.jpg">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/9/92/W3sDesign_Mediator_Design_Pattern_UML.jpg">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/3/38/W3sDesign_Memento_Design_Pattern_UML.jpg">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/0/01/W3sDesign_Observer_Design_Pattern_UML.jpg">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/e/ec/W3sDesign_State_Design_Pattern_UML.jpg">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/4/45/W3sDesign_Strategy_Design_Pattern_UML.jpg">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/2/2a/W3sDesign_Template_Method_Design_Pattern_UML.jpg">
+<meta property="og:image" content="https://upload.wikimedia.org/wikipedia/commons/0/00/W3sDesign_Visitor_Design_Pattern_UML.jpg">
+<meta property="article:published_time" content="2020-01-18T09:25:34.000Z">
+<meta property="article:modified_time" content="2022-04-09T08:56:10.821Z">
+<meta property="article:author" content="Eugene Yang">
+<meta property="article:tag" content="note">
+<meta property="article:tag" content="design pattern">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://upload.wikimedia.org/wikipedia/commons/9/96/Dependency_inversion.png">
+
+
+<link rel="canonical" href="http://eugene87222.github.io/2020/01/18/20200118-design-pattern-note/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://eugene87222.github.io/2020/01/18/20200118-design-pattern-note/","path":"2020/01/18/20200118-design-pattern-note/","title":"Design Pattern 學習筆記"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Design Pattern 學習筆記 | 3ugeneYang.§ite</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107694365-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-107694365-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">3ugeneYang.§ite</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#S-O-L-I-D"><span class="nav-number">1.</span> <span class="nav-text">S.O.L.I.D.</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Single-responsibility-principle-SRP"><span class="nav-number">1.1.</span> <span class="nav-text">Single responsibility principle (SRP)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-open-closed-principle-OCP"><span class="nav-number">1.2.</span> <span class="nav-text">The open closed principle (OCP)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Liskov-Substitution-Principle-LSP"><span class="nav-number">1.3.</span> <span class="nav-text">Liskov Substitution Principle (LSP)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Interface-Segregation-Principle-ISP"><span class="nav-number">1.4.</span> <span class="nav-text">Interface Segregation Principle    (ISP)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dependency-inversion-principle-DIP"><span class="nav-number">1.5.</span> <span class="nav-text">Dependency inversion principle (DIP)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SOLID-%E4%B9%8B%E5%A4%96%E7%9A%84-Least-Knowledge-Principle"><span class="nav-number">1.6.</span> <span class="nav-text">SOLID 之外的 Least Knowledge Principle</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GoF-%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F"><span class="nav-number">2.</span> <span class="nav-text">GoF 設計模式</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Creational-design-patterns"><span class="nav-number">2.1.</span> <span class="nav-text">Creational design patterns</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstract-Factory"><span class="nav-number">2.1.1.</span> <span class="nav-text">Abstract Factory</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%83%85%E5%A2%83%EF%BC%88from-ithome%EF%BC%89"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">情境（from ithome）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A8%AD%E8%A8%88"><span class="nav-number">2.1.1.2.</span> <span class="nav-text">設計</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#From-wiki"><span class="nav-number">2.1.1.3.</span> <span class="nav-text">From wiki</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Builder"><span class="nav-number">2.1.2.</span> <span class="nav-text">Builder</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%83%85%E5%A2%83%EF%BC%88from-ithome%EF%BC%89-1"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">情境（from ithome）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A8%AD%E8%A8%88-1"><span class="nav-number">2.1.2.2.</span> <span class="nav-text">設計</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#From-wiki-1"><span class="nav-number">2.1.2.3.</span> <span class="nav-text">From wiki</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Factory-Method"><span class="nav-number">2.1.3.</span> <span class="nav-text">Factory Method</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#From-wiki-2"><span class="nav-number">2.1.3.1.</span> <span class="nav-text">From wiki</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Prototype"><span class="nav-number">2.1.4.</span> <span class="nav-text">Prototype</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%83%85%E5%A2%83%EF%BC%88from-ithome%EF%BC%89-2"><span class="nav-number">2.1.4.1.</span> <span class="nav-text">情境（from ithome）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A8%AD%E8%A8%88-2"><span class="nav-number">2.1.4.2.</span> <span class="nav-text">設計</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#From-wiki-3"><span class="nav-number">2.1.4.3.</span> <span class="nav-text">From wiki</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Singleton"><span class="nav-number">2.1.5.</span> <span class="nav-text">Singleton</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%83%85%E5%A2%83%EF%BC%88from-ithome%EF%BC%89-3"><span class="nav-number">2.1.5.1.</span> <span class="nav-text">情境（from ithome）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#From-wiki-4"><span class="nav-number">2.1.5.2.</span> <span class="nav-text">From wiki</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Structural-design-patterns"><span class="nav-number">2.2.</span> <span class="nav-text">Structural design patterns</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Adapter"><span class="nav-number">2.2.1.</span> <span class="nav-text">Adapter</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%83%85%E5%A2%83%EF%BC%88from-ithome%EF%BC%89-4"><span class="nav-number">2.2.1.1.</span> <span class="nav-text">情境（from ithome）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A8%AD%E8%A8%88-3"><span class="nav-number">2.2.1.2.</span> <span class="nav-text">設計</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#From-wiki-5"><span class="nav-number">2.2.1.3.</span> <span class="nav-text">From wiki</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bridge"><span class="nav-number">2.2.2.</span> <span class="nav-text">Bridge</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%83%85%E5%A2%83%EF%BC%88from-ithome%EF%BC%89-5"><span class="nav-number">2.2.2.1.</span> <span class="nav-text">情境（from ithome）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A8%AD%E8%A8%88-4"><span class="nav-number">2.2.2.2.</span> <span class="nav-text">設計</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#From-wiki-6"><span class="nav-number">2.2.2.3.</span> <span class="nav-text">From wiki</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Composite"><span class="nav-number">2.2.3.</span> <span class="nav-text">Composite</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%83%85%E5%A2%83%EF%BC%88from-ithome%EF%BC%89-6"><span class="nav-number">2.2.3.1.</span> <span class="nav-text">情境（from ithome）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#From-wiki-7"><span class="nav-number">2.2.3.2.</span> <span class="nav-text">From wiki</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Decorator"><span class="nav-number">2.2.4.</span> <span class="nav-text">Decorator</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%83%85%E5%A2%83%EF%BC%88from-ithome%EF%BC%89-7"><span class="nav-number">2.2.4.1.</span> <span class="nav-text">情境（from ithome）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A8%AD%E8%A8%88-5"><span class="nav-number">2.2.4.2.</span> <span class="nav-text">設計</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#From-wiki-8"><span class="nav-number">2.2.4.3.</span> <span class="nav-text">From wiki</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Facade"><span class="nav-number">2.2.5.</span> <span class="nav-text">Facade</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%83%85%E5%A2%83%EF%BC%88from-ithome%EF%BC%89-8"><span class="nav-number">2.2.5.1.</span> <span class="nav-text">情境（from ithome）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A8%AD%E8%A8%88-6"><span class="nav-number">2.2.5.2.</span> <span class="nav-text">設計</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#From-wiki-9"><span class="nav-number">2.2.5.3.</span> <span class="nav-text">From wiki</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Flyweight"><span class="nav-number">2.2.6.</span> <span class="nav-text">Flyweight</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%83%85%E5%A2%83%EF%BC%88from-ithome%EF%BC%89-9"><span class="nav-number">2.2.6.1.</span> <span class="nav-text">情境（from ithome）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A8%AD%E8%A8%88-7"><span class="nav-number">2.2.6.2.</span> <span class="nav-text">設計</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#From-wiki-10"><span class="nav-number">2.2.6.3.</span> <span class="nav-text">From wiki</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Proxy"><span class="nav-number">2.2.7.</span> <span class="nav-text">Proxy</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%83%85%E5%A2%83%EF%BC%88from-ithome%EF%BC%89-10"><span class="nav-number">2.2.7.1.</span> <span class="nav-text">情境（from ithome）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A8%AD%E8%A8%88-8"><span class="nav-number">2.2.7.2.</span> <span class="nav-text">設計</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Proxy-%E5%92%8C-Adapter-%E7%9A%84%E5%B7%AE%E7%95%B0%EF%BC%88from-ithome%EF%BC%89"><span class="nav-number">2.2.7.3.</span> <span class="nav-text">Proxy 和 Adapter 的差異（from ithome）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#From-wiki-11"><span class="nav-number">2.2.7.4.</span> <span class="nav-text">From wiki</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Behavioral-design-patterns"><span class="nav-number">2.3.</span> <span class="nav-text">Behavioral design patterns</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Chain-of-responsibility"><span class="nav-number">2.3.1.</span> <span class="nav-text">Chain of responsibility</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%83%85%E5%A2%83%EF%BC%88from-ithome%EF%BC%89-11"><span class="nav-number">2.3.1.1.</span> <span class="nav-text">情境（from ithome）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A8%AD%E8%A8%88-9"><span class="nav-number">2.3.1.2.</span> <span class="nav-text">設計</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#From-wiki-12"><span class="nav-number">2.3.1.3.</span> <span class="nav-text">From wiki</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Command"><span class="nav-number">2.3.2.</span> <span class="nav-text">Command</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A8%AD%E8%A8%88-10"><span class="nav-number">2.3.2.1.</span> <span class="nav-text">設計</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#From-wiki-13"><span class="nav-number">2.3.2.2.</span> <span class="nav-text">From wiki</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Interpreter"><span class="nav-number">2.3.3.</span> <span class="nav-text">Interpreter</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%83%85%E5%A2%83%EF%BC%88from-ithome%EF%BC%89-12"><span class="nav-number">2.3.3.1.</span> <span class="nav-text">情境（from ithome）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A8%AD%E8%A8%88-11"><span class="nav-number">2.3.3.2.</span> <span class="nav-text">設計</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#From-wiki-14"><span class="nav-number">2.3.3.3.</span> <span class="nav-text">From wiki</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Iterator"><span class="nav-number">2.3.4.</span> <span class="nav-text">Iterator</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%83%85%E5%A2%83%EF%BC%88from-ithome%EF%BC%89-13"><span class="nav-number">2.3.4.1.</span> <span class="nav-text">情境（from ithome）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#From-wiki-15"><span class="nav-number">2.3.4.2.</span> <span class="nav-text">From wiki</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mediator"><span class="nav-number">2.3.5.</span> <span class="nav-text">Mediator</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%83%85%E5%A2%83%EF%BC%88from-ithome%EF%BC%89-14"><span class="nav-number">2.3.5.1.</span> <span class="nav-text">情境（from ithome）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A8%AD%E8%A8%88-12"><span class="nav-number">2.3.5.2.</span> <span class="nav-text">設計</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#From-wiki-16"><span class="nav-number">2.3.5.3.</span> <span class="nav-text">From wiki</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Memento"><span class="nav-number">2.3.6.</span> <span class="nav-text">Memento</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%83%85%E5%A2%83%EF%BC%88from-ithome%EF%BC%89-15"><span class="nav-number">2.3.6.1.</span> <span class="nav-text">情境（from ithome）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A8%AD%E8%A8%88-13"><span class="nav-number">2.3.6.2.</span> <span class="nav-text">設計</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#From-wiki-17"><span class="nav-number">2.3.6.3.</span> <span class="nav-text">From wiki</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Observer"><span class="nav-number">2.3.7.</span> <span class="nav-text">Observer</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#From-wiki-18"><span class="nav-number">2.3.7.1.</span> <span class="nav-text">From wiki</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#State"><span class="nav-number">2.3.8.</span> <span class="nav-text">State</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%83%85%E5%A2%83%EF%BC%88from-ithome%EF%BC%89-16"><span class="nav-number">2.3.8.1.</span> <span class="nav-text">情境（from ithome）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A8%AD%E8%A8%88-14"><span class="nav-number">2.3.8.2.</span> <span class="nav-text">設計</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#From-wiki-19"><span class="nav-number">2.3.8.3.</span> <span class="nav-text">From wiki</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Strategy"><span class="nav-number">2.3.9.</span> <span class="nav-text">Strategy</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%83%85%E5%A2%83%EF%BC%88from-ithome%EF%BC%89-17"><span class="nav-number">2.3.9.1.</span> <span class="nav-text">情境（from ithome）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A8%AD%E8%A8%88-15"><span class="nav-number">2.3.9.2.</span> <span class="nav-text">設計</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#From-wiki-20"><span class="nav-number">2.3.9.3.</span> <span class="nav-text">From wiki</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Template"><span class="nav-number">2.3.10.</span> <span class="nav-text">Template</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%83%85%E5%A2%83%EF%BC%88from-ithome%EF%BC%89-18"><span class="nav-number">2.3.10.1.</span> <span class="nav-text">情境（from ithome）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A8%AD%E8%A8%88-16"><span class="nav-number">2.3.10.2.</span> <span class="nav-text">設計</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#From-wiki-21"><span class="nav-number">2.3.10.3.</span> <span class="nav-text">From wiki</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Visitor"><span class="nav-number">2.3.11.</span> <span class="nav-text">Visitor</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%83%85%E5%A2%83%EF%BC%88from-ithome%EF%BC%89-19"><span class="nav-number">2.3.11.1.</span> <span class="nav-text">情境（from ithome）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A8%AD%E8%A8%88-17"><span class="nav-number">2.3.11.2.</span> <span class="nav-text">設計</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#From-wiki-22"><span class="nav-number">2.3.11.3.</span> <span class="nav-text">From wiki</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E5%8F%83%E8%80%83%E8%B3%87%E6%BA%90%E3%80%81%E7%B6%B2%E7%AB%99"><span class="nav-number">3.</span> <span class="nav-text">一些參考資源、網站</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Eugene Yang"
+      src="/image/IMG_1314.png">
+  <p class="site-author-name" itemprop="name">Eugene Yang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:eugene87222@gmail.com" title="E-Mail → mailto:eugene87222@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Eugene87222" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Eugene87222" rel="noopener" target="_blank"><i class="fa fa-paper-plane fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/eugene87222" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fab fa-facebook-square fa-fw"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/yanghc" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;yanghc" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pinterest.com/eugene87222/" title="Pinterest → https:&#x2F;&#x2F;www.pinterest.com&#x2F;eugene87222&#x2F;" rel="noopener" target="_blank"><i class="fab fa-pinterest fa-fw"></i>Pinterest</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/eugene87222" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2020/01/18/20200118-design-pattern-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/image/IMG_1314.png">
+      <meta itemprop="name" content="Eugene Yang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="3ugeneYang.§ite">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Design Pattern 學習筆記 | 3ugeneYang.§ite">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Design Pattern 學習筆記
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-01-18 17:25:34" itemprop="dateCreated datePublished" datetime="2020-01-18T17:25:34+08:00">2020-01-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-04-09 16:56:10" itemprop="dateModified" datetime="2022-04-09T16:56:10+08:00">2022-04-09</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>19k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>18 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>本篇文章為筆者在學習 design pattern 的一些筆記與摘要，並非完全原創，文章內容大多截取自<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Design_Patterns">維基百科</a>與 <a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/users/20103220/ironman/1343">Learning Design Pattern in 30 real-case practices系列</a>（已取得作者同意）<span id="more"></span>。</p>
+<p><a href="#GoF-%E8%A8%AD%E8%A8%88%E6%A8%A1%E5%BC%8F">GoF 設計模式</a>裡面的各種 pattern 主要會以下列形式介紹：</p>
+<pre><code>Pattern 名稱
+- 情境
+    （擷取自 ithome 系列文）
+- 設計
+    （擷取自 ithome 系列文、wiki，自己的想法）
+- From wiki
+    （擷取自 wiki）
+- wiki 上面的 UML
+- Reference 來源
+</code></pre>
+<h1 id="S-O-L-I-D"><a href="#S-O-L-I-D" class="headerlink" title="S.O.L.I.D."></a>S.O.L.I.D.</h1><h2 id="Single-responsibility-principle-SRP"><a href="#Single-responsibility-principle-SRP" class="headerlink" title="Single responsibility principle (SRP)"></a>Single responsibility principle (SRP)</h2><ul>
+<li>A class should have only one reason to change.</li>
+<li>__每個物件，不管是類別、函數，負責的功能，都應該只做一件事__。對函數而言，一個函數內，同時做了兩件以上的事情。當發生錯誤時，很難快速定位錯誤的原因。另外，也容易間接導至程式碼的可閱讀性降低。</li>
+</ul>
+<blockquote>
+<p>Reference:<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10191955">SOLID 之 單一職責原則（Single responsibility principle）</a><br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10191553">09. 物件導向設計原則—SOLID</a></p>
+</blockquote>
+<h2 id="The-open-closed-principle-OCP"><a href="#The-open-closed-principle-OCP" class="headerlink" title="The open closed principle (OCP)"></a>The open closed principle (OCP)</h2><ul>
+<li>Software entities (class, modules, functions, etc.) <strong>should be open for extension, but closed for modification</strong>.</li>
+<li>優點：降低修改風險；只有新增程式碼，舊有程式因為沒修改，所以理論上問題當然會比較少。</li>
+<li>潛在問題：擴展的情境並不一定在設計階段就會發現，常常要到了需求調整才會知道</li>
+</ul>
+<blockquote>
+<p>Reference:<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10192105">SOLID 之 開關原則（Open-Close principle）</a></p>
+</blockquote>
+<h2 id="Liskov-Substitution-Principle-LSP"><a href="#Liskov-Substitution-Principle-LSP" class="headerlink" title="Liskov Substitution Principle (LSP)"></a>Liskov Substitution Principle (LSP)</h2><ul>
+<li><strong>Subtypes must be substitutable for their base types</strong>.</li>
+<li>假設繼承實作並且 override 的時候，必須先思考修改內容的行為方向是否符合 parent class，如果行為不符合就意味著其實一開始就不屬於該 parent class</li>
+<li>Guide：<ul>
+<li>child class 必須完全實作 parent class 的方法</li>
+<li>child class 可以有屬於自己的屬性和方法</li>
+<li>覆寫或實作 parent class 的 method 時，參數要與 parent class 定義的一樣，或是更寬鬆。比方說：parent class 的定義是 List，child class 則可以是 List 或 Collection</li>
+<li>覆寫或實作 parent class 的 method 時，回傳結果要跟 parent class 定義的一樣，或是縮小。比方說：parent class 是回傳 List ，child class 則可以回傳 List 或 ArrayList</li>
+<li>Param type: child &gt; parent</li>
+<li>Return type: parent &gt; child</li>
+</ul>
+</li>
+<li>LSP 的目的：提高強健性</li>
+</ul>
+<blockquote>
+<p>Reference:<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10192317">SOLID 之 里氏替換原則（Liskov substitution principle）</a><br><a target="_blank" rel="noopener" href="https://medium.com/@f40507777/%E9%87%8C%E6%B0%8F%E6%9B%BF%E6%8F%9B%E5%8E%9F%E5%89%87-liskov-substitution-principle-adc1650ada53">里氏替換原則 Liskov Substitution Principle (LSP)</a> </p>
+</blockquote>
+<h2 id="Interface-Segregation-Principle-ISP"><a href="#Interface-Segregation-Principle-ISP" class="headerlink" title="Interface Segregation Principle    (ISP)"></a>Interface Segregation Principle    (ISP)</h2><ul>
+<li>Clients should not be forced to depend on methods that they do not use.<blockquote>
+<p>直譯：「客戶不應該被強迫依賴他們不使用的方法」</p>
+</blockquote>
+</li>
+<li>優點：在需要多型時，會比較容易為 class 實作對應的 method</li>
+</ul>
+<blockquote>
+<p>Reference:<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10192464">SOLID 之 介面隔離原則（Interface segregation principle）</a></p>
+</blockquote>
+<h2 id="Dependency-inversion-principle-DIP"><a href="#Dependency-inversion-principle-DIP" class="headerlink" title="Dependency inversion principle (DIP)"></a>Dependency inversion principle (DIP)</h2><ul>
+<li>High-level modules should not depend on low-level modules. Both should depend on abstractions.</li>
+<li>Abstractions should not depend on details. Details should depend on abstractions.</li>
+</ul>
+<blockquote>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/9/96/Dependency_inversion.png"><br>from <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E4%BE%9D%E8%B5%96%E5%8F%8D%E8%BD%AC%E5%8E%9F%E5%88%99">wiki</a></p>
+</blockquote>
+<blockquote>
+<p>Reference:<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10192844">SOLID 之 依賴反轉原則（Dependency inversion principle）</a></p>
+</blockquote>
+<h2 id="SOLID-之外的-Least-Knowledge-Principle"><a href="#SOLID-之外的-Least-Knowledge-Principle" class="headerlink" title="SOLID 之外的 Least Knowledge Principle"></a>SOLID 之外的 Least Knowledge Principle</h2><ul>
+<li>Each unit should have only limited knowledge about other units: only units “closely” related to the current unit.</li>
+</ul>
+<blockquote>
+<p>Reference<br>[不在 SOLID 裡的 最小知識原則（Least Knowledge Principle）(<a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10193110">https://ithelp.ithome.com.tw/articles/10193110</a>)</p>
+</blockquote>
+<h1 id="GoF-設計模式"><a href="#GoF-設計模式" class="headerlink" title="GoF 設計模式"></a>GoF 設計模式</h1><h2 id="Creational-design-patterns"><a href="#Creational-design-patterns" class="headerlink" title="Creational design patterns"></a>Creational design patterns</h2><h3 id="Abstract-Factory"><a href="#Abstract-Factory" class="headerlink" title="Abstract Factory"></a>Abstract Factory</h3><h4 id="情境（from-ithome）"><a href="#情境（from-ithome）" class="headerlink" title="情境（from ithome）"></a>情境（from <a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10194363">ithome</a>）</h4><blockquote>
+<p>As a 開發人員<br>I want 建立一個 Interface 來讓開發人員建立各資料庫連線物件<br>So that 避免在多個程式碼區塊放入建立資料庫連線的細節，降低耦合度</p>
+</blockquote>
+<h4 id="設計"><a href="#設計" class="headerlink" title="設計"></a>設計</h4><ul>
+<li>讓工廠類別（Factory Class）去做建立物件的細節，至於使用者只要使用 Factory 去建立需要的物件，不需要知道物件怎麼建立的，或是細節</li>
+<li>常用的工廠模式：<ul>
+<li>Static factory（兩種使用方式）<ul>
+<li>藉由參數來選擇要建立哪種連線（例如底下的 Create 方法）（<a target="_blank" rel="noopener" href="https://github.com/KarateJB/DesignPattern.Sample/tree/master/Python/Samples/Factory">參考範例</a>）</li>
+<li>直接呼叫對應的方法（例如底下的 CreateDataMart &#x2F; CreateHistory &#x2F; CreateOnline 方法）（<a target="_blank" rel="noopener" href="https://github.com/KarateJB/DesignPattern.Sample/tree/master/Python/Samples/Factory">參考範例</a>）</li>
+</ul>
+</li>
+<li>Abstract factory<ul>
+<li>建立一個抽象工廠，再各自建立擴充的工廠來覆寫它</li>
+<li><em><strong>跟 Strategy 相關 ??</strong></em></li>
+</ul>
+</li>
+<li>Generic factory</li>
+</ul>
+</li>
+</ul>
+<h4 id="From-wiki"><a href="#From-wiki" class="headerlink" title="From wiki"></a>From <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Abstract_factory_pattern">wiki</a></h4><p>The abstract factory pattern provides a way to <strong>encapsulate a group of individual factories that have a common theme without specifying their concrete classes</strong>. In normal usage, the client software creates a concrete implementation of the abstract factory and then uses the generic interface of the factory to create the concrete objects that are part of the theme. <strong>The client doesn’t know (or care) which concrete objects it gets from each of these internal factories, since it uses only the generic interfaces of their products</strong>. This pattern separates the details of implementation of a set of objects from their general usage and relies on object composition, as <strong>object creation is implemented in methods exposed in the factory interface</strong>.</p>
+<blockquote>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/a/aa/W3sDesign_Abstract_Factory_Design_Pattern_UML.jpg"><br>from <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Abstract_factory_pattern">wiki</a></p>
+</blockquote>
+<blockquote>
+<p>Reference:<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10194363">DBA說換資料庫的帳號密碼，結果我花了一天改連線資訊$#&amp;@#! (Factory 工廠模式) </a></p>
+</blockquote>
+<hr>
+<h3 id="Builder"><a href="#Builder" class="headerlink" title="Builder"></a>Builder</h3><h4 id="情境（from-ithome）-1"><a href="#情境（from-ithome）-1" class="headerlink" title="情境（from ithome）"></a>情境（from <a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10194814">ithome</a>）</h4><blockquote>
+<p>As a 公司入口網站產品經理<br>I want 各BU在公司入口網站首頁看到屬於部門之資訊<br>So that 讓主管及同仁能迅速掌握資訊，並達到各部門之差異化。</p>
+</blockquote>
+<h4 id="設計-1"><a href="#設計-1" class="headerlink" title="設計"></a>設計</h4><ul>
+<li>建造者模式包含了以下元素：<ul>
+<li>Builder（建造者）：負責建造</li>
+<li>Director（總監）：請建造者依序執行建造的動作</li>
+</ul>
+</li>
+<li>假設入口網站包含了”報表”及”員工請假資訊”，而各 BU 看到的報表類型或哪些員工（介於多少職等）請假要列出來的條件皆不一樣。（<a target="_blank" rel="noopener" href="https://github.com/KarateJB/DesignPattern.Sample/tree/master/Python/Samples/Builder">參考範例</a>）</li>
+<li>和 Factory 的差別<ul>
+<li>初看 Builder 會很難抓到使用的時機，因為 Factory 可以解決大部分的 Creational 需求。</li>
+</ul>
+</li>
+</ul>
+<h4 id="From-wiki-1"><a href="#From-wiki-1" class="headerlink" title="From wiki"></a>From <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Builder_pattern">wiki</a></h4><p>The intent of the Builder design pattern is to <strong>separate the construction of a complex object from its representation</strong>. By doing so the same construction process can create different representations.</p>
+<blockquote>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/8/87/W3sDesign_Builder_Design_Pattern_UML.jpg"><br>from <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Builder_pattern">wiki</a></p>
+</blockquote>
+<blockquote>
+<p>Reference:<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10194814">為什麼裝潢師傅做出來的不是我想要的? 你需要… (Builder 建造者模式)</a></p>
+</blockquote>
+<hr>
+<h3 id="Factory-Method"><a href="#Factory-Method" class="headerlink" title="Factory Method"></a>Factory Method</h3><h4 id="From-wiki-2"><a href="#From-wiki-2" class="headerlink" title="From wiki"></a>From <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Factory_method_pattern">wiki</a></h4><p>In class-based programming, the factory method pattern is a creational pattern that uses factory methods to deal with the problem of <strong>creating objects without having to specify the exact class of the object that will be created</strong>. This is done by creating objects by calling a factory method—either specified in an interface and implemented by child classes, or implemented in a base class and optionally overridden by derived classes—rather than by calling a constructor.</p>
+<blockquote>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/4/43/W3sDesign_Factory_Method_Design_Pattern_UML.jpg"><br>from <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Factory_method_pattern">wiki</a></p>
+</blockquote>
+<blockquote>
+<p>Reference:<br><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Factory_method_pattern#Python">參考範例</a></p>
+</blockquote>
+<hr>
+<h3 id="Prototype"><a href="#Prototype" class="headerlink" title="Prototype"></a>Prototype</h3><h4 id="情境（from-ithome）-2"><a href="#情境（from-ithome）-2" class="headerlink" title="情境（from ithome）"></a>情境（from <a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10194600">ithome</a>）</h4><blockquote>
+<p>As a 系統使用者<br>I want 降低查詢線上交易報表的回應時間<br>So that 提高作業效率</p>
+</blockquote>
+<h4 id="設計-2"><a href="#設計-2" class="headerlink" title="設計"></a>設計</h4><ul>
+<li>原型模式有更深層的意義在於<ul>
+<li>儲放原型</li>
+<li>方便的調用原型複製（Clone）功能</li>
+</ul>
+</li>
+</ul>
+<h4 id="From-wiki-3"><a href="#From-wiki-3" class="headerlink" title="From wiki"></a>From <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Prototype_pattern">wiki</a></h4><p>The prototype pattern is a creational design pattern in software development. It is used <strong>when the type of objects to create is determined by a prototypical instance</strong>, which is cloned to produce new objects. This pattern is used to:</p>
+<ul>
+<li><strong>avoid subclasses of an object creator in the client application</strong>, like the factory method pattern does.</li>
+<li><strong>avoid the inherent cost of creating a new object in the standard way</strong> (e.g., using the ‘new’ keyword) when it is prohibitively expensive for a given application.</li>
+</ul>
+<blockquote>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/W3sDesign_Prototype_Design_Pattern_UML.jpg"><br>from <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Prototype_pattern">wiki</a></p>
+</blockquote>
+<blockquote>
+<p>Reference:<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10194600">收到一筆要建立複製人軍隊的訂單怎麼辦? (Prototype 原型模式)</a></p>
+</blockquote>
+<hr>
+<h3 id="Singleton"><a href="#Singleton" class="headerlink" title="Singleton"></a>Singleton</h3><h4 id="情境（from-ithome）-3"><a href="#情境（from-ithome）-3" class="headerlink" title="情境（from ithome）"></a>情境（from <a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10196899">ithome</a>）</h4><blockquote>
+<p>As a 業務副總<br>I want 在明天的新產品線上預購活動，讓預購客戶取得一個唯一的預購號碼，而且要在產品發表會螢幕上打上線上預購的數目。<br>So that 由這個成功的產品發表會來增加產品曝光率</p>
+</blockquote>
+<h4 id="From-wiki-4"><a href="#From-wiki-4" class="headerlink" title="From wiki"></a>From <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Singleton_pattern">wiki</a></h4><p>In software engineering, the singleton pattern is a software design pattern that <strong>restricts the instantiation of a class to one “single” instance</strong>. This is useful when exactly one object is needed to coordinate actions across the system.</p>
+<blockquote>
+<p>Reference:<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10196899">別再因為發號碼牌重複被客訴! (Singleton 單例模式)</a></p>
+</blockquote>
+<hr>
+<h2 id="Structural-design-patterns"><a href="#Structural-design-patterns" class="headerlink" title="Structural design patterns"></a>Structural design patterns</h2><h3 id="Adapter"><a href="#Adapter" class="headerlink" title="Adapter"></a>Adapter</h3><h4 id="情境（from-ithome）-4"><a href="#情境（from-ithome）-4" class="headerlink" title="情境（from ithome）"></a>情境（from <a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10194158">ithome</a>）</h4><blockquote>
+<p>As a 資料分析者<br>I want 系統可以介接 XX 店家二代卡機傳回來的 EDI 並整理資料後存放在資料庫<br>So that 我們可以在資料庫做進一步客戶分析  </p>
+</blockquote>
+<h4 id="設計-3"><a href="#設計-3" class="headerlink" title="設計"></a>設計</h4><ul>
+<li>通過轉換已經存在類別的接口以適應而不改變它</li>
+<li>Adapter 分成兩種：<ul>
+<li>繼承（Class way）</li>
+<li>組合（Object way）</li>
+</ul>
+</li>
+<li>__Adapter 就像出國旅行用的萬用轉接頭__，負責將電器的插頭（來源）轉換成插座（Adaptee）可以用的模式。 來源只統一用 Adapter 這個接口，而不管細節</li>
+</ul>
+<h4 id="From-wiki-5"><a href="#From-wiki-5" class="headerlink" title="From wiki"></a>From <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Adapter_pattern">wiki</a></h4><p>In software engineering, the adapter pattern is a software design pattern (also known as wrapper, an alternative naming shared with the decorator pattern) that <strong>allows the interface of an existing class to be used as another interface</strong>. It is often used to <strong>make existing classes work with others without modifying their source code</strong>.</p>
+<blockquote>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/W3sDesign_Adapter_Design_Pattern_UML.jpg"><br>from <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Adapter_pattern">wiki</a></p>
+</blockquote>
+<blockquote>
+<p>Reference:<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10194158">江湖走跳，轉接頭很重要! (Adapter 適配器模式)</a></p>
+</blockquote>
+<hr>
+<h3 id="Bridge"><a href="#Bridge" class="headerlink" title="Bridge"></a>Bridge</h3><h4 id="情境（from-ithome）-5"><a href="#情境（from-ithome）-5" class="headerlink" title="情境（from ithome）"></a>情境（from <a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10193914">ithome</a>）</h4><blockquote>
+<p>As a 建立訂單的秘書<br>I want 可以在同一介面上依據各供應商、產品和是否急件列印不同格式的訂單<br>So that 秘書可以不必因為上述之差異而到處 KEY 重複的資料</p>
+</blockquote>
+<h4 id="設計-4"><a href="#設計-4" class="headerlink" title="設計"></a>設計</h4><ol>
+<li>分離 Abstraction 及 Implementor，使兩者可獨立變化</li>
+<li>在 run time 設定 Abstraction 裡的 Implementor</li>
+</ol>
+<ul>
+<li><strong>Strategy 屬於行為模式（Behavioral design patterns）</strong></li>
+<li>__Bridge 屬於結構型模式（Structural design patterns）__，它將抽象和實做解耦合，使兩者可獨立的變化</li>
+</ul>
+<h4 id="From-wiki-6"><a href="#From-wiki-6" class="headerlink" title="From wiki"></a>From <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Bridge_pattern">wiki</a></h4><p>The bridge pattern is a design pattern used in software engineering that is meant to <strong>decouple an abstraction from its implementation so that the two can vary independently</strong>, introduced by the Gang of Four. The bridge uses encapsulation, aggregation, and can use inheritance to separate responsibilities into different classes.</p>
+<blockquote>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/W3sDesign_Bridge_Design_Pattern_UML.jpg"><br>from <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Bridge_pattern">wiki</a></p>
+</blockquote>
+<blockquote>
+<p>Reference:<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10193914">橋來橋去! 以需求大化小，小化無(抽象)為目標! (Bridge 橋接模式)</a></p>
+</blockquote>
+<hr>
+<h3 id="Composite"><a href="#Composite" class="headerlink" title="Composite"></a>Composite</h3><h4 id="情境（from-ithome）-6"><a href="#情境（from-ithome）-6" class="headerlink" title="情境（from ithome）"></a>情境（from <a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10195044">ithome</a>）</h4><blockquote>
+<p>As a 人資經理<br>I want 系統可以帶出任一單位的組織圖<br>So that 可以讓老闆容易了解目前組織架構</p>
+</blockquote>
+<h4 id="From-wiki-7"><a href="#From-wiki-7" class="headerlink" title="From wiki"></a>From <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Composite_pattern">wiki</a></h4><p>In software engineering, the composite pattern is a partitioning design pattern. The composite pattern describes a group of objects that are treated the same way as a single instance of the same type of object. <strong>The intent of a composite is to “compose” objects into tree structures to represent part-whole hierarchies</strong>. Implementing the composite pattern lets clients treat individual objects and compositions uniformly.</p>
+<p>Composite <strong>should be used when clients ignore the difference between compositions of objects and individual objects</strong>. If programmers find that they are using multiple objects in the same way, and often have nearly identical code to handle each of them, then composite is a good choice; it is less complex in this situation to treat primitives and composites as homogeneous.</p>
+<blockquote>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/6/65/W3sDesign_Composite_Design_Pattern_UML.jpg"><br>from <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Composite_pattern">wiki</a></p>
+</blockquote>
+<blockquote>
+<p>Reference:<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10195044">老闆最大的興趣：異動組織! 但是下個月又調回來了… (Composite 組合模式)</a></p>
+</blockquote>
+<hr>
+<h3 id="Decorator"><a href="#Decorator" class="headerlink" title="Decorator"></a>Decorator</h3><h4 id="情境（from-ithome）-7"><a href="#情境（from-ithome）-7" class="headerlink" title="情境（from ithome）"></a>情境（from <a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10195207">ithome</a>）</h4><blockquote>
+<p>As a 物流部秘書<br>I want 報價單系統可以在標準運費上加上其他服務費：加點&#x2F;假日運送&#x2F;延遲費”並費用最大化<br>So that 配合成本轉嫁客戶之策略，節首公司之支出</p>
+</blockquote>
+<h4 id="設計-5"><a href="#設計-5" class="headerlink" title="設計"></a>設計</h4><ul>
+<li>在不繼承原有類別情況下，對原類別加強或新增功能</li>
+</ul>
+<h4 id="From-wiki-8"><a href="#From-wiki-8" class="headerlink" title="From wiki"></a>From <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Decorator_pattern">wiki</a></h4><p>In object-oriented programming, the decorator pattern is a design pattern that <strong>allows behavior to be added to an individual object, dynamically, without affecting the behavior of other objects from the same class</strong>. The decorator pattern is often useful for adhering to the Single Responsibility Principle, as it allows functionality to be divided between classes with unique areas of concern. The decorator pattern is <strong>structurally nearly identical to the chain of responsibility pattern</strong>, the difference being that in a chain of responsibility, exactly one of the classes handles the request, while for the decorator, all classes handle the request.</p>
+<blockquote>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/8/83/W3sDesign_Decorator_Design_Pattern_UML.jpg"><br>from <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Decorator_pattern">wiki</a></p>
+</blockquote>
+<blockquote>
+<p>Reference:<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10195207">標準永遠有例外! 但是千萬不要以為自己可以改標準… (Decorator 裝飾者模式)</a></p>
+</blockquote>
+<hr>
+<h3 id="Facade"><a href="#Facade" class="headerlink" title="Facade"></a>Facade</h3><h4 id="情境（from-ithome）-8"><a href="#情境（from-ithome）-8" class="headerlink" title="情境（from ithome）"></a>情境（from <a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10193671">ithome</a>）</h4><blockquote>
+<p>As a 資料分析者<br>I want 使用者在執行任一系統功能時，系統可以同時記錄使用記錄在文字檔和資料庫<br>So that 我們可以知道使用者何時使用了該功能和次數</p>
+</blockquote>
+<h4 id="設計-6"><a href="#設計-6" class="headerlink" title="設計"></a>設計</h4><ul>
+<li>封裝商業邏輯並提供簡單介面，以達到易使用、可讀性、減少依賴的目的</li>
+</ul>
+<h4 id="From-wiki-9"><a href="#From-wiki-9" class="headerlink" title="From wiki"></a>From <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Facade_pattern">wiki</a></h4><p>The facade pattern (also spelled façade) is a software-design pattern commonly used in object-oriented programming. Analogous to a facade in architecture, a facade is an object that serves as a front-facing interface masking more complex underlying or structural code.</p>
+<p>A facade can:</p>
+<ul>
+<li>improve the readability and usability of a software library by <strong>masking interaction with more complex components behind a single (and often simplified) API</strong></li>
+<li>provide a context-specific interface to more generic functionality (complete with context-specific input validation)</li>
+<li>serve as a launching point for a broader refactor of monolithic or tightly-coupled systems in favor of more loosely-coupled code</li>
+</ul>
+<p><strong>Developers often use the facade design pattern when a system is very complex or difficult to understand</strong> because the system has a large number of interdependent classes or because its source code is unavailable. <strong>This pattern hides the complexities of the larger system and provides a simpler interface to the client</strong>.</p>
+<blockquote>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/9/96/W3sDesign_Facade_Design_Pattern_UML.jpg"><br>from <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Facade_pattern">wiki</a></p>
+</blockquote>
+<blockquote>
+<p><img src="https://upload.wikimedia.org/wikipedia/en/5/57/Example_of_Facade_design_pattern_in_UML.png"><br>from <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Facade_pattern">wiki</a></p>
+</blockquote>
+<blockquote>
+<p>ReferenceL<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10193671">不用看書就會，但不一定會唸的… (Facade 外觀模式)</a></p>
+</blockquote>
+<hr>
+<h3 id="Flyweight"><a href="#Flyweight" class="headerlink" title="Flyweight"></a>Flyweight</h3><h4 id="情境（from-ithome）-9"><a href="#情境（from-ithome）-9" class="headerlink" title="情境（from ithome）"></a>情境（from <a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10195427">ithome</a>）</h4><blockquote>
+<p>As a 公司官網管理者<br>I want 產品頁面可以更快速的顯示(&lt;&#x3D;2.0Sec)<br>So that 瀏覽者有好的使用者體驗</p>
+</blockquote>
+<h4 id="設計-7"><a href="#設計-7" class="headerlink" title="設計"></a>設計</h4><ul>
+<li>Flyweight 使用的時機如下：<ul>
+<li>__共享對像會頻繁的建立__，而且每次建立需耗費可觀的資源</li>
+<li>共享對像適合為獨立且輕量的的小元素，且不會由本身來改變其狀態和資料</li>
+<li>提供介面讓外部程式改變其狀態和資料</li>
+</ul>
+</li>
+<li>網站的暫存資料很適合將其作為 Flyweight 物件存放並共享給整個網站使用，因為暫存資料一般有以下特性：<ul>
+<li><strong>變動性小</strong></li>
+<li>因資料共用性，一般習慣將暫存以小範圍管理之方式建立</li>
+</ul>
+</li>
+<li>注意 Flyweight 為 Structural design pattern 而非 Creational design pattern，它通常會搭配 Factory，由工廠提供資料，而 Flyweight 提供一個共享的結構。</li>
+</ul>
+<h4 id="From-wiki-10"><a href="#From-wiki-10" class="headerlink" title="From wiki"></a>From <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Flyweight_pattern">wiki</a></h4><p>A flyweight is an object that <strong>minimizes memory usage by sharing as much data as possible with other similar objects</strong>; it is a way to use objects in large numbers when a simple repeated representation would use an unacceptable amount of memory. Often some parts of the object state can be shared, and it is common practice to hold them in external data structures and pass them to the objects temporarily when they are used.</p>
+<blockquote>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/W3sDesign_Flyweight_Design_Pattern_UML.jpg"><br>from <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Flyweight_pattern">wiki</a></p>
+</blockquote>
+<blockquote>
+<p>Reference:<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10195427">程式碼也需要瘦身! (Flyweight 享元模式)</a></p>
+</blockquote>
+<hr>
+<h3 id="Proxy"><a href="#Proxy" class="headerlink" title="Proxy"></a>Proxy</h3><h4 id="情境（from-ithome）-10"><a href="#情境（from-ithome）-10" class="headerlink" title="情境（from ithome）"></a>情境（from <a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10195625">ithome</a>）</h4><blockquote>
+<p>As a 物流部秘書<br>I want 報價單系統可以在其他服務費加上更多彈性：</p>
+<ul>
+<li>加點: 若單趟載超過兩個點，第三個點開始每加一點加收總價*20%</li>
+<li>延遲費: 超過兩小時後的時間，改為每小時NTD$1,000</li>
+</ul>
+<p>So that 業務可在大單採原來之計價，但小單則採新制</p>
+</blockquote>
+<h4 id="設計-8"><a href="#設計-8" class="headerlink" title="設計"></a>設計</h4><ul>
+<li>What problems can the Proxy design pattern solve?<ul>
+<li>The access to an object should be controlled.</li>
+<li>Additional functionality should be provided when accessing an object.</li>
+</ul>
+</li>
+</ul>
+<h4 id="Proxy-和-Adapter-的差異（from-ithome）"><a href="#Proxy-和-Adapter-的差異（from-ithome）" class="headerlink" title="Proxy 和 Adapter 的差異（from ithome）"></a>Proxy 和 Adapter 的差異（from <a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10195625">ithome</a>）</h4><ul>
+<li>Adapter<ul>
+<li>特性：<ul>
+<li>提供不同的介面，而主程式依賴於實體 Adapter 類別</li>
+<li>當套用 Adapter 時，<strong>主程式使用的介面會改變</strong></li>
+</ul>
+</li>
+<li>使用時機：<ul>
+<li>__在不改變原始介面下__，提供不同的介面讓主程式可以使用原介面的功能</li>
+<li>目的在於__適應__，不改變原功能的目的</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Proxy<ul>
+<li>特性：<ul>
+<li>提供相同的介面，讓主程式依賴於抽象</li>
+<li><strong>主程式使用的介面和方式不會改變</strong></li>
+</ul>
+</li>
+<li>使用時機：<ul>
+<li>在不改變主程式的行為下，讓代理完成其它實作類別的功能</li>
+<li>目的在於__控制__，可__加強或改變原功能的目的__</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="From-wiki-11"><a href="#From-wiki-11" class="headerlink" title="From wiki"></a>From <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Proxy_pattern">wiki</a></h4><p>A proxy, in its most general form, is a class functioning as an interface to something else. The proxy could interface to anything: a network connection, a large object in memory, a file, or some other resource that is expensive or impossible to duplicate. In short, a proxy is a wrapper or agent object that is being called by the client to access the real serving object behind the scenes. Use of the proxy can simply be forwarding to the real object, or can provide additional logic. In the proxy, extra functionality can be provided, for example caching when operations on the real object are resource intensive, or checking preconditions before operations on the real object are invoked. For the client, usage of a proxy object is similar to using the real object, because both implement the same interface.</p>
+<blockquote>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/6/6e/W3sDesign_Proxy_Design_Pattern_UML.jpg"><br>from <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Proxy_pattern">wiki</a></p>
+</blockquote>
+<blockquote>
+<p>Reference:<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10195625">老闆說給客戶的報價要有彈性! 但是只能多算不能少算! (Proxy 代理模式)</a></p>
+</blockquote>
+<hr>
+<h2 id="Behavioral-design-patterns"><a href="#Behavioral-design-patterns" class="headerlink" title="Behavioral design patterns"></a>Behavioral design patterns</h2><h3 id="Chain-of-responsibility"><a href="#Chain-of-responsibility" class="headerlink" title="Chain of responsibility"></a>Chain of responsibility</h3><h4 id="情境（from-ithome）-11"><a href="#情境（from-ithome）-11" class="headerlink" title="情境（from ithome）"></a>情境（from <a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10193451">ithome</a>）</h4><blockquote>
+<p>As a 產品經理<br>I want 多國語系介面<br>So that 顯示使用者對應的語系內容</p>
+</blockquote>
+<h4 id="設計-9"><a href="#設計-9" class="headerlink" title="設計"></a>設計</h4><ul>
+<li>根據條件來定義一個有責任的接收者，以處理一個請求或將其轉發給鏈上的下一個接收者（如果有的話）</li>
+<li>chain 上的接收者可以選擇直接丟給下一個適合的接收者，或是選擇做事再判斷適合的接收者後往後丟</li>
+</ul>
+<h4 id="From-wiki-12"><a href="#From-wiki-12" class="headerlink" title="From wiki"></a>From <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern">wiki</a></h4><p>In object-oriented design, the chain-of-responsibility pattern is a design pattern <strong>consisting of a source of command objects and a series of processing objects</strong>. Each processing object contains logic that defines the types of command objects that it can handle; the rest are passed to the next processing object in the chain.</p>
+<blockquote>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/6/6a/W3sDesign_Chain_of_Responsibility_Design_Pattern_UML.jpg"><br>from <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Chain-of-responsibility_pattern">wiki</a></p>
+</blockquote>
+<blockquote>
+<p>Reference:<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10193451">職場第一條規則：事情不要接了傻傻做，而是要交給負責的人! (Chain of Responsibility 職責鍊模式)</a></p>
+</blockquote>
+<hr>
+<h3 id="Command"><a href="#Command" class="headerlink" title="Command"></a>Command</h3><h4 id="設計-10"><a href="#設計-10" class="headerlink" title="設計"></a>設計</h4><ul>
+<li>何時適合用 Command 呢？<ul>
+<li>當需要執行多個對象</li>
+<li>且對象需要抽換策略和抽換執行策略的邏輯</li>
+</ul>
+</li>
+</ul>
+<h4 id="From-wiki-13"><a href="#From-wiki-13" class="headerlink" title="From wiki"></a>From <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Command_pattern">wiki</a></h4><p>Four terms always associated with the command pattern are <strong>command, receiver, invoker and client</strong>. A command object knows about receiver and invokes a method of the receiver. Values for parameters of the receiver method are stored in the command. The receiver object to execute these methods is also stored in the command object by aggregation. The receiver then does the work when the execute() method in command is called. An invoker object knows how to execute a command, and optionally does bookkeeping about the command execution. The invoker does not know anything about a concrete command, it knows only about the command interface. Invoker object(s), command objects and receiver objects are held by a client object, the client decides which receiver objects it assigns to the command objects, and which commands it assigns to the invoker. The client decides which commands to execute at which points. To execute a command, it passes the command object to the invoker object.</p>
+<blockquote>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/c/c8/W3sDesign_Command_Design_Pattern_UML.jpg"><br>from <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Command_pattern">wiki</a></p>
+</blockquote>
+<blockquote>
+<p>Reference:<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10196669">讓你當一天艾森豪，來指揮諾曼地登陸作戰! (Command 命令模式)</a></p>
+</blockquote>
+<hr>
+<h3 id="Interpreter"><a href="#Interpreter" class="headerlink" title="Interpreter"></a>Interpreter</h3><h4 id="情境（from-ithome）-12"><a href="#情境（from-ithome）-12" class="headerlink" title="情境（from ithome）"></a>情境（from <a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10193177">ithome</a>）</h4><blockquote>
+<p>As a 資料分析者<br>I want 系統可以介接店家傳回來的 EDI 並整理資料後存放在資料庫<br>So that 我們可以在資料庫做進一步客戶分析</p>
+</blockquote>
+<h4 id="設計-11"><a href="#設計-11" class="headerlink" title="設計"></a>設計</h4><ul>
+<li>定義一個表示法，使用表示法來解釋（翻譯）語言中的句子</li>
+</ul>
+<h4 id="From-wiki-14"><a href="#From-wiki-14" class="headerlink" title="From wiki"></a>From <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Interpreter_pattern">wiki</a></h4><p>In computer programming, the interpreter pattern is a design pattern that specifies how to evaluate sentences in a language. <strong>The basic idea is to have a class for each symbol (terminal or nonterminal) in a specialized computer language.</strong> The syntax tree of a sentence in the language is an instance of the composite pattern and is used to evaluate (interpret) the sentence for a client.</p>
+<blockquote>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/3/33/W3sDesign_Interpreter_Design_Pattern_UML.jpg"><br>from <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Interpreter_pattern">wiki</a></p>
+</blockquote>
+<blockquote>
+<p>感覺跟 strategy 的概念有點相似，對於同一個介面個別實作細節</p>
+</blockquote>
+<blockquote>
+<p>Reference:<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10193177">雞同鴨講也可以通! (Interpreter 解譯器模式)</a></p>
+</blockquote>
+<hr>
+<h3 id="Iterator"><a href="#Iterator" class="headerlink" title="Iterator"></a>Iterator</h3><h4 id="情境（from-ithome）-13"><a href="#情境（from-ithome）-13" class="headerlink" title="情境（from ithome）"></a>情境（from <a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10196545">ithome</a>）</h4><blockquote>
+<p>As a 電商老闆<br>I want 舉辦行銷活動，購物車結帳時：  </p>
+<ul>
+<li>書籍雜誌：會員相同類別10本以上八折優惠  </li>
+<li>生活用品：會員相同品項$1,000以上九折優惠</li>
+</ul>
+<p>So that 提高網站轉換率及營收</p>
+</blockquote>
+<h4 id="From-wiki-15"><a href="#From-wiki-15" class="headerlink" title="From wiki"></a>From <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Iterator_pattern">wiki</a></h4><p>In object-oriented programming, the iterator pattern is a design pattern in which an iterator <strong>is used to traverse a container and access the container’s elements</strong>. The iterator pattern decouples algorithms from containers; in some cases, algorithms are necessarily container-specific and thus cannot be decoupled.</p>
+<blockquote>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/W3sDesign_Iterator_Design_Pattern_UML.jpg"><br>from <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Iterator_pattern">wiki</a></p>
+</blockquote>
+<blockquote>
+<p>Reference:<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10196545">你每天在用，但是可能不知道的… (Iterator 迭代器模式)</a></p>
+</blockquote>
+<hr>
+<h3 id="Mediator"><a href="#Mediator" class="headerlink" title="Mediator"></a>Mediator</h3><h4 id="情境（from-ithome）-14"><a href="#情境（from-ithome）-14" class="headerlink" title="情境（from ithome）"></a>情境（from <a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10195923">ithome</a>）</h4><blockquote>
+<p>As a 銀行行員<br>I want 計算客戶評分時，可採用</p>
+<ul>
+<li>各金融商品之評分模型但分別給與權重</li>
+<li>各金融商品之評分模型，加總後作平均</li>
+</ul>
+<p>So that 參考各模組之評分，達到KYC客戶風險評估之目的</p>
+</blockquote>
+<h4 id="設計-12"><a href="#設計-12" class="headerlink" title="設計"></a>設計</h4><ul>
+<li>在 Mediator 中定義兩種角色（各自需建立抽象及實作類別）<ul>
+<li>Colleague：合作的對象，並且透過 Mediator 與其他對像溝通</li>
+<li>Mediator：中介者，他知道所有合作的對象，並且協調這些對像協同作業</li>
+</ul>
+</li>
+</ul>
+<h4 id="From-wiki-16"><a href="#From-wiki-16" class="headerlink" title="From wiki"></a>From <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Mediator_pattern">wiki</a></h4><p>In software engineering, the mediator pattern defines an object that <strong>encapsulates how a set of objects interact</strong>. This pattern is considered to be a behavioral pattern due to the way it can alter the program’s running behavior.</p>
+<p>In object-oriented programming, programs often consist of many classes. Business logic and computation are distributed among these classes. However, as more classes are added to a program, especially during maintenance and&#x2F;or refactoring, the problem of communication between these classes may become more complex. This makes the program harder to read and maintain. Furthermore, it can become difficult to change the program, since any change may affect code in several other classes.</p>
+<p><strong>With the mediator pattern, communication between objects is encapsulated within a mediator object</strong>. Objects no longer communicate directly with each other, but instead communicate through the mediator. This reduces the dependencies between communicating objects, thereby reducing coupling. </p>
+<blockquote>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/9/92/W3sDesign_Mediator_Design_Pattern_UML.jpg"><br>from <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Mediator_pattern">wiki</a></p>
+</blockquote>
+<blockquote>
+<p>Reference:<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10195923">別再孤軍奮戰! 做好做滿第一件事情先找到能調用資源的人! (Mediator 中介者模式)</a><br><a target="_blank" rel="noopener" href="https://www.twblogs.net/a/5b8edfe02b7177188348679e">Python實現設計模式–08.中介者模式（Mediator Pattern）</a></p>
+</blockquote>
+<hr>
+<h3 id="Memento"><a href="#Memento" class="headerlink" title="Memento"></a>Memento</h3><h4 id="情境（from-ithome）-15"><a href="#情境（from-ithome）-15" class="headerlink" title="情境（from ithome）"></a>情境（from <a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10196102">ithome</a>）</h4><blockquote>
+<p>As a 電子表單使用者<br>I want 系統可以在我填寫表單時，提供記錄草稿的功能，儲存該張表單後，即刪除該單所有草稿，但若未儲存，則須保留草稿<br>So that 避免臨時無法完成表單而造成已填寫之資料遺失情況</p>
+</blockquote>
+<h4 id="設計-13"><a href="#設計-13" class="headerlink" title="設計"></a>設計</h4><ul>
+<li>在 Memento 中，定義了以下角色<ul>
+<li>Originator：擁有要被儲存的資料</li>
+<li>Memento：State</li>
+<li>Caretaker（管理人）：管理與儲存 Memento（由 Originator 提供），提供存取的介面</li>
+</ul>
+</li>
+</ul>
+<h4 id="From-wiki-17"><a href="#From-wiki-17" class="headerlink" title="From wiki"></a>From <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Memento_pattern">wiki</a></h4><p>The memento pattern is a software design pattern that <strong>provides the ability to restore an object to its previous state (undo via rollback)</strong>.</p>
+<p>The memento pattern is implemented with three objects: <strong>the originator, a caretaker and a memento</strong>. The originator is some object that has an internal state. The caretaker is going to do something to the originator, but wants to be able to undo the change. The caretaker first asks the originator for a memento object. Then it does whatever operation (or sequence of operations) it was going to do. To roll back to the state before the operations, it returns the memento object to the originator. The memento object itself is an opaque object (one which the caretaker cannot, or should not, change). When using this pattern, care should be taken if the originator may change other objects or resources - the memento pattern operates on a single object.</p>
+<p>Classic examples of the memento pattern include the seed of a pseudorandom number generator (it will always produce the same sequence thereafter when initialized with the seed state) and the state in a finite state machine.</p>
+<blockquote>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/3/38/W3sDesign_Memento_Design_Pattern_UML.jpg"><br>from <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Memento_pattern">wiki</a></p>
+</blockquote>
+<blockquote>
+<p>Reference:<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10196102">想不起昨天做了什麼? 吃銀杏和記憶口香糖不如試試… (Memento 備忘錄模式)</a></p>
+</blockquote>
+<hr>
+<h3 id="Observer"><a href="#Observer" class="headerlink" title="Observer"></a>Observer</h3><h4 id="From-wiki-18"><a href="#From-wiki-18" class="headerlink" title="From wiki"></a>From <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Observer_pattern">wiki</a></h4><p>The observer pattern is a software design pattern in which <strong>an object, called the subject, maintains a list of its dependents, called observers, and notifies them automatically of any state changes, usually by calling one of their methods</strong>.</p>
+<p>It is mainly used to implement distributed event handling systems, in “event driven” software. In those systems, the subject is usually called a “stream of events” or “stream source of events”, while the observers are called “sink of events”. The stream nomenclature simulates or adapts to a physical setup where the observers are physically separated and have no control over the emitted events of the subject&#x2F;stream-source. This pattern then perfectly suits any process where data arrives through I&#x2F;O, that is, where data is not available to the CPU at startup, but can arrive “randomly” (HTTP requests, GPIO data, user input from keyboard&#x2F;mouse&#x2F;…, distributed databases and blockchains, …). Most modern languages have built-in “event” constructs which implement the observer pattern components. While not mandatory most ‘observers’ implementations will use background threads listening for subject events and other support mechanism from the kernel (Linux epoll, …)</p>
+<blockquote>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/0/01/W3sDesign_Observer_Design_Pattern_UML.jpg"><br>from <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Observer_pattern">wiki</a></p>
+</blockquote>
+<blockquote>
+<p>Reference:<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10196777">察言觀色! 敵不動，我不動! (Observer 觀察者模式)</a></p>
+</blockquote>
+<hr>
+<h3 id="State"><a href="#State" class="headerlink" title="State"></a>State</h3><h4 id="情境（from-ithome）-16"><a href="#情境（from-ithome）-16" class="headerlink" title="情境（from ithome）"></a>情境（from <a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10196254">ithome</a>）</h4><blockquote>
+<p>As a 提需求單的使用者<br>I want 需求單管理系統支援在某個需求的狀態改變時，記錄時間並以Email通知同仁<br>So that 任何人可以輕易的識別目前需求的狀態</p>
+</blockquote>
+<h4 id="設計-14"><a href="#設計-14" class="headerlink" title="設計"></a>設計</h4><ul>
+<li>實作 State 的方式<ul>
+<li>建立每一種狀態的類別，它們定義了該狀態下要做那些事，以及決定下一個狀態</li>
+<li>建立存放狀態的對象（Context），它具有改變狀態的權力</li>
+</ul>
+</li>
+<li>State v.s. Chain of Responsibility<ul>
+<li>State 和 Chain of Responsibility 都可以解決有順序、多重判斷、執行邏輯的問題，e.g. IF ELSE，SWITCH CASE</li>
+<li>兩者的差別<ul>
+<li>State<ul>
+<li>由 Context 控制何時轉換及執行狀態</li>
+<li>對像透過__已定義好的順序__轉換狀態</li>
+</ul>
+</li>
+<li>Chain of Responsibility<ul>
+<li>對象只能決定何時發起鏈上的第一個點（Handler），鏈上其他的點接續完成作業</li>
+<li><strong>對像能在開始作業前，改變職責鏈的順序</strong></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="From-wiki-19"><a href="#From-wiki-19" class="headerlink" title="From wiki"></a>From <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/State_pattern">wiki</a></h4><p>The state pattern is a behavioral software design pattern that <strong>allows an object to alter its behavior when its internal state changes</strong>. This pattern is close to the concept of <strong>finite-state machines</strong>. The state pattern can be interpreted as a strategy pattern, which is able to switch a strategy through invocations of methods defined in the pattern’s interface.</p>
+<p>The state pattern is used in computer programming to encapsulate varying behavior for the same object, based on its internal state. <strong>This can be a cleaner way for an object to change its behavior at runtime without resorting to conditional statements and thus improve maintainability</strong>.</p>
+<blockquote>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/W3sDesign_State_Design_Pattern_UML.jpg"><br>from <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/State_pattern">wiki</a></p>
+</blockquote>
+<blockquote>
+<p>Reference:<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10196254">別讓老闆和USER再問你好了沒? 隨時更新工作狀態吧! (State 狀態模式)</a></p>
+</blockquote>
+<hr>
+<h3 id="Strategy"><a href="#Strategy" class="headerlink" title="Strategy"></a>Strategy</h3><h4 id="情境（from-ithome）-17"><a href="#情境（from-ithome）-17" class="headerlink" title="情境（from ithome）"></a>情境（from <a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10192935">ithome</a>）</h4><blockquote>
+<p>As a 資料分析者<br>I want 使用者在執行任一系統功能時，系統可以記錄使用記錄在文字檔<br>So that 我們可以知道使用者何時使用了該功能和次數</p>
+</blockquote>
+<h4 id="設計-15"><a href="#設計-15" class="headerlink" title="設計"></a>設計</h4><ul>
+<li>定義多個演算法，各別封裝這些演算法，並讓它們可以互換</li>
+</ul>
+<h4 id="From-wiki-20"><a href="#From-wiki-20" class="headerlink" title="From wiki"></a>From <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Strategy_pattern">wiki</a></h4><p>In computer programming, the strategy pattern (also known as the policy pattern) is a behavioral software design pattern that enables <strong>selecting an algorithm at runtime</strong>. Instead of implementing a single algorithm directly.</p>
+<blockquote>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/4/45/W3sDesign_Strategy_Design_Pattern_UML.jpg"><br>from <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Strategy_pattern">wiki</a></p>
+</blockquote>
+<blockquote>
+<p>Reference:<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10192935">謀略設計模式! 學習首重策略! (Strategy 策略模式) </a></p>
+</blockquote>
+<hr>
+<h3 id="Template"><a href="#Template" class="headerlink" title="Template"></a>Template</h3><h4 id="情境（from-ithome）-18"><a href="#情境（from-ithome）-18" class="headerlink" title="情境（from ithome）"></a>情境（from <a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10195762">ithome</a>）</h4><blockquote>
+<p>As a 銀行交易員<br>I want 在衍生性金融商品管理系統可以自動比價<br>So that 提供獲利及損失模型，讓客戶理解投資風險</p>
+</blockquote>
+<h4 id="設計-16"><a href="#設計-16" class="headerlink" title="設計"></a>設計</h4><ul>
+<li>就宣告一個 template class 然後繼承它，並實作其 abstract method</li>
+</ul>
+<h4 id="From-wiki-21"><a href="#From-wiki-21" class="headerlink" title="From wiki"></a>From <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Template_method_pattern">wiki</a></h4><p>The template method is a method in a superclass, usually an abstract superclass, and <strong>defines the skeleton of an operation in terms of a number of high-level steps</strong>. These steps are themselves implemented by additional helper methods in the same class as the template method.</p>
+<blockquote>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/W3sDesign_Template_Method_Design_Pattern_UML.jpg"><br>from <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Template_method_pattern">wiki</a></p>
+</blockquote>
+<blockquote>
+<p>Reference:<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10195762">一樣米養百種人! (Template Method 樣板方法)</a></p>
+</blockquote>
+<hr>
+<h3 id="Visitor"><a href="#Visitor" class="headerlink" title="Visitor"></a>Visitor</h3><h4 id="情境（from-ithome）-19"><a href="#情境（from-ithome）-19" class="headerlink" title="情境（from ithome）"></a>情境（from <a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10196407">ithome</a>）</h4><blockquote>
+<p>As a 電商老闆<br>I want 舉辦行銷活動，購物車結帳時：</p>
+<ul>
+<li>書籍雜誌：會員相同類別10本以上八折優惠</li>
+<li>生活用品：會員相同品項$1,000以上九折優惠</li>
+</ul>
+<p>So that 提高網站轉換率及營收</p>
+</blockquote>
+<h4 id="設計-17"><a href="#設計-17" class="headerlink" title="設計"></a>設計</h4><ul>
+<li>Visitor 是 Strategy 的延伸<ul>
+<li>在 Strategy 中，我們__只讓一個對象__執行注入的策略</li>
+<li>在 Visitor 中，我們可以__讓很多對象__依序執行注入的策略</li>
+</ul>
+</li>
+<li>使用時機：<ul>
+<li>Strategy 是設計來對__一個物件__注入不同處理邏輯</li>
+<li>Visitor 是設計來對__多個物件__注入處理邏輯（當然也可以對單一個物件注入不同處理邏輯）</li>
+<li>Strategy 簡單，適用於多數場合</li>
+<li>Visitor 使用 Strategy 的概念，適用於有多個實作類別或是子類別，而且每個類別需要特別的處理邏輯</li>
+</ul>
+</li>
+</ul>
+<h4 id="From-wiki-22"><a href="#From-wiki-22" class="headerlink" title="From wiki"></a>From <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Visitor_pattern">wiki</a></h4><p>In object-oriented programming and software engineering, the visitor design pattern is a way of <strong>separating an algorithm from an object structure on which it operates</strong>. A practical result of this separation is the ability to <strong>add new operations to existing object structures without modifying the structures</strong>. <strong>It is one way to follow the open&#x2F;closed principle</strong>.</p>
+<p>In essence, the visitor allows adding new virtual functions to a family of classes, without modifying the classes. Instead, a visitor class is created that implements all of the appropriate specializations of the virtual function. The visitor takes the instance reference as input, and implements the goal through double dispatch.</p>
+<blockquote>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/0/00/W3sDesign_Visitor_Design_Pattern_UML.jpg"><br>from <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Visitor_pattern">wiki</a></p>
+</blockquote>
+<blockquote>
+<p>Reference:<br><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10196407">優惠方案每天變! 購物車怎麼結帳才不會算到手抽筋? (Visitor 訪問者模式)</a></p>
+</blockquote>
+<h1 id="一些參考資源、網站"><a href="#一些參考資源、網站" class="headerlink" title="一些參考資源、網站"></a>一些參考資源、網站</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://ithelp.ithome.com.tw/articles/10192379">ithome</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Design_Patterns">wiki</a></li>
+<li><a target="_blank" rel="noopener" href="https://openhome.cc/Gossip/DesignPattern/">OPENHOME</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.twblogs.net/c/5b8d0ace2b7177188339c4ac/">台部落</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Eugene Yang
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="http://eugene87222.github.io/2020/01/18/20200118-design-pattern-note/" title="Design Pattern 學習筆記">http://eugene87222.github.io/2020/01/18/20200118-design-pattern-note/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/note/" rel="tag"># note</a>
+              <a href="/tags/design-pattern/" rel="tag"># design pattern</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/01/18/20191219-get-rid-of-captcha/" rel="prev" title="用機器學習的方式登入選課系統">
+                  <i class="fa fa-chevron-left"></i> 用機器學習的方式登入選課系統
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/01/18/20200118-photo/" rel="next" title="隨手拍#11 - 新竹公園">
+                  隨手拍#11 - 新竹公園 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eugene Yang</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">239k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">3:38</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"eugene87222","count":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

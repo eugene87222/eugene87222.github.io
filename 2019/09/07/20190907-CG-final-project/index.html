@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/image/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/image/favicon.ico">
+  <link rel="mask-icon" href="/image/favicon.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic%7CKaushan+Script:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"eugene87222.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="我在大三下學期的時候修了一門多媒體所開的「電腦動畫與特效」，並製作了一個小動畫作為這堂課的期末專題，想說在這邊跟大家分享一下製作動畫時的一些心路歷程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="電腦動畫與特效期末專題">
+<meta property="og:url" content="http://eugene87222.github.io/2019/09/07/20190907-CG-final-project/index.html">
+<meta property="og:site_name" content="3ugeneYang.§ite">
+<meta property="og:description" content="我在大三下學期的時候修了一門多媒體所開的「電腦動畫與特效」，並製作了一個小動畫作為這堂課的期末專題，想說在這邊跟大家分享一下製作動畫時的一些心路歷程">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2019-09-07T03:19:51.000Z">
+<meta property="article:modified_time" content="2020-01-20T14:20:14.190Z">
+<meta property="article:author" content="Eugene Yang">
+<meta property="article:tag" content="NCTU">
+<meta property="article:tag" content="computer animation">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://eugene87222.github.io/2019/09/07/20190907-CG-final-project/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://eugene87222.github.io/2019/09/07/20190907-CG-final-project/","path":"2019/09/07/20190907-CG-final-project/","title":"電腦動畫與特效期末專題"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>電腦動畫與特效期末專題 | 3ugeneYang.§ite</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107694365-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-107694365-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">3ugeneYang.§ite</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A3%BD%E4%BD%9C%E5%8B%95%E6%A9%9F"><span class="nav-number">1.</span> <span class="nav-text">製作動機</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%9B%AE%E6%A8%99"><span class="nav-number">2.</span> <span class="nav-text">目標</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%A7%8B%E6%80%9D"><span class="nav-number">3.</span> <span class="nav-text">構思</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%89%9B%E9%AB%94%E5%B1%A4%E9%9D%A2"><span class="nav-number">3.1.</span> <span class="nav-text">剛體層面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%81%E9%AB%94%E5%B1%A4%E9%9D%A2"><span class="nav-number">3.2.</span> <span class="nav-text">流體層面</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="nav-number">4.</span> <span class="nav-text">實作流程</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8-Maya-%E4%B8%AD%E6%A8%A1%E6%93%AC%E9%85%92%E6%9D%AF%E7%A2%8E%E8%A3%82"><span class="nav-number">4.1.</span> <span class="nav-text">在 Maya 中模擬酒杯碎裂</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8-RealFlow-%E4%B8%AD%E5%81%9A%E6%B5%81%E9%AB%94%E6%A8%A1%E6%93%AC"><span class="nav-number">4.2.</span> <span class="nav-text">在 RealFlow 中做流體模擬</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9E%E5%88%B0-Maya-%E5%81%9A%E6%9C%80%E5%BE%8C%E4%BF%AE%E9%A3%BE"><span class="nav-number">4.3.</span> <span class="nav-text">回到 Maya 做最後修飾</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%8C%E6%88%90%E5%93%81"><span class="nav-number">5.</span> <span class="nav-text">完成品</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Eugene Yang"
+      src="/image/IMG_1314.png">
+  <p class="site-author-name" itemprop="name">Eugene Yang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:eugene87222@gmail.com" title="E-Mail → mailto:eugene87222@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Eugene87222" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Eugene87222" rel="noopener" target="_blank"><i class="fa fa-paper-plane fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/eugene87222" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fab fa-facebook-square fa-fw"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/yanghc" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;yanghc" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pinterest.com/eugene87222/" title="Pinterest → https:&#x2F;&#x2F;www.pinterest.com&#x2F;eugene87222&#x2F;" rel="noopener" target="_blank"><i class="fab fa-pinterest fa-fw"></i>Pinterest</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/eugene87222" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/09/07/20190907-CG-final-project/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/image/IMG_1314.png">
+      <meta itemprop="name" content="Eugene Yang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="3ugeneYang.§ite">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="電腦動畫與特效期末專題 | 3ugeneYang.§ite">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          電腦動畫與特效期末專題
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2019-09-07 11:19:51" itemprop="dateCreated datePublished" datetime="2019-09-07T11:19:51+08:00">2019-09-07</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2020-01-20 22:20:14" itemprop="dateModified" datetime="2020-01-20T22:20:14+08:00">2020-01-20</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>1.2k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>1 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>我在大三下學期的時候修了一門多媒體所開的「電腦動畫與特效」，並製作了一個小動畫作為這堂課的期末專題，想說在這邊跟大家分享一下製作動畫時的一些心路歷程<span id="more"></span>。</p>
+<blockquote>
+<p>P.S. 因為做動畫的當下沒有打算寫這篇，所以也沒有把製作的過程截圖下來，之後有時間再把整個製作流程 run 一遍，並把截圖補上</p>
+</blockquote>
+<h1 id="製作動機"><a href="#製作動機" class="headerlink" title="製作動機"></a>製作動機</h1><p>源自於 Youtube 上面用子彈射擊各種物體的慢動作影片。<br>（影片相關連結：<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=_rFYhLt7Dlo%EF%BC%89">https://www.youtube.com/watch?v=_rFYhLt7Dlo）</a></p>
+<h1 id="目標"><a href="#目標" class="headerlink" title="目標"></a>目標</h1><ul>
+<li>結合剛體碎裂與流體的模擬，嘗試模擬子彈射穿盛裝液體的容器的場景</li>
+<li>盡可能提高動畫的擬真性</li>
+<li>學習建模與動畫軟體的基本操作</li>
+</ul>
+<h1 id="構思"><a href="#構思" class="headerlink" title="構思"></a>構思</h1><p>以射擊裝有液體的杯子為例，整個碰撞過程主要包含三個面向</p>
+<ul>
+<li>子彈射擊杯子時，杯子與子彈之間的碰撞</li>
+<li>子彈穿過杯中液體時，與液體間的碰撞</li>
+<li>杯子碎裂後，碎片與液體之間的碰撞</li>
+</ul>
+<p>如果將上述三種面向全部模擬出來的話會最接近現實的情況，但是由於硬體設備的不足以及整個模擬的過程過於複雜，後來便決定將碰撞過程拆分成兩個大面向個別處理。</p>
+<h2 id="剛體層面"><a href="#剛體層面" class="headerlink" title="剛體層面"></a>剛體層面</h2><p>先模擬子彈射擊未盛裝液體的杯子，並將模擬結果存起來。</p>
+<h2 id="流體層面"><a href="#流體層面" class="headerlink" title="流體層面"></a>流體層面</h2><p>將先前的動畫模擬結果匯入到專門實作流體的軟體當中，直接將流體加入動畫中。此時因為杯子的破碎方式是固定的（先前的存檔），所以流體並不會對子彈以及杯子碎塊造成力以及位置上的影響，流體只是單純照著杯子的碎裂方式去移動。</p>
+<h1 id="實作流程"><a href="#實作流程" class="headerlink" title="實作流程"></a>實作流程</h1><p>場景：子彈射擊裝有液體的酒杯<br>用 <a target="_blank" rel="noopener" href="https://www.autodesk.com/products/maya/overview">Maya</a> 作為建模以及模擬剛體碎裂的程式，並使用 <a target="_blank" rel="noopener" href="http://www.nextlimit.com/realflow/">RealFlow</a> 處理流體模擬。</p>
+<h2 id="在-Maya-中模擬酒杯碎裂"><a href="#在-Maya-中模擬酒杯碎裂" class="headerlink" title="在 Maya 中模擬酒杯碎裂"></a>在 <a target="_blank" rel="noopener" href="https://www.autodesk.com/products/maya/overview">Maya</a> 中模擬酒杯碎裂</h2><p>首先在 <a target="_blank" rel="noopener" href="https://www.autodesk.com/products/maya/overview">Maya</a> 裡面建模，包含地板、牆壁、酒杯與子彈。</p>
+<ul>
+<li>使用 <a target="_blank" rel="noopener" href="https://www.autodesk.com/products/maya/overview">Maya</a> 的 plugin - <a target="_blank" rel="noopener" href="https://www.pulldownit.com/">Pulldownit</a>，來將物體隨機碎裂成多個碎塊，在設定子彈與酒杯的物理屬性（kinematics rigid body 與 passive rigid body）。比較需要注意的是，地板與牆壁等障礙物也要設定屬性，這樣酒杯與子彈才不會穿透進地板或牆壁裡面。</li>
+<li>設定子彈的 key frame，也就是設定在特定時間下，子彈的位置。設定好之後 Maya 會自行計算物體的移動速度。</li>
+<li>模擬子彈射擊的過程，並將模擬出來的動畫輸出成 .sd 檔案。</li>
+</ul>
+<h2 id="在-RealFlow-中做流體模擬"><a href="#在-RealFlow-中做流體模擬" class="headerlink" title="在 RealFlow 中做流體模擬"></a>在 <a target="_blank" rel="noopener" href="http://www.nextlimit.com/realflow/">RealFlow</a> 中做流體模擬</h2><p>將先前製作好的動畫匯入進 <a target="_blank" rel="noopener" href="http://www.nextlimit.com/realflow/">RealFlow</a>。</p>
+<ul>
+<li>使用 <a target="_blank" rel="noopener" href="http://www.nextlimit.com/realflow/">RealFlow</a> 當中的 emitter（有點類似水龍頭的東西，可以在容器中注入液體），並隨著杯子碎裂的方式，來流體模擬的動向。上一個環節已經說明過了，由於剛體的運動軌跡已經決定，流體並不會影響到剛體的移動方向。</li>
+<li>將模擬出來的流體匯出。</li>
+</ul>
+<h2 id="回到-Maya-做最後修飾"><a href="#回到-Maya-做最後修飾" class="headerlink" title="回到 Maya 做最後修飾"></a>回到 <a target="_blank" rel="noopener" href="https://www.autodesk.com/products/maya/overview">Maya</a> 做最後修飾</h2><p>將 <a target="_blank" rel="noopener" href="http://www.nextlimit.com/realflow/">RealFlow</a> 製作出來的流體以及原先的杯子動畫合併在一起，並給各種物件加上材質，於場景當中加入光源。</p>
+<h1 id="完成品"><a href="#完成品" class="headerlink" title="完成品"></a>完成品</h1><p>影片網址：<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=VnRKnYkhNhU">https://www.youtube.com/watch?v=VnRKnYkhNhU</a></p>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Eugene Yang
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="http://eugene87222.github.io/2019/09/07/20190907-CG-final-project/" title="電腦動畫與特效期末專題">http://eugene87222.github.io/2019/09/07/20190907-CG-final-project/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/NCTU/" rel="tag"># NCTU</a>
+              <a href="/tags/computer-animation/" rel="tag"># computer animation</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/06/24/20190624-ComputerSecurity-note-ch24-supplement2/" rel="prev" title="[Intro. to Computer Security Course Note] Ch 24 (supplement 2)">
+                  <i class="fa fa-chevron-left"></i> [Intro. to Computer Security Course Note] Ch 24 (supplement 2)
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/01/18/20191219-get-rid-of-captcha/" rel="next" title="用機器學習的方式登入選課系統">
+                  用機器學習的方式登入選課系統 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eugene Yang</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">239k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">3:38</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"eugene87222","count":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

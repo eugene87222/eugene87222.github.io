@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/image/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/image/favicon.ico">
+  <link rel="mask-icon" href="/image/favicon.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic%7CKaushan+Script:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"eugene87222.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="這陣子比較有空，想說來看些資料分析的東西，以下是我從網路上整理的一些資料，還沒完成的地方之後有時間會再補上">
+<meta property="og:type" content="article">
+<meta property="og:title" content="資料分析筆記">
+<meta property="og:url" content="http://eugene87222.github.io/2018/11/19/20181119-data-analysis-note/index.html">
+<meta property="og:site_name" content="3ugeneYang.§ite">
+<meta property="og:description" content="這陣子比較有空，想說來看些資料分析的東西，以下是我從網路上整理的一些資料，還沒完成的地方之後有時間會再補上">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-11-19T15:15:13.000Z">
+<meta property="article:modified_time" content="2020-09-02T02:56:51.932Z">
+<meta property="article:author" content="Eugene Yang">
+<meta property="article:tag" content="data analysis">
+<meta property="article:tag" content="note">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://eugene87222.github.io/2018/11/19/20181119-data-analysis-note/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://eugene87222.github.io/2018/11/19/20181119-data-analysis-note/","path":"2018/11/19/20181119-data-analysis-note/","title":"資料分析筆記"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>資料分析筆記 | 3ugeneYang.§ite</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107694365-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-107694365-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">3ugeneYang.§ite</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E7%8D%B2%E5%8F%96%E8%B3%87%E6%96%99"><span class="nav-number">1.</span> <span class="nav-text">如何獲取資料</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%B8%E8%A6%8B%E7%9A%84%E8%B3%87%E6%96%99%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">常見的資料分析方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%8F%8F%E8%BF%B0%E7%B5%B1%E8%A8%88%EF%BC%88%E6%95%98%E8%BF%B0%E7%B5%B1%E8%A8%88%EF%BC%89"><span class="nav-number">2.1.</span> <span class="nav-text">一、描述統計（敘述統計）</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BC%BA%E5%A4%B1%E5%80%BC"><span class="nav-number">2.1.1.</span> <span class="nav-text">缺失值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E6%85%8B%E6%80%A7%E6%AA%A2%E9%A9%97"><span class="nav-number">2.1.2.</span> <span class="nav-text">常態性檢驗</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%81%87%E8%A8%AD%E6%AA%A2%E9%A9%97"><span class="nav-number">2.2.</span> <span class="nav-text">二、假設檢驗</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E6%95%B8%E6%AA%A2%E9%A9%97"><span class="nav-number">2.2.1.</span> <span class="nav-text">引數檢驗</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%9E%E5%BC%95%E6%95%B8%E6%AA%A2%E9%A9%97"><span class="nav-number">2.2.2.</span> <span class="nav-text">非引數檢驗</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E4%BF%A1%E5%BA%A6%E5%88%86%E6%9E%90"><span class="nav-number">2.3.</span> <span class="nav-text">三、信度分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%96%E5%9C%A8%E4%BF%A1%E5%BA%A6"><span class="nav-number">2.3.1.</span> <span class="nav-text">外在信度</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%A7%E5%9C%A8%E4%BF%A1%E5%BA%A6"><span class="nav-number">2.3.2.</span> <span class="nav-text">內在信度</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%88%97%E8%81%AF%E8%A1%A8%E5%88%86%E6%9E%90"><span class="nav-number">2.4.</span> <span class="nav-text">四、列聯表分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81%E7%9B%B8%E9%97%9C%E5%88%86%E6%9E%90"><span class="nav-number">2.5.</span> <span class="nav-text">五、相關分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%96%AE%E7%9B%B8%E9%97%9C"><span class="nav-number">2.5.1.</span> <span class="nav-text">單相關</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A4%87%E7%9B%B8%E9%97%9C"><span class="nav-number">2.5.2.</span> <span class="nav-text">複相關</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%81%8F%E7%9B%B8%E9%97%9C-%E6%B7%A8%E7%9B%B8%E9%97%9C%E3%80%81%E7%B4%94%E7%9B%B8%E9%97%9C"><span class="nav-number">2.5.3.</span> <span class="nav-text">偏相關(淨相關、純相關)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E8%AE%8A%E7%95%B0%E6%95%B8%E5%88%86%E6%9E%90-%E6%96%B9%E5%B7%AE%E5%88%86%E6%9E%90"><span class="nav-number">2.6.</span> <span class="nav-text">六、變異數分析(方差分析)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%96%AE%E5%9B%A0%E7%B4%A0%E8%AE%8A%E7%95%B0%E6%95%B8%E5%88%86%E6%9E%90"><span class="nav-number">2.6.1.</span> <span class="nav-text">單因素變異數分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E5%9B%A0%E7%B4%A0%E6%9C%89%E4%BA%92%E5%8B%95%E8%AE%8A%E7%95%B0%E6%95%B8%E5%88%86%E6%9E%90"><span class="nav-number">2.6.2.</span> <span class="nav-text">多因素有互動變異數分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E5%9B%A0%E7%B4%A0%E7%84%A1%E4%BA%92%E5%8B%95%E8%AE%8A%E7%95%B0%E6%95%B8%E5%88%86%E6%9E%90"><span class="nav-number">2.6.3.</span> <span class="nav-text">多因素無互動變異數分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%83%E3%80%81%E8%BF%B4%E6%AD%B8%E5%88%86%E6%9E%90"><span class="nav-number">2.7.</span> <span class="nav-text">七、迴歸分析</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E5%85%83%E7%B7%9A%E6%80%A7%E8%BF%B4%E6%AD%B8%E5%88%86%E6%9E%90"><span class="nav-number">2.7.1.</span> <span class="nav-text">一元線性迴歸分析</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E5%85%83%E7%B7%9A%E6%80%A7%E8%BF%B4%E6%AD%B8%E5%88%86%E6%9E%90"><span class="nav-number">2.7.2.</span> <span class="nav-text">多元線性迴歸分析</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A5%E4%B8%8B%E5%85%A8%E9%83%A8%E9%83%BD%E8%A6%81%E6%9F%A5"><span class="nav-number">3.</span> <span class="nav-text">以下全部都要查</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BB%A5%E4%B8%8A%E5%85%A8%E9%83%A8%E9%83%BD%E8%A6%81%E6%9F%A5"><span class="nav-number">4.</span> <span class="nav-text">以上全部都要查</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Logistic-%E8%BF%B4%E6%AD%B8%E5%88%86%E6%9E%90"><span class="nav-number">4.0.1.</span> <span class="nav-text">Logistic 迴歸分析</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AB%E3%80%81%E8%81%9A%E9%A1%9E%E5%88%86%E6%9E%90"><span class="nav-number">4.1.</span> <span class="nav-text">八、聚類分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%9D%E3%80%81%E5%88%A4%E5%88%A5%E5%88%86%E6%9E%90"><span class="nav-number">4.2.</span> <span class="nav-text">九、判別分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E3%80%81%E4%B8%BB%E6%88%90%E5%88%86%E5%88%86%E6%9E%90"><span class="nav-number">4.3.</span> <span class="nav-text">十、主成分分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E4%B8%80%E3%80%81%E5%9B%A0%E5%AD%90%E5%88%86%E6%9E%90"><span class="nav-number">4.4.</span> <span class="nav-text">十一、因子分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E4%BA%8C%E3%80%81%E6%99%82%E9%96%93%E6%8E%92%E5%BA%8F%E5%88%86%E6%9E%90"><span class="nav-number">4.5.</span> <span class="nav-text">十二、時間排序分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E4%B8%89%E3%80%81%E7%94%9F%E5%AD%98%E5%88%86%E6%9E%90"><span class="nav-number">4.6.</span> <span class="nav-text">十三、生存分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E5%9B%9B%E3%80%81%E5%85%B8%E5%9E%8B%E7%9B%B8%E9%97%9C%E5%88%86%E6%9E%90"><span class="nav-number">4.7.</span> <span class="nav-text">十四、典型相關分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E4%BA%94%E3%80%81ROC-%E5%88%86%E6%9E%90"><span class="nav-number">4.8.</span> <span class="nav-text">十五、ROC 分析</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E5%85%AD%E3%80%81%E5%85%B6%E4%BB%96%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95"><span class="nav-number">4.9.</span> <span class="nav-text">十六、其他分析方法</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">5.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Eugene Yang"
+      src="/image/IMG_1314.png">
+  <p class="site-author-name" itemprop="name">Eugene Yang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:eugene87222@gmail.com" title="E-Mail → mailto:eugene87222@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Eugene87222" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Eugene87222" rel="noopener" target="_blank"><i class="fa fa-paper-plane fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/eugene87222" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fab fa-facebook-square fa-fw"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/yanghc" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;yanghc" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pinterest.com/eugene87222/" title="Pinterest → https:&#x2F;&#x2F;www.pinterest.com&#x2F;eugene87222&#x2F;" rel="noopener" target="_blank"><i class="fab fa-pinterest fa-fw"></i>Pinterest</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/eugene87222" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2018/11/19/20181119-data-analysis-note/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/image/IMG_1314.png">
+      <meta itemprop="name" content="Eugene Yang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="3ugeneYang.§ite">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="資料分析筆記 | 3ugeneYang.§ite">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          資料分析筆記
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2018-11-19 23:15:13" itemprop="dateCreated datePublished" datetime="2018-11-19T23:15:13+08:00">2018-11-19</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2020-09-02 10:56:51" itemprop="dateModified" datetime="2020-09-02T10:56:51+08:00">2020-09-02</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>3.7k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>3 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>這陣子比較有空，想說來看些資料分析的東西，以下是我從網路上整理的一些資料，還沒完成的地方之後有時間會再補上<span id="more"></span>。</p>
+<h1 id="如何獲取資料"><a href="#如何獲取資料" class="headerlink" title="如何獲取資料"></a>如何獲取資料</h1><ol>
+<li><a target="_blank" rel="noopener" href="https://scikit-learn.org/stable/datasets/index.html">sklearn 內建的 dataset</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.kaggle.com/datasets?sortBy=votes&group=featured">Kaggle Dataset</a>（包含較多已整理的資料，不需要太多時間對資料做前處理）</li>
+<li><a target="_blank" rel="noopener" href="https://developers.google.com/maps/documentation/?hl=zh-tw">Google Map API</a>（好像要$$）</li>
+<li>各種政府提供的 Open data 平台（e.g. <a target="_blank" rel="noopener" href="https://data.gov.tw/">政府資料開放平台</a>，<a target="_blank" rel="noopener" href="https://data.taipei/index">台北市政府資料開放平台</a>）</li>
+</ol>
+<p>MEDIUM 進度 2.3 講</p>
+<h1 id="常見的資料分析方法"><a href="#常見的資料分析方法" class="headerlink" title="常見的資料分析方法"></a>常見的資料分析方法</h1><h2 id="一、描述統計（敘述統計）"><a href="#一、描述統計（敘述統計）" class="headerlink" title="一、描述統計（敘述統計）"></a>一、描述統計（敘述統計）</h2><p>透過對數據資料的圖像化處理，將資料摘要變為圖表，以直觀了解整體資料分布的情況。通常會使用的工具是頻數分布表與圖示法，如多邊圖、直方圖、餅圖、散點圖等。</p>
+<p>另外，也可以透過分析數據資料，以了解各變量內的觀察值集中與分散的情況。運用的工具有：集中量數，如平均數、中位數、眾數、幾何平均數、調和平均數。與變異量數，如全距、平均差、標準差、相對差、四分差。</p>
+<p>數據的次數分配情況，往往會呈現常態分布。為了表示測量數據與常態分布偏離的情況，會使用偏度、峰度這兩種統計數據。</p>
+<p>為了解個別觀察值在整體中所佔的位置，會需要將觀察值轉換為相對量數，如百分等級、標準分數、四分位數等。</p>
+<h3 id="缺失值"><a href="#缺失值" class="headerlink" title="缺失值"></a>缺失值</h3><ul>
+<li>完全變數: 不含缺失值</li>
+<li>三種主要的缺失<ul>
+<li>完全隨機缺失（missing completely at random, MCAR）：數據的缺失是完全隨機的，不依賴於任何變數，不影響樣本的無偏性。（e.g. 家庭地址缺失）</li>
+<li>隨機缺失（missing at random, MAR）：數據的缺失不是完全隨機的，該類數據的缺失可能依賴於其他完全變數。（e.g. 財務數據缺失情況可能與企業大小有關）</li>
+<li>非隨機缺失（missing not at random, MNAR）：數據的缺失與不完全變數自身的取值有關。（e.g. 高收入的族群較不願意提供家庭收入）</li>
+</ul>
+</li>
+<li>對於隨機缺失與非隨機缺失，刪除資料是不合適的，隨機缺失可以透過已知數據推估缺失值。</li>
+<li>缺失值填充<ul>
+<li>剔除法（List-wise deletion）：如果某筆數據漏了某個屬性的資料，就把該筆數據從分析中剔除。__剔除法在缺失值比例小的話十分有效__。然而，這種方法是以減少樣本量來換取資料的完整性，會造成資源的大量浪費，丟棄了大量的隱藏訊息。</li>
+<li>均值法（Mean imputation）：如果缺失數據是數值型態的話，就用該屬性的平均數填充缺失值；如果是非數值型態的話就用眾數的概念去填充。但這種方法會產生有偏估計，所以並不被推崇。而且該方法是建立在完全隨機缺失（MCAR）的假設之上，並且會__造成變數的 Variance 與 Standard deviation 變小__。</li>
+<li>最近鄰居（就是 KNN 啦，講中文誰知道）</li>
+<li>迴歸填充（Regression imputation）：對於連續取值的變數，可以利用線性回歸來擬合估計其取值。對於二值變數，可以利用 logistic regression 來估計其取值。</li>
+<li>決策樹（Decision tree）：利用不缺失某個屬性的樣本訓練決策樹，然後對於該屬性缺失的樣本即可利用訓練所得決策樹來預測所缺失的屬性取值。</li>
+<li>熱卡填充（Hot deck imputation）：對於一個含有缺失值的變數，__尋找一個與他最為相似的數據並進行填充__，判斷相似與否的標準 depends on 問題本身。利用 hot deck 填充數據後，其 standard deviation 與填充前較為相近。但在回歸函數中，容易使得誤差變大，而且這個很耗時。</li>
+<li>多重填充（Multiple imputation）: 有點複雜還是直接 google 好了。</li>
+</ul>
+</li>
+</ul>
+<h3 id="常態性檢驗"><a href="#常態性檢驗" class="headerlink" title="常態性檢驗"></a>常態性檢驗</h3><p>很多統計方法都要求數值呈現或近似呈現常態分佈，所以得先進行常態性檢驗。</p>
+<ul>
+<li>非引數檢驗的 K-量檢驗（這是什麼我也不知道）</li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Normal_probability_plot">PP 圖（probability plot graph）</a></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%88%86%E4%BD%8D%E5%9C%96">QQ 圖</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Shapiro%E2%80%93Wilk_test">W 檢驗</a>：基於相關性的檢驗法，透過公式得到的相關係數越接近 1 代表數據越接近常態分佈。</li>
+<li><a target="_blank" rel="noopener" href="http://publish.get.com.tw/bookpre_pdf/51MG022703-2.pdf">動差法</a>：<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E7%9F%A9_(%E6%95%B8%E5%AD%B8)">動差是什麼</a></li>
+</ul>
+<h2 id="二、假設檢驗"><a href="#二、假設檢驗" class="headerlink" title="二、假設檢驗"></a>二、假設檢驗</h2><h3 id="引數檢驗"><a href="#引數檢驗" class="headerlink" title="引數檢驗"></a>引數檢驗</h3><p>在已知總體分佈的條件下（一般要求總體呈現常態分佈）對一些主要的引數（如均值、百分數、方差、相關係數等）進行的檢驗。</p>
+<ul>
+<li>U 檢驗（Z 檢驗）：當樣本較大時，樣本符合常態分布。（大三上統計學講義）</li>
+<li>T 檢驗：當樣本較小時，樣本符合常態分布。（大三上統計學講義）</li>
+<li>單樣本 T 檢驗：推斷該樣本來自的總體平均 μ 與已知的某一總體平均數 μ0（通常為理論值或標準值）有無差別。 <strong>(不懂)</strong></li>
+<li>配對樣本 T 檢驗：當總體均數未知時，且兩個樣本可以配對，同對中的兩者在可能會影響處理效果的各種條件方面極為相似。 <strong>(不懂)</strong></li>
+<li>獨立雙樣本 T 檢驗：無法找到在各方面極為相似的兩樣本作配對比較時使用。 <strong>(不懂)</strong></li>
+</ul>
+<h3 id="非引數檢驗"><a href="#非引數檢驗" class="headerlink" title="非引數檢驗"></a>非引數檢驗</h3><p>不考慮總體分佈是否已知，常常也不是針對總體引數，而是針對總體的某些一般性假設（e.g. 總體分佈的位罝是否相同，總體分佈是否常態）進行檢驗。</p>
+<ul>
+<li>適用情況: 順序型別的數據資料，這類資料的分佈形態一般是未知的。</li>
+<li>雖然是連續資料，但總體分佈形態未知或者非正態</li>
+<li>總體分佈雖然常態，資料也是連續型別，但樣本容量極小（10 以下）</li>
+<li>主要方法 <strong>(全部晚點查)</strong><ul>
+<li>卡方檢驗</li>
+<li>秩和檢驗</li>
+<li>二項檢驗</li>
+<li>遊程檢驗</li>
+<li>K-量檢驗等</li>
+</ul>
+</li>
+</ul>
+<h2 id="三、信度分析"><a href="#三、信度分析" class="headerlink" title="三、信度分析"></a>三、信度分析</h2><p>檢查測量可信度。（e.g. 調查問卷的真實性）</p>
+<h3 id="外在信度"><a href="#外在信度" class="headerlink" title="外在信度"></a>外在信度</h3><p>不同時間測量時，量表的一致性程度。</p>
+<p>常用方法 -&gt; 重測信度: 將同一個測驗重複施測於同一樣本上。施測時間不同，但是方法一樣。求出各時間所得的測驗分數之相關係數，又稱為「再測信度」</p>
+<h3 id="內在信度"><a href="#內在信度" class="headerlink" title="內在信度"></a>內在信度</h3><p>每個量表是否測量到單一的概念，同時組成兩表的內在項目一致性如何。</p>
+<p>常用方法 -&gt; 分半信度: 通常是在不準備重測的情況下，我們就用分半信度來計算信度係數。（e.g. 如果有一份問卷，其中有十個問題涉及到女性歧視現象。利用分半信度時，可將十個問題隨機分成兩組，每組有五個問題，然後根據每組的測量結果來計算兩組的相關係數。）</p>
+<h2 id="四、列聯表分析"><a href="#四、列聯表分析" class="headerlink" title="四、列聯表分析"></a>四、列聯表分析</h2><p>用於分析離散型變數或定型變數之間是否存在相關性。</p>
+<p>對於二為數據，可以用卡方檢驗。</p>
+<p>對於三維的數據，可以用 Mentel-Haenszel 分層分析。（<a target="_blank" rel="noopener" href="http://biostatdept.cmu.edu.tw/doc/epaper_a/paper/teaching_corner_042-1.pdf">參考資料一</a>）（<a target="_blank" rel="noopener" href="https://molecular-service-science.com/2012/08/20/chi-squared-test-and-three-way-table-and-simpson-paradox/">參考資料二</a>）</p>
+<h2 id="五、相關分析"><a href="#五、相關分析" class="headerlink" title="五、相關分析"></a>五、相關分析</h2><p>研究__現象之間__是否存在某種依存關係，對具體有依存關係的現象探討相關方向及相關程度。</p>
+<h3 id="單相關"><a href="#單相關" class="headerlink" title="單相關"></a>單相關</h3><p>兩個因素之間的相關關係叫單相關，即研究時只涉及一個自變數一個因變數。</p>
+<h3 id="複相關"><a href="#複相關" class="headerlink" title="複相關"></a>複相關</h3><p>三個或三個以上因素的相關關係叫複相關，即研究時涉及兩個或兩個以上的自變數和因變數相關。</p>
+<h3 id="偏相關-淨相關、純相關"><a href="#偏相關-淨相關、純相關" class="headerlink" title="偏相關(淨相關、純相關)"></a>偏相關(淨相關、純相關)</h3><p>在某一現象與多種現象相關的場，當假定其他變數不變時，其中兩個變數之間的相關關係稱為偏相關。</p>
+<h2 id="六、變異數分析-方差分析"><a href="#六、變異數分析-方差分析" class="headerlink" title="六、變異數分析(方差分析)"></a>六、變異數分析(方差分析)</h2><p>使用時機: 各樣本必須是互相獨立的隨機樣本，各樣本來自常態分佈的母體，各母體變異數相等。（<a target="_blank" rel="noopener" href="https://molecular-service-science.com/2012/08/20/chi-squared-test-and-three-way-table-and-simpson-paradox/">參考資料一</a>）</p>
+<h3 id="單因素變異數分析"><a href="#單因素變異數分析" class="headerlink" title="單因素變異數分析"></a>單因素變異數分析</h3><p>一項檢驗只有一個影響因素；或者存在多個影響因素時，只分析一個因素與響應變數的關係。</p>
+<h3 id="多因素有互動變異數分析"><a href="#多因素有互動變異數分析" class="headerlink" title="多因素有互動變異數分析"></a>多因素有互動變異數分析</h3><p>一項實驗有多個影響因素，分析多個影響因素與響應變數的關係，__同時考慮多個影響因素之間的關係__。</p>
+<h3 id="多因素無互動變異數分析"><a href="#多因素無互動變異數分析" class="headerlink" title="多因素無互動變異數分析"></a>多因素無互動變異數分析</h3><p>一項實驗有多個影響因素，分析多個影響因素與響應變數的關係，__但是影響因素之間沒有關係或忽略其中的關係__。</p>
+<h2 id="七、迴歸分析"><a href="#七、迴歸分析" class="headerlink" title="七、迴歸分析"></a>七、迴歸分析</h2><h3 id="一元線性迴歸分析"><a href="#一元線性迴歸分析" class="headerlink" title="一元線性迴歸分析"></a>一元線性迴歸分析</h3><p>__只有一個自變數 X 與因變數 Y 有關__，自變數 X 與因變數 Y 的關係就是一個二元一次方程式，X 與 Y 必須是連續型變數，因變數 Y 或其<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E6%AE%8B%E5%B7%AE">殘差</a>必須呈現常態分佈。</p>
+<h3 id="多元線性迴歸分析"><a href="#多元線性迴歸分析" class="headerlink" title="多元線性迴歸分析"></a>多元線性迴歸分析</h3><p>__分析多個自變數與因變數 Y 的關係__，X 與 Y 必須是連續型變數，因變數 Y 或其殘差必須呈現常態分佈。</p>
+<h1 id="以下全部都要查"><a href="#以下全部都要查" class="headerlink" title="以下全部都要查"></a>以下全部都要查</h1><ul>
+<li>變數篩選方式: 選擇最優迴歸方程的變數篩選法包括全模型法（CP 法）、逐步迴歸法、向前引入（選取）法、向後剔除（選取）法。</li>
+<li>模型診斷方法<ul>
+<li>殘差檢驗：觀測值與估計值的差值必須呈現正態分佈。</li>
+<li><a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%BC%BA%E5%BD%B1%E5%93%8D%E7%82%B9">強影響點</a>判斷：尋找方式一般分為標準誤差法、Mahalanobis 距離法。</li>
+<li>共線性診斷<ul>
+<li>診斷方式：容忍度、方差擴大因子法（又稱膨脹係數 VIF）、特徵根判定法、條件指標 CI、方差比例。</li>
+<li>處理方法：增加樣本容量或選取另外的迴歸如主成分迴歸、嶺迴歸等。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h1 id="以上全部都要查"><a href="#以上全部都要查" class="headerlink" title="以上全部都要查"></a>以上全部都要查</h1><h3 id="Logistic-迴歸分析"><a href="#Logistic-迴歸分析" class="headerlink" title="Logistic 迴歸分析"></a>Logistic 迴歸分析</h3><p>線性迴歸模型要求因變數是連續的常態分佈，且自變數和因變數之間呈線性關係，而 __Logistic迴歸模型對因變數的分佈沒有要求__，一般用於因變數是離散時的情況。</p>
+<h2 id="八、聚類分析"><a href="#八、聚類分析" class="headerlink" title="八、聚類分析"></a>八、聚類分析</h2><p><em>待補</em></p>
+<h2 id="九、判別分析"><a href="#九、判別分析" class="headerlink" title="九、判別分析"></a>九、判別分析</h2><p><em>待補</em></p>
+<h2 id="十、主成分分析"><a href="#十、主成分分析" class="headerlink" title="十、主成分分析"></a>十、主成分分析</h2><p><em>待補</em></p>
+<h2 id="十一、因子分析"><a href="#十一、因子分析" class="headerlink" title="十一、因子分析"></a>十一、因子分析</h2><p><em>待補</em></p>
+<h2 id="十二、時間排序分析"><a href="#十二、時間排序分析" class="headerlink" title="十二、時間排序分析"></a>十二、時間排序分析</h2><p><em>待補</em></p>
+<h2 id="十三、生存分析"><a href="#十三、生存分析" class="headerlink" title="十三、生存分析"></a>十三、生存分析</h2><p><em>待補</em></p>
+<h2 id="十四、典型相關分析"><a href="#十四、典型相關分析" class="headerlink" title="十四、典型相關分析"></a>十四、典型相關分析</h2><p><em>待補</em></p>
+<h2 id="十五、ROC-分析"><a href="#十五、ROC-分析" class="headerlink" title="十五、ROC 分析"></a>十五、ROC 分析</h2><p><em>待補</em></p>
+<h2 id="十六、其他分析方法"><a href="#十六、其他分析方法" class="headerlink" title="十六、其他分析方法"></a>十六、其他分析方法</h2><p><em>待補</em></p>
+<h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://medium.com/@yehjames">Yeh James</a> 的__資料分析&amp;機器學習__系列講義</li>
+<li><a target="_blank" rel="noopener" href="https://itw01.com/VQ5QSEJ.html">https://itw01.com/VQ5QSEJ.html</a></li>
+<li><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%8F%8F%E8%BF%B0%E7%BB%9F%E8%AE%A1%E5%AD%A6">https://zh.wikipedia.org/wiki/%E6%8F%8F%E8%BF%B0%E7%BB%9F%E8%AE%A1%E5%AD%A6</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/31584345">https://zhuanlan.zhihu.com/p/31584345</a></li>
+<li><a target="_blank" rel="noopener" href="https://kknews.cc/zh-tw/tech/gvzkv38.html">https://kknews.cc/zh-tw/tech/gvzkv38.html</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/zziahgf/article/details/21024167">https://blog.csdn.net/zziahgf/article/details/21024167</a></li>
+<li><a target="_blank" rel="noopener" href="https://yamol.tw/note_book.php?bsid=5732&amp;noteid=16659">https://yamol.tw/note_book.php?bsid=5732&amp;noteid=16659</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Eugene Yang
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="http://eugene87222.github.io/2018/11/19/20181119-data-analysis-note/" title="資料分析筆記">http://eugene87222.github.io/2018/11/19/20181119-data-analysis-note/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/data-analysis/" rel="tag"># data analysis</a>
+              <a href="/tags/note/" rel="tag"># note</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2018/08/26/20180826-photo/" rel="prev" title="隨手拍#8 - 象山">
+                  <i class="fa fa-chevron-left"></i> 隨手拍#8 - 象山
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2019/01/26/20190126-photo/" rel="next" title="隨手拍#9 - 長洲渡輪碼頭">
+                  隨手拍#9 - 長洲渡輪碼頭 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eugene Yang</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">239k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">3:38</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"eugene87222","count":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

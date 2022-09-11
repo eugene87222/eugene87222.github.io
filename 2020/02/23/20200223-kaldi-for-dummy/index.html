@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/image/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/image/favicon.ico">
+  <link rel="mask-icon" href="/image/favicon.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic%7CKaushan+Script:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"eugene87222.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="最近開始接觸語音辨識，經過一番搜尋後，在網路上找到幾個相關的 toolkit，分別是 CMUSphinx、Kaldi 還有 Mozilla 的 DeepSpeech。CMUSphinx 是由卡內基美隆大學開發的，DeepSpeech 則是由 Mozilla 基於百度的 Deep Speech 研究所開發的，百度發的論文在這邊，有興趣的可以去看一下，這裡就不對這些語音辨識工具多做介紹了，文章把重點放">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Kaldi 入門教學 - Kaldi tutorial for dummy">
+<meta property="og:url" content="http://eugene87222.github.io/2020/02/23/20200223-kaldi-for-dummy/index.html">
+<meta property="og:site_name" content="3ugeneYang.§ite">
+<meta property="og:description" content="最近開始接觸語音辨識，經過一番搜尋後，在網路上找到幾個相關的 toolkit，分別是 CMUSphinx、Kaldi 還有 Mozilla 的 DeepSpeech。CMUSphinx 是由卡內基美隆大學開發的，DeepSpeech 則是由 Mozilla 基於百度的 Deep Speech 研究所開發的，百度發的論文在這邊，有興趣的可以去看一下，這裡就不對這些語音辨識工具多做介紹了，文章把重點放">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-23T07:41:27.000Z">
+<meta property="article:modified_time" content="2020-09-25T02:42:47.888Z">
+<meta property="article:author" content="Eugene Yang">
+<meta property="article:tag" content="tutorial">
+<meta property="article:tag" content="machine learning">
+<meta property="article:tag" content="kaldi">
+<meta property="article:tag" content="speech recognition">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://eugene87222.github.io/2020/02/23/20200223-kaldi-for-dummy/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://eugene87222.github.io/2020/02/23/20200223-kaldi-for-dummy/","path":"2020/02/23/20200223-kaldi-for-dummy/","title":"Kaldi 入門教學 - Kaldi tutorial for dummy"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>Kaldi 入門教學 - Kaldi tutorial for dummy | 3ugeneYang.§ite</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107694365-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-107694365-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">3ugeneYang.§ite</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%82%BA%E4%BB%80%E9%BA%BC%E9%81%B8%E6%93%87-Kaldi"><span class="nav-number">1.</span> <span class="nav-text">為什麼選擇 Kaldi</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83"><span class="nav-number">2.</span> <span class="nav-text">開發環境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8B%E8%BC%89%E8%88%87%E5%AE%89%E8%A3%9D-Kaldi"><span class="nav-number">3.</span> <span class="nav-text">下載與安裝 Kaldi</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Kaldi-%E8%B7%AF%E5%BE%91%E8%A8%AD%E7%BD%AE"><span class="nav-number">4.</span> <span class="nav-text">Kaldi 路徑設置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%B0%A1%E6%98%93-Kaldi-%E7%AF%84%E4%BE%8B"><span class="nav-number">5.</span> <span class="nav-text">簡易 Kaldi 範例</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%83%85%E5%A2%83"><span class="nav-number">5.1.</span> <span class="nav-text">情境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%AE%E7%9A%84"><span class="nav-number">5.2.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5"><span class="nav-number">5.3.</span> <span class="nav-text">第一步</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BA%96%E5%82%99%E8%A8%93%E7%B7%B4%E8%B3%87%E6%96%99"><span class="nav-number">6.</span> <span class="nav-text">準備訓練資料</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%8C%84%E9%9F%B3%E6%AA%94"><span class="nav-number">6.1.</span> <span class="nav-text">錄音檔</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%81%B2%E5%AD%B8%E8%B3%87%E6%96%99"><span class="nav-number">6.2.</span> <span class="nav-text">聲學資料</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#spk2gender"><span class="nav-number">6.2.1.</span> <span class="nav-text">spk2gender</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#wav-scp"><span class="nav-number">6.2.2.</span> <span class="nav-text">wav.scp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#text"><span class="nav-number">6.2.3.</span> <span class="nav-text">text</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#utt2spk"><span class="nav-number">6.2.4.</span> <span class="nav-text">utt2spk</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#corpus-txt"><span class="nav-number">6.2.5.</span> <span class="nav-text">corpus.txt</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AA%9E%E8%A8%80%E8%B3%87%E6%96%99"><span class="nav-number">6.3.</span> <span class="nav-text">語言資料</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#lexicon-txt"><span class="nav-number">6.3.1.</span> <span class="nav-text">lexicon.txt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nonsilence-phones-txt"><span class="nav-number">6.3.2.</span> <span class="nav-text">nonsilence_phones.txt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#silence-phones-txt"><span class="nav-number">6.3.3.</span> <span class="nav-text">silence_phones.txt</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#optional-silence-txt"><span class="nav-number">6.3.4.</span> <span class="nav-text">optional_silence.txt</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BA%96%E5%82%99%E8%A8%93%E7%B7%B4%E7%94%A8%E7%9A%84%E5%B7%A5%E5%85%B7"><span class="nav-number">7.</span> <span class="nav-text">準備訓練用的工具</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E5%BF%85%E8%A6%81%E7%9A%84%E5%B7%A5%E5%85%B7"><span class="nav-number">7.1.</span> <span class="nav-text">一些必要的工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A9%95%E4%BC%B0%E6%A8%A1%E5%9E%8B%E8%A1%A8%E7%8F%BE%E7%9A%84%E5%B7%A5%E5%85%B7"><span class="nav-number">7.2.</span> <span class="nav-text">評估模型表現的工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SRILM"><span class="nav-number">7.3.</span> <span class="nav-text">SRILM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BB%BA%E7%AB%8B-configure"><span class="nav-number">7.4.</span> <span class="nav-text">建立 configure</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#decode-config"><span class="nav-number">7.4.1.</span> <span class="nav-text">decode.config</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mfcc-conf"><span class="nav-number">7.4.2.</span> <span class="nav-text">mfcc.conf</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%BA%96%E5%82%99%E8%A8%93%E7%B7%B4%E7%94%A8%E7%9A%84-shell-script"><span class="nav-number">8.</span> <span class="nav-text">準備訓練用的 shell script</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#cmd-sh"><span class="nav-number">8.1.</span> <span class="nav-text">cmd.sh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#path-sh"><span class="nav-number">8.2.</span> <span class="nav-text">path.sh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#run-sh"><span class="nav-number">8.3.</span> <span class="nav-text">run.sh</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A8%93%E7%B7%B4%E6%A8%A1%E5%9E%8B"><span class="nav-number">9.</span> <span class="nav-text">訓練模型</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E6%A8%A1%E5%9E%8B"><span class="nav-number">10.</span> <span class="nav-text">如何使用模型</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BA%96%E5%82%99%E6%B8%AC%E8%A9%A6%E5%B7%A5%E5%85%B7"><span class="nav-number">10.1.</span> <span class="nav-text">準備測試工具</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BA%96%E5%82%99%E6%A8%A1%E5%9E%8B%E8%88%87%E9%8C%84%E9%9F%B3%E6%AA%94"><span class="nav-number">10.2.</span> <span class="nav-text">準備模型與錄音檔</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Eugene Yang"
+      src="/image/IMG_1314.png">
+  <p class="site-author-name" itemprop="name">Eugene Yang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:eugene87222@gmail.com" title="E-Mail → mailto:eugene87222@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Eugene87222" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Eugene87222" rel="noopener" target="_blank"><i class="fa fa-paper-plane fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/eugene87222" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fab fa-facebook-square fa-fw"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/yanghc" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;yanghc" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pinterest.com/eugene87222/" title="Pinterest → https:&#x2F;&#x2F;www.pinterest.com&#x2F;eugene87222&#x2F;" rel="noopener" target="_blank"><i class="fab fa-pinterest fa-fw"></i>Pinterest</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/eugene87222" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2020/02/23/20200223-kaldi-for-dummy/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/image/IMG_1314.png">
+      <meta itemprop="name" content="Eugene Yang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="3ugeneYang.§ite">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="Kaldi 入門教學 - Kaldi tutorial for dummy | 3ugeneYang.§ite">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Kaldi 入門教學 - Kaldi tutorial for dummy
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-02-23 15:41:27" itemprop="dateCreated datePublished" datetime="2020-02-23T15:41:27+08:00">2020-02-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2020-09-25 10:42:47" itemprop="dateModified" datetime="2020-09-25T10:42:47+08:00">2020-09-25</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>11k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>10 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>最近開始接觸語音辨識，經過一番搜尋後，在網路上找到幾個相關的 toolkit，分別是 <a target="_blank" rel="noopener" href="https://cmusphinx.github.io/">CMUSphinx</a>、<a target="_blank" rel="noopener" href="http://kaldi-asr.org/">Kaldi</a> 還有 <a target="_blank" rel="noopener" href="https://www.mozilla.org/en-US/">Mozilla</a> 的 <a target="_blank" rel="noopener" href="https://github.com/mozilla/DeepSpeech">DeepSpeech</a>。<a target="_blank" rel="noopener" href="https://cmusphinx.github.io/">CMUSphinx</a> 是由卡內基美隆大學開發的，<a target="_blank" rel="noopener" href="https://github.com/mozilla/DeepSpeech">DeepSpeech</a> 則是由 <a target="_blank" rel="noopener" href="https://www.mozilla.org/en-US/">Mozilla</a> 基於百度的 Deep Speech 研究所開發的，百度發的論文在<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1412.5567">這邊</a>，有興趣的可以去看一下，這裡就不對這些語音辨識工具多做介紹了，文章把重點放在 <a target="_blank" rel="noopener" href="http://kaldi-asr.org/">Kaldi</a> 的安裝與使用教學<span id="more"></span>。</p>
+<h1 id="為什麼選擇-Kaldi"><a href="#為什麼選擇-Kaldi" class="headerlink" title="為什麼選擇 Kaldi"></a>為什麼選擇 <a target="_blank" rel="noopener" href="http://kaldi-asr.org/">Kaldi</a></h1><p>我一開始是想找個可以用 <a target="_blank" rel="noopener" href="https://www.python.org/">Python</a> 開發的語音辨識工具，因為寫起來比較方便，後來找到 <a target="_blank" rel="noopener" href="https://cmusphinx.github.io/">CMUSphinx</a>，他有提供 <a target="_blank" rel="noopener" href="https://www.python.org/">Python</a> 的介面，但是在網路上看到大家對 <a target="_blank" rel="noopener" href="https://cmusphinx.github.io/">CMUSphinx</a> 的評價都不太好（準確度方面），於是我就繼續找，過程中在 <a target="_blank" rel="noopener" href="https://telegram.org/">Telegram</a> 上面找到一個<a target="_blank" rel="noopener" href="https://t.me/speech_recognition">討論 Speech Recognition 的群組</a>，就上去問一下有沒有比較推薦的訓練工具，有人建議我可以試試 <a target="_blank" rel="noopener" href="http://kaldi-asr.org/">Kaldi</a>，花了些時間搜尋有關 <a target="_blank" rel="noopener" href="http://kaldi-asr.org/">Kaldi</a> 的教學還有說明文件後，發現他的參考資料比 CMUSphinx 多很多，而且官方說明文件也很完整，不過原生的 <a target="_blank" rel="noopener" href="http://kaldi-asr.org/">Kaldi</a> 貌似沒有提供 <a target="_blank" rel="noopener" href="https://www.python.org/">Python</a> 的 API，使用上是以 shell script 為主，這讓我猶豫了一下，不過後來翻了一下那些 shell script，其實也沒有很複雜，就是檔案多了點，畢竟我目前沒有打算把模型的實作方法整個看懂，重心主要擺在「訓練及使用模型」，了解訓練流程就足夠了，所以就決定先試試看 <a target="_blank" rel="noopener" href="http://kaldi-asr.org/">Kaldi</a>，看他的表現如何。至於為什麼不用 <a target="_blank" rel="noopener" href="https://www.mozilla.org/en-US/">Mozilla</a> 的 <a target="_blank" rel="noopener" href="https://github.com/mozilla/DeepSpeech">DeepSpeech</a>，因為我寫這篇文章的前幾個小時才發現有這個東西，等文章寫好之後我就會去看看 <a target="_blank" rel="noopener" href="https://github.com/mozilla/DeepSpeech">DeepSpeech</a> 了，如果可以的話希望也可以寫一篇教學，寫寫自己的心路歷程。</p>
+<p>廢話不多說，現在就開始我們今天的重點，<a target="_blank" rel="noopener" href="http://kaldi-asr.org/">Kaldi 的官網</a>有兩篇教學，<a target="_blank" rel="noopener" href="https://kaldi-asr.org/doc/tutorial.html">Kaldi tutorial</a> 和 <a target="_blank" rel="noopener" href="https://kaldi-asr.org/doc/kaldi_for_dummies.html">Kaldi for Dummies tutorial</a>，這篇文章會針對後者做解說，文章的編排我會盡量按照 <a target="_blank" rel="noopener" href="https://kaldi-asr.org/doc/kaldi_for_dummies.html">Kaldi for Dummies tutorial</a> 的目錄走，內容則會用我自己的方法去說明，不會完全照著原文翻譯，當然還是建議大家有能力的話可以直接去看原文。</p>
+<h1 id="開發環境"><a href="#開發環境" class="headerlink" title="開發環境"></a>開發環境</h1><p>官方說__盡量在 Linux 環境執行__，畢竟不管是安裝套件或是修改設定，Linux 對開發者還是比較友善的。我則是在 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows/wsl/about">wsl</a> 上執行，因為我只有筆電（Windows 10 Home），然後又不想裝虛擬機，覺得每次開開關關很麻煩，所以決定裝 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows/wsl/about">wsl</a>，我選的是 Ubuntu 18.04 的版本。</p>
+<p>官方教學在這邊有列出一些「必須安裝的工具」跟「可裝可不裝的工具」，可以先不管他們，等到安裝完 <a target="_blank" rel="noopener" href="http://kaldi-asr.org/">Kaldi</a> 之後這些工具也一併安裝好了。</p>
+<h1 id="下載與安裝-Kaldi"><a href="#下載與安裝-Kaldi" class="headerlink" title="下載與安裝 Kaldi"></a>下載與安裝 <a target="_blank" rel="noopener" href="http://kaldi-asr.org/">Kaldi</a></h1><p>用 git 把 <a target="_blank" rel="noopener" href="http://kaldi-asr.org/">Kaldi</a> 的 source 下載下來</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/kaldi-asr/kaldi.git kaldi --origin upstream</span><br></pre></td></tr></table></figure>
+<p>然後先照著 kaldi&#x2F;tools&#x2F;INSTALL 裡面的說明把該裝的裝一裝，再照著 kaldi&#x2F;src&#x2F;INSTALL 裡的步驟安裝 <a target="_blank" rel="noopener" href="http://kaldi-asr.org/">Kaldi</a>。</p>
+<h1 id="Kaldi-路徑設置"><a href="#Kaldi-路徑設置" class="headerlink" title="Kaldi 路徑設置"></a><a target="_blank" rel="noopener" href="http://kaldi-asr.org/">Kaldi</a> 路徑設置</h1><p>clone 下來的 kaldi 資料夾裡面有很多東西，官方列出其中幾個比較需要知道的：</p>
+<ul>
+<li>egs：各種範例，每個範例裡面都有 README 可以參考，範例中的 shell script 也都有很詳細的註解，後面的教學也會用到這個資料夾</li>
+<li>misc：一些額外的工具，我自己是沒有管他啦</li>
+<li>src：<a target="_blank" rel="noopener" href="http://kaldi-asr.org/">Kaldi</a> 的 source code，<a target="_blank" rel="noopener" href="https://kaldi-asr.org/doc/tutorial_looking.html#tutorial_looking_src">這裡</a>有官方的詳細解說</li>
+<li>tools：很多很多的工具，在訓練的時候會用到，<a target="_blank" rel="noopener" href="https://kaldi-asr.org/doc/tutorial_looking.html#tutorial_looking_tools">這裡</a>有官方的詳細解說</li>
+<li>windows：如果真的必須在 Windows 上面執行 <a target="_blank" rel="noopener" href="http://kaldi-asr.org/">Kaldi</a> 的話，務必要看看這個資料夾，官方很貼心的提供了一些工具</li>
+</ul>
+<h1 id="簡易-Kaldi-範例"><a href="#簡易-Kaldi-範例" class="headerlink" title="簡易 Kaldi 範例"></a>簡易 <a target="_blank" rel="noopener" href="http://kaldi-asr.org/">Kaldi</a> 範例</h1><h2 id="情境"><a href="#情境" class="headerlink" title="情境"></a>情境</h2><p>現在我們有許多來自不同受試者的錄音檔，錄音的內容為英文數字，每個錄音檔都包含三個數字。例如：「one nine zero」。</p>
+<h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><p>我們希望把這些錄音檔拆成 training set 跟 testing set，然後建立自動語音辨識。</p>
+<h2 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h2><p>先在 egs 裡面建立一個 digits 資料夾，接下來的動作都會在這個資料夾裡面進行。</p>
+<h1 id="準備訓練資料"><a href="#準備訓練資料" class="headerlink" title="準備訓練資料"></a>準備訓練資料</h1><h2 id="錄音檔"><a href="#錄音檔" class="headerlink" title="錄音檔"></a>錄音檔</h2><p>訓練會用到的錄音檔可以在<a target="_blank" rel="noopener" href="https://github.com/hlthu/hlthu.github.io/blob/master/public/downloads/numbers-en.tar.gz">這邊</a>下載，裡面一共有 128 個單聲道 16000 Hz 的 wav 檔，並且已經被分成 train 與 test，分別包含 80 個與 40 個錄音，檔名的格式是 <code>ID_&lt;錄音裡面的三個數字&gt;</code>，這邊有八個 ID，可以想成是八個不同的人的錄音，錄音檔按照 ID 又被細分為八個資料夾，所以我們錄音檔的結構會長這樣：</p>
+<ul>
+<li>八個不同的人</li>
+<li>每個人有 16 個錄音檔</li>
+<li>總共 128 個句子（每個人 16 個）</li>
+<li>總共 128 * 3 個英文數字（每個句子有三個英文數字）</li>
+</ul>
+<p>在剛剛建立的 digits 資料夾裡面建立一個名為 digits_audio 的資料夾，在 digits_audio 裡面再建立兩個資料夾 train 跟 test，然後把先前下載好的錄音檔裡面的 train 跟 test 分別放到剛剛建立的 train 跟 test 裡面。</p>
+<h2 id="聲學資料"><a href="#聲學資料" class="headerlink" title="聲學資料"></a>聲學資料</h2><p>建立好錄音檔後，還得告訴 <a target="_blank" rel="noopener" href="http://kaldi-asr.org/">Kaldi</a> 一些關於這些聲音的資訊，首先先在 digits 下建立一個 data 資料夾，然後在 data 裡面一樣建立 train 跟 test，接著分別在 train 跟 test 裡面依序建立以下這些檔案：</p>
+<blockquote>
+<p>我相信不會有人想要自己一行一行打這些檔案（我自己就不想），所以我寫了幾個簡單的 script 來自動產生這些檔案（除了 spk2gender），連結在<a target="_blank" rel="noopener" href="https://gist.github.com/eugene87222/437942ac45dedf8cb8f6a2e350df6c91">這裡</a>，不過建議大家先把下面關於檔案的說明都看完，了解檔案格式之後再跑 script。</p>
+</blockquote>
+<h3 id="spk2gender"><a href="#spk2gender" class="headerlink" title="spk2gender"></a>spk2gender</h3><p>這個檔案是關於說話的人的性別，格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;speakerID&gt; &lt;gender&gt;</span><br></pre></td></tr></table></figure>
+<p><code>speakerID</code> 可以當成是說話的人的名字，前提是這些名字不重複，<code>gender</code> 就是性別，男生是 <code>m</code>，女生是 <code>f</code>，就我們的錄音檔來看，<code>speakerID</code> 就是 1 到 8，前五個是男生，後三個是女生，所以檔案內容會像下面這樣：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1 m</span><br><span class="line">2 m</span><br><span class="line">3 m</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h3 id="wav-scp"><a href="#wav-scp" class="headerlink" title="wav.scp"></a>wav.scp</h3><p>這個檔案是每個句子所對應的錄音檔路徑，格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;utteranceID&gt; &lt;full_path_to_audio_file&gt;</span><br></pre></td></tr></table></figure>
+<p>每個句子都有一個 <code>utteranceID</code>，<code>utteranceID</code> 沒有特別規定的格式，不過為了方便起見，這邊就以錄音檔的檔名作為 <code>utteranceID</code>，<code>full_path_to_audio_file</code> 就檔案的完整路徑，所以檔案內容會像下面這樣：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1-040 /path/to/1-040.wav</span><br><span class="line">1-089 /path/to/1-089.wav</span><br><span class="line">1-104 /path/to/1-104.wav</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h3 id="text"><a href="#text" class="headerlink" title="text"></a>text</h3><p>這個檔案是每個句子所對應的錄音內容，格式跟參考內容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;utteranceID&gt; &lt;text_transcription&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1-040 zero four zero</span><br><span class="line">1-089 zero eight nine</span><br><span class="line">1-104 one zero four</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h3 id="utt2spk"><a href="#utt2spk" class="headerlink" title="utt2spk"></a>utt2spk</h3><p>這個檔案是每個句子所對應的說話者，格式跟參考內容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;utteranceID&gt; &lt;speakerID&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">1-040 1</span><br><span class="line">1-089 1</span><br><span class="line">1-104 1</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<h3 id="corpus-txt"><a href="#corpus-txt" class="headerlink" title="corpus.txt"></a>corpus.txt</h3><p>這個檔案要包含所有會出現在自動語音辨識系統裡面的句子，以我們的錄音為例， corpus.txt 裡面會有 128 個句子，分別對應到 128 錄音檔的內容，格式跟參考內容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;text_transcription&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">zero four zero</span><br><span class="line">zero eight nine</span><br><span class="line">one zero four</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<p>另外要注意這個檔案存放的地方跟上面那些檔案比較不一樣，要在<a href="#%E8%81%B2%E5%AD%B8%E8%B3%87%E6%96%99">之前建立的 data 資料夾</a>裡面，建立一個 local 資料夾，並把 corpus.txt 丟進去。</p>
+<h2 id="語言資料"><a href="#語言資料" class="headerlink" title="語言資料"></a>語言資料</h2><p>這部分就是要準備一些跟我們要辨識的語言有關的文件，首先先在<a href="#corpus-txt">上個環節</a>建立的 local 下建立 dict 資料夾，接著依序建立以下檔案：</p>
+<h3 id="lexicon-txt"><a href="#lexicon-txt" class="headerlink" title="lexicon.txt"></a>lexicon.txt</h3><p>這個檔案包含了所有會出現在自動語音辨識系統裡面的字的發音，發音則是由一個至多個<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E9%9F%B3%E7%B4%A0">音素（phone）</a>組成，格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;word&gt; &lt;phone 1&gt; &lt;phone 2&gt; ...</span><br></pre></td></tr></table></figure>
+<p>以我們的教學為例， lexicon.txt 裡面就是 0 到 9 的發音，這邊直接把所有的發音提供給大家使用：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">!SIL sil</span><br><span class="line">&lt;UNK&gt; spn</span><br><span class="line">eight ey t</span><br><span class="line">five f ay v</span><br><span class="line">four f ao r</span><br><span class="line">nine n ay n</span><br><span class="line">one hh w ah n</span><br><span class="line">one w ah n</span><br><span class="line">seven s eh v ah n</span><br><span class="line">six s ih k s</span><br><span class="line">three th r iy</span><br><span class="line">two t uw</span><br><span class="line">zero z ih r ow</span><br><span class="line">zero z iy r ow</span><br></pre></td></tr></table></figure>
+
+<h3 id="nonsilence-phones-txt"><a href="#nonsilence-phones-txt" class="headerlink" title="nonsilence_phones.txt"></a>nonsilence_phones.txt</h3><p>這個檔案包含了所有 non silence 的音素，這邊一樣把格式跟檔案內容提供給大家：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;phone&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">ah</span><br><span class="line">ao</span><br><span class="line">ay</span><br><span class="line">eh</span><br><span class="line">ey</span><br><span class="line">f</span><br><span class="line">hh</span><br><span class="line">ih</span><br><span class="line">iy</span><br><span class="line">k</span><br><span class="line">n</span><br><span class="line">ow</span><br><span class="line">r</span><br><span class="line">s</span><br><span class="line">t</span><br><span class="line">th</span><br><span class="line">uw</span><br><span class="line">w</span><br><span class="line">v</span><br><span class="line">z</span><br></pre></td></tr></table></figure>
+
+<h3 id="silence-phones-txt"><a href="#silence-phones-txt" class="headerlink" title="silence_phones.txt"></a>silence_phones.txt</h3><p>這應該看檔名就知道了，格式跟檔案內容如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;phone&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sil</span><br><span class="line">spn</span><br></pre></td></tr></table></figure>
+
+<h3 id="optional-silence-txt"><a href="#optional-silence-txt" class="headerlink" title="optional_silence.txt"></a>optional_silence.txt</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;phone&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sil</span><br></pre></td></tr></table></figure>
+
+<p>到目前為止我們已經把訓練要用的資料都準備好了，接下來要準備訓練用的工具。</p>
+<h1 id="準備訓練用的工具"><a href="#準備訓練用的工具" class="headerlink" title="準備訓練用的工具"></a>準備訓練用的工具</h1><h2 id="一些必要的工具"><a href="#一些必要的工具" class="headerlink" title="一些必要的工具"></a>一些必要的工具</h2><p>把 kaldi&#x2F;egs&#x2F;wsj&#x2F;s5 裡面的 utils 跟 steps 這兩個資料夾複製到我們的 digits 下面，如果想省硬碟空間的話也可以考慮用 <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Symbolic_link">symbolic link</a> 的方式。</p>
+<h2 id="評估模型表現的工具"><a href="#評估模型表現的工具" class="headerlink" title="評估模型表現的工具"></a>評估模型表現的工具</h2><p>在我們的 digits 資料夾下建立一個 local 資料夾，把 kaldi&#x2F;egs&#x2F;voxforge&#x2F;s5&#x2F;local 裡面的 score.sh 複製到這邊。</p>
+<h2 id="SRILM"><a href="#SRILM" class="headerlink" title="SRILM"></a>SRILM</h2><p>詳細的安裝說明請到 kaldi&#x2F;tools&#x2F;install_srilm.sh 裡面看。</p>
+<h2 id="建立-configure"><a href="#建立-configure" class="headerlink" title="建立 configure"></a>建立 configure</h2><p>在 digits 下建立一個 conf 資料夾，在裡面建立 decode.config 跟 mfcc.conf 兩個檔案，檔案的內容如下：</p>
+<h3 id="decode-config"><a href="#decode-config" class="headerlink" title="decode.config"></a>decode.config</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">first_beam=10.0</span><br><span class="line">beam=13.0</span><br><span class="line">lattice_beam=6.0</span><br></pre></td></tr></table></figure>
+
+<h3 id="mfcc-conf"><a href="#mfcc-conf" class="headerlink" title="mfcc.conf"></a>mfcc.conf</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">--use-energy=false</span><br></pre></td></tr></table></figure>
+
+<p>這兩個檔案是用來調整訓練模型時候的一些參數。</p>
+<h1 id="準備訓練用的-shell-script"><a href="#準備訓練用的-shell-script" class="headerlink" title="準備訓練用的 shell script"></a>準備訓練用的 shell script</h1><p>接著要準備訓練模型的程式，在 digits 下依序建立這三個檔案：</p>
+<h2 id="cmd-sh"><a href="#cmd-sh" class="headerlink" title="cmd.sh"></a>cmd.sh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Setting local system jobs (local CPU - no external clusters)</span></span><br><span class="line"><span class="built_in">export</span> train_cmd=run.pl</span><br><span class="line"><span class="built_in">export</span> decode_cmd=run.pl</span><br></pre></td></tr></table></figure>
+
+<h2 id="path-sh"><a href="#path-sh" class="headerlink" title="path.sh"></a>path.sh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Defining Kaldi root directory</span></span><br><span class="line"><span class="built_in">export</span> KALDI_ROOT=`<span class="built_in">pwd</span>`/../..</span><br><span class="line"><span class="comment"># Setting paths to useful tools</span></span><br><span class="line"><span class="built_in">export</span> PATH=<span class="variable">$PWD</span>/utils/:<span class="variable">$KALDI_ROOT</span>/src/bin:<span class="variable">$KALDI_ROOT</span>/tools/openfst/bin:<span class="variable">$KALDI_ROOT</span>/src/fstbin/:<span class="variable">$KALDI_ROOT</span>/src/gmmbin/:<span class="variable">$KALDI_ROOT</span>/src/featbin/:<span class="variable">$KALDI_ROOT</span>/src/lmbin/:<span class="variable">$KALDI_ROOT</span>/src/sgmm2bin/:<span class="variable">$KALDI_ROOT</span>/src/fgmmbin/:<span class="variable">$KALDI_ROOT</span>/src/latbin/:<span class="variable">$PWD</span>:<span class="variable">$PATH</span></span><br><span class="line"><span class="comment"># Defining audio data directory (modify it for your installation directory!)</span></span><br><span class="line"><span class="built_in">export</span> DATA_ROOT=<span class="string">&quot;/home/&#123;user&#125;/kaldi/egs/digits/digits_audio&quot;</span></span><br><span class="line"><span class="comment"># Enable SRILM</span></span><br><span class="line">. <span class="variable">$KALDI_ROOT</span>/tools/env.sh</span><br><span class="line"><span class="comment"># Variable needed for proper data sorting</span></span><br><span class="line"><span class="built_in">export</span> LC_ALL=C</span><br></pre></td></tr></table></figure>
+
+<h2 id="run-sh"><a href="#run-sh" class="headerlink" title="run.sh"></a>run.sh</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">. ./path.sh || <span class="built_in">exit</span> 1</span><br><span class="line">. ./cmd.sh || <span class="built_in">exit</span> 1</span><br><span class="line">nj=1       <span class="comment"># number of parallel jobs - 1 is perfect for such a small dataset</span></span><br><span class="line">lm_order=1 <span class="comment"># language model order (n-gram quantity) - 1 is enough for digits grammar</span></span><br><span class="line"><span class="comment"># Safety mechanism (possible running this script with modified arguments)</span></span><br><span class="line">. utils/parse_options.sh || <span class="built_in">exit</span> 1</span><br><span class="line">[[ <span class="variable">$#</span> -ge 1 ]] &amp;&amp; &#123; <span class="built_in">echo</span> <span class="string">&quot;Wrong arguments!&quot;</span>; <span class="built_in">exit</span> 1; &#125;</span><br><span class="line"><span class="comment"># Removing previously created data (from last run.sh execution)</span></span><br><span class="line"><span class="built_in">rm</span> -rf exp mfcc data/train/spk2utt data/train/cmvn.scp data/train/feats.scp data/train/split1 data/test/spk2utt data/test/cmvn.scp data/test/feats.scp data/test/split1 data/local/lang data/lang data/local/tmp data/local/dict/lexiconp.txt</span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;===== PREPARING ACOUSTIC DATA =====&quot;</span></span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line"><span class="comment"># Needs to be prepared by hand (or using self written scripts):</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># spk2gender  [&lt;speaker-id&gt; &lt;gender&gt;]</span></span><br><span class="line"><span class="comment"># wav.scp     [&lt;uterranceID&gt; &lt;full_path_to_audio_file&gt;]</span></span><br><span class="line"><span class="comment"># text        [&lt;uterranceID&gt; &lt;text_transcription&gt;]</span></span><br><span class="line"><span class="comment"># utt2spk     [&lt;uterranceID&gt; &lt;speakerID&gt;]</span></span><br><span class="line"><span class="comment"># corpus.txt  [&lt;text_transcription&gt;]</span></span><br><span class="line"><span class="comment"># Making spk2utt files</span></span><br><span class="line">utils/utt2spk_to_spk2utt.pl data/train/utt2spk &gt; data/train/spk2utt</span><br><span class="line">utils/utt2spk_to_spk2utt.pl data/test/utt2spk &gt; data/test/spk2utt</span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;===== FEATURES EXTRACTION =====&quot;</span></span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line"><span class="comment"># Making feats.scp files</span></span><br><span class="line">mfccdir=mfcc</span><br><span class="line"><span class="comment"># Uncomment and modify arguments in scripts below if you have any problems with data sorting</span></span><br><span class="line"><span class="comment"># utils/validate_data_dir.sh data/train     # script for checking prepared data - here: for data/train directory</span></span><br><span class="line"><span class="comment"># utils/fix_data_dir.sh data/train          # tool for data proper sorting if needed - here: for data/train directory</span></span><br><span class="line">steps/make_mfcc.sh --nj <span class="variable">$nj</span> --cmd <span class="string">&quot;<span class="variable">$train_cmd</span>&quot;</span> data/train exp/make_mfcc/train <span class="variable">$mfccdir</span></span><br><span class="line">steps/make_mfcc.sh --nj <span class="variable">$nj</span> --cmd <span class="string">&quot;<span class="variable">$train_cmd</span>&quot;</span> data/test exp/make_mfcc/test <span class="variable">$mfccdir</span></span><br><span class="line"><span class="comment"># Making cmvn.scp files</span></span><br><span class="line">steps/compute_cmvn_stats.sh data/train exp/make_mfcc/train <span class="variable">$mfccdir</span></span><br><span class="line">steps/compute_cmvn_stats.sh data/test exp/make_mfcc/test <span class="variable">$mfccdir</span></span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;===== PREPARING LANGUAGE DATA =====&quot;</span></span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line"><span class="comment"># Needs to be prepared by hand (or using self written scripts):</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># lexicon.txt           [&lt;word&gt; &lt;phone 1&gt; &lt;phone 2&gt; ...]</span></span><br><span class="line"><span class="comment"># nonsilence_phones.txt [&lt;phone&gt;]</span></span><br><span class="line"><span class="comment"># silence_phones.txt    [&lt;phone&gt;]</span></span><br><span class="line"><span class="comment"># optional_silence.txt  [&lt;phone&gt;]</span></span><br><span class="line"><span class="comment"># Preparing language data</span></span><br><span class="line">utils/prepare_lang.sh data/local/dict <span class="string">&quot;&lt;UNK&gt;&quot;</span> data/local/lang data/lang</span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;===== LANGUAGE MODEL CREATION =====&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;===== MAKING lm.arpa =====&quot;</span></span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line">loc=`<span class="built_in">which</span> ngram-count`;</span><br><span class="line"><span class="keyword">if</span> [ -z <span class="variable">$loc</span> ]; <span class="keyword">then</span></span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">uname</span> -a | grep 64 &gt;/dev/null; <span class="keyword">then</span></span><br><span class="line">        sdir=<span class="variable">$KALDI_ROOT</span>/tools/srilm/bin/i686-m64</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        sdir=<span class="variable">$KALDI_ROOT</span>/tools/srilm/bin/i686</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line">    <span class="keyword">if</span> [ -f <span class="variable">$sdir</span>/ngram-count ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;Using SRILM language modelling tool from <span class="variable">$sdir</span>&quot;</span></span><br><span class="line">        <span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$sdir</span></span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;SRILM toolkit is probably not installed.</span></span><br><span class="line"><span class="string">                Instructions: tools/install_srilm.sh&quot;</span></span><br><span class="line">        <span class="built_in">exit</span> 1</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">fi</span></span><br><span class="line"><span class="built_in">local</span>=data/local</span><br><span class="line"><span class="built_in">mkdir</span> <span class="variable">$local</span>/tmp</span><br><span class="line">ngram-count -order <span class="variable">$lm_order</span> -write-vocab <span class="variable">$local</span>/tmp/vocab-full.txt -wbdiscount -text <span class="variable">$local</span>/corpus.txt -lm <span class="variable">$local</span>/tmp/lm.arpa</span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;===== MAKING G.fst =====&quot;</span></span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line">lang=data/lang</span><br><span class="line">arpa2fst --disambig-symbol=<span class="comment">#0 --read-symbol-table=$lang/words.txt $local/tmp/lm.arpa $lang/G.fst</span></span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;===== MONO TRAINING =====&quot;</span></span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line">steps/train_mono.sh --nj <span class="variable">$nj</span> --cmd <span class="string">&quot;<span class="variable">$train_cmd</span>&quot;</span> data/train data/lang exp/mono  || <span class="built_in">exit</span> 1</span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;===== MONO DECODING =====&quot;</span></span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line">utils/mkgraph.sh --mono data/lang exp/mono exp/mono/graph || <span class="built_in">exit</span> 1</span><br><span class="line">steps/decode.sh --config conf/decode.config --nj <span class="variable">$nj</span> --cmd <span class="string">&quot;<span class="variable">$decode_cmd</span>&quot;</span> exp/mono/graph data/test exp/mono/decode</span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;===== MONO ALIGNMENT =====&quot;</span></span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line">steps/align_si.sh --nj <span class="variable">$nj</span> --cmd <span class="string">&quot;<span class="variable">$train_cmd</span>&quot;</span> data/train data/lang exp/mono exp/mono_ali || <span class="built_in">exit</span> 1</span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;===== TRI1 (first triphone pass) TRAINING =====&quot;</span></span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line">steps/train_deltas.sh --cmd <span class="string">&quot;<span class="variable">$train_cmd</span>&quot;</span> 2000 11000 data/train data/lang exp/mono_ali exp/tri1 || <span class="built_in">exit</span> 1</span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;===== TRI1 (first triphone pass) DECODING =====&quot;</span></span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line">utils/mkgraph.sh data/lang exp/tri1 exp/tri1/graph || <span class="built_in">exit</span> 1</span><br><span class="line">steps/decode.sh --config conf/decode.config --nj <span class="variable">$nj</span> --cmd <span class="string">&quot;<span class="variable">$decode_cmd</span>&quot;</span> exp/tri1/graph data/test exp/tri1/decode</span><br><span class="line"><span class="built_in">echo</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;===== run.sh script is finished =====&quot;</span></span><br><span class="line"><span class="built_in">echo</span></span><br></pre></td></tr></table></figure>
+
+<h1 id="訓練模型"><a href="#訓練模型" class="headerlink" title="訓練模型"></a>訓練模型</h1><p>該準備的都準備好了，目前的 digits 資料夾結構會長這樣：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── cmd.sh</span><br><span class="line">├── conf</span><br><span class="line">│   ├── decode.config</span><br><span class="line">│   └── mfcc.conf</span><br><span class="line">├── data</span><br><span class="line">│   ├── local</span><br><span class="line">│   │   ├── corpus.txt</span><br><span class="line">│   │   └── dict</span><br><span class="line">│   │       ├── lexicon.txt</span><br><span class="line">│   │       ├── nonsilence_phones.txt</span><br><span class="line">│   │       ├── optional_silence.txt</span><br><span class="line">│   │       └── silence_phones.txt</span><br><span class="line">│   ├── test</span><br><span class="line">│   │   ├── spk2gender</span><br><span class="line">│   │   ├── text</span><br><span class="line">│   │   ├── utt2spk</span><br><span class="line">│   │   └── wav.scp</span><br><span class="line">│   └── train</span><br><span class="line">│       └── 跟 test 一樣的結構</span><br><span class="line">├── digits_audio</span><br><span class="line">│   ├── test</span><br><span class="line">│   │   └── 編號 1 到 8 的資料夾</span><br><span class="line">│   │       └── 每個資料夾內都有 6 個 wav</span><br><span class="line">│   └── train</span><br><span class="line">│       └── 編號 1 到 8 的資料夾</span><br><span class="line">│           └── 每個資料夾內都有 10 個 wav</span><br><span class="line">├── local</span><br><span class="line">│   └── score.sh</span><br><span class="line">├── path.sh</span><br><span class="line">├── run.sh</span><br><span class="line">├── steps</span><br><span class="line">│   ├── align_basis_fmllr.sh</span><br><span class="line">│   ├── align_basis_fmllr_lats.sh</span><br><span class="line">│   └── ...</span><br><span class="line">└── utils</span><br><span class="line">    ├── add_disambig.pl</span><br><span class="line">    ├── add_lex_disambig.pl</span><br><span class="line">    └── ...</span><br></pre></td></tr></table></figure>
+
+<p>最後在 terminal 打上 <code>./run.sh</code> 就可以開始訓練了，訓練出來的結果可以去 exp 裡面看，副檔名為 .mdl 的就是我們訓練出來的模型，其中 final.mdl 是訓練過程跑完後的最終模型，他其實是個 link，連到同一個資料夾裡面的 &lt;number&gt;.mdl。</p>
+<p>以上就是官方 <a target="_blank" rel="noopener" href="https://kaldi-asr.org/doc/kaldi_for_dummies.html">Kaldi for Dummies tutorial</a> 的解說，接下來會說明怎麼使用訓練好的模型來測試自己的錄音檔。</p>
+<h1 id="如何使用模型"><a href="#如何使用模型" class="headerlink" title="如何使用模型"></a>如何使用模型</h1><h2 id="準備測試工具"><a href="#準備測試工具" class="headerlink" title="準備測試工具"></a>準備測試工具</h2><p>先到 kaldi&#x2F;src&#x2F;online 下面 make，把該編譯的東西編一編，然後把 kaldi&#x2F;egs&#x2F;voxforge 下面的 online_demo 整個複製到我們的 digits 資料夾下面。</p>
+<h2 id="準備模型與錄音檔"><a href="#準備模型與錄音檔" class="headerlink" title="準備模型與錄音檔"></a>準備模型與錄音檔</h2><p>在我們剛剛複製過來的 online_demo 下建立兩個資料夾，online-data 跟 work，online-data 要擺我們的模型跟錄音，work 可以先不管他，跑測試的過程中產生的檔案會被丟進去，然後在 online-data 裡面建立 audio 跟 model 兩個資料夾。</p>
+<p>把要測試的 wav 放到 audio 裡面，另外在 audio 裡建立一個 trans.txt，檔案內容就是 wav 的對應到的語音內容，舉例來說：test1.wav 的內容是「one two three」，那 trans.txt 就會是：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">test1 one two three</span><br></pre></td></tr></table></figure>
+
+<p>接著在 model 下建立 tri1 資料夾，資料夾內要包含以下四個檔案：</p>
+<ul>
+<li>&lt;number.mdl&gt;：模型（在 digits&#x2F;exp&#x2F;tri1 裡面）</li>
+<li>final.mdl：一個 link，連到模型（在 digits&#x2F;exp&#x2F;tri1 裡面）</li>
+<li>HCLG.fst：完整的 fst（在 digits&#x2F;exp&#x2F;tri1&#x2F;graph 裡面）</li>
+<li>words.txt：字典，給每個字一個編號（在 digits&#x2F;exp&#x2F;tri1&#x2F;graph 裡面）</li>
+</ul>
+<p>修改一下 online_demo 下的 run.sh，把 <code>ac_model_type</code> 改成 <code>tri1</code>（原本應該是 <code>tri2b_mmi</code>），另外原本的 run.sh 裡面有一段下載 testing data 的程式碼，把它註解掉。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ ! -s <span class="variable">$&#123;data_file&#125;</span>.tar.bz2 ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;Downloading test models and data ...&quot;</span></span><br><span class="line">    wget -T 10 -t 3 <span class="variable">$data_url</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> [ ! -s <span class="variable">$&#123;data_file&#125;</span>.tar.bz2 ]; <span class="keyword">then</span></span><br><span class="line">        <span class="built_in">echo</span> <span class="string">&quot;Download of <span class="variable">$data_file</span> has failed!&quot;</span></span><br><span class="line">        <span class="built_in">exit</span> 1</span><br><span class="line">    <span class="keyword">fi</span></span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<p>最後，把 run.sh 裡面 <code>$ac_model/model</code> 的地方都改成 <code>$ac_model/final.mdl</code>（應該有兩個地方要改），都弄好之後 online_demo 的結構應該會像這樣：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── README.txt</span><br><span class="line">├── online-data</span><br><span class="line">│   ├── audio</span><br><span class="line">│   │   ├── test1.wav</span><br><span class="line">│   │   └── trans.txt</span><br><span class="line">│   └── models</span><br><span class="line">│       ├── mono</span><br><span class="line">│       │   ├── 40.mdl</span><br><span class="line">│       │   ├── HCLG.fst</span><br><span class="line">│       │   ├── final.mdl -&gt; 40.mdl</span><br><span class="line">│       │   └── words.txt</span><br><span class="line">│       └── tri1</span><br><span class="line">│           ├── 35.mdl</span><br><span class="line">│           ├── HCLG.fst</span><br><span class="line">│           ├── final.mdl -&gt; 35.mdl</span><br><span class="line">│           └── words.txt</span><br><span class="line">├── run.sh</span><br><span class="line">└── work</span><br></pre></td></tr></table></figure>
+<p>執行 run.sh 就可以看到測試結果了。</p>
+<blockquote>
+<p>vosk api 補上 沒用過</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Eugene Yang
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="http://eugene87222.github.io/2020/02/23/20200223-kaldi-for-dummy/" title="Kaldi 入門教學 - Kaldi tutorial for dummy">http://eugene87222.github.io/2020/02/23/20200223-kaldi-for-dummy/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/tutorial/" rel="tag"># tutorial</a>
+              <a href="/tags/machine-learning/" rel="tag"># machine learning</a>
+              <a href="/tags/kaldi/" rel="tag"># kaldi</a>
+              <a href="/tags/speech-recognition/" rel="tag"># speech recognition</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/02/18/20200218-photo/" rel="prev" title="隨手拍#12 - 台中秋紅谷">
+                  <i class="fa fa-chevron-left"></i> 隨手拍#12 - 台中秋紅谷
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/07/12/20200712-undergrad-4-2/" rel="next" title="四下修課心得">
+                  四下修課心得 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eugene Yang</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">239k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">3:38</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"eugene87222","count":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>

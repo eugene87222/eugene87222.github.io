@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/image/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/image/favicon.ico">
+  <link rel="mask-icon" href="/image/favicon.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic%7CKaushan+Script:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"eugene87222.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="之前大三上剛開學的時候閒閒沒事，剛好那段時間正在選課，有鑑於每次登入選課系統都要打驗證碼（下圖），我自己是覺得很麻煩（到底有多懶），就想說用 Python 寫個自動登入的程式">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用機器學習的方式登入選課系統">
+<meta property="og:url" content="http://eugene87222.github.io/2020/01/18/20191219-get-rid-of-captcha/index.html">
+<meta property="og:site_name" content="3ugeneYang.§ite">
+<meta property="og:description" content="之前大三上剛開學的時候閒閒沒事，剛好那段時間正在選課，有鑑於每次登入選課系統都要打驗證碼（下圖），我自己是覺得很麻煩（到底有多懶），就想說用 Python 寫個自動登入的程式">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://eugene87222.github.io/image/2020-01-16_230643.png">
+<meta property="og:image" content="http://eugene87222.github.io/image/3.jpg">
+<meta property="og:image" content="http://eugene87222.github.io/image/3_gray.jpg">
+<meta property="og:image" content="http://eugene87222.github.io/image/3_blur.jpg">
+<meta property="og:image" content="http://eugene87222.github.io/image/3_highlight.jpg">
+<meta property="og:image" content="http://eugene87222.github.io/image/3_ori_contour.jpg">
+<meta property="og:image" content="http://eugene87222.github.io/image/3_final_contour.jpg">
+<meta property="article:published_time" content="2020-01-17T16:33:02.000Z">
+<meta property="article:modified_time" content="2020-02-25T05:45:09.550Z">
+<meta property="article:author" content="Eugene Yang">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="I don&#39;t know">
+<meta property="article:tag" content="machine learning">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://eugene87222.github.io/image/2020-01-16_230643.png">
+
+
+<link rel="canonical" href="http://eugene87222.github.io/2020/01/18/20191219-get-rid-of-captcha/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://eugene87222.github.io/2020/01/18/20191219-get-rid-of-captcha/","path":"2020/01/18/20191219-get-rid-of-captcha/","title":"用機器學習的方式登入選課系統"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>用機器學習的方式登入選課系統 | 3ugeneYang.§ite</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107694365-1"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-107694365-1","only_pageview":false}</script>
+  <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">3ugeneYang.§ite</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a></li><li class="menu-item menu-item-sitemap"><a href="/sitemap.xml" rel="section"><i class="fa fa-sitemap fa-fw"></i>Sitemap</a></li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup"><div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off" maxlength="80"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close" role="button">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div class="search-result-container no-result">
+  <div class="search-result-icon">
+    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+        
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%A6%E4%BD%9C%E6%96%B9%E6%B3%95"><span class="nav-number">1.</span> <span class="nav-text">實作方法</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%96%8B%E7%99%BC%E7%92%B0%E5%A2%83"><span class="nav-number">1.1.</span> <span class="nav-text">開發環境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%92%90%E9%9B%86-training-data"><span class="nav-number">1.2.</span> <span class="nav-text">蒐集 training data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Preprocessing"><span class="nav-number">1.3.</span> <span class="nav-text">Preprocessing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%87%E5%89%B2%E6%95%B8%E5%AD%97"><span class="nav-number">1.4.</span> <span class="nav-text">切割數字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Train-model"><span class="nav-number">1.5.</span> <span class="nav-text">Train model</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%99%BB%E5%85%A5%E7%B3%BB%E7%B5%B1"><span class="nav-number">1.6.</span> <span class="nav-text">登入系統</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AF%A6%E9%A9%97%E7%B5%90%E6%9E%9C"><span class="nav-number">2.</span> <span class="nav-text">實驗結果</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Eugene Yang"
+      src="/image/IMG_1314.png">
+  <p class="site-author-name" itemprop="name">Eugene Yang</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap site-overview-item animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">75</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+          <a href="/tags/">
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author site-overview-item animated">
+      <span class="links-of-author-item">
+        <a href="mailto:eugene87222@gmail.com" title="E-Mail → mailto:eugene87222@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Eugene87222" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Eugene87222" rel="noopener" target="_blank"><i class="fa fa-paper-plane fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.facebook.com/eugene87222" title="Facebook → https:&#x2F;&#x2F;www.facebook.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fab fa-facebook-square fa-fw"></i>Facebook</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.linkedin.com/in/yanghc" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;yanghc" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.pinterest.com/eugene87222/" title="Pinterest → https:&#x2F;&#x2F;www.pinterest.com&#x2F;eugene87222&#x2F;" rel="noopener" target="_blank"><i class="fab fa-pinterest fa-fw"></i>Pinterest</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://github.com/eugene87222" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+  </div>
+
+
+
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="sidebar-dimmer"></div>
+
+
+    </header>
+
+    
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2020/01/18/20191219-get-rid-of-captcha/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/image/IMG_1314.png">
+      <meta itemprop="name" content="Eugene Yang">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="3ugeneYang.§ite">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="用機器學習的方式登入選課系統 | 3ugeneYang.§ite">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          用機器學習的方式登入選課系統
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">Posted on</span>
+
+      <time title="Created: 2020-01-18 00:33:02" itemprop="dateCreated datePublished" datetime="2020-01-18T00:33:02+08:00">2020-01-18</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2020-02-25 13:45:09" itemprop="dateModified" datetime="2020-02-25T13:45:09+08:00">2020-02-25</time>
+    </span>
+
+  
+    <span class="post-meta-item" title="Views" id="busuanzi_container_page_pv">
+      <span class="post-meta-item-icon">
+        <i class="far fa-eye"></i>
+      </span>
+      <span class="post-meta-item-text">Views: </span>
+      <span id="busuanzi_value_page_pv"></span>
+    </span>
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="Symbols count in article">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span>6k</span>
+    </span>
+    <span class="post-meta-item" title="Reading time">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">Reading time &asymp;</span>
+      <span>5 mins.</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+        <p>之前大三上剛開學的時候閒閒沒事，剛好那段時間正在選課，有鑑於每次登入選課系統都要打驗證碼（下圖），我自己是覺得很麻煩（到底有多懶），就想說用 Python 寫個自動登入的程式<span id="more"></span>，不過選課系統的數字驗證碼長得不是很好看，去暴力搜尋每個數字感覺不太可行，後來決定先用 OpenCV 把數字切出來，再用機器學習去辨識數字，一開始寫的時候是直接用 <a target="_blank" rel="noopener" href="https://github.com/tensorflow/tensorflow/tree/master/tensorflow/examples/tutorials/mnist">tensorflow 的手寫數字辨識 CNN 模型</a>，不過因為 MNIST 的手寫數字跟選課系統的數字驗證碼書寫風格差異有點大，加上那時候用 OpenCV 做 preprocessing 理弄得亂七八糟（雖然現在的版本可能還是亂七八糟），所以數字辨識的準確度只有 85% 左右，根本沒辦法拿來登入選課系統，因為其中一個數字打錯就整個都錯了。</p>
+<p><img src="/image/2020-01-16_230643.png"></p>
+<p>之後事情開始變多，得念書考試寫作業，只好把這個東西暫時擱置，一直等到現在大四上結束，才有空繼續把它完成。下面的介紹主要就分成實作方法跟實驗結果兩個部分。</p>
+<h1 id="實作方法"><a href="#實作方法" class="headerlink" title="實作方法"></a>實作方法</h1><h2 id="開發環境"><a href="#開發環境" class="headerlink" title="開發環境"></a>開發環境</h2><ul>
+<li>Windows 10 Home</li>
+<li>Python 3.6.4</li>
+<li>Python packages: OpenCV, Numpy, Pillow, Requests, scikit learn, Selenium</li>
+</ul>
+<h2 id="蒐集-training-data"><a href="#蒐集-training-data" class="headerlink" title="蒐集 training data"></a>蒐集 training data</h2><p>這邊就簡單地用 <code>requests</code> 來抓圖片，一共下載了 7000 張。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">image_url = <span class="string">&#x27;https://course.nctu.edu.tw/function/Safecode.asp&#x27;</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">7000</span>):</span><br><span class="line">    image = requests.get(image_url)</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">f&quot;<span class="subst">&#123;config[<span class="string">&#x27;PATH&#x27;</span>][<span class="string">&#x27;DOWNLOAD&#x27;</span>]&#125;</span>/<span class="subst">&#123;i&#125;</span>.jpg&quot;</span>, <span class="string">&#x27;wb+&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">        file.write(image.content)</span><br></pre></td></tr></table></figure>
+
+<h2 id="Preprocessing"><a href="#Preprocessing" class="headerlink" title="Preprocessing"></a>Preprocessing</h2><p>我們用這下面張圖來解說。</p>
+<img src="/image/3.jpg" width="50%"/>
+
+<p>首先會把驗證碼統一調整大小至 50 乘 100，然後把驗證碼加白框（怕數字太靠近圖片邊緣，之後在切割的時候會不好處理），再來把圖片轉乘灰階，因為有些數字的顏色較淺，轉乘灰階之後還要利用 <code>adaptiveThreshold</code> 把數字從背景中分離出來。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">image = cv2.imread(filename)</span><br><span class="line">image = cv2.resize(image, (<span class="number">100</span>, <span class="number">50</span>))</span><br><span class="line">image = cv2.copyMakeBorder(image, <span class="number">5</span>, <span class="number">5</span>, <span class="number">5</span>, <span class="number">5</span>, cv2.BORDER_CONSTANT, value=(<span class="number">255</span>, <span class="number">255</span>, <span class="number">255</span>))</span><br><span class="line">image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)</span><br><span class="line">image = cv2.adaptiveThreshold(image, <span class="number">255</span>, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY, <span class="number">11</span>, <span class="number">2</span>)</span><br><span class="line">image = cv2.threshold(image, <span class="number">170</span>, <span class="number">255</span>, cv2.THRESH_BINARY)[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
+
+<img src="/image/3_gray.jpg" width="50%"/>
+
+<p>如上圖所示，這時候的圖片還是有雜訊（背景的黑點點），根據 <a target="_blank" rel="noopener" href="https://opencv-python-tutroals.readthedocs.io/en/latest/py_tutorials/py_imgproc/py_filtering/py_filtering.html">OpenCV Python Tutorial</a> 上面有關 Medium Filtering 的介紹：</p>
+<blockquote>
+<p>This is highly effective in removing salt-and-pepper noise</p>
+</blockquote>
+<p>接著用 <code>medianBlur</code> 來去除背景的雜訊。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">image = cv2.medianBlur(image, <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<p>處理完後會像下面這個樣子，仔細觀察其實可以發現在降噪的過程中，「3」跟「9」有部分筆劃感覺也被去除了，這部分我現在還想不到可以怎麼改善，我相信一定有更好的處理方法，如果讀者有什麼想法也可以留言或寫信告訴我。</p>
+<img src="/image/3_blur.jpg" width="50%"/>
+
+<h2 id="切割數字"><a href="#切割數字" class="headerlink" title="切割數字"></a>切割數字</h2><p>把雜訊去掉後，下一步就是把驗證碼裡面的數字切割出來，OpenCV 有個很方便的函數 <code>findContours</code> 可以直接將輪廓標出來。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">contours, hierarchy = cv2.findContours(img_blur_gray, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)</span><br></pre></td></tr></table></figure>
+<p><code>findContours</code> 有三個主要的參數，第一個當然就是要被檢測的圖片，第二個是 <code>mode</code>，用來指定要使用哪種模式檢測輪廓，我們使用 <code>cv2.RETR_TREE</code> 來建立一個樹狀結構的輪廓，第三個參數是 <code>method</code>，用以選擇輪廓的近似方法，如果用 <code>cv2.CHAIN_APPROX_NONE</code> 的話，OpenCV 會將輪廓上的所有點存下來，假如今天碰到一個矩形的輪廓，那矩形的四條邊都會被存起來，但其實我們只要知道四個頂點的座標就夠了，所以改用 <code>cv2.CHAIN_APPROX_SIMPLE</code>。</p>
+<p>接著來看 <code>findContours</code> 回傳的資料，該函數會回傳兩個東西，一個是輪廓本身（<code>contours</code>），一個是每個輪廓對應的屬性（<code>hierarchy</code>），<code>contours</code> 裡面包含每個輪廓的點，如果是矩形輪廓就有四個點，五角形就有五個點，依此類推；<code>hierarchy</code> 則是輪廓的樹狀結構，每個輪廓都對應到其中的四個元素，分別是「後一個輪廓、前一個輪廓、父輪廓、被自己包起來的輪廓編號」。</p>
+<p>這邊我們只會使用到 <code>contours</code>，首先用 <code>drawContours</code> 把輪廓畫出來看看：</p>
+<img src="/image/3_highlight.jpg" width="50%"/>
+
+<p>可以發現偵測到的輪廓是多邊形，但是我們的目的是要切割出數字所在的矩形區域，可以用 <code>boundingRect</code> 來算出包含整個輪廓的最小矩形。</p>
+<img src="/image/3_ori_contour.jpg" width="50%"/>
+
+<p>算完後會長這樣，相信大家也注意到了，上圖的「4」會有兩個輪廓，一個是「4」的外圍的輪廓，一個是「4」中間空洞的輪廓，用 <code>boundingRect</code> 計算完後會產生兩個矩形，就是分別對應這兩個輪廓，但是只有外圍那個才是我們想要的，所以還要加一些判斷式來檢查，最後的程式碼會長這樣。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">valid = []</span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> contours:</span><br><span class="line">    x, y, w, h = cv2.boundingRect(c)</span><br><span class="line">    <span class="keyword">if</span> (w &lt; <span class="number">8</span> <span class="keyword">and</span> h &lt; <span class="number">8</span>) <span class="keyword">or</span> (w &gt; <span class="number">25</span> <span class="keyword">and</span> h &gt; <span class="number">25</span>) <span class="keyword">or</span> w &gt; <span class="number">40</span> <span class="keyword">or</span> h &gt; <span class="number">40</span>:</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    valid.append((x, y, w, h))</span><br><span class="line">contours = valid</span><br></pre></td></tr></table></figure>
+<p>這邊還有一點要注意，可以看到上圖的「3」被切成兩個部分，之所以會這樣可能是與先前提到降噪的問題有關，為了解決這種情況，我另外寫了一個用來合併矩形的函數。因為當這種情況發生時，兩個矩形通常會有部分區域重疊（上圖的「3」就是這樣），至於實作方面，我們可以透過 logical AND 來檢查是否重疊，每個矩形都對應到一張 60 乘 110 的圖，矩形所在的地方標「1」，其他地方標「0」，把兩張圖做 AND 就知道有沒有相交了，下面是合併矩形的程式碼。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">contours.sort(key=<span class="keyword">lambda</span> x: x[<span class="number">0</span>])</span><br><span class="line">frame = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(contours)):</span><br><span class="line">    x, y, w, h = contours[i]</span><br><span class="line">    frame.append(cv2.rectangle(np.zeros((<span class="number">60</span>, <span class="number">110</span>)), (x, y), (x+w, y+h), <span class="number">1</span>, <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line">status = np.zeros(<span class="built_in">len</span>(frame))</span><br><span class="line">intermediate = []</span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(frame)):</span><br><span class="line">    <span class="keyword">if</span> status[i]:</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    <span class="keyword">if</span> i == <span class="built_in">len</span>(frame) - <span class="number">1</span>:</span><br><span class="line">        status[i] = <span class="number">1</span></span><br><span class="line">        intermediate.append(contours[i])</span><br><span class="line">        <span class="keyword">continue</span></span><br><span class="line">    intersect = np.logical_and(frame[i], frame[i + <span class="number">1</span>])</span><br><span class="line">    <span class="keyword">if</span> <span class="literal">True</span> <span class="keyword">in</span> intersect:</span><br><span class="line">        x = <span class="built_in">min</span>(contours[i][<span class="number">0</span>], contours[i + <span class="number">1</span>][<span class="number">0</span>])</span><br><span class="line">        y = <span class="built_in">min</span>(contours[i][<span class="number">1</span>], contours[i + <span class="number">1</span>][<span class="number">1</span>])</span><br><span class="line">        w = <span class="built_in">max</span>(contours[i][<span class="number">0</span>] + contours[i][<span class="number">2</span>], contours[i + <span class="number">1</span>][<span class="number">0</span>] + contours[i + <span class="number">1</span>][<span class="number">2</span>]) - x</span><br><span class="line">        h = <span class="built_in">max</span>(contours[i][<span class="number">1</span>] + contours[i][<span class="number">3</span>], contours[i + <span class="number">1</span>][<span class="number">1</span>] + contours[i + <span class="number">1</span>][<span class="number">3</span>]) - y</span><br><span class="line">        <span class="keyword">if</span> w &lt;= <span class="number">20</span> <span class="keyword">and</span> h &lt;= <span class="number">20</span>:</span><br><span class="line">            status[i] = <span class="number">1</span></span><br><span class="line">            status[i + <span class="number">1</span>] = <span class="number">1</span></span><br><span class="line">            intermediate.append((x, y, w, h))</span><br><span class="line">    <span class="keyword">if</span> status[i] != <span class="number">1</span>:</span><br><span class="line">        status[i] = <span class="number">1</span></span><br><span class="line">        intermediate.append(contours[i])</span><br><span class="line"></span><br><span class="line">contours = final_contours</span><br></pre></td></tr></table></figure>
+<p>簡單說明一下，前五行先把矩形由左到右排序，並畫出每個矩形對應的 60 乘 110 的圖，第七行的 <code>state</code> 是用來記錄該矩形處理了沒，因為矩形已經排序過，所以第 <code>i</code> 個矩形只可能與第 <code>i + 1</code> 個相交，如果相交的話就將兩者合併，並在 <code>state</code> 中將第 <code>i</code> 與 <code>i + 1</code> 個紀錄為已處理的狀態。注意第 22 行的判斷式，因為有時候會發生兩個數字靠很近，導致矩形相交，這時就要檢查矩形的大小，如果超過單一數字的矩形大小（這邊設定為 20），就代表過程中誤將兩個數字合在一起了，不應該採用該合併後的結果。下圖是合併之後的結果。</p>
+<img src="/image/3_final_contour.jpg" width="50%"/>
+
+<h2 id="Train-model"><a href="#Train-model" class="headerlink" title="Train model"></a>Train model</h2><p>每張驗證碼會切出五個數字，7000 張驗證碼總共有 35000 個數字，切割完數字後就可以開始訓練辨識用的模型了，一開始是想用 unsupervised learning 的方式去學習，畢竟切出來的三萬多張圖也沒有標 label，想說讓電腦自己去做 clustering，於是就用 scikit learn 提供的 KMeans 來訓練模型，但是做出來的準確度有夠低，一方面是因為 KMeans 只能找 local minimum，如果初始化爛掉了那就很可能會繼續爛下去，另一方面是有些數字其實長得很像，像是「3」寫醜一點就很像「8」，或許改用 Spectral Clustering 會比較好一點，不過後來還是決定先用 supervised 的方式，Spectral Clustering 之後有空再說。</p>
+<p>因為改用 supervised，所以我自己手動標了 700 張數字，每個數字各 100 張（驗證碼只會出現 3、4、5、6、7、8、9 這七種數字），然後用 scikit learn 的 SVM 來訓練。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> <span class="title function_">train</span>()</span><br><span class="line">    X = []</span><br><span class="line">    y = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>, <span class="number">10</span>):</span><br><span class="line">        <span class="keyword">for</span> filename <span class="keyword">in</span> os.listdir(<span class="string">f&quot;<span class="subst">&#123;config[<span class="string">&#x27;PATH&#x27;</span>][<span class="string">&#x27;PARTITION&#x27;</span>]&#125;</span>/<span class="subst">&#123;i&#125;</span>&quot;</span>):</span><br><span class="line">            img = openImage(<span class="string">f&quot;<span class="subst">&#123;config[<span class="string">&#x27;PATH&#x27;</span>][<span class="string">&#x27;PARTITION&#x27;</span>]&#125;</span>/<span class="subst">&#123;i&#125;</span>/<span class="subst">&#123;filename&#125;</span>&quot;</span>)</span><br><span class="line">            X.append(img)</span><br><span class="line">            y.append(i)</span><br><span class="line">    model = svm.SVC()</span><br><span class="line">    model.fit(X, y)</span><br><span class="line">    <span class="keyword">return</span> model</span><br></pre></td></tr></table></figure>
+<p>訓練完第一版模型之後，我打算用這個模型來處理剩下的 34300 張數字，主要流程就是 SVM 每標註完 2000 張數字後，會訓練一個新版本的 SVM，再用這個新的模型去標註，一直重複這些動作直到所有圖片都標好 label，我那麼懶怎麼可能自己手動跑這些步驟呢，當然是直接寫 Python 讓電腦全部自己完成，以下是程式碼。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">model = train()</span><br><span class="line"></span><br><span class="line">iteration = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    count = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> filename <span class="keyword">in</span> os.listdir(config[<span class="string">&#x27;PATH&#x27;</span>][<span class="string">&#x27;PARTITION&#x27;</span>]):</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(filename) != <span class="number">1</span>:</span><br><span class="line">            img = cv2.imread(<span class="string">f&quot;<span class="subst">&#123;config[<span class="string">&#x27;PATH&#x27;</span>][<span class="string">&#x27;PARTITION&#x27;</span>]&#125;</span>/<span class="subst">&#123;filename&#125;</span>&quot;</span>)</span><br><span class="line">            img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</span><br><span class="line">            img = img.ravel()</span><br><span class="line">            ans = model.predict([img])[<span class="number">0</span>]</span><br><span class="line">            shutil.move(<span class="string">f&quot;<span class="subst">&#123;config[<span class="string">&#x27;PATH&#x27;</span>][<span class="string">&#x27;PARTITION&#x27;</span>]&#125;</span>/<span class="subst">&#123;filename&#125;</span>&quot;</span>, </span><br><span class="line">                        <span class="string">f&quot;<span class="subst">&#123;config[<span class="string">&#x27;PATH&#x27;</span>][<span class="string">&#x27;PARTITION&#x27;</span>]&#125;</span>/<span class="subst">&#123;ans&#125;</span>/<span class="subst">&#123;filename&#125;</span>&quot;</span>)</span><br><span class="line">            count += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> count == <span class="number">2000</span>:</span><br><span class="line">                <span class="keyword">break</span></span><br><span class="line">    iteration += <span class="number">1</span></span><br><span class="line">    <span class="built_in">print</span>(<span class="string">f&#x27;Iter: <span class="subst">&#123;iteration&#125;</span>&#x27;</span>)</span><br><span class="line">    model = train()</span><br><span class="line">    <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
+<p>全部跑完之後發現這七個數字的出現頻率都還滿平均的，每個數字大約出現五千次左右，至於準確度的部分我並沒有特別去測，不過整個流程跑完之後我有去檢查每個 label 所在的資料夾，35000 張數字只有不到 5 張被放錯地方（標錯 label）。</p>
+<h2 id="登入系統"><a href="#登入系統" class="headerlink" title="登入系統"></a>登入系統</h2><p>模型訓練好後，就可以開始嘗試登入選課系統了，不過第一個碰到的問題就是如何從網頁畫面中取得驗證碼，因為驗證碼是透過 <a target="_blank" rel="noopener" href="https://course.nctu.edu.tw/function/Safecode.asp">https://course.nctu.edu.tw/function/Safecode.asp</a> 隨機產生的，沒辦法直接用 <code>requests</code> 從網頁裡面抓圖片，或許 Python 有辦法抓網頁載入時後台的資訊，但是我不知道怎麼做 QQ，所以後來決定直接把視窗 resize 成固定大小，再用 Selenium 抓特定的區塊，接著就是把抓到的驗證碼丟給切割數字的函數，再把切出來的五個數字拿去辨識，這部分的程式碼因為沒有什麼比較需要解釋的，只是一些 Selenium 的操作（自動點擊、輸入文字等），所以就不放上來了。</p>
+<h1 id="實驗結果"><a href="#實驗結果" class="headerlink" title="實驗結果"></a>實驗結果</h1><p>下面是我錄的小短片，驗證碼的辨識準確度跟辨識速度都有不錯的表現，我後來也寫了一個簡單的 BAT 檔，要登入的時候點兩下就好了，整體下來感覺還不錯，但就是敗在 Selenium 的開瀏覽器的速度，如果能夠再快一點就好了。然後程式碼的部分我都放在 <a target="_blank" rel="noopener" href="https://github.com/eugene87222/NCTU-LetMeFillTheCAPTCHA">Github</a> 上面了，有興趣的讀者可以去玩玩看，有什麼問題或想法也歡迎寫信告訴我。</p>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/UV738erwCus" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          
+
+<div class="post-copyright">
+<ul>
+  <li class="post-copyright-author">
+      <strong>Post author:  </strong>Eugene Yang
+  </li>
+  <li class="post-copyright-link">
+      <strong>Post link: </strong>
+      <a href="http://eugene87222.github.io/2020/01/18/20191219-get-rid-of-captcha/" title="用機器學習的方式登入選課系統">http://eugene87222.github.io/2020/01/18/20191219-get-rid-of-captcha/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+  </li>
+</ul>
+</div>
+
+          <div class="post-tags">
+              <a href="/tags/python/" rel="tag"># python</a>
+              <a href="/tags/I-don-t-know/" rel="tag"># I don't know</a>
+              <a href="/tags/machine-learning/" rel="tag"># machine learning</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2019/09/07/20190907-CG-final-project/" rel="prev" title="電腦動畫與特效期末專題">
+                  <i class="fa fa-chevron-left"></i> 電腦動畫與特效期末專題
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/01/18/20200118-design-pattern-note/" rel="next" title="Design Pattern 學習筆記">
+                  Design Pattern 學習筆記 <i class="fa fa-chevron-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+    
+  <div class="comments" id="disqus_thread">
+    <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+  </div>
+  
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+
+<div class="copyright">
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Eugene Yang</span>
+</div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="Symbols count total">239k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">3:38</span>
+  </span>
+</div>
+<div class="busuanzi-count">
+    <span class="post-meta-item" id="busuanzi_container_site_uv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="Total Visitors">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="Total Views">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  
+<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+<script src="/js/third-party/search/local-search.js"></script>
+
+
+
+  <script src="/js/third-party/fancybox.js"></script>
+
+
+  
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+<script class="next-config" data-name="disqus" type="application/json">{"enable":true,"shortname":"eugene87222","count":false,"i18n":{"disqus":"disqus"}}</script>
+<script src="/js/third-party/comments/disqus.js"></script>
+
+</body>
+</html>
