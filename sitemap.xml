@@ -722,6 +722,20 @@
 
   
   <url>
+    <loc>http://eugene87222.github.io/tags/tutorial/</loc>
+    <lastmod>2022-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/tags/web-development/</loc>
+    <lastmod>2022-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://eugene87222.github.io/tags/notice/</loc>
     <lastmod>2022-12-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -743,20 +757,6 @@
   </url>
   
   <url>
-    <loc>http://eugene87222.github.io/tags/tutorial/</loc>
-    <lastmod>2022-12-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/tags/web-development/</loc>
-    <lastmod>2022-12-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://eugene87222.github.io/tags/other/</loc>
     <lastmod>2022-12-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -764,14 +764,14 @@
   </url>
   
   <url>
-    <loc>http://eugene87222.github.io/tags/collection/</loc>
+    <loc>http://eugene87222.github.io/tags/photo/</loc>
     <lastmod>2022-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://eugene87222.github.io/tags/photo/</loc>
+    <loc>http://eugene87222.github.io/tags/collection/</loc>
     <lastmod>2022-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -855,13 +855,6 @@
   </url>
   
   <url>
-    <loc>http://eugene87222.github.io/tags/design-pattern/</loc>
-    <lastmod>2022-12-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://eugene87222.github.io/tags/kaldi/</loc>
     <lastmod>2022-12-01</lastmod>
     <changefreq>weekly</changefreq>
@@ -876,14 +869,7 @@
   </url>
   
   <url>
-    <loc>http://eugene87222.github.io/tags/creative/</loc>
-    <lastmod>2022-12-01</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/tags/drawing/</loc>
+    <loc>http://eugene87222.github.io/tags/design-pattern/</loc>
     <lastmod>2022-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -926,6 +912,20 @@
   
   <url>
     <loc>http://eugene87222.github.io/tags/Synopsys/</loc>
+    <lastmod>2022-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/tags/creative/</loc>
+    <lastmod>2022-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/tags/drawing/</loc>
     <lastmod>2022-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
