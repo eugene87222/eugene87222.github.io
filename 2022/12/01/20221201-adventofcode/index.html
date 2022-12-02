@@ -26,7 +26,7 @@
 <meta property="og:site_name" content="3ugeneYang.§ite">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-12-01T13:46:11.000Z">
-<meta property="article:modified_time" content="2022-12-01T13:46:38.728Z">
+<meta property="article:modified_time" content="2022-12-02T14:58:09.862Z">
 <meta property="article:author" content="Eugene Yang">
 <meta property="article:tag" content="Advent of Code">
 <meta property="article:tag" content="Algorithm">
@@ -161,7 +161,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">76</span>
+          <span class="site-state-item-count">77</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -248,9 +248,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
-      
 
-      <time title="Created: 2022-12-01 21:46:11 / Modified: 21:46:38" itemprop="dateCreated datePublished" datetime="2022-12-01T21:46:11+08:00">2022-12-01</time>
+      <time title="Created: 2022-12-01 21:46:11" itemprop="dateCreated datePublished" datetime="2022-12-01T21:46:11+08:00">2022-12-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">Edited on</span>
+      <time title="Modified: 2022-12-02 22:58:09" itemprop="dateModified" datetime="2022-12-02T22:58:09+08:00">2022-12-02</time>
     </span>
 
   
@@ -267,7 +273,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>721</span>
+      <span>715</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
@@ -291,13 +297,13 @@
 <p><a target="_blank" rel="noopener" href="https://adventofcode.com/2022/day/1">https://adventofcode.com/2022/day/1</a></p>
 </blockquote>
 <h2 id="Part-One"><a href="#Part-One" class="headerlink" title="Part One"></a>Part One</h2><p>就找最大的而已，應該 O(n) 走一遍就好了。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">max_cal = <span class="number">0</span></span><br><span class="line">cur_cal = <span class="number">0</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;input.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> fp:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> fp:</span><br><span class="line">        line = line.strip()</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(line):</span><br><span class="line">            cur_cal += <span class="built_in">int</span>(line)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            max_cal = <span class="built_in">max</span>(max_cal, cur_cal)</span><br><span class="line">            cur_cal = <span class="number">0</span></span><br><span class="line"><span class="built_in">print</span>(max_cal)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">max_cal = <span class="number">0</span></span><br><span class="line">cur_cal = <span class="number">0</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;01.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> fp:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> fp:</span><br><span class="line">        line = line.strip()</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(line):</span><br><span class="line">            cur_cal += <span class="built_in">int</span>(line)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            max_cal = <span class="built_in">max</span>(max_cal, cur_cal)</span><br><span class="line">            cur_cal = <span class="number">0</span></span><br><span class="line"><span class="built_in">print</span>(max_cal)</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>Answer: 70720</p>
 </blockquote>
 <h2 id="Part-Two"><a href="#Part-Two" class="headerlink" title="Part Two"></a>Part Two</h2><p>取前 k 大的或前 k 小的這種用 heap 應該就可以了。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"></span><br><span class="line">pq = []</span><br><span class="line">cur_cal = <span class="number">0</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;input.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> fp:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> fp:</span><br><span class="line">        line = line.strip()</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(line):</span><br><span class="line">            cur_cal += <span class="built_in">int</span>(line)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            heapq.heappush(pq, -cur_cal)</span><br><span class="line">            cur_cal = <span class="number">0</span></span><br><span class="line">total = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>):</span><br><span class="line">    total -= heapq.heappop(pq)</span><br><span class="line"><span class="built_in">print</span>(total)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> heapq</span><br><span class="line"></span><br><span class="line">pq = []</span><br><span class="line">cur_cal = <span class="number">0</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;01.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> fp:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> fp:</span><br><span class="line">        line = line.strip()</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(line):</span><br><span class="line">            cur_cal += <span class="built_in">int</span>(line)</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            heapq.heappush(pq, -cur_cal)</span><br><span class="line">            cur_cal = <span class="number">0</span></span><br><span class="line">total = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">3</span>):</span><br><span class="line">    total -= heapq.heappop(pq)</span><br><span class="line"><span class="built_in">print</span>(total)</span><br></pre></td></tr></table></figure>
 
 <blockquote>
 <p>Answer: 207148</p>
@@ -342,6 +348,9 @@
                 </a>
             </div>
             <div class="post-nav-item">
+                <a href="/2022/12/02/20221202-adventofcode/" rel="next" title="Advent of Code 2022 - 2">
+                  Advent of Code 2022 - 2 <i class="fa fa-chevron-right"></i>
+                </a>
             </div>
           </div>
     </footer>
@@ -378,13 +387,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">240k</span>
+    <span title="Symbols count total">241k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">3:38</span>
+    <span title="Reading time total">3:39</span>
   </span>
 </div>
 <div class="busuanzi-count">
