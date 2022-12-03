@@ -21,30 +21,27 @@
 <script class="next-config" data-name="main" type="application/json">{"hostname":"eugene87222.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta property="og:type" content="article">
-<meta property="og:title" content="[Intro. to Computer Security Course Note] Ch 12">
-<meta property="og:url" content="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch12/index.html">
+<meta property="og:title" content="Advent of Code 2022 - 3">
+<meta property="og:url" content="http://eugene87222.github.io/2022/12/03/20221203-adventofcode/index.html">
 <meta property="og:site_name" content="3ugeneYang.§ite">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://i.imgur.com/a5cfdKu.png">
-<meta property="og:image" content="https://i.imgur.com/tCGCtqx.png">
-<meta property="article:published_time" content="2019-06-24T11:57:00.000Z">
-<meta property="article:modified_time" content="2020-02-25T05:45:29.260Z">
+<meta property="article:published_time" content="2022-12-03T05:20:34.000Z">
+<meta property="article:modified_time" content="2022-12-03T05:23:52.828Z">
 <meta property="article:author" content="Eugene Yang">
-<meta property="article:tag" content="NCTU">
-<meta property="article:tag" content="note">
-<meta property="article:tag" content="computer security">
+<meta property="article:tag" content="Advent of Code">
+<meta property="article:tag" content="Algorithm">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://i.imgur.com/a5cfdKu.png">
 
 
-<link rel="canonical" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch12/">
+<link rel="canonical" href="http://eugene87222.github.io/2022/12/03/20221203-adventofcode/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch12/","path":"2019/06/24/20190624-ComputerSecurity-note-ch12/","title":"[Intro. to Computer Security Course Note] Ch 12"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"en","comments":true,"permalink":"http://eugene87222.github.io/2022/12/03/20221203-adventofcode/","path":"2022/12/03/20221203-adventofcode/","title":"Advent of Code 2022 - 3"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>[Intro. to Computer Security Course Note] Ch 12 | 3ugeneYang.§ite</title>
+<title>Advent of Code 2022 - 3 | 3ugeneYang.§ite</title>
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107694365-1"></script>
   <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-107694365-1","only_pageview":false}</script>
@@ -149,7 +146,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Ch12-Operating-System-Security"><span class="nav-number">1.</span> <span class="nav-text">Ch12. Operating System Security</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Introduction"><span class="nav-number">2.</span> <span class="nav-text">Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#System-Security-Planning"><span class="nav-number">2.1.</span> <span class="nav-text">System Security Planning</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Operating-System-Hardening"><span class="nav-number">3.</span> <span class="nav-text">Operating System Hardening</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Application-Security"><span class="nav-number">4.</span> <span class="nav-text">Application Security</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Security-Maintenance"><span class="nav-number">5.</span> <span class="nav-text">Security Maintenance</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Linux-x2F-Unix-Security"><span class="nav-number">6.</span> <span class="nav-text">Linux&#x2F;Unix Security</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Windows-Security"><span class="nav-number">7.</span> <span class="nav-text">Windows Security</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Virtualization-Security"><span class="nav-number">8.</span> <span class="nav-text">Virtualization Security</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hypervisor"><span class="nav-number">8.1.</span> <span class="nav-text">Hypervisor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Two-Types-of-Hypervisor"><span class="nav-number">8.2.</span> <span class="nav-text">Two Types of Hypervisor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#New-Type-Container-x2F-APp-Virtualization"><span class="nav-number">8.3.</span> <span class="nav-text">New Type: Container&#x2F;APp Virtualization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Securing-Virtualization-Systems"><span class="nav-number">8.4.</span> <span class="nav-text">Securing Virtualization Systems</span></a></li></ol></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Day-3-Rucksack-Reorganization"><span class="nav-number">1.</span> <span class="nav-text">Day 3: Rucksack Reorganization</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-One"><span class="nav-number">1.1.</span> <span class="nav-text">Part One</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Part-Two"><span class="nav-number">1.2.</span> <span class="nav-text">Part Two</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -223,7 +220,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch12/">
+    <link itemprop="mainEntityOfPage" href="http://eugene87222.github.io/2022/12/03/20221203-adventofcode/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/image/IMG_1314.png">
@@ -236,12 +233,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="[Intro. to Computer Security Course Note] Ch 12 | 3ugeneYang.§ite">
+      <meta itemprop="name" content="Advent of Code 2022 - 3 | 3ugeneYang.§ite">
       <meta itemprop="description" content=" ">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          [Intro. to Computer Security Course Note] Ch 12
+          Advent of Code 2022 - 3
         </h1>
 
         <div class="post-meta-container">
@@ -251,15 +248,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">Posted on</span>
+      
 
-      <time title="Created: 2019-06-24 19:57:00" itemprop="dateCreated datePublished" datetime="2019-06-24T19:57:00+08:00">2019-06-24</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">Edited on</span>
-      <time title="Modified: 2020-02-25 13:45:29" itemprop="dateModified" datetime="2020-02-25T13:45:29+08:00">2020-02-25</time>
+      <time title="Created: 2022-12-03 13:20:34 / Modified: 13:23:52" itemprop="dateCreated datePublished" datetime="2022-12-03T13:20:34+08:00">2022-12-03</time>
     </span>
 
   
@@ -276,14 +267,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>1.7k</span>
+      <span>782</span>
     </span>
     <span class="post-meta-item" title="Reading time">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
+      <span>1 mins.</span>
     </span>
 </div>
 
@@ -295,95 +286,20 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h1 id="Ch12-Operating-System-Security"><a href="#Ch12-Operating-System-Security" class="headerlink" title="Ch12. Operating System Security"></a>Ch12. Operating System Security</h1><hr>
-<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><h2 id="System-Security-Planning"><a href="#System-Security-Planning" class="headerlink" title="System Security Planning"></a>System Security Planning</h2><ul>
-<li>The first step in deploying a new system is planning<ul>
-<li>A wide security assessment of the organization</li>
-<li>To maximize security while minimizing costs</li>
-<li>To determine security requirements for the system, apps, data, and users</li>
-<li>To identify appropriate personnel and training to install and manage the system</li>
-</ul>
-</li>
-</ul>
-<h1 id="Operating-System-Hardening"><a href="#Operating-System-Hardening" class="headerlink" title="Operating System Hardening"></a>Operating System Hardening</h1><ul>
-<li>First thing to do: secure the base OS</li>
-<li>Basic steps<ul>
-<li>Install and patch the OS</li>
-<li>Harden and configure the OS to adequately address the identified security needs of the system by<ul>
-<li>Removing 不必要的東西</li>
-<li>Configuring 權限</li>
-<li>Configuring 資源</li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h1 id="Application-Security"><a href="#Application-Security" class="headerlink" title="Application Security"></a>Application Security</h1><h1 id="Security-Maintenance"><a href="#Security-Maintenance" class="headerlink" title="Security Maintenance"></a>Security Maintenance</h1><ul>
-<li>NIST SP 800-123 suggests to include<ul>
-<li>Monitoring and analyzing logging information<ul>
-<li>Can only inform you about bad things that <strong>have already happened</strong></li>
-</ul>
-</li>
-<li>Performing regular backups</li>
-<li>Recovering from security compromises</li>
-<li>Regularly testing system security</li>
-</ul>
-</li>
-</ul>
-<h1 id="Linux-x2F-Unix-Security"><a href="#Linux-x2F-Unix-Security" class="headerlink" title="Linux&#x2F;Unix Security"></a>Linux&#x2F;Unix Security</h1><ul>
-<li>Patch management<ul>
-<li>Keeping security patches up to date is a widely recognized</li>
-</ul>
-</li>
-<li>App security using a chroot jail<ul>
-<li>Some network accessible services: do not require access to the full file system, but rather only need a limited set of data files and directories<ul>
-<li>e.g., FTP</li>
-</ul>
-</li>
-<li>Running such services in a chroot jail: restricting the server’s view of the file system to just a specified portion</li>
-<li>Drawback: added <strong>complexity</strong></li>
-</ul>
-</li>
-</ul>
-<h1 id="Windows-Security"><a href="#Windows-Security" class="headerlink" title="Windows Security"></a>Windows Security</h1><ul>
-<li>Patch management<ul>
-<li>記得更新</li>
-</ul>
-</li>
-</ul>
-<h1 id="Virtualization-Security"><a href="#Virtualization-Security" class="headerlink" title="Virtualization Security"></a>Virtualization Security</h1><ul>
-<li>Benefits<ul>
-<li>比較有效率</li>
-</ul>
-</li>
-<li>However, it raises additional security concerns</li>
-</ul>
-<h2 id="Hypervisor"><a href="#Hypervisor" class="headerlink" title="Hypervisor"></a>Hypervisor</h2><ul>
-<li>The software that sits between the hardware and the VMs<ul>
-<li>Acting as a resource broker</li>
-</ul>
-</li>
-</ul>
-<h2 id="Two-Types-of-Hypervisor"><a href="#Two-Types-of-Hypervisor" class="headerlink" title="Two Types of Hypervisor"></a>Two Types of Hypervisor</h2><ul>
-<li><img src="https://i.imgur.com/a5cfdKu.png" width="60%"/></li>
-<li>Key differences<ul>
-<li>Typically, type 1 performs better, <strong>more secure</strong>, <strong>用在 server 上</strong></li>
-<li>Type 2: enabling virtualization without needing to dedicate a server to that function, <strong>用在 client 上</strong></li>
-</ul>
-</li>
-</ul>
-<h2 id="New-Type-Container-x2F-APp-Virtualization"><a href="#New-Type-Container-x2F-APp-Virtualization" class="headerlink" title="New Type: Container&#x2F;APp Virtualization"></a>New Type: Container&#x2F;APp Virtualization</h2><ul>
-<li><img src="https://i.imgur.com/tCGCtqx.png" width="60%"/></li>
-<li>Reducing overhead: no need of resources to run a separate OS for each app</li>
-<li>But, 安全風險較高</li>
-</ul>
-<h2 id="Securing-Virtualization-Systems"><a href="#Securing-Virtualization-Systems" class="headerlink" title="Securing Virtualization Systems"></a>Securing Virtualization Systems</h2><ul>
-<li>Hypervisor security<ul>
-<li>Secured using a process similar to securing an OS</li>
-<li>Installed in an <strong>isolated</strong> environment</li>
-</ul>
-</li>
-</ul>
+        <h1 id="Day-3-Rucksack-Reorganization"><a href="#Day-3-Rucksack-Reorganization" class="headerlink" title="Day 3: Rucksack Reorganization"></a>Day 3: Rucksack Reorganization</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://adventofcode.com/2022/day/3">https://adventofcode.com/2022/day/3</a></p>
+</blockquote>
+<h2 id="Part-One"><a href="#Part-One" class="headerlink" title="Part One"></a>Part One</h2><p>用 set 寫好了。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">priority = <span class="number">0</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;03.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> fp:</span><br><span class="line">    <span class="keyword">for</span> line <span class="keyword">in</span> fp:</span><br><span class="line">        line = line.strip()</span><br><span class="line">        <span class="keyword">if</span> <span class="built_in">len</span>(line):</span><br><span class="line">            l = <span class="built_in">set</span>(line[:<span class="built_in">len</span>(line)//<span class="number">2</span>])</span><br><span class="line">            r = <span class="built_in">set</span>(line[<span class="built_in">len</span>(line)//<span class="number">2</span>:])</span><br><span class="line">            <span class="keyword">for</span> c <span class="keyword">in</span> r:</span><br><span class="line">                <span class="keyword">if</span> c <span class="keyword">in</span> l:</span><br><span class="line">                    <span class="keyword">if</span> <span class="built_in">ord</span>(c) &gt;= <span class="number">97</span>: <span class="comment"># a-z</span></span><br><span class="line">                        priority += <span class="built_in">ord</span>(c) - <span class="number">97</span> + <span class="number">1</span></span><br><span class="line">                    <span class="keyword">else</span>: <span class="comment"># A-Z</span></span><br><span class="line">                        priority += <span class="built_in">ord</span>(c) - <span class="number">65</span> + <span class="number">27</span></span><br><span class="line"><span class="built_in">print</span>(priority)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Answer: 7824</p>
+</blockquote>
+<h2 id="Part-Two"><a href="#Part-Two" class="headerlink" title="Part Two"></a>Part Two</h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">priority = <span class="number">0</span></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;03.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> fp:</span><br><span class="line">    lines = fp.readlines()</span><br><span class="line">idx = <span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> idx &lt; <span class="built_in">len</span>(lines):</span><br><span class="line">    a = <span class="built_in">set</span>(lines[idx].strip())</span><br><span class="line">    b = <span class="built_in">set</span>(lines[idx+<span class="number">1</span>].strip())</span><br><span class="line">    c = <span class="built_in">set</span>(lines[idx+<span class="number">2</span>].strip())</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">26</span>):</span><br><span class="line">        t = <span class="built_in">chr</span>(<span class="built_in">ord</span>(<span class="string">&#x27;a&#x27;</span>)+i)</span><br><span class="line">        <span class="keyword">if</span> t <span class="keyword">in</span> a <span class="keyword">and</span> t <span class="keyword">in</span> b <span class="keyword">and</span> t <span class="keyword">in</span> c:</span><br><span class="line">            priority += <span class="built_in">ord</span>(c) - <span class="number">97</span> + <span class="number">1</span></span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">        t = <span class="built_in">chr</span>(<span class="built_in">ord</span>(<span class="string">&#x27;A&#x27;</span>)+i)</span><br><span class="line">        <span class="keyword">if</span> t <span class="keyword">in</span> a <span class="keyword">and</span> t <span class="keyword">in</span> b <span class="keyword">and</span> t <span class="keyword">in</span> c:</span><br><span class="line">            priority += <span class="built_in">ord</span>(c) - <span class="number">65</span> + <span class="number">27</span></span><br><span class="line">            <span class="keyword">continue</span></span><br><span class="line">    idx += <span class="number">3</span></span><br><span class="line"><span class="built_in">print</span>(priority)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Answer: 2798</p>
+</blockquote>
 
     </div>
 
@@ -401,7 +317,7 @@
   </li>
   <li class="post-copyright-link">
       <strong>Post link: </strong>
-      <a href="http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch12/" title="[Intro. to Computer Security Course Note] Ch 12">http://eugene87222.github.io/2019/06/24/20190624-ComputerSecurity-note-ch12/</a>
+      <a href="http://eugene87222.github.io/2022/12/03/20221203-adventofcode/" title="Advent of Code 2022 - 3">http://eugene87222.github.io/2022/12/03/20221203-adventofcode/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
@@ -410,23 +326,20 @@
 </div>
 
           <div class="post-tags">
-              <a href="/tags/NCTU/" rel="tag"># NCTU</a>
-              <a href="/tags/note/" rel="tag"># note</a>
-              <a href="/tags/computer-security/" rel="tag"># computer security</a>
+              <a href="/tags/Advent-of-Code/" rel="tag"># Advent of Code</a>
+              <a href="/tags/Algorithm/" rel="tag"># Algorithm</a>
+              <a href="/tags/Python/" rel="tag"># Python</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2019/06/24/20190624-ComputerSecurity-note-ch24/" rel="prev" title="[Intro. to Computer Security Course Note] Ch 24">
-                  <i class="fa fa-chevron-left"></i> [Intro. to Computer Security Course Note] Ch 24
+                <a href="/2022/12/02/20221202-adventofcode/" rel="prev" title="Advent of Code 2022 - 2">
+                  <i class="fa fa-chevron-left"></i> Advent of Code 2022 - 2
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2019/06/24/20190624-ComputerSecurity-note-ch22/" rel="next" title="[Intro. to Computer Security Course Note] Ch 22">
-                  [Intro. to Computer Security Course Note] Ch 22 <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>
