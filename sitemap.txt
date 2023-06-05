@@ -1,3 +1,4 @@
+http://eugene87222.github.io/about/index.html
 http://eugene87222.github.io/2022/12/10/20221210-adventofcode/
 http://eugene87222.github.io/2022/12/09/20221209-adventofcode/
 http://eugene87222.github.io/2022/12/09/20221208-adventofcode/
@@ -8,7 +9,6 @@ http://eugene87222.github.io/2022/12/04/20221204-adventofcode/
 http://eugene87222.github.io/2022/12/03/20221203-adventofcode/
 http://eugene87222.github.io/2022/12/02/20221202-adventofcode/
 http://eugene87222.github.io/2022/12/01/20221201-adventofcode/
-http://eugene87222.github.io/about/index.html
 http://eugene87222.github.io/2017/10/29/20171029-collection/
 http://eugene87222.github.io/2022/08/20/20220811-get-jobs/
 http://eugene87222.github.io/2018/02/15/20180226-PTT-crawler-4/
