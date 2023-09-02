@@ -5,7 +5,6 @@
 <meta name="viewport" content="width=device-width">
 <meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.1.0">
 
-
   <link rel="apple-touch-icon" sizes="180x180" href="/image/favicon.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/image/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/image/favicon.ico">
@@ -15,10 +14,10 @@
 
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic%7CKaushan+Script:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.1.1/css/all.min.css" integrity="sha256-DfWjNxDkM94fVBWx1H5BMMp0Zq7luBlV8QRcSES7s+0=" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" integrity="sha256-Vzbj7sDDS/woiFS3uNKo8eIuni59rjyNGtXfstRzStA=" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.20/dist/fancybox/fancybox.css" integrity="sha256-RvRHGSuWAxZpXKV9lLDt2e+rZ+btzn48Wp4ueS3NZKs=" crossorigin="anonymous">
 
-<script class="next-config" data-name="main" type="application/json">{"hostname":"eugene87222.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.11.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
+<script class="next-config" data-name="main" type="application/json">{"hostname":"eugene87222.github.io","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.18.0","exturl":false,"sidebar":{"position":"left","display":"always","padding":18,"offset":12},"copycode":{"enable":true,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false}}</script><script src="/js/config.js"></script>
 
     <meta name="description" content="最近開始接觸語音辨識，經過一番搜尋後，在網路上找到幾個相關的 toolkit，分別是 CMUSphinx、Kaldi 還有 Mozilla 的 DeepSpeech。CMUSphinx 是由卡內基美隆大學開發的，DeepSpeech 則是由 Mozilla 基於百度的 Deep Speech 研究所開發的，百度發的論文在這邊，有興趣的可以去看一下，這裡就不對這些語音辨識工具多做介紹了，文章把重點放">
 <meta property="og:type" content="article">
@@ -46,9 +45,12 @@
 <script class="next-config" data-name="calendar" type="application/json">""</script>
 <title>Kaldi 入門教學 - Kaldi tutorial for dummy | 3ugeneYang.§ite</title>
   
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-107694365-1"></script>
-  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"UA-107694365-1","only_pageview":false}</script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KYHQZW85VY"></script>
+  <script class="next-config" data-name="google_analytics" type="application/json">{"tracking_id":"G-KYHQZW85VY","only_pageview":false}</script>
   <script src="/js/third-party/analytics/google-analytics.js"></script>
+
+
+
 
 
 
@@ -63,8 +65,8 @@
   <div class="headband"></div>
 
   <main class="main">
-    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar" role="button">
         <span class="toggle-line"></span>
@@ -83,7 +85,7 @@
   </div>
 
   <div class="site-nav-right">
-    <div class="toggle popup-trigger">
+    <div class="toggle popup-trigger" aria-label="Search" role="button">
         <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
@@ -125,15 +127,9 @@
     </div>
   </div>
 
-</div>
+</header>
         
   
-  <div class="toggle sidebar-toggle" role="button">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-
   <aside class="sidebar">
 
     <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
@@ -154,13 +150,13 @@
         <!--/noindex-->
 
         <div class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Eugene Yang"
       src="/image/IMG_1314.png">
   <p class="site-author-name" itemprop="name">Eugene Yang</p>
   <div class="site-description" itemprop="description"></div>
 </div>
-<div class="site-state-wrap site-overview-item animated">
+<div class="site-state-wrap animated">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
@@ -175,42 +171,30 @@
       </div>
   </nav>
 </div>
-  <div class="links-of-author site-overview-item animated">
+  <div class="links-of-author animated">
       <span class="links-of-author-item">
-        <a href="mailto:eugene87222@gmail.com" title="E-Mail → mailto:eugene87222@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+        <a href="mailto:eugene87222@gmail.com" title="E-Mail → mailto:eugene87222@gmail.com" rel="noopener me" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.linkedin.com/in/yanghc" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;yanghc" rel="noopener" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
+        <a href="https://www.linkedin.com/in/yanghc" title="LinkedIn → https:&#x2F;&#x2F;www.linkedin.com&#x2F;in&#x2F;yanghc" rel="noopener me" target="_blank"><i class="fab fa-linkedin fa-fw"></i>LinkedIn</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://www.pinterest.com/eugene87222/" title="Pinterest → https:&#x2F;&#x2F;www.pinterest.com&#x2F;eugene87222&#x2F;" rel="noopener" target="_blank"><i class="fab fa-pinterest fa-fw"></i>Pinterest</a>
+        <a href="https://www.pinterest.com/eugene87222/" title="Pinterest → https:&#x2F;&#x2F;www.pinterest.com&#x2F;eugene87222&#x2F;" rel="noopener me" target="_blank"><i class="fab fa-pinterest fa-fw"></i>Pinterest</a>
       </span>
       <span class="links-of-author-item">
-        <a href="https://github.com/eugene87222" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;eugene87222" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+        <a href="https://github.com/eugene87222" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;eugene87222" rel="noopener me" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
       </span>
   </div>
-
-
 
         </div>
       </div>
     </div>
-  </aside>
-  <div class="sidebar-dimmer"></div>
-
-
-    </header>
 
     
-  <div class="back-to-top" role="button" aria-label="Back to top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
+  </aside>
 
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
 
+    </div>
 
     <div class="main-inner post posts-expand">
 
@@ -271,11 +255,11 @@
       <span id="busuanzi_value_page_pv"></span>
     </span>
     <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="Symbols count in article">
+    <span class="post-meta-item" title="Word count in article">
       <span class="post-meta-item-icon">
         <i class="far fa-file-word"></i>
       </span>
-      <span class="post-meta-item-text">Symbols count in article: </span>
+      <span class="post-meta-item-text">Word count in article: </span>
       <span>11k</span>
     </span>
     <span class="post-meta-item" title="Reading time">
@@ -293,8 +277,7 @@
     
     
     
-    <div class="post-body" itemprop="articleBody">
-        <p>最近開始接觸語音辨識，經過一番搜尋後，在網路上找到幾個相關的 toolkit，分別是 <a target="_blank" rel="noopener" href="https://cmusphinx.github.io/">CMUSphinx</a>、<a target="_blank" rel="noopener" href="http://kaldi-asr.org/">Kaldi</a> 還有 <a target="_blank" rel="noopener" href="https://www.mozilla.org/en-US/">Mozilla</a> 的 <a target="_blank" rel="noopener" href="https://github.com/mozilla/DeepSpeech">DeepSpeech</a>。<a target="_blank" rel="noopener" href="https://cmusphinx.github.io/">CMUSphinx</a> 是由卡內基美隆大學開發的，<a target="_blank" rel="noopener" href="https://github.com/mozilla/DeepSpeech">DeepSpeech</a> 則是由 <a target="_blank" rel="noopener" href="https://www.mozilla.org/en-US/">Mozilla</a> 基於百度的 Deep Speech 研究所開發的，百度發的論文在<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1412.5567">這邊</a>，有興趣的可以去看一下，這裡就不對這些語音辨識工具多做介紹了，文章把重點放在 <a target="_blank" rel="noopener" href="http://kaldi-asr.org/">Kaldi</a> 的安裝與使用教學<span id="more"></span>。</p>
+    <div class="post-body" itemprop="articleBody"><p>最近開始接觸語音辨識，經過一番搜尋後，在網路上找到幾個相關的 toolkit，分別是 <a target="_blank" rel="noopener" href="https://cmusphinx.github.io/">CMUSphinx</a>、<a target="_blank" rel="noopener" href="http://kaldi-asr.org/">Kaldi</a> 還有 <a target="_blank" rel="noopener" href="https://www.mozilla.org/en-US/">Mozilla</a> 的 <a target="_blank" rel="noopener" href="https://github.com/mozilla/DeepSpeech">DeepSpeech</a>。<a target="_blank" rel="noopener" href="https://cmusphinx.github.io/">CMUSphinx</a> 是由卡內基美隆大學開發的，<a target="_blank" rel="noopener" href="https://github.com/mozilla/DeepSpeech">DeepSpeech</a> 則是由 <a target="_blank" rel="noopener" href="https://www.mozilla.org/en-US/">Mozilla</a> 基於百度的 Deep Speech 研究所開發的，百度發的論文在<a target="_blank" rel="noopener" href="https://arxiv.org/abs/1412.5567">這邊</a>，有興趣的可以去看一下，這裡就不對這些語音辨識工具多做介紹了，文章把重點放在 <a target="_blank" rel="noopener" href="http://kaldi-asr.org/">Kaldi</a> 的安裝與使用教學<span id="more"></span>。</p>
 <h1 id="為什麼選擇-Kaldi"><a href="#為什麼選擇-Kaldi" class="headerlink" title="為什麼選擇 Kaldi"></a>為什麼選擇 <a target="_blank" rel="noopener" href="http://kaldi-asr.org/">Kaldi</a></h1><p>我一開始是想找個可以用 <a target="_blank" rel="noopener" href="https://www.python.org/">Python</a> 開發的語音辨識工具，因為寫起來比較方便，後來找到 <a target="_blank" rel="noopener" href="https://cmusphinx.github.io/">CMUSphinx</a>，他有提供 <a target="_blank" rel="noopener" href="https://www.python.org/">Python</a> 的介面，但是在網路上看到大家對 <a target="_blank" rel="noopener" href="https://cmusphinx.github.io/">CMUSphinx</a> 的評價都不太好（準確度方面），於是我就繼續找，過程中在 <a target="_blank" rel="noopener" href="https://telegram.org/">Telegram</a> 上面找到一個<a target="_blank" rel="noopener" href="https://t.me/speech_recognition">討論 Speech Recognition 的群組</a>，就上去問一下有沒有比較推薦的訓練工具，有人建議我可以試試 <a target="_blank" rel="noopener" href="http://kaldi-asr.org/">Kaldi</a>，花了些時間搜尋有關 <a target="_blank" rel="noopener" href="http://kaldi-asr.org/">Kaldi</a> 的教學還有說明文件後，發現他的參考資料比 CMUSphinx 多很多，而且官方說明文件也很完整，不過原生的 <a target="_blank" rel="noopener" href="http://kaldi-asr.org/">Kaldi</a> 貌似沒有提供 <a target="_blank" rel="noopener" href="https://www.python.org/">Python</a> 的 API，使用上是以 shell script 為主，這讓我猶豫了一下，不過後來翻了一下那些 shell script，其實也沒有很複雜，就是檔案多了點，畢竟我目前沒有打算把模型的實作方法整個看懂，重心主要擺在「訓練及使用模型」，了解訓練流程就足夠了，所以就決定先試試看 <a target="_blank" rel="noopener" href="http://kaldi-asr.org/">Kaldi</a>，看他的表現如何。至於為什麼不用 <a target="_blank" rel="noopener" href="https://www.mozilla.org/en-US/">Mozilla</a> 的 <a target="_blank" rel="noopener" href="https://github.com/mozilla/DeepSpeech">DeepSpeech</a>，因為我寫這篇文章的前幾個小時才發現有這個東西，等文章寫好之後我就會去看看 <a target="_blank" rel="noopener" href="https://github.com/mozilla/DeepSpeech">DeepSpeech</a> 了，如果可以的話希望也可以寫一篇教學，寫寫自己的心路歷程。</p>
 <p>廢話不多說，現在就開始我們今天的重點，<a target="_blank" rel="noopener" href="http://kaldi-asr.org/">Kaldi 的官網</a>有兩篇教學，<a target="_blank" rel="noopener" href="https://kaldi-asr.org/doc/tutorial.html">Kaldi tutorial</a> 和 <a target="_blank" rel="noopener" href="https://kaldi-asr.org/doc/kaldi_for_dummies.html">Kaldi for Dummies tutorial</a>，這篇文章會針對後者做解說，文章的編排我會盡量按照 <a target="_blank" rel="noopener" href="https://kaldi-asr.org/doc/kaldi_for_dummies.html">Kaldi for Dummies tutorial</a> 的目錄走，內容則會用我自己的方法去說明，不會完全照著原文翻譯，當然還是建議大家有能力的話可以直接去看原文。</p>
 <h1 id="開發環境"><a href="#開發環境" class="headerlink" title="開發環境"></a>開發環境</h1><p>官方說__盡量在 Linux 環境執行__，畢竟不管是安裝套件或是修改設定，Linux 對開發者還是比較友善的。我則是在 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows/wsl/about">wsl</a> 上執行，因為我只有筆電（Windows 10 Home），然後又不想裝虛擬機，覺得每次開開關關很麻煩，所以決定裝 <a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/windows/wsl/about">wsl</a>，我選的是 Ubuntu 18.04 的版本。</p>
@@ -426,7 +409,7 @@
       <a href="http://eugene87222.github.io/2020/02/23/20200223-kaldi-for-dummy/" title="Kaldi 入門教學 - Kaldi tutorial for dummy">http://eugene87222.github.io/2020/02/23/20200223-kaldi-for-dummy/</a>
   </li>
   <li class="post-copyright-license">
-    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
+      <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="noopener" target="_blank"><i class="fab fa-fw fa-creative-commons"></i>BY-NC-SA</a> unless stating additionally.
   </li>
 </ul>
 </div>
@@ -443,12 +426,12 @@
           <div class="post-nav">
             <div class="post-nav-item">
                 <a href="/2020/02/18/20200218-photo/" rel="prev" title="隨手拍#12 - 台中秋紅谷">
-                  <i class="fa fa-chevron-left"></i> 隨手拍#12 - 台中秋紅谷
+                  <i class="fa fa-angle-left"></i> 隨手拍#12 - 台中秋紅谷
                 </a>
             </div>
             <div class="post-nav-item">
                 <a href="/2020/07/12/20200712-undergrad-4-2/" rel="next" title="四下修課心得">
-                  四下修課心得 <i class="fa fa-chevron-right"></i>
+                  四下修課心得 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
@@ -472,21 +455,20 @@
   <footer class="footer">
     <div class="footer-inner">
 
-
-<div class="copyright">
-  &copy; 
-  <span itemprop="copyrightYear">2023</span>
-  <span class="with-love">
-    <i class="fa fa-heart"></i>
-  </span>
-  <span class="author" itemprop="copyrightHolder">Eugene Yang</span>
-</div>
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">Eugene Yang</span>
+  </div>
 <div class="wordcount">
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="Symbols count total">248k</span>
+    <span title="Word count total">248k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
@@ -520,18 +502,29 @@
   </footer>
 
   
-  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin="anonymous"></script>
-<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+  <div class="back-to-top" role="button" aria-label="Back to top">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
 
   
-<script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.0/dist/search.js" integrity="sha256-vXZMYLEqsROAXkEw93GGIvaB2ab+QW6w3+1ahD9nXXA=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.20/dist/fancybox/fancybox.umd.js" integrity="sha256-q8XkJ6dj5VwSvzI8+nATCHHQG+Xv/dAZBCgqmu93zOY=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/next-boot.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/hexo-generator-searchdb@1.4.1/dist/search.js" integrity="sha256-1kfA5uHPf65M5cphT2dvymhkuyHPQp5A53EGZOnOLmc=" crossorigin="anonymous"></script>
 <script src="/js/third-party/search/local-search.js"></script>
 
 
 
+
   <script src="/js/third-party/fancybox.js"></script>
+
 
 
   
