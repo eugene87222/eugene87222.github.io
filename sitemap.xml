@@ -812,20 +812,6 @@
 
   
   <url>
-    <loc>http://eugene87222.github.io/tags/tutorial/</loc>
-    <lastmod>2024-12-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://eugene87222.github.io/tags/web-development/</loc>
-    <lastmod>2024-12-28</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://eugene87222.github.io/tags/NCTU/</loc>
     <lastmod>2024-12-28</lastmod>
     <changefreq>weekly</changefreq>
@@ -834,6 +820,20 @@
   
   <url>
     <loc>http://eugene87222.github.io/tags/diary/</loc>
+    <lastmod>2024-12-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/tags/tutorial/</loc>
+    <lastmod>2024-12-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://eugene87222.github.io/tags/web-development/</loc>
     <lastmod>2024-12-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -854,14 +854,14 @@
   </url>
   
   <url>
-    <loc>http://eugene87222.github.io/tags/collection/</loc>
+    <loc>http://eugene87222.github.io/tags/photo/</loc>
     <lastmod>2024-12-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://eugene87222.github.io/tags/photo/</loc>
+    <loc>http://eugene87222.github.io/tags/collection/</loc>
     <lastmod>2024-12-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

@@ -400,6 +400,33 @@ td {
   right: 4px;
   top: 8px;
 }
+.expand-btn {
+  bottom: 0;
+  color: var(--highlight-foreground);
+  cursor: pointer;
+  display: none;
+  left: 0;
+  right: 0;
+  position: absolute;
+  text-align: center;
+}
+.fold-cover {
+  background-image: linear-gradient(to top, var(--highlight-background) 0, rgba(0,0,0,0) 100%);
+  bottom: 0;
+  display: none;
+  height: 50px;
+  left: 0;
+  right: 0;
+  position: absolute;
+}
+.highlight-fold {
+  max-height: 500px;
+  overflow-y: hidden !important;
+}
+.highlight-fold .expand-btn,
+.highlight-fold .fold-cover {
+  display: block;
+}
 code,
 kbd,
 figure.highlight,
@@ -1151,7 +1178,7 @@ pre code {
     vertical-align: middle;
   }
   .links-of-author a::before {
-    background: #6c419f;
+    background: #f4732d;
     display: inline-block;
     margin-right: 3px;
     transform: translateY(-2px);
@@ -1979,9 +2006,6 @@ pre code {
 .post-meta-break {
   flex-basis: 100%;
   height: 0;
-}
-#busuanzi_container_page_pv {
-  display: none;
 }
 .post-nav {
   border-top: 1px solid #eee;
